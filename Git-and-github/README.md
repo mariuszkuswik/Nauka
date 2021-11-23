@@ -1,21 +1,16 @@
 
 # Odpalenie nowego repo 
 
-1.  ```git init``` 
-2. 
-### #TODO sprawdzic jak to ladniej opisac
-# Dodanie wzystkich plikow 
-```git add -A``` 
-3. 
-```git push -m "Opis commita"```
-4. 
-````git remote set-url origin git@github.com:mariuszkuswik/nazwa_repo.git````
-5. 
-```git remote add origin https://github.com/mariuszkuswik/nazwa_repo.git```
-6. 
-### #TODO Do sprawdzenia czym jest origin
-# master to nazwa brancha
-```git push origin master``` 
+1.  ```git init```
+### #TODO sprawdzic jak ladniej opisac to dodanie wszystkich plikow  
+2. Dodanie wzystkich plikow : ```git add -A``` 
+3. ```git push -m "Opis commita"``` 
+4. ````git remote set-url origin git@github.com:mariuszkuswik/nazwa_repo.git````
+5. ```git remote add origin https://github.com/mariuszkuswik/nazwa_repo.git```
+### #TODO Do sprawdzenia czym jest origin, poprawic opis 
+6. master to nazwa brancha : ```git push origin master```
+
+
 
 
 # Introduction to Git
