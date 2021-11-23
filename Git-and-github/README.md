@@ -1,8 +1,7 @@
 
 # Odpalenie nowego repo 
 
-1. 
-```git init``` 
+1.  ```git init``` 
 2. 
 ### #TODO sprawdzic jak to ladniej opisac
 # Dodanie wzystkich plikow 
