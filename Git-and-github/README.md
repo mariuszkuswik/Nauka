@@ -4,7 +4,7 @@
 1. 
 ```git init``` 
 2. 
-### #TODO sprawdzic jak to ladniej opisac 
+### #TODO sprawdzic jak to ladniej opisac
 # Dodanie wzystkich plikow 
 ```git add -A``` 
 3. 
