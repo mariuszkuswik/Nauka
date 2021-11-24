@@ -20,3 +20,10 @@ Skrót BASH pochodzi od "Bourne Again SHell". Twórcą tego rozwiązania jest St
 
 ### Co to jest jądro Linuxa ( Linux kernel)   
 Najważniejsza część systemów operacyjnych z rodziny Linux / Unix. Pierwsze wydanie miało miejsce w 26 sierpnia 1991 roku. Jest to oprogramowanie systemowe niskiego poziomu. Jądro linux odpowiada za komunikacje ze sprzętem oraz wykonywanie operacji na pamięci operacyjnej. Służy za pośrednika (warstwa jądra) pomiędzy użytkownikiem (warstwa użytkownika), który uruchamia swoje programy a fizycznymi urządzeniami wchodzącymi w skład danej maszyny. 
+
+
+# Sieci 
+
+### Które porty są otwarte 
+### Tablica routingu 
+### Adres ip lokalnej maszyny  
