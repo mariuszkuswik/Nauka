@@ -18,17 +18,17 @@
 
 A **.gitignore** file is a plain text file where each line contains a pattern for files/directories to ignore. Generally, this is placed in the root folder of the repository, and that's what I recommend. However, you can put it in any folder in the repository and you can also have multiple **.gitignore** files. The patterns in the files are relative to the location of that **.gitignore** file.
 
-- Literal File Names  
+**- Literal File Names**  
    - The easiest pattern is a ```literal file name```, for example:  
 		> .nazwapliku
 
-- Wildcard  
+**- Wildcard**  
    - The ```*``` matches 0 or more characters **(except the /).** So, for example, ***.log** matches any file ending with the **.log** extension.  
 Another example is ***~**, which matches any file ending with **~**, such as **index.html~**
    - You can also use the ```?```, which matches any one character except for the **/.**
 
 
-- Negation  
+**- Negation**  
    - You can use a prefix of ! to negate a file that would be ignored.  
       
       > *.log 
@@ -43,10 +43,11 @@ Another example is ***~**, which matches any file ending with **~**, such as **i
       Due to performance reasons, **git will still ignore** ```logs/example.log``` here because the entire ```logs``` directory is ignored.
 
 
-- Double Asterisk
-    - ```**``` can be used to match any number of directories.
+**- Double Asterisk**
+- ```**``` can be used to match any number of directories.
 
-      ```**/logs``` matches all files or directories named logs (same as the pattern logs)
+	matches all files or directories named logs (same as the pattern logs)
+      ```**/logs``` 
       ```**/logs/*.log``` matches all files ending with .log in a logs directory
       ```logs/**/*.log``` matches all files ending with .log in the logs directory and any of its subdirectories
       ```**``` can also be used to match all files inside of a directory, so for example logs/** matches all files inside of logs.
