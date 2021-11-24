@@ -11,6 +11,36 @@
 6. master to nazwa brancha : ```git push origin master```
 
 
+# .gitignore
+
+### <a href="https://app.pluralsight.com/guides/how-to-use-gitignore-file">Artykuł na temat .gitignore</a>
+
+A **.gitignore** file is a plain text file where each line contains a pattern for files/directories to ignore. Generally, this is placed in the root folder of the repository, and that's what I recommend. However, you can put it in any folder in the repository and you can also have multiple **.gitignore** files. The patterns in the files are relative to the location of that **.gitignore** file.
+
+- Literal File Names  
+   - The easiest pattern is a ```literal file name```, for example:  
+```.nazwapliku```
+
+- Wildcard  
+   - The ```*``` matches 0 or more characters **(except the /).** So, for example, ***.log** matches any file ending with the **.log** extension.  
+Another example is ***~**, which matches any file ending with **~**, such as **index.html~**
+   - You can also use the ```?```, which matches any one character except for the **/.**
+
+
+- Negation  
+   - You can use a prefix of ! to negate a file that would be ignored.  
+```*.log  
+!example.log  
+```    
+In this example, example.log is not ignored, even though all other files ending with .log are ignored.
+
+But be aware, you can't negate a file inside of an ignored directory:
+
+logs/
+!logs/example.log
+Due to performance reasons, git will still ignore logs/example.log here because the entire logs directory is ignored.
+
+
 
 
 # Introduction to Git
