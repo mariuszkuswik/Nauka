@@ -29,18 +29,32 @@ Another example is ***~**, which matches any file ending with **~**, such as **i
 
 - Negation  
    - You can use a prefix of ! to negate a file that would be ignored.  
-```*.log  
-!example.log  
-```    
-In this example, example.log is not ignored, even though all other files ending with .log are ignored.
+      
+      ```*.log```  
+      ```!example.log```  
+ 
+      In this example, ```example.log``` **is not ignored**, even though all other files ending with ```.log``` are ignored.  
+      But be aware, **you can't negate a file inside of an ignored directory:**
 
-But be aware, you can't negate a file inside of an ignored directory:
+      ```logs/```  
+      ```!logs/example.log```  
 
-logs/
-!logs/example.log
-Due to performance reasons, git will still ignore logs/example.log here because the entire logs directory is ignored.
+      Due to performance reasons, git will still ignore ```logs/example.log``` here because the entire ```logs``` directory is ignored.
 
 
+- Double Asterisk
+    - ```**``` can be used to match any number of directories.
+
+      ```**/logs``` matches all files or directories named logs (same as the pattern logs)
+      ```**/logs/*.log``` matches all files ending with .log in a logs directory
+      ```logs/**/*.log``` matches all files ending with .log in the logs directory and any of its subdirectories
+      ```**``` can also be used to match all files inside of a directory, so for example logs/** matches all files inside of logs.
+
+- Comments
+   Any lines that start with # are comments:
+
+   ```# macOS Files```  
+   ```.DS_Store```
 
 
 # Introduction to Git
