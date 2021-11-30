@@ -131,9 +131,22 @@ ip netns exec net1 ip add a 10.0.0.1/24 dev veth1
 
 ip netns exec net1 ip link set dev veth1 up
 
+### Routing 
+
+
+```ip route``` - routing table management  
+
+```ip route show ```  
 
 
 
+<details>Detale
+   <summary>
+
+      test
+   </summary>
+
+</details>
 
 
 
