@@ -21,13 +21,13 @@
 ### Komendy 
 
 ### Podkomendy  
-```docker --help``` - wyświetla wszystkie podkomendy 
+```docker --help``` - wyświetla wszystkie podkomendy  
 
 
-### Przykłady komend 
-# TODO - sprawdzić czy to jest ok 
-```docker image ls``` - Listuje ?zainstalowane? obrazy
-```docker container ls``` - listuje ?działające? obrazy
+### Przykłady komend  
+# TODO - sprawdzić czy to jest ok   
+```docker image ls``` - Listuje ?zainstalowane? obrazy  
+```docker container ls``` - listuje ?działające? obrazy  
 
 
-```docker container commit``` - Tworzy nowy obraz kontenera z obecnego stamu 
+```docker container commit``` - Tworzy nowy obraz kontenera z obecnego stamu   
