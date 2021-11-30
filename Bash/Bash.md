@@ -89,9 +89,7 @@ Return - Zwraca wartos funkcji
 
 
 <details>
-   <summary>
-      <p>#TODO - Przykład użycia, całość jest do sprawdzenia i poprawienia</p>
-   </summary>
+   <summary><p>#TODO - Przykład użycia, całość jest do sprawdzenia i poprawienia</p></summary>
 
    ## Przykład   
    - ```ip netns``` - Network namaspaces, bez uzycia parametrow listuje je  
