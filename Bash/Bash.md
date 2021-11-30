@@ -84,11 +84,12 @@ Return - Zwraca wartos funkcji
 ```ip link``` - network device configuration
 
 ### Namespaces/Przestrzeenie nazw 
+[Artykuł wyjaśniający](https://linuxpolska.pl/blog/zabawa-w-namespaces/)
 - Przestrzenie nazw sprawiają, że możliwa jest całkowita separacja sieci – routingu, iptables i interfejsów sieciowych.
    - ```ip netns``` - Network namaspaces, bez uzycia parametrow listuje je  
    - ```ip netns add net1``` - Add network space na domyślnej karcie
 
-   
+
 
 # #TODO - odpowiedzieć na pytanie 
 Jak działa routing i maska podsieci 
