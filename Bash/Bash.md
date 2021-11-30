@@ -86,12 +86,21 @@ Return - Zwraca wartos funkcji
 ### Namespaces/Przestrzeenie nazw 
 [Artykuł wyjaśniający](https://linuxpolska.pl/blog/zabawa-w-namespaces/)
 - Przestrzenie nazw sprawiają, że możliwa jest całkowita separacja sieci – routingu, iptables i interfejsów sieciowych.
+   # #TODO - Do sprawdzenia czy poniższe komendy działają dobrze  
    - ```ip netns``` - Network namaspaces, bez uzycia parametrow listuje je  
    - ```ip netns add net1``` - Add network space na domyślnej karcie
 
    - ```ip netns exec net1 ip addr add 10.0.0.1/24 dev veth1``` - Dla namaspace **net1** wykonaj komendę ***dodania adresu ip dla urządzenia veth1***
 
+   - ```ip netns exec net1 ip link set dev veth1 up``` - Dla namespace net1 włączenie urządzenia veth1
 
+   - ```ping 10.0.0.1 # Fails``` - Obecnie ustawiony jest domyślny namespace więc ping nie przechodzi 
+
+   - ```ip addr add 10.0.0.2/24 dev veth0``` - dodanie adresu ip na urządzeniu veth0 
+
+   - ```ip link set dev veth0 up``` - włączenie urządzenia veth0
+
+   - ```ping 10.0.0.1``` - Ping przechodzi
 
 
 # #TODO - odpowiedzieć na pytanie 
