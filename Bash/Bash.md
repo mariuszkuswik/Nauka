@@ -87,16 +87,6 @@ read -s -p "Enter a password for the new user "$1": " USER_PASSWORD
 ## Funkcje 
 Return - Zwraca wartos funkcji
 
-# Git
-
-Podstawowe komendy 
-
-init 
-commit 
-push 
-
-czym jest master, branch, repo 
-
 # Sieci 
 
 Jak działa routing i maska podsieci 
