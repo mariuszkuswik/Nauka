@@ -24,6 +24,8 @@ Najważniejsza część systemów operacyjnych z rodziny Linux / Unix. Pierwsze 
 
 # Sieci 
 
+
+
 ### Które porty są otwarte 
 ### Tablica routingu 
 ### Adres ip lokalnej maszyny  
