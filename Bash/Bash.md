@@ -86,11 +86,12 @@ Return - Zwraca wartos funkcji
 ### Namespaces/Przestrzeenie nazw 
 [Artykuł wyjaśniający](https://linuxpolska.pl/blog/zabawa-w-namespaces/)
 - Przestrzenie nazw sprawiają, że możliwa jest całkowita separacja sieci – routingu, iptables i interfejsów sieciowych.
+
+
+
    # #TODO - Do sprawdzenia + poprawienia wszystko, sprawdzić czy poniższe komendy działają dobrze, przetestować je sensownie 
 
-
-<details>
-   <summary>
+<details><summary>CLICK ME</summary>
 
    ## Przykład   
    - ```ip netns``` - Network namaspaces, bez uzycia parametrow listuje je  
@@ -145,18 +146,7 @@ ip netns exec net1 ip link set dev veth1 up
 
 
 
-
-   </summary>
-
 </details>
-
-
-
-
-
-
-
-
 
 
 
