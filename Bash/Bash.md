@@ -78,8 +78,18 @@ Return - Zwraca wartos funkcji
 
 # Sieci 
 
+```ip``` - show / manipulate routing, network devices, interfaces and tunnels
+```ip address``` - protocol address management 
+```ip route``` - routing table management 
+
+
+
 Jak działa routing i maska podsieci 
 Wyświetl karty sieciowe w linuxie, opisz czego się na tej podstawie dowiedziałeś
+
+# System 
+
+Systemctl - opisać 
 
 # Wirtualizacja 
 
