@@ -88,10 +88,10 @@ Return - Zwraca wartos funkcji
 - Przestrzenie nazw sprawiają, że możliwa jest całkowita separacja sieci – routingu, iptables i interfejsów sieciowych.
 
 
-
-   # #TODO - Do sprawdzenia + poprawienia wszystko, sprawdzić czy poniższe komendy działają dobrze, przetestować je sensownie 
-
-<details><summary>CLICK ME</summary>
+<details>
+   <summary>
+      <h2>#TODO - Przykład użycia, całość jest do sprawdzenia i poprawienia</h2>
+   </summary>
 
    ## Przykład   
    - ```ip netns``` - Network namaspaces, bez uzycia parametrow listuje je  
@@ -142,8 +142,6 @@ ip netns exec net1 ip link set dev veth1 up
 ```ip route``` - routing table management  
 
 ```ip route show ```  
-
-
 
 
 </details>
