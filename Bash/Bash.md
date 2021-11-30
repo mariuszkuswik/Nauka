@@ -17,6 +17,8 @@
 
 
 
+## Skryptowanie 
+
 ## Zmienne specjalne
 
 
@@ -44,7 +46,6 @@ _( najczesciej  0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, n
 **Do poprawienia**
 - Dodać jakąs informację na temat **elif** 
 
-## Skryptowanie 
 
 ### Automatyczne tworzenie użytkownika 
 
