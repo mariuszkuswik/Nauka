@@ -1,3 +1,7 @@
+1. [System](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#system-linux)
+	- [Zmienne specjalne](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#zmienne-specjalne)
+2. [Skryptowanie](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#skryptowanie)
+
 ## Pytania do uzupelnienia 
 
 - Przykładowe shelle 
