@@ -86,7 +86,7 @@ Return - Zwraca wartos funkcji
 ### Namespaces/Przestrzeenie nazw 
 [Artykuł wyjaśniający](https://linuxpolska.pl/blog/zabawa-w-namespaces/)
 - Przestrzenie nazw sprawiają, że możliwa jest całkowita separacja sieci – routingu, iptables i interfejsów sieciowych.
-   # #TODO - Do sprawdzenia czy poniższe komendy działają dobrze
+   # #TODO - Do sprawdzenia + poprawienia wszystko, sprawdzić czy poniższe komendy działają dobrze, przetestować je sensownie 
 
    ## Przykład   
    - ```ip netns``` - Network namaspaces, bez uzycia parametrow listuje je  
@@ -103,6 +103,49 @@ Return - Zwraca wartos funkcji
    - ```ip link set dev veth0 up``` - włączenie urządzenia veth0
 
    - ```ping 10.0.0.1``` - Ping przechodzi
+
+sudo ip link add veth0 type veth peer name veth1 netns net1  
+  
+chia@mariusz-chia1:~$ ip link  
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000  
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00  
+2: enp6s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000  
+    link/ether fc:34:97:10:09:2e brd ff:ff:ff:ff:ff:ff  
+3: virbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default qlen 1000  
+    link/ether 52:54:00:4f:e5:43 brd ff:ff:ff:ff:ff:ff  
+4: virbr0-nic: <BROADCAST,MULTICAST> mtu 1500 qdisc fq_codel master virbr0 state DOWN mode DEFAULT group default qlen 1000  
+    link/ether 52:54:00:4f:e5:43 brd ff:ff:ff:ff:ff:ff
+5: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default  
+    link/ether 02:42:56:ca:d7:7e brd ff:ff:ff:ff:ff:ff  
+8: veth0@if2: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000  
+    link/ether 3a:0a:61:e5:9a:ce brd ff:ff:ff:ff:ff:ff link-netns net1  
+
+
+chia@mariusz-chia1:~$ sudo ip netns exec net1 ip link
+1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: veth1@if8: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 02:5c:a6:fe:9f:f2 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+
+ip netns exec net1 ip add a 10.0.0.1/24 dev veth1
+
+ip netns exec net1 ip link set dev veth1 up
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # #TODO - odpowiedzieć na pytanie 
