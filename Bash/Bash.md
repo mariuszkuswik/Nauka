@@ -135,6 +135,11 @@ ip netns exec net1 ip add a 10.0.0.1/24 dev veth1
 
 ip netns exec net1 ip link set dev veth1 up
 
+
+
+
+</details>
+
 ### Routing 
 
 
@@ -143,14 +148,9 @@ ip netns exec net1 ip link set dev veth1 up
 ```ip route show ```  
 
 
-</details>
 
 
-
-
-
-
-# #TODO - odpowiedzieć na pytanie 
+## #TODO - odpowiedzieć na pytanie 
 Jak działa routing i maska podsieci 
 Wyświetl karty sieciowe w linuxie, opisz czego się na tej podstawie dowiedziałeś
 
