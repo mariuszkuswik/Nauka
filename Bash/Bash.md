@@ -89,7 +89,7 @@ Return - Zwraca wartos funkcji
 
 
 <details><summary>TODO - Przykład użycia, całość jest do sprawdzenia i poprawienia</summary>
-
+ 
    ## Przykład   
    - ```ip netns``` - Network namaspaces, bez uzycia parametrow listuje je  
    - ```ip netns add net1``` - Add network space na domyślnej karcie
