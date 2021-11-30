@@ -1,4 +1,9 @@
 
+# #TO DO 
+1. Podstawowe komendy
+2. init commit push
+3. czym jest master, branch, repo
+
 
 # Odpalenie nowego repo 
 
