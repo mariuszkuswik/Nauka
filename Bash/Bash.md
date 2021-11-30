@@ -88,7 +88,7 @@ Return - Zwraca wartos funkcji
 - Przestrzenie nazw sprawiają, że możliwa jest całkowita separacja sieci – routingu, iptables i interfejsów sieciowych.
 
 
-<details><summary>TODO - Przykład użycia, całość jest do sprawdzenia i poprawienia</summary>
+<details><summary><h2>TODO - Przykład użycia, całość jest do sprawdzenia i poprawienia</h2></summary>
  
    ## Przykład   
    - ```ip netns``` - Network namaspaces, bez uzycia parametrow listuje je  
