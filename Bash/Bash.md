@@ -81,9 +81,16 @@ Return - Zwraca wartos funkcji
 ```ip``` - show / manipulate routing, network devices, interfaces and tunnels  
 ```ip address``` - protocol address management  
 ```ip route``` - routing table management  
-  
+```ip link``` - network device configuration
 
+### Namespaces/Przestrzeenie nazw 
+- Przestrzenie nazw sprawiają, że możliwa jest całkowita separacja sieci – routingu, iptables i interfejsów sieciowych.
+   - ```ip netns``` - Network namaspaces, bez uzycia parametrow listuje je  
+   - ```ip netns add net1``` - Add network space na domyślnej karcie
 
+   
+
+# #TODO - odpowiedzieć na pytanie 
 Jak działa routing i maska podsieci 
 Wyświetl karty sieciowe w linuxie, opisz czego się na tej podstawie dowiedziałeś
 
