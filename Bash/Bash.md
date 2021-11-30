@@ -140,12 +140,12 @@ ip netns exec net1 ip link set dev veth1 up
 
 
 
-<details>Detale
+<details>
    <summary>
 
       test
    </summary>
-
+Detale
 </details>
 
 
