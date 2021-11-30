@@ -90,7 +90,7 @@ Return - Zwraca wartos funkcji
 
 <details>
    <summary>
-      <h2>#TODO - Przykład użycia, całość jest do sprawdzenia i poprawienia</h2>
+      <p>#TODO - Przykład użycia, całość jest do sprawdzenia i poprawienia</p>
    </summary>
 
    ## Przykład   
