@@ -1,6 +1,6 @@
 1. [System](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#system-linux)
-	- [Zmienne specjalne](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#zmienne-specjalne)
 2. [Skryptowanie](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#skryptowanie)
+	- [Zmienne specjalne](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#zmienne-specjalne)
 
 ## Pytania do uzupelnienia 
 
