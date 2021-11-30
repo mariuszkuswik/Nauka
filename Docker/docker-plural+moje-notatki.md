@@ -31,3 +31,5 @@
 
 
 ```docker container commit``` - Tworzy nowy obraz kontenera z obecnego stamu   
+
+
