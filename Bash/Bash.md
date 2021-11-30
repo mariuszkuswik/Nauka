@@ -1,6 +1,16 @@
 
 # Linux/Bash
 
+# Spis treści
+1. [System](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#system-linux)
+2. [Skryptowanie](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#skryptowanie)
+	- [Zmienne specjalne](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#zmienne-specjalne)
+	- [Exitcode](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#exitcode)
+	- [Automatyczne tworzenie użytkownika - przykładowy skrypt](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#automatyczne-tworzenie-u%C5%BCytkownika)
+3. [Funkcje](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#funkcje)
+4. [Sieci](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#sieci)
+5. [Wirtualizacja](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#wirtualizacja)
+
 ## System Linux 
 
 ### Pytania pod rozmowę 
@@ -76,6 +86,10 @@ read -s -p "Enter a password for the new user "$1": " USER_PASSWORD
 ## Funkcje 
 Return - Zwraca wartos funkcji
 
+
+
+
+
 # Sieci 
   
 ```ip``` - show / manipulate routing, network devices, interfaces and tunnels  
@@ -83,16 +97,24 @@ Return - Zwraca wartos funkcji
 ```ip route``` - routing table management  
 ```ip link``` - network device configuration
 
+
+
+
+
+
 ### Namespaces/Przestrzeenie nazw 
 [Artykuł wyjaśniający](https://linuxpolska.pl/blog/zabawa-w-namespaces/)
 - Przestrzenie nazw sprawiają, że możliwa jest całkowita separacja sieci – routingu, iptables i interfejsów sieciowych.
 
 
-## #TODO - Całość przykładu jest do sprawdzenia i poprawienia
+
+
+
+**#TODO - Całość przykładu jest do sprawdzenia i poprawienia**
 
 <details><summary>Przykład użycia</summary>
  
-   ## Przykład   
+   ### Przykład   
    - ```ip netns``` - Network namaspaces, bez uzycia parametrow listuje je  
    - ```ip netns add net1``` - Add network space na domyślnej karcie
 
@@ -137,11 +159,13 @@ ip netns exec net1 ip link set dev veth1 up
 
 
 
-
 </details>
 
-### Routing 
 
+
+
+
+### Routing 
 
 ```ip route``` - routing table management  
 
@@ -150,7 +174,20 @@ ip netns exec net1 ip link set dev veth1 up
 
 
 
-## #TODO - odpowiedzieć na pytanie 
+### Konfiguracja adresu IP na stałe 
+
+<details><summary><b>#TODO - sprawdzić notatki + poprawić to co jest źle</b></summary>
+   
+   - Komenda ```ip``` zmienia ip tylko w trakcie obecnej sesji  
+   - ```/etc/sysconfig/network-scripts/``` - miejsce w którym znajdują się pliki konfiguracyjne dla kart sieciowych  
+   - 
+
+</details>
+
+
+
+
+**#TODO - odpowiedzieć na pytanie**
 Jak działa routing i maska podsieci 
 Wyświetl karty sieciowe w linuxie, opisz czego się na tej podstawie dowiedziałeś
 
