@@ -89,6 +89,9 @@ Return - Zwraca wartos funkcji
    - ```ip netns``` - Network namaspaces, bez uzycia parametrow listuje je  
    - ```ip netns add net1``` - Add network space na domyślnej karcie
 
+   - ```ip netns exec net1 ip addr add 10.0.0.1/24 dev veth1``` - Dla namaspace **net1** wykonaj komendę ***dodania adresu ip dla urządzenia veth1***
+
+
 
 
 # #TODO - odpowiedzieć na pytanie 
