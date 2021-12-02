@@ -225,3 +225,6 @@ Sprawdź czy maszyna na której jesteź jest maszyną wirtualną
 	- whereis ?
 - Grep po wszystkich katalogach w psozukiwaniu stringa wewnątrz pliku 
 	- grep -R "string" sciezka docelowa ?
+	
+	
+[Idz na górę](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#linuxbash) 
