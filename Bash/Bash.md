@@ -220,3 +220,8 @@ Sprawdź czy maszyna na której jesteź jest maszyną wirtualną
 - Czym jest SWAP, ile go potrzebujemy 
 
 - Czym są linki w linuxie, podaj różnice, kiedy ich używamy 
+	
+- Jak sprawdzić gdzie jest zainstalowany dany program 
+	- whereis ?
+- Grep po wszystkich katalogach w psozukiwaniu stringa wewnątrz pliku 
+	- grep -R "string" sciezka docelowa ?
