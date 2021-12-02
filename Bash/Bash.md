@@ -216,3 +216,7 @@ Sprawdź czy maszyna na której jesteź jest maszyną wirtualną
 	
 - Jak sprawdzić biblioteki których nam brakuje 
 	- ldd ?
+	
+- Czym jest SWAP, ile go potrzebujemy 
+
+- Czym są linki w linuxie, podaj różnice, kiedy ich używamy 
