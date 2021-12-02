@@ -10,7 +10,7 @@
 3. [Funkcje](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#funkcje)
 4. [Sieci](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#sieci)
 5. [Wirtualizacja](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#wirtualizacja)
-
+6. [Pytania na rozmowę]()
 ## System Linux 
 
 ### Pytania pod rozmowę 
@@ -202,6 +202,6 @@ Sprawdź czy maszyna na której jesteź jest maszyną wirtualną
 
 	
 	
-# Pytanie na rozmowę 
+# Pytania na rozmowę 
 - Czym różnie się TCP od UDP 
 	- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. UDP to również protokół w warstwie transportowej, ale nie wymaga potwierdzenia o otrzymaniu danych
