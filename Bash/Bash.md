@@ -207,3 +207,12 @@ Sprawdź czy maszyna na której jesteź jest maszyną wirtualną
 # Pytania na rozmowę 
 - Czym różnie się TCP od UDP 
 	- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. UDP to również protokół w warstwie transportowej, ale nie wymaga potwierdzenia o otrzymaniu danych
+
+- Czym jest export a czym env, jak działają zmienne środowiskowe, jak je wypisać
+	
+- Jak stworzyć nowy branch w git od podstaw
+	
+- Jak sprawdzić kto i kiedy dodał jakiś commit  
+	
+- Jak sprawdzić biblioteki których nam brakuje 
+	- ldd ?
