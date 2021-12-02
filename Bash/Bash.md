@@ -10,7 +10,6 @@
 3. [Funkcje](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#funkcje)
 4. [Sieci](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#sieci)
 5. [Wirtualizacja](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#wirtualizacja)
-6. [Pytania na rozmowe](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#pytania-na-rozmow%C4%99)  
 
 
 ## System Linux 
