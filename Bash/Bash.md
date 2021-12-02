@@ -97,8 +97,7 @@ Return - Zwraca wartos funkcji
 ```ip route``` - routing table management  
 ```ip link``` - network device configuration
 
-
-
+ 
 
 
 
@@ -200,3 +199,9 @@ Systemctl - opisać
 Czym jest wirtualizacja  
 Sprawdź czy maszyna na której jesteź jest maszyną wirtualną 
 
+
+	
+	
+# Pytanie na rozmowę 
+- Czym różnie się TCP od UDP 
+	- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. UDP to również protokół w warstwie transportowej, ale nie wymaga potwierdzenia o otrzymaniu danych
