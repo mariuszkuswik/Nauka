@@ -10,7 +10,9 @@
 3. [Funkcje](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#funkcje)
 4. [Sieci](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#sieci)
 5. [Wirtualizacja](https://github.com/mariuszkuswik/Nauka/blob/main/Bash/Bash.md#wirtualizacja)
-6. [Pytania na rozmowę]()
+6. [Pytania na rozmowę](Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. ... UDP to również protokół w warstwie transportowej, ale nie wymaga handshake'a ani potwierdzenia o otrzymaniu danych)  
+
+
 ## System Linux 
 
 ### Pytania pod rozmowę 
