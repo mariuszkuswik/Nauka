@@ -1,4 +1,8 @@
 ### Czym się zajmuję w pracy 
+aaaaa
+
+
+
 
 ### Doświadczenie zawodowe 
 
