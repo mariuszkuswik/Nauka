@@ -1,34 +1,22 @@
-### Czym się zajmuję w pracy 
-- Reagowanie na alerty NetAppa, zazwyczaj volume full, broken disk,
-- Monitoring SolarWindsa, dodawanie nowych maszyn
-
-
-
-### Doświadczenie zawodowe 
-
-### Co pisałem w pythonie 
-- Selenium i Beutiful Soup 
-
-### Co pisałem w powerhsellu 
-- Wolny RAM 
-- Wyciaganie nazw profili użytkownika z poszczególnych dysków 
-
-### Moje osobiste projekty 
-- Chia 
-
-
-Czego się uczyć 
-- Docker
-- Git
-- Podstawy SQLa, tworzenie prostych zapytań 
-- Apache/Tomcat 
-
-
-
-
-
-
 # Pytania na rozmowę 
+- Czym rozni sie TCP od UDP
+	- 
+- Jak wyświetlić tablicę routingu 
+- Jak sprawdzić porty otwarte na lokalnej maszynie 
+- Jak przeskanować porty zdalnej maszyny 
+- Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlić strony hostowanej przez nią, jak zdiagnozowac problem 
+- Jak wyświetlić karty sieciowe 
+- Jak działą routing 
+- Jak zwrócić wartość funkcji 
+	- return 
+- Exitcode z instrukcji Bash, wypisac czym jest
+- Wypisac zmienne specjalne z instrukcji bash 
+- Do czego służy kropka w skryptach bashowych, jak działa source pliku 
+	- Czy zmienne ze skryptu zaciaganego zastana zaciagniete ? - Wydaje mi sie ze tak
+	- Czy skrypt zostanie wykonany - mysle ze tak 
+- Co zwraca funkcja ? 
+	- Sama z siebie zwraca exitcode, domyslnie wartosc 0/1  
+- Czym jest VLAN
 - Czym jest GRUB, jak przebiega proces bootowania systemu 
 	- 
 - Jak sprawdzić czy filesystem działa poprawnie, jak go naprawić 
