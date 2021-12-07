@@ -1,17 +1,20 @@
 ### Czym się zajmuję w pracy 
-aaaaa
-
+- Reagowanie na alerty NetAppa, zazwyczaj volume full, broken disk,
+- Monitoring SolarWindsa, dodawanie nowych maszyn
 
 
 
 ### Doświadczenie zawodowe 
 
 ### Co pisałem w pythonie 
+- Selenium i Beutiful Soup 
 
 ### Co pisałem w powerhsellu 
+- Wolny RAM 
+- Wyciaganie nazw profili użytkownika z poszczególnych dysków 
 
 ### Moje osobiste projekty 
-
+- Chia 
 
 
 Czego się uczyć 
@@ -20,25 +23,20 @@ Czego się uczyć
 - Podstawy SQLa, tworzenie prostych zapytań 
 - Apache/Tomcat 
 
-## Pytania do uzupelnienia 
-
-
-
-
-
-
-
 
 
 
 
 
 # Pytania na rozmowę 
+- Czym jest GRUB, jak przebiega proces bootowania systemu 
+	- 
+- Jak sprawdzić czy filesystem działa poprawnie, jak go naprawić 
+	- 
 - shebang - czym jest
 	-  daje kontrole nad tym w jakim shellu zostanie wykonany skrypt, jezeli nie zostanie uzyty to skrypt wykona sie w obecnie uzywanym shellu 
 - Czym różnie się TCP od UDP 
 	- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. UDP to również protokół w warstwie transportowej, ale nie wymaga potwierdzenia o otrzymaniu danych
-
 - Czym jest export a czym env, jak działają zmienne środowiskowe, jak je wypisać
 	- env - Wypisuje zmienne środowiskowe, export tworzy zmienną środowiskową 	
 - Jak stworzyć nowy branch w git od podstaw
@@ -50,7 +48,7 @@ Czego się uczyć
 - Czym jest SWAP, ile go potrzebujemy 
 	- Pamięć ulotna dostępna na dysku którą system może wykorzystywać, jej użycie jest zależne od stopnia swapiness, minimalna wielkość powinna być równa ilości RAM, ze względu na możliwość hibernacji 
 - Czym są linki w linuxie, podaj różnice, kiedy ich używamy 
-	
+	- 	
 - Jak sprawdzić gdzie jest zainstalowany dany program 
 	- whereis ?
 - Grep po wszystkich katalogach w psozukiwaniu stringa wewnątrz pliku 
@@ -73,10 +71,10 @@ Czego się uczyć
 
 		```chmod u+s <nazwa pliku>```
 
-
+- Jak brzmią domyślne ustawienia uprawnień, jak je zmienić 
+	- umask - sprawdzic jak zmienic 
 - Ogolnie sprawdzic jakie uprawnienia uniemozliwia usuniecie pliku 
 Ogarnac notatki z telefonu 
-- umask 
 - Dlaczego przypisujemy zmienne sredowiskowe 
 - Jak dzialaja klamrowe nawiasy 
 
