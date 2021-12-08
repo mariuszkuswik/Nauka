@@ -4,7 +4,7 @@
 - Reagowanie na alerty NetAppa, zazwyczaj volume full, broken disk,
 - Monitoring SolarWindsa, dodawanie nowych maszyn
 
-
+aaaaaa
 
 ### Doświadczenie zawodowe 
 
