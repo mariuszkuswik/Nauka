@@ -16,7 +16,8 @@
 - Automatyczne wyciaganie grup przypisanych do konkretnego udzialu
 - Edycja maszyn w VM ware 
 - Windows Patching - konsola Ivanti 
-
+- Decomisioning maszyn 
+- Szyfrowanie udziałów 
 
 ### Doświadczenie zawodowe 
 
