@@ -14,19 +14,6 @@
 
 ## System Linux 
 
-### Pytania pod rozmowę 
-- Jakie znam filesystemy na linuxie, czym się charakteryzują  
-	- ext2, ext3, ext4, xfs, btrfs
-	- Upenić się czy jest to ok 
-- jakie znam katalogi linuxowe, za co odpowiadają 
-- gdzie przechowywane sa logi 
-- gdzie przechowywane są pliki konfiguracyjne 
-- jak dziala . ./script_name.sh
-	- sourcowanie plikow, skrypt wykona się i zaciągnięte zostaną z niego wartości
-	- Sprawdzić czy coś dopisać  
-- jakie znam rodzaje RAIDa, na czym polegają
-
-
 
 ## Skryptowanie 
 

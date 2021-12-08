@@ -20,6 +20,7 @@
 
 
 Czego się uczyć 
+- iptables !!!
 - Docker
 - Git
 - Podstawy SQLa, tworzenie prostych zapytań 

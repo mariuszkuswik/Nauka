@@ -1,9 +1,15 @@
 # Pytania na rozmowę 
+- Nauczyc sie iptables i znalezc do niego jakies pytania 
 - Czym rozni sie TCP od UDP
-	- 
-- Jak wyświetlić tablicę routingu 
+	- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. ... UDP to również protokół w warstwie transportowej, ale nie wymaga handshake'a ani potwierdzenia o otrzymaniu danych. 
+- Jak wyświetlić tablicę routingu
+	- ip route 
 - Jak sprawdzić porty otwarte na lokalnej maszynie 
+	- ```netstat``` 
+	- ```netstat -a``` - wyświetla wszystkie porty
+	- ```netstat -l``` - wyświetla nasłuchujące porty  
 - Jak przeskanować porty zdalnej maszyny 
+	- ```nmap```
 - Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlić strony hostowanej przez nią, jak zdiagnozowac problem 
 - Jak wyświetlić karty sieciowe 
 - Jak działą routing 
@@ -38,18 +44,19 @@
 - Czym są linki w linuxie, podaj różnice, kiedy ich używamy 
 	- 	
 - Jak sprawdzić gdzie jest zainstalowany dany program 
-	- whereis ?
+	- whereis
 - Grep po wszystkich katalogach w psozukiwaniu stringa wewnątrz pliku 
 	- grep -R "string" sciezka docelowa ?
-
 - Czym jest wirtualizacja  
 
 - Sprawdź czy maszyna na której jesteś jest maszyną wirtualną 
 	- lscpu, wyświetla to czy maszyna jest wirtualizowana 
 - Czym jest konteneryzacja 
 	- 
-
 - Przykładowe shelle 
+	- bash 
+	- zsh 
+	- fish 
 - Czym jest sticky bit ? 
 	- Na koniec komendy jak zmienić lub ustawić te specjalne bity. Do tego słuzy nam komenda chmod.
 
@@ -64,5 +71,15 @@
 - Ogolnie sprawdzic jakie uprawnienia uniemozliwia usuniecie pliku 
 Ogarnac notatki z telefonu 
 - Dlaczego przypisujemy zmienne sredowiskowe 
-- Jak dzialaja klamrowe nawiasy 
-
+- Jak dzialaja klamrowe nawiasy w bashu 
+- Jakie znam filesystemy na linuxie, czym się charakteryzują
+	- ext2, ext3, ext4, xfs, btrfs, bfs
+- Jakie znam katalogi linuxowe, za co odpowiadają
+	- /boot - pliki niezbędne do uruchomienia systemu (kernel, initrd, pliki bootloadera - w przypadku GRUB)
+	- /etc - pliki konfiguracyjne, ustawienia systemowe
+	- /home - pliki określające ustawienia każdego użytkownika + ich pliki  
+	- /proc - wirtualny katalog, zawierający dane o aktualnie uruchomionych procesach
+	- /tmp - pliki tymczasowe
+- Gdzie przechowywane sa logi
+- Gdzie przechowywane są pliki konfiguracyjne
+- Jakie znam rodzaje RAIDa, na czym polegają
