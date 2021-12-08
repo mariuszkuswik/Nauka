@@ -191,7 +191,6 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
 	
 	
 	
-[Idz na górę](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#linuxbash) 
 
 
 
@@ -229,3 +228,8 @@ Najważniejsza część systemów operacyjnych z rodziny Linux / Unix. Pierwsze 
 ### Które porty są otwarte 
 ### Tablica routingu 
 ### Adres ip lokalnej maszyny  
+
+
+
+
+[Idz na górę](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#linuxbash) 
