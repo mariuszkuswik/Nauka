@@ -1,3 +1,5 @@
+### TODO - Ukryć odpowiedzi na pytania pod rozwijaną listą 
+
 # Pytania na rozmowę 
 - Nauczyc sie iptables i znalezc do niego jakies pytania 
 - Czym rozni sie TCP od UDP
