@@ -12,11 +12,21 @@
 	- ```nmap```
 - Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlić strony hostowanej przez nią, jak zdiagnozowac problem 
 - Jak wyświetlić karty sieciowe 
+	- ip a 
 - Jak działą routing 
 - Jak zwrócić wartość funkcji 
 	- return 
 - Exitcode z instrukcji Bash, wypisac czym jest
 - Wypisac zmienne specjalne z instrukcji bash 
+	- $? - wynik ostatniej komendy ( najczesciej 0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )
+	$$ - numer procesu używanego przez komende
+	!$ - ostatni użyty argument
+	$0 - nazwa programu
+	$1 - argumenty, zaczynaja sie od jednego, nie musi byc to jeden
+	$# - liczba argumentow
+	$* - wszystkie argumenty jako string
+	$@ - argumenty w postaci tablicy
+	[Instrukcja](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#zmienne-specjalne)
 - Do czego służy kropka w skryptach bashowych, jak działa source pliku 
 	- Czy zmienne ze skryptu zaciaganego zastana zaciagniete ? - Wydaje mi sie ze tak
 	- Czy skrypt zostanie wykonany - mysle ze tak 
