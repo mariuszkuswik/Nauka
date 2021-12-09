@@ -18,6 +18,7 @@
 - Windows Patching - konsola Ivanti 
 - Decomisioning maszyn 
 - Szyfrowanie udziałów 
+	- Skrypt wyciągający wolumeny do szyfrowania, były kryteria na podstawie których były szyfrowane, wyciąganie przez zdalne ssh, sprawdzić SOP 
 
 ### Doświadczenie zawodowe 
 
