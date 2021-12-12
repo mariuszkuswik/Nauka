@@ -178,6 +178,13 @@ ip netns exec net1 ip link set dev veth1 up
 Jak działa routing i maska podsieci 
 Wyświetl karty sieciowe w linuxie, opisz czego się na tej podstawie dowiedziałeś
 
+
+### iptables
+
+### firewalld
+- W RHEL8 firewall jest zarzadzany przez firewalld, w RHEL7 pod spodem bylo iptables, obecnie jest to nftables
+
+
 # System 
 
 Systemctl - opisać 
