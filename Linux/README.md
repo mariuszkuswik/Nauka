@@ -6,4 +6,5 @@
 	- [Automatyczne tworzenie użytkownika - przykładowy skrypt](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#automatyczne-tworzenie-u%C5%BCytkownika)
 3. [Funkcje](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#funkcje)
 4. [Sieci](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#sieci)
+	- [firewalld](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#firewalld)
 5. [Wirtualizacja](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#wirtualizacja)
