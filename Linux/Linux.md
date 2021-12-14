@@ -88,8 +88,25 @@ Return - Zwraca wartos funkcji
 ```nmcli``` - network manager cli 
 
 - Jak ustawić ip i brame 
-- Jak dodać routing 
+	1. wejscie w config ```/etc/sysconfig/network-scripts/ifcfg-"$device_name"
+	2. Config  
+		```IPADDR="$adres_ip"
+		NETMASK="255.255.255.0"
+		GATEWAY="$adres_bramy"```
+	### ***Po wszystkich zmianach configu musimy przeładować połączenie w network managerze***
+	3. Przeładowanie 
+		nmcli connection 
+		### #TODO - sprawdzić parametry + to jak przeładować nmcli i czy to wystarczy   
 - Jak dodać DNS 
+	1. wejscie w config ```/etc/sysconfig/network-scripts/ifcfg-"$device_name"
+	2. Config 
+		```DNS1="$adres_DNS"
+		DNS2="$adres_DNS2"
+		DNS...```
+
+- Jak dodać routing ( DODAĆ ROUTING PRZED ODPALANIEM )
+	- komenda ip route odpowiada za routing  
+		```ip route connection 
 
 
 https://serverfault.com/questions/810636/how-to-manage-dns-in-networkmanager-via-console-nmcli
