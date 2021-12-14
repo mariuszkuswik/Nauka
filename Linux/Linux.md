@@ -205,7 +205,6 @@ Systemctl - opisać
 
 # Wirtualizacja 
 
-Czym jest wirtualizacja  
 Sprawdź czy maszyna na której jesteś jest maszyną wirtualną 
 
 
