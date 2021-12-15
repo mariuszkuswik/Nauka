@@ -105,7 +105,7 @@ Return - Zwraca wartos funkcji
 		DNS... ```
 - Jak dodać routing ( DODAĆ ROUTING PRZED ODPALANIEM )
 	- komenda ip route odpowiada za routing  
-		```ip route connection - uzupelnic```
+		```ip route add default via "$ip_address" dev "$network_card_name"
 
 
 https://serverfault.com/questions/810636/how-to-manage-dns-in-networkmanager-via-console-nmcli
