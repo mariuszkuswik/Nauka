@@ -103,7 +103,7 @@ Return - Zwraca wartos funkcji
 		```DNS1="$adres_DNS"
 		DNS2="$adres_DNS2"
 		DNS... ```
-- Jak dodać routing ( DODAĆ ROUTING PRZED ODPALANIEM )
+- Jak dodać routing 
 	- komenda ip route odpowiada za routing  
 		```ip route add default via "$ip_address" dev "$network_card_name"
 
@@ -219,10 +219,16 @@ Wyświetl karty sieciowe w linuxie, opisz czego się na tej podstawie dowiedzia�
 ### firewalld
 - W RHEL8 firewall jest zarzadzany przez firewalld, w RHEL7 pod spodem bylo iptables, obecnie jest to nftables
 zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
-	- ```firewall-cmd --list-all``` - wypisuje wszystkie reguly 
-	- Stale przypisanie regul jest za pomoca configu, TODO - sprawdzic jak dokladnie
 	- ```firewall-cmd --state``` - wyswietla czy firewall dziala 
+
+	- ```firewall-cmd --list-all``` - wypisuje wszystkie reguly które obecnie działają  
+	```firewall-cmd --list-all --permanent``` wypisuje reguły które są zapisane w configu - będą działać po ***reboocie systemu***
+
+	- Stale przypisanie regul jest za pomoca configu, TODO - sprawdzic jak dokladnie
+
+
 	- ```systemctl start firewalld``` wlaczenie firewalla
+
 	- ```firewall-cmd --reload``` -  Reload firewalld to force rule changes to take effect 
 
 
