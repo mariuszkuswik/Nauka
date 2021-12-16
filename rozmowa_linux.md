@@ -2,6 +2,13 @@
 
 # Pytania na rozmowę 
 - Nauczyc sie iptables i znalezc do niego jakies pytania 
+- Docker - pouczyć się 
+- Puppet - pouczyć się 
+- Automatyczne narzędzia do rotowania logów 
+- Czym różnią się filesystemy między sobą, np xfs i ext4
+- Jak dodać regułę do firewalla
+- Gdzie znajduje się plik z użytkownikami w systemie 
+- Jak dodać użytkownika - adduser i useradd - jak działa useradd
 - Jak działa firewall 
 	- ### #TODO - do uzupełnienia 
 	- firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
@@ -101,3 +108,10 @@ Ogarnac notatki z telefonu
 - Gdzie przechowywane sa logi
 - Gdzie przechowywane są pliki konfiguracyjne
 - Jakie znam rodzaje RAIDa, na czym polegają
+- Jak działają LVMy, czym są, jak je wyświetlić, jak rozszerzyć, czym jest volume group 
+- Jak konfiguruje się firewalla, jak dodać nową regułę
+- Jak skonfigurować NFS 
+- Jak skonfigurować SAMBe
+- Jaki jest proces bootowania systemu 
+- Czym jest Kernel 
+- Serwer jest zajeżdżany, w jaki sposób zdiagnozuję problem 
