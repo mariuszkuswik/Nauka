@@ -9,6 +9,7 @@
 - Jak dodać regułę do firewalla
 - Gdzie znajduje się plik z użytkownikami w systemie 
 - Jak dodać użytkownika - adduser i useradd - jak działa useradd
+- Czym jest brama domyślna 
 - Jak działa firewall 
 	- ### #TODO - do uzupełnienia 
 	- firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
