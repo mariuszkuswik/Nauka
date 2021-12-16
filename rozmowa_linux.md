@@ -5,9 +5,9 @@
 - Jak działa firewall 
 	- ### #TODO - do uzupełnienia 
 	- firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
-- Czym rozni sie TCP od UDP
-- 	- [Podstawy sieci + opis TCP i UDP](https://newsblog.pl/czym-one-sa-roznica-miedzy-protokolem-tcp-i-udp/)
+- Czym rozni sie TCP od UDP	
 	- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. ... UDP to również protokół w warstwie transportowej, ale nie wymaga handshake'a ani potwierdzenia o otrzymaniu danych. 
+	[Podstawy sieci + opis TCP i UDP](https://newsblog.pl/czym-one-sa-roznica-miedzy-protokolem-tcp-i-udp/)
 - Jak wyświetlić tablicę routingu
 	- ip route 
 - Jak sprawdzić porty otwarte na lokalnej maszynie 
@@ -39,8 +39,10 @@
 - Co zwraca funkcja ? 
 	- Sama z siebie zwraca exitcode, domyslnie wartosc 0/1  
 - Czym jest VLAN
+	- technologia sieciowa, która pozwala w ramach jednej fizycznej sieci lokalnej tworzyć wiele sieci logicznych (sieci wirtualnych)
 - Czym jest GRUB, jak przebiega proces bootowania systemu 
-	- 
+	- boot manager,  który ładuje jądro Linuksa, jest to pierwsze oprogramowanie uruchamiane przy starcie systemu.
+	[Czym jest grub + bootowanie](https://qa-stack.pl/ubuntu/347203/what-exactly-is-grub)
 - Jak sprawdzić czy filesystem działa poprawnie, jak go naprawić 
 	- 
 - shebang - czym jest
