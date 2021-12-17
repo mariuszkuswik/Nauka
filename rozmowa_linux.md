@@ -10,10 +10,24 @@
 - Gdzie znajduje się plik z użytkownikami w systemie 
 - Jak dodać użytkownika - adduser i useradd - jak działa useradd
 - Czym jest brama domyślna 
+- Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlić strony hostowanej przez nią, jak zdiagnozowac problem 
+- Exitcode z instrukcji Bash, wypisac czym jest
+- Jak sprawdzić czy filesystem działa poprawnie, jak go naprawić 
+- Czym są linki w linuxie, podaj różnice, kiedy ich używamy 
+
+
+
+
+
+
 - Jak działa firewall 
+
 	- ### #TODO - do uzupełnienia 
 	- firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
 
+
+
+<!-- Lista z ogarniętymi pytaniami  -->
 <ol>
 	<li>
 		<details> <summary>Czym rozni sie TCP od UDP</summary>
@@ -22,31 +36,42 @@
 		</details>  
 	</li>
 	<li>
-		<details> <summary> Jak wyświetlić tablicę routingu </summary>
+		<details> <summary>Jak wyświetlić tablicę routingu </summary>
 			- <code>ip route</code> 
 		</details>  
 	</li>
-
-
-
+	<li>
+		<details> <summary>Jak sprawdzić porty otwarte na lokalnej maszynie </summary>
+			- ```netstat``` 
+			- ```netstat -a``` - wyświetla wszystkie porty
+			- ```netstat -l``` - wyświetla nasłuchujące porty  
+		</details>  
+	</li>
+	<li>
+		<details> <summary>Jak przeskanować porty zdalnej maszyny </summary>
+			- <code>nmap</code>
+		</details>  
+	</li>
+	<li>
+		<details> <summary>Jak wyświetlić karty sieciowe 
+			- <code>ip a</code>
+	</li>
 
 </ol>
 
   
-- Jak sprawdzić porty otwarte na lokalnej maszynie 
-	- ```netstat``` 
-	- ```netstat -a``` - wyświetla wszystkie porty
-	- ```netstat -l``` - wyświetla nasłuchujące porty  
-- Jak przeskanować porty zdalnej maszyny 
-	- ```nmap```
-- Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlić strony hostowanej przez nią, jak zdiagnozowac problem 
-- Jak wyświetlić karty sieciowe 
-	- ip a 
-- Jak działą routing 
-- Jak zwrócić wartość funkcji 
+
+
+
+
+
+- Jak działą routing
+
+<details> <summary>- Jak zwrócić wartość funkcji 
 	- return 
-- Exitcode z instrukcji Bash, wypisac czym jest
-- Wypisac zmienne specjalne z instrukcji bash 
+
+
+<details> <summary>- Wypisac zmienne specjalne z instrukcji bash 
 	- $? - wynik ostatniej komendy ( najczesciej 0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )  
 	$$ - numer procesu używanego przez komende   
 	!$ - ostatni użyty argument  
@@ -56,35 +81,36 @@
 	$* - wszystkie argumenty jako string  
 	$@ - argumenty w postaci tablicy  
 	[Instrukcja](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#zmienne-specjalne)  
-- Do czego służy kropka w skryptach bashowych, jak działa source pliku 
+
+
+<details> <summary>- Do czego służy kropka w skryptach bashowych, jak działa source pliku 
 	- Czy zmienne ze skryptu zaciaganego zastana zaciagniete ? - Wydaje mi sie ze tak
 	- Czy skrypt zostanie wykonany - mysle ze tak 
-- Co zwraca funkcja ? 
+<details> <summary>- Co zwraca funkcja ? 
 	- Sama z siebie zwraca exitcode, domyslnie wartosc 0/1  
-- Czym jest VLAN
+<details> <summary>- Czym jest VLAN
 	- technologia sieciowa, która pozwala w ramach jednej fizycznej sieci lokalnej tworzyć wiele sieci logicznych (sieci wirtualnych)
-- Czym jest GRUB, jak przebiega proces bootowania systemu 
+<details> <summary>- Czym jest GRUB, jak przebiega proces bootowania systemu 
 	- boot manager,  który ładuje jądro Linuksa, jest to pierwsze oprogramowanie uruchamiane przy starcie systemu.
 	[Czym jest grub + bootowanie](https://qa-stack.pl/ubuntu/347203/what-exactly-is-grub)
-- Jak sprawdzić czy filesystem działa poprawnie, jak go naprawić 
-	- 
-- shebang - czym jest
+
+<details> <summary>- shebang - czym jest
 	-  daje kontrole nad tym w jakim shellu zostanie wykonany skrypt, jezeli nie zostanie uzyty to skrypt wykona sie w obecnie uzywanym shellu 
-- Czym różnie się TCP od UDP 
+<details> <summary>- Czym różnie się TCP od UDP 
 	- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. UDP to również protokół w warstwie transportowej, ale nie wymaga potwierdzenia o otrzymaniu danych
-- Czym jest export a czym env, jak działają zmienne środowiskowe, jak je wypisać
+<details> <summary>- Czym jest export a czym env, jak działają zmienne środowiskowe, jak je wypisać
 	- env - Wypisuje zmienne środowiskowe, export tworzy zmienną środowiskową 	
 - Jak stworzyć nowy branch w git od podstaw
 	- Dodać do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
 - Jak sprawdzić kto i kiedy dodał jakiś commit  
 	- Dodać do instrukcji Git
-- Jak sprawdzić biblioteki których nam brakuje 
+<details> <summary>- Jak sprawdzić biblioteki których nam brakuje 
 	- ldd "sciezka docelowa komendy"
-- Czym jest SWAP, ile go potrzebujemy 
+<details> <summary>- Czym jest SWAP, ile go potrzebujemy 
 	- Pamięć ulotna dostępna na dysku którą system może wykorzystywać, jej użycie jest zależne od stopnia swapiness, minimalna wielkość powinna być równa ilości RAM, ze względu na możliwość hibernacji 
-- Czym są linki w linuxie, podaj różnice, kiedy ich używamy 
+
 	- 	
-- Jak sprawdzić gdzie jest zainstalowany dany program 
+<details> <summary>- Jak sprawdzić gdzie jest zainstalowany dany program 
 	- whereis
 - Grep po wszystkich katalogach w psozukiwaniu stringa wewnątrz pliku 
 	- grep -R "string" sciezka docelowa ?
