@@ -97,7 +97,7 @@
 		<details>
 	</li>
 <li>
-	<details> <summary>- shebang - czym jest<summary>
+	<details> <summary>- shebang - czym jest</summary>
 		-  daje kontrole nad tym w jakim shellu zostanie wykonany skrypt, jezeli nie zostanie uzyty to skrypt wykona sie w obecnie uzywanym shellu 
 	</details>
 </li>
