@@ -23,7 +23,7 @@
 	</li>
 	<li>
 		<details> <summary> Jak wyświetlić tablicę routingu </summary>
-			- ```ip route``` 
+			- <code>ip route</code> 
 		</details>  
 	</li>
 
