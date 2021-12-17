@@ -15,15 +15,38 @@
 - Jak sprawdzić czy filesystem działa poprawnie, jak go naprawić 
 - Czym są linki w linuxie, podaj różnice, kiedy ich używamy 
 - Jak działa routing
+- Gdzie przechowywane sa logi
+- Gdzie przechowywane są pliki konfiguracyjne
+- Jakie znam rodzaje RAIDa, na czym polegają
+- Jak działają LVMy, czym są, jak je wyświetlić, jak rozszerzyć, czym jest volume group 
+- Jak konfiguruje się firewalla, jak dodać nową regułę
+- Jak skonfigurować NFS 
+- Jak skonfigurować SAMBe
+- Jaki jest proces bootowania systemu 
+- Czym jest Kernel 
+- Serwer jest zajeżdżany, w jaki sposób zdiagnozuję problem 
+- Czym jest wirtualizacja  
+- Ogarnac notatki z telefonu 
+- Ogolnie sprawdzic jakie uprawnienia uniemozliwia usuniecie pliku 
+- Czym jest konteneryzacja 
+- Dlaczego przypisujemy zmienne sredowiskowe 
+- Jak dzialaja klamrowe nawiasy w bashu 
 
 
 
+- Jak stworzyć nowy branch w git od podstaw
+	- Dodać do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
+- Jak sprawdzić kto i kiedy dodał jakiś commit  
+	- Dodać do instrukcji Git
 
 
 - Jak działa firewall 
 
 	- ### #TODO - do uzupełnienia 
 	- firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
+
+
+
 
 
 
@@ -108,36 +131,9 @@
   
 
 
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-	-  daje kontrole nad tym w jakim shellu zostanie wykonany skrypt, jezeli nie zostanie uzyty to skrypt wykona sie w obecnie uzywanym shellu 
-<details> <summary>- Czym różnie się TCP od UDP 
-	- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. UDP to również protokół w warstwie transportowej, ale nie wymaga potwierdzenia o otrzymaniu danych
 <details> <summary>- Czym jest export a czym env, jak działają zmienne środowiskowe, jak je wypisać
 	- env - Wypisuje zmienne środowiskowe, export tworzy zmienną środowiskową 	
-- Jak stworzyć nowy branch w git od podstaw
-	- Dodać do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
-- Jak sprawdzić kto i kiedy dodał jakiś commit  
-	- Dodać do instrukcji Git
+
 <details> <summary>- Jak sprawdzić biblioteki których nam brakuje 
 	- ldd "sciezka docelowa komendy"
 <details> <summary>- Czym jest SWAP, ile go potrzebujemy 
@@ -148,12 +144,11 @@
 	- whereis
 - Grep po wszystkich katalogach w psozukiwaniu stringa wewnątrz pliku 
 	- grep -R "string" sciezka docelowa ?
-- Czym jest wirtualizacja  
+
 
 - Sprawdź czy maszyna na której jesteś jest maszyną wirtualną 
 	- lscpu, wyświetla to czy maszyna jest wirtualizowana 
-- Czym jest konteneryzacja 
-	- 
+
 - Przykładowe shelle 
 	- bash 
 	- zsh 
@@ -169,10 +164,7 @@
 
 - Jak brzmią domyślne ustawienia uprawnień, jak je zmienić 
 	- umask - sprawdzic jak zmienic 
-- Ogolnie sprawdzic jakie uprawnienia uniemozliwia usuniecie pliku 
-Ogarnac notatki z telefonu 
-- Dlaczego przypisujemy zmienne sredowiskowe 
-- Jak dzialaja klamrowe nawiasy w bashu 
+
 - Jakie znam filesystemy na linuxie, czym się charakteryzują
 	- ext2, ext3, ext4, xfs, btrfs, bfs
 - Jakie znam katalogi linuxowe, za co odpowiadają
@@ -181,13 +173,4 @@ Ogarnac notatki z telefonu
 	- /home - pliki określające ustawienia każdego użytkownika + ich pliki  
 	- /proc - wirtualny katalog, zawierający dane o aktualnie uruchomionych procesach
 	- /tmp - pliki tymczasowe
-- Gdzie przechowywane sa logi
-- Gdzie przechowywane są pliki konfiguracyjne
-- Jakie znam rodzaje RAIDa, na czym polegają
-- Jak działają LVMy, czym są, jak je wyświetlić, jak rozszerzyć, czym jest volume group 
-- Jak konfiguruje się firewalla, jak dodać nową regułę
-- Jak skonfigurować NFS 
-- Jak skonfigurować SAMBe
-- Jaki jest proces bootowania systemu 
-- Czym jest Kernel 
-- Serwer jest zajeżdżany, w jaki sposób zdiagnozuję problem 
+
