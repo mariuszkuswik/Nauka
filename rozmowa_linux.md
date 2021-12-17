@@ -18,8 +18,8 @@
 	- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. ... UDP to również protokół w warstwie transportowej, ale nie wymaga handshake'a ani potwierdzenia o otrzymaniu danych. 
 	[Podstawy sieci + opis TCP i UDP](https://newsblog.pl/czym-one-sa-roznica-miedzy-protokolem-tcp-i-udp/)
 </details>  
-- Jak wyświetlić tablicę routingu
-	- ip route 
+- Jak wyświetlić tablicę routingu  
+	- ip route   
 - Jak sprawdzić porty otwarte na lokalnej maszynie 
 	- ```netstat``` 
 	- ```netstat -a``` - wyświetla wszystkie porty
