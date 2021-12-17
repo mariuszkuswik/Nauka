@@ -74,7 +74,17 @@
 				[Instrukcja](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#zmienne-specjalne)  
 		</details>
 	</li>
-
+	<li>
+		<details> <summary>Do czego służy kropka w skryptach bashowych, jak działa source pliku </summary>
+			- Zmienne ze skryptu zaciaganego rowniez zastana zaciagniete 
+			- Zaciagany/sourcowany skrypt zostanie wykonany ( sprawdzic czy na pewno )
+		</details>
+	</li>
+	<li>
+		<details> <summary>- Co zwraca funkcja ? <summary>
+			- Sama z siebie zwraca exitcode, domyslnie wartosc 0/1, żeby zwrócić coś więcej używamy <code>return</code>
+		</details>
+	</li>
 
 </ol>
 
@@ -84,8 +94,6 @@
 
 
 
-- 
-
 
 	
 
@@ -94,11 +102,10 @@
 
 
 
-<details> <summary>- Do czego służy kropka w skryptach bashowych, jak działa source pliku 
-	- Czy zmienne ze skryptu zaciaganego zastana zaciagniete ? - Wydaje mi sie ze tak
-	- Czy skrypt zostanie wykonany - mysle ze tak 
-<details> <summary>- Co zwraca funkcja ? 
-	- Sama z siebie zwraca exitcode, domyslnie wartosc 0/1  
+
+
+
+	
 <details> <summary>- Czym jest VLAN
 	- technologia sieciowa, która pozwala w ramach jednej fizycznej sieci lokalnej tworzyć wiele sieci logicznych (sieci wirtualnych)
 <details> <summary>- Czym jest GRUB, jak przebiega proces bootowania systemu 
