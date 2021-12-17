@@ -14,7 +14,7 @@
 - Exitcode z instrukcji Bash, wypisac czym jest
 - Jak sprawdzić czy filesystem działa poprawnie, jak go naprawić 
 - Czym są linki w linuxie, podaj różnice, kiedy ich używamy 
-
+- Jak działa routing
 
 
 
@@ -56,6 +56,25 @@
 		<details> <summary>Jak wyświetlić karty sieciowe 
 			- <code>ip a</code>
 	</li>
+	<li>
+		<details> <summary>Jak zwrócić wartość funkcji 
+			- <code> return </code>
+		</details>
+	</li>
+	<li>
+		<details> <summary>- Wypisac zmienne specjalne z instrukcji bash </summary>
+				$? - wynik ostatniej komendy ( najczesciej 0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )  
+				$$ - numer procesu używanego przez komende   
+				!$ - ostatni użyty argument  
+				$0 - nazwa programu  
+				$1 - argumenty, zaczynaja sie od jednego, nie musi byc to jeden  
+				$# - liczba argumentow  
+				$* - wszystkie argumenty jako string  
+				$@ - argumenty w postaci tablicy  
+				[Instrukcja](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#zmienne-specjalne)  
+		</details>
+	</li>
+
 
 </ol>
 
@@ -65,22 +84,14 @@
 
 
 
-- Jak działą routing
-
-<details> <summary>- Jak zwrócić wartość funkcji 
-	- return 
+- 
 
 
-<details> <summary>- Wypisac zmienne specjalne z instrukcji bash 
-	- $? - wynik ostatniej komendy ( najczesciej 0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )  
-	$$ - numer procesu używanego przez komende   
-	!$ - ostatni użyty argument  
-	$0 - nazwa programu  
-	$1 - argumenty, zaczynaja sie od jednego, nie musi byc to jeden  
-	$# - liczba argumentow  
-	$* - wszystkie argumenty jako string  
-	$@ - argumenty w postaci tablicy  
-	[Instrukcja](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#zmienne-specjalne)  
+	
+
+
+
+
 
 
 <details> <summary>- Do czego służy kropka w skryptach bashowych, jak działa source pliku 
