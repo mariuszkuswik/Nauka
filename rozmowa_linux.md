@@ -53,16 +53,16 @@
 		</details>  
 	</li>
 	<li>
-		<details> <summary>Jak wyświetlić karty sieciowe 
+		<details> <summary>Jak wyświetlić karty sieciowe </summary>
 			- <code>ip a</code>
 	</li>
 	<li>
-		<details> <summary>Jak zwrócić wartość funkcji 
+		<details> <summary>Jak zwrócić wartość funkcji </summary>
 			- <code> return </code>
 		</details>
 	</li>
 	<li>
-		<details> <summary>- Wypisac zmienne specjalne z instrukcji bash </summary>
+		<details> <summary>- Wypisac zmienne specjalne z instrukcji bash </summary>				
 				$? - wynik ostatniej komendy ( najczesciej 0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )  
 				$$ - numer procesu używanego przez komende   
 				!$ - ostatni użyty argument  
