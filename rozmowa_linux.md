@@ -85,6 +85,23 @@
 			- Sama z siebie zwraca exitcode, domyslnie wartosc 0/1, żeby zwrócić coś więcej używamy <code>return</code>
 		</details>
 	</li>
+	<li>
+		<details> <summary>- Czym jest VLAN</summary>
+			- technologia sieciowa, która pozwala w ramach jednej fizycznej sieci lokalnej tworzyć wiele sieci logicznych (sieci wirtualnych)
+		</details>
+	</li>
+	<li>
+		<details> <summary>- Czym jest GRUB, jak przebiega proces bootowania systemu </summary>
+			- boot manager,  który ładuje jądro Linuksa, jest to pierwsze oprogramowanie uruchamiane przy starcie systemu.
+			[Czym jest grub + bootowanie](https://qa-stack.pl/ubuntu/347203/what-exactly-is-grub)
+		<details>
+	</li>
+<li>
+	<details> <summary>- shebang - czym jest<summary>
+		-  daje kontrole nad tym w jakim shellu zostanie wykonany skrypt, jezeli nie zostanie uzyty to skrypt wykona sie w obecnie uzywanym shellu 
+	</details>
+</li>
+
 
 </ol>
 
@@ -106,13 +123,12 @@
 
 
 	
-<details> <summary>- Czym jest VLAN
-	- technologia sieciowa, która pozwala w ramach jednej fizycznej sieci lokalnej tworzyć wiele sieci logicznych (sieci wirtualnych)
-<details> <summary>- Czym jest GRUB, jak przebiega proces bootowania systemu 
-	- boot manager,  który ładuje jądro Linuksa, jest to pierwsze oprogramowanie uruchamiane przy starcie systemu.
-	[Czym jest grub + bootowanie](https://qa-stack.pl/ubuntu/347203/what-exactly-is-grub)
 
-<details> <summary>- shebang - czym jest
+
+
+
+
+
 	-  daje kontrole nad tym w jakim shellu zostanie wykonany skrypt, jezeli nie zostanie uzyty to skrypt wykona sie w obecnie uzywanym shellu 
 <details> <summary>- Czym różnie się TCP od UDP 
 	- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. UDP to również protokół w warstwie transportowej, ale nie wymaga potwierdzenia o otrzymaniu danych
