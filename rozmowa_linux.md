@@ -60,14 +60,14 @@
 	</li>
 	<li>
 		<details> <summary>Jak wyświetlić tablicę routingu </summary>
-			- <code>ip route</code> 
+			- <code>ip route</code>   
 		</details>  
 	</li>
 	<li>
 		<details> <summary>Jak sprawdzić porty otwarte na lokalnej maszynie </summary>
-			- <code>netstat</code> 
-			- <code>netstat -a</code> - wyświetla wszystkie porty
-			- <code>netstat -l</code> - wyświetla nasłuchujące porty  
+			- <code>netstat</code>  
+			- <code>netstat -a</code> - wyświetla wszystkie porty  
+			- <code>netstat -l</code> - wyświetla nasłuchujące porty   
 		</details>  
 	</li>
 	<li>
@@ -86,14 +86,14 @@
 	</li>
 	<li>
 		<details> <summary>- Wypisac zmienne specjalne z instrukcji bash </summary>				
-				$? - wynik ostatniej komendy ( najczesciej 0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )  
-				$$ - numer procesu używanego przez komende   
-				!$ - ostatni użyty argument  
-				$0 - nazwa programu  
-				$1 - argumenty, zaczynaja sie od jednego, nie musi byc to jeden  
-				$# - liczba argumentow  
-				$* - wszystkie argumenty jako string  
-				$@ - argumenty w postaci tablicy  
+				<code>$?</code> - wynik ostatniej komendy ( najczesciej 0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )   
+				<code>$$</code> - numer procesu używanego przez komende   
+				<code>!$</code> - ostatni użyty argument  
+				<code>$0</code> - nazwa programu  
+				<code>$1</code> - argumenty, zaczynaja sie od jednego, nie musi byc to jeden  
+				<code>$#</code> - liczba argumentow  
+				<code>$*</code> - wszystkie argumenty jako string  
+				<code>$@</code> - argumenty w postaci tablicy  
 				[Instrukcja](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#zmienne-specjalne)  
 		</details>
 	</li>
@@ -126,8 +126,8 @@
 	</li>
 	<li>
 		<details> <summary>- Czym jest <b>export</b> a czym <b>env</b>, jak działają zmienne środowiskowe, jak je wypisać</summary>
-			- <code>env</code> - wypisuje zmienne środowiskowe
-			- <code>export</code> - tworzy zmienną środowiskową 	
+			- <code>env</code> - wypisuje zmienne środowiskowe  
+			- <code>export</code> - tworzy zmienną środowiskową   	
 		</details> 
 	</li>
 	<li>
