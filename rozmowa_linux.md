@@ -221,7 +221,7 @@
 				<code>$#</code> - liczba argumentow  </br>
 				<code>$*</code> - wszystkie argumenty jako string  </br>
 				<code>$@</code> - argumenty w postaci tablicy  </br>
-				<a href="https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#zmienne-specjalne">Instrukcja</a>
+				<a href="https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#zmienne-specjalne">Instrukcja z mojego githuba</a>
 		</details>
 	</li>
 	<li>
