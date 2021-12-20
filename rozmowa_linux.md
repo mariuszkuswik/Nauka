@@ -1,38 +1,89 @@
 ### TODO - Ukryć odpowiedzi na pytania pod rozwijaną listą 
 
 # Pytania na rozmowę 
-- Nauczyc sie iptables i znalezc do niego jakies pytania 
-- Docker - pouczyć się 
-- Puppet - pouczyć się 
-- Automatyczne narzędzia do rotowania logów 
-- Czym różnią się filesystemy między sobą, np xfs i ext4
-- Jak dodać regułę do firewalla
-- Gdzie znajduje się plik z użytkownikami w systemie 
-- Jak dodać użytkownika - adduser i useradd - jak działa useradd
-- 
-- Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlić strony hostowanej przez nią, jak zdiagnozowac problem 
-- Exitcode z instrukcji Bash, wypisac czym jest
-- Jak sprawdzić czy filesystem działa poprawnie, jak go naprawić 
-- Czym są linki w linuxie, podaj różnice, kiedy ich używamy 
-- Jak działa routing
-- Gdzie przechowywane sa logi
-- Gdzie przechowywane są pliki konfiguracyjne
-- Jakie znam rodzaje RAIDa, na czym polegają
-- Jak działają LVMy, czym są, jak je wyświetlić, jak rozszerzyć, czym jest volume group 
-- Jak konfiguruje się firewalla, jak dodać nową regułę
-- Jak skonfigurować NFS 
-- Jak skonfigurować SAMBe
-- Jaki jest proces bootowania systemu 
-- Czym jest Kernel 
-- Serwer jest zajeżdżany, w jaki sposób zdiagnozuję problem 
-- Czym jest wirtualizacja  
+<details> <summary>	- Nauczyc sie iptables i znalezc do niego jakies pytania </summary>	
+
+</details>
+<details> <summary>	- Docker - pouczyć się </summary>
+
+</details>
+<details> <summary>	- Puppet - pouczyć się </summary>
+
+</details>
+
+<details> <summary>	- Automatyczne narzędzia do rotowania logów </summary>
+
+</details>
+<details> <summary>	- Czym różnią się filesystemy między sobą, np xfs i ext4</summary>
+
+</details>
+<details> <summary>	- Jak dodać regułę do firewalla</summary>
+
+</details>
+<details> <summary>	- Gdzie znajduje się plik z użytkownikami w systemie </summary>
+
+</details>
+<details> <summary>	- Jak dodać użytkownika - adduser i useradd - jak działa useradd</summary>
+
+</details>
+<details> <summary>	- Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlić strony hostowanej przez nią, jak zdiagnozowac problem </summary>
+
+</details>
+<details> <summary>	- Exitcode z instrukcji Bash, wypisac czym jest</summary>
+
+</details>
+<details> <summary>	- Jak sprawdzić czy filesystem działa poprawnie, jak go naprawić </summary>
+
+</details>
+<details> <summary>	- Czym są linki w linuxie, podaj różnice, kiedy ich używamy </summary>
+
+</details>
+<details> <summary>	- Jak działa routing</summary>
+
+</details>
+<details> <summary>	- Gdzie przechowywane są pliki konfiguracyjne</summary>
+
+</details>
+<details> <summary>	- Jakie znam rodzaje RAIDa, na czym polegają</summary>
+
+</details>
+<details> <summary>	- Jak działają LVMy, czym są, jak je wyświetlić, jak rozszerzyć, czym jest volume group </summary>
+
+</details>
+<details> <summary>	- Jak konfiguruje się firewalla, jak dodać nową regułę</summary>
+
+</details>
+<details> <summary>	- Jak skonfigurować NFS </summary>
+
+</details>
+<details> <summary>	- Jak skonfigurować SAMBe</summary>
+
+</details>
+<details> <summary>	- Jaki jest proces bootowania systemu </summary>
+
+</details>
+<details> <summary>	- Czym jest Kernel </summary>
+
+</details>
+<details> <summary>	- Serwer jest zajeżdżany, w jaki sposób zdiagnozuję problem </summary>
+
+</details>
+<details> <summary>	- Czym jest wirtualizacja  </summary>
+
+</details>
+<details> <summary>	- Ogolnie sprawdzic jakie uprawnienia uniemozliwia usuniecie pliku </summary>
+
+</details>
+<details> <summary>	- Czym jest konteneryzacja </summary>
+<details> <summary>	- Dlaczego przypisujemy zmienne sredowiskowe </summary>
+<details> <summary>	- Jak dzialaja klamrowe nawiasy w bashu </summary>
+<details> <summary>	- Jak ustawić statyczne ip dla maszyny</summary>
+
+</details>
+
+
+- Nauczyć się KVM 
 - Ogarnac notatki z telefonu 
-- Ogolnie sprawdzic jakie uprawnienia uniemozliwia usuniecie pliku 
-- Czym jest konteneryzacja 
-- Dlaczego przypisujemy zmienne sredowiskowe 
-- Jak dzialaja klamrowe nawiasy w bashu 
-
-
 
 - Jak stworzyć nowy branch w git od podstaw
 	- Dodać do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
@@ -46,46 +97,46 @@
 	- firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
 
 
-
+<details> <summary>	- Gdzie przechowywane sa logi
 
 
 
 <!-- Lista z ogarniętymi pytaniami  -->
 <ol>
 	<li>
-		<details> <summary>	Czym jest brama domyślna </details>
+		<details> <summary class="sieci">	Czym jest brama domyślna </details>
 			- W sieci TCP/IP domyślna brama (sieciowa) (ang. default gateway) oznacza router, do którego komputery sieci lokalnej mają wysyłać pakiety o ile nie powinny być one kierowane w sieć lokalną lub do innych, znanych im routerów.
 		</details> 
 	</li>
 	<li>
-		<details> <summary>Czym rozni sie <b>TCP od UDP</b></summary>
+		<details> <summary class="sieci">Czym rozni sie <b>TCP od UDP</b></summary>
 			- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. ... UDP to również protokół w warstwie transportowej, ale nie wymaga handshake'a ani potwierdzenia o otrzymaniu danych. 
 			<a href="https://newsblog.pl/czym-one-sa-roznica-miedzy-protokolem-tcp-i-udp/">Podstawy sieci + opis TCP i UDP</a>
 		</details>  
 	</li>
 	<li>
-		<details> <summary>Jak wyświetlić tablicę routingu </summary>
+		<details> <summary class="sieci">Jak wyświetlić tablicę routingu </summary>
 			- <code>ip route</code>   
 		</details>  
 	</li>
 	<li>
-		<details> <summary>Jak sprawdzić porty otwarte na lokalnej maszynie </summary>
+		<details> <summary class="linux sieci">Jak sprawdzić porty otwarte na lokalnej maszynie </summary>
 			- <code>netstat</code>  </br>
 			- <code>netstat -a</code> - wyświetla wszystkie porty  </br>
 			- <code>netstat -l</code> - wyświetla nasłuchujące porty   </br>
 		</details>  
 	</li>
 	<li>
-		<details> <summary>Jak przeskanować porty zdalnej maszyny </summary>
+		<details> <summary class="linux sieci">Jak przeskanować porty zdalnej maszyny </summary>
 			- <code>nmap</code>
 		</details>  
 	</li>
 	<li>
-		<details> <summary>Jak wyświetlić karty sieciowe </summary>
+		<details> <summary class="linux sieci">Jak wyświetlić karty sieciowe </summary>
 			- <code>ip a</code>
 	</li>
 	<li>
-		<details> <summary>Jak zwrócić wartość funkcji </summary>
+		<details> <summary class="linux bash">Jak zwrócić wartość funkcji </summary>
 			- <code> return </code>
 		</details>
 	</li>
