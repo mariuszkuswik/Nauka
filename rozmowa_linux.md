@@ -9,7 +9,7 @@
 - Jak dodać regułę do firewalla
 - Gdzie znajduje się plik z użytkownikami w systemie 
 - Jak dodać użytkownika - adduser i useradd - jak działa useradd
-- Czym jest brama domyślna 
+- 
 - Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlić strony hostowanej przez nią, jak zdiagnozowac problem 
 - Exitcode z instrukcji Bash, wypisac czym jest
 - Jak sprawdzić czy filesystem działa poprawnie, jak go naprawić 
@@ -52,6 +52,11 @@
 
 <!-- Lista z ogarniętymi pytaniami  -->
 <ol>
+	<li>
+		<details> <summary>	Czym jest brama domyślna </details>
+			- W sieci TCP/IP domyślna brama (sieciowa) (ang. default gateway) oznacza router, do którego komputery sieci lokalnej mają wysyłać pakiety o ile nie powinny być one kierowane w sieć lokalną lub do innych, znanych im routerów.
+		</details> 
+	</li>
 	<li>
 		<details> <summary>Czym rozni sie <b>TCP od UDP</b></summary>
 			- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. ... UDP to również protokół w warstwie transportowej, ale nie wymaga handshake'a ani potwierdzenia o otrzymaniu danych. 
