@@ -10,7 +10,7 @@
 	<li>
 		<a href="https://github.com/mariuszkuswik/Nauka/blob/main/rozmowa_linux.md#pytania-na-rozmow%C4%99">Pytania na rozmowę </a>
 	</li>
-<ol>
+</ol>
 
 
 # Czego się nauczyć i co zrobić 
