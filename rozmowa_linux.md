@@ -53,7 +53,7 @@
 <!-- Lista z ogarniętymi pytaniami  -->
 <ol>
 	<li>
-		<details> <summary>Czym rozni sie TCP od UDP</summary>
+		<details> <summary>Czym rozni sie <b>TCP od UDP</b></summary>
 			- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. ... UDP to również protokół w warstwie transportowej, ale nie wymaga handshake'a ani potwierdzenia o otrzymaniu danych. 
 			<a href="https://newsblog.pl/czym-one-sa-roznica-miedzy-protokolem-tcp-i-udp/">Podstawy sieci + opis TCP i UDP</a>
 		</details>  
@@ -65,9 +65,9 @@
 	</li>
 	<li>
 		<details> <summary>Jak sprawdzić porty otwarte na lokalnej maszynie </summary>
-			- ```netstat``` 
-			- ```netstat -a``` - wyświetla wszystkie porty
-			- ```netstat -l``` - wyświetla nasłuchujące porty  
+			- <code>netstat</code> 
+			- <code>netstat -a</code> - wyświetla wszystkie porty
+			- <code>netstat -l</code> - wyświetla nasłuchujące porty  
 		</details>  
 	</li>
 	<li>
@@ -126,12 +126,13 @@
 	</li>
 	<li>
 		<details> <summary>- Czym jest <b>export</b> a czym <b>env</b>, jak działają zmienne środowiskowe, jak je wypisać</summary>
-			- env - Wypisuje zmienne środowiskowe, export tworzy zmienną środowiskową 	
+			- <code>env</code> - wypisuje zmienne środowiskowe
+			- <code>export</code> - tworzy zmienną środowiskową 	
 		</details> 
 	</li>
 	<li>
 		<details> <summary>- Jak sprawdzić biblioteki których nam brakuje </summary>
-			- ldd "sciezka docelowa komendy"
+			- <code>ldd "sciezka docelowa komendy"</code>
 		</details> 
 	</li>
 	<li>
@@ -141,12 +142,12 @@
 	</li>
 	<li>
 		<details> <summary>- Jak sprawdzić gdzie jest zainstalowany dany program </summary>
-			- whereis
+			- <code>whereis</code>
 		</details>
 	</li>
 	<li>
 		<details> <summary>- Grep po wszystkich katalogach w psozukiwaniu stringa wewnątrz pliku </summary>
-			- grep -R "string" sciezka docelowa ?
+			- <code>grep -R "string" sciezka docelowa ?</code>
 	</li>
 	<li>
 		<details> <summary>- Sprawdź czy maszyna na której jesteś jest maszyną wirtualną </summary>
@@ -154,27 +155,32 @@
 	</li>
 	<li>
 		<details> <summary>- Przykładowe shelle </summary>
-			- bash 
-			- zsh 
-			- fish 
+			- <code>bash</code> 
+			- <code>zsh</code> 
+			- <code>fish</code> 
 		</details>
 	</li>
 	<li>
 		<details> <summary>- Czym jest <b>sticky bit</b> ? </summary>
 			- Na koniec komendy jak zmienić lub ustawić te specjalne bity. Do tego słuzy nam komenda chmod.
-				```chmod o+s <nazwa pliku>```
-				```chmod g+s <nazwa katalogu>```
-				```chmod u+s <nazwa pliku>```
+				<code>chmod o+s <nazwa pliku></code>
+				<code>chmod g+s <nazwa katalogu></code>
+				<code>chmod u+s <nazwa pliku></code>
 		</details>
 	</li>
 	<li>
 		<details> <summary>- Jak brzmią domyślne ustawienia uprawnień, jak je zmienić </summary>
-			- umask - sprawdzic jak zmienic 
+			- <code>umask</code> - sprawdzic jak zmienic 
 		</details>
 	</li>
 	<li>
 		<details> <summary>- Jakie znam <b>filesystemy</b> na linuxie, czym się charakteryzują</summary>
-			- ext2, ext3, ext4, xfs, btrfs, bfs
+			- <code>ext2</code>
+			- <code>ext3</code>
+			- <code>ext4</code>
+			- <code>xfs</code>
+			- <code>btrfs</code>
+			- <code>bfs</code>
 		</details>
 	</li>
 	<li>
