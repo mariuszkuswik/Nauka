@@ -65,9 +65,9 @@
 	</li>
 	<li>
 		<details> <summary>Jak sprawdzić porty otwarte na lokalnej maszynie </summary>
-			- <code>netstat</code>  
-			- <code>netstat -a</code> - wyświetla wszystkie porty  
-			- <code>netstat -l</code> - wyświetla nasłuchujące porty   
+			- <code>netstat</code>  </br>
+			- <code>netstat -a</code> - wyświetla wszystkie porty  </br>
+			- <code>netstat -l</code> - wyświetla nasłuchujące porty   </br>
 		</details>  
 	</li>
 	<li>
