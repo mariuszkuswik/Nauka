@@ -14,6 +14,10 @@
 
 
 # Czego się nauczyć i co zrobić 
+- Jak skonfigurować NFS
+- Jak skonfigurować Sambę
+- Puppet
+- Docker
 - Nauczyć się KVM 
 - Ogarnac notatki z telefonu 
 - Jak stworzyć nowy branch w git od podstaw
@@ -23,25 +27,12 @@
 - Gdzie przechowywane sa logi
 - firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
 - Jak działa firewall 
+- Nauczyc sie iptables i znalezc do niego jakies pytania
+- Automatyczne narzędzia do rotowania logów
 
 
 # Pytania do uzupełnienia 
 <ol>
-	<li>
-		<details> <summary>	- Nauczyc sie iptables i znalezc do niego jakies pytania </summary>	
-			Tekst
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Docker - pouczyć się </summary>
-			Teskt
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Puppet - pouczyć się </summary>
-			Tekst
-		</details>
-	</li>
 	<li>
 		<details> <summary>	- Automatyczne narzędzia do rotowania logów </summary>
 			Tekst
