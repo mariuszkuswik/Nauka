@@ -86,21 +86,21 @@
 	</li>
 	<li>
 		<details> <summary>- Wypisac zmienne specjalne z instrukcji bash </summary>				
-				<code>$?</code> - wynik ostatniej komendy ( najczesciej 0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )   
-				<code>$$</code> - numer procesu używanego przez komende   
-				<code>!$</code> - ostatni użyty argument  
-				<code>$0</code> - nazwa programu  
-				<code>$1</code> - argumenty, zaczynaja sie od jednego, nie musi byc to jeden  
-				<code>$#</code> - liczba argumentow  
-				<code>$*</code> - wszystkie argumenty jako string  
-				<code>$@</code> - argumenty w postaci tablicy  
+				<code>$?</code> - wynik ostatniej komendy ( najczesciej 0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )   </br>
+				<code>$$</code> - numer procesu używanego przez komende   </br>
+				<code>!$</code> - ostatni użyty argument  </br>
+				<code>$0</code> - nazwa programu  </br>
+				<code>$1</code> - argumenty, zaczynaja sie od jednego, nie musi byc to jeden  </br>
+				<code>$#</code> - liczba argumentow  </br>
+				<code>$*</code> - wszystkie argumenty jako string  </br>
+				<code>$@</code> - argumenty w postaci tablicy  </br>
 				[Instrukcja](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#zmienne-specjalne)  
 		</details>
 	</li>
 	<li>
 		<details> <summary>Do czego służy kropka w skryptach bashowych, jak działa source pliku </summary>
-			- Zmienne ze skryptu zaciaganego rowniez zastana zaciagniete 
-			- Zaciagany/sourcowany skrypt zostanie wykonany ( sprawdzic czy na pewno )
+			- Zmienne ze skryptu zaciaganego rowniez zastana zaciagniete  </br>
+			- Zaciagany/sourcowany skrypt zostanie wykonany ( sprawdzic czy na pewno )  </br>
 		</details>
 	</li>
 	<li>
@@ -115,7 +115,7 @@
 	</li>
 	<li>
 		<details> <summary>- Czym jest <b>GRUB</b>, jak przebiega proces bootowania systemu </summary>
-			- boot manager,  który ładuje jądro Linuksa, jest to pierwsze oprogramowanie uruchamiane przy starcie systemu.
+			- boot manager,  który ładuje jądro Linuksa, jest to pierwsze oprogramowanie uruchamiane przy starcie systemu.  </br>
 			[Czym jest grub + bootowanie](https://qa-stack.pl/ubuntu/347203/what-exactly-is-grub)
 		</details>
 	</li>
@@ -126,8 +126,8 @@
 	</li>
 	<li>
 		<details> <summary>- Czym jest <b>export</b> a czym <b>env</b>, jak działają zmienne środowiskowe, jak je wypisać</summary>
-			- <code>env</code> - wypisuje zmienne środowiskowe  
-			- <code>export</code> - tworzy zmienną środowiskową   	
+			- <code>env</code> - wypisuje zmienne środowiskowe   </br> 
+			- <code>export</code> - tworzy zmienną środowiskową   </br>	
 		</details> 
 	</li>
 	<li>
@@ -155,17 +155,17 @@
 	</li>
 	<li>
 		<details> <summary>- Przykładowe shelle </summary>
-			- <code>bash</code>  
-			- <code>zsh</code>  
-			- <code>fish</code>  
+			- <code>bash</code>  </br>
+			- <code>zsh</code>  </br>
+			- <code>fish</code>  </br>
 		</details>
 	</li>
 	<li>
 		<details> <summary>- Czym jest <b>sticky bit</b> ? </summary>
 			- Na koniec komendy jak zmienić lub ustawić te specjalne bity. Do tego słuzy nam komenda chmod.  
-				<code>chmod o+s <nazwa pliku></code>  
-				<code>chmod g+s <nazwa katalogu></code>  
-				<code>chmod u+s <nazwa pliku></code>  
+				<code>chmod o+s <nazwa pliku></code>  </br>
+				<code>chmod g+s <nazwa katalogu></code>  </br>
+				<code>chmod u+s <nazwa pliku></code>  </br>
 		</details>
 	</li>
 	<li>
@@ -175,20 +175,20 @@
 	</li>
 	<li>
 		<details> <summary>- Jakie znam <b>filesystemy</b> na linuxie, czym się charakteryzują</summary>
-			- <code>ext2</code>  
-			- <code>ext3</code>  
-			- <code>ext4</code>  
-			- <code>xfs</code>  
-			- <code>btrfs</code>  
-			- <code>bfs</code>  
+			- <code>ext2</code>  </br>
+			- <code>ext3</code>  </br>
+			- <code>ext4</code>  </br>
+			- <code>xfs</code>  </br>
+			- <code>btrfs</code>  </br>
+			- <code>bfs</code>  </br>
 		</details>
 	</li>
 	<li>
 		<details> <summary>- Jakie znam <b>katalogi linuxowe</b>, za co odpowiadają</summary>
-			- /boot - pliki niezbędne do uruchomienia systemu (kernel, initrd, pliki bootloadera - w przypadku GRUB)
-			- /etc - pliki konfiguracyjne, ustawienia systemowe
-			- /home - pliki określające ustawienia każdego użytkownika + ich pliki  
-			- /proc - wirtualny katalog, zawierający dane o aktualnie uruchomionych procesach
+			- /boot - pliki niezbędne do uruchomienia systemu (kernel, initrd, pliki bootloadera - w przypadku GRUB)  </br>
+			- /etc - pliki konfiguracyjne, ustawienia systemowe  </br>
+			- /home - pliki określające ustawienia każdego użytkownika + ich pliki  </br>
+			- /proc - wirtualny katalog, zawierający dane o aktualnie uruchomionych procesach  </br>
 			- /tmp - pliki tymczasowe
 		</details>
 	</li>
