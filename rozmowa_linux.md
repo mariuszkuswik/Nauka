@@ -117,7 +117,7 @@
 		<details> <summary>- Czym jest GRUB, jak przebiega proces bootowania systemu </summary>
 			- boot manager,  który ładuje jądro Linuksa, jest to pierwsze oprogramowanie uruchamiane przy starcie systemu.
 			[Czym jest grub + bootowanie](https://qa-stack.pl/ubuntu/347203/what-exactly-is-grub)
-		<details>
+		</details>
 	</li>
 	<li>
 		<details> <summary>- shebang - czym jest</summary>
