@@ -1,6 +1,17 @@
 # Spis treści 
 
-[Go top]()
+<ol>
+	<li>
+		[Czego się nauczyć i co zrobić]()
+	</li>
+	<li>
+		[Pytania do uzupełnienia]()
+	</li>
+	<li>
+		[Pytania na rozmowę ]()
+	</li>
+<ol>
+
 
 # Czego się nauczyć i co zrobić 
 - Nauczyć się KVM 
@@ -314,7 +325,7 @@
   
 
 
-
+[Go top](https://github.com/mariuszkuswik/Nauka/blob/main/rozmowa_linux.md#spis-tre%C5%9Bci)
 
 
 
