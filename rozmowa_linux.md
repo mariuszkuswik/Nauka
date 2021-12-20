@@ -104,7 +104,7 @@
 		</details>
 	</li>
 	<li>
-		<details> <summary>- Co zwraca funkcja ? <summary>
+		<details> <summary>- Co zwraca funkcja ? </summary>
 			- Sama z siebie zwraca <b>exitcode</b>, domyslnie wartosc 0/1, żeby zwrócić coś więcej używamy <code>return</code>
 		</details>
 	</li>
