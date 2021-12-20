@@ -151,7 +151,7 @@
 	- Dodać do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
 - Jak sprawdzić kto i kiedy dodał jakiś commit  
 	- Dodać do instrukcji Git
-
+- Gdzie przechowywane sa logi
 
 - Jak działa firewall 
 
@@ -159,7 +159,7 @@
 	- firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
 
 
-<details> <summary>	- Gdzie przechowywane sa logi
+
 
 
 
