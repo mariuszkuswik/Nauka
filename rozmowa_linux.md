@@ -119,58 +119,90 @@
 			[Czym jest grub + bootowanie](https://qa-stack.pl/ubuntu/347203/what-exactly-is-grub)
 		<details>
 	</li>
-<li>
-	<details> <summary>- shebang - czym jest</summary>
-		-  daje kontrole nad tym w jakim shellu zostanie wykonany skrypt, jezeli nie zostanie uzyty to skrypt wykona sie w obecnie uzywanym shellu 
-	</details>
-</li>
-
-
+	<li>
+		<details> <summary>- shebang - czym jest</summary>
+			-  daje kontrole nad tym w jakim shellu zostanie wykonany skrypt, jezeli nie zostanie uzyty to skrypt wykona sie w obecnie uzywanym shellu 
+		</details>
+	</li>
+	<li>
+		<details> <summary>- Czym jest export a czym env, jak działają zmienne środowiskowe, jak je wypisać</summary>
+			- env - Wypisuje zmienne środowiskowe, export tworzy zmienną środowiskową 	
+		</details> 
+	</li>
+	<li>
+		<details> <summary>- Jak sprawdzić biblioteki których nam brakuje </summary>
+			- ldd "sciezka docelowa komendy"
+		</details> 
+	</li>
+	<li>
+		<details> <summary>- Czym jest SWAP, ile go potrzebujemy </summary>
+			- Pamięć ulotna dostępna na dysku którą system może wykorzystywać, jej użycie jest zależne od stopnia swapiness, minimalna wielkość powinna być równa ilości RAM, ze względu na możliwość hibernacji 
+		</details> 
+	</li>
+	<li>
+		<details> <summary>- Jak sprawdzić gdzie jest zainstalowany dany program </summary>
+			- whereis
+		</details>
+	</li>
+	<li>
+		<details> <summary>- Grep po wszystkich katalogach w psozukiwaniu stringa wewnątrz pliku </summary>
+			- grep -R "string" sciezka docelowa ?
+	</li>
+	<li>
+		<details> <summary>- Sprawdź czy maszyna na której jesteś jest maszyną wirtualną </summary>
+			- lscpu, wyświetla to czy maszyna jest wirtualizowana 
+	</li>
+	<li>
+		<details> <summary>- Przykładowe shelle </summary>
+			- bash 
+			- zsh 
+			- fish 
+		</details>
+	</li>
+	<li>
+		<details> <summary>- Czym jest sticky bit ? </summary>
+			- Na koniec komendy jak zmienić lub ustawić te specjalne bity. Do tego słuzy nam komenda chmod.
+				```chmod o+s <nazwa pliku>```
+				```chmod g+s <nazwa katalogu>```
+				```chmod u+s <nazwa pliku>```
+		</details>
+	</li>
+	<li>
+		<details> <summary>- Jak brzmią domyślne ustawienia uprawnień, jak je zmienić </summary>
+			- umask - sprawdzic jak zmienic 
+		</details>
+	</li>
+	<li>
+		<details> <summary>- Jakie znam filesystemy na linuxie, czym się charakteryzują</summary>
+			- ext2, ext3, ext4, xfs, btrfs, bfs
+		</details>
+	</li>
+	<li>
+		<details> <summary>- Jakie znam katalogi linuxowe, za co odpowiadają</summary>
+			- /boot - pliki niezbędne do uruchomienia systemu (kernel, initrd, pliki bootloadera - w przypadku GRUB)
+			- /etc - pliki konfiguracyjne, ustawienia systemowe
+			- /home - pliki określające ustawienia każdego użytkownika + ich pliki  
+			- /proc - wirtualny katalog, zawierający dane o aktualnie uruchomionych procesach
+			- /tmp - pliki tymczasowe
+		</details>
+	</li>
 </ol>
 
   
 
 
-<details> <summary>- Czym jest export a czym env, jak działają zmienne środowiskowe, jak je wypisać
-	- env - Wypisuje zmienne środowiskowe, export tworzy zmienną środowiskową 	
-
-<details> <summary>- Jak sprawdzić biblioteki których nam brakuje 
-	- ldd "sciezka docelowa komendy"
-<details> <summary>- Czym jest SWAP, ile go potrzebujemy 
-	- Pamięć ulotna dostępna na dysku którą system może wykorzystywać, jej użycie jest zależne od stopnia swapiness, minimalna wielkość powinna być równa ilości RAM, ze względu na możliwość hibernacji 
-
-	- 	
-<details> <summary>- Jak sprawdzić gdzie jest zainstalowany dany program 
-	- whereis
-- Grep po wszystkich katalogach w psozukiwaniu stringa wewnątrz pliku 
-	- grep -R "string" sciezka docelowa ?
 
 
-- Sprawdź czy maszyna na której jesteś jest maszyną wirtualną 
-	- lscpu, wyświetla to czy maszyna jest wirtualizowana 
 
-- Przykładowe shelle 
-	- bash 
-	- zsh 
-	- fish 
-- Czym jest sticky bit ? 
-	- Na koniec komendy jak zmienić lub ustawić te specjalne bity. Do tego słuzy nam komenda chmod.
 
-		```chmod o+s <nazwa pliku>```
 
-		```chmod g+s <nazwa katalogu>```
 
-		```chmod u+s <nazwa pliku>```
 
-- Jak brzmią domyślne ustawienia uprawnień, jak je zmienić 
-	- umask - sprawdzic jak zmienic 
 
-- Jakie znam filesystemy na linuxie, czym się charakteryzują
-	- ext2, ext3, ext4, xfs, btrfs, bfs
-- Jakie znam katalogi linuxowe, za co odpowiadają
-	- /boot - pliki niezbędne do uruchomienia systemu (kernel, initrd, pliki bootloadera - w przypadku GRUB)
-	- /etc - pliki konfiguracyjne, ustawienia systemowe
-	- /home - pliki określające ustawienia każdego użytkownika + ich pliki  
-	- /proc - wirtualny katalog, zawierający dane o aktualnie uruchomionych procesach
-	- /tmp - pliki tymczasowe
+
+
+
+
+
+
 
