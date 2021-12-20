@@ -105,27 +105,27 @@
 	</li>
 	<li>
 		<details> <summary>- Co zwraca funkcja ? <summary>
-			- Sama z siebie zwraca exitcode, domyslnie wartosc 0/1, żeby zwrócić coś więcej używamy <code>return</code>
+			- Sama z siebie zwraca <b>exitcode</b>, domyslnie wartosc 0/1, żeby zwrócić coś więcej używamy <code>return</code>
 		</details>
 	</li>
 	<li>
-		<details> <summary>- Czym jest VLAN</summary>
+		<details> <summary>- Czym jest <b>VLAN</b></summary>
 			- technologia sieciowa, która pozwala w ramach jednej fizycznej sieci lokalnej tworzyć wiele sieci logicznych (sieci wirtualnych)
 		</details>
 	</li>
 	<li>
-		<details> <summary>- Czym jest GRUB, jak przebiega proces bootowania systemu </summary>
+		<details> <summary>- Czym jest <b>GRUB</b>, jak przebiega proces bootowania systemu </summary>
 			- boot manager,  który ładuje jądro Linuksa, jest to pierwsze oprogramowanie uruchamiane przy starcie systemu.
 			[Czym jest grub + bootowanie](https://qa-stack.pl/ubuntu/347203/what-exactly-is-grub)
 		</details>
 	</li>
 	<li>
-		<details> <summary>- shebang - czym jest</summary>
+		<details> <summary>- <b>shebang</b> - czym jest</summary>
 			-  daje kontrole nad tym w jakim shellu zostanie wykonany skrypt, jezeli nie zostanie uzyty to skrypt wykona sie w obecnie uzywanym shellu 
 		</details>
 	</li>
 	<li>
-		<details> <summary>- Czym jest export a czym env, jak działają zmienne środowiskowe, jak je wypisać</summary>
+		<details> <summary>- Czym jest <b>export</b> a czym <b>env</b>, jak działają zmienne środowiskowe, jak je wypisać</summary>
 			- env - Wypisuje zmienne środowiskowe, export tworzy zmienną środowiskową 	
 		</details> 
 	</li>
@@ -135,7 +135,7 @@
 		</details> 
 	</li>
 	<li>
-		<details> <summary>- Czym jest SWAP, ile go potrzebujemy </summary>
+		<details> <summary>- Czym jest <b>SWAP</b>, ile go potrzebujemy </summary>
 			- Pamięć ulotna dostępna na dysku którą system może wykorzystywać, jej użycie jest zależne od stopnia swapiness, minimalna wielkość powinna być równa ilości RAM, ze względu na możliwość hibernacji 
 		</details> 
 	</li>
@@ -160,7 +160,7 @@
 		</details>
 	</li>
 	<li>
-		<details> <summary>- Czym jest sticky bit ? </summary>
+		<details> <summary>- Czym jest <b>sticky bit</b> ? </summary>
 			- Na koniec komendy jak zmienić lub ustawić te specjalne bity. Do tego słuzy nam komenda chmod.
 				```chmod o+s <nazwa pliku>```
 				```chmod g+s <nazwa katalogu>```
@@ -173,12 +173,12 @@
 		</details>
 	</li>
 	<li>
-		<details> <summary>- Jakie znam filesystemy na linuxie, czym się charakteryzują</summary>
+		<details> <summary>- Jakie znam <b>filesystemy</b> na linuxie, czym się charakteryzują</summary>
 			- ext2, ext3, ext4, xfs, btrfs, bfs
 		</details>
 	</li>
 	<li>
-		<details> <summary>- Jakie znam katalogi linuxowe, za co odpowiadają</summary>
+		<details> <summary>- Jakie znam <b>katalogi linuxowe</b>, za co odpowiadają</summary>
 			- /boot - pliki niezbędne do uruchomienia systemu (kernel, initrd, pliki bootloadera - w przypadku GRUB)
 			- /etc - pliki konfiguracyjne, ustawienia systemowe
 			- /home - pliki określające ustawienia każdego użytkownika + ich pliki  
