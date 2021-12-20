@@ -155,17 +155,17 @@
 	</li>
 	<li>
 		<details> <summary>- Przykładowe shelle </summary>
-			- <code>bash</code> 
-			- <code>zsh</code> 
-			- <code>fish</code> 
+			- <code>bash</code>  
+			- <code>zsh</code>  
+			- <code>fish</code>  
 		</details>
 	</li>
 	<li>
 		<details> <summary>- Czym jest <b>sticky bit</b> ? </summary>
-			- Na koniec komendy jak zmienić lub ustawić te specjalne bity. Do tego słuzy nam komenda chmod.
-				<code>chmod o+s <nazwa pliku></code>
-				<code>chmod g+s <nazwa katalogu></code>
-				<code>chmod u+s <nazwa pliku></code>
+			- Na koniec komendy jak zmienić lub ustawić te specjalne bity. Do tego słuzy nam komenda chmod.  
+				<code>chmod o+s <nazwa pliku></code>  
+				<code>chmod g+s <nazwa katalogu></code>  
+				<code>chmod u+s <nazwa pliku></code>  
 		</details>
 	</li>
 	<li>
@@ -175,12 +175,12 @@
 	</li>
 	<li>
 		<details> <summary>- Jakie znam <b>filesystemy</b> na linuxie, czym się charakteryzują</summary>
-			- <code>ext2</code>
-			- <code>ext3</code>
-			- <code>ext4</code>
-			- <code>xfs</code>
-			- <code>btrfs</code>
-			- <code>bfs</code>
+			- <code>ext2</code>  
+			- <code>ext3</code>  
+			- <code>ext4</code>  
+			- <code>xfs</code>  
+			- <code>btrfs</code>  
+			- <code>bfs</code>  
 		</details>
 	</li>
 	<li>
