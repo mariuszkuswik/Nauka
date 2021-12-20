@@ -103,46 +103,45 @@
 		</details>
 	</li>
 	<li>
-	<details> <summary>	- Czym jest Kernel </summary>
-
-	</details>
+		<details> <summary>	- Czym jest Kernel </summary>
+				Tekst	
+		</details>
 	</li>
 	<li>
-	<details> <summary>	- Serwer jest zajeżdżany, w jaki sposób zdiagnozuję problem </summary>
-
-	</details>
+		<details> <summary>	- Serwer jest zajeżdżany, w jaki sposób zdiagnozuję problem </summary>
+				Tekst
+		</details>
 	</li>
 	<li>
-	<details> <summary>	- Czym jest wirtualizacja  </summary>
-
-	</details>
+		<details> <summary>	- Czym jest wirtualizacja  </summary>
+				Tekst
+		</details>
 	</li>
 	<li>
-	<details> <summary>	- Ogolnie sprawdzic jakie uprawnienia uniemozliwia usuniecie pliku </summary>
-
-	</details>
+		<details> <summary>	- Ogolnie sprawdzic jakie uprawnienia uniemozliwia usuniecie pliku </summary>
+				Tekst
+		</details>
 	</li>
 	<li>
-	<details> <summary>	- Czym jest konteneryzacja </summary>
-
-	</details>
+		<details> <summary>	- Czym jest konteneryzacja </summary>
+				Tekst
+		</details>
 	</li>
 	<li>
-	<details> <summary>	- Dlaczego przypisujemy zmienne sredowiskowe </summary>
-
-	</details>
+		<details> <summary>	- Dlaczego przypisujemy zmienne sredowiskowe </summary>
+				Tekst
+		</details>
 	</li>
 	<li>
-	<details> <summary>	- Jak dzialaja klamrowe nawiasy w bashu </summary>
-
-	</details>
+		<details> <summary>	- Jak dzialaja klamrowe nawiasy w bashu </summary>
+				Tekst
+		</details>
 	</li>
 	<li>
-	<details> <summary>	- Jak ustawić statyczne ip dla maszyny</summary>
-
-	</details>
+		<details> <summary>	- Jak ustawić statyczne ip dla maszyny</summary>
+				Tekst
+		</details>
 	</li>
-	<li>
 </ol>
 
 - Nauczyć się KVM 
