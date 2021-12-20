@@ -1,149 +1,149 @@
 ### TODO - Ukryć odpowiedzi na pytania pod rozwijaną listą 
 
 # Pytania na rozmowę 
+<ol>
+	<li>
+		<details> <summary>	- Nauczyc sie iptables i znalezc do niego jakies pytania </summary>	
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Docker - pouczyć się </summary>
+			Teskt
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Puppet - pouczyć się </summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Automatyczne narzędzia do rotowania logów </summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Czym różnią się filesystemy między sobą, np xfs i ext4</summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Jak dodać regułę do firewalla</summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Gdzie znajduje się plik z użytkownikami w systemie </summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Jak dodać użytkownika - adduser i useradd - jak działa useradd</summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlić strony hostowanej przez nią, jak zdiagnozowac problem </summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Exitcode z instrukcji Bash, wypisac czym jest</summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Jak sprawdzić czy filesystem działa poprawnie, jak go naprawić </summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Czym są linki w linuxie, podaj różnice, kiedy ich używamy </summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Jak działa routing</summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Gdzie przechowywane są pliki konfiguracyjne</summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Jakie znam rodzaje RAIDa, na czym polegają</summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Jak działają LVMy, czym są, jak je wyświetlić, jak rozszerzyć, czym jest volume group </summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Jak konfiguruje się firewalla, jak dodać nową regułę</summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Jak skonfigurować NFS </summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Jak skonfigurować SAMBe</summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+		<details> <summary>	- Jaki jest proces bootowania systemu </summary>
+			Tekst
+		</details>
+	</li>
+	<li>
+	<details> <summary>	- Czym jest Kernel </summary>
 
-<li>
-	<details> <summary>	- Nauczyc sie iptables i znalezc do niego jakies pytania </summary>	
-		Tekst
 	</details>
-</li>
-<li>
-	<details> <summary>	- Docker - pouczyć się </summary>
-		Teskt
-	</details>
-</li>
-<li>
-	<details> <summary>	- Puppet - pouczyć się </summary>
-		Tekst
-	</details>
-</li>
-<li>
-	<details> <summary>	- Automatyczne narzędzia do rotowania logów </summary>
-		Tekst
-	</details>
-</li>
-<li>
-	<details> <summary>	- Czym różnią się filesystemy między sobą, np xfs i ext4</summary>
-		Tekst
-	</details>
-</li>
-<li>
-	<details> <summary>	- Jak dodać regułę do firewalla</summary>
-		Tekst
-	</details>
-</li>
-<li>
-	<details> <summary>	- Gdzie znajduje się plik z użytkownikami w systemie </summary>
-		Tekst
-	</details>
-</li>
-<li>
-	<details> <summary>	- Jak dodać użytkownika - adduser i useradd - jak działa useradd</summary>
-		Tekst
-	</details>
-</li>
-<li>
-	<details> <summary>	- Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlić strony hostowanej przez nią, jak zdiagnozowac problem </summary>
-		Tekst
-	</details>
-</li>
-<li>
-	<details> <summary>	- Exitcode z instrukcji Bash, wypisac czym jest</summary>
-		Tekst
-	</details>
-</li>
-<li>
-	<details> <summary>	- Jak sprawdzić czy filesystem działa poprawnie, jak go naprawić </summary>
-		Tekst
-	</details>
-</li>
-<li>
-	<details> <summary>	- Czym są linki w linuxie, podaj różnice, kiedy ich używamy </summary>
-		Tekst
-	</details>
-</li>
-<li>
-	<details> <summary>	- Jak działa routing</summary>
-		Tekst
-	</details>
-</li>
-<li>
-	<details> <summary>	- Gdzie przechowywane są pliki konfiguracyjne</summary>
-		Tekst
-	</details>
-</li>
-<li>
-	<details> <summary>	- Jakie znam rodzaje RAIDa, na czym polegają</summary>
-		Tekst
-	</details>
-</li>
-<li>
-	<details> <summary>	- Jak działają LVMy, czym są, jak je wyświetlić, jak rozszerzyć, czym jest volume group </summary>
-		Tekst
-	</details>
-</li>
-<li>
-	<details> <summary>	- Jak konfiguruje się firewalla, jak dodać nową regułę</summary>
-		Tekst
-	</details>
-</li>
-<li>
-	<details> <summary>	- Jak skonfigurować NFS </summary>
-		Tekst
-	</details>
-</li>
-<li>
-	<details> <summary>	- Jak skonfigurować SAMBe</summary>
-		Tekst
-	</details>
-</li>
-<li>
-	<details> <summary>	- Jaki jest proces bootowania systemu </summary>
-		Tekst
-	</details>
-</li>
-<li>
-<details> <summary>	- Czym jest Kernel </summary>
+	</li>
+	<li>
+	<details> <summary>	- Serwer jest zajeżdżany, w jaki sposób zdiagnozuję problem </summary>
 
-</details>
-</li>
-<li>
-<details> <summary>	- Serwer jest zajeżdżany, w jaki sposób zdiagnozuję problem </summary>
+	</details>
+	</li>
+	<li>
+	<details> <summary>	- Czym jest wirtualizacja  </summary>
 
-</details>
-</li>
-<li>
-<details> <summary>	- Czym jest wirtualizacja  </summary>
+	</details>
+	</li>
+	<li>
+	<details> <summary>	- Ogolnie sprawdzic jakie uprawnienia uniemozliwia usuniecie pliku </summary>
 
-</details>
-</li>
-<li>
-<details> <summary>	- Ogolnie sprawdzic jakie uprawnienia uniemozliwia usuniecie pliku </summary>
+	</details>
+	</li>
+	<li>
+	<details> <summary>	- Czym jest konteneryzacja </summary>
 
-</details>
-</li>
-<li>
-<details> <summary>	- Czym jest konteneryzacja </summary>
+	</details>
+	</li>
+	<li>
+	<details> <summary>	- Dlaczego przypisujemy zmienne sredowiskowe </summary>
 
-</details>
-</li>
-<li>
-<details> <summary>	- Dlaczego przypisujemy zmienne sredowiskowe </summary>
+	</details>
+	</li>
+	<li>
+	<details> <summary>	- Jak dzialaja klamrowe nawiasy w bashu </summary>
 
-</details>
-</li>
-<li>
-<details> <summary>	- Jak dzialaja klamrowe nawiasy w bashu </summary>
+	</details>
+	</li>
+	<li>
+	<details> <summary>	- Jak ustawić statyczne ip dla maszyny</summary>
 
-</details>
-</li>
-<li>
-<details> <summary>	- Jak ustawić statyczne ip dla maszyny</summary>
-
-</details>
-</li>
-<li>
-
+	</details>
+	</li>
+	<li>
+</ol>
 
 - Nauczyć się KVM 
 - Ogarnac notatki z telefonu 
