@@ -166,7 +166,7 @@
 <!-- Lista z ogarniętymi pytaniami  -->
 <ol>
 	<li>
-		<details> <summary>Czym jest brama domyślna </details>
+		<details> <summary class="sieci">Czym jest brama domyślna </summary>
 			- W sieci TCP/IP domyślna brama (sieciowa) (ang. default gateway) oznacza router, do którego komputery sieci lokalnej mają wysyłać pakiety o ile nie powinny być one kierowane w sieć lokalną lub do innych, znanych im routerów.
 		</details> 
 	</li>
