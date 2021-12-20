@@ -2,13 +2,13 @@
 
 <ol>
 	<li>
-		[Czego się nauczyć i co zrobić]()
+		<a href="https://github.com/mariuszkuswik/Nauka/blob/main/rozmowa_linux.md#czego-si%C4%99-nauczy%C4%87-i-co-zrobi%C4%87">Czego się nauczyć i co zrobić </a>
 	</li>
 	<li>
-		[Pytania do uzupełnienia]()
+		<a href="https://github.com/mariuszkuswik/Nauka/blob/main/rozmowa_linux.md#pytania-do-uzupe%C5%82nienia">Pytania do uzupełnienia </a>
 	</li>
 	<li>
-		[Pytania na rozmowę ]()
+		<a href="https://github.com/mariuszkuswik/Nauka/blob/main/rozmowa_linux.md#pytania-na-rozmow%C4%99">Pytania na rozmowę </a>
 	</li>
 <ol>
 
@@ -23,6 +23,7 @@
 - Gdzie przechowywane sa logi
 - firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
 - Jak działa firewall 
+
 
 # Pytania do uzupełnienia 
 <ol>
@@ -167,8 +168,6 @@
 		</details>
 	</li>
 </ol>
-
-
 
 
 # Pytania na rozmowę 
@@ -323,8 +322,7 @@
 </ol>
 
   
-
-
+  
 [Go top](https://github.com/mariuszkuswik/Nauka/blob/main/rozmowa_linux.md#spis-tre%C5%9Bci)
 
 
