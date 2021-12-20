@@ -1,6 +1,19 @@
-### TODO - Ukryć odpowiedzi na pytania pod rozwijaną listą 
+# Spis treści 
 
-# Pytania na rozmowę 
+[Go top]()
+
+# Czego się nauczyć i co zrobić 
+- Nauczyć się KVM 
+- Ogarnac notatki z telefonu 
+- Jak stworzyć nowy branch w git od podstaw
+	- Dodać do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
+- Jak sprawdzić kto i kiedy dodał jakiś commit  
+	- Dodać do instrukcji Git
+- Gdzie przechowywane sa logi
+- firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
+- Jak działa firewall 
+
+# Pytania do uzupełnienia 
 <ol>
 	<li>
 		<details> <summary>	- Nauczyc sie iptables i znalezc do niego jakies pytania </summary>	
@@ -144,24 +157,10 @@
 	</li>
 </ol>
 
-- Nauczyć się KVM 
-- Ogarnac notatki z telefonu 
-
-- Jak stworzyć nowy branch w git od podstaw
-	- Dodać do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
-- Jak sprawdzić kto i kiedy dodał jakiś commit  
-	- Dodać do instrukcji Git
-- Gdzie przechowywane sa logi
-
-- Jak działa firewall 
-
-	- ### #TODO - do uzupełnienia 
-	- firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
 
 
 
-
-
+# Pytania na rozmowę 
 
 <!-- Lista z ogarniętymi pytaniami  -->
 <ol>
