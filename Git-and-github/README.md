@@ -1,3 +1,5 @@
+### Testowy wpis 
+
 
 # #TO DO 
 1. Podstawowe komendy
@@ -15,6 +17,8 @@
 5. ```git remote add origin https://github.com/mariuszkuswik/nazwa_repo.git```
 ### #TODO Do sprawdzenia czym jest origin, poprawic opis 
 6. master to nazwa brancha : ```git push origin master```
+
+
 
 #  Branch
 
