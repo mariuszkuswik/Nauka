@@ -3,9 +3,11 @@
 This documents contains some of the basic commands that you will need to get started with Git and GitHub
 
 # Contents
+- [Odpalenie nowego repo](Odpalenie-nowego-repo)
 - [Branch](#branch)
     - [Czym jest](#czym-jest-branch)
     - [Jak stworzyć nowy branch i zmergować go z mainem](#Jak-stworzyć-nowy-branch-i-zmergować-go-z-mainem)
+- [.gitignore](#.gitignore)
 1. [Basic Commands 1](#basic-commands-1)
 2. [Basic Commands 2](#basic-commands-2)
 3. [Basic Commands 3](#basic-commands-3)
