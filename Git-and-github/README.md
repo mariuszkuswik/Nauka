@@ -22,9 +22,53 @@
 
 #  Branch
 
+
+### #TODO - Dodać informację o komendach podstwowych takich jak 
+- git branch 
+- git checkout 
+
+
+[Tworzenie nowego brancha na przykładzie](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
+
+
+## Jak stworzyć nowy branch i zmergować go z mainem 
+
+1. Tworzenie nowego brancha, przejście do niego 
+
+```git checkout -b nazwa_brancha```
+> Switched to a new branch "nowy_branch" 
+
+2. zmiana brancha bez tworzenia nowego
+
+```git checkout nazwa_brancha``` 
+
+2. Wyświetlenie wszystkich branchy 
+
+```git branch ```
+
+> github_edycja_branchy
+> main
+> * nowy_branch
+
+
+4. Edycja plików w obecnym (nowym) branchu 
+
+5. Zmiana brancha na ten z którym chcemy połączyć wprowadzone zmiany 
+
+```git checkout main```
+
+6. Połączenie zmian wprowadzonych w nowym branchu z mainem 
+
+```git merge nazwa_brancha```
+
+7. Usunięcie brancha który już nie jest potrzebny 
+
+```git branch -d nazwa_brancha"```
+
 ## Create a new branch with git and manage branches
 
 ### In your Github fork, you need to keep your master branch clean, by clean I mean without any changes, like that you can create at any time a branch from your master. Each time that you want to commit a bug or a feature, you need to create a branch for it, which will be a copy of your master branch.
+
 
 
 When you do a pull request on a branch, you can continue to work on another branch and make another pull request on this other branch.
