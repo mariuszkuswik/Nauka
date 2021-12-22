@@ -1,4 +1,20 @@
-### Testowy wpis 
+# Introduction to Git
+
+This documents contains some of the basic commands that you will need to get started with Git and GitHub
+
+# Contents
+- [Branch](#branch)
+    - [Czym jest](#czym-jest-branch)
+    - [Jak stworzyć nowy branch i zmergować go z mainem](#Jak-stworzyć-nowy-branch-i-zmergować-go-z-mainem)
+1. [Basic Commands 1](#basic-commands-1)
+2. [Basic Commands 2](#basic-commands-2)
+3. [Basic Commands 3](#basic-commands-3)
+4. [Activity 1](#activity-1)
+5. [Activity 2](#activity-2)
+6. [Activity 3](#activity-3)
+7. [Activity 4](#activity-4)
+8. [Danger Commands](#danger-commands)
+8. [Next Steps](#next-steps)
 
 
 # #TO DO 
@@ -22,11 +38,13 @@
 
 #  Branch
 
+## Czym jest Branch 
+
 
 ### #TODO - Dodać informację o komendach podstwowych takich jak 
 - git branch 
 - git checkout 
-
+- Dodać jakąś informację na temat set-upsream 
 
 [Tworzenie nowego brancha na przykładzie](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 
@@ -53,13 +71,20 @@
 
 4. Edycja plików w obecnym (nowym) branchu 
 
+
 5. Zmiana brancha na ten z którym chcemy połączyć wprowadzone zmiany 
 
 ```git checkout main```
 
+
 6. Połączenie zmian wprowadzonych w nowym branchu z mainem 
 
 ```git merge nazwa_brancha```
+> Komenda łączy obecnego brancha z nazwa_brancha 
+
+```git merge master nazwa_brancha```
+> Komenda łączy branch master z branch nazwa_brancha
+
 
 7. Usunięcie brancha który już nie jest potrzebny 
 
@@ -172,20 +197,7 @@ Another example is ***~**, which matches any file ending with **~**, such as **i
 		> .DS_Store
 
 
-# Introduction to Git
 
-This documents contains some of the basic commands that you will need to get started with Git and GitHub
-
-# Contents
-1. [Basic Commands 1](#basic-commands-1)
-2. [Basic Commands 2](#basic-commands-2)
-3. [Basic Commands 3](#basic-commands-3)
-4. [Activity 1](#activity-1)
-5. [Activity 2](#activity-2)
-6. [Activity 3](#activity-3)
-7. [Activity 4](#activity-4)
-8. [Danger Commands](#danger-commands)
-8. [Next Steps](#next-steps)
 
 # Basic Commands 1
 
