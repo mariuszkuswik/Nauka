@@ -58,10 +58,8 @@ This documents contains some of the basic commands that you will need to get sta
 9. Change current branch 
 ```git checkout <branch_name>```
 
-10. Merge other branches with master branch: 
+10. Merge other branches with master branch ( branche można łączyć różnie, nie musi być to tylko operacja na masterze ): 
 ```git merge master <branch_to_be_merged>```
-
-
 
 
 
