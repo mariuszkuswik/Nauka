@@ -46,7 +46,7 @@ This documents contains some of the basic commands that you will need to get sta
 5. List out all the commits: 
 ```git log```
 
-6. Check the difference between file changes: 
+6. Check the difference between file changes ( before commit): 
 ```git diff```
 
 7. List out all the branches: 
@@ -55,7 +55,10 @@ This documents contains some of the basic commands that you will need to get sta
 8. Create a new branch: 
 ```git branch <branch_name>```
 
-9. Merge other branches with master branch: 
+9. Change current branch 
+```git checkout <branch_name>```
+
+10. Merge other branches with master branch: 
 ```git merge master <branch_to_be_merged>```
 
 
