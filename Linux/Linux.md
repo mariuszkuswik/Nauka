@@ -219,7 +219,8 @@ Wyświetl karty sieciowe w linuxie, opisz czego się na tej podstawie dowiedzia�
 ### firewalld
 - W RHEL8 firewall jest zarzadzany przez firewalld, w RHEL7 pod spodem bylo iptables, obecnie jest to nftables
 zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
-	- ```firewall-cmd --state``` - wyswietla czy firewall dziala 
+	
+    - ```firewall-cmd --state``` - wyswietla czy firewall dziala 
 
 	- ```firewall-cmd --list-all``` - wypisuje wszystkie reguly które obecnie działają  
 	```firewall-cmd --list-all --permanent``` wypisuje reguły które są zapisane w configu - będą działać po ***reboocie systemu***
