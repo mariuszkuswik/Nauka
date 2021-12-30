@@ -23,6 +23,44 @@ This documents contains some of the basic commands that you will need to get sta
 1. Podstawowe komendy
 2. init commit push
 3. czym jest master, branch, repo
+4. Dodać rozdział o commitach, jak je przywracać, usuwać, przeglądać 
+
+
+
+# Basic Commands 1
+
+1. Initialize a repository *Run this **ONLY ONCE***: 
+```git init```
+
+2. Check the status of the repository: 
+```git status```
+
+3. Add file(s) to the staging area
+    * For individual files: ```git add <filename>``` 
+    * For all files in the current catalog: ```git add .```
+    * For all files ```git add -A```
+
+4. Commit changes (Take a screenshot of code): 
+```git commit -m "Initial Commit"```
+
+5. List out all the commits: 
+```git log```
+
+6. Check the difference between file changes ( before commit): 
+```git diff```
+
+7. List out all the branches: 
+```git branch```
+
+8. Create a new branch: 
+```git branch <branch_name>```
+
+9. Change current branch 
+```git checkout <branch_name>```
+
+10. Merge other branches with master branch ( branche można łączyć różnie, nie musi być to tylko operacja na masterze ): 
+```git merge master <branch_to_be_merged>```
+
 
 
 # Odpalenie nowego repo 
@@ -199,37 +237,6 @@ Another example is ***~**, which matches any file ending with **~**, such as **i
 		> .DS_Store
 
 
-
-
-# Basic Commands 1
-
-1. Initialize a repository *Run this **ONLY ONCE***: 
-```git init```
-
-2. Check the status of the repository: 
-```git status```
-
-3. Add file(s) to the staging area
-    * For individual files: ```git add <filename>``` 
-    * For all files: ```git add .```
-
-4. Commit changes (Take a screenshot of code): 
-```git commit -m "Initial Commit"```
-
-5. List out all the commits: 
-```git log```
-
-6. Check the difference between file changes: 
-```git diff```
-
-7. List out all the branches: 
-```git branch```
-
-8. Create a new branch: 
-```git branch <branch_name>```
-
-9. Merge other branches with master branch: 
-```git merge master <branch_to_be_merged>```
 
 # Activity 1
 
