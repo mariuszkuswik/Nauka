@@ -14,6 +14,32 @@
 
 ## System Linux 
 
+# Biblia
+
+## Używanie Powłoki 
+
+
+- Polecenie ```id```
+
+    Więcej informacji o tożsamości użytkownika dostarcza polecenie id:
+    ```$ id```
+    > uid=1000(chris) gid=1000(chris) groups=1005(sales), 7(lp)
+
+    nazwa użytkownika to chris, (uid) 1000. Podstawową grupą użytkownika **chris**, podstawową grupą również jest **chris** (gid) 1000. 
+    Użytkownik chris należy również do innych grup o nazwach **sales** (gid 1005) i **lp** (gid 7).
+
+
+
+- Katalogi z komendami 
+    Większość poleceń dostarczanych z Linuksem znajduje się w katalogach /bin, /usr/bin oraz /usr/local/bin.
+    Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne 
+
+
+
+
+
+
+
 
 
 ## Skryptowanie 

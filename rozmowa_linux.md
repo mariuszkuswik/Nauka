@@ -30,6 +30,14 @@
 - Nauczyc sie iptables i znalezc do niego jakies pytania
 - Automatyczne narzędzia do rotowania logów
 
+# Biblia 
+- Polecenie id 
+	- Więcej informacji o tożsamości użytkownika
+		<code> $ id
+uid=1000(chris) gid=1000(chris) groups=1005(sales), 7(lpgroup)</code>
+	1005 jest id grupy sales, 7 jest id lpgroup
+
+	
 
 # Pytania do uzupełnienia 
 <ol>
