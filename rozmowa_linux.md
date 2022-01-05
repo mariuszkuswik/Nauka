@@ -39,6 +39,11 @@
 		</details>
 	</li>
 	<li>
+		<details> <summary>Print information about users who are currently logged in</summary>
+			<code>who</code>
+		</details>
+	</li>
+	<li>
 		<details> <summary>	- Czym różnią się filesystemy między sobą, np xfs i ext4</summary>
 			Tekst
 		</details>

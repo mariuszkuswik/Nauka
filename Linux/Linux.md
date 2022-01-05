@@ -13,7 +13,7 @@
 
 
 ## System Linux 
-
+aaaaaaa
 
 ## Skryptowanie 
 
