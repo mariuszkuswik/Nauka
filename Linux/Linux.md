@@ -2,7 +2,7 @@
 # Linux/Bash
 
 # Spis treści
-1. [System](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#system-linux)
+1. [System](#system-linux)
 2. [Skryptowanie](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#skryptowanie)
 	- [Zmienne specjalne](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#zmienne-specjalne)
 	- [Exitcode](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#exitcode)
@@ -13,7 +13,8 @@
 
 
 ## System Linux 
-aaaaaaa
+
+
 
 ## Skryptowanie 
 
