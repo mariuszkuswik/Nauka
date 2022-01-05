@@ -24,6 +24,9 @@
 
 ### Polecenie ```id```
 
+
+id pokazuje id uzytkownika i gid ( id grupy uzytkownika)
+
     Więcej informacji o tożsamości użytkownika dostarcza polecenie id:
     ```$ id```
     > uid=1000(chris) gid=1000(chris) groups=1005(sales), 7(lp)
