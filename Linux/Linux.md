@@ -27,24 +27,24 @@
 
 id pokazuje id uzytkownika i gid ( id grupy uzytkownika)
 
-    Więcej informacji o tożsamości użytkownika dostarcza polecenie id:
-    ```$ id```
-    > uid=1000(chris) gid=1000(chris) groups=1005(sales), 7(lp)
+Więcej informacji o tożsamości użytkownika dostarcza polecenie id:
+```$ id```
+> uid=1000(chris) gid=1000(chris) groups=1005(sales), 7(lp)
 
-    nazwa użytkownika to chris, (uid) 1000. Podstawową grupą użytkownika **chris**, podstawową grupą również jest **chris** (gid) 1000. 
-    Użytkownik chris należy również do innych grup o nazwach **sales** (gid 1005) i **lp** (gid 7).
+nazwa użytkownika to chris, (uid) 1000. Podstawową grupą użytkownika **chris**, podstawową grupą również jest **chris** (gid) 1000. 
+Użytkownik chris należy również do innych grup o nazwach **sales** (gid 1005) i **lp** (gid 7).
 
-    **W dystrybucjach systemu Linux, w których jest włączony mechanizm SELinux (Security Enhanced Linux),
-    takich jak Fedora i Red Hat Enterprise Linux, na końcu danych wyjściowych polecenia id znajdują się
-    jeszcze informacje dodatkowe. Te dane mogą mieć następującą postać:** 
+**W dystrybucjach systemu Linux, w których jest włączony mechanizm SELinux (Security Enhanced Linux),
+takich jak Fedora i Red Hat Enterprise Linux, na końcu danych wyjściowych polecenia id znajdują się
+jeszcze informacje dodatkowe. Te dane mogą mieć następującą postać:** 
     
-    > context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+> context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
 
 
 ### Katalogi z komendami 
    
-    Większość poleceń dostarczanych z Linuksem znajduje się w katalogach /bin, /usr/bin oraz /usr/local/bin.
-    Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne 
+Większość poleceń dostarczanych z Linuksem znajduje się w katalogach /bin, /usr/bin oraz /usr/local/bin.
+Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne 
 
 
 
