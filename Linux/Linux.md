@@ -14,12 +14,15 @@
 
 ## System Linux 
 
+
+
+
 # Biblia
 
 ## Używanie Powłoki 
 
 
-- Polecenie ```id```
+### Polecenie ```id```
 
     Więcej informacji o tożsamości użytkownika dostarcza polecenie id:
     ```$ id```
@@ -35,11 +38,12 @@
     > context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
 
 
-
-
-- Katalogi z komendami 
+### Katalogi z komendami 
+   
     Większość poleceń dostarczanych z Linuksem znajduje się w katalogach /bin, /usr/bin oraz /usr/local/bin.
     Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne 
+
+
 
 
 
