@@ -41,6 +41,27 @@ jeszcze informacje dodatkowe. Te dane mogą mieć następującą postać:**
 > context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
 
 
+### Polecenie ```type```
+
+Określenie źródła poszczególnych poleceń powłoki jest możliwe po wydaniu polecenia type.
+(Jeżeli używana powłoka jest inna niż bash, wtedy należy skorzystać z polecenia which).
+Na przykład określenie miejsca położenia polecenia bash jest możliwe po wpisaniu:
+
+```$ type bash```
+> bash is /bin/bash
+
+Jeżeli sprawdzane polecenie znajduje się
+w kilku miejscach, wówczas dodanie opcji -a spowoduje wyświetlenie wszystkich znanych
+lokalizacji danego polecenia. Na przykład polecenie type -a ls powinno wyświetlić położenie
+systemowego polecenia ls i polecenia zdefiniowanego za pomocą aliasu.
+
+```$ type -a ls```
+
+> ls is aliased to `ls --color -F'
+> ls is /usr/bin/ls
+
+
+
 ### Katalogi z komendami 
    
 Większość poleceń dostarczanych z Linuksem znajduje się w katalogach /bin, /usr/bin oraz /usr/local/bin.
