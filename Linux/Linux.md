@@ -80,11 +80,9 @@ Większość poleceń dostarczanych z Linuksem znajduje się w katalogach /bin, 
 Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne 
 
 
-## Uprawnienia 
 
-4 - read
-2 - write 
-1 - execute 
+
+## Uprawnienia 
 
 ### Plik 
     - Read - Wyświetlenie zawartości pliku
@@ -96,6 +94,35 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
     - Write - Dodawanie plików lub podkatalogów do danego katalogu, usunięcie plików lub katalogów z danego katalogu
     - Execute - Wejście do katalogu, przeszukiwanie lub uruchomienie programu znajdującego się w nim, dostęp do metadanych pliku (wielkość, znaczniki czasu) dla wszystkich plików znajdujących się w tym katalogu
 
+## Uprawnienia liczbowe  
+
+4 - read
+2 - write 
+1 - execute 
+
+```chmod -R 755 $HOME/myapps``` - zmiana uprawnien rekurencyjnie dla calego katalogu 
+
+### Uprawnienia tekstowe 
+
+a - all 
+u - user
+g - group 
+o - others 
+
+w - write 
+r - read 
+x - execute 
+
+
+- Nadawanie uprawnien tekstowo, poczatkowo do pliku wszyscy maja pelne uprawnienia 
+    \- ( minus ) zabiera uprawnienia 
+    \+ ( plus ) dodaje uprawnienia 
+    
+    Wszyscy maja pelne uprawnienia, po wykonaniu r-xr-xr-x
+    ```$ chmod a-w plik```
+    
+    Nikt nie ma uprawnien, po wykonaniu rw-------
+    ```$ chmod u+rw plik```
 
 
 
