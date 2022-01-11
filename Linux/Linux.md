@@ -99,22 +99,22 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 
 ## Uprawnienia liczbowe  
 
-4 - read
-2 - write 
-1 - execute 
+- 4 - read
+- 2 - write 
+- 1 - execute 
 
 ```chmod -R 755 $HOME/myapps``` - zmiana uprawnien rekurencyjnie dla calego katalogu 
 
 ### Uprawnienia tekstowe 
 
-a - all 
-u - user
-g - group 
-o - others 
+- a - all 
+- u - user
+- g - group 
+- o - others 
 
-w - write 
-r - read 
-x - execute 
+- w - write 
+- r - read 
+- x - execute 
 
 
 - Nadawanie uprawnien tekstowo, poczatkowo do pliku wszyscy maja pelne uprawnienia  
