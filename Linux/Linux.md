@@ -117,15 +117,15 @@ r - read
 x - execute 
 
 
-- Nadawanie uprawnien tekstowo, poczatkowo do pliku wszyscy maja pelne uprawnienia 
-    \- ( minus ) zabiera uprawnienia 
-    \+ ( plus ) dodaje uprawnienia 
+- Nadawanie uprawnien tekstowo, poczatkowo do pliku wszyscy maja pelne uprawnienia  
+    \- ( minus ) zabiera uprawnienia  
+    \+ ( plus ) dodaje uprawnienia   
     
-    Wszyscy maja pelne uprawnienia, po wykonaniu r-xr-xr-x
-    ```$ chmod a-w plik```
+    Wszyscy maja pelne uprawnienia, po wykonaniu r-xr-xr-x  
+    ```$ chmod a-w plik```  
     
-    Nikt nie ma uprawnien, po wykonaniu rw-------
-    ```$ chmod u+rw plik```
+    Nikt nie ma uprawnien, po wykonaniu rw-------  
+    ```$ chmod u+rw plik```  
 
 
 
