@@ -180,6 +180,25 @@ Zmiana właściciela użytkownika i grupy na janek
 Zmiana rekurencyjna właściciela i grupy dla katalogu  
 ```chown -R janek:janek /media/myusb```
 
+### cp - kopiowanie plikow 
+
+```cp -a test test2``` - kopia zachowała znaczniki daty i godziny oraz uprawnienia. Bez tej opcji użyte zostaną znaczniki daty i godziny oraz uprawnienia określone przez wartość umask
+
+### mv - przenoszenie plików 
+
+Dla mv jest użycie opcji -b. W takim przypadku, jeśli w położeniu
+docelowym istnieje już plik o danej nazwie, to przed przeniesieniem nowego pliku nastąpi
+utworzenie kopii zapasowej już istniejącego
+
+### Przydatne !
+wydanie polecenia mv, cp lub rm z ukośnikiem
+na początku, np. \rm ogromny_katalog. Ukośnik powoduje użycie polecenia rm, a nie jego aliasu
+
+
+
+
+
+
 
 
 
