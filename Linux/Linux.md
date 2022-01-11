@@ -14,7 +14,7 @@
 
 ## System Linux 
 
-
+asdsd
 ## Skryptowanie 
 
 ## Zmienne specjalne
