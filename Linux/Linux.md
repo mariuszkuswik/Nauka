@@ -5,6 +5,7 @@
 1. [System](#system-linux)
 2. [Biblia](#Biblia)
     - [Uprawnienia](#Uprawnienia)
+        - [Umask](#Umask)
 2. [Skryptowanie](#skryptowanie)
 	- [Zmienne specjalne](#zmienne-specjalne)
 	- [Exitcode](#exitcode)
@@ -110,7 +111,7 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 - a - all 
 - u - user
 - g - group 
-- o - others 
+- o - others  
 
 - w - write 
 - r - read 
@@ -127,11 +128,40 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
     Nikt nie ma uprawnien, po wykonaniu rw-------  
     ```$ chmod u+rw plik```  
 
+    Wynikiem wykonania tego polecenia chmod będą uprawnienia r-xr-x---:
+    ```$ chmod ug+rx plik```
+
+# Ważne !
+
+**Użycie liter podczas rekurencyjnej zmiany uprawnień za pomocą polecenia chmod sprawdza się
+lepiej niż zastosowanie liczb do tego celu** , ponieważ bity można zmieniać wybiórczo zamiast
+wszystkich uprawnień jednocześnie. Załóżmy na przykład, że chcemy usunąć uprawnienia
+„pozostałych użytkowników” bez zmiany innych uprawnień zdefiniowanych dla plików
+i katalogów. W takim przypadku można wydać następujące polecenie:
+
+```$ chmod -R o-w $HOME/myapps```
+
+To polecenie powoduje rekurencyjne usunięcie uprawnień „pozostałych użytkowników” dla
+wszystkich plików i katalogów znajdujących się w katalogu myapps. Jeżeli do zdefiniowania
+uprawnień użylibyśmy liczby, np. 644, uprawnienie wykonywania zostałoby usunięte dla
+wszystkich katalogów. Liczba 755 oznaczałaby włączenie uprawnienia wykonywania także
+dla zwykłych plików. Opcja o-w umożliwia wyłączenie tylko jednego bitu i pozostawienie
+pozostałych bitów bez zmian.
 
 
+### Umask - Definiowanie uprawnień domyślnych 
+
+```umask``` - Wyświetla obecnie ustawiony umask 
+
+**Zmiana umask poleceniem umask zmienia to tylko tymczasowo !**
 
 
+Jeżeli wartość umask chcesz zmienić trwale, polecenie umask musisz dodać do pliku .bashrc
+znajdującego się w katalogu domowym (polecenie to umieść gdzieś na końcu pliku).
+Po następnym uruchomieniu powłoki wartość umask będzie odpowiadała zdefiniowanej
+w pliku .bashrc
 
+![Umask](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/umask_permissions.png)
 
 
 
