@@ -5,7 +5,7 @@
 1. [System](#system-linux)
 2. [Biblia](#Biblia)
     - [Uprawnienia](#Uprawnienia)
-        - [Umask](#Umask)
+        - [Umask](umask---definiowanie-uprawnień-domyślnych)
 2. [Skryptowanie](#skryptowanie)
 	- [Zmienne specjalne](#zmienne-specjalne)
 	- [Exitcode](#exitcode)
