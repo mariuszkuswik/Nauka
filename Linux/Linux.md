@@ -4,7 +4,7 @@
 # Spis treści
 1. [System](#system-linux)
 2. [Biblia](#Biblia)
-    - [Uprawnienia](##Uprawnienia)
+    - [Uprawnienia](#Uprawnienia)
 2. [Skryptowanie](#skryptowanie)
 	- [Zmienne specjalne](#zmienne-specjalne)
 	- [Exitcode](#exitcode)
