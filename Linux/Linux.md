@@ -80,6 +80,23 @@ Większość poleceń dostarczanych z Linuksem znajduje się w katalogach /bin, 
 Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne 
 
 
+## Uprawnienia 
+
+4 - read
+2 - write 
+1 - execute 
+
+### Plik 
+    - Read - Wyświetlenie zawartości pliku
+    - Write - Zmiana zawartości pliku, zmianajego nazwy lub usunięcie pliku
+    - Execute - Uruchomienie pliku jako programu
+
+### Katalog 
+    - Read - Wyświetlenie plików oraz podkatalogów danego katalogu
+    - Write - Dodawanie plików lub podkatalogów do danego katalogu, usunięcie plików lub katalogów z danego katalogu
+    - Execute - Wejście do katalogu, przeszukiwanie lub uruchomienie programu znajdującego się w nim, dostęp do metadanych pliku (wielkość, znaczniki czasu) dla wszystkich plików znajdujących się w tym katalogu
+
+
 
 
 
