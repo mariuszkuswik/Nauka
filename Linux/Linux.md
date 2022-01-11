@@ -6,6 +6,7 @@
 2. [Biblia](#Biblia)
     - [Uprawnienia](#Uprawnienia)
         - [Umask](#umask---definiowanie-uprawnień-domyślnych)
+        - [Chown](#chown---Zmiana-właściciela-pliku)
 2. [Skryptowanie](#skryptowanie)
 	- [Zmienne specjalne](#zmienne-specjalne)
 	- [Exitcode](#exitcode)
@@ -155,13 +156,29 @@ pozostałych bitów bez zmian.
 
 **Zmiana umask poleceniem umask zmienia to tylko tymczasowo !**
 
+- Tymczasowa zmiana 
+    ```umask 777``` 
 
-Jeżeli wartość umask chcesz zmienić trwale, polecenie umask musisz dodać do pliku .bashrc
-znajdującego się w katalogu domowym (polecenie to umieść gdzieś na końcu pliku).
-Po następnym uruchomieniu powłoki wartość umask będzie odpowiadała zdefiniowanej
-w pliku .bashrc
+- Stałą zmiana 
+    Jeżeli wartość umask chcesz zmienić trwale, polecenie umask musisz dodać do pliku .bashrc
+    znajdującego się w katalogu domowym (polecenie to umieść gdzieś na końcu pliku).
+    Po następnym uruchomieniu powłoki wartość umask będzie odpowiadała zdefiniowanej
+    w pliku **.bashrc** ( ```/etc/bashrc``` chcąc zmienić dla wszystkich użytkowników )
 
-![Umask](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/umask_permissions.png)
+
+**The pre-defined initial permissions for files and directories are 666 and 777 respectively.**
+Without any change in default umask permissions, all files created by user root will get 644 (666 - 022) permissions and all directories will get 755 (777-022) permissions.
+
+![Umask wyjaśnienie](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/umask_permissions.png)
+
+
+### chown - Zmiana właściciela pliku 
+
+Zmiana właściciela użytkownika i grupy na janek
+```chown janek:janek /home/janek/notatka.txt```
+
+Zmiana rekurencyjna właściciela i grupy dla katalogu  
+```chown -R janek:janek /media/myusb```
 
 
 
