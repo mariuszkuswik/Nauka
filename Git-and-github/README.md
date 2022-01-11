@@ -65,6 +65,9 @@ This documents contains some of the basic commands that you will need to get sta
 
 # Odpalenie nowego repo 
 
+### Dlaczego nie działa
+https://careerkarma.com/blog/git-fatal-could-not-read-from-remote-repository/
+
 1.  ```git init```
 ### #TODO sprawdzic jak ladniej opisac to dodanie wszystkich plikow  
 2. Dodanie wzystkich plikow : ```git add -A``` 
