@@ -208,6 +208,21 @@ tekst
 
 ### Vim 
 
+```ZZ``` - wyjście z zapisem 
+```:qw``` - wyjście z zapisem
+
+```ZQ``` - wyjście bez zapisywania 
+```:q!``` - wyjście bez zapisywania 
+
+```u``` - undo 
+```Ctrl+R``` - redo 
+
+
+```:!polecenie``` - wydanie polecenia do shella z poziomu vima
+```:!bash``` - otwiera nowego shella, **exit** wychodzi z shella i wraca do terminala 
+
+
+## Wyszukiwanie plików 
 
 
 
