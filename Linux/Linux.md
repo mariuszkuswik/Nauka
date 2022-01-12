@@ -224,7 +224,26 @@ tekst
 
 ## Wyszukiwanie plików 
 
+### Locate 
 
+Wyszukuje na podstawie nazw plików w swojej basie danych, jest przez to wydajniejszy,
+jeżeli nie masz uprawnień do danego pliku/folderu to nie zostanie on odnaleziony,  
+baza domyślnie jest odświeżana raz dziennie, odświeżanie manualne ```updatedb```
+
+- ```updatedb``` - odświeżenie bazy danych locate 
+
+- ```/etc/updatedb.conf``` - plik konfiguracyjny określający jakie pliki mają być ignorowane i nie dodawane do bazy, 
+domyślnie **locate** nie przeszukuje 
+    - plików z zewnętrznie zamontowanych dysków ( cifs, nfs ), 
+    - /tmp
+ 
+- ```locate -i``` - wyszukuje pliki niezależnie od wielkości liter
+
+### Find 
+
+
+
+### Grep 
 
 
 
