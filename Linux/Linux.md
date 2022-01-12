@@ -246,19 +246,19 @@ Przeprowadza wyszukiwanie w całym systemie plików, jest wolniejszy niż locate
 Po znalezieniu plików można na nich przeprowadzać pewne
 operacje (służy do tego opcja -exec lub -okay) przez wydanie żądanych poleceń.
 
-Wyświetlenie szczegółów na temat plików
+1. Wyświetlenie szczegółów na temat plików
 - ```find . -ls``` - przeszukuje obecny katalog, wyświetla szczegółowe informacje w formacie takim jak **ls -l** 
 
-Wyszukiwanie po nazwie 
+2. Wyszukiwanie po nazwie 
 - ```find . -name``` -  
 - ```find . -iname``` - 
 
-Wyszukiwanie pliku o danych wielkościach 
+3. Wyszukiwanie pliku o danych wielkościach 
 - ```$ find /usr/share/ -size +10M``` - wyszukuje pliki większe niż 10MB
 - ```$ find /mostlybig -size -1M``` - wyszukuje pliki mniejsze niż 1MB
 - ```$ find /bigdata -size +500M -size -5G -exec du -sh {} \;``` - - wyszukuje pliki większe niż 500MB i mniejsze niż 5GB, wykonuje na nich polecenie du 
 
-Wyszukiwanie plików na podstawie użytkowników i grup 
+4. Wyszukiwanie plików na podstawie użytkowników i grup 
 - ```$ find /home -user chris -ls``` - wyszukuje pliki należące do użytkownika chris 
 - ```find /home \( -user chris -or -user janek \) -ls``` - wyszukuje pliki należące do użytkownika chris lub janek  
 - ```find /etc -group ntp -ls``` - wyszukuje pliki należące do grupy ntp 
@@ -266,7 +266,7 @@ Wyszukiwanie plików na podstawie użytkowników i grup
 
 Do wyszukiwania za pomocą uprawnień służy ```-perm``` 
 
-### #TODO - Dopisać co dokładnie oznacza które, nie do końca to rozumiem 
+### #TODO - Dopisać co dokładnie oznacza które, nie do końca to rozumiem, strona w Biblii około 149
 **Brak znaku** 
 **Minus (-)** 
 **Slash (/)** 
@@ -278,8 +278,38 @@ Do wyszukiwania za pomocą uprawnień służy ```-perm```
 - ```$ find /myreadonly -perm /222 -type f```
 > 685035 0 -rw-rw-r-- 1 chris chris 0 Dec 30 16:34 /myreadonly/abc
 
-- ```$ find . -perm -002 -type f -ls```
+- ```$ find . -perm -002 -type f -ls``` - ustawienie typu jako file 
 > 266230 0 -rw-rw-rw- 1 chris chris 0 Dec 30 16:28 ./LINUX_BIBLE/abc 
+
+
+5. Wyszukiwanie plików na podstawie daty i godziny 
+
+- ```$ find /etc/ -mmin -10``` - Wyszukuje pliki zmodyfikowane w ciągu ostatnich 10 min 
+- ```$ find /bin /usr/bin /sbin /usr/sbin -ctime -3``` - File's  status was last changed n*24 hours ago.
+
+### #TODO - Dodać wyszukiwanie na podstawie czasu, strona w Bibilii 150 
+
+Jak widać na podstawie zaprezentowanych przykładów, masz możliwość wyszukiwania zmian
+w treści lub w metadanych, które zaszły w ciągu określonej liczby dni lub minut. Opcje
+dotyczące czasu (-atime, -ctime i -mtime) pozwalają wyszukiwać dane na podstawie podanej
+liczby dni, które upłynęły od chwili ostatniego dostępu do pliku, jego zmiany bądź modyfikacji
+jego metadanych. Opcje min (tzn. -amin, -cmin i -mmin) działają tak samo, ale dotyczą minut.
+Wartości podawane jako argumenty dla opcji min i time są poprzedzone znakiem minus
+(wskazującym, ile czasu należy odjąć od bieżącego dnia i godziny) lub znakiem plus
+(wskazującym, ile czasu należy dodać do bieżącego dnia i godziny). Bez znaku minus lub plus
+konieczne jest dokładne dopasowanie wartości
+
+
+6. Wyszukiwanie plików za pomocą not i or
+
+pliki należące do użytkownika janek, które nie zostały przypisane grupie janek:
+- ```$ find /var/allusers/ -user janek -not -group janek -ls```
+> 679972 0 -rw-r--r-- 1 janek sales 0 Dec 31 13:02 /var/allusers/one
+
+plik musi należeć do użytkownika janek, a ponadto jego wielkość nie może przekraczać 1 MB:
+- ```$ find /var/allusers/ -user janek -and -size +1M -ls```
+> 679977 1812 -rw-r--r-- 1 janek root 1854379 Dec 31 13:09 /var/allusers/dict.dat
+
 
 
 
