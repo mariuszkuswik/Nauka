@@ -99,7 +99,7 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
     - Write - Dodawanie plików lub podkatalogów do danego katalogu, usunięcie plików lub katalogów z danego katalogu
     - Execute - Wejście do katalogu, przeszukiwanie lub uruchomienie programu znajdującego się w nim, dostęp do metadanych pliku (wielkość, znaczniki czasu) dla wszystkich plików znajdujących się w tym katalogu
 
-## Uprawnienia liczbowe  
+### Uprawnienia liczbowe  
 
 - 4 - read
 - 2 - write 
@@ -132,7 +132,7 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
     Wynikiem wykonania tego polecenia chmod będą uprawnienia r-xr-x---:
     ```$ chmod ug+rx plik```
 
-# Ważne !
+## Ważne !
 
 **Użycie liter podczas rekurencyjnej zmiany uprawnień za pomocą polecenia chmod sprawdza się
 lepiej niż zastosowanie liczb do tego celu** , ponieważ bity można zmieniać wybiórczo zamiast
@@ -196,7 +196,23 @@ na początku, np. \rm ogromny_katalog. Ukośnik powoduje użycie polecenia rm, a
 
 
 
+## Praca z plikami tekstowymi 
 
+### Wpisywanie tekstu do pliku przy pomocy ```cat```
+cat << tekst > /tmp/yourfilehere
+These contents will be written to the file.
+        This line is indented.
+tekst
+
+### Vim 
+
+
+
+
+
+
+
+# Koniec Biblii
 
 
 
