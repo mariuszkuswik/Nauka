@@ -226,7 +226,8 @@ tekst
 
 ### Locate 
 
-Wyszukuje na podstawie nazw plików w swojej basie danych, jest przez to wydajniejszy,
+Wyszukuje na podstawie nazw w swojej bazie danych, jest przez to wydajniejszy,
+znajduje wszystkie pliki które zawierają podaną nazwę w swojej ścieżce,
 jeżeli nie masz uprawnień do danego pliku/folderu to nie zostanie on odnaleziony,  
 baza domyślnie jest odświeżana raz dziennie, odświeżanie manualne ```updatedb```
 
