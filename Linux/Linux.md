@@ -7,6 +7,8 @@
     - [Uprawnienia](#Uprawnienia)
         - [Umask](#umask---definiowanie-uprawnień-domyślnych)
         - [Chown](#chown---Zmiana-właściciela-pliku)
+    - [Praca z plikami tekstowymi](#Praca-z-plikami-tekstowymi)
+        - [Vim](#vim)
 2. [Skryptowanie](#skryptowanie)
 	- [Zmienne specjalne](#zmienne-specjalne)
 	- [Exitcode](#exitcode)
