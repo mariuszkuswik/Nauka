@@ -246,6 +246,7 @@ Przeprowadza wyszukiwanie w całym systemie plików, jest wolniejszy niż locate
 Po znalezieniu plików można na nich przeprowadzać pewne
 operacje (służy do tego opcja -exec lub -okay) przez wydanie żądanych poleceń.
 
+Wyświetlenie szczegółów na temat plików
 - ```find . -ls``` - przeszukuje obecny katalog, wyświetla szczegółowe informacje w formacie takim jak **ls -l** 
 
 Wyszukiwanie po nazwie 
@@ -257,6 +258,28 @@ Wyszukiwanie pliku o danych wielkościach
 - ```$ find /mostlybig -size -1M``` - wyszukuje pliki mniejsze niż 1MB
 - ```$ find /bigdata -size +500M -size -5G -exec du -sh {} \;``` - - wyszukuje pliki większe niż 500MB i mniejsze niż 5GB, wykonuje na nich polecenie du 
 
+Wyszukiwanie plików na podstawie użytkowników i grup 
+- ```$ find /home -user chris -ls``` - wyszukuje pliki należące do użytkownika chris 
+- ```find /home \( -user chris -or -user janek \) -ls``` - wyszukuje pliki należące do użytkownika chris lub janek  
+- ```find /etc -group ntp -ls``` - wyszukuje pliki należące do grupy ntp 
+- ```find /var/spool -not -user root -ls``` - wyszukuje pliki nie należące do użytkownika root 
+
+Do wyszukiwania za pomocą uprawnień służy ```-perm``` 
+
+### #TODO - Dopisać co dokładnie oznacza które, nie do końca to rozumiem 
+**Brak znaku** 
+**Minus (-)** 
+**Slash (/)** 
+
+
+- ```$ find /usr/bin -perm 755 -ls``` - dokładne dopasowanie 
+> 788884 28 -rwxr-xr-x 1 root root 28176 Mar 10 2014 /bin/echo
+
+- ```$ find /myreadonly -perm /222 -type f```
+> 685035 0 -rw-rw-r-- 1 chris chris 0 Dec 30 16:34 /myreadonly/abc
+
+- ```$ find . -perm -002 -type f -ls```
+> 266230 0 -rw-rw-rw- 1 chris chris 0 Dec 30 16:28 ./LINUX_BIBLE/abc 
 
 
 
