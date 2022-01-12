@@ -242,6 +242,22 @@ domyślnie **locate** nie przeszukuje
 
 ### Find 
 
+Przeprowadza wyszukiwanie w całym systemie plików, jest wolniejszy niż locate,
+Po znalezieniu plików można na nich przeprowadzać pewne
+operacje (służy do tego opcja -exec lub -okay) przez wydanie żądanych poleceń.
+
+- ```find . -ls``` - przeszukuje obecny katalog, wyświetla szczegółowe informacje w formacie takim jak **ls -l** 
+
+Wyszukiwanie po nazwie 
+- ```find . -name``` -  
+- ```find . -iname``` - 
+
+Wyszukiwanie pliku o danych wielkościach 
+- ```$ find /usr/share/ -size +10M``` - wyszukuje pliki większe niż 10MB
+- ```$ find /mostlybig -size -1M``` - wyszukuje pliki mniejsze niż 1MB
+- ```$ find /bigdata -size +500M -size -5G -exec du -sh {} \;``` - - wyszukuje pliki większe niż 500MB i mniejsze niż 5GB, wykonuje na nich polecenie du 
+
+
 
 
 ### Grep 
