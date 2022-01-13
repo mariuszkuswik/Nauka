@@ -74,13 +74,6 @@ systemowego polecenia ls i polecenia zdefiniowanego za pomocą aliasu.
 > ls is /usr/bin/ls
 
 
-### <code>locate</code>
-
-Dodać sensowny opis 
-
-
-
-
 
 
 ### Katalogi z komendami 
