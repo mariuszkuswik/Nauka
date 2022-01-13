@@ -308,11 +308,11 @@ konieczne jest dokładne dopasowanie wartości
 
 pliki należące do użytkownika janek, które nie zostały przypisane grupie janek:
 - ```$ find /var/allusers/ -user janek -not -group janek -ls```
-> 679972 0 -rw-r--r-- 1 janek sales 0 Dec 31 13:02 /var/allusers/one
+    > 679972 0 -rw-r--r-- 1 janek sales 0 Dec 31 13:02 /var/allusers/one
 
 plik musi należeć do użytkownika janek, a ponadto jego wielkość nie może przekraczać 1 MB:
 - ```$ find /var/allusers/ -user janek -and -size +1M -ls```
-> 679977 1812 -rw-r--r-- 1 janek root 1854379 Dec 31 13:09 /var/allusers/dict.dat
+    > 679977 1812 -rw-r--r-- 1 janek root 1854379 Dec 31 13:09 /var/allusers/dict.dat
 
 
 7. Wyszukiwanie plików i wykonywanie na nich poleceń
@@ -325,28 +325,28 @@ Każde polecenie musi zostać zakończone backslashem i średnikiem (\;)
 
 
 **Przykłady użycia :**  
-```$ find /etc -iname passwd -exec echo "Znaleziono plik {}" \;```
-> Znaleziono plik /etc/pam.d/passwd
-> Znaleziono plik /etc/passwd
+- ```$ find /etc -iname passwd -exec echo "Znaleziono plik {}" \;```
+    > Znaleziono plik /etc/pam.d/passwd
+    > Znaleziono plik /etc/passwd
 
-```$ find /usr/share -size +5M -exec du {} \; | sort -nr```
-> 116932 /usr/share/icons/HighContrast/icon-theme.cache
-> 69048 /usr/share/icons/gnome/icon-theme.cache
-> 20564 /usr/share/fonts/cjkuni-uming/uming.ttc
+- ```$ find /usr/share -size +5M -exec du {} \; | sort -nr```
+    > 116932 /usr/share/icons/HighContrast/icon-theme.cache
+    > 69048 /usr/share/icons/gnome/icon-theme.cache
+    > 20564 /usr/share/fonts/cjkuni-uming/uming.ttc
 
 
-```# find /var/allusers/ -user janek -ok mv {} /tmp/janek/ \;```
-> < mv ... /var/allusers/dict.dat > ? y
-> < mv ... /var/allusers/five > ? y
+- ```# find /var/allusers/ -user janek -ok mv {} /tmp/janek/ \;```
+    > < mv ... /var/allusers/dict.dat > ? y
+    > < mv ... /var/allusers/five > ? y
 
 ### Grep 
 
-```grep [opcja] [pattern] [plik]``` - wyszukuje patternu w podanych plikach 
+```grep [opcja] [pattern] [plik]``` - wyszukuje patternu w podanych plikach  
 
-```-i``` - małe/duże litery 
-```-R``` - wyszukiwanie rekurencyjne ( wewnątrz wszystkich folderów ) 
-```-v``` - wyszukuje wiersze które **nie zawierają** podanej frazy   
-```-l``` - wyśiwetla **nazwy plików** zawierających podaną frazę, bez wyświetlania zawartości  
+```-i``` - małe/duże litery   
+```-R``` - wyszukiwanie rekurencyjne ( wewnątrz wszystkich folderów )  
+```-v``` - wyszukuje wiersze które **nie zawierają** podanej frazy    
+```-l``` - wyśiwetla **nazwy plików** zawierających podaną frazę, bez wyświetlania zawartości   
 
 
 
