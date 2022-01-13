@@ -311,9 +311,44 @@ plik musi należeć do użytkownika janek, a ponadto jego wielkość nie może p
 > 679977 1812 -rw-r--r-- 1 janek root 1854379 Dec 31 13:09 /var/allusers/dict.dat
 
 
+7. Wyszukiwanie plików i wykonywanie na nich poleceń
 
+
+```$ find [opcje] -exec polecenie {} \;``` - **-exec** wykonuje polecenie dla wszystkich znalezionych plików  
+```$ find [opcje] -ok polecenie {} \;``` - **-ok** pyta przed wykonaniem każdego z poleceń 
+
+Każde polecenie musi zostać zakończone backslashem i średnikiem (\;)
+
+
+**Przykłady użycia :**  
+```$ find /etc -iname passwd -exec echo "Znaleziono plik {}" \;```
+> Znaleziono plik /etc/pam.d/passwd
+> Znaleziono plik /etc/passwd
+
+```$ find /usr/share -size +5M -exec du {} \; | sort -nr```
+> 116932 /usr/share/icons/HighContrast/icon-theme.cache
+> 69048 /usr/share/icons/gnome/icon-theme.cache
+> 20564 /usr/share/fonts/cjkuni-uming/uming.ttc
+
+
+```# find /var/allusers/ -user janek -ok mv {} /tmp/janek/ \;```
+> < mv ... /var/allusers/dict.dat > ? y
+> < mv ... /var/allusers/five > ? y
 
 ### Grep 
+
+```grep [opcja] [pattern] [plik]``` - wyszukuje patternu w podanych plikach 
+
+```-i``` - małe/duże litery 
+```-R``` - wyszukiwanie rekurencyjne ( wewnątrz wszystkich folderów ) 
+```-v``` - wyszukuje wiersze które **nie zawierają** podanej frazy   
+```-l``` - wyśiwetla **nazwy plików** zawierających podaną frazę, bez wyświetlania zawartości  
+
+
+
+
+
+
 
 
 
