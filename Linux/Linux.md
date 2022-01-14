@@ -349,6 +349,8 @@ Każde polecenie musi zostać zakończone backslashem i średnikiem (\;)
 
 ## Zarządzanie uruchomionymi procesami
 
+### ps
+
 ```ps aux``` - wyświetla wszystkie uruchomione procesy dla wszystkich użytkowników w systemie 
 ```-e``` - wyświetla wsyzystkie działające procesy 
 
@@ -356,7 +358,30 @@ Każde polecenie musi zostać zakończone backslashem i średnikiem (\;)
     - kolumny które mogą zostać wyświetlone = pid,user,uid,group,gid (group id),vsz (zaalokowana pamięć wirtualna),rss (faktycznie użyta
 pamięć operacyjna),comm (pełne polecenie, które zostało wydane)
 
-```sort=``` - sortowanie danych na podstawie podanej kolumny 
+```sort=[nazwa_kolumny]``` - sortowanie na podstawie podanej kolumny 
+```sort=-[nazwa_kolumny]``` - sortowanie odwrotne po nazwie kolumny 
+
+
+### top 
+
+```h``` - w oknie top w każdym momencie można użyć ```h``` - wyświetla to pomoc   
+  
+```M``` - sortowanie według ilości zajmowanej pamięci  
+```P``` - sortowanie według zużycia procesora ( domyślna opcja )
+```R``` - sortowanie w odwrotnej kolejności 
+  
+```1``` - wyświelta zużycie wszystkich procesorów ( jeżeli jest ich więcej )    
+```u``` - wyszkuje procesy otwarte przez podanego użytkownika   
+  
+   
+```r``` - renice procesu  
+```k``` - kill procesu 
+    **-9** - natychmiastowe zakończenie 
+    **-15** - eleganckie zakończenie 
+  
+  
+
+
 
 
 
