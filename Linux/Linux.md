@@ -349,7 +349,14 @@ Każde polecenie musi zostać zakończone backslashem i średnikiem (\;)
 
 ## Zarządzanie uruchomionymi procesami
 
-aa
+```ps aux``` - wyświetla wszystkie uruchomione procesy dla wszystkich użytkowników w systemie 
+```-e``` - wyświetla wsyzystkie działające procesy 
+
+```-o``` - pozwala na wybranie konkretnych kolumn 
+    - kolumny które mogą zostać wyświetlone = pid,user,uid,group,gid (group id),vsz (zaalokowana pamięć wirtualna),rss (faktycznie użyta
+pamięć operacyjna),comm (pełne polecenie, które zostało wydane)
+
+```sort=``` - sortowanie danych na podstawie podanej kolumny 
 
 
 
