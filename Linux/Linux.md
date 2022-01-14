@@ -296,6 +296,11 @@ Wartości podawane jako argumenty dla opcji min i time są poprzedzone znakiem m
 (wskazującym, ile czasu należy dodać do bieżącego dnia i godziny). Bez znaku minus lub plus
 konieczne jest dokładne dopasowanie wartości
 
+-atime n - File was last accessed n*24 hours ago.
+-ctime n - File's  status was last changed n*24 hours ago.
+-mtime n - File's data was last modified n*24 hours ago.
+
+
 
 6. Wyszukiwanie plików za pomocą not i or
 
@@ -342,9 +347,9 @@ Każde polecenie musi zostać zakończone backslashem i średnikiem (\;)
 ```-l``` - wyśiwetla **nazwy plików** zawierających podaną frazę, bez wyświetlania zawartości   
 
 
+## Zarządzanie uruchomionymi procesami
 
-
-
+aa
 
 
 
