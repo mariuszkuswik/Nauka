@@ -1,6 +1,9 @@
 
 # Linux/Bash
 
+# Obecna strona 163
+
+
 # Spis treści
 1. [System](#system-linux)
 2. [Biblia](#Biblia)
@@ -391,6 +394,13 @@ pamięć operacyjna),comm (pełne polecenie, które zostało wydane)
 15871 - numer procesu
 
 ```jobs``` - wyświetla wszytkie obecnie działające zadania 
+    - ```-l``` - wyświetla pid i status dla jobów 
+    - ```-p``` - wyświetla tylko pidy dla jobów  
+
+```$ fg %1``` - przenosi pierwsze zadanie z listy jobs **na pierwszy plan** 
+```$ bg %5``` - przenosi piąte zadanie z listy jobs **w tło**
+
+
 
 
 
