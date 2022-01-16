@@ -443,7 +443,7 @@ pamięć operacyjna),comm (pełne polecenie, które zostało wydane)
         <td>Kontynuowanie działania wcześniej wstrzymanego procesu</td>
         <td>Zatrzymanie procesu</td>
     </tr>
-    
+</table>
  
 
 
