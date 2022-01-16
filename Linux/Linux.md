@@ -385,7 +385,7 @@ pamięć operacyjna),comm (pełne polecenie, które zostało wydane)
     **-15** - eleganckie zakończenie 
   
   
-## Background and foreground processes 
+## Procesy w tle i na pierwszym planie 
 
 ```$ find /usr > /tmp/allusrfiles &``` - uruchamia proces w tle
     > [3] 15971
@@ -404,9 +404,21 @@ pamięć operacyjna),comm (pełne polecenie, które zostało wydane)
 
 ### Kończenie działania procesów 
 
+Do najczęściej używanych
+sygnałów z poziomu powłoki zaliczamy 
+
+- SIGKILL (9) - natychmiastowe zakończenie procesu 
+- SIGTERM (15) - eleganckie zakończenie procesu 
+- SIGHUP (1) - ponowne załadowanie plików konfiguracyjnych 
+
 **kill i kilall** mozna wykorzystywac do kończenia lub zmiany procesu, **np. nakazujący procesowi ponowne odczytanie plików konfiguracyjnych, wstrzymanie działania, kontynuowanie działania po wcześniejszym wstrzymaniu itd.**
 
 
+```$ killall -9 testme``` - kilall wysyła sygnał na podstawie nazwy proces
+
+
+### Tabela z syganłami dla procesów 
+### #TODO - tabela do poprawienia 
 <table>
     <tr>
         <th>Sygnał</th>
@@ -445,19 +457,28 @@ pamięć operacyjna),comm (pełne polecenie, które zostało wydane)
     </tr>
 </table>
  
+Zwróć uwagę na istnienie wielu liczb reprezentujących sygnały SIGCONT i SIGSTOP, ponieważ
+poszczególne architektury sprzętowe używają różnych liczb wskazujących na te sygnały.
+Na przykład architektury x86 i Power w większości przypadków wykorzystują wartość
+środkową. Pierwsza wartość zwykle sprawdza się na platformach Alpha i SPARC, podczas
+gdy ostatnia — w architekturze MIPS.
 
 
+### Definiowanie priorytetu procesu za pomocą poleceń nice i renice
 
-SIGHUP 1 Wykryto zerwanie połączenia z terminalem kontrolnym lub zamknięcie jego procesu
-SIGINT 2 Przerwanie z poziomu klawiatury
-SIGQUIT 3 Zakończenie działania zainicjowane z poziomu klawiatury
-SIGABRT 6 Sygnał przerwania z abort(3)
-SIGKILL 9 Natychmiastowe zakończenie działania
-SIGTERM 15 Sygnał zakończenia działania procesu
-SIGCONT 19, 18, 25 Kontynuowanie działania wcześniej wstrzymanego procesu
-SIGSTOP 17, 19, 23 Zatrzymanie procesu
+- Procesy mają wartości **-20 do 19, im niższa wartość tym proces ma wyższy priorytet**, domyślnie jest 0,
+- Zwykły użytkownik może przypisać większą wartość priorytetu, ale nie niższą. Dlatego jeśli użytkownik przypisze procesowi wartość 10 dla priorytetu, a później będzie
+chciał przywrócić poprzednią wartość priorytetu, np. 5, taka operacja zakończy się
+niepowodzeniem. Podobnie próba przypisania wartości ujemnej priorytetowi procesu
+również zakończy się niepowodzeniem.
+- Zwykły użytkownik może zmieniać priorytet jedynie własnym procesom.
 
 
+```# nice -n +5 updatedb &``` - uruchamia polecenie updatedb z wartością nice +5 i uruchomienie go w tle
+
+Potiwerdzenie zmiany nice procesu na 5 za pomocą polecenia **top** 
+> PID USER PR NI VIRT RES SHR S %CPU %MEM TIME+ COMMAND
+> 20284 root 25 5 98.7m 932 644 D 2.7 0.0 0:00.96 updatedb
 
 
 
