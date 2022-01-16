@@ -424,15 +424,26 @@ pamięć operacyjna),comm (pełne polecenie, które zostało wydane)
         <td>SIGSTOP</td>
     </tr>
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>6</td>
+        <td>9</td>
+        <td>15</td>
+        <td>19, 18, 25</td>
+        <td>17, 19, 23</td>
     </tr>
+    <tr>
+        <td>Wykryto zerwanie połączenia z terminalem kontrolnym lub zamknięcie jego procesu</td>
+        <td>Przerwanie z poziomu klawiatury</td>
+        <td>Zakończenie działania zainicjowane z poziomu klawiatury</td>
+        <td>Sygnał przerwania z abort(3)</td>
+        <td>Natychmiastowe zakończenie działania</td>
+        <td>Sygnał zakończenia działania procesu</td>
+        <td>Kontynuowanie działania wcześniej wstrzymanego procesu</td>
+        <td>Zatrzymanie procesu</td>
+    </tr>
+    
  
 
 
