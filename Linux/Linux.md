@@ -13,6 +13,8 @@
             - [Locate](#locate-1)
             - [Find](#find)
             - [Grep](#grep)
+    - [Praca z procesami](#Zarządzanie-uruchomionymi-procesami)
+        - [Background and foreground processes](#Background-and-foreground-processes )
 2. [Skryptowanie](#skryptowanie)
 	- [Zmienne specjalne](#zmienne-specjalne)
 	- [Exitcode](#exitcode)
@@ -380,6 +382,18 @@ pamięć operacyjna),comm (pełne polecenie, które zostało wydane)
     **-15** - eleganckie zakończenie 
   
   
+## Background and foreground processes 
+
+```$ find /usr > /tmp/allusrfiles &``` - uruchamia proces w tle
+    > [3] 15971
+
+[3] - numer zadania
+15871 - numer procesu
+
+```jobs``` - wyświetla wszytkie obecnie działające zadania 
+
+
+
 
 
 
