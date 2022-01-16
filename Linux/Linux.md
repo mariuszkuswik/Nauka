@@ -477,9 +477,9 @@ również zakończy się niepowodzeniem.
 
 ```# nice -n +5 updatedb &``` - **uruchamia polecenie updatedb z nice +5** i uruchomienie go w tle
 
-Potiwerdzenie zmiany nice procesu na 5 za pomocą polecenia **top** 
-> PID USER PR NI VIRT RES SHR S %CPU %MEM TIME+ COMMAND
-> 20284 root 25 5 98.7m 932 644 D 2.7 0.0 0:00.96 updatedb
+Potiwerdzenie zmiany nice procesu na 5 za pomocą polecenia **top**   
+> PID USER PR NI VIRT RES SHR S %CPU %MEM TIME+ COMMAND   
+> 20284 root 25 5 98.7m 932 644 D 2.7 0.0 0:00.96 updatedb   
 
 ```# renice -n -5 20284``` - **zmienia wartośc nice** polecenia updatedb na -5
 
