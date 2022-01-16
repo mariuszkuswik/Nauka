@@ -1,7 +1,8 @@
 
 # Linux/Bash
 
-# Obecna strona 163
+# Obecna strona 167 - do uzuępnienia czym jest cgroup. tylko mniej więcej, bez szczegółów,
+# Ćwiczenia po rozdziale do zrobienia 
 
 
 # Spis treści
@@ -486,7 +487,7 @@ Potiwerdzenie zmiany nice procesu na 5 za pomocą polecenia **top**
 ### Ograniczanie procesów za pomocą cgroup
 
 strona 167 - usupełnić informacje na temat cgroup, dopisać mniej więcej to czym jest, nie opisywać samych grup 
- 
+
 
 
 
