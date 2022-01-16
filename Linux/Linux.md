@@ -474,11 +474,19 @@ również zakończy się niepowodzeniem.
 - Zwykły użytkownik może zmieniać priorytet jedynie własnym procesom.
 
 
-```# nice -n +5 updatedb &``` - uruchamia polecenie updatedb z wartością nice +5 i uruchomienie go w tle
+```# nice -n +5 updatedb &``` - **uruchamia polecenie updatedb z nice +5** i uruchomienie go w tle
 
 Potiwerdzenie zmiany nice procesu na 5 za pomocą polecenia **top** 
 > PID USER PR NI VIRT RES SHR S %CPU %MEM TIME+ COMMAND
 > 20284 root 25 5 98.7m 932 644 D 2.7 0.0 0:00.96 updatedb
+
+```# renice -n -5 20284``` - **zmienia wartośc nice** polecenia updatedb na -5
+
+
+### Ograniczanie procesów za pomocą cgroup
+
+strona 167 - usupełnić informacje na temat cgroup, dopisać mniej więcej to czym jest, nie opisywać samych grup 
+ 
 
 
 
