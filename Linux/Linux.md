@@ -400,10 +400,51 @@ pamięć operacyjna),comm (pełne polecenie, które zostało wydane)
 ```$ fg %1``` - przenosi pierwsze zadanie z listy jobs **na pierwszy plan** 
 ```$ bg %5``` - przenosi piąte zadanie z listy jobs **w tło**
 
+## Zamykanie procesu i zmiana jego priorytetu
+
+### Kończenie działania procesów 
+
+**kill i kilall** mozna wykorzystywac do kończenia lub zmiany procesu, **np. nakazujący procesowi ponowne odczytanie plików konfiguracyjnych, wstrzymanie działania, kontynuowanie działania po wcześniejszym wstrzymaniu itd.**
+
+
+<table>
+    <tr>
+        <th>Sygnał</th>
+        <th>Liczba</th>
+        <th>Opis</th>
+    </tr>
+    <tr>
+        <td>SIGHUP</td>
+        <td>SIGINT</td>
+        <td>SIGQUIT</td>
+        <td>SIGABRT</td>
+        <td>SIGKILL</td>
+        <td>SIGTERM</td>
+        <td>SIGCONT</td>
+        <td>SIGSTOP</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+ 
 
 
 
-
+SIGHUP 1 Wykryto zerwanie połączenia z terminalem kontrolnym lub zamknięcie jego procesu
+SIGINT 2 Przerwanie z poziomu klawiatury
+SIGQUIT 3 Zakończenie działania zainicjowane z poziomu klawiatury
+SIGABRT 6 Sygnał przerwania z abort(3)
+SIGKILL 9 Natychmiastowe zakończenie działania
+SIGTERM 15 Sygnał zakończenia działania procesu
+SIGCONT 19, 18, 25 Kontynuowanie działania wcześniej wstrzymanego procesu
+SIGSTOP 17, 19, 23 Zatrzymanie procesu
 
 
 
