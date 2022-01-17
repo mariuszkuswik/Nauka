@@ -1,7 +1,7 @@
 
 # Linux/Bash
 
-# Obecna strona 167 - do uzuępnienia czym jest cgroup. tylko mniej więcej, bez szczegółów,
+# Obecna strona 177 - do uzuępnienia czym jest cgroup. tylko mniej więcej, bez szczegółów,
 # Ćwiczenia po rozdziale do zrobienia 
 
 # Odpowiedzi strona 797 
@@ -545,6 +545,23 @@ ${zmienna%%wzorzec} Usunięcie dłuższego dopasowania wzorca z końca wartości
 > Przykład
 > $ echo $THAT
 > Nieustawiona
+
+
+W poniższym przykładzie zmienna MOJANAZWAPLIKU otrzymuje wartość /home/janek/
+mojplik.txt. Następnie zmiennej PLIK zostaje przypisana wartość mojplik.txt, natomiast
+zmiennej KATALOG wartość /home/janek. W zmiennej NAZWA nazwa pliku zostaje skrócona
+do mojplik, a zmienna ROZSZERZENIE przechowuje wartość txt. (W celu wypróbowania
+przedstawionych tutaj przykładów należy je po prostu wpisać w powłoce, podobnie jak
+w przypadku poprzedniego przykładu. Następnie wartości zmiennych można wyświetlić
+za pomocą polecenia echo). Wpisz kod przedstawiony po lewej stronie; informacje
+zamieszczone po prawej stronie wyjaśniają sposób działania poszczególnych poleceń.
+MOJANAZWAPLIKU="/home/janek/mojplik.txt" # Zdefiniowanie wartości zmiennej
+
+> MOJANAZWAPLIKU
+> PLIK=${MOJANAZWAPLIKU##*/} # PLIK otrzymuje wartość "mojplik.txt"
+> KATALOG=${MOJANAZWAPLIKU%/*} # KATALOG otrzymuje wartość "/home/janek"
+> NAZWA=${PLIK%.*} # NAZWA otrzymuje wartość "mojplik"
+> ROZSZERZENIE=${PLIK##*.} # ROZSZERZENIE otrzymuje wartość "txt"
 
 
 
