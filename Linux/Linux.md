@@ -4,6 +4,8 @@
 # Obecna strona 167 - do uzuępnienia czym jest cgroup. tylko mniej więcej, bez szczegółów,
 # Ćwiczenia po rozdziale do zrobienia 
 
+# Odpowiedzi strona 797 
+
 
 # Spis treści
 1. [System](#system-linux)
@@ -358,7 +360,7 @@ Każde polecenie musi zostać zakończone backslashem i średnikiem (\;)
 ### ps
 
 ```ps aux``` - wyświetla wszystkie uruchomione procesy dla wszystkich użytkowników w systemie 
-```-e``` - wyświetla wsyzystkie działające procesy 
+```-ef``` - wyświetla wsyzystkie działające procesy 
 
 ```-o``` - pozwala na wybranie konkretnych kolumn 
     - kolumny które mogą zostać wyświetlone = pid,user,uid,group,gid (group id),vsz (zaalokowana pamięć wirtualna),rss (faktycznie użyta
