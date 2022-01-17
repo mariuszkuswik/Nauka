@@ -502,6 +502,51 @@ Na początku skryptu można umieścić polecenie set -x w celu wyświetlenia ka�
 
 ```$ set -x mojskrypt``` lub ```$ bash -x mojskrypt``` - wyświetla każdą wykonywana komendę ( **równwnież to co jest przypisane pod alias **)
 
+```nazwa_zmiennej=$(echo "test")``` - przypisanie komendy pod zmienną 
+```BILANS="$BiezacyBilans"``` - przypisanie zmiennej BILANS wartości zmiennej BiezacyBilans 
+
+```unset zmienna``` - zwolnienie zmiennej ```zmienna```
+
+
+## Zmienne specjalne
+
+- **$?** - wynik ostatniej komendy 
+_( najczesciej  0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )_
+- **$$** - numer procesu używanego przez komende
+- **!$** - ostatni użyty argument 
+- **$0** - nazwa programu 
+- **$1** - argumenty, zaczynaja sie od jednego, nie musi byc to jeden 
+- **$#** - Liczba podanych parametrów 
+- **$*** - Wszystkie parametry jako string 
+- **$@** - Podane parametry w postaci tablicy 
+
+```man bash``` - Pełna lista zmiennych specjalnych
+
+```read -p "Ile masz lat i wzrostu" wiek wzrost``` - Komenda wyświetla wiadomośc i zapisuje podane wartość do zmiennej **wiek** i **wzrost**   
+
+```$MIASTO``` jest skróconym zapisem ```${MIASTO}```
+
+
+### Przykłady przypisania zmiennych w powłoce bash 
+Konstrukcja Znaczenie
+${zmienna:-wartość} Jeżeli zmienna nie jest ustawiona bądź jest pusta, wówczas zostanie używa wartość.
+${zmienna#wzorzec} Usunięcie krótszego dopasowania wzorca z początku wartości zmiennej.
+${zmienna##wzorzec} Usunięcie dłuższego dopasowania wzorca z początku wartości zmiennej.
+${zmienna%wzorzec} Usunięcie krótszego dopasowania wzorca z końca wartości zmiennej.
+${zmienna%%wzorzec} Usunięcie dłuższego dopasowania wzorca z końca wartości zmiennej.
+
+
+**Przykłady użycia przypisać z tabeli powyżej** 
+
+> $ THIS="Przykład"
+> $ THIS=${THIS:-"Nieustawiona"}
+> $ THAT=${THAT:-"Nieustawiona"}
+> $ echo $THIS
+> Przykład
+> $ echo $THAT
+> Nieustawiona
+
+
 
 
 
@@ -514,21 +559,6 @@ Na początku skryptu można umieścić polecenie set -x w celu wyświetlenia ka�
 
 
 ## Skryptowanie 
-
-## Zmienne specjalne
-
-
-- **$?** - wynik ostatniej komendy 
-_( najczesciej  0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )_
-- **$$** - numer procesu używanego przez komende
-- **!$** - ostatni użyty argument 
-- **$0** - nazwa programu 
-- **$1** - argumenty, zaczynaja sie od jednego, nie musi byc to jeden 
-- **$#** - liczba argumentow 
-- **$*** - wszystkie argumenty jako string 
-- **$@** - argumenty w postaci tablicy 
-
-
 
 
 ### Exitcode
