@@ -360,7 +360,9 @@ Każde polecenie musi zostać zakończone backslashem i średnikiem (\;)
 ### ps
 
 ```ps aux``` - wyświetla wszystkie uruchomione procesy dla wszystkich użytkowników w systemie 
-```-ef``` - wyświetla wsyzystkie działające procesy 
+```-e``` - wyświetla wsyzystkie działające procesy 
+```-f``` - full-format, including command lines
+
 
 ```-o``` - pozwala na wybranie konkretnych kolumn 
     - kolumny które mogą zostać wyświetlone = pid,user,uid,group,gid (group id),vsz (zaalokowana pamięć wirtualna),rss (faktycznie użyta
