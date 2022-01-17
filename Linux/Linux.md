@@ -497,10 +497,12 @@ Potiwerdzenie zmiany nice procesu na 5 za pomocą polecenia **top**
 
 ## Skrypty powłoki 
 
-Na początku skryptu można umieścić polecenie set -x w celu wyświetlenia każdego
-polecenia wykonywanego przez skrypt. Alternatywnym rozwiązaniem jest uruchomienie
-skryptu w poniższy sposób:
-```$ bash -x mojskrypt```
+### Debugowanie
+Na początku skryptu można umieścić polecenie set -x w celu wyświetlenia każdego polecenia wykonywanego przez skrypt.
+
+```$ set -x mojskrypt``` lub ```$ bash -x mojskrypt``` - wyświetla każdą wykonywana komendę ( **równwnież to co jest przypisane pod alias **)
+
+
 
 
 
