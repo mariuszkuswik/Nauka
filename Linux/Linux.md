@@ -490,9 +490,17 @@ Potiwerdzenie zmiany nice procesu na 5 za pomocą polecenia **top**
 
 ### Ograniczanie procesów za pomocą cgroup
 
-strona 167 - usupełnić informacje na temat cgroup, dopisać mniej więcej to czym jest, nie opisywać samych grup 
+### #TODO - strona 167 - usupełnić informacje na temat cgroup, dopisać mniej więcej to czym jest, nie opisywać samych grup 
+
+### #TODO - szrobić ćwiczenia od nowa
 
 
+## Skrypty powłoki 
+
+Na początku skryptu można umieścić polecenie set -x w celu wyświetlenia każdego
+polecenia wykonywanego przez skrypt. Alternatywnym rozwiązaniem jest uruchomienie
+skryptu w poniższy sposób:
+```$ bash -x mojskrypt```
 
 
 
