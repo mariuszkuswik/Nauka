@@ -1,7 +1,7 @@
 
 # Linux/Bash
 
-# Obecna strona 197 - do uzuępnienia czym jest cgroup. tylko mniej więcej, bez szczegółów,
+# Obecna strona 199 - do uzuępnienia czym jest cgroup. tylko mniej więcej, bez szczegółów,
 # Ćwiczenia po rozdziale do zrobienia 
 
 # Odpowiedzi strona 797 
@@ -653,7 +653,9 @@ done
 
 ## Podstawowa administracja systemem Linux
 
+### root 
 
+Nadanie użytkownikowi uprawnień sudo odbywa się w pliku ```/etc/sudoers``` 
 
 
 
