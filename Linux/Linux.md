@@ -1,7 +1,7 @@
 
 # Linux/Bash
 
-# Obecna strona 177 - do uzuępnienia czym jest cgroup. tylko mniej więcej, bez szczegółów,
+# Obecna strona 196 - do uzuępnienia czym jest cgroup. tylko mniej więcej, bez szczegółów,
 # Ćwiczenia po rozdziale do zrobienia 
 
 # Odpowiedzi strona 797 
@@ -522,7 +522,17 @@ _( najczesciej  0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, n
 
 ```man bash``` - Pełna lista zmiennych specjalnych
 
+
+###  Odczytanie danych podanych przez użytkownika
+
+```read -s``` = secret, ukrywa znaki wpisywane przez użytkownika 
+```read -p``` <Tekst dla uzytkownika\> = prompt, tekst dla uzytkownika 
+
 ```read -p "Ile masz lat i wzrostu" wiek wzrost``` - Komenda wyświetla wiadomośc i zapisuje podane wartość do zmiennej **wiek** i **wzrost**   
+ 
+```bash
+read -s -p "Enter a password for the new user "$1": " USER_PASSWORD
+```
 
 ```$MIASTO``` jest skróconym zapisem ```${MIASTO}```
 
@@ -573,10 +583,79 @@ MOJANAZWAPLIKU="/home/janek/mojplik.txt" # Zdefiniowanie wartości zmiennej
 
 2. Polecenia if…then
 
-```ZMIENNA=1
+```bash
+ZMIENNA=1
 if [ $ZMIENNA -eq 1 ] ; then
 echo "Zmienna ma wartość 1"
-fi```
+fi
+```
+
+### Wszystkie instrukcje warunkowe 
+```man test``` - wszystkie instrukcje warunkowe 
+
+- ```=``` - Stringi są równe 
+- ```!=``` - Stringi są różne 
+
+- ```-eq``` - Liczby są równe
+
+
+elif - else if  
+```bash 
+if [ -f "$nazwapliku" ] ; then
+echo "$nazwapliku to zwykły plik"
+elif [ -d "$nazwapliku" ] ; then
+echo "$nazwapliku to katalog"
+else
+echo "Nie mam pojęcia, czym jest $nazwapliku"
+fi
+```
+
+Domlyślnie if zwraca 0 lub 1, podobnie jak wykonywany program, **0 oznacza prawdę**
+
+
+- ```&&``` - jeżeli polecenie **wykonało się** poprawnie to wykonuje następne
+- ```||``` - jeżeli polecenie **nie wykonało się** poprawnie to wykonuje następne 
+
+```bash
+nazwakatalogu=mojkatalog
+[ -e $nazwakatalogu ] && echo $nazwakatalogu już istnieje || mkdir $nazwakatalogu
+```
+
+
+3. Case
+### #TODO - case - opisać jakoś sensownie strona 180
+
+
+4. Pętla for…do
+
+Konstrukcja pętli for
+
+```bash
+for ZMIENNA in LISTA
+do
+{ polecenia }
+done
+```
+
+5. Pętle while…do i until…do
+
+### #TODO - strona 182 - może coś opisać 
+
+
+6. Przydatne programy 
+
+### #TODO - sed - dodać opis, strona 183
+
+# #TODO - Strona 186 - ćwiczenia do rozdziału, do zrobienia 
+
+
+# Administracja systemem Linux
+
+## Podstawowa administracja systemem Linux
+
+
+
+
 
 
 
@@ -623,13 +702,7 @@ fi
 
 ```
 
-###  Odczytanie danych podanych przez użytkownika
-* -s = secret, ukrywa znaki wpisywane przez użytkownika 
-* -p <Tekst dla uzytkownika\> = prompt, tekst dla uzytkownika 
- 
-```bash
-read -s -p "Enter a password for the new user "$1": " USER_PASSWORD
-```
+
 
 ## Funkcje 
 Return - Zwraca wartos funkcji
