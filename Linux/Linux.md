@@ -1,7 +1,7 @@
 
 # Linux/Bash
 
-# Obecna strona 196 - do uzuępnienia czym jest cgroup. tylko mniej więcej, bez szczegółów,
+# Obecna strona 197 - do uzuępnienia czym jest cgroup. tylko mniej więcej, bez szczegółów,
 # Ćwiczenia po rozdziale do zrobienia 
 
 # Odpowiedzi strona 797 
