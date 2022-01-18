@@ -564,6 +564,21 @@ MOJANAZWAPLIKU="/home/janek/mojplik.txt" # Zdefiniowanie wartości zmiennej
 > ROZSZERZENIE=${PLIK##*.} # ROZSZERZENIE otrzymuje wartość "txt"
 
 
+1. Inkrementacja
+
+```$ I=0```
+```$ echo Wartość po inkrementacji wynosi $((++I))```
+> Wartość  po inkrementacji wynosi 1
+
+
+2. Polecenia if…then
+
+```ZMIENNA=1
+if [ $ZMIENNA -eq 1 ] ; then
+echo "Zmienna ma wartość 1"
+fi```
+
+
 
 
 
