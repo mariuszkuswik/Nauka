@@ -567,11 +567,11 @@ za pomocą polecenia echo). Wpisz kod przedstawiony po lewej stronie; informacje
 zamieszczone po prawej stronie wyjaśniają sposób działania poszczególnych poleceń.
 MOJANAZWAPLIKU="/home/janek/mojplik.txt" # Zdefiniowanie wartości zmiennej
 
-> MOJANAZWAPLIKU
-> PLIK=${MOJANAZWAPLIKU##*/} # PLIK otrzymuje wartość "mojplik.txt"
-> KATALOG=${MOJANAZWAPLIKU%/*} # KATALOG otrzymuje wartość "/home/janek"
-> NAZWA=${PLIK%.*} # NAZWA otrzymuje wartość "mojplik"
-> ROZSZERZENIE=${PLIK##*.} # ROZSZERZENIE otrzymuje wartość "txt"
+> MOJANAZWAPLIKU  
+> PLIK=${MOJANAZWAPLIKU##*/} # PLIK otrzymuje wartość "mojplik.txt"  
+> KATALOG=${MOJANAZWAPLIKU%/*} # KATALOG otrzymuje wartość "/home/janek"  
+> NAZWA=${PLIK%.*} # NAZWA otrzymuje wartość "mojplik"  
+> ROZSZERZENIE=${PLIK##*.} # ROZSZERZENIE otrzymuje wartość "txt"  
 
 
 1. Inkrementacja
