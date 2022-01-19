@@ -116,14 +116,14 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 
 ### Uprawnienia tekstowe 
 
-- a - all 
+- a - all
 - u - user
-- g - group 
-- o - others  
+- g - group
+- o - others
 
-- w - write 
-- r - read 
-- x - execute 
+- w - write
+- r - read
+- x - execute
 
 
 - Nadawanie uprawnien tekstowo, poczatkowo do pliku wszyscy maja pelne uprawnienia  
