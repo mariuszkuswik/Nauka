@@ -653,9 +653,13 @@ done
 
 ## Podstawowa administracja systemem Linux
 
-### root 
+### sudo/root 
 
-Nadanie użytkownikowi uprawnień sudo odbywa się w pliku ```/etc/sudoers``` 
+```/etc/sudoers``` - Plik w którym nadawane są uprawnienia sudo 
+
+```janek ALL=(ALL) ALL``` - Nadanie użutkownikowi pełnych uprawnień sudo w pluki **sudoers**
+
+Domyślnie sudo działa bez wpisywania hasła przez 5 minut, zmiany można dokonać w **/etc/sudoers** edytując wartość zmiennej **passwd_timeout**
 
 
 
