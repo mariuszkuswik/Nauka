@@ -754,9 +754,8 @@ Przykłady najczęściej spotykanych plików :
 - ```secure``` — zawiera komunikaty związane z kwestiami bezpieczeństwa, na przykład dotyczące logowania i innych zadań związanych z uwierzytelnianiem użytkowników.
 
 
-
-
-
+### Sprawdzanie i konfigurowanie sprzętu
+# Strona 207 
 
 
 
