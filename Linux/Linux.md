@@ -612,6 +612,14 @@ fi
 
 Domlyślnie if zwraca 0 lub 1, podobnie jak wykonywany program, **0 oznacza prawdę**
 
+### Exitcode
+**Dodawanie innych exit kodow pomaga uzytkownikom**
+* Exitcode wieksze niz 0 mozemy definiowac sami 
+* Exitcode 0 - kod wykonany prawidlowo 
+* Exitcode 1 i kazdy wiekszy - kod wykonany z bledem 
+
+np. ```exit 141```
+
 
 - ```&&``` - jeżeli polecenie **wykonało się** poprawnie to wykonuje następne
 - ```||``` - jeżeli polecenie **nie wykonało się** poprawnie to wykonuje następne 
@@ -693,7 +701,7 @@ są definiowane przez drugi bądź trzeci zbiór bitów rwx (read, write, execut
 gshadow Zawiera zaszyfrowane hasła grup
 
 
-### Używanie polecenia journalctl do przeglądania dziennika zdarzeń systemd
+### journalctl, przeglądania dziennika zdarzeń systemd
 
 Proces uruchamiania komputera, jądro oraz wszystkie usługi zarządzane przez systemd kierują swoje komunikaty stanu i błędów bezpośrednio do dziennika systemd.
 
@@ -714,6 +722,7 @@ journalctl -k
 
 - Wszystkie komunikaty 
 ```journalctl``` - wywoływane bez opcji pozwala przejrzeć wszystkie komunikaty zapisane w dzienniku systemd
+```journalctl -a``` - Wyświetla wszystkie kolumny
 
 - Bootowanie
 ```journalctl --list-boots``` - wyświetla identyfikatory rozruchu dla każdej operacji uruchomienia systemu i czas w któym nastąpiły
@@ -729,7 +738,7 @@ journalctl -k
 ```journalctl PRIORITY=0``` - Komunikaty powiązane z określonym poziomem rejestrowania danych, dla opcji **PRIORITY=** przypisujemy wartość z przedziału od 0 do 7, 0 to komunikaty krytyczne 
 
 
-
+### rsyslogd 
 
 
 # Koniec Biblii
@@ -740,14 +749,6 @@ journalctl -k
 
 ## Skryptowanie 
 
-
-### Exitcode
-**Dodawanie innych exit kodow pomaga uzytkownikom**
-* Exitcode wieksze niz 0 mozemy definiowac sami 
-* Exitcode 0 - kod wykonany prawidlowo 
-* Exitcode 1 i kazdy wiekszy - kod wykonany z bledem 
-
- 
 
 **Do poprawienia**
 - Dodać jakąs informację na temat **elif** 
