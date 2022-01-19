@@ -121,6 +121,7 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 - g - group
 - o - others&nbsp;
     
+    
 - w - write
 - r - read
 - x - execute
