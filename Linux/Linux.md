@@ -8,6 +8,8 @@
 
 
 # Spis treści
+[Koniec Biblii](#Koniec-biblii)
+
 1. [System](#system-linux)
 2. [Biblia](#Biblia)
     - [Uprawnienia](#Uprawnienia)
@@ -121,7 +123,7 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 - g - group
 - o - others
   
-  
+
 - w - write
 - r - read
 - x - execute
