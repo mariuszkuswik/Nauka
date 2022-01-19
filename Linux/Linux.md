@@ -741,6 +741,9 @@ journalctl -k
 ### rsyslogd 
 
 
+
+
+
 # Koniec Biblii
 
 
@@ -951,7 +954,7 @@ Systemctl - opisać
 
 Sprawdź czy maszyna na której jesteś jest maszyną wirtualną 
 
-
+```lspci``` - można to powiedzieć na podstawie procesora 
 	
 	
 	
@@ -985,8 +988,6 @@ Skrót BASH pochodzi od "Bourne Again SHell". Twórcą tego rozwiązania jest St
 Najważniejsza część systemów operacyjnych z rodziny Linux / Unix. Pierwsze wydanie miało miejsce w 26 sierpnia 1991 roku. Jest to oprogramowanie systemowe niskiego poziomu. Jądro linux odpowiada za komunikacje ze sprzętem oraz wykonywanie operacji na pamięci operacyjnej. Służy za pośrednika (warstwa jądra) pomiędzy użytkownikiem (warstwa użytkownika), który uruchamia swoje programy a fizycznymi urządzeniami wchodzącymi w skład danej maszyny. 
 
 
-# Sieci 
-
 
 
 ### Które porty są otwarte 
@@ -996,4 +997,4 @@ Najważniejsza część systemów operacyjnych z rodziny Linux / Unix. Pierwsze 
 
 
 
-[Idz na górę](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#linuxbash) 
+[Idz na górę](#linuxbash) 
