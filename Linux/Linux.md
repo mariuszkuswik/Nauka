@@ -716,8 +716,10 @@ journalctl -k
 ```journalctl --list-boots``` - wyświetla identyfikatory rozruchu dla każdej operacji uruchomienia systemu i czas w któym nastąpiły
 
 ### #TODO - do sprawdzenia czy dobrze zapisane są komendy
-```journalctl -b [ID lub numer bootowania]``` - wyświetla informacje dotyczące określonej operacji uruchomienia systemu
-### TODO - do poprawienia komenda ```journalctl -b [ID lub numer bootowania]``` - Natomiast w celu wyświetlania jedynie komunikatów jądra użyj opcji -k. 
+```journalctl -b [ID bootowania]``` - wyświetla informacje dotyczące określonej operacji uruchomienia systemu
+```journalctl -k``` - Wyświetlenie jedynie komunikatów jądra 
+
+
 
 # Koniec Biblii
 
