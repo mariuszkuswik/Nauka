@@ -109,8 +109,8 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 ### Uprawnienia liczbowe  
 
 - 4 - read
-- 2 - write
-- 1 - execute
+- 2 - write 
+- 1 - execute 
 
 ```chmod -R 755 $HOME/myapps``` - zmiana uprawnien rekurencyjnie dla calego katalogu 
 
@@ -119,9 +119,8 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 - a - all
 - u - user
 - g - group
-- o - others  
-     
-     
+- o - others
+
 - w - write
 - r - read
 - x - execute
@@ -157,7 +156,7 @@ wszystkich katalogów. Liczba 755 oznaczałaby włączenie uprawnienia wykonywan
 dla zwykłych plików. Opcja o-w umożliwia wyłączenie tylko jednego bitu i pozostawienie
 pozostałych bitów bez zmian.
 
-
+   
 ### Umask - Definiowanie uprawnień domyślnych 
 
 ```umask``` - Wyświetla obecnie ustawiony umask 
