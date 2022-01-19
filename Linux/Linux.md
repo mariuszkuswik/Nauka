@@ -662,7 +662,16 @@ done
 Domyślnie sudo działa bez wpisywania hasła przez 5 minut, zmiany można dokonać w **/etc/sudoers** edytując wartość zmiennej **passwd_timeout**
 
 
+### Pliki konfiguracyjne
 
+- ```$HOME``` - osobiste pliki konfiguracyjne
+
+- ```/etc``` - pliki konfiguracyjne które wpływają na cały system
+    - ```/etc/httpd``` — katalog zawiera różne pliki służące do konfiguracji zachowania serwera
+    WWW Apache
+    - ```/etc/mail``` — pliki konfigurujące usługę poczty elektronicznej (sendmail).
+    - ```/etc/postfix``` — pliki konfiguracyjne agenta transportu poczty elektronicznej (postfix)
+    - ```/etc/cups``` — katalog zawiera pliki używane do konfiguracji usługi drukowania CUPS.
 
 
 
