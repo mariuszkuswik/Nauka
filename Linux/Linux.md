@@ -712,12 +712,23 @@ journalctl -b 488e152a3e2b4f6bb86be366c55264e7
 journalctl -k
 ```
 
+- Wszystkie komunikaty 
 ```journalctl``` - wywoływane bez opcji pozwala przejrzeć wszystkie komunikaty zapisane w dzienniku systemd
-```journalctl --list-boots``` - wyświetla identyfikatory rozruchu dla każdej operacji uruchomienia systemu i czas w któym nastąpiły
 
-### #TODO - do sprawdzenia czy dobrze zapisane są komendy
+- Bootowanie
+```journalctl --list-boots``` - wyświetla identyfikatory rozruchu dla każdej operacji uruchomienia systemu i czas w któym nastąpiły
 ```journalctl -b [ID bootowania]``` - wyświetla informacje dotyczące określonej operacji uruchomienia systemu
+
+- Komunikaty jądra 
 ```journalctl -k``` - Wyświetlenie jedynie komunikatów jądra 
+
+- Konkretna usługa 
+```journalctl _SYSTEMD_UNIT=sshd.service``` - Opcje _SYSTEMD_UNIT= umożliwiają wyświetlenie komunikatów dla konkretnych usług (tutaj jest to sshd) albo dla innego pliku systemd (np. inna usługa lub punkt montowania).
+
+- Priorytet komunikatów 
+```journalctl PRIORITY=0``` - Komunikaty powiązane z określonym poziomem rejestrowania danych, dla opcji **PRIORITY=** przypisujemy wartość z przedziału od 0 do 7, 0 to komunikaty krytyczne 
+
+
 
 
 
