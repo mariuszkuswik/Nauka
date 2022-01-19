@@ -119,7 +119,7 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 - a - all
 - u - user
 - g - group
-- o - others
+- o - others\
     
 - w - write
 - r - read
