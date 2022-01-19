@@ -693,12 +693,31 @@ są definiowane przez drugi bądź trzeci zbiór bitów rwx (read, write, execut
 gshadow Zawiera zaszyfrowane hasła grup
 
 
+### Używanie polecenia journalctl do przeglądania dziennika zdarzeń systemd
 
+Proces uruchamiania komputera, jądro oraz wszystkie usługi zarządzane przez systemd kierują swoje komunikaty stanu i błędów bezpośrednio do dziennika systemd.
 
+Przykłady użycia polecenia ```journalctl``` :
 
+```bash
+journalctl
+journalctl --list-boots | head
+```
+> -2 93bdb6164... Sat 2020-01-04 21:07:28 EST—Sat 2020-01-04 21:19:37 EST
+> -1 7336cb823... Sun 2020-01-05 10:38:27 EST—Mon 2020-01-06 09:29:09 EST
+> 0 eaebac25f... Sat 2020-01-18 14:11:41 EST—Sat 2020-01-18 16:03:37 EST
 
+```bash
+journalctl -b 488e152a3e2b4f6bb86be366c55264e7
+journalctl -k
+```
 
+```journalctl``` - wywoływane bez opcji pozwala przejrzeć wszystkie komunikaty zapisane w dzienniku systemd
+```journalctl --list-boots``` - wyświetla identyfikatory rozruchu dla każdej operacji uruchomienia systemu i czas w któym nastąpiły
 
+### #TODO - do sprawdzenia czy dobrze zapisane są komendy
+```journalctl -b [ID lub numer bootowania]``` - wyświetla informacje dotyczące określonej operacji uruchomienia systemu
+### TODO - do poprawienia komenda ```journalctl -b [ID lub numer bootowania]``` - Natomiast w celu wyświetlania jedynie komunikatów jądra użyj opcji -k. 
 
 # Koniec Biblii
 
