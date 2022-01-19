@@ -102,9 +102,9 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 
 ### Katalog 
 
-    - Read - Wyświetlenie plików oraz podkatalogów danego katalogu
-    - Write - Dodawanie plików lub podkatalogów do danego katalogu, usunięcie plików lub katalogów z danego katalogu
-    - Execute - Wejście do katalogu, przeszukiwanie lub uruchomienie programu znajdującego się w nim, dostęp do metadanych pliku (wielkość, znaczniki czasu) dla wszystkich plików znajdujących się w tym katalogu
+- Read - Wyświetlenie plików oraz podkatalogów danego katalogu
+- Write - Dodawanie plików lub podkatalogów do danego katalogu, usunięcie plików lub katalogów z danego katalogu
+- Execute - Wejście do katalogu, przeszukiwanie lub uruchomienie programu znajdującego się w nim, dostęp do metadanych pliku (wielkość, znaczniki czasu) dla wszystkich plików znajdujących się w tym katalogu
 
 ### Uprawnienia liczbowe  
 
