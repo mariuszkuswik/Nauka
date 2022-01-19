@@ -675,6 +675,28 @@ Domyślnie sudo działa bez wpisywania hasła przez 5 minut, zmiany można dokon
 
 
 
+### #TODO - Strona 203 - katalogi do uzupełnienia, przerobić na tabelę 
+Wybrane spośród najbardziej interesujących plików konfiguracyjnych w katalogu /etc
+
+Plik Opis  
+bashrc Ustawienia konfiguracyjne powłoki bash, których zasięg obejmuje cały system. (W niektórych dystrybucjach Linuksa
+plik nosi nazwę bash.bashrc).
+crontab Ustawienie godzin uruchamiania zautomatyzowanych zadań oraz zmiennych powiązanych ze środowiskiem cron
+(na przykład SHELL i PATH).
+exports Plik zawiera listę katalogów lokalnych dostępnych do współdzielenia ze zdalnymi komputerami za pomocą
+Network File System (NFS).
+fstab Identyfikacja najczęściej stosowanych urządzeń magazynujących dane (dysk twardy, napędy DVD i CD-ROM itd.) oraz
+miejsc zamontowania ich w systemie Linux. Plik jest używany przez polecenie mount do wyboru systemów plików
+montowanych podczas uruchamiania komputera.
+group Identyfikacja nazw oraz identyfikatorów grup (GID), które zostały zdefiniowane w systemie. Uprawnienia grup w Linuksie
+są definiowane przez drugi bądź trzeci zbiór bitów rwx (read, write, execute) powiązanych z każdym plikiem i katalogiem.
+gshadow Zawiera zaszyfrowane hasła grup
+
+
+
+
+
+
 
 
 
