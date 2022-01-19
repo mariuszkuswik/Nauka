@@ -726,6 +726,7 @@ journalctl -k
 - Wszystkie komunikaty  
 ```journalctl``` - wywoływane bez opcji pozwala przejrzeć wszystkie komunikaty zapisane w dzienniku systemd
 ```journalctl -a``` - Wyświetla wszystkie kolumny
+```journalctl -f``` - wyświetlanie journalctl na bierząco
 
 - Bootowanie  
 ```journalctl --list-boots``` - wyświetla identyfikatory rozruchu dla każdej operacji uruchomienia systemu i czas w któym nastąpiły
@@ -754,8 +755,12 @@ Przykłady najczęściej spotykanych plików :
 - ```secure``` — zawiera komunikaty związane z kwestiami bezpieczeństwa, na przykład dotyczące logowania i innych zadań związanych z uwierzytelnianiem użytkowników.
 
 
-### Sprawdzanie i konfigurowanie sprzętu
-# Strona 207 
+### Sprawdzanie komponentów komputera
+
+- lspci 
+
+
+# Strona 208 - dmesg do opisania 
 
 
 
