@@ -96,9 +96,9 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 
 ### Plik 
 
-    - Read - Wyświetlenie zawartości pliku
-    - Write - Zmiana zawartości pliku, zmianajego nazwy lub usunięcie pliku
-    - Execute - Uruchomienie pliku jako programu
+- Read - Wyświetlenie zawartości pliku
+- Write - Zmiana zawartości pliku, zmianajego nazwy lub usunięcie pliku
+- Execute - Uruchomienie pliku jako programu
 
 ### Katalog 
 
