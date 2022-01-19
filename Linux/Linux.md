@@ -723,32 +723,50 @@ journalctl -b 488e152a3e2b4f6bb86be366c55264e7
 journalctl -k
 ```
 
-- Wszystkie komunikaty 
+- Wszystkie komunikaty  
 ```journalctl``` - wywoływane bez opcji pozwala przejrzeć wszystkie komunikaty zapisane w dzienniku systemd
 ```journalctl -a``` - Wyświetla wszystkie kolumny
 
-- Bootowanie
+- Bootowanie  
 ```journalctl --list-boots``` - wyświetla identyfikatory rozruchu dla każdej operacji uruchomienia systemu i czas w któym nastąpiły
 ```journalctl -b [ID bootowania]``` - wyświetla informacje dotyczące określonej operacji uruchomienia systemu
 
-- Komunikaty jądra 
+- Komunikaty jądra   
 ```journalctl -k``` - Wyświetlenie jedynie komunikatów jądra 
 
-- Konkretna usługa 
+- Konkretna usługa   
 ```journalctl _SYSTEMD_UNIT=sshd.service``` - Opcje _SYSTEMD_UNIT= umożliwiają wyświetlenie komunikatów dla konkretnych usług (tutaj jest to sshd) albo dla innego pliku systemd (np. inna usługa lub punkt montowania).
 
-- Priorytet komunikatów 
+- Priorytet komunikatów   
 ```journalctl PRIORITY=0``` - Komunikaty powiązane z określonym poziomem rejestrowania danych, dla opcji **PRIORITY=** przypisujemy wartość z przedziału od 0 do 7, 0 to komunikaty krytyczne 
 
 
 ### rsyslogd 
+
+**rsyslogd** - odpowiadaa za zbieranie komunikatów oraz kierowanie ich do plików dzienników zdarzeń lub zdalnych hostów rejestrowania danych. 
+Zapisuje informacje w pliku **/etc/rsyslog.conf**. 
+Komunikaty są zazwyczaj kierowane do plików dzienników zdarzeń, które zwykle znajdują się w katalogu /var/log, choć w celu zapewnienia bezpieczeństwa nie zawsze tak jest, 
+
+Przykłady najczęściej spotykanych plików : 
+
+- ```boot.log``` — zawiera komunikaty generowane w trakcie uruchamiania usług podczas startu systemu.
+- ```messages``` — zawiera wiele ogólnych informacji o systemie.
+- ```secure``` — zawiera komunikaty związane z kwestiami bezpieczeństwa, na przykład dotyczące logowania i innych zadań związanych z uwierzytelnianiem użytkowników.
+
+
+
+
+
+
+
+
 
 
 
 
 
 # Koniec Biblii
-
+[Go Top](#Linux/Bash)
 
 
 
