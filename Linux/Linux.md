@@ -757,6 +757,7 @@ Przykłady najczęściej spotykanych plików :
 
 ### Sprawdzanie komponentów komputera
 
+### #TODO - # Strona 208 - dmesg do opisania 
 - ```dmesg``` - wyświetla obecną wersję jądra, print or control the kernel ring buffer
 
 - ```lspci``` - wyświetla listę szyn PCI w komputerze i podłączone do nich urządzenia.
@@ -775,7 +776,7 @@ na wersji jądra. Na przykład jeśli jądro jest w wersji 5.3.8-200.fc30.x86_64
 będą się znajdowały w katalogu /lib/modules/5.3.8-200.fc30.x86_64.
 
 
-- ```lsmod``` - wyświetla listę aktualnie wczytanych modułów do jądra
+- ```lsmod``` - wyświetla listę aktualnie wczytanych modułów jądra
 
 - ```modinfo``` - wyświetla informacje o dowolnym z wczytanych modułów 
     - ```modinfo -d e1000``` - opis modułu e1000 (moduł do obsługi karty sieciowej)
@@ -785,8 +786,12 @@ będą się znajdowały w katalogu /lib/modules/5.3.8-200.fc30.x86_64.
     - ```modinfo -n e1000``` - katalog zawierający  
         > /lib/modules/4.18.0-348.7.1.el8_5.x86_64/kernel/drivers/net/ethernet/intel/e1000/e1000.ko.xz
 
+### Wczytywanie modułów
 
-# Strona 208 - dmesg do opisania 
+
+
+
+
 
 
 
