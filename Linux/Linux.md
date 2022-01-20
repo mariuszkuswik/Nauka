@@ -789,7 +789,7 @@ będą się znajdowały w katalogu /lib/modules/5.3.8-200.fc30.x86_64.
 ### Wczytywanie modułów
 
 
-
+# Strona 213
 
 
 
