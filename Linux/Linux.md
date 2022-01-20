@@ -757,7 +757,7 @@ Przykłady najczęściej spotykanych plików :
 
 ### Sprawdzanie komponentów komputera
 
-- ```dmesg``` - print or control the kernel ring buffer
+- ```dmesg``` - wyświetla obecną wersję jądra, print or control the kernel ring buffer
 
 - ```lspci``` - wyświetla listę szyn PCI w komputerze i podłączone do nich urządzenia.
     - ```lspci -v``` lub ```lspci -vvv``` - dodanie jednego **v** lub więcej **v** wyświetla więcej informacji szczegółowych
@@ -768,8 +768,22 @@ Przykłady najczęściej spotykanych plików :
 - ```lscpu``` - wyświetla informacje na temat procesora 
 
 
-    
+### Praca z wczytywanymi modułami
 
+Moduły jądra są instalowane w podkatalogach katalogu /lib/modules. Nazwa katalogu bazuje
+na wersji jądra. Na przykład jeśli jądro jest w wersji 5.3.8-200.fc30.x86_64, to moduły dla niego
+będą się znajdowały w katalogu /lib/modules/5.3.8-200.fc30.x86_64.
+
+
+- ```lsmod``` - wyświetla listę aktualnie wczytanych modułów do jądra
+
+- ```modinfo``` - wyświetla informacje o dowolnym z wczytanych modułów 
+    - ```modinfo -d e1000``` - opis modułu e1000 (moduł do obsługi karty sieciowej)
+        > Intel(R) PRO/1000 Network Driver
+    - ```modinfo -a e1000``` - autor 
+        > Intel Corporation, <linux.nics@intel.com>
+    - ```modinfo -n e1000``` - katalog zawierający  
+        > /lib/modules/4.18.0-348.7.1.el8_5.x86_64/kernel/drivers/net/ethernet/intel/e1000/e1000.ko.xz
 
 
 # Strona 208 - dmesg do opisania 
