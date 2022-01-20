@@ -757,7 +757,19 @@ Przykłady najczęściej spotykanych plików :
 
 ### Sprawdzanie komponentów komputera
 
-- lspci 
+- ```dmesg``` - print or control the kernel ring buffer
+
+- ```lspci``` - wyświetla listę szyn PCI w komputerze i podłączone do nich urządzenia.
+    ```lspci -v``` lub ```lspci -vvv``` - dodanie jednego **v** lub więcej **v** wyświetla więcej informacji szczegółowych
+
+- ```lsusb``` - wyświetla informacje dotyczące wejść USB oraz podłączonych do nich urządzeń
+    ```lsusb -v``` lub ```lsusb -vvv``` - podobnie jak przy lspci dodanie jednego lub więcej parametru **v** wyświetla dodatkowe informacje 
+
+- ```lscpu``` - wyświetla informacje na temat procesora 
+
+
+    
+
 
 
 # Strona 208 - dmesg do opisania 
