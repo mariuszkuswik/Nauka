@@ -397,8 +397,8 @@ pamięć operacyjna),comm (pełne polecenie, które zostało wydane)
 
 - ```$ find /usr > /tmp/allusrfiles &``` - uruchamia proces w tle
 > [3] 15971     
-    - [3] - numer zadania
-    - 15871 - numer procesu
+> # [3] - numer zadania
+> # 15871 - numer procesu
 
 
 
