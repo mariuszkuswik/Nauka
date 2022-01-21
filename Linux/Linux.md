@@ -327,8 +327,8 @@ plik musi należeć do użytkownika janek, a ponadto jego wielkość nie może p
 7. Wyszukiwanie plików i wykonywanie na nich poleceń
 
 
-```$ find [opcje] -exec polecenie {} \;``` - **-exec** wykonuje polecenie dla wszystkich znalezionych plików  
-```$ find [opcje] -ok polecenie {} \;``` - **-ok** pyta przed wykonaniem każdego z poleceń 
+- ```$ find [opcje] -exec polecenie {} \;``` - **-exec** wykonuje polecenie dla wszystkich znalezionych plików  
+- ```$ find [opcje] -ok polecenie {} \;``` - **-ok** pyta przed wykonaniem każdego z poleceń 
 
 Każde polecenie musi zostać zakończone backslashem i średnikiem (\;)
 
