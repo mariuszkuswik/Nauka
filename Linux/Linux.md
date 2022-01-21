@@ -395,18 +395,18 @@ pamięć operacyjna),comm (pełne polecenie, które zostało wydane)
   
 ## Procesy w tle i na pierwszym planie 
 
-```$ find /usr > /tmp/allusrfiles &``` - uruchamia proces w tle
-    > [3] 15971
+- ```$ find /usr > /tmp/allusrfiles &``` - uruchamia proces w tle
+> [3] 15971
 
-[3] - numer zadania
-15871 - numer procesu
+- [3] - numer zadania
+- 15871 - numer procesu
 
-```jobs``` - wyświetla wszytkie obecnie działające zadania 
+- ```jobs``` - wyświetla wszytkie obecnie działające zadania 
     - ```-l``` - wyświetla pid i status dla jobów 
     - ```-p``` - wyświetla tylko pidy dla jobów  
 
-```$ fg %1``` - przenosi pierwsze zadanie z listy jobs **na pierwszy plan** 
-```$ bg %5``` - przenosi piąte zadanie z listy jobs **w tło**
+- ```$ fg %1``` - przenosi pierwsze zadanie z listy jobs **na pierwszy plan** 
+- ```$ bg %5``` - przenosi piąte zadanie z listy jobs **w tło**
 
 ## Zamykanie procesu i zmiana jego priorytetu
 
