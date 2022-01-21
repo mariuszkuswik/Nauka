@@ -641,12 +641,12 @@ nazwakatalogu=mojkatalog
 
 Konstrukcja pętli for
 
-    ```bash
-    for ZMIENNA in LISTA
-    do
-    { polecenia }
-    done
-    ```
+```bash
+for ZMIENNA in LISTA
+do
+{ polecenia }
+done
+```
 
 5. Pętle while…do i until…do
 
