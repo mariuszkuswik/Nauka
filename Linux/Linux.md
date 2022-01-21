@@ -123,7 +123,6 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 - g - group
 - o - others
   
-
 - w - write
 - r - read
 - x - execute
@@ -795,7 +794,7 @@ będą się znajdowały w katalogu /lib/modules/5.3.8-200.fc30.x86_64.
 
     **modprobe** wczytuje moduły tymczasowo ( do czasu restartu ), aby załadować je na stałe dodajemy **modprobe** do skryptów startowych systemu
 
-```rmmod``` - Usuwanie modułów
+- ```rmmod``` - Usuwanie modułów
 
 
 
