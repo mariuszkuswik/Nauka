@@ -1,8 +1,8 @@
 
 # Linux/Bash
 
-# Obecna strona 208 - do uzuępnienia czym jest cgroup. tylko mniej więcej, bez szczegółów,
-# Ćwiczenia po rozdziale do zrobienia 
+# Obecna strona 213 
+- do uzuępnienia czym jest cgroup. tylko mniej więcej, bez szczegółów,
 
 # Odpowiedzi strona 797 
 
@@ -810,6 +810,7 @@ będą się znajdowały w katalogu /lib/modules/5.3.8-200.fc30.x86_64.
 
 ### Strona 214 ćwiczenia do rozdziału
 
+
 Wykonanie do sprawdzenia 
 
 1. sudo systemctl sart  
@@ -824,9 +825,27 @@ Tak, razem z modułem bttv zostały dodane też kolejne
 10. sudo modprobe -r bttv
 lsmod | grep bttv
 
-# Strona 213
 
 
+
+## Instalacja systemu Linux
+
+- **kdump** - włączenie tej opcji powoduje, że pewna ilość pamięci RAM zostanie zarezerwowana do przechwycenia zawartości jądra w przypadku jego awarii
+
+- Pliki typu kickstart - Skrypty umieszczane w plikach typu kickstart mogą wykonywać wybrane polecenia przed skonfigurowaniem
+lub po skonfigurowaniu systemu Linux przez program instalacyjny, np. dodawaanie użytkowników, zmiana uprawnień, pobieranie plików przez sieć
+Podczas instalacji RHEL plik typu kickstart zawierający udzielone odpowiedzi na wszystkie pytania programu instalacyjnego będzie dostępny jako /root/anaconda-ks.cfg. Można go wykorzystać w trakcie następnego procesu instalacji. 
+
+Więcej informacji w podręczniku str 279 
+
+[Tutorial dot kickstar od RedHata](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/performing_an_advanced_rhel_installation/performing_an_automated_installation_using_kickstart)
+
+
+### #TODO - jak zbackupować całość systemu 
+
+![Instalacja](instalacja_linux_1.png)
+
+# Obecna strona 230
 
 
 
