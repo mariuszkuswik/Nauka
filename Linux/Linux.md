@@ -23,6 +23,7 @@
             - [Grep](#grep)
     - [Praca z procesami](#Zarządzanie-uruchomionymi-procesami)
         - [Background and foreground processes](#Background-and-foreground-processes )
+    - [Administracja systemem linux](#administracja-systemem-linux)
 2. [Skryptowanie](#skryptowanie)
 	- [Zmienne specjalne](#zmienne-specjalne)
 	- [Exitcode](#exitcode)
@@ -665,6 +666,8 @@ done
 
 ### sudo/root 
 
+- ```visudo ``` - służy do ecycji plików jako root, zapis działa nawet gdy nikt nie ma do niego prawa 
+
 - ```/etc/sudoers``` - Plik w którym nadawane są uprawnienia sudo 
 
     ```janek ALL=(ALL) ALL``` - Nadanie użutkownikowi pełnych uprawnień sudo w pliku **sudoers**
@@ -796,7 +799,29 @@ będą się znajdowały w katalogu /lib/modules/5.3.8-200.fc30.x86_64.
 
 - ```rmmod``` - Usuwanie modułów
 
+    - ```rmmod parport_pc``` - Przykładowe usunięcie modułu **parport_pc**
 
+    Jeżeli moduł jest w użyciu, trzeba spróbować zamknąć proces używający danego
+    urządzenia, a następnie ponownie wydać polecenie rmmod. 
+
+    - ```modprobe -r [nazwa_modułu]``` - usunięcie modułu razem z modułami zależnymi od wskazanego do usunięcia  
+
+
+### Strona 214 ćwiczenia do rozdziału
+
+Wykonanie do sprawdzenia 
+
+1. sudo systemctl sart  
+3. sudo find /var/spool ! -user root -ls
+
+
+9. sudo modprobe bttv
+lsmod | grep bttv
+
+Tak, razem z modułem bttv zostały dodane też kolejne 
+
+10. sudo modprobe -r bttv
+lsmod | grep bttv
 
 # Strona 213
 
