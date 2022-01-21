@@ -666,9 +666,9 @@ done
 
 ### sudo/root 
 
-```/etc/sudoers``` - Plik w którym nadawane są uprawnienia sudo 
+- ```/etc/sudoers``` - Plik w którym nadawane są uprawnienia sudo 
 
-```janek ALL=(ALL) ALL``` - Nadanie użutkownikowi pełnych uprawnień sudo w pluki **sudoers**
+    ```janek ALL=(ALL) ALL``` - Nadanie użutkownikowi pełnych uprawnień sudo w pliku **sudoers**
 
 Domyślnie sudo działa bez wpisywania hasła przez 5 minut, zmiany można dokonać w **/etc/sudoers** edytując wartość zmiennej **passwd_timeout**
 
