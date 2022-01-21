@@ -788,21 +788,15 @@ będą się znajdowały w katalogu /lib/modules/5.3.8-200.fc30.x86_64.
 
 ### Wczytywanie modułów
 
-Za pomocą polecenia modprobe można do działającego jądra wczytać (jako użytkownik root)
-moduł, który został skompilowany i zainstalowany w katalogu /lib/modules. Częstym powodem
-wczytywania modułu jest tymczasowe użycie danej funkcji (na przykład wczytanie modułu
-obsługującego specjalny system plików dla nośnika wymiennego, aby uzyskać do niego dostęp).
-Innym powodem jest identyfikacja modułu używanego z danym podzespołem komputerowym,
-który nie został poprawnie wykryty.
+- ```modprobe``` - Dodawanie modułów do działającego jądra, **po restarcie systemu wczytane moduły nie będą już dostępne**, aby były należy dodać wiersz z poleceniem modprobe do skryptów startowych, dodawać można moduły,
 
-```modprobe``` - Dodawanie modułów do działającego jądra, **po restarcie systemu wczytane moduły nie będą już dostępne**, aby były należy dodać wiersz z poleceniem modprobe do skryptów startowych, dodawać można moduły 
+    Przed załadowaniem moduły muszą zostać wcześniej skompilowane i zainstalowane w katalogu **/lib/modules**, 
+    przykładem dla którego możemy chcieć załadować moduł jest dodanie nowego systemu plików  
 
-Polecenie modprobe wczytuje moduły tymczasowo — to znaczy tak wczytane moduły nie będą
-dostępne po ponownym uruchomieniu systemu. W celu trwałego wczytania modułu do systemu
-należy dodać wiersz z poleceniem modprobe do skryptów startowych uruchamianych podczas
-wczytywania systemu.
+    **modprobe** wczytuje moduły tymczasowo ( do czasu restartu ), aby załadować je na stałe dodajemy **modprobe** do skryptów startowych systemu
 
 ```rmmod``` - Usuwanie modułów
+
 
 
 # Strona 213
