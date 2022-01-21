@@ -845,7 +845,7 @@ Więcej informacji w podręczniku str 279
 
 ![Instalacja](instalacja_linux_1.png)
 
-# Obecna strona 230
+# Obecna strona 232
 
 
 
