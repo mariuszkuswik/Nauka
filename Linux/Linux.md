@@ -868,8 +868,8 @@ strona 235
 **rpm nie instaluje zależności potrzebnych do zainstalowania danego pakietu, do zainstalowania pakietu potrzebna jest dokładna ścieżkla pliku .rmp**
 
 
-```-q``` - querry 
-```-i``` information 
+```-q``` - querry  
+```-i``` information  
 
 ```rmp -q firefox``` 
 > firefox-67.0-4.fc30.x86_64
