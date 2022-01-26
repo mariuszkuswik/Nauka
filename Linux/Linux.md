@@ -845,6 +845,115 @@ Więcej informacji w podręczniku str 279
 
 ![Instalacja](instalacja_linux_1.png)
 
+
+# Początek zmian pociągowych 
+
+## #TODO - Sprawdzić czy to co wrzuciłem z braków to wszystko  
+
+## Opcje rozruchowe dla plików typu kickstart i zdalnych repozytoriów
+Strona 234
+
+
+## Partycjonowanie dysku twardego 
+strona 235
+
+
+## Używanie programu uruchamiającego GRUB
+
+### rpm
+
+**rpm nie instaluje zależności potrzebnych do zainstalowania danego pakietu, do zainstalowania pakietu potrzebna jest dokładna ścieżkla pliku .rmp**
+
+
+```-q``` - querry 
+```-i``` information 
+
+```rmp -q firefox``` 
+> firefox-67.0-4.fc30.x86_64
+
+
+```rmp -qi firefox```
+> Name : firefox
+Version : 67.0
+Release : 4.fc30
+Architecture: x86_64
+Install Date: Sun 02 Jun 2019 09:37:25 PM EDT
+Group : Unspecified
+Size : 266449296
+License : MPLv1.1 or GPLv2+ or LGPLv2+
+Signature : RSA/SHA256, Fri 24 May 2019 12:09:57 PM EDT, Key ID ef3c111fcfc659b9
+Source RPM : firefox-67.0-4.fc30.src.rpm
+Build Date : Thu 23 May 2019 10:03:55 AM EDT
+Build Host : buildhw-08.phx2.fedoraproject.org
+Relocations : (not relocatable)
+Packager : Fedora Project
+Vendor : Fedora Project
+URL : https://www.mozilla.org/firefox/
+Bug URL : https://bugz.fedoraproject.org/firefox
+Summary : Mozilla Firefox Web browser
+Description :
+Mozilla Firefox is an open-source web browser, designed for standards
+compliance, performance and portability.
+
+
+### yum
+
+**yum instaluje pakiet razem z jego zależnościami na podstawie repozytoriów, w nowych wersjach RHEL yum jest linkem do dnf** 
+
+Repozytoria yum mogą być umieszczane w katalogu, na serwerze WWW (http://), FTP (ftp://), CD lub DVD albo w katalogu lokalnym (file:///).   
+Położenie tych repozytoriów jest następnie przechowywane w pliku użytkownika systemu ```/etc/yum.conf``` lub częściej , w oddzielnych plikach konfiguracyjnych w katalogu ```/etc/yum.repos.d``` ( obecnie pliki konfiguracyjne te są linkami do plików dnf )
+
+```yum [opcje] polecenie``` - podstawowa składnia 
+```yum install firefox``` - instalacja pakietu firefox
+
+### yum.conf 
+
+strona 252 - dopisać informacje na temat plików konfiguracyjnych 
+
+1. Sprawdzanie pliku /etc/yum.conf
+
+### #TODO - Dodać opis
+
+2. Sprawdzanie plików /etc/yum.repos.d/*.repo
+Repozytoria oprogramowania mogą być włączane przez umieszczanie w katalogu
+/etc/yum.repos.d plików z rozszerzeniem .repo wskazujących położenie jednego lub
+więcej repozytoriów.
+
+
+Przykład dla pliku ```/etc/yum.repos.d/myrepo.repo```
+
+> [myrepo]  # - Nazwa repozytorium 
+name=Moje repozytorium # - Prosty opis
+baseurl=http://myrepo.example.com/pub/myrepo # - Położenie repo, lokalne zaczynają się od ( file:/// ) 
+enabled=1 # - Opcja wskazuje czy dane repozytorium jest aktywne 
+gpgcheck=1 # - Sprawdzenie klucza, spradza czy repozytorium nie zostało zmienione 
+gpgkey=file:///etc/pki/rpm-gpg/MYOWNKEY - # klucz
+
+
+3. Pobieranie z repozytorium YUM pakietów RPM i metadanych
+
+Po wydaniu polecenia yum zostają sprawdzone wszystkie repozytoria, co oznacza pobranie do systemu lokalnego metadanych o wszystkich znajdujących się w nich pakietach.
+
+Metadane są w systemie lokalnym przechowywane w katalogu ```/var/cache/yum```. Wszelkie kolejne zapytania dotyczące pakietów, grup pakietów lub innych informacji o repozytorium
+są pobierane z buforowanych metadanych, aż do upływu czasu ich ważności.
+
+**Domyślnie czas ważności to 48 godzin dla dnf**, można go zmienić za pomocą opcji **metadata_expire w pliku /etc/yum.conf**.
+
+Następnie polecenie yum szuka pakietów wskazanych do instalacji i sprawdza, czy wymagane są pakiety zależne, po przygotowaniu listy pakietów prosi o potwierdzenie a następnie instaluje.
+
+
+4. Instalowanie pakietów RPM w systemie plików Linuksa
+
+
+
+
+### Strona 253
+
+
+
+# Koniec zmian pociągowych 
+
+
 # Obecna strona 232
 
 
