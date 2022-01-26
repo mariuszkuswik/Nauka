@@ -1,7 +1,7 @@
 
 # Linux/Bash
 
-# Obecna strona 213 
+# Obecna strona 253 
 - do uzuępnienia czym jest cgroup. tylko mniej więcej, bez szczegółów,
 
 # Odpowiedzi strona 797 
@@ -846,6 +846,9 @@ Więcej informacji w podręczniku str 279
 ![Instalacja](instalacja_linux_1.png)
 
 
+
+# Strona przed zmianami z pociągu, sprawdzić czy nie ma czegoś do opisania 
+
 # Początek zmian pociągowych 
 
 ## #TODO - Sprawdzić czy to co wrzuciłem z braków to wszystko  
@@ -910,15 +913,15 @@ Położenie tych repozytoriów jest następnie przechowywane w pliku użytkownik
 
 strona 252 - dopisać informacje na temat plików konfiguracyjnych 
 
+### Instalacja pakietu 
+
 1. Sprawdzanie pliku /etc/yum.conf
 
 ### #TODO - Dodać opis
 
 2. Sprawdzanie plików /etc/yum.repos.d/*.repo
-Repozytoria oprogramowania mogą być włączane przez umieszczanie w katalogu
-/etc/yum.repos.d plików z rozszerzeniem .repo wskazujących położenie jednego lub
-więcej repozytoriów.
 
+Repozytoria oprogramowania mogą być włączane przez umieszczanie w katalogu /etc/yum.repos.d plików z rozszerzeniem .repo wskazujących położenie jednego lub więcej repozytoriów.
 
 Przykład dla pliku ```/etc/yum.repos.d/myrepo.repo```
 
@@ -944,6 +947,16 @@ Następnie polecenie yum szuka pakietów wskazanych do instalacji i sprawdza, cz
 
 4. Instalowanie pakietów RPM w systemie plików Linuksa
 
+Po pobraniu do katalogów tymczasowych wszystkich niezbędnych pakietów narzędzie
+yum wykonuje polecenia rpm dla każdego instalowanego pakietu.
+
+Jeżeli pakiet zawiera jakiekolwiek skrypty wykonywane przed lub po instalacji (np. odpowiedzialne za utworzenie specjalnego konta użytkownika lub katalogów), zostają one uruchomione.
+
+
+5. Przechowywanie w lokalnej bazie danych RPM medadanych repozytorium YUM
+
+### #TODO - strona 254 - sprawdzić czy jest sens to opisywać czy zostawić proste kroki 
+
 
 
 
@@ -954,7 +967,6 @@ Następnie polecenie yum szuka pakietów wskazanych do instalacji i sprawdza, cz
 # Koniec zmian pociągowych 
 
 
-# Obecna strona 232
 
 
 
