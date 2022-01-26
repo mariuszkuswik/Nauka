@@ -913,7 +913,7 @@ Położenie tych repozytoriów jest następnie przechowywane w pliku użytkownik
 
 strona 252 - dopisać informacje na temat plików konfiguracyjnych 
 
-### Instalacja pakietu 
+### Instalacja pakietu przy pomocy yum 
 
 1. Sprawdzanie pliku /etc/yum.conf
 
@@ -955,7 +955,26 @@ Jeżeli pakiet zawiera jakiekolwiek skrypty wykonywane przed lub po instalacji (
 
 5. Przechowywanie w lokalnej bazie danych RPM medadanych repozytorium YUM
 
-### #TODO - strona 254 - sprawdzić czy jest sens to opisywać czy zostawić proste kroki 
+Metadane znajdujące się w instalowanym pakiecie RPM zostają skopiowane do lokalnej **bazy danych RPM**. 
+
+Gdy informacje dotyczące zainstalowanych pakietów znajdują się w lokalnej bazie RPM, można wykonywać do niej zapytania. 
+Np. można sprawdzić zainstalowane pakiety, wyświetlić komponenty tych pakietów, a także zajrzeć do skryptów i dzienników zdarzeń powiązanych z poszczególnymi pakietami. 
+Istnieje również możliwość zweryfikowania zainstalowanych pakietów względem **bazy danych RPM**.
+
+Polecenie **rpm** to najlepsze narzędzie do wykonywania zapytań do **bazy danych RPM**.
+
+
+### #TODO - strona 254 - sprawdzić czy jest zostawić tak długo opisane kroki czy ich nie skrócić 
+
+
+### Wyszukiwanie pakietów za pomocą yum 
+
+```yum search editor``` - wyszukuje słowa **editor** w nazwie lub opisie pakietów 
+
+>...
+eclipse-veditor.noarch : Eclipse-based Verilog/VHDL plugin
+ed.x86_64 : The GNU line editor
+emacs.x86_64 : GNU Emacs text editor
 
 
 
