@@ -971,10 +971,10 @@ Polecenie **rpm** to najlepsze narzędzie do wykonywania zapytań do **bazy dany
 
 ```yum search editor``` - wyszukuje słowa **editor** w nazwie lub opisie pakietów 
 
->...
-eclipse-veditor.noarch : Eclipse-based Verilog/VHDL plugin
-ed.x86_64 : The GNU line editor
-emacs.x86_64 : GNU Emacs text editor
+>...  
+eclipse-veditor.noarch : Eclipse-based Verilog/VHDL plugin  
+ed.x86_64 : The GNU line editor  
+emacs.x86_64 : GNU Emacs text editor  
 
 
 
