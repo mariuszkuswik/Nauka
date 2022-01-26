@@ -925,12 +925,12 @@ Repozytoria oprogramowania mogą być włączane przez umieszczanie w katalogu /
 
 Przykład dla pliku ```/etc/yum.repos.d/myrepo.repo```
 
-> [myrepo]  # - Nazwa repozytorium 
-name=Moje repozytorium # - Prosty opis
-baseurl=http://myrepo.example.com/pub/myrepo # - Położenie repo, lokalne zaczynają się od ( file:/// ) 
-enabled=1 # - Opcja wskazuje czy dane repozytorium jest aktywne 
-gpgcheck=1 # - Sprawdzenie klucza, spradza czy repozytorium nie zostało zmienione 
-gpgkey=file:///etc/pki/rpm-gpg/MYOWNKEY - # klucz
+> [myrepo]  # - Nazwa repozytorium  
+name=Moje repozytorium # - Prosty opis  
+baseurl=http://myrepo.example.com/pub/myrepo # - Położenie repo, lokalne zaczynają się od ( file:/// )   
+enabled=1 # - Opcja wskazuje czy dane repozytorium jest aktywne  
+gpgcheck=1 # - Sprawdzenie klucza, spradza czy repozytorium nie zostało zmienione  
+gpgkey=file:///etc/pki/rpm-gpg/MYOWNKEY - # klucz  
 
 
 3. Pobieranie z repozytorium YUM pakietów RPM i metadanych
