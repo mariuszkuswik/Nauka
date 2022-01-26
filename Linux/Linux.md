@@ -876,27 +876,27 @@ strona 235
 
 
 ```rmp -qi firefox```
-> Name : firefox
-Version : 67.0
-Release : 4.fc30
-Architecture: x86_64
-Install Date: Sun 02 Jun 2019 09:37:25 PM EDT
-Group : Unspecified
-Size : 266449296
-License : MPLv1.1 or GPLv2+ or LGPLv2+
-Signature : RSA/SHA256, Fri 24 May 2019 12:09:57 PM EDT, Key ID ef3c111fcfc659b9
-Source RPM : firefox-67.0-4.fc30.src.rpm
-Build Date : Thu 23 May 2019 10:03:55 AM EDT
-Build Host : buildhw-08.phx2.fedoraproject.org
-Relocations : (not relocatable)
-Packager : Fedora Project
-Vendor : Fedora Project
-URL : https://www.mozilla.org/firefox/
-Bug URL : https://bugz.fedoraproject.org/firefox
-Summary : Mozilla Firefox Web browser
-Description :
-Mozilla Firefox is an open-source web browser, designed for standards
-compliance, performance and portability.
+> Name : firefox  
+Version : 67.0  
+Release : 4.fc30  
+Architecture: x86_64  
+Install Date: Sun 02 Jun 2019 09:37:25 PM EDT  
+Group : Unspecified  
+Size : 266449296  
+License : MPLv1.1 or GPLv2+ or LGPLv2+  
+Signature : RSA/SHA256, Fri 24 May 2019 12:09:57 PM EDT, Key ID ef3c111fcfc659b9  
+Source RPM : firefox-67.0-4.fc30.src.rpm  
+Build Date : Thu 23 May 2019 10:03:55 AM EDT  
+Build Host : buildhw-08.phx2.fedoraproject.org  
+Relocations : (not relocatable)  
+Packager : Fedora Project  
+Vendor : Fedora Project  
+URL : https://www.mozilla.org/firefox/  
+Bug URL : https://bugz.fedoraproject.org/firefox  
+Summary : Mozilla Firefox Web browser  
+Description :  
+Mozilla Firefox is an open-source web browser, designed for standards  
+compliance, performance and portability.  
 
 
 ### yum
