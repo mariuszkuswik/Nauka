@@ -869,7 +869,7 @@ strona 235
 
 
 ```-q``` - querry  
-```-i``` information  
+```-i``` - information  
 
 ```rmp -q firefox``` 
 > firefox-67.0-4.fc30.x86_64
@@ -970,16 +970,24 @@ Polecenie **rpm** to najlepsze narzędzie do wykonywania zapytań do **bazy dany
 ### Wyszukiwanie pakietów za pomocą yum 
 
 ```yum search editor``` - wyszukuje słowa **editor** w nazwie lub opisie pakietów 
-
 >...  
 eclipse-veditor.noarch : Eclipse-based Verilog/VHDL plugin  
 ed.x86_64 : The GNU line editor  
 emacs.x86_64 : GNU Emacs text editor  
 
+```yum info emacs``` - poberanie informacji o pakiecie
+> yum info emacs  
+Name : emacs  
+Epoch : 1  
+Version : 26.2  
+Release : 1.fc30  
+...  
 
 
 
-### Strona 253
+
+
+### Strona 256
 
 
 
