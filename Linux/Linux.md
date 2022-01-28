@@ -985,7 +985,7 @@ Release : 1.fc30
 ...  
 
 ```yum provides dvdrecord``` - Znajduje pakiet po nazwie polecenia, pliku konfiguracyjnego lub biblioteki
-> wodim-1.1.11-41.fc30.x86_64 : A command line CD/DVD recording program  
+> wodim-1.1.11-41.fc30.x86_64 : A command line CD/DVD recording program   
 Repo : fedora  
 Matched from:  
 Filename : /usr/bin/dvdrecord  
@@ -998,10 +998,10 @@ Filename : /usr/bin/dvdrecord
     - ```yum list all``` - wyświetla wszystkie pakiety 
 
 ```yum deplist emacs``` - Wyświetla komponenty zależne (dependency) a także dostarczane w samym pakiecie (provider) 
-> yum deplist emacs | less
-package: emacs-1:26.1-8.fc30.x86_64
-dependency: /bin/sh
-provider: bash-5.0.7-1.fc30.i686
+> yum deplist emacs | less  
+package: emacs-1:26.1-8.fc30.x86_64  
+dependency: /bin/sh  
+provider: bash-5.0.7-1.fc30.i686  
 
 
 
@@ -1016,16 +1016,16 @@ Podpolecenie ```history``` pozwala przejżeć historię operacji ```yum``` i je 
 
 
 - ```yum history``` - wyświetla historię transakcji polecenia ```yum```
-    > ID | Command line | Date and time | Action(s) | Altered
-    ---------------------------------------------------------------------
-    12 | install emacs | 2019-06-22 11:14 | Install | 7
-    ...
+    > ID | Command line | Date and time | Action(s) | Altered  
+    ---------------------------------------------------------------------  
+    12 | install emacs | 2019-06-22 11:14 | Install | 7  
+    ...  
 
 - ```yum history info 12``` - wyświetla informacje na temat transakcji o **ID 12**
-    > Transaction ID : 12
-    ...
-    Command Line : install emacs
-    ...
+    > Transaction ID : 12  
+    ...  
+    Command Line : install emacs  
+    ...  
 
 - ```yum history undo 12``` - wycofuje transakcję z **ID 12** ( w tym przypadku instalacji emacs )
 
@@ -1041,7 +1041,7 @@ Podpolecenie ```history``` pozwala przejżeć historię operacji ```yum``` i je 
 
 ### Uaktualnianie grup pakietów
 
-
+```yum grouplist``` - Wyświetlenie listy grup dostępnych pakietów 
 
 
 
