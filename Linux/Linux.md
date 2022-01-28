@@ -997,6 +997,38 @@ Filename : /usr/bin/dvdrecord
     - ```yum list installed``` - wyświetla zainstalowane pakiety 
     - ```yum list all``` - wyświetla wszystkie pakiety 
 
+```yum deplist emacs``` - Wyświetla komponenty zależne (dependency) a także dostarczane w samym pakiecie (provider) 
+> yum deplist emacs | less
+package: emacs-1:26.1-8.fc30.x86_64
+dependency: /bin/sh
+provider: bash-5.0.7-1.fc30.i686
+
+
+
+### Instalowanie i usuwanie pakietów 
+
+```yum install emacs``` -  zainstalowanie jednego lub więcej pakietów razem z niezbędnymi zależnościami
+```yum reinstall emacs``` - Od nowa instaluje wymagane zależności
+```yum remove emacs``` - Usuwa pakiet emacs
+
+
+Podpolecenie ```history``` pozwala przejżeć historię operacji ```yum``` i je wycofać za pomocą opcji ```history undo```
+
+
+- ```yum history``` - wyświetla historię transakcji polecenia ```yum```
+    > ID | Command line | Date and time | Action(s) | Altered
+    ---------------------------------------------------------------------
+    12 | install emacs | 2019-06-22 11:14 | Install | 7
+    ...
+
+- ```yum history info 12``` - wyświetla informacje na temat transakcji o **ID 12**
+    > Transaction ID : 12
+    ...
+    Command Line : install emacs
+    ...
+
+- ```yum history undo 12``` - wycofuje transakcję z **ID 12** ( w tym przypadku instalacji emacs )
+
 
 
 
@@ -1014,9 +1046,9 @@ Filename : /usr/bin/dvdrecord
 
 
 
-
-# Koniec Biblii
 [Go Top](#Linux/Bash)
+# Koniec Biblii
+
 
 
 
