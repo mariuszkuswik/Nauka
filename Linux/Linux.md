@@ -24,6 +24,7 @@
     - [Praca z procesami](#Zarządzanie-uruchomionymi-procesami)
         - [Background and foreground processes](#Background-and-foreground-processes )
     - [Administracja systemem linux](#administracja-systemem-linux)
+- [Koniec Biblii](#Koniec-Biblii)
 2. [Skryptowanie](#skryptowanie)
 	- [Zmienne specjalne](#zmienne-specjalne)
 	- [Exitcode](#exitcode)
@@ -990,14 +991,13 @@ Matched from:
 Filename : /usr/bin/dvdrecord  
 
 
-Podpolecenie ```list``` pozwala wyświetlić listę nazw pakietów na różne sposoby. 
+- Podpolecenie ```list``` pozwala wyświetlić listę nazw pakietów na różne sposoby. 
+    - ```yum list "nazwa_pakietu"``` - wyświetla wersję i repozytorium danego pakietu
+    - ```yum list available``` - wyświetla dostępne pakiety
+    - ```yum list installed``` - wyświetla zainstalowane pakiety 
+    - ```yum list all``` - wyświetla wszystkie pakiety 
 
-- ```yum list "nazwa_pakietu"``` - wyświetla wersję i repozytorium danego pakietu
-- ```yum list available```
-- ```yum list installed```
-- ```yum list all```
-Użyj go z nazwą bazową pakietu, a poznasz wersję i repozytorium danego pakietu. Możesz wyświetlać pakiety
-dostępne (available), zainstalowane (installed) lub wszystkie (all)
+
 
 
 ### Strona 256
