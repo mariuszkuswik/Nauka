@@ -976,7 +976,7 @@ eclipse-veditor.noarch : Eclipse-based Verilog/VHDL plugin
 ed.x86_64 : The GNU line editor  
 emacs.x86_64 : GNU Emacs text editor  
 
-```yum info emacs``` - poberanie informacji o pakiecie
+```yum info emacs``` - wyświetlenie informacji o pakiecie
 > yum info emacs  
 Name : emacs  
 Epoch : 1  
@@ -1043,13 +1043,44 @@ Podpolecenie ```history``` pozwala przejżeć historię operacji ```yum``` i je 
 ### Uaktualnianie grup pakietów
 
 ```yum grouplist``` - Wyświetlenie listy grup dostępnych pakietów 
+> Available Environment Groups:  
+Fedora Custom Operating System  
+Minimal Install  
+Fedora Server Edition  
+...  
+Installed Groups:  
+LibreOffice  
+GNOME Desktop Environment  
+Fonts  
+...  
+Available Groups:  
+Authoring and Publishing  
+Books and Guides  
+C Development Tools and Libraries  
+...  
+
+```yum groupinfo gnome``` - wyświetlenie opisu grupy LXDE, pakietów obowiązkowych, domyślnych i opcjonalnych   
+> Group: GNOME 
+ Description: GNOME is a highly intuitive and user-friendly desktop environment. 
+ Mandatory Packages: 
+   ModemManager 
+   NetworkManager-adsl 
+ ...
+
+```yum groupinstall gnome``` - instalacja pakietów grupy gnome
+
+```yum groupremove LXDE``` - usunięcie grupy pakietów gnome 
+
+
+### Konserwacja bufora i bazy danych pakietów RPM
 
 
 
 
-### Strona 256
 
 
+### Strona 260
+była 254
 
 # Koniec zmian pociągowych 
 
