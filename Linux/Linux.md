@@ -983,8 +983,21 @@ Version : 26.2
 Release : 1.fc30  
 ...  
 
+```yum provides dvdrecord``` - Znajduje pakiet po nazwie polecenia, pliku konfiguracyjnego lub biblioteki
+> wodim-1.1.11-41.fc30.x86_64 : A command line CD/DVD recording program  
+Repo : fedora  
+Matched from:  
+Filename : /usr/bin/dvdrecord  
 
 
+Podpolecenie ```list``` pozwala wyświetlić listę nazw pakietów na różne sposoby. 
+
+- ```yum list "nazwa_pakietu"``` - wyświetla wersję i repozytorium danego pakietu
+- ```yum list available```
+- ```yum list installed```
+- ```yum list all```
+Użyj go z nazwą bazową pakietu, a poznasz wersję i repozytorium danego pakietu. Możesz wyświetlać pakiety
+dostępne (available), zainstalowane (installed) lub wszystkie (all)
 
 
 ### Strona 256
