@@ -1060,12 +1060,12 @@ C Development Tools and Libraries
 ...  
 
 ```yum groupinfo gnome``` - wyświetlenie opisu grupy LXDE, pakietów obowiązkowych, domyślnych i opcjonalnych   
-> Group: GNOME 
- Description: GNOME is a highly intuitive and user-friendly desktop environment. 
- Mandatory Packages: 
-   ModemManager 
-   NetworkManager-adsl 
- ...
+> Group: GNOME   
+ Description: GNOME is a highly intuitive and user-friendly desktop environment.   
+ Mandatory Packages:  
+   ModemManager  
+   NetworkManager-adsl  
+ ...  
 
 ```yum groupinstall gnome``` - instalacja pakietów grupy gnome
 
