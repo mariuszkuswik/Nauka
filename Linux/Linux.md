@@ -1017,8 +1017,9 @@ Podpolecenie ```history``` pozwala przejżeć historię operacji ```yum``` i je 
 
 - ```yum history``` - wyświetla historię transakcji polecenia ```yum```
     > ID | Command line | Date and time | Action(s) | Altered  
-    ---------------------------------------------------------------------  
     12 | install emacs | 2019-06-22 11:14 | Install | 7  
+     3 | install tmux  | 2022-01-19 06:33 | Install        |    1
+     2 | update -y     | 2022-01-19 06:28 | I, U           |   91
     ...  
 
 - ```yum history info 12``` - wyświetla informacje na temat transakcji o **ID 12**
