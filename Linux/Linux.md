@@ -1030,6 +1030,20 @@ Podpolecenie ```history``` pozwala przejżeć historię operacji ```yum``` i je 
 - ```yum history undo 12``` - wycofuje transakcję z **ID 12** ( w tym przypadku instalacji emacs )
 
 
+### Uaktualnianie pakietów
+
+```yum check-update``` - sprawdza czy dostępne są updaty 
+
+```yum update``` - updatuje **wszystkie** pakiety dla których dostępne są aktualizacje 
+
+```yum update cups``` - updatuje **jedynie pakiet cups**, jeżeli razem z nim muszą zostać uaktualnione także pewne pakiety zależne, one również będą pobrane i zainstalowane.
+
+
+### Uaktualnianie grup pakietów
+
+
+
+
 
 
 ### Strona 256
