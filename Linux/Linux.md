@@ -1117,7 +1117,7 @@ metadanych dla wszystkich włączonych repozytoriów. Oto przykład opróżnieni
 > firefox-60.7.0-1.el8_0.x86_64.rpm 6.1 MB/s | 93 MB 00:15  
 
 
-### rmp, instalowanie, analizowanie i weryfikowanie
+### rmp, instalowanie, analizowanie i weryfikowanie oprogramowania
 
 
 ```rpm --install ./zsh-5.5.1-6.el8.x86_64.rpm``` - **instalacja** pakietu **zsh** znajdującego się w lokalnym folderze
