@@ -1110,22 +1110,36 @@ metadanych dla wszystkich włączonych repozytoriów. Oto przykład opróżnieni
     ```yum check``` - po raz kolejny sprawdza bazę danych **yum** w celu potwierdzenia jej naprawienia 
 
 
-**Ogólnie rzecz biorąc, rpm to polecenie, które najlepiej sprawdza się w pracy z lokalną bazą danych RPM**
+**rpm to polecenie, które najlepiej sprawdza się w pracy z lokalną bazą danych RPM**
 
 
 ```dnf download firefox``` - **samo pobranie** pakietu **rpm** dla firefox 
 > firefox-60.7.0-1.el8_0.x86_64.rpm 6.1 MB/s | 93 MB 00:15
 
 
+### rmp, instalowanie, analizowanie i weryfikowanie
 
-### Instalowanie, analizowanie i weryfikowanie oprogramowania za pomocą polecenia rpm
+
+```rpm --install ./zsh-5.5.1-6.el8.x86_64.rpm``` - **instalacja** pakietu **zsh** znajdującego się w lokalnym folderze
+
+```rpm --update ./zsh-5.5.1-6.el8.x86_64.rpm``` - **update** pakietu **zsh** do wersji z pliku znajdującego się w lokalnym folderze, 
+```--update lub -U``` - instaluje pakiet **również jeżeli nie znajdował się wcześniej w systemie**
+```--freshen lub -F``` - instaluje pakiet **tylko jeżeli znajdował się wcześniej w systemie**
+> Verifying... ######################### [100%]
+Preparing... ######################### [100%]
+1:zsh-5.5.1-6.el8 ######################### [100%]
+
+```rpm --Uhv ./zsh-5.5.1-6.el8.x86_64.rpm``` - **update, hash, verbose** - aktualizacja z użyciem opcji które mówią więcej o procesie
+
+```rpm -e emacs``` - usunięcie pakietu 
+
+### Pobieranie informacji o pakiecie
 
 
 
 
 
 ### Strona 260
-była 254
 
 # Koniec zmian pociągowych 
 
