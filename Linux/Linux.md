@@ -1161,9 +1161,157 @@ Release : 6.el8
 /etc/zlogout  
 ...  
 
-### Strona 260
-263
-# Koniec zmian pociągowych 
+
+### #TODO - zastanowić się ile z tego potrzebuję, strona 263 
+
+Opcje można wykorzystać do pobrania dowolnych informacji znajdujących się w pakiecie RPM.
+To pozwala ustalić, które pakiety RPM są konieczne do zainstalowania (--requires), jaka
+wersja oprogramowania jest dostarczana (--provides), jakie skrypty zostaną wykonane przed
+zainstalowaniem i po zainstalowaniu pakietu RPM lub jego usunięciu (--scripts), a także jakie
+zmiany zostały wprowadzone w pakiecie RPM (--changelog):
+
+
+Wszystkie wykonywane dotąd zapytania dotyczyły lokalnej bazy danych RPM. Jeżeli dodać
+opcję -p do zapytania, wówczas informacje zostaną pobrane z pliku RPM znajdującego się
+w katalogu lokalnym. Opcja -p to doskonały sposób na przeanalizowanie otrzymanego pakietu,
+zanim zostanie zainstalowany w systemie.
+
+
+Jeżeli jeszcze tego nie zrobiłeś, pobierz pakiet zsh i umieść go w katalogu lokalnym (dnf download
+zsh). Następnie wykonaj kilka poleceń rpm pobierających informacje o tym pakiecie:
+# rpm -qip zsh-5.7.1-1.fc30.x86_64.rpm Wyświetlenie informacji o danym pliku RPM
+# rpm -qlp zsh-5.7.1-1.fc30.x86_64.rpm Wyświetlenie wszystkich plików znajdujących się
+´w danym pliku RPM
+# rpm -qdp zsh-5.7.1-1.fc30.x86_64.rpm Wyświetlenie dokumentacji znajdującej się
+´w danym pliku RPM
+# rpm -qcp zsh-5.7.1-1.fc30.x86_64.rpm Wyświetlenie plików konfiguracyjnych znajdujących się
+´w danym pliku RPM.
+
+
+### Weryfikowanie pakietów RPM
+
+Za pomocą opcji -V można sprawdzić pakiety zainstalowane w systemie i zobaczyć, czy
+którykolwiek z komponentów został zmieniony od chwili instalacji pakietu
+
+
+W celu przywrócenie pakietu do jego stanu początkowego użyj polecenia rpm z opcją
+--replacepkgs
+
+### Zarządzanie oprogramowaniem w firmie
+
+Serwery Satellite (Spacewalk). Systemy Red Hat Enterprise Linux można wdrażać za
+pomocą tzw. serwerów Satellite, które w zakresie zarządzania i wdrażania nowych
+systemów i uaktualnień mają dokładnie tę samą funkcjonalność co Red Hat CDN.
+Systemy RHEL można skonfigurować do automatycznego pobierania uaktualnień
+z serwerów Satellite. Zbiory pakietów określane mianem Errata, które służą do
+usuwania określonych problemów, można szybko i automatycznie wdrażać
+w wymagających tego systemach.
+
+
+Obrazy kontenerów. Zamiast instalować poszczególne pakiety w systemie, kilka lub
+kilkaset pakietów RPM można umieścić w obrazie kontenera. Jest on podobny do RPM
+pod tym względem, że przechowuje zestaw oprogramowania. Jednocześnie różni się
+od RPM tym, że obraz można znacznie łatwiej niż RPM dodać do systemu, uruchomić
+i usunąć.
+
+
+### #TODO - Ćwiczenia, strona 267   
+
+## Zarządzanie kontami użytkowników
+
+### Dodawanie użytkowników za pomocą polecenia useradd
+
+
+### #TODO - do poprawienia procedura, opis i tabela
+
+# Strona 272  
+
+- Tworzenie nowego użytkownika przy pomocy ```useradd```
+
+    ```useradd -c "Maria Kowalska" maria```
+
+    ```passwd maria```
+
+
+odczas tworzenia konta dla Marii polecenie useradd wykonuje następujące zadania:
+■ Odczyt plików /etc/login.defs i /etc/default/useradd w celu pobrania wartości
+domyślnych używanych w trakcie tworzenia nowego konta.
+■ Sprawdzenie parametrów polecenia powłoki i określenie, które wartości domyślne
+należy nadpisać.
+■ Utworzenie wpisu nowego użytkownika w plikach /etc/passwd i /etc/shadow,
+na podstawie wartości domyślnych oraz podanych w poleceniu powłoki.
+
+■ Utworzenie wszystkich wpisów grup w pliku /etc/group. (Dystrybucja Fedora tworzy
+grupę, używając nazwy nowego użytkownika).
+■ Utworzenie w katalogu /home katalogu domowego na podstawie nazwy użytkownika.
+■ Skopiowanie wszystkich plików z katalogu /etc/skel do katalogu domowego nowego
+użytkownika. Katalog wzorcowy zawiera zwykle skrypty startowe logowania i aplikacji.
+
+### Strona 273 do tabeli 
+
+-c komentarz
+-c "miejsce na komentarz"
+Opcja powoduje dodanie opisu do nowego konta. Bardzo często opisem jest pełne imię i nazwisko
+użytkownika. Słowo komentarz należy zastąpić danymi użytkownika konta (-c janek).
+W przypadku wielu słów trzeba zastosować cudzysłów (-c "janek kowalski").
+-d katalog_domowy Opcja ustala katalog domowy dla tworzonego konta. Wartością domyślną jest nazwa odpowiadająca
+loginowi konta i umieszczona w katalogu /home. Argument katalog_domowy należy zastąpić
+nazwą używanego katalogu (na przykład -d /mnt/home/janek).
+-D Zamiast tworzyć nowe konto użytkownika, podane informacje zostaną zapisane jako ustawienia
+domyślne dla wszystkich nowo tworzonych kont.
+-e
+data_upływu_ważności_konta
+Ustalenie daty upływu ważności konta w postaci RRRR-MM-DD. Argument data_upływu_
+´ważności_konta należy zastąpić datą, na przykład jeśli konto ma utracić ważność 5 maja
+2022 roku, należy użyć opcji -e 2022-05-06.
+-f -1 Ustalenie liczby dni, po których konto zostanie trwale zablokowane po upływie ważności hasła.
+Wartością domyślną jest -1 i oznacza wyłączenie tej opcji. Wartość 0 powoduje, że konto zostanie
+zablokowane natychmiast po upływie ważności hasła. Liczbę -1 trzeba zastąpić wybraną liczbą dni.
+-g grupa Ustawienie grupy podstawowej (jak przedstawiono w pliku /etc/group) dla nowego użytkownika.
+Słowo grupa należy zastąpić nazwą grupy (na przykład -g wheel). Jeżeli pominiesz tę opcję,
+utworzona zostanie grupa o nazwie odpowiadającej nazwie użytkownika i stanie się ona grupą
+podstawową dla nowo tworzonego użytkownika.
+-G lista_grup Dodanie nowego użytkownika do rozdzielonej przecinkami listy grup (na przykład -G
+wheel,sales,tech,lunch). Jeżeli później chcesz użyć opcji -G w poleceniu usermod,
+musi zostać podane -aG zamiast po prostu -G. Gdy o tym zapomnisz, grupy dodatkowe
+zostaną usunięte, a jedynymi przypisanymi grupami będą tylko te podane w tym miejscu.
+-k katalog_wzorcowy Ustawienie katalogu wzorcowego zawierającego pliki konfiguracyjne oraz skrypty logowania, które
+powinny zostać skopiowane do katalogu domowego tworzonego użytkownika. Ten parametr może
+być użyty tylko w połączeniu z opcją -m. Wyrażenie katalog_wzorcowy należy zastąpić nazwą
+wybranego katalogu. (Jeżeli opcja ta nie zostanie użyta, zastosowany będzie katalog /etc/skel).
+-m Automatyczne tworzenie katalogu domowego użytkownika i skopiowanie plików z katalogu
+wzorcowego (/etc/skel). W przeciwieństwie do Ubuntu w dystrybucjach Fedora i RHEL działanie
+to jest automatycznie podejmowane, więc nie trzeba go wskazywać.
+-M Katalog domowy nowego użytkownika nie zostanie utworzony, nawet jeśli domyślnie ustawione
+zachowanie nakazuje jego utworzenie.
+-n Wyłączenie domyślnego zachowania polegającego na utworzeniu nowej grupy, która odpowiada nazwie
+i identyfikatorowi nowego użytkownika. Ta opcja jest dostępna w systemach Red Hat Linux. Inne
+dystrybucje Linuksa zamiast tego powodują przypisanie nowego użytkownika do grupy o nazwie users.
+-o Opcja używana wraz z -u uid do utworzenia konta użytkownika, który będzie miał taki sam
+identyfikator jak inny użytkownik. (W ten sposób można posiadać dwie różne nazwy użytkownika
+z prawem dostępu do takiego samego zestawu plików i katalogów).
+-p hasło Ustalenie hasła dla tworzonego konta. Hasło powinno być zaszyfrowane. Zamiast podawania
+w tym miejscu zaszyfrowanego hasła można po prostu później użyć polecenia passwd
+użytkownik i dodać hasło dla danego użytkownika. (W celu wygenerowania hasła
+zaszyfrowanego przez MD5 należy wydać polecenie openssl passwd).
+-s powłoka Wskazanie powłoki używanej w tworzonym koncie. Słowo powłoka należy zastąpić wybraną
+powłoką (na przykład -s /bin/csh).
+-u id_użytkownika Ustawienie numeru identyfikacyjnego dla konta użytkownika (na przykład -u 1793). Bez użycia
+opcji -u zachowanie domyślne polega na automatycznym przypisaniu pierwszego wolnego numeru.
+W poleceniu zapis id_użytkownika trzeba zastąpić wybranym numerem identyfikacyjnym.
+Te numery automatycznie przypisywane zwykłym użytkownikom rozpoczynają się od wartości
+1000. Dlatego identyfikatory dla zwykłych użytkowników należy wybierać w sposób, który nie
+będzie kolidował z automatycznie przypisywanymi identyfikatorami.
+
+
+
+
+
+
+
+
+### Strona 274
+272
 
 
 
