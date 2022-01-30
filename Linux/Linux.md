@@ -1149,20 +1149,20 @@ Release : 6.el8
 /etc/zlogout  
 ...  
 
-```rpm -qd zsh``` - dokumentacja
-/usr/share/doc/zsh/BUGS  
+```rpm -qd zsh``` - dokumentacja  
+> /usr/share/doc/zsh/BUGS  
 /usr/share/doc/zsh/CONTRIBUTORS  
 /usr/share/doc/zsh/FAQ  
 ...  
 
 ```rpm -qc zsh``` - pliki konfiguracyjne
-/etc/skel/.zshrc  
+> /etc/skel/.zshrc   
 /etc/zlogin  
 /etc/zlogout  
 ...  
 
 ### Strona 260
-
+263
 # Koniec zmian pociągowych 
 
 
