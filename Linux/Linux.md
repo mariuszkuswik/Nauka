@@ -1074,6 +1074,38 @@ C Development Tools and Libraries
 
 ### Konserwacja bufora i bazy danych pakietów RPM
 
+Opróżnienie bufora to operacja, którą należy przeprowadzać od czasu do czasu. Jeżeli
+zdecydujesz się na zachowanie pobranych pakietów po ich zainstalowaniu (domyślnie są
+usuwane, na podstawie opcji keepcache=0 w pliku /etc/yum.conf), wówczas katalogi bufora
+(/var/cache/yum) mogą się zapełnić. Metadane przechowywane w katalogach bufora mogą
+zostać usunięte, co podczas następnego wykonania polecenia yum spowoduje pobranie od nowa
+metadanych dla wszystkich włączonych repozytoriów. Oto przykład opróżnienia metadanych:
+
+```yum clean packages```
+> 14 files removed
+
+```yum clean metadata```
+> Cache was expired
+16 files removed
+
+```yum clean all```
+> 68 files removed
+
+
+
+
+```yum check``` - Sprawdza bazę danych **yum** w przypadku jej ewentualnego uszkodzenia 
+> error: db5 error(11) from dbenv->open: Resource temporarily
+unavailable
+error: cannot open Packages index using db5-Resource temporarily
+unavailable(11)
+error: cannot open Packages database in /var/lib/rpm
+Error: Error: rpmdb open failed
+
+```rpm --rebuilddb``` - odbudowuje uszkodzoną bazę danych yum 
+
+```yum check``` - po raz kolejny sprawdza bazę danych **yum** w celu potwierdzenia jej naprawienia 
+
 
 
 
