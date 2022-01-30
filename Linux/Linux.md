@@ -1060,10 +1060,10 @@ C Development Tools and Libraries
 ...  
 
 ```yum groupinfo gnome``` - wyświetlenie opisu grupy LXDE, pakietów obowiązkowych, domyślnych i opcjonalnych   
-> Group: GNOME   
+> Group: GNOME    
  Description: GNOME is a highly intuitive and user-friendly desktop environment.   
  Mandatory Packages:  
-   ModemManager  
+   ModemManager   
    NetworkManager-adsl  
  ...  
 
@@ -1085,25 +1085,25 @@ metadanych dla wszystkich włączonych repozytoriów. Oto przykład opróżnieni
 - Opróżnianie bufora yum
 
     ```yum clean packages```
-    > 14 files removed
+    > 14 files removed  
 
     ```yum clean metadata```
-    > Cache was expired
-    16 files removed
+    > Cache was expired  
+    16 files removed  
 
     ```yum clean all```
-    > 68 files removed
+    > 68 files removed  
 
 
 - Sprawdzenie i naprawienie bazy danych yum
 
     ```yum check``` - Sprawdza bazę danych **yum** w przypadku jej ewentualnego uszkodzenia 
-    > error: db5 error(11) from dbenv->open: Resource temporarily
-    unavailable
-    error: cannot open Packages index using db5-Resource temporarily
-    unavailable(11)
-    error: cannot open Packages database in /var/lib/rpm
-    Error: Error: rpmdb open failed
+    > error: db5 error(11) from dbenv->open: Resource temporarily  
+    unavailable  
+    error: cannot open Packages index using db5-Resource temporarily  
+    unavailable(11)  
+    error: cannot open Packages database in /var/lib/rpm  
+    Error: Error: rpmdb open failed  
 
     ```rpm --rebuilddb``` - odbudowuje uszkodzoną bazę danych yum 
 
@@ -1114,7 +1114,7 @@ metadanych dla wszystkich włączonych repozytoriów. Oto przykład opróżnieni
 
 
 ```dnf download firefox``` - **samo pobranie** pakietu **rpm** dla firefox 
-> firefox-60.7.0-1.el8_0.x86_64.rpm 6.1 MB/s | 93 MB 00:15
+> firefox-60.7.0-1.el8_0.x86_64.rpm 6.1 MB/s | 93 MB 00:15  
 
 
 ### rmp, instalowanie, analizowanie i weryfikowanie
@@ -1125,9 +1125,9 @@ metadanych dla wszystkich włączonych repozytoriów. Oto przykład opróżnieni
 ```rpm --update ./zsh-5.5.1-6.el8.x86_64.rpm``` - **update** pakietu **zsh** do wersji z pliku znajdującego się w lokalnym folderze, 
 ```--update lub -U``` - instaluje pakiet **również jeżeli nie znajdował się wcześniej w systemie**
 ```--freshen lub -F``` - instaluje pakiet **tylko jeżeli znajdował się wcześniej w systemie**
-> Verifying... ######################### [100%]
-Preparing... ######################### [100%]
-1:zsh-5.5.1-6.el8 ######################### [100%]
+> Verifying... ######################### [100%]  
+Preparing... ######################### [100%]  
+1:zsh-5.5.1-6.el8 ######################### [100%]  
 
 ```rpm --Uhv ./zsh-5.5.1-6.el8.x86_64.rpm``` - **update, hash, verbose** - aktualizacja z użyciem opcji które mówią więcej o procesie
 
