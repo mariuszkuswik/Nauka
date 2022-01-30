@@ -1133,11 +1133,33 @@ Preparing... ######################### [100%]
 
 ```rpm -e emacs``` - usunięcie pakietu 
 
+
 ### Pobieranie informacji o pakiecie
 
 
+```rpm -qi zsh``` - opis
+> Name : zsh  
+Version : 5.5.1  
+Release : 6.el8  
+...  
 
+```rpm -ql zsh``` - lista plików
+> /etc/skel/.zshrc  
+/etc/zlogin  
+/etc/zlogout  
+...  
 
+```rpm -qd zsh``` - dokumentacja
+/usr/share/doc/zsh/BUGS  
+/usr/share/doc/zsh/CONTRIBUTORS  
+/usr/share/doc/zsh/FAQ  
+...  
+
+```rpm -qc zsh``` - pliki konfiguracyjne
+/etc/skel/.zshrc  
+/etc/zlogin  
+/etc/zlogout  
+...  
 
 ### Strona 260
 
