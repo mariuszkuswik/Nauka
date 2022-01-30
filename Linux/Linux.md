@@ -1122,9 +1122,9 @@ metadanych dla wszystkich włączonych repozytoriów. Oto przykład opróżnieni
 
 ```rpm --install ./zsh-5.5.1-6.el8.x86_64.rpm``` - **instalacja** pakietu **zsh** znajdującego się w lokalnym folderze
 
-```rpm --update ./zsh-5.5.1-6.el8.x86_64.rpm``` - **update** pakietu **zsh** do wersji z pliku znajdującego się w lokalnym folderze, 
-```--update lub -U``` - instaluje pakiet **również jeżeli nie znajdował się wcześniej w systemie**
-```--freshen lub -F``` - instaluje pakiet **tylko jeżeli znajdował się wcześniej w systemie**
+```rpm --update ./zsh-5.5.1-6.el8.x86_64.rpm``` - **update** pakietu **zsh** do wersji z pliku znajdującego się w lokalnym folderze,  
+```--update lub -U``` - instaluje pakiet **również jeżeli nie znajdował się wcześniej w systemie**  
+```--freshen lub -F``` - instaluje pakiet **tylko jeżeli znajdował się wcześniej w systemie**  
 > Verifying... ######################### [100%]  
 Preparing... ######################### [100%]  
 1:zsh-5.5.1-6.el8 ######################### [100%]  
