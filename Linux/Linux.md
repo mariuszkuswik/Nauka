@@ -1320,14 +1320,28 @@ znaczenie pola jest określane na podstawie położenia w wierszu,
     - ```wheel:x:10:mariusz```    
     > group_name:password:GID:user_list  
 
-- ```/etc/skel``` - dodać informacje na temat katalogu, przechowuje domyślną strukturę home dla nowych użytkowników  
+- ```/etc/skel``` - folder zawiera pliki domyślne, które będą kopiowane do katalogu domowego użytkownika
   
 
 ### Ustalanie ustawień domyślnych użytkownika
 
-Polecenie useradd stosuje wartości domyślne podczas tworzenia nowych kont, które odczytuje z plików ```/etc/login.defs``` oraz ```/etc/default/useradd```.  
+Polecenie useradd stosuje wartości domyślne podczas tworzenia nowych kont, które odczytuje z plików ```/etc/login.defs``` oraz ```/etc/default/useradd```
 
-- ```man login.defs``` - wartości możliwe do nadania w pliku login.defs   
+Zmiana wartości domyślnych dla useradd 
+    - ```man login.defs``` - wartości możliwe do nadania w pliku **login.defs**
+
+    - ```useradd -D``` - wyświetlenie wartości domyślnych używanych obecnie przez **useradd**
+        
+        Opcja ```-D``` służy również do zmiany wartości domyślnych
+        np. ```useradd -D -b /home/everyone -s /bin/tcsh``` - zmienia domyślny home-folder na /garage i shell na tcsh
+    
+
+
+     
+
+
+
+
 
 
 
@@ -1336,11 +1350,6 @@ Polecenie useradd stosuje wartości domyślne podczas tworzenia nowych kont, kt�
 
 ### Strona 274
 272
-
-
-
-
-
 
 
 
