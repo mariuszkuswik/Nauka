@@ -1329,6 +1329,7 @@ Polecenie useradd stosuje wartości domyślne podczas tworzenia nowych kont, kt�
   
 Zmiana wartości domyślnych dla useradd  
     - ```man login.defs``` - wartości możliwe do nadania w pliku **login.defs**  
+       
     - ```useradd -D``` - wyświetlenie wartości domyślnych używanych obecnie przez **useradd**  
         Opcja ```-D``` służy również do zmiany wartości domyślnych  
         np. ```useradd -D -b /home/everyone -s /bin/tcsh``` - zmienia domyślny home-folder na /garage i shell na tcsh  
