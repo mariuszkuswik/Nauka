@@ -1356,6 +1356,17 @@ Zmiana wartości domyślnych dla **useradd** :
 
 - ```userdel -r chris``` - usunięcie uytkownika *chris* **razem z katalogiem domowym**
 
+Przed usunięciem użytkownika dobrze jest wydać polecenie find i wyszukać wszystkie pliki należące do tego użytkownika, 
+samo usunięcie użytkownika nie zmienia właściciela pliku
+
+```find / -user chris -ls``` - pliki ownera *po loginie*
+```find / -uid 504 -ls``` - pliki ownera *po UID*
+
+```find / -nouser -ls``` - odnalezienie plików *nienależących do nikogo*
+
+
+
+
 
 
 
