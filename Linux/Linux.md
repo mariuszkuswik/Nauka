@@ -1365,6 +1365,8 @@ samo usunięcie użytkownika nie zmienia właściciela pliku
 ```find / -nouser -ls``` - odnalezienie plików *nienależących do nikogo*
 
 
+### Grupy kont użytkowników
+
 
 
 
