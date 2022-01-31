@@ -1221,7 +1221,7 @@ i usunąć.
 
 
 
-### Dodawanie użytkowników za pomocą polecenia useradd
+### useradd - Dodawanie użytkowników
 
 
 ### #TODO - do poprawienia procedura, opis i tabela, Strona 272  
@@ -1323,21 +1323,27 @@ znaczenie pola jest określane na podstawie położenia w wierszu,
 - ```/etc/skel``` - folder zawiera pliki domyślne, które będą kopiowane do katalogu domowego użytkownika
   
 
-### Ustalanie ustawień domyślnych użytkownika
+### useradd - Ustalanie ustawień domyślnych użytkownika
 
-Polecenie useradd stosuje wartości domyślne podczas tworzenia nowych kont, które odczytuje z plików ```/etc/login.defs``` oraz ```/etc/default/useradd```  
+Polecenie useradd stosuje wartości domyślne podczas tworzenia nowych kont, które odczytuje z plików */etc/login.defs* oraz */etc/default/useradd*  
   
-Zmiana wartości domyślnych dla useradd :
+Zmiana wartości domyślnych dla **useradd** :
 
 - ```man login.defs``` - wartości możliwe do nadania w pliku **login.defs**  
 
 - ```useradd -D``` - wyświetlenie wartości domyślnych używanych obecnie przez **useradd**  
         Opcja ```-D``` służy również do zmiany wartości domyślnych  
-        np. ```useradd -D -b /home/everyone -s /bin/tcsh``` - zmienia domyślny home-folder na /garage i shell na tcsh  
-    
+        np. ```useradd -D -b /home/everyone -s /bin/tcsh``` - zmienia domyślny home-folder na */garage* i shell na *tcsh*  
 
 
+### usermod - Modyfikowanie ustawień użytkownika
 
+**usermod** służy do modyfikowania ustawień użytkownika, wiele parametrów pokrywa się z **useradd**
+
+- ```usermod -Ga sales,marketing, chris``` - **Dodanie użytkownika** chris **do grup** sales, marketing
+**WAŻNE** - jeżeli opcja **-a** nie zostanie zastosowana to użytkownik zostanie dodany do grup do których nie należał i utraci członkostwo w dotychczasowych   
+
+- 
 
 
 
