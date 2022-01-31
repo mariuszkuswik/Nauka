@@ -1219,12 +1219,15 @@ i usunąć.
 
 ## Zarządzanie kontami użytkowników
 
+
+
 ### Dodawanie użytkowników za pomocą polecenia useradd
 
 
-### #TODO - do poprawienia procedura, opis i tabela
+### #TODO - do poprawienia procedura, opis i tabela, Strona 272  
 
-# Strona 272  
+
+
 
 - Tworzenie nowego użytkownika przy pomocy ```useradd```
 
@@ -1233,16 +1236,15 @@ i usunąć.
     ```passwd maria```
 
 
-odczas tworzenia konta dla Marii polecenie useradd wykonuje następujące zadania:
+Podczas tworzenia konta dla Marii polecenie useradd wykonuje następujące zadania:
+
 ■ Odczyt plików /etc/login.defs i /etc/default/useradd w celu pobrania wartości
 domyślnych używanych w trakcie tworzenia nowego konta.
 ■ Sprawdzenie parametrów polecenia powłoki i określenie, które wartości domyślne
 należy nadpisać.
 ■ Utworzenie wpisu nowego użytkownika w plikach /etc/passwd i /etc/shadow,
 na podstawie wartości domyślnych oraz podanych w poleceniu powłoki.
-
-■ Utworzenie wszystkich wpisów grup w pliku /etc/group. (Dystrybucja Fedora tworzy
-grupę, używając nazwy nowego użytkownika).
+■ Utworzenie wszystkich wpisów grup w pliku /etc/group. (Dystrybucja Fedora tworzy grupę, używając nazwy nowego użytkownika).
 ■ Utworzenie w katalogu /home katalogu domowego na podstawie nazwy użytkownika.
 ■ Skopiowanie wszystkich plików z katalogu /etc/skel do katalogu domowego nowego
 użytkownika. Katalog wzorcowy zawiera zwykle skrypty startowe logowania i aplikacji.
@@ -1302,6 +1304,21 @@ W poleceniu zapis id_użytkownika trzeba zastąpić wybranym numerem identyfikac
 Te numery automatycznie przypisywane zwykłym użytkownikom rozpoczynają się od wartości
 1000. Dlatego identyfikatory dla zwykłych użytkowników należy wybierać w sposób, który nie
 będzie kolidował z automatycznie przypisywanymi identyfikatorami.
+
+
+Każdy wiersz pliku /etc/passwd przedstawia konto pojedynczego użytkownika. 
+
+- ```/etc/passwd``` - **Informacje na temat kont użytkowników** znajdują się w ```/etc/passwd``` i są oddzielone dwukropkiem, 
+znaczenie pola jest określane na podstawie położenia w wierszu,
+    ```maria:x:1002:1007:Maria Kowalska:/home/maria:/bin/tcsh```
+    > login:hasło:user id:group id:komentarz:katalog domowy:shell
+
+- ```/etc/shadow``` zawiera **zaszyfrowane hasła użytkowników** i opcjonalnie o ich wygaśnięciu
+    ```man 5 shadow``` - konstrukcja pliku  
+
+- ```/etc/group``` - text file that defines the groups on the system. There is one entry per line, with the following format:
+    ```wheel:x:10:mariusz```
+    > group_name:password:GID:user_list
 
 
 
