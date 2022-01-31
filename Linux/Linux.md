@@ -1226,15 +1226,15 @@ i usunąć.
 
 ### #TODO - do poprawienia procedura, opis i tabela, Strona 272  
 
+- ```useradd```
+    Polecenie useradd stosuje wartości domyślne podczas tworzenia nowych kont, które odczytuje z plików /etc/login.defs oraz /etc/default/useradd.
 
-
-
-- Tworzenie nowego użytkownika przy pomocy ```useradd```
+- Tworzenie nowego użytkownika przy pomocy 
 
     ```useradd -c "Maria Kowalska" maria```
-
     ```passwd maria```
 
+**Po utworzeniu konta użutkownika dobrze jest się na nim zalogować, sprawdzić home folder i ewentualne uprawnienia**
 
 Podczas tworzenia konta dla Marii polecenie useradd wykonuje następujące zadania:
 
@@ -1323,6 +1323,11 @@ znaczenie pola jest określane na podstawie położenia w wierszu,
 - ```/etc/skel``` - dodać informacje na temat katalogu, przechowuje domyślną strukturę home dla nowych użytkowników 
 
 
+### Ustalanie ustawień domyślnych użytkownika
+
+Polecenie useradd stosuje wartości domyślne podczas tworzenia nowych kont, które odczytuje z plików ```/etc/login.defs``` oraz ```/etc/default/useradd```.
+
+- ```man login.defs``` - wartości możliwe do nadania w pliku login.defs 
 
 
 
