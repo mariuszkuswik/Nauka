@@ -1352,6 +1352,9 @@ Zmiana wartości domyślnych dla **useradd** :
 
 ### userdel - Usuwanie użytkownika
 
+- ```userdel chris``` - usunięcie użytkownika *chris*, domyślnie usuwany **jest sam użytkownik** 
+
+- ```userdel -r chris``` - usunięcie uytkownika *chris* **razem z katalogiem domowym**
 
 
 
@@ -1361,8 +1364,8 @@ Zmiana wartości domyślnych dla **useradd** :
 
 
 
-### Strona 274
-277
+### Strona 278
+278
 
 
 
