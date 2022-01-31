@@ -1325,9 +1325,9 @@ znaczenie pola jest określane na podstawie położenia w wierszu,
 
 ### Ustalanie ustawień domyślnych użytkownika
 
-Polecenie useradd stosuje wartości domyślne podczas tworzenia nowych kont, które odczytuje z plików ```/etc/login.defs``` oraz ```/etc/default/useradd```
-
-Zmiana wartości domyślnych dla useradd 
+Polecenie useradd stosuje wartości domyślne podczas tworzenia nowych kont, które odczytuje z plików ```/etc/login.defs``` oraz ```/etc/default/useradd```  
+  
+Zmiana wartości domyślnych dla useradd  
     - ```man login.defs``` - wartości możliwe do nadania w pliku **login.defs**  
     - ```useradd -D``` - wyświetlenie wartości domyślnych używanych obecnie przez **useradd**  
         Opcja ```-D``` służy również do zmiany wartości domyślnych  
