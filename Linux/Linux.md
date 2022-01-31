@@ -1314,12 +1314,10 @@ znaczenie pola jest określane na podstawie położenia w wierszu,
     > login:hasło:user id:group id:komentarz:katalog domowy:shell   
 
 - ```/etc/shadow``` zawiera **zaszyfrowane hasła użytkowników** i opcjonalnie o ich wygaśnięciu  
-  
-    ```man 5 shadow``` - konstrukcja pliku   
+    - ```man 5 shadow``` - konstrukcja pliku   
 
 - ```/etc/group``` - text file that **defines the groups on the system**. There is one entry per line, with the following format:  
-     
-    ```wheel:x:10:mariusz```    
+    - ```wheel:x:10:mariusz```    
     > group_name:password:GID:user_list  
 
 - ```/etc/skel``` - dodać informacje na temat katalogu, przechowuje domyślną strukturę home dla nowych użytkowników  
