@@ -1367,7 +1367,7 @@ Zmiana wartości domyślnych dla **useradd** :
 
 
 
-[Go Top](#Linux/Bash)
+[Go Top](#LinuxBash)
 # Koniec Biblii
 
 
