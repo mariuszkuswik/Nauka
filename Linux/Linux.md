@@ -24,6 +24,10 @@
     - [Praca z procesami](#Zarządzanie-uruchomionymi-procesami)
         - [Background and foreground processes](#Background-and-foreground-processes )
     - [Administracja systemem linux](#administracja-systemem-linux)
+    - [Zarządzanie kontami użytkowników](#Zarządzanie-kontami-użytkowników)
+        - [useradd](#useradd---Ustalanie-ustawień-domyślnych-użytkownika)
+        - [usermod](#usermod---Modyfikowanie-ustawień-użytkownika)
+        - [userdel](#userdel---Usuwanie-użytkownika)
 - [Koniec Biblii](#Koniec-Biblii)
 2. [Skryptowanie](#skryptowanie)
 	- [Zmienne specjalne](#zmienne-specjalne)
@@ -1308,7 +1312,7 @@ będzie kolidował z automatycznie przypisywanymi identyfikatorami.
 
 Każdy wiersz pliku /etc/passwd przedstawia konto pojedynczego użytkownika. 
 
-- ```/etc/passwd``` - **Informacje na temat kont użytkowników** znajdują się w ```/etc/passwd``` i są oddzielone dwukropkiem, 
+- ```/etc/passwd``` - **Informacje na temat kont użytkowników** znajdują się w */etc/passwd* i są oddzielone dwukropkiem, 
 znaczenie pola jest określane na podstawie położenia w wierszu,   
     - ```maria:x:1002:1007:Maria Kowalska:/home/maria:/bin/tcsh```   
     > login:hasło:user id:group id:komentarz:katalog domowy:shell   
@@ -1338,12 +1342,15 @@ Zmiana wartości domyślnych dla **useradd** :
 
 ### usermod - Modyfikowanie ustawień użytkownika
 
-**usermod** służy do modyfikowania ustawień użytkownika, wiele parametrów pokrywa się z **useradd**
+**usermod** - służy do modyfikowania ustawień użytkownika, wiele parametrów pokrywa się z **useradd**
 
 - ```usermod -Ga sales,marketing, chris``` - **Dodanie użytkownika** chris **do grup** sales, marketing
 **WAŻNE** - jeżeli opcja **-a** nie zostanie zastosowana to użytkownik zostanie dodany do grup do których nie należał i utraci członkostwo w dotychczasowych   
 
-- 
+- ```man 8 usermod``` - pełna lista parametrów możliwych do zmiany 
+
+
+### userdel - Usuwanie użytkownika
 
 
 
@@ -1355,7 +1362,7 @@ Zmiana wartości domyślnych dla **useradd** :
 
 
 ### Strona 274
-272
+277
 
 
 
