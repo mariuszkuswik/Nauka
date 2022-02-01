@@ -66,6 +66,18 @@ This documents contains some of the basic commands that you will need to get sta
 # Odpalenie nowego repo 
 
 ### Dlaczego nie działa
+
+1. Start SSH agent in the background.
+```$ ssh-agent -s```
+> Agent pid 59566
+
+2. Dodaj klucz
+```ssh-add ~/.ssh/github```
+
+
+https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey
+
+
 https://careerkarma.com/blog/git-fatal-could-not-read-from-remote-repository/
 
 1.  ```git init```
