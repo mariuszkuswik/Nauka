@@ -1411,8 +1411,9 @@ podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
 - ```setfacl``` - modyfikuje uprawnienia (-m) lub usuwa uprawnienia ACL (-x) 
 
     - ```setfacl -m u:nazwa_użytkownika:rwx nazwa_pliku``` - setfacl modyfikuje uprawnienia dla pliku *nazwa_pliku*, 
-        - ```u``` wskazuje na nadanie uprawnień użytkownikowi 
-        - ```rwx``` to uprawnienia jakie zostają mu nadane 
+        - ```u``` - wskazuje na nadanie uprawnień użytkownikowi 
+        - ```g``` - nadanie uprawnień grupie 
+        - ```rwx``` - to uprawnienia jakie zostają nadane w powyższym przykładzie
 
 - ```getfacl``` -  Wyświetla ACLki dla pliku
     
@@ -1433,9 +1434,6 @@ podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
         **mask** jest określany **na podstawie uprawnień zwykłej grupy** (*chmod nadaje*), 
         Nawet jeśli użytkownik otrzyma większe uprawnienia ACL to nie będą one miały zastosowania
         
-    
-
-
 
 
     **Przykład użycia :**
@@ -1460,6 +1458,15 @@ podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
 Przy poleceniu **ls -l** w uprawnieniach w ```rw-rw-r--+``` trzeba zwracać uwagę na ```+```,  
 **Oznacza to, że dla pliku są ustawione uprawnienia ACL**   
 Wydanie polecenia **getfacl** dla tego pliku spowoduje wyświetlenie pełnych informacji o sposobie ustawienia ACL
+
+
+### Określanie domyślnych uprawnień ACL
+
+
+Zdefiniowanie domyślnych uprawnień ACL dla katalogu pozwala na ich dziedziczenie.  
+Do zdefiniowania domyślnych uprawnień ACL służy opcja ```d:```    
+  
+    - ```setfacl -m d:g:market:rwx /tmp/maria/``` - polecenie sprawia, że w folderze maria wszystkie uprawnienia dla grupy market będą dziedziczone  
 
 
 
