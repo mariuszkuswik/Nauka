@@ -1419,7 +1419,11 @@ podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
 
     **Przykład użycia :**
 
-    ```setfacl -m u:test:rwx ./a1```  
+    ```setfacl -m u:test:rwx ./a1``` 
+
+    ```ls -l ./a1```
+    > drwxrwxr-x+ 2 mariusz mariusz 6 Feb  1 09:20 a1  
+
     ```getfacl ./a1```  
     
     > \# file: a1  
@@ -1432,8 +1436,9 @@ podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
     other::r-x  
 
 
-
-
+Przy poleceniu **ls -l** w uprawnieniach ```w rw-rw-r--+``` trzeba zwracać uwagę na ```+```, 
+**oznacza to, że dla pliku są ustawione uprawnienia ACL**  
+Wydanie polecenia **getfacl** dla tego pliku spowoduje wyświetlenie pełnych informacji o sposobie ustawienia ACL
 
 
 
