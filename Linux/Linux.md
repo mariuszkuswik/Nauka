@@ -1422,9 +1422,9 @@ podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
 ```setfacl -m u:test:rwx ./a1```  
 ```getfacl ./a1```  
   
-> # file: a1  
-# owner: mariusz  
-# group: mariusz  
+> \# file: a1  
+\# owner: mariusz  
+\# group: mariusz  
 user::rwx  
 user:test:rwx  
 group::rwx  
