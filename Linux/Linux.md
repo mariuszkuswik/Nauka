@@ -1416,16 +1416,17 @@ podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
 
 - ```getfacl``` -  Wyświetla ACLki dla pliku
     
-    - ```getfacl ./a1```
-        > \# file: a1
-        \# owner: mariusz
-        \# group: mariusz
-        user::---
-        user:test:rwx                   #effective:r--
-        group::rwx                      #effective:r--
-        mask::r--
-        other::---
-
+    - ```getfacl ./a1```  
+        > \# file: a1  
+        \# owner: mariusz  
+        \# group: mariusz  
+        user::---  
+        user:test:rwx                   #effective:r--  
+        group::rwx                      #effective:r--  
+        mask::r--  
+        other::---  
+  
+  
         **WAŻNE**
           
         Wiersz **mask** określa jakie uprawnienia maksymalne może mieć użytkownik lub grupa - w tym przypadku **read** dla użytkownika **test**,  
