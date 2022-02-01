@@ -1183,12 +1183,12 @@ zanim zostanie zainstalowany w systemie.
 
 Jeżeli jeszcze tego nie zrobiłeś, pobierz pakiet zsh i umieść go w katalogu lokalnym (dnf download
 zsh). Następnie wykonaj kilka poleceń rpm pobierających informacje o tym pakiecie:
-# rpm -qip zsh-5.7.1-1.fc30.x86_64.rpm Wyświetlenie informacji o danym pliku RPM
-# rpm -qlp zsh-5.7.1-1.fc30.x86_64.rpm Wyświetlenie wszystkich plików znajdujących się
+\# rpm -qip zsh-5.7.1-1.fc30.x86_64.rpm Wyświetlenie informacji o danym pliku RPM
+\# rpm -qlp zsh-5.7.1-1.fc30.x86_64.rpm Wyświetlenie wszystkich plików znajdujących się
 ´w danym pliku RPM
-# rpm -qdp zsh-5.7.1-1.fc30.x86_64.rpm Wyświetlenie dokumentacji znajdującej się
+\# rpm -qdp zsh-5.7.1-1.fc30.x86_64.rpm Wyświetlenie dokumentacji znajdującej się
 ´w danym pliku RPM
-# rpm -qcp zsh-5.7.1-1.fc30.x86_64.rpm Wyświetlenie plików konfiguracyjnych znajdujących się
+\# rpm -qcp zsh-5.7.1-1.fc30.x86_64.rpm Wyświetlenie plików konfiguracyjnych znajdujących się
 ´w danym pliku RPM.
 
 
