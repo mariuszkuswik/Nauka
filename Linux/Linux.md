@@ -1472,7 +1472,7 @@ Do zdefiniowania domyślnych uprawnień ACL służy opcja ```d:```
 
 
 ### Strona 277
-282
+283
 
 
 
