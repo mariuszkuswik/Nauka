@@ -1400,7 +1400,38 @@ podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
     - ```groupmod -n jacks jokers``` - zmiana nazwy grupy jokers 
 
 
-### Zarządzanie użytkownikami w dużej firmi
+## Definiowanie uprawnień za pomocą listy ACL
+
+
+### #TODO - Strona 281 - do skrócenia  
+
+
+### Definiowanie ACL za pomocą setfacl
+
+- ```setfacl``` - modyfikuje uprawnienia (-m) lub usuwa uprawnienia ACL (-x) 
+
+    - ```setfacl -m u:nazwa_użytkownika:rwx nazwa_pliku``` - setfacl modyfikuje uprawnienia dla pliku *nazwa_pliku*, 
+        - ```u``` wskazuje na nadanie uprawnień użytkownikowi 
+        - ```rwx``` to uprawnienia jakie zostają mu nadane 
+
+- ```getfacl``` -  Wyświetla ACLki dla pliku
+
+
+**Przykład użycia :**
+
+```setfacl -m u:test:rwx ./a1```
+```getfacl ./a1```
+
+> # file: a1  
+# owner: mariusz  
+# group: mariusz  
+user::rwx  
+user:test:rwx  
+group::rwx  
+mask::rwx  
+other::r-x  
+
+
 
 
 
@@ -1408,7 +1439,7 @@ podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
 
 
 ### Strona 277
-277
+281
 
 
 
