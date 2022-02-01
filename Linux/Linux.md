@@ -1367,10 +1367,40 @@ samo usunięcie użytkownika nie zmienia właściciela pliku
 
 ### Grupy kont użytkowników
 
+### #TODO - strona 279, ogarnąć jak działa polecenie newgrp i gpasswd
+
+Każdy plik przypisany do grupy sales lub marketing jest dostępny dla użytkownika
+maria z uprawnieniami dla grupy i pozostałych użytkowników (w zależności od tego,
+które mają większy zasięg). Jeżeli użytkownik maria chce utworzyć plik z przypisanymi
+do niego grupami sales i marketing, może użyć polecenia newgrp. W przykładzie
+użytkownik maria wydaje polecenie newgrp, aby sales tymczasowo stała się jego grupą
+podstawową, a następnie tworzy plik:
+[sara]$ touch file1
+[sara]$ newgrp sales
+[sara]$ touch file2
+[sara]$ ls -l file*
+-rw-rw-r--. 1 sara sara 0 Jan 18 22:22 file1
+-rw-rw-r--. 1 sara sales 0 Jan 18 22:23 file2
+[sara]$ exit
+Za pomocą polecenia newgrp można też umożliwić użytkownikowi tymczasowe przypisanie mu
+grupy, bez faktycznego dodawania go do tej grupy. W tym celu ktoś z uprawnieniami roota może
+wydać polecenie gpasswd (np. gpasswd sales). Następnie jeśli użytkownik wykona z poziomu
+powłoki polecenie newgrp sales, będzie mógł tymczasowo użyć sales jako swojej grupy
+podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
 
 
+### Tworzenie grup kont
+
+- **groupadd** - tworzenie grup 
+    - ```groupadd kings``` - utworzenie grupy kings z pierwszym wolnym GID (group ID)    
+    - ```groupadd -g 1325 jokers```- utworzenie grupy jokers o GID 1325
+
+- **groupmod** - zmiana parametrów grupy 
+    - ```groupmod -g 330 jokers``` - zmiana GID na 330
+    - ```groupmod -n jacks jokers``` - zmiana nazwy grupy jokers 
 
 
+### Zarządzanie użytkownikami w dużej firmi
 
 
 
