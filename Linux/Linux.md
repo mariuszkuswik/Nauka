@@ -1417,19 +1417,19 @@ podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
 - ```getfacl``` -  Wyświetla ACLki dla pliku
 
 
-**Przykład użycia :**
+    **Przykład użycia :**
 
-```setfacl -m u:test:rwx ./a1```  
-```getfacl ./a1```  
-  
-> \# file: a1  
-\# owner: mariusz  
-\# group: mariusz  
-user::rwx  
-user:test:rwx  
-group::rwx  
-mask::rwx  
-other::r-x  
+    ```setfacl -m u:test:rwx ./a1```  
+    ```getfacl ./a1```  
+    
+    > \# file: a1  
+    \# owner: mariusz  
+    \# group: mariusz  
+    user::rwx  
+    user:test:rwx  
+    group::rwx  
+    mask::rwx  
+    other::r-x  
 
 
 
