@@ -1415,6 +1415,26 @@ podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
         - ```rwx``` to uprawnienia jakie zostają mu nadane 
 
 - ```getfacl``` -  Wyświetla ACLki dla pliku
+    
+    - ```getfacl ./a1```
+        > \# file: a1
+        \# owner: mariusz
+        \# group: mariusz
+        user::---
+        user:test:rwx                   #effective:r--
+        group::rwx                      #effective:r--
+        mask::r--
+        other::---
+
+        **WAŻNE**
+          
+        Wiersz **mask** określa jakie uprawnienia maksymalne może mieć użytkownik lub grupa - w tym przypadku **read** dla użytkownika **test**,  
+        **mask** jest określany **na podstawie uprawnień zwykłej grupy** (*chmod nadaje*), 
+        Nawet jeśli użytkownik otrzyma większe uprawnienia ACL to nie będą one miały zastosowania
+        
+    
+
+
 
 
     **Przykład użycia :**
@@ -1437,14 +1457,14 @@ podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
 
 
 Przy poleceniu **ls -l** w uprawnieniach w ```rw-rw-r--+``` trzeba zwracać uwagę na ```+```,  
-**oznacza to, że dla pliku są ustawione uprawnienia ACL**   
+**Oznacza to, że dla pliku są ustawione uprawnienia ACL**   
 Wydanie polecenia **getfacl** dla tego pliku spowoduje wyświetlenie pełnych informacji o sposobie ustawienia ACL
 
 
 
 
 ### Strona 277
-281
+282
 
 
 
