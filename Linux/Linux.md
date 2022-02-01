@@ -1436,8 +1436,8 @@ podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
     other::r-x  
 
 
-Przy poleceniu **ls -l** w uprawnieniach ```w rw-rw-r--+``` trzeba zwracać uwagę na ```+```, 
-**oznacza to, że dla pliku są ustawione uprawnienia ACL**  
+Przy poleceniu **ls -l** w uprawnieniach w ```rw-rw-r--+``` trzeba zwracać uwagę na ```+```,  
+**oznacza to, że dla pliku są ustawione uprawnienia ACL**   
 Wydanie polecenia **getfacl** dla tego pliku spowoduje wyświetlenie pełnych informacji o sposobie ustawienia ACL
 
 
