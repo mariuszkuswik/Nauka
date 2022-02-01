@@ -1423,10 +1423,10 @@ podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
         user::---  
         user:test:rwx                   #effective:r--  
         group::rwx                      #effective:r--  
-        mask::r--  
-        other::---  
-  
-  
+        mask::r--   
+        other::---   
+
+
         **WAŻNE**
           
         Wiersz **mask** określa jakie uprawnienia maksymalne może mieć użytkownik lub grupa - w tym przypadku **read** dla użytkownika **test**,  
