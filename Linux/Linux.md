@@ -1531,7 +1531,10 @@ Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```
 
 ### #TODO - Tabela strona 285
 
-Litery i cyfry używane w specjalnych bitach uprawnień
+
+![Litery i cyfry używane w specjalnych bitach uprawnień](tabela_11_4.png)
+
+
 
 Nazwa Wartość liczbowa Wartość tekstowa
 Ustawienie bitu identyfikatora użytkownika 4 u+s
@@ -1541,7 +1544,6 @@ Bit sticky 1 o+t
 #### Ustawienie bitu GID - tworzenie katalogów współdzielonych przez grupy
 
 Gdy dla katalogu zostaje ustawiony bit GID (2 lub g+s), wówczas wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.
-Jeżeli 
 
 ```bash
 # Zmiana grupy dla folderu na shared_folder
@@ -1559,6 +1561,11 @@ ls -l test_file
 > -rw-rw-r--. 1 mariusz shared_folder 0 Feb 2 12:37 test_file
 ```
 
+
+### bit sticky - tworzenie katalogu, którego nie można łatwo usunąć
+
+
+**Bit sticky** powoduje, że tylko użytkownik root lub właściciel katalogu może go usunąć, bez bitu sticky każdy użytkownik może usunąć dany plik lub katalog. 
 
 
 
