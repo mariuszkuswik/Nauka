@@ -1529,17 +1529,11 @@ Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```
   
 ### Dodawanie katalogów współdzielonych przez użytkowników
 
-### #TODO - Tabela strona 285
+Litery i cyfry używane w specjalnych bitach uprawnień
 
+![Litery i cyfry używane w specjalnych bitach uprawnień](https://github.com/mariuszkuswik/Nauka/blob/biblia/Linux/Obrazy/tabela_11_4.png)
 
-![Litery i cyfry używane w specjalnych bitach uprawnień](tabela_11_4.png)
-
-
-
-Nazwa Wartość liczbowa Wartość tekstowa
-Ustawienie bitu identyfikatora użytkownika 4 u+s
-Ustawienie bitu identyfikatora grupy 2 g+s
-Bit sticky 1 o+t
+Tabela strona 285
 
 #### Ustawienie bitu GID - tworzenie katalogów współdzielonych przez grupy
 
