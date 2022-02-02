@@ -1465,13 +1465,23 @@ Wydanie polecenia **getfacl** dla tego pliku spowoduje wyświetlenie pełnych in
 
 Zdefiniowanie domyślnych uprawnień ACL dla katalogu pozwala na ich dziedziczenie.  
 Do zdefiniowania domyślnych uprawnień ACL służy opcja ```d:```    
-  
     - ```setfacl -m d:g:market:rwx /tmp/maria/``` - polecenie sprawia, że w folderze maria wszystkie uprawnienia dla grupy market będą dziedziczone  
+        > getfacl /tmp/maria/  
+        \# file: tmp/maria/  
+        \# owner: maria  
+        \# group: maria  
+        user::rwx  
+        group::rwx  
+        other::r-x  
+        default:user::rwx  
+        default:group::rwx  
+        default:group:sales:rwx  
+        default:group:market:rwx  
+        default:mask::rwx  
+        default:other::r-x  
 
 
-
-
-### Strona 277
+### Strona 283
 283
 
 
