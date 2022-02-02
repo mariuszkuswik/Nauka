@@ -1477,17 +1477,47 @@ Do zdefiniowania domyślnych uprawnień ACL służy opcja ```d:```
         default:group::rwx  
         default:group:sales:rwx  
         default:group:market:rwx  
-        default:<zero-width space>mask::rwx  
+        default:<zero-width space>mask::rwx   
         default:other::r-x  
 
 *Domyślnie uprawnienia do plików są nadawane bez execute*, tak samo jest w przypadku uprawnień odziedziczonych 
 
 
 
+### Włączanie ACL
+
+W RHEL systemy plików *xfs* i *ext* są automatycznie tworzone z włączoną obsługą ACL.
+
+Jak włączyć ACL : 
+    ■ Dodanie opcji acl do piątego pola w wierszu zdefiniowanym w pliku **/etc/fstab**, co powoduje automatyczne zamontowanie danego systemu plików podczas uruchamiania systemu.
+    ■ Dodanie opcji acl do polecenia mount podczas ręcznego montowania systemu plików za pomocą polecenia mount.
+    ■ Umieszczenie wiersza acl w polu Default mount options w superbloku systemu plików, co powoduje użycie opcji acl podczas zarówno automatycznego, jak i ręcznego montowania systemu plików.
+
+
+Wyświetlenie opcji montowania systemu, sprawdzenie czy opcja **acl** została włączona :  
+
+```mount | grep home```
+> /dev/mapper/mybox-home on /home type ext4 (rw)
+
+```tune2fs -l /dev/mapper/mybox-home | grep "mount options"```
+> Default mount options: user_xattr acl
+
+
+Jeżeli pole Default mount options jest puste (jak podczas tworzenia nowego systemu plików),
+opcję montowania acl można dodać za pomocą polecenia tune2fs -o. Na przykład w innym
+systemie Linux utworzyłem system plików na dysku przenośnym USB, który został zamontowany
+jako /dev/sdc1. Aby wykorzystać opcję montowania acl i potwierdzić jej użycie, wydałem
+następujące polecenia:
+# tune2fs -o acl /dev/sdc1
+# tune2fs -l /dev/sdc1 | grep "mount options"
+Default mount options: acl
+
+
+
 
 
 ### Strona 283
-283
+284
 
 
 
