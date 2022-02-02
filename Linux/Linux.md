@@ -1460,7 +1460,7 @@ Przy poleceniu **ls -l** w uprawnieniach w ```rw-rw-r--+``` trzeba zwracać uwag
 Wydanie polecenia **getfacl** dla tego pliku spowoduje wyświetlenie pełnych informacji o sposobie ustawienia ACL
 
 
-### Określanie domyślnych uprawnień ACL
+## Określanie domyślnych uprawnień ACL
 
 
 Zdefiniowanie domyślnych uprawnień ACL dla katalogu pozwala na ich dziedziczenie.  
@@ -1484,7 +1484,7 @@ Do zdefiniowania domyślnych uprawnień ACL służy opcja ```d:```
 
 
 
-### Włączanie ACL
+## Włączanie ACL
 
 W RHEL systemy plików *xfs* i *ext* są automatycznie tworzone z włączoną obsługą ACL.
 
@@ -1495,7 +1495,7 @@ Jak włączyć ACL :
 
 
 
-##### Sprawdzenie czy opcja acl została włączona, wyświetlenie opcji montowania systemu:
+#### Sprawdzenie czy opcja acl została włączona, wyświetlenie opcji montowania systemu:
 
     ```mount | grep home```  
     > /dev/mapper/mybox-home on /home type ext4 (rw)  
@@ -1504,7 +1504,7 @@ Jak włączyć ACL :
     > Default mount options: user_xattr acl  
   
 
-#### Sposoby na zamontowanie opcji acl  
+### Sposoby na zamontowanie opcji acl  
 
 1. Dodanie opcji montowania **acl** za pomocą polecenia **tune2fs -o**  
    
@@ -1527,13 +1527,13 @@ Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```
     ```mount -o acl /dev/sdc1 /var/stuff```  
 
   
-### Dodawanie katalogów współdzielonych przez użytkowników
+## Dodawanie katalogów współdzielonych przez użytkowników
 
 ![Litery i cyfry używane w specjalnych bitach uprawnień](https://github.com/mariuszkuswik/Nauka/blob/biblia/Linux/Obrazy/tabela_11_4.png)
 
 ##### Tabela strona 285
 
-#### Ustawienie bitu GID - tworzenie katalogów współdzielonych przez grupy
+### Ustawienie bitu GID - tworzenie katalogów współdzielonych przez grupy
 
 Gdy dla katalogu zostaje ustawiony bit GID (2 lub g+s), wówczas wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.
 Bit można ustawić poprzez użycie *chmod g+s* lub dodając *2 na początku* uprawnień które nadajemy *np. 2755*.
@@ -1555,14 +1555,13 @@ ls -l test_file
 ```
 
 
-### bit sticky - tworzenie katalogu, którego nie można łatwo usunąć
+## bit sticky - tworzenie katalogu, którego nie można łatwo usunąć
 
 
 **Bit sticky** powoduje, że tylko użytkownik root lub właściciel katalogu może go usunąć.
 
 
 ```bash
-
 # Dodanie sticky bitu
 chmod 1777 Sticky_catalog/
 
@@ -1576,8 +1575,9 @@ su test
 # Próba usunięcia pliku w folderze ze stickybitem nieudana 
 rm Sticky_catalog/test_file
 >rm: cannot remove 'Sticky_catalog/test_file': Operation not permitted 
-
 ```
+
+
 
 
 
