@@ -1490,27 +1490,35 @@ W RHEL systemy plików *xfs* i *ext* są automatycznie tworzone z włączoną ob
 
 Jak włączyć ACL : 
     ■ Dodanie opcji acl do piątego pola w wierszu zdefiniowanym w pliku **/etc/fstab**, co powoduje automatyczne zamontowanie danego systemu plików podczas uruchamiania systemu.
-    ■ Dodanie opcji acl do polecenia mount podczas ręcznego montowania systemu plików za pomocą polecenia mount.
     ■ Umieszczenie wiersza acl w polu Default mount options w superbloku systemu plików, co powoduje użycie opcji acl podczas zarówno automatycznego, jak i ręcznego montowania systemu plików.
+    ■ Dodanie opcji acl do polecenia mount podczas ręcznego montowania systemu plików za pomocą polecenia mount.
 
 
-Wyświetlenie opcji montowania systemu, sprawdzenie czy opcja **acl** została włączona :  
 
-```mount | grep home```
-> /dev/mapper/mybox-home on /home type ext4 (rw)
+- Sprawdzenie czy opcja **acl** została włączona, wyświetlenie opcji montowania systemu:    
 
-```tune2fs -l /dev/mapper/mybox-home | grep "mount options"```
-> Default mount options: user_xattr acl
+    ```mount | grep home```  
+    > /dev/mapper/mybox-home on /home type ext4 (rw)  
+  
+    ```tune2fs -l /dev/mapper/mybox-home | grep "mount options"```  
+    > Default mount options: user_xattr acl  
+  
+
+**Sposoby na zamontowanie opcji acl** 
+
+1. Dodanie opcji montowania **acl** za pomocą polecenia ```tune2fs -o```  
+   
+    ```tune2fs -o acl /dev/sdc1```  
+   
+    ```tune2fs -l /dev/sdc1 | grep "mount options"```  
+    > Default mount options: acl  
+  
+Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```   
 
 
-Jeżeli pole Default mount options jest puste (jak podczas tworzenia nowego systemu plików),
-opcję montowania acl można dodać za pomocą polecenia tune2fs -o. Na przykład w innym
-systemie Linux utworzyłem system plików na dysku przenośnym USB, który został zamontowany
-jako /dev/sdc1. Aby wykorzystać opcję montowania acl i potwierdzić jej użycie, wydałem
-następujące polecenia:
-# tune2fs -o acl /dev/sdc1
-# tune2fs -l /dev/sdc1 | grep "mount options"
-Default mount options: acl
+2. Dołączenie opcji **acl** do wiersza w pliku **/etc/fstab** 
+
+
 
 
 
