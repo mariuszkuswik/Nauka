@@ -1536,7 +1536,7 @@ Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```
 ## Ustawienie bitu GID - tworzenie katalogów współdzielonych przez grupy
 
 Gdy dla katalogu zostaje ustawiony bit GID (2 lub g+s), wówczas wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.
-Bit można ustawić poprzez użycie *chmod g+s* lub dodając *2 na początku* uprawnień które nadajemy *np. 2755*.
+Bit można ustawić poprzez użycie *chmod g+s* lub dodając *2 na początku* uprawnień które nadajemy *np. 2755* (tabela 11.4).
 
 ```bash
 # Zmiana grupy dla folderu na shared_folder
