@@ -1477,8 +1477,13 @@ Do zdefiniowania domyślnych uprawnień ACL służy opcja ```d:```
         default:group::rwx  
         default:group:sales:rwx  
         default:group:market:rwx  
-        default:mask::rwx  
+        default\:mask::rwx  
         default:other::r-x  
+
+*Domyślnie uprawnienia do plików są nadawane bez execute*, tak samo jest w przypadku uprawnień odziedziczonych 
+
+
+
 
 
 ### Strona 283
