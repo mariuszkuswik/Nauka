@@ -1504,7 +1504,7 @@ Jak włączyć ACL :
     > Default mount options: user_xattr acl  
   
 
-**Sposoby na zamontowanie opcji acl** 
+#### Sposoby na zamontowanie opcji acl
 
 1. Dodanie opcji montowania **acl** za pomocą polecenia ```tune2fs -o```  
    
