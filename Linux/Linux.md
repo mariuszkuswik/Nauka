@@ -1527,6 +1527,38 @@ Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```
     ```mount -o acl /dev/sdc1 /var/stuff```  
 
   
+### Dodawanie katalogów współdzielonych przez użytkowników
+
+### #TODO - Tabela strona 285
+
+Litery i cyfry używane w specjalnych bitach uprawnień
+
+Nazwa Wartość liczbowa Wartość tekstowa
+Ustawienie bitu identyfikatora użytkownika 4 u+s
+Ustawienie bitu identyfikatora grupy 2 g+s
+Bit sticky 1 o+t
+
+#### Ustawienie bitu GID - tworzenie katalogów współdzielonych przez grupy
+
+Gdy dla katalogu zostaje ustawiony bit GID (2 lub g+s), wówczas wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.
+Jeżeli 
+
+```bash
+# Zmiana grupy dla folderu na shared_folder
+chgrp shared_folder GID_test_shared
+
+# Dodanie GID do folderu 
+chmod 2775 GID_test_shared/
+
+# Potwierdzenie dodania bitu GID ( s w miejscu execute dla grupy )
+ls -l GID_test_shared/
+> drwxrwsr-x. 2 mariusz shared_folder  4096 Feb  2 12:30 GID_test_shared
+
+# Grupą do której należy plik jest shared_folder - skutek przypisania GID
+ls -l test_file
+> -rw-rw-r--. 1 mariusz shared_folder 0 Feb 2 12:37 test_file
+```
+
 
 
 
