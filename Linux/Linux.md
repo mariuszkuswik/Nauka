@@ -1495,7 +1495,7 @@ Jak włączyć ACL :
 
 
 
-- **Sprawdzenie czy opcja **acl** została włączona, wyświetlenie opcji montowania systemu:    **
+- **Sprawdzenie czy opcja acl została włączona, wyświetlenie opcji montowania systemu:**
 
     ```mount | grep home```  
     > /dev/mapper/mybox-home on /home type ext4 (rw)  
