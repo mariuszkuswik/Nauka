@@ -1529,15 +1529,14 @@ Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```
   
 ### Dodawanie katalogów współdzielonych przez użytkowników
 
-Litery i cyfry używane w specjalnych bitach uprawnień
-
 ![Litery i cyfry używane w specjalnych bitach uprawnień](https://github.com/mariuszkuswik/Nauka/blob/biblia/Linux/Obrazy/tabela_11_4.png)
 
-Tabela strona 285
+##### Tabela strona 285
 
 #### Ustawienie bitu GID - tworzenie katalogów współdzielonych przez grupy
 
 Gdy dla katalogu zostaje ustawiony bit GID (2 lub g+s), wówczas wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.
+Bit można ustawić poprzez użycie *chmod g+s* lub dodając *2 na początku* uprawnień które nadajemy *np. 2755*.
 
 ```bash
 # Zmiana grupy dla folderu na shared_folder
@@ -1559,7 +1558,26 @@ ls -l test_file
 ### bit sticky - tworzenie katalogu, którego nie można łatwo usunąć
 
 
-**Bit sticky** powoduje, że tylko użytkownik root lub właściciel katalogu może go usunąć, bez bitu sticky każdy użytkownik może usunąć dany plik lub katalog. 
+**Bit sticky** powoduje, że tylko użytkownik root lub właściciel katalogu może go usunąć.
+
+
+```bash
+
+# Dodanie sticky bitu
+chmod 1777 Sticky_catalog/
+
+# Sprawdzenie czy bit został dodany - t w miejscu execute dla others oznacza, że tak
+ls -l Sticky_catalog
+drwxrwxrwt. 2 mariusz mariusz        4096 Feb  2 12:57 Sticky_catalog
+
+# Przelogowanie na użytkownika test 
+su test
+
+# Próba usunięcia pliku w folderze ze stickybitem nieudana 
+rm Sticky_catalog/test_file
+>rm: cannot remove 'Sticky_catalog/test_file': Operation not permitted 
+
+```
 
 
 
