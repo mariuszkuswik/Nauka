@@ -1504,9 +1504,9 @@ Jak włączyć ACL :
     > Default mount options: user_xattr acl  
   
 
-#### Sposoby na zamontowanie opcji acl
+#### Sposoby na zamontowanie opcji acl  
 
-1. Dodanie opcji montowania **acl** za pomocą polecenia ```tune2fs -o```  
+1. Dodanie opcji montowania **acl** za pomocą polecenia **tune2fs -o**  
    
     ```tune2fs -o acl /dev/sdc1```  
    
@@ -1516,16 +1516,22 @@ Jak włączyć ACL :
 Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```   
 
 
-2. Dołączenie opcji **acl** do wiersza w pliku **/etc/fstab** 
+2. Dołączenie opcji **acl** do wiersza w pliku **/etc/fstab**  
+    Krótki opis fstaba:   
+    UUID    | mount_point | file_system | options | 4 i 5 opcja - man fstab  
 
+    ```/dev/sdc1 /var/stuff ext4 acl 1 2```  
+  
+3. **Tymczasowe zamontowanie** systemu plików za pomocą **mount** i podanie opcji montowania acl  
+  
+    ```mount -o acl /dev/sdc1 /var/stuff```  
 
-
-
+  
 
 
 
 ### Strona 283
-284
+285
 
 
 
