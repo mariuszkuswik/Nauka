@@ -1488,7 +1488,7 @@ Do zdefiniowania domyślnych uprawnień ACL służy opcja ```d:```
 
 W RHEL systemy plików *xfs* i *ext* są automatycznie tworzone z włączoną obsługą ACL.
 
-Jak włączyć ACL : 
+Jak włączyć ACL :  
     ■ Dodanie opcji acl do piątego pola w wierszu zdefiniowanym w pliku **/etc/fstab**, co powoduje automatyczne zamontowanie danego systemu plików podczas uruchamiania systemu.  
     ■ Umieszczenie wiersza acl w polu Default mount options w superbloku systemu plików, co powoduje użycie opcji acl podczas zarówno automatycznego, jak i ręcznego montowania systemu plików.  
     ■ Dodanie opcji acl do polecenia mount podczas ręcznego montowania systemu plików za pomocą polecenia mount.  
