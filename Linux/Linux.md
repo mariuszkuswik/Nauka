@@ -1581,7 +1581,33 @@ O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dl
     ```
 
 
-## Scentralizowane konta użytkowników
+### #TODO - Ćwiczenia do zrobienia, strona 289 
+
+
+# Zarządzanie dyskami i systemami plików
+
+## Partycjonowanie dysku twardego
+
+### Tablica partycji
+
+MBR - stara wersja, ograniczenie do 4 partycji podstawowych + parycje logiczne na partycji rozszerzonej, maksymalny rozmar 2TB  
+GUID - nowa wersja, ograniczenie do 128 partycji podstawowych ( chyba tyle partycji), maksymalny rozmar 9,4ZB (zetabajty)
+
+### Wyświetlanie partycji na dysku
+
+```parted -l /dev/disk``` - wyświetla tablicę partycji 
+
+WAŻNE - parted przeprowadza zmiany od razu, w przeciwieństwie do fdisk nie muszą one być zatwierdzane 
+
+parted 
+
+
+```parted /dev/sdb```- Odpalenie parted dla /dev/sdb
+
+**parted** - Przydatne opcje w trybie interaktywnym 
+    - ```p``` - wyświetlenie partycji
+    - ```mklabel gpt``` - zmiana tablicy partycji na gpt 
+    - ```mkapart``` - utworzenie nowej partycji 
 
 
 
@@ -1590,7 +1616,7 @@ O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dl
 
 
 ### Strona 286
-286
+297
 
 
 
