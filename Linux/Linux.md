@@ -1535,7 +1535,7 @@ Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```
 
 ## Ustawienie bitu GID - tworzenie katalogów współdzielonych przez grupy
 
-Gdy dla katalogu zostaje ustawiony **bit GID** *(2 lub g+s)*, wówczas wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.
+**bit GID** - gdy zostaje ustawiony dla katalogu *(2 lub g+s)*, wówczas wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.
 
 O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grupy
 
