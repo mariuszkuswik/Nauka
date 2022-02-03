@@ -1535,25 +1535,27 @@ Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```
 
 ## Ustawienie bitu GID - tworzenie katalogów współdzielonych przez grupy
 
-Gdy dla katalogu zostaje ustawiony **bit GID** (2 lub g+s), wówczas wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.
-Bit można ustawić poprzez użycie *chmod g+s* lub dodając *2 na początku* uprawnień które nadajemy *np. 2755* (tabela 11.4).
-O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grupy  
+Gdy dla katalogu zostaje ustawiony **bit GID** *(2 lub g+s)*, wówczas wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.
 
-```bash
-# Zmiana grupy dla folderu na shared_folder
-chgrp shared_folder GID_test_shared
+O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grupy
 
-# Dodanie GID do folderu 
-chmod 2775 GID_test_shared/
+- Bit można ustawić poprzez użycie *chmod g+s* lub dodając *2 na początku* uprawnień które nadajemy *np. chmod 2755*  - (tabela 11.4)
 
-# Potwierdzenie dodania bitu GID ( s w miejscu execute dla grupy )
-ls -l GID_test_shared/
-> drwxrwsr-x. 2 mariusz shared_folder  4096 Feb  2 12:30 GID_test_shared
+    ```bash
+    # Zmiana grupy dla folderu na shared_folder
+    chgrp shared_folder GID_test_shared
 
-# Grupą do której należy plik jest shared_folder - skutek przypisania GID
-ls -l test_file
-> -rw-rw-r--. 1 mariusz shared_folder 0 Feb 2 12:37 test_file
-```
+    # Dodanie GID do folderu 
+    chmod 2775 GID_test_shared/
+
+    # Potwierdzenie dodania bitu GID ( s w miejscu execute dla grupy )
+    ls -l GID_test_shared/
+    > drwxrwsr-x. 2 mariusz shared_folder  4096 Feb  2 12:30 GID_test_shared
+
+    # Grupą do której należy plik jest shared_folder - skutek przypisania GID
+    ls -l test_file
+    > -rw-rw-r--. 1 mariusz shared_folder 0 Feb 2 12:37 test_file
+    ```
 
 
 ## bit sticky - tworzenie katalogu, którego nie można łatwo usunąć
