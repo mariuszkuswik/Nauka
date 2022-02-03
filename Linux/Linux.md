@@ -1533,7 +1533,7 @@ Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```
 ![Litery i cyfry używane w specjalnych bitach uprawnień](https://github.com/mariuszkuswik/Nauka/blob/biblia/Linux/Obrazy/tabela_11_4.png)
 
 
-## Ustawienie bitu GID - tworzenie katalogów współdzielonych przez grupy
+## Bit GID - tworzenie katalogów współdzielonych przez grupy
 
 **Bit GID** - gdy zostaje ustawiony dla katalogu *(2 lub g+s)*, wówczas **wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.**
 O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grupy
@@ -1559,7 +1559,6 @@ O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grup
 
 ## Bit sticky - tworzenie katalogu, którego nie można łatwo usunąć
 
-
 **Bit sticky** - gdy zostaje ustawiony dla katalogu *(1 lub u+s)*, wówczas **tylko użytkownik root lub właściciel katalogu może go usunąć.**
 O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dla others*
 
@@ -1581,6 +1580,8 @@ O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dl
     >rm: cannot remove 'Sticky_catalog/test_file': Operation not permitted 
     ```
 
+
+## Scentralizowane konta użytkowników
 
 
 
