@@ -1529,16 +1529,16 @@ Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```
   
 ## Dodawanie katalogów współdzielonych przez użytkowników
 
+##### Tabela 11.4, strona 285
 ![Litery i cyfry używane w specjalnych bitach uprawnień](https://github.com/mariuszkuswik/Nauka/blob/biblia/Linux/Obrazy/tabela_11_4.png)
 
-##### Tabela 11.4, strona 285
 
 ## Ustawienie bitu GID - tworzenie katalogów współdzielonych przez grupy
 
 **bit GID** - gdy zostaje ustawiony dla katalogu *(2 lub g+s)*, wówczas wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.
 O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grupy
 
-- Bit można ustawić poprzez użycie *chmod g+s* lub dodając *2 na początku* uprawnień które nadajemy *np. chmod 2755*  - [tabela 11.4](#tabela_11_4)
+- Bit można ustawić poprzez użycie *chmod g+s* lub dodając *2 na początku* uprawnień które nadajemy *np. chmod 2755*  - [Tabela 11.4](#tabela-114-strona-285)
 
     ```bash
     # Zmiana grupy dla folderu na shared_folder
