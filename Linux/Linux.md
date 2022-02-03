@@ -1538,7 +1538,7 @@ Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```
 **Bit GID** - gdy zostaje ustawiony dla katalogu *(2 lub g+s)*, wówczas **wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.**
 O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grupy
 
-- Bit można ustawić poprzez użycie *chmod g+s* lub dodając *2 na początku* uprawnień które nadajemy *np. chmod 2755*  - [Tabela 11.4](#tabela-114-strona-285)
+- Bit GID można ustawić poprzez użycie *chmod g+s* lub dodając *2 na początku* uprawnień które nadajemy *np. chmod 2755*  - [Tabela 11.4](#tabela-114-strona-285)
 
     ```bash
     # Zmiana grupy dla folderu na shared_folder
@@ -1562,7 +1562,7 @@ O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grup
 **Bit sticky** - gdy zostaje ustawiony dla katalogu *(1 lub u+s)*, wówczas **tylko użytkownik root lub właściciel katalogu może go usunąć.**
 O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dla others*
 
-- Bit można ustawić poprzez użycie *chmod u+s* lub dodając *1 na początku* uprawnień które nadajemy *np. chmod 1755*  - [Tabela 11.4](#tabela-114-strona-285)
+- *Sticky Bit* można ustawić poprzez użycie *chmod u+s* lub dodając *1 na początku* uprawnień które nadajemy *np. chmod 1755*  - [Tabela 11.4](#tabela-114-strona-285)
 
     ```bash
     # Dodanie sticky bitu
