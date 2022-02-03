@@ -1535,7 +1535,7 @@ Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```
 
 ## Ustawienie bitu GID - tworzenie katalogów współdzielonych przez grupy
 
-**bit GID** - gdy zostaje ustawiony dla katalogu *(2 lub g+s)*, wówczas wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.
+**Bit GID** - gdy zostaje ustawiony dla katalogu *(2 lub g+s)*, wówczas **wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.**
 O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grupy
 
 - Bit można ustawić poprzez użycie *chmod g+s* lub dodając *2 na początku* uprawnień które nadajemy *np. chmod 2755*  - [Tabela 11.4](#tabela-114-strona-285)
@@ -1557,28 +1557,29 @@ O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grup
     ```
 
 
-## bit sticky - tworzenie katalogu, którego nie można łatwo usunąć
+## Bit sticky - tworzenie katalogu, którego nie można łatwo usunąć
 
 
-**Bit sticky** powoduje, że tylko użytkownik root lub właściciel katalogu może go usunąć.
-Bit można ustawić poprzez użycie *chmod u+s* lub dodając *1 na początku* uprawnień które nadajemy *np. 1755* (tabela 11.4).
+**Bit sticky** - gdy zostaje ustawiony dla katalogu *(1 lub u+s)*, wówczas **tylko użytkownik root lub właściciel katalogu może go usunąć.**
+O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dla others*
 
+- Bit można ustawić poprzez użycie *chmod u+s* lub dodając *1 na początku* uprawnień które nadajemy *np. chmod 1755*  - [Tabela 11.4](#tabela-114-strona-285)
 
-```bash
-# Dodanie sticky bitu
-chmod 1777 Sticky_catalog/
+    ```bash
+    # Dodanie sticky bitu
+    chmod 1777 Sticky_catalog/
 
-# Sprawdzenie czy bit został dodany - t w miejscu execute dla others oznacza, że tak
-ls -l Sticky_catalog
-drwxrwxrwt. 2 mariusz mariusz        4096 Feb  2 12:57 Sticky_catalog
+    # Sprawdzenie czy bit został dodany - t w miejscu execute dla others oznacza, że tak
+    ls -l Sticky_catalog
+    drwxrwxrwt. 2 mariusz mariusz        4096 Feb  2 12:57 Sticky_catalog
 
-# Przelogowanie na użytkownika test 
-su test
+    # Przelogowanie na użytkownika test 
+    su test
 
-# Próba usunięcia pliku w folderze ze stickybitem nieudana 
-rm Sticky_catalog/test_file
->rm: cannot remove 'Sticky_catalog/test_file': Operation not permitted 
-```
+    # Próba usunięcia pliku w folderze ze stickybitem nieudana 
+    rm Sticky_catalog/test_file
+    >rm: cannot remove 'Sticky_catalog/test_file': Operation not permitted 
+    ```
 
 
 
