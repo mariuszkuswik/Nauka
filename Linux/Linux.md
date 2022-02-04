@@ -1593,13 +1593,13 @@ O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dl
 MBR - stara wersja, ograniczenie do 4 partycji podstawowych + parycje logiczne na partycji rozszerzonej, maksymalny rozmar 2TB  
 GUID - nowa wersja, ograniczenie do 128 partycji podstawowych ( chyba tyle partycji), maksymalny rozmar 9,4ZB (zetabajty)
 
-### Wyświetlanie partycji na dysku
+
+### parted - wyświetlanie i edycja partycji 
 
 ```parted -l /dev/disk``` - wyświetla tablicę partycji 
 
 WAŻNE - parted przeprowadza zmiany od razu, w przeciwieństwie do fdisk nie muszą one być zatwierdzane 
 
-### parted 
 
 **WAŻNE** - RHEL 8 **może nie mieć** zainstalowanego *gdisk*, parted jest istotne 
 
@@ -1627,15 +1627,20 @@ Tworzenie filesystemu
 ![LVM schemat](rys_12_1.png)
 
 
-```pvdisplay /dev/sda2``` - physical volume display 
+WAŻNE - ```man lvm``` - zbiór większości komend potrzebnych do zarządzania LVM  
+
+Wyświetlanie informacji na temat LVM :  
+
+- ```pvdisplay /dev/sda2``` - physical volume display 
     - ```pvs /dev/sda2``` - alternatywna, kompaktowa wersja
 
-```vgdisplay vg_abc``` - volume group display 
+- ```vgdisplay vg_abc``` - volume group display 
     - ```vgs vg_abc``` - alternatywna, kompaktowa wersja
 
 
-```lvdisplay vg_abc``` -  logical volume display 
+- ```lvdisplay vg_abc``` -  logical volume display 
     - ```lvs vg_abc``` - alternatywna, kompaktowa wersja
+
 
 
 
