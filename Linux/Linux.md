@@ -1596,6 +1596,8 @@ GUID - nowa wersja, ograniczenie do 128 partycji podstawowych ( chyba tyle party
 
 ### parted - wyświetlanie i edycja partycji 
 
+W razie problemów parted podpowiada po naciśnięciu *tab* 
+
 ```parted -l /dev/disk``` - wyświetla tablicę partycji 
 
 WAŻNE - parted przeprowadza zmiany od razu, w przeciwieństwie do fdisk nie muszą one być zatwierdzane 
@@ -1624,11 +1626,12 @@ Tworzenie filesystemu
 
 ## Używanie menedżera partycji LVM
 
+
 ![LVM schemat](rys_12_1.png)
 
-Na rysunku 12.1 pokazałem, że najpierw tworzymy jeden lub więcej woluminów fizycznych (pv), używamy ich do utworzenia grupy woluminów (vg), aby następnie na jej podstawie utworzyć woluminy logiczne.
+Rysunek 12.1 pokazuje, że najpierw tworzymy jeden lub więcej woluminów fizycznych (pv), używamy ich do utworzenia grupy woluminów (vg), aby następnie na jej podstawie tworzymy woluminy logiczne.
 
-### #TODO - schemat przerobić na jakiś prostszyo, opisowy 
+### #TODO - schemat przerobić na jakiś prostszy, opisowy 
 
 Polecenia przeznaczone do pracy z poszczególnymi komponentami LVM rozpoczynają się od
 pv, vg i lv.
@@ -1648,9 +1651,17 @@ Wyświetlanie informacji na temat LVM :
     - ```lvs vg_name``` - alternatywna, kompaktowa wersja
 
 
-
-
 ## Tworzenie woluminów logicznych LVM
+
+1. Nadanie flagi lvm w programie parted 
+
+```bash
+parted /dev/sdb
+set 
+1
+lvm
+```
+
 
 
 
