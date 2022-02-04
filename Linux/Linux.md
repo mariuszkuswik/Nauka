@@ -1626,21 +1626,31 @@ Tworzenie filesystemu
 
 ![LVM schemat](rys_12_1.png)
 
+Na rysunku 12.1 pokazałem, że najpierw tworzymy jeden lub więcej woluminów fizycznych (pv), używamy ich do utworzenia grupy woluminów (vg), aby następnie na jej podstawie utworzyć woluminy logiczne.
+
+### #TODO - schemat przerobić na jakiś prostszyo, opisowy 
+
+Polecenia przeznaczone do pracy z poszczególnymi komponentami LVM rozpoczynają się od
+pv, vg i lv.
 
 WAŻNE - ```man lvm``` - zbiór większości komend potrzebnych do zarządzania LVM  
 
 Wyświetlanie informacji na temat LVM :  
 
-- ```pvdisplay /dev/sda2``` - physical volume display 
-    - ```pvs /dev/sda2``` - alternatywna, kompaktowa wersja
+- ```pvdisplay /dev/disk_name``` - wyświetla woluminy fizyczne
+    - ```pvs /dev/disk_name``` - alternatywna, kompaktowa wersja
 
-- ```vgdisplay vg_abc``` - volume group display 
-    - ```vgs vg_abc``` - alternatywna, kompaktowa wersja
+- ```vgdisplay vg_name``` - wyświetla grupę woluminów
+    - ```vgs vg_name``` - alternatywna, kompaktowa wersja
 
 
-- ```lvdisplay vg_abc``` -  logical volume display 
-    - ```lvs vg_abc``` - alternatywna, kompaktowa wersja
+- ```lvdisplay vg_name``` -  wyświetla woluminy logiczne
+    - ```lvs vg_name``` - alternatywna, kompaktowa wersja
 
+
+
+
+## Tworzenie woluminów logicznych LVM
 
 
 
