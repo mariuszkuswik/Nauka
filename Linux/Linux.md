@@ -1599,8 +1599,9 @@ GUID - nowa wersja, ograniczenie do 128 partycji podstawowych ( chyba tyle party
 
 WAŻNE - parted przeprowadza zmiany od razu, w przeciwieństwie do fdisk nie muszą one być zatwierdzane 
 
-parted 
+### parted 
 
+**WAŻNE** - RHEL 8 **może nie mieć** zainstalowanego *gdisk*, parted jest istotne 
 
 ```parted /dev/sdb```- Odpalenie parted dla /dev/sdb
 
@@ -1608,6 +1609,7 @@ parted
     - ```p``` - wyświetlenie partycji
     - ```mklabel gpt``` - zmiana tablicy partycji na gpt 
     - ```mkapart``` - utworzenie nowej partycji 
+
 
 ### #TODO - strona 299, niestandardowe ćwiczenia do wykonania 
 
@@ -1620,9 +1622,10 @@ Tworzenie filesystemu
 ```partprobe /dev/sbd``` - Załadowanie nowych partycji z dysku /dev/sdb
 
 
-
-
 ## Używanie menedżera partycji LVM
+
+![LVM schemat](rys_12_1.png)
+
 
 ```pvdisplay /dev/sda2``` - physical volume display 
     - ```pvs /dev/sda2``` - alternatywna, kompaktowa wersja
@@ -1631,12 +1634,15 @@ Tworzenie filesystemu
     - ```vgs vg_abc``` - alternatywna, kompaktowa wersja
 
 
+```lvdisplay vg_abc``` -  logical volume display 
+    - ```lvs vg_abc``` - alternatywna, kompaktowa wersja
+
 
 
 
 
 ### Strona 297
-302
+303
 
 
 
