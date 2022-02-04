@@ -1624,6 +1624,12 @@ Tworzenie filesystemu
 
 ## Używanie menedżera partycji LVM
 
+```pvdisplay /dev/sda2``` - physical volume display 
+    - ```pvs /dev/sda2``` - alternatywna, kompaktowa wersja
+
+```vgdisplay vg_abc``` - volume group display 
+    - ```vgs vg_abc``` - alternatywna, kompaktowa wersja
+
 
 
 
