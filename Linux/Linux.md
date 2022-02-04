@@ -1609,14 +1609,28 @@ parted
     - ```mklabel gpt``` - zmiana tablicy partycji na gpt 
     - ```mkapart``` - utworzenie nowej partycji 
 
+### #TODO - strona 299, niestandardowe ćwiczenia do wykonania 
+
+Tworzenie filesystemu 
+```mkfs.filesystem_name``` 
+```mkswap /dev/sdb2``` - Utworzenie filesystemu dla SWAPu 
+
+
+```/proc/partitions``` - plik w którym możemy potwierdzić, że system faktycznie widzi nowe partycje 
+```partprobe /dev/sbd``` - Załadowanie nowych partycji z dysku /dev/sdb
+
+
+
+
+## Używanie menedżera partycji LVM
 
 
 
 
 
 
-### Strona 286
-297
+### Strona 297
+302
 
 
 
