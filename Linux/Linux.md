@@ -1702,21 +1702,21 @@ Wyświetlanie informacji na temat LVM :
 
 ## Powiększanie woluminów logicznych LVM
 
-1. Sprawdzenie dostępnego miejsca na woluminie 
-    ```bash 
-    vgs myvg0
+1. Sprawdzenie dostępnego miejsca na woluminie   
+    ```bash   
+    vgs myvg0  
     ```
-
-2. Sprawdzenie ile miejsca zajmuje filesystem 
+  
+2. Sprawdzenie ile miejsca zajmuje filesystem   
     ```df -h /mnt/mymusic/```
-
-3. Powiększenie lvm, alternatywnie można wpisać --size 1G, co ustawi lvm na równo 1GB
+  
+3. Powiększenie lvm, alternatywnie można wpisać --size 1G, co ustawi lvm na równo 1GB  
     ```lvextend --size +1G /dev/mapper/myvg0-music```
-
-4. Zmiana wielkości filesystemu (ext2/3/4) tak aby wypełniał całą wielkość woluminu 
+  
+4. Zmiana wielkości filesystemu (ext2/3/4) tak aby wypełniał całą wielkość woluminu   
     ```resize2fs -p /dev/mapper/myvg0-music```
-
-5. Sprawdzenie czy filesystem został powiększony 
+  
+5. Sprawdzenie czy filesystem został powiększony   
     ```df -h /mnt/mymusic/```
 
 
