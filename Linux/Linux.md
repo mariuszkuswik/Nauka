@@ -1747,35 +1747,9 @@ Wyświetlanie informacji na temat LVM :
 | nfs | Network File System (NFS) jest używany do montowania systemów plików w innych komputerach z systemem Linux bądź UNIX. |
 | xfs | System plików o dużej wydajności, który działa szczególnie dobrze z ogromnymi plikami. Jest on używany domyślnie w dystrybucji RHEL 7. |
 
- ##### Tabela 12.1 strona 308
+##### Tabela 12.1 strona 308
 
  
- 
-
-
- 
-squashfs Skompresowany system plików tylko do odczytu. System squashfs jest popularny w przypadku dystrybucji Linuksa typu live CD,
-w których ilość miejsca jest bardzo ograniczona, a nośnik jest przeznaczony tylko do odczytu (na przykład CD lub DVD).
- 
-hpfs System plików używany do montowania tylko do odczytu systemu pliku OS/2 HPFS.
-ncpfs System powiązany z systemami plików Novell NetWare. Systemy plików Novell NetWare mogą być montowane przez sieć.
-
-ufs System plików popularny w systemach operacyjnych Sun Microsystems (to znaczy Solaris oraz SunOS).
-c528defda93e9420916cfa7705790125R O Z D Z I AŁ 1 2 . Zarządzanie dyskami i systemami plików 309
-12
-T A B E L A 1 2 . 1 . Obsługiwane rodzaje systemów plików — ciąg dalszy
-Rodzaj Opis
-jfs To opracowany przez firmę IBM 64-bitowy system plików z księgowaniem, który jest stosunkowo niewielki jak na liczbę
-oferowanych funkcji.
-
-
- 
-gfs2 System plików współdzielonego dysku pozwalający wielu komputerom na używanie tego samego dysku bez konieczności
-stosowania sieciowego systemu plików, takiego jak CIFS, NFS itd
-
-
-
-
 
 
 
