@@ -1598,8 +1598,8 @@ GUID - nowa wersja, ograniczenie do 128 partycji podstawowych ( chyba tyle party
 
 W razie problemów parted podpowiada po naciśnięciu *tab* 
 
-**WAŻNE** - parted przeprowadza zmiany od razu, w przeciwieństwie do fdisk nie muszą one być zatwierdzane 
-**WAŻNE** - RHEL 8 **może nie mieć** zainstalowanego *gdisk*, parted jest istotne   
+**WAŻNE** - parted przeprowadza zmiany od razu, w przeciwieństwie do fdisk nie muszą one być zatwierdzane   
+**WAŻNE** - RHEL 8 **może nie mieć** zainstalowanego *gdisk*, parted jest istotne    
   
 ```parted -l /dev/disk``` - wyświetla tablicę partycji   
   
@@ -1674,7 +1674,7 @@ Wyświetlanie informacji na temat LVM :
     pvcreate /dev/sdb1
     ```
 
-3. Dodanie grupy wolumenu na wolumenie fizycznym 
+3. Dodanie grupy woluminów na woluminie fizycznym 
     ```bash
     # vgcreate volume_group_name physical_volume_name
     vgcreate myvg0 /dev/sdb1
@@ -1686,18 +1686,20 @@ Wyświetlanie informacji na temat LVM :
     lvcreate -n music --size 1G myvg0
     ```
 
-5. Potwierdzenie utworzenia 
+5. Potwierdzenie utworzenia woluminu logicznego
     ```bash
-    # Wyświetlenie lvm 
-    lvs
-
-    # Wyświetlenie fizycznego urządzenia lvm 
-    ls /dev/mapper/
+    # Wyświetlenie szczegółowych informacji o lvm ( w tym ścieżki )
+    lvdisplay
+    > LV Path /dev/myvg0/music
     ```
+
+6. Utworzenie filesystemu na woluminie logicznym 
+    # mkfs.filesystem_name lvm_path
+    mkfs.xfs /dev/myvg0/music
 
 
 ### Strona 297
-303
+306
 
 
 
