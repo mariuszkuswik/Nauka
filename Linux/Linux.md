@@ -1733,70 +1733,33 @@ Wyświetlanie informacji na temat LVM :
 ```cat /proc/filesystems``` - wyświetlenie obsługiwanych systemów plików  
 
 
-
+#### Obsługiwane rodzaje systemów plików
 
 |Rodzaj|Opis  |
 |--|--|
-| btrfs|Wykorzystujący technikę „kopiowanie przy zapisie” system plików, który implementuje zaawansowaną funkcjonalność systemu plików. Charakteryzuje się odpornością na awarie i łatwą administracją. |
-|cifs |Common Internet File System (CIFS), wirtualny system plików używany w celu uzyskania dostępu do serwerów zgodnych
-ze specyfikacją SNIA CIFS. System CIFS jest próbą dopracowania i ustandaryzowania protokołu SMB używanego przez
-Sambę i mechanizm współdzielenia plików Windowsa. |
-| | |
-| | |
-| | |
-| | |
-| | |
-| | |
-| | |
-| | |
-| | |
-| | |
-| | |
-| | |
-| | |
-| | |
-| | |
-Rodzaj | Opis
-befs System plików używany przez system operacyjny BeOS.
- 
+| btrfs | Wykorzystujący technikę „kopiowanie przy zapisie” system plików, który implementuje zaawansowaną funkcjonalność systemu plików. Charakteryzuje się odpornością na awarie i łatwą administracją. |
+| cifs | Common Internet File System (CIFS), wirtualny system plików używany w celu uzyskania dostępu do serwerów zgodnych ze specyfikacją SNIA CIFS. System CIFS jest próbą dopracowania i ustandaryzowania protokołu SMB używanego przez Sambę i mechanizm współdzielenia plików Windowsa. |
+| ext4 | Następca popularnego systemu plików ext3, względem którego zawiera wiele usprawnień, między innymi obsługę woluminów o wielkości do 1 eksabajtu; obsługuje także pliki o wielkości do 16 terabajtów. (W dystrybucjach Fedora i RHEL zastąpił ext3 jako domyślny system plików. Obecnie domyślnym systemem plików w RHEL jest xfs). |
+| ext3 | Ext jest systemem plików stosowanym najczęściej wielu systemach Linux. System plików ext3, nazywany również trzecim rozszerzonym systemem plików, zawiera funkcję księgowania, która w porównaniu z ext2 poprawia możliwości systemu plików w podniesieniu się po awarii. |
+| ext2 | Domyślny system plików wcześniejszych systemów Linux. Ma takie same funkcje jak ext3, poza księgowaniem. |
+| ext | To pierwsza wersja systemu plików ext3, która nie jest już używana. |
+| swap | System plików przeznaczony dla partycji wymiany. Wymienione partycje są używane do tymczasowego przechowywania danych, gdy zajęta jest pamięć RAM. W takim przypadku dane są przenoszone do obszaru wymiany i ponownie zwracane do pamięci RAM, gdy staną się niezbędne. |
+| nfs | Network File System (NFS) jest używany do montowania systemów plików w innych komputerach z systemem Linux bądź UNIX. |
+| xfs | System plików o dużej wydajności, który działa szczególnie dobrze z ogromnymi plikami. Jest on używany domyślnie w dystrybucji RHEL 7. |
+
+ ##### Tabela 12.1 strona 308
 
  
-ext4 Następca popularnego systemu plików ext3, względem którego zawiera wiele usprawnień, między innymi obsługę woluminów
-o wielkości do 1 eksabajtu; obsługuje także pliki o wielkości do 16 terabajtów. (W dystrybucjach Fedora i RHEL zastąpił ext3
-jako domyślny system plików. Obecnie domyślnym systemem plików w RHEL jest xfs).
-ext3 Ext jest systemem plików stosowanym najczęściej wielu systemach Linux. System plików ext3, nazywany również trzecim
-rozszerzonym systemem plików, zawiera funkcję księgowania, która w porównaniu z ext2 poprawia możliwości systemu
-plików w podniesieniu się po awarii.
-ext2 Domyślny system plików wcześniejszych systemów Linux. Ma takie same funkcje jak ext3, poza księgowaniem.
-ext To pierwsza wersja systemu plików ext3, która nie jest już używana.
-iso9660 System wywodzący się z systemu plików High Sierra (początkowy standard zapisu dysków CD-ROM). Rozszerzenia standardu
-High Sierra (nazwane rozszerzeniami Rock Ridge) pozwalają systemowi plików iso9660 na obsługę długich nazw plików oraz
-informacji powiązanych z systemem UNIX (takich jak prawa dostępu pliku, właściciel, dowiązania). Płyty CD-ROM z danymi
-najczęściej używają tego systemu plików.
-kafs System plików klienta AFS. Używany w rozproszonych środowiskach komputerowych do współdzielenia plików z klientami
-Linux, Windows oraz Macintosh.
-minix System plików minix, oryginalnie użyty w wersji Minix Uniksa. Obsługuje nazwy plików zawierające do 30 znaków.
-msdos System plików MS-DOS. Ten system plików można zastosować do zamontowania dyskietek pochodzących z systemu
-operacyjnego Microsoft.
-vfat Rozszerzony system plików Microsoft FAT (VFAT).
-exfat Rozszerzony system plików FAT (exFAT) zoptymalizowany dla kart SD, napędów USB i innych nośników pamięci flash.
-umsdos System plików MS-DOS wraz z rozszerzeniami pozwalającymi na stosowanie funkcji podobnych do tych z Uniksa
-(włączając długie nazwy plików).
-proc To nie jest prawdziwy system plików, ale interfejs systemu plików dla jądra Linuksa. Prawdopodobnie użytkownik nie będzie
-podejmował żadnych specjalnych działań do ustawienia tego systemu plików. Jednak punkt montowania /proc powinien
-posiadać system plików typu proc. Z katalogu /proc korzysta wiele narzędzi uzyskujących informacje z jądra Linuksa.
-reiserfs ReiserFS jest systemem plików z obsługą księgowania. ReiserFS był domyślnym systemem plików dla wielu dystrybucji
-Linuksa. Jednak obecnie najczęściej używanymi typami systemu plików w Linuksie są ext3 i xfs.
-swap System plików przeznaczony dla partycji wymiany. Wymienione partycje są używane do tymczasowego przechowywania
-danych, gdy zajęta jest pamięć RAM. W takim przypadku dane są przenoszone do obszaru wymiany i ponownie zwracane
-do pamięci RAM, gdy staną się niezbędne.
+ 
+
+
+ 
 squashfs Skompresowany system plików tylko do odczytu. System squashfs jest popularny w przypadku dystrybucji Linuksa typu live CD,
 w których ilość miejsca jest bardzo ograniczona, a nośnik jest przeznaczony tylko do odczytu (na przykład CD lub DVD).
-nfs Network File System (NFS) jest używany do montowania systemów plików w innych komputerach z systemem Linux bądź UNIX.
+ 
 hpfs System plików używany do montowania tylko do odczytu systemu pliku OS/2 HPFS.
 ncpfs System powiązany z systemami plików Novell NetWare. Systemy plików Novell NetWare mogą być montowane przez sieć.
-ntfs System plików Windows NT. W niektórych dystrybucjach ten system plików może być obsługiwany w trybie tylko do odczytu
-(a więc można go zamontować i skopiować z niego pliki).
+
 ufs System plików popularny w systemach operacyjnych Sun Microsystems (to znaczy Solaris oraz SunOS).
 c528defda93e9420916cfa7705790125R O Z D Z I AŁ 1 2 . Zarządzanie dyskami i systemami plików 309
 12
@@ -1804,8 +1767,9 @@ T A B E L A 1 2 . 1 . Obsługiwane rodzaje systemów plików — ciąg dalszy
 Rodzaj Opis
 jfs To opracowany przez firmę IBM 64-bitowy system plików z księgowaniem, który jest stosunkowo niewielki jak na liczbę
 oferowanych funkcji.
-xfs Pierwotnie opracowany przez firmę Silicon Graphics system plików o dużej wydajności, który działa szczególnie dobrze
-z ogromnymi plikami. Jest on używany domyślnie w dystrybucji RHEL 7.
+
+
+ 
 gfs2 System plików współdzielonego dysku pozwalający wielu komputerom na używanie tego samego dysku bez konieczności
 stosowania sieciowego systemu plików, takiego jak CIFS, NFS itd
 
