@@ -1694,8 +1694,10 @@ Wyświetlanie informacji na temat LVM :
     ```
 
 6. Utworzenie filesystemu na woluminie logicznym 
+    ```bash 
     # mkfs.filesystem_name lvm_path
     mkfs.xfs /dev/myvg0/music
+    ```
 
 
 ### Strona 297
