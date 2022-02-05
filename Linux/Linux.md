@@ -1606,9 +1606,9 @@ W razie problemów parted podpowiada po naciśnięciu *tab*
 ```parted /dev/sdb```- Odpalenie parted dla /dev/sdb  
   
 **parted** - Przydatne opcje w trybie interaktywnym  
-    - ```p``` - wyświetlenie partycji  
-    - ```mklabel gpt``` - zmiana tablicy partycji na gpt   
-    - ```mkapart``` - utworzenie nowej partycji   
+- ```p``` - wyświetlenie partycji  
+- ```mklabel gpt``` - zmiana tablicy partycji na gpt   
+- ```mkapart``` - utworzenie nowej partycji   
 
 
 ### #TODO - strona 299, niestandardowe ćwiczenia do wykonania 
