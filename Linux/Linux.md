@@ -1703,9 +1703,9 @@ Wyświetlanie informacji na temat LVM :
 ## Powiększanie woluminów logicznych LVM
 
 1. Sprawdzenie dostępnego miejsca na woluminie   
-    ```bash   
+    ```   
     vgs myvg0  
-    ```
+    ```  
   
 2. Sprawdzenie ile miejsca zajmuje filesystem   
     ```df -h /mnt/mymusic/```
