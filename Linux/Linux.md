@@ -1653,18 +1653,45 @@ Wyświetlanie informacji na temat LVM :
 
 ## Tworzenie woluminów logicznych LVM
 
-1. Nadanie flagi lvm w programie parted 
+**/dev/mapper** - ścieżka w której znajdują się *lvm*y 
 
+1. Nadanie flagi lvm w programie parted 
 ```bash
+# Odpalenie parted
 parted /dev/sdb
+# opcja set dla ustawienia nowej flagi 
 set 
+# Pierwsza partycja 
 1
+# Flaga lvm 
 lvm
 ```
 
+2. Dodanie woluminu fizycznego 
+```bash
+# pvcreate disk_name
+pvcreate /dev/sdb1
+```
 
+3. Dodanie grupy wolumenu na wolumenie fizycznym 
+```bash
+# vgcreate volume_group_name physical_volume_name
+vgcreate myvg0 /dev/sdb1
+```
 
+4. Dodanie woluminu logicznego o wybranej nazwie 
+```bash
+# lvreate -n lvm_name --size size volume_group_name 
+lvcreate -n music --size 1G myvg0
+```
 
+5. Potwierdzenie utworzenia 
+```bash
+#  
+
+# Wyświetlenie fizycznego urządzenia lvm 
+ls /dev/mapper/
+```
 
 
 ### Strona 297
