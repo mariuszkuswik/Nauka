@@ -1700,6 +1700,26 @@ Wyświetlanie informacji na temat LVM :
     ```
 
 
+## Powiększanie woluminów logicznych LVM
+
+vgdisplay myvg0
+
+
+df -h /mnt/mymusic/
+
+
+lvextend --size +1G /dev/mapper/myvg0-music
+
+
+resize2fs -p /dev/mapper/myvg0-music
+
+
+df -h /mnt/mymusic/
+
+
+
+
+
 ### Strona 297
 306
 
