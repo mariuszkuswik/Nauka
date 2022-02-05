@@ -1761,34 +1761,42 @@ Wyświetlanie informacji na temat LVM :
 free -m
 ```
 
-2.  Wyczyszczenie partycji/punktu w którym jest zamontowana  
+2. Wyczyszczenie partycji/punktu w którym jest zamontowana  
 ```
 dd if=/dev/zero of=/var/tmp/myswap bs=1M count=1024
 ```
 
-3. 
+3. Utworzenie pliku lub partycji SWAP 
 ```
-mkswap /var/opt/myswap
-```
-
-4. 
-```
-swapon /var/opt/myswap
+mkswap /dev/sdb5
 ```
 
-5. S
+4. Tymczasowe włączenie swapu, na stałe dodaje się do *fstab*
+```
+swapon /dev/sdb5
+```
+
+5. Sprawdzenie UUID dla partycji swapowej
+```
+blkid /dev/sdb5
+```
+
+5. Sprawdzenie czy swap włączył się dobrze 
 ``` 
 free -m
 ```
 
 6. Dodanie wpisu w /etc/fstab, sprawdzić czy nie powinno to być na podstawie UUID 
 ```
-/var/opt/myswap swap swap defaults 0 0
+UUID=some_swap_uuid swap swap defaults 0 0
 ```
 
 
-### Strona 297
-309 - dokończyć instrukcję tworzenia swapu 
+
+
+
+### Strona 309
+309
 
 
 
