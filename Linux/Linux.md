@@ -1730,7 +1730,7 @@ Wyświetlanie informacji na temat LVM :
 
 ## Montowanie systemów plików
 
-```man fs``` - informacje na temat filesystemów w Linuxie
+```man fs``` - informacje na temat filesystemów w Linuxie  
 ```cat /proc/filesystems``` - wyświetlenie obsługiwanych systemów plików  
 
 ### Wybrane Filesystemy
@@ -1800,8 +1800,20 @@ free -m
 
 ## fstab - definiowanie montowanych systemów plików
 
+```bash
+/dev/mapper/vg_abc-lv_root / ext4 defaults 1 1
+```
 
-
+- 1 kolumna - urządzenie do zamontowania 
+    - UUID=some_uuid (```lsblk -f lub blkid```)
+    - LABEL=some_label (```lsblk```)
+    - local_device_path ( np. ```/dev/sdb1``` )
+- 2 kolumna - *mount point* - miejsce w którym zamontować filesystem 
+- 3 kolumna - *filesystem* ( np. xfs, swap, nfs )
+- 4 kolumna - mount options - ```defaults``` dla domyślnych ustawień
+    - ```man mount``` - zawiera opcje możliwe do ustawienia 
+- 5 kolumna - ```0 0``` - domyślny wpis
+    
 
 
 
