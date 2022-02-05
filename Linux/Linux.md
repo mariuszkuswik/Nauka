@@ -1753,7 +1753,10 @@ Wyświetlanie informacji na temat LVM :
 ## SWAP - Włączanie przestrzeni wymiany
 
 
-1. Wyświetlenie dostępnej obecnie pamięci  
+```mkswap``` - tworzy przestrzeń swap na patrycji lub z pliku 
+
+
+1. Wyświetlenie dostępnej pamięci RAM i SWAP 
 ```
 free -m
 ```
@@ -1773,17 +1776,19 @@ mkswap /var/opt/myswap
 swapon /var/opt/myswap
 ```
 
-5. 
+5. S
 ``` 
 free -m
 ```
 
-
-
+6. Dodanie wpisu w /etc/fstab, sprawdzić czy nie powinno to być na podstawie UUID 
+```
+/var/opt/myswap swap swap defaults 0 0
+```
 
 
 ### Strona 297
-308
+309 - dokończyć instrukcję tworzenia swapu 
 
 
 
