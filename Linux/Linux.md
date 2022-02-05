@@ -1730,12 +1730,12 @@ Wyświetlanie informacji na temat LVM :
 
 ## Montowanie systemów plików
 
+```man fs``` - informacje na temat filesystemów w Linuxie
 ```cat /proc/filesystems``` - wyświetlenie obsługiwanych systemów plików  
-
 
 #### Obsługiwane rodzaje systemów plików
 
-|Rodzaj|Opis  |
+| Rodzaj | Opis |
 |--|--|
 | btrfs | Wykorzystujący technikę „kopiowanie przy zapisie” system plików, który implementuje zaawansowaną funkcjonalność systemu plików. Charakteryzuje się odpornością na awarie i łatwą administracją. |
 | cifs | Common Internet File System (CIFS), wirtualny system plików używany w celu uzyskania dostępu do serwerów zgodnych ze specyfikacją SNIA CIFS. System CIFS jest próbą dopracowania i ustandaryzowania protokołu SMB używanego przez Sambę i mechanizm współdzielenia plików Windowsa. |
@@ -1750,13 +1750,40 @@ Wyświetlanie informacji na temat LVM :
 ##### Tabela 12.1 strona 308
 
  
+## SWAP - Włączanie przestrzeni wymiany
+
+
+1. Wyświetlenie dostępnej obecnie pamięci  
+```
+free -m
+```
+
+2.  Wyczyszczenie partycji/punktu w którym jest zamontowana  
+```
+dd if=/dev/zero of=/var/tmp/myswap bs=1M count=1024
+```
+
+3. 
+```
+mkswap /var/opt/myswap
+```
+
+4. 
+```
+swapon /var/opt/myswap
+```
+
+5. 
+``` 
+free -m
+```
 
 
 
 
 
 ### Strona 297
-307
+308
 
 
 
