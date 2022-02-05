@@ -1812,8 +1812,8 @@ free -m
 - 3 kolumna - *filesystem* ( np. xfs, swap, nfs )
 - 4 kolumna - mount options - ```defaults``` dla domyślnych ustawień
     - ```man mount``` - zawiera opcje możliwe do ustawienia 
-- 5 kolumna - ```0 0``` - domyślny wpis
-    
+- 5 kolumna - ```0 0``` - domyślnie wpisujemy dwa zera, ```man fstab``` dla informacji
+
 
 
 
