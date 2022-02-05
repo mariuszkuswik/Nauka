@@ -1733,7 +1733,7 @@ Wyświetlanie informacji na temat LVM :
 ```man fs``` - informacje na temat filesystemów w Linuxie
 ```cat /proc/filesystems``` - wyświetlenie obsługiwanych systemów plików  
 
-#### Obsługiwane rodzaje systemów plików
+### Obsługiwane rodzaje systemów plików
 
 | Rodzaj | Opis |
 |--|--|
@@ -1753,7 +1753,13 @@ Wyświetlanie informacji na temat LVM :
 ## SWAP - Włączanie przestrzeni wymiany
 
 
-```mkswap``` - tworzy przestrzeń swap na patrycji lub z pliku 
+```mkswap /dev/sdb1``` - tworzy przestrzeń SWAP na patrycji lub z pliku 
+
+```swapon/swapoff``` - tymczasowe włączenie SWAPu (do następnego reboota)
+    - ```-a``` - użycie *całego dostępnego SWAPu*
+    - ```/dev/sdb1``` - użycie *konkretnej partycji SWAPowej*
+
+```free -m``` - wyświetla dostępną pamięć RAM i SWAP w MB
 
 
 1. Wyświetlenie dostępnej pamięci RAM i SWAP 
@@ -1786,17 +1792,21 @@ blkid /dev/sdb5
 free -m
 ```
 
-6. Dodanie wpisu w /etc/fstab, sprawdzić czy nie powinno to być na podstawie UUID 
+6. Dodanie wpisu w /etc/fstab, *punkt montowania ma wartośc swap ponieważ swapu nie trzeba montować*
 ```
-UUID=some_swap_uuid swap swap defaults 0 0
+/dev/sdb5 swap swap defaults 0 0
 ```
+
+
+## fstab - definiowanie montowanych systemów plików
+
 
 
 
 
 
 ### Strona 309
-309
+311
 
 
 
