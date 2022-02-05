@@ -1733,7 +1733,7 @@ Wyświetlanie informacji na temat LVM :
 ```man fs``` - informacje na temat filesystemów w Linuxie
 ```cat /proc/filesystems``` - wyświetlenie obsługiwanych systemów plików  
 
-### Obsługiwane rodzaje systemów plików
+### Wybrane Filesystemy
 
 | Rodzaj | Opis |
 |--|--|
