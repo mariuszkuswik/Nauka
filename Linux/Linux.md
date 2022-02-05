@@ -1599,16 +1599,16 @@ GUID - nowa wersja, ograniczenie do 128 partycji podstawowych ( chyba tyle party
 W razie problemów parted podpowiada po naciśnięciu *tab* 
 
 **WAŻNE** - parted przeprowadza zmiany od razu, w przeciwieństwie do fdisk nie muszą one być zatwierdzane 
-**WAŻNE** - RHEL 8 **może nie mieć** zainstalowanego *gdisk*, parted jest istotne 
-
-```parted -l /dev/disk``` - wyświetla tablicę partycji 
-
-```parted /dev/sdb```- Odpalenie parted dla /dev/sdb
-
-**parted** - Przydatne opcje w trybie interaktywnym 
-    - ```p``` - wyświetlenie partycji
-    - ```mklabel gpt``` - zmiana tablicy partycji na gpt 
-    - ```mkapart``` - utworzenie nowej partycji 
+**WAŻNE** - RHEL 8 **może nie mieć** zainstalowanego *gdisk*, parted jest istotne   
+  
+```parted -l /dev/disk``` - wyświetla tablicę partycji   
+  
+```parted /dev/sdb```- Odpalenie parted dla /dev/sdb  
+  
+**parted** - Przydatne opcje w trybie interaktywnym  
+    - ```p``` - wyświetlenie partycji  
+    - ```mklabel gpt``` - zmiana tablicy partycji na gpt   
+    - ```mkapart``` - utworzenie nowej partycji   
 
 
 ### #TODO - strona 299, niestandardowe ćwiczenia do wykonania 
