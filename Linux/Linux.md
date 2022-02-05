@@ -1656,22 +1656,22 @@ Wyświetlanie informacji na temat LVM :
 **/dev/mapper** - ścieżka w której znajdują się *lvm*y 
 
 1. Nadanie flagi lvm w programie parted 
-```bash
-# Odpalenie parted
-parted /dev/sdb
-# opcja set dla ustawienia nowej flagi 
-set 
-# Pierwsza partycja 
-1
-# Flaga lvm 
-lvm
-```
+    ```bash
+    # Odpalenie parted
+    parted /dev/sdb
+    # opcja set dla ustawienia nowej flagi 
+    set 
+    # Pierwsza partycja 
+    1
+    # Flaga lvm 
+    lvm
+    ```
 
 2. Dodanie woluminu fizycznego 
-```bash
-# pvcreate disk_name
-pvcreate /dev/sdb1
-```
+    ```bash
+    # pvcreate disk_name
+    pvcreate /dev/sdb1
+    ```
 
 3. Dodanie grupy wolumenu na wolumenie fizycznym 
 ```bash
