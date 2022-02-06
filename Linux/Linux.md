@@ -1897,7 +1897,63 @@ openssh-server.x86_64 7.9p1-5.fc30 @anaconda
 ```man sshd_config``` - pomoc w konfiguracji sshd
 
 
+Minimum bezpieczeństwa to ustawienie *no* dla opcji *PermitRootLogin*
 
+
+### Używanie narzędzi klienta SSH
+
+### Używanie ssh do zdalnego logowania
+
+```~/.ssh/known_hosts``` - plik z kluczami publicznymi zaufanych hostów i ich adresami IP - chcąc zalogować się na któryś musi On zostać dodany  
+
+
+```ssh janek@10.140.67.23 "cat myfile"``` - wykonanie polecenia zdalnie przez ssh, katalogiem domyślnym jest home użytkownika wykonującego 
+
+
+
+**Graficzny SSH** - strona 336
+
+Innym typem zdalnego wykonywania poleceń w przypadku ssh jest tzw. przekazywanie X11.
+Jeżeli na serwerze została włączona opcja przekazywania X11 (w pliku /etc/sshd/sshd_config
+znajduje się wiersz X11Forwarding yes), to za pomocą SSH można bezpiecznie uruchamiać
+aplikacje graficzne z serwera, używając polecenia ssh -X. Dla nowego administratora serwera
+to oznacza, że jeśli serwer zawiera zainstalowane graficzne narzędzia administracji, wówczas
+będzie można je uruchamiać bez konieczności znajdowania się bezpośrednio przed konsolą.
+Oto kolejny przykład:
+
+```bash
+$ ssh -X janek@10.140.67.23 system-config-printer
+janek@10.140.67.23's password: **********
+```
+Po wydaniu tego polecenia zostaniesz poproszony o podanie hasła użytkownika root.
+Następnie na ekranie zostanie wyświetlone okno narzędzia graficznego umożliwiającego
+skonfigurowanie drukarki.
+
+Jeżeli chcesz wydać więcej poleceń X i nie chcesz ponownie nawiązywać połączenia za każdym
+razem, funkcjonalność przekazywania X11 możesz zastosować bezpośrednio ze zdalnej powłoki.
+Wystarczy uruchomić polecenia w tle, a w systemie lokalnym będziesz mieć kilka działających
+zdalnych aplikacji X. Oto kolejny fragment kodu:
+
+```bash
+$ ssh -X janek@10.140.67.23
+janek@10.140.67.23's password: **********
+$ system-config-printer &
+$ gedit &
+$ exit
+```
+
+
+### scp i rsync - kopiowanie plików między systemami
+
+
+Przykład działania scp, kopiowanie ze zdalnego systemu na nasz odbywa się anagloicznie 
+
+```bash
+# scp source user@hostname:destination
+scp /home/chris/memo janek@10.140.67.23:/tmp
+```
+> janek@10.140.67.23's password: ***************
+memo 100%|****************| 153 0:00
 
 
 
@@ -1905,7 +1961,7 @@ openssh-server.x86_64 7.9p1-5.fc30 @anaconda
 
 
 ### Strona 330
-330
+334
 
 
 
