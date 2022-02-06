@@ -1835,7 +1835,8 @@ free -m
     - ```mount -o loop plik.iso /mnt/obraz``` - tymczasowe zamontowanie pliku iso do folderu     
 - ```-t``` - filesystem  
   
-  
+---
+
 ```umount /mnt/mount_point``` - służy do odmontowywania   
 - ```lsof /mnt/mount_point``` - pokazuje jakie procesy używają danego punktu montowania, pozwala je ubić a następnie odmontować      
 
