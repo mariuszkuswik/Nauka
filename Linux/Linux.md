@@ -1888,26 +1888,26 @@ openssh-server.x86_64 7.9p1-5.fc30 @anaconda
 ```sshd``` - daemon ssh
 
 
-```systemctl status sshd.service``` - sprawdzenie statusu daemona ssh
-```systemctl start sshd.service``` - uruchomienie daemona ssh
-```systemctl enable sshd.service``` - uruchamianie sshd przy starcie systemu 
+```systemctl status sshd.service``` - sprawdzenie statusu daemona ssh  
+```systemctl start sshd.service``` - uruchomienie daemona ssh  
+```systemctl enable sshd.service``` - uruchamianie sshd przy starcie systemu   
+ 
+
+```/etc/ssh/sshd_config``` - config file dla sshd  
+```man sshd_config``` - pomoc w konfiguracji sshd  
 
 
-```/etc/ssh/sshd_config``` - config file dla sshd
-```man sshd_config``` - pomoc w konfiguracji sshd
-
-
-Minimum bezpieczeństwa to ustawienie *no* dla opcji *PermitRootLogin*
+Minimum bezpieczeństwa to ustawienie *no* dla opcji *PermitRootLogin*  
 
 
 ### Używanie narzędzi klienta SSH
 
 ### Używanie ssh do zdalnego logowania
 
-```~/.ssh/known_hosts``` - plik z kluczami publicznymi zaufanych hostów i ich adresami IP - chcąc zalogować się na któryś musi On zostać dodany  
+```~/.ssh/known_hosts``` - plik z kluczami publicznymi zaufanych hostów i ich adresami IP - chcąc zalogować się na któryś musi On zostać dodany   
 
 
-```ssh janek@10.140.67.23 "cat myfile"``` - wykonanie polecenia zdalnie przez ssh, katalogiem domyślnym jest home użytkownika wykonującego 
+```ssh janek@10.140.67.23 "cat myfile"``` - wykonanie polecenia zdalnie przez ssh, katalogiem domyślnym jest home użytkownika wykonującego  
 
 
 
@@ -1922,7 +1922,7 @@ będzie można je uruchamiać bez konieczności znajdowania się bezpośrednio p
 Oto kolejny przykład:
 
 ```bash
-$ ssh -X janek@10.140.67.23 system-config-printer
+$ ssh -X janek@10.140.67.23 system-config-printer 
 janek@10.140.67.23's password: **********
 ```
 Po wydaniu tego polecenia zostaniesz poproszony o podanie hasła użytkownika root.
@@ -1949,11 +1949,11 @@ $ exit
 Przykład działania scp, kopiowanie ze zdalnego systemu na nasz odbywa się anagloicznie 
 
 ```bash
-# scp source user@hostname:destination
-scp /home/chris/memo janek@10.140.67.23:/tmp
+# scp source user@hostname:destination  
+scp /home/chris/memo janek@10.140.67.23:/tmp  
 ```
-> janek@10.140.67.23's password: ***************
-memo 100%|****************| 153 0:00
+> janek@10.140.67.23's password: ***************   
+memo 100%|****************| 153 0:00   
 
 
 
