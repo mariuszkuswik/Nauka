@@ -53,6 +53,8 @@
 ```man -k``` - wyszukiwanie komend   
 ```man -f``` - wyświetlenie wszystkich możliwych sekcji pomocy dla danej komendy  
 
+## info - pomoc podobna do manula 
+### #TODO - dodać opis
 
 
 # #TODO - Dodać zwijanie przy opisach poleceń i skrócić część notatek 
