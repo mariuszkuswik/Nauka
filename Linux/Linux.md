@@ -49,9 +49,9 @@
 
 ## man - manual 
 
-```man man``` - pomoc odnośnie mana 
-```man -k``` - wyszukiwanie komend 
-```man -f``` - wyświetlenie wszystkich możliwych sekcji pomocy dla danej komendy
+```man man``` - pomoc odnośnie mana   
+```man -k``` - wyszukiwanie komend   
+```man -f``` - wyświetlenie wszystkich możliwych sekcji pomocy dla danej komendy  
 
 
 
