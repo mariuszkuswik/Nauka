@@ -45,7 +45,13 @@
 
 # Biblia
 
-## Używanie Powłoki 
+# Używanie Powłoki 
+
+## man - manual 
+
+```man man``` - pomoc odnośnie mana 
+```man -k``` - wyszukiwanie komend 
+```man -f``` - wyświetlenie wszystkich możliwych sekcji pomocy dla danej komendy
 
 
 
@@ -875,6 +881,9 @@ strona 235
 
 ```-q``` - querry  
 ```-i``` - information  
+```-l``` - list files in a package 
+```-c``` - configfiles 
+
 
 ```rmp -q firefox``` 
 > firefox-67.0-4.fc30.x86_64
@@ -1808,9 +1817,9 @@ free -m
     - UUID=some_uuid (```lsblk -f lub blkid```)
     - LABEL=some_label (```lsblk```)
     - local_device_path ( np. ```/dev/sdb1``` )
-- 2 kolumna - *mount point* - miejsce w którym zamontować filesystem 
+- 2 kolumna - *punkt montowania* - katalog, w którym urządzenie jest montowane
 - 3 kolumna - *filesystem* ( np. xfs, swap, nfs )
-- 4 kolumna - mount options - ```defaults``` dla domyślnych ustawień
+- 4 kolumna - *opcje montowania* - ```defaults``` dla domyślnych ustawień
     - ```man mount``` - zawiera opcje możliwe do ustawienia 
 - 5 kolumna - ```0 0``` - domyślnie wpisujemy dwa zera, ```man fstab``` dla informacji
 
