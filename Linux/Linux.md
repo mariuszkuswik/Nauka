@@ -1764,15 +1764,15 @@ Wyświetlanie informacji na temat LVM :
 ## SWAP - Włączanie przestrzeni wymiany
 
 
-```mkswap /dev/sdb1``` - tworzy przestrzeń SWAP na patrycji lub z pliku 
+```mkswap /dev/sdb1``` - tworzy przestrzeń SWAP na patrycji lub z pliku  
+  
+```swapon/swapoff``` - tymczasowe włączenie SWAPu (do następnego reboota)  
+    - ```-a``` - użycie *całego dostępnego SWAPu*  
+    - ```/dev/sdb1``` - użycie *konkretnej partycji SWAPowej*  
+  
+```free -m``` - wyświetla dostępną pamięć RAM i SWAP w MB  
 
-```swapon/swapoff``` - tymczasowe włączenie SWAPu (do następnego reboota)
-    - ```-a``` - użycie *całego dostępnego SWAPu*
-    - ```/dev/sdb1``` - użycie *konkretnej partycji SWAPowej*
-
-```free -m``` - wyświetla dostępną pamięć RAM i SWAP w MB
-
-
+  
 1. Wyświetlenie dostępnej pamięci RAM i SWAP 
 ```
 free -m
@@ -1828,15 +1828,28 @@ free -m
 - 5 kolumna - ```0 0``` - domyślnie wpisujemy dwa zera, ```man fstab``` dla informacji
 
 
+## mount i umount
+
+```mount /dev/device /mnt/mount_point``` - wyświetl obecnie zamontowane systemy plików 
+    - ```-o``` - opcje montowania
+        - ```mount -o loop plik.iso /mnt/obraz``` - tymczasowe zamontowanie pliku iso do folderu   
+    - ```-t``` - filesystem
 
 
+```umount /mnt/mount_point``` - służy do odmontowywania 
+    - ```lsof /mnt/mount_point``` - pokazuje jakie procesy używają danego punktu montowania, pozwala je ubić a następnie odmontować    
 
+
+## mkfs - tworzenie systemu plików
+
+
+mkfs -t xfs /dev/sdc1
 
 
 
 
 ### Strona 309
-311
+313
 
 
 
