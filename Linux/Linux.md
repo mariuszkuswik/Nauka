@@ -885,7 +885,7 @@ strona 235
 ```-i``` - information  
 ```-l``` - list files in a package 
 ```-c``` - configfiles 
-
+```-v``` - sprawdzenie czy jakieś pliki nie zostały zmodyfikowane ? doczytać 
 
 ```rmp -q firefox``` 
 > firefox-67.0-4.fc30.x86_64
@@ -1607,6 +1607,8 @@ GUID - nowa wersja, ograniczenie do 128 partycji podstawowych ( chyba tyle party
 
 ### parted - wyświetlanie i edycja partycji 
 
+**cfdisk** - łatwiejsza wersja fdisku 
+
 W razie problemów parted podpowiada po naciśnięciu *tab* 
 
 **WAŻNE** - parted przeprowadza zmiany od razu, w przeciwieństwie do fdisk nie muszą one być zatwierdzane   
@@ -1847,11 +1849,62 @@ free -m
 # 13. Wprowadzenie do administracji serwerem
 
 
+Monitorowanie serwera
+
 man rsyslogd 
 
-##### TU SKONCZYLEM - Ustawienia bezpieczeństwa w plikach konfiguracyjnych
+Dzięki usłudze rsyslog (demon rsyslogd) można zebrać pochodzące z wielu różnych usług
+informacje o znaczeniu krytycznym i o błędach, a następnie umieścić je w plikach dzienników
+zdarzeń. Domyślnie w RHEL komunikaty generowane przez aplikacje są umieszczane w plikach
+dzienników zdarzeń znajdujących się w katalogu /var/log. 
 
-### Strona 309
+**logwatch** każdej nocy skanuje
+pliki dzienników zdarzeń, a następnie na podany adres e-mail wysyła wychwycone w nich
+informacje o znaczeniu krytycznym. Z kolei funkcjonalność **logrotate** powoduje kompresję
+plików dzienników zdarzeń po osiągnięciu przez nie określonej wielkości lub po upływie
+określonego czasu od chwili poprzedniego wykonania kopii zapasowej dzienników zdarzeń.
+
+
+Narzędzie sar (dostarczane przez pakiet sysstat) może być skonfigurowane do monitorowania
+aktywności systemu w kategoriach takich jak poziom użycia pamięci i procesora, opóźnienie
+dyskowe, aktywność sieci oraz wykorzystanie innych zasobów. Domyślnie sar co kilka minut
+uruchamia narzędzie sadc, aby zebrać dane. Późniejsza analiza tych danych może pomóc
+w ustaleniu, co i kiedy spowodowało zwiększone użycie zasobów w systemie. 
+
+Dokładne informacje dalej 
+
+
+## SSH - Zarządzanie zdalnym dostępem  
+
+```yum list installed | grep openssh``` - wylistowanie zainstalowanego oprogramowania z narzędziami ssh
+>...  
+openssh.x86_64 7.9p1-5.fc30 @anaconda  
+openssh-clients.x86_64 7.9p1-5.fc30 @anaconda  
+openssh-server.x86_64 7.9p1-5.fc30 @anaconda  
+
+
+### Uruchamianie usługi openssh-server
+
+```sshd``` - daemon ssh
+
+
+```systemctl status sshd.service``` - sprawdzenie statusu daemona ssh
+```systemctl start sshd.service``` - uruchomienie daemona ssh
+```systemctl enable sshd.service``` - uruchamianie sshd przy starcie systemu 
+
+
+```/etc/ssh/sshd_config``` - config file dla sshd
+```man sshd_config``` - pomoc w konfiguracji sshd
+
+
+
+
+
+
+
+
+
+### Strona 330
 330
 
 
