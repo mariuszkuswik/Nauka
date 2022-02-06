@@ -1840,16 +1840,19 @@ free -m
 - ```lsof /mnt/mount_point``` - pokazuje jakie procesy używają danego punktu montowania, pozwala je ubić a następnie odmontować      
 
 
-## mkfs - tworzenie systemu plików
+
+### #TODO - Ćwiczenia do zrobienia - strona 319
 
 
-mkfs -t xfs /dev/sdc1
+# 13. Wprowadzenie do administracji serwerem
 
+
+man rsyslogd 
 
 
 
 ### Strona 309
-313
+327
 
 
 
