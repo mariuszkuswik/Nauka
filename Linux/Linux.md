@@ -1849,10 +1849,10 @@ free -m
 
 man rsyslogd 
 
-
+##### TU SKONCZYLEM - Ustawienia bezpieczeństwa w plikach konfiguracyjnych
 
 ### Strona 309
-327
+330
 
 
 
