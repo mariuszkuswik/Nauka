@@ -1830,10 +1830,7 @@ free -m
 
 ## mount i umount
 
-```bash
-mount /dev/device /mnt/mount_point
-```
-    - wyświetl obecnie zamontowane systemy plików   
+```mount /dev/device /mnt/mount_point``` - wyświetla obecnie zamontowane systemy plików   
     - ```-o``` - opcje montowania  
         - ```mount -o loop plik.iso /mnt/obraz``` - tymczasowe zamontowanie pliku iso do folderu     
     - ```-t``` - filesystem  
