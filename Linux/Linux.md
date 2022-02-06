@@ -1822,8 +1822,15 @@ free -m
 - 2 kolumna - *punkt montowania* - katalog, w którym urządzenie jest montowane
 - 3 kolumna - *filesystem* ( np. xfs, swap, nfs )
 - 4 kolumna - *opcje montowania* - ```defaults``` dla domyślnych ustawień
-    - ```man mount``` - zawiera opcje możliwe do ustawienia 
+    - ```man mount``` - zawiera opcje możliwe do ustawienia
+    - user - pozwala użytkownikom na montowanie danego katalogu
+    - _netdev - nakazuje urządzeniom czekać ze zmapowaniem aż sieć zostanie włączona
 - 5 kolumna - ```0 0``` - domyślnie wpisujemy dwa zera, ```man fstab``` dla informacji
+
+
+
+
+
 
 
 
