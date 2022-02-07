@@ -2238,7 +2238,8 @@ będzie można wyświetlić później po użyciu określonych opcji polecenia sa
 
  
 ```bash
-du /var
+$du /var
+
 ...
 1.4M    ./log
 0       ./mail
