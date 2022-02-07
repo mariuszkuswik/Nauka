@@ -1991,9 +1991,9 @@ rsync -avl janek@10.140.67.23:/usr/share/man/man1/ /tmp/
 sftp to interaktywna sesja ssh, pozwalająca na łatwe kopiowanie plików 
 
 ```sftp janek@jd.example.com``` - połączenie z hostem przez *sftp* 
-> Connecting to jd.example.com
-janek@jd.example.com's password: ***************
-sftp>
+> Connecting to jd.example.com  
+janek@jd.example.com's password: ***************  
+sftp>  
 
 
 ```?``` - wyświetlenie komend  
