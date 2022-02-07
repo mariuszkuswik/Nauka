@@ -1386,6 +1386,8 @@ które mają większy zasięg). Jeżeli użytkownik maria chce utworzyć plik z 
 do niego grupami sales i marketing, może użyć polecenia newgrp. W przykładzie
 użytkownik maria wydaje polecenie newgrp, aby sales tymczasowo stała się jego grupą
 podstawową, a następnie tworzy plik:
+
+```bash
 [sara]$ touch file1
 [sara]$ newgrp sales
 [sara]$ touch file2
@@ -1393,6 +1395,8 @@ podstawową, a następnie tworzy plik:
 -rw-rw-r--. 1 sara sara 0 Jan 18 22:22 file1
 -rw-rw-r--. 1 sara sales 0 Jan 18 22:23 file2
 [sara]$ exit
+```
+
 Za pomocą polecenia newgrp można też umożliwić użytkownikowi tymczasowe przypisanie mu
 grupy, bez faktycznego dodawania go do tej grupy. W tym celu ktoś z uprawnieniami roota może
 wydać polecenie gpasswd (np. gpasswd sales). Następnie jeśli użytkownik wykona z poziomu
@@ -1945,23 +1949,49 @@ $ exit
 
 ### scp i rsync - kopiowanie plików między systemami
 
+#### scp 
 
 Przykład działania scp, kopiowanie ze zdalnego systemu na nasz odbywa się anagloicznie 
 
 ```bash
 # scp source user@hostname:destination  
 scp /home/chris/memo janek@10.140.67.23:/tmp  
+
 ```
 > janek@10.140.67.23's password: ***************   
 memo 100%|****************| 153 0:00   
 
 
+Cechy *scp* :
+
+- Utrata atrybutów - uprawnienia oraz znaczniki daty i godziny nie są kopiowane
+- Utrata dowiązań symbolicznych - scp zastępuje linki symboliczne plikami do których prowadzą 
+- Niepotrzebnie powtarzane kopiowanie - Pliki są ponownie kopiowane, nawet jeżeli już istnieją w miejscu docelowym
+
+#### rsync 
+
+- Rsync nie kopiuje plików jeżeli w miejscu docelowym już się znajdują, oszczędza to czas, 
+**atrybuty plików ( data utworzenia itd ) zostają zachowane** 
+
+
+-a - archive - archiwizacja przed kopiowaniem 
+-v - verbose - pokazuje więcej informacji przy kopiowaniu 
+-l - links - kopiuje linki symboliczne jako linki ( nie pliki do których prowadzą )
+
+
+Przykład : 
+```bash
+rsync -avl janek@10.140.67.23:/usr/share/man/man1/ /tmp/
+```
+
+
+## sftp - Interaktywne kopiowanie za pomocą 
 
 
 
 
 ### Strona 330
-334
+338
 
 
 
