@@ -2234,6 +2234,20 @@ będzie można wyświetlić później po użyciu określonych opcji polecenia sa
 
 ### du - Sprawdzanie zużycia miejsca na dysku
 
+```du``` - wyświetla ilośc miejsca którą zajmują pliki i katalogi, domyślnie działa rekursywnie, na koniec podaje ilość miejsca zajętą przez dany katalog 
+ 
+```bash
+    du /var
+    ...
+    1.4M    ./log
+    0       ./mail
+    0       ./opt
+    0       ./snap
+    0       ./tmp
+    792M    .
+```
+
+
 
 
 
