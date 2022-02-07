@@ -2176,24 +2176,24 @@ udp 0 0 :::514 :::* 25341/rsyslogd
 
 ## Obserwowanie komunikatów za pomocą usługi logwatch
 
-*logwatch* polega na pobieraniu każdej nocy komunikatów, które mogą
-przedstawiać problem. Są one umieszczane w wiadomości e-mail wysyłanej na adres podany
-przez administratora.
-Logwatch trzeba zainstalować - ```yum install logwatch```
+*logwatch* polega na pobieraniu każdej nocy komunikatów, które mogą  
+przedstawiać problem. Są one umieszczane w wiadomości e-mail wysyłanej na adres podany  
+przez administratora.  
+Logwatch trzeba zainstalować - ```yum install logwatch```  
 
-logwatch jest uruchamiana jako zadanie mechanizmu cron (0logwatch) umieszczone w /etc/cron.daily
+logwatch jest uruchamiana jako zadanie mechanizmu cron (0logwatch) umieszczone w /etc/cron.daily  
 
-```/etc/logwatch/conf/logwatch.conf``` - config
-```man logwatch.conf``` - man dla configu
+```/etc/logwatch/conf/logwatch.conf``` - config  
+```man logwatch.conf``` - man dla configu  
 
-Domyślnie po zainstalowaniu logwatch wysyła maila raz dziennie,  
-jest to ustawione w *cron.daily*
+Domyślnie po zainstalowaniu logwatch wysyła maila raz dziennie,   
+jest to ustawione w *cron.daily*  
 
-```mail``` - polecenie służy do lokalnego przeglądania maili, można przy jego pomocy sprawdzić czy logwatch dobrze działa 
-    - ```1``` - wyświetlenie pierwszego maila
-    - ```2``` - wyświetlenie drugiego maila
-    - ...
-    - ```x``` - wyjście z polecenia mail
+```mail``` - polecenie służy do lokalnego przeglądania maili, można przy jego pomocy sprawdzić czy logwatch dobrze działa  
+    - ```1``` - wyświetlenie pierwszego maila  
+    - ```2``` - wyświetlenie drugiego maila  
+    - ...  
+    - ```x``` - wyjście z polecenia mail  
 
 
 ## Sprawdzanie zasobów systemowych za pomocą polecenia sar
