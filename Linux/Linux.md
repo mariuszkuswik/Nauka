@@ -2060,6 +2060,7 @@ Całośc z rsyslog do przećwiczenia !
 Wszyskite moduły są opisane pod ```man rsyslog.conf```
 
 ◻ sekcja RULES w pliku *rsyslog.conf*
+
     ```bash
     #### RULES ####
     # Log all kernel messages to the console.
