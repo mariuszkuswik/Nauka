@@ -2190,6 +2190,18 @@ Domyślnie po zainstalowaniu logwatch wysyła maila raz dziennie,
 jest to ustawione w *cron.daily*
 
 ```mail``` - polecenie służy do lokalnego przeglądania maili, można przy jego pomocy sprawdzić czy logwatch dobrze działa 
+    - ```1``` - wyświetlenie pierwszego maila
+    - ```2``` - wyświetlenie drugiego maila
+    - ...
+    - ```x``` - wyjście z polecenia mail
+
+
+## Sprawdzanie zasobów systemowych za pomocą polecenia sar
+
+
+
+
+
 
 
 
