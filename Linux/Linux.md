@@ -1970,7 +1970,7 @@ Cechy *scp* :
 
 ### rsync 
 
-- Rsync nie kopiuje plików jeżeli w miejscu docelowym już się znajdują, oszczędza to czas, 
+Rsync nie kopiuje plików jeżeli w miejscu docelowym już się znajdują, oszczędza to czas,   
 **atrybuty plików ( data utworzenia itd ) zostają zachowane** 
 
 
