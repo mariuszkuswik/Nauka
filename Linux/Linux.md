@@ -1996,9 +1996,9 @@ janek@jd.example.com's password: ***************
 sftp>  
 
 
-```?``` - wyświetlenie komend  
-```get``` - pobieranie pliku  
-```put``` - upload pliku  
+- ```?``` - wyświetlenie komend  
+- ```get``` - pobieranie pliku  
+- ```put``` - upload pliku  
 
 
 ## Uwierzytelnianie ssh na podstawie klucza
@@ -2009,17 +2009,85 @@ sftp>
 
 Do klucza prywatnego można nadać hasło które będzie wykorzystywane przy uwierzytelnienia 
 
-
 - ```ssh-keygen``` - generowanie pary kluczy 
 - ```ssh-copy-id -i ~/.ssh/id_rsa.pub janek@10.140.67.23``` - Kopiowanie klucza publicznego na host zdalny 
 
+Kopiowanie przy pomocy *ssh-copy-id* samo dodaje wpis do pliku authorized_keys w *katalogu .ssh* użytkownika kopiującego  
+
+```PasswordAuthentication no``` - opcja wyłączająca uwierzytelnienie za pomocą hasła w pliku */etc/ssh/sshd_config*
+
+
+## Włączanie rejestrowania danych za pomocą rsyslog
+
+### Plik /etc/rsyslog.conf
+
+Całośc z rsyslog do przećwiczenia !
+
+```man 5 rsyslog.conf``` - man dla configu rsyslog
+```man rsyslogd``` - man dla daemona syslog 
+
+```/etc/rsyslog.conf``` - config dla rsyslog
+
+Przykładowy config 
+```bash
+module(load="imuxsock"
+# provides support for local system logging (e.g. via logger command)
+SysSock.Use="off") # Turn off message reception via local log socket;
+# local messages are retrieved through imjournal now.
+module(load="imjournal"
+# provides access to the systemd journal
+StateFile="imjournal.state") # File to store the position in the journal
+#module(load="imklog")
+# reads kernel messages (the same are read from journald)
+#module(load="immark")
+# provides --MARK-- message capability
+# Provides UDP syslog reception
+# for parameters see http://www.rsyslog.com/doc/imudp.html
+#module(load="imudp") # needs to be done just once
+#input(type="imudp" port="514")
+# Provides TCP syslog reception
+# for parameters see http://www.rsyslog.com/doc/imtcp.html
+#module(load="imtcp") # needs to be done just once
+#input(type="imtcp" port="514")
+```
+
+- Wiersze rozpoczynające się od ```module(load=``` powodują wczytanie modułów.
+- ```imjournal``` - Moduł pozwala usłudze rsyslog uzyskać dostęp do dziennika systemd
+- imuxsock - do akceptowania komunikatów pochodzących z systemu lokalnego
+- imklog - rejestrować komunikaty generowane przez jądro
+- immark - rejestrowanie komunikatów --MARK-- (używanych do wskazania, że usługa działa) ( nie włączony domyślnie ) 
+
+Wszyskite moduły są opisane pod ```man rsyslog.conf```
+
+sekcja RULES w pliku *rsyslog.conf*
+```bash
+#### RULES ####
+# Log all kernel messages to the console.
+# Logging much else clutters up the screen.
+#kern.* /dev/console
+# Log anything (except mail) of level info or higher.
+# Don't log private authentication messages!
+*.info;mail.none;authpriv.none;cron.none /var/log/messages
+# The authpriv file has restricted access.
+authpriv.* /var/log/secure
+# Log all the mail messages in one place.
+mail.* -/var/log/maillog
+# Log cron stuff
+cron.* /var/log/cron
+```
+
+**W kolumnie po lewej stronie RULES jest wskazany rodzaj dopasowywanych komunikatów, kolumna po prawej określa miejsce docelowe dla dopasowanych komunikatów. Komunikaty są dopasowywane na podstawie funkcjonalności (mail, cron, kern itd.) i priorytetu (od debug, info, notice do crit, alert i emerg) rozdzielonych kropką.  
+Dlatego mail.info dopasowuje wszystkie komunikaty pochodzące z usługi poczty i mające poziom co najmniej info.**
 
 
 
 
 ### Strona 330
-340
+341
 
+
+### #TODO - dodać do dnf/yum jak dodać repo z iso
+https://access.redhat.com/solutions/1355683
 
 
 
