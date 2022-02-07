@@ -1995,9 +1995,10 @@ sftp to interaktywna sesja ssh, pozwalająca na łatwe kopiowanie plików
 janek@jd.example.com's password: ***************
 sftp>
 
-```?``` - wyświetlenie komend
-```get``` - pobieranie pliku
-```put``` - upload pliku
+
+```?``` - wyświetlenie komend  
+```get``` - pobieranie pliku  
+```put``` - upload pliku  
 
 
 ## Uwierzytelnianie ssh na podstawie klucza (bez użycia hasła)
@@ -2010,6 +2011,7 @@ Do klucza prywatnego można nadać hasło które będzie wykorzystywane przy uwi
 
 
 ```ssh-keygen``` - generowanie pary kluczy 
+
 
 Kopiowanie klucza publicznego na host zdalny 
 
