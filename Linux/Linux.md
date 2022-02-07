@@ -2246,17 +2246,51 @@ będzie można wyświetlić później po użyciu określonych opcji polecenia sa
 1.0M /home/janek  
 
 
+### find - Określanie zużycia miejsca na dysku
+
+- Wyszukanie plików należących do użytkownika janek, wywietlenie dokładnych informacji przy pomocy ls, wyświetlenie katalogów bez ich zawartości, posortowanie po wielkości plików 
+
+```bash
+find / -xdev -user janek -print | xargs ls -ldS > /tmp/janek
+```
+    - ```-xdev``` - uniemożliwia przeszukiwanie innych systemów plików niż wskazane
 
 
+```bash
+find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
+```
 
 
+# Administracja siecią
+
+
+```ip addr show``` - wyświetlenie informacji o wszystkich interfejsach sieciowych 
+    - ```-s``` - wyświetla dane statystyczne dotyczące transmisji pakietów oraz wygenerowanych błędów dla każdego interfejsu
+
+```ip addr show```
+> 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue
+        state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+        valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+        valid_lft forever preferred_lft forever
+2: enp4s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500
+        qdisc fq_codel state DOWN group default qlen 1000
+    link/ether 30:85:a9:04:9b:f9 brd ff:ff:ff:ff:ff:ff
+3: wlp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500
+...
+
+```ifconfig``` - Starsza, chociaż wciąż działająca alternatywa dla komendy ip
+
+## Sprawdzanie informacji o routingu
 
 
 
 
 
 ### Strona 348
-350
+357
 
 
 ### #TODO - dodać do dnf/yum jak dodać repo z iso
