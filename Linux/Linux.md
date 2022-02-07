@@ -2203,20 +2203,20 @@ jest to ustawione w *cron.daily*
 
 ### #TODO - przeredagować 
 
-Polecenie sar jest częścią pakietu sysstat. Po jego zainstalowaniu i uruchomieniu usługi
-sysstat system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które
-będzie można wyświetlić później po użyciu określonych opcji polecenia sar.
+Polecenie sar jest częścią pakietu sysstat. Po jego zainstalowaniu i uruchomieniu usługi  
+sysstat system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które  
+będzie można wyświetlić później po użyciu określonych opcji polecenia sar.  
 
 ```bash
 # systemclt enable sysstat
 # systemctl start sysstat
 ```
 
-```/var/log/sa/sa??``` - domyślne miejsce docelowe dla logów
+```/var/log/sa/sa??``` - domyślne miejsce docelowe dla logów  
 
-```sar``` - przeglądanie logów 
-    - ```-u``` - wyświetla informacje dotyczące procesora 
-    - ```-d``` - wyświetla informacje dotyczące dysku
+```sar``` - przeglądanie logów  
+    - ```-u``` - wyświetla informacje dotyczące procesora   
+    - ```-d``` - wyświetla informacje dotyczące dysku  
 
 
 
