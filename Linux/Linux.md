@@ -2264,10 +2264,10 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 # Administracja siecią
 
 
-```ip addr show``` - wyświetlenie informacji o wszystkich interfejsach sieciowych 
-    - ```-s``` - wyświetla dane statystyczne dotyczące transmisji pakietów oraz wygenerowanych błędów dla każdego interfejsu
-
-```ip addr show```
+```ip addr show``` - wyświetlenie informacji o wszystkich interfejsach sieciowych  
+    - ```-s``` - wyświetla dane statystyczne dotyczące transmisji pakietów oraz wygenerowanych błędów dla każdego interfejsu  
+ 
+```ip addr show```  
 > 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue  
         state UNKNOWN group default qlen 1000  
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00  
