@@ -2218,6 +2218,23 @@ będzie można wyświetlić później po użyciu określonych opcji polecenia sa
     - ```-u``` - wyświetla informacje dotyczące procesora   
     - ```-d``` - wyświetla informacje dotyczące dysku  
 
+### #TODO - sar do uzupełnienia, nie było możliwości pobrania na wirtualkę 
+
+## Sprawdzanie ilości wolnego miejsca
+
+### df - Wyświetlanie dostępnej powierzchni dyskowej
+
+```df``` - wyświetla dostępną wolną powierzchnię w systemie plików
+    - ```-h``` - human readable - użycie większych jednostek 
+    - ```-t``` - Wyświetlenie informacji tylko o systemie plików wskazanego rodzaju
+    - ```-x``` - Wyłączenie wyświetlania informacji o wskazanym rodzaju systemu pliku ( np. *df -x tmpfs* )
+    - ```-a``` - include pseudo, duplicate, inaccessible file systems
+    - ```-i``` - list inodes information instead of block usage
+    - ```--block-size=#``` - Wyświetlenie wolnego miejsca w jednostkach *np. G, M*
+
+### du - Sprawdzanie zużycia miejsca na dysku
+
+
 
 
 
