@@ -2222,7 +2222,7 @@ będzie można wyświetlić później po użyciu określonych opcji polecenia sa
 
 
 ### Strona 330
-347
+348
 
 
 ### #TODO - dodać do dnf/yum jak dodać repo z iso
