@@ -2052,10 +2052,10 @@ Całośc z rsyslog do przećwiczenia !
     ```
 
 - Wiersze rozpoczynające się od ```module(load=``` powodują wczytanie modułów.
-- ```imjournal``` - Moduł pozwala usłudze rsyslog uzyskać dostęp do dziennika systemd
-- imuxsock - do akceptowania komunikatów pochodzących z systemu lokalnego
-- imklog - rejestrować komunikaty generowane przez jądro
-- immark - rejestrowanie komunikatów --MARK-- (używanych do wskazania, że usługa działa) ( nie włączony domyślnie ) 
+- ```imjournal``` - moduł pozwala usłudze rsyslog uzyskać dostęp do dziennika systemd
+- ```imuxsock``` - służy do akceptowania komunikatów pochodzących z systemu lokalnego
+- ```imklog``` - rejestrowanie komunikatów generowane przez jądro
+- ```immark ```- rejestrowanie komunikatów --MARK-- (używanych do wskazania, że usługa działa) ( nie włączony domyślnie ) 
 
 Wszyskite moduły są opisane pod ```man rsyslog.conf```
 
@@ -2080,11 +2080,72 @@ Wszyskite moduły są opisane pod ```man rsyslog.conf```
 **W kolumnie po lewej stronie RULES jest wskazany rodzaj dopasowywanych komunikatów, kolumna po prawej określa miejsce docelowe dla dopasowanych komunikatów. Komunikaty są dopasowywane na podstawie funkcjonalności (mail, cron, kern itd.) i priorytetu (od debug, info, notice do crit, alert i emerg) rozdzielonych kropką.  
 Dlatego mail.info dopasowuje wszystkie komunikaty pochodzące z usługi poczty i mające poziom co najmniej info.**
 
+Większość komunikatów jest przekazywana do plików znajdujących się w katalogu /var/log.   
+
+Istnieje również możliwość przekierowania komunikatów do urządzenia, takiego jak /dev/console, lub zdalnego hosta rejestracji danych, takiego jak @loghost.example.com.  
+Znak @ określa, że znajdująca się po nim nazwa jest nazwą hosta.  
+
+
+## Plik dziennika zdarzeń messages
+
+
+```bash
+Feb 25 11:04:32 toys network: Bringing up loopback: succeeded
+Feb 25 11:04:35 toys network: Bringing up interface eth0: succeeded
+Feb 25 13:01:14 toys vsftpd(pam_unix)[10565]: authentication failure;
+logname= uid=0 euid=0 tty= ruser= rhost=10.0.0.5 user=chris
+Feb 25 14:44:24 toys su(pam_unix)[11439]: session opened for
+user root by chris(uid=500)
+```
+
+Domyślny format komunikatu w pliku /var/log/messages został podzielony na pięć głównych  
+części i jest określony przez następujący wpis w pliku /etc/rsyslog.conf:  
+```module(load="builtin:omfile" Template="RSYSLOG_TraditionalFileFormat")```  
+
+■ data i godzina zarejestrowania komunikatu;
+■ nazwa komputera, z którego pochodzi komunikat;
+■ nazwa programu lub usługi, której dotyczy komunikat;
+■ ujęty w nawias kwadratowy numer procesu programu, z którego pochodzi komunikat;
+■ rzeczywisty tekst komunikatu.
+
+
+## Konfigurowanie i używanie loghost za pomocą rsyslog
+
+
+Do przekierowania logów komputera do demona rsyslogd w innym komputerze konieczne jest wprowadzenie zmian w configu rsyslog */etc/rsyslog.conf*,  
+**hosta lokalnego i zdalnego**
+
+## Zmiany po stronie klienta
+
+Aby komunikaty były przekazywane do innego komputera (tzw. loghost) zamiast do pliku, nazwę pliku dziennika zdarzeń zastępuemy znakiem **@ i hosntame**.  
+np. dla przekierowania *messages, secure i maillog*, do configu */etc/rsyslog.conf* dodaj wiersze, zawierające **@loghost**
+
+```bash
+# Log anything (except mail) of level info or higher.
+# Don't log private authentication messages!
+*.info;mail.none;news.none;authpriv.none;cron.none /var/log/messages
+*.info;mail.none;news.none;authpriv.none;cron.none @loghost
+
+# The authpriv file has restricted access.
+authpriv.* /var/log/secure
+authpriv.* @loghost
+
+# Log all the mail messages in one place.
+mail.* -/var/log/maillog
+mail.* @loghost
+```
+
+Nazwa **loghost** jest stosowana zazwyczaj, dzieki temu można łatwo podmienić serwer bez zmieniania configu na wszystkich maszynach
+
+
+## Zmiany po stronie loghosta
+
+
 
 
 
 ### Strona 330
-341
+344
 
 
 ### #TODO - dodać do dnf/yum jak dodać repo z iso
