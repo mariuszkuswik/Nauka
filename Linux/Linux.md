@@ -2165,12 +2165,14 @@ rsyslog.service).
 portach (514 dla ruchu sieciowego UDP i/lub TCP). Wydaj polecenie netstat i sprawdź,
 czy demon rsyslogd faktycznie nasłuchuje na portach 514 (IPv4 i IPv6) dla ruchu
 sieciowego UDP i TCP:
+
+```bash
 # netstat -tupln | grep 514
 tcp 0 0 0.0.0.0:514 0.0.0.0:* LISTEN 25341/rsyslogd
 tcp 0 0 :::514 :::* LISTEN 25341/rsyslogd
 udp 0 0 0.0.0.0:514 0.0.0.0:* 25341/rsyslogd
 udp 0 0 :::514 :::* 25341/rsyslogd
-
+```
 
 
 
