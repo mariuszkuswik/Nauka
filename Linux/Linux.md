@@ -2013,7 +2013,7 @@ Do klucza prywatnego można nadać hasło które będzie wykorzystywane przy uwi
 ```ssh-keygen``` - generowanie pary kluczy 
 
 
-Kopiowanie klucza publicznego na host zdalny 
+- Kopiowanie klucza publicznego na host zdalny 
 
 ```bash
 ssh-copy-id -i ~/.ssh/id_rsa.pub janek@10.140.67.23
