@@ -2028,28 +2028,28 @@ Całośc z rsyslog do przećwiczenia !
 
 ```/etc/rsyslog.conf``` - config dla rsyslog
 
-Przykładowy config 
-```bash
-module(load="imuxsock"
-# provides support for local system logging (e.g. via logger command)
-SysSock.Use="off") # Turn off message reception via local log socket;
-# local messages are retrieved through imjournal now.
-module(load="imjournal"
-# provides access to the systemd journal
-StateFile="imjournal.state") # File to store the position in the journal
-#module(load="imklog")
-# reads kernel messages (the same are read from journald)
-#module(load="immark")
-# provides --MARK-- message capability
-# Provides UDP syslog reception
-# for parameters see http://www.rsyslog.com/doc/imudp.html
-#module(load="imudp") # needs to be done just once
-#input(type="imudp" port="514")
-# Provides TCP syslog reception
-# for parameters see http://www.rsyslog.com/doc/imtcp.html
-#module(load="imtcp") # needs to be done just once
-#input(type="imtcp" port="514")
-```
+- Przykładowy config 
+    ```bash
+    module(load="imuxsock"
+    # provides support for local system logging (e.g. via logger command)
+    SysSock.Use="off") # Turn off message reception via local log socket;
+    # local messages are retrieved through imjournal now.
+    module(load="imjournal"
+    # provides access to the systemd journal
+    StateFile="imjournal.state") # File to store the position in the journal
+    #module(load="imklog")
+    # reads kernel messages (the same are read from journald)
+    #module(load="immark")
+    # provides --MARK-- message capability
+    # Provides UDP syslog reception
+    # for parameters see http://www.rsyslog.com/doc/imudp.html
+    #module(load="imudp") # needs to be done just once
+    #input(type="imudp" port="514")
+    # Provides TCP syslog reception
+    # for parameters see http://www.rsyslog.com/doc/imtcp.html
+    #module(load="imtcp") # needs to be done just once
+    #input(type="imtcp" port="514")
+    ```
 
 - Wiersze rozpoczynające się od ```module(load=``` powodują wczytanie modułów.
 - ```imjournal``` - Moduł pozwala usłudze rsyslog uzyskać dostęp do dziennika systemd
@@ -2059,22 +2059,22 @@ StateFile="imjournal.state") # File to store the position in the journal
 
 Wszyskite moduły są opisane pod ```man rsyslog.conf```
 
-sekcja RULES w pliku *rsyslog.conf*
-```bash
-#### RULES ####
-# Log all kernel messages to the console.
-# Logging much else clutters up the screen.
-#kern.* /dev/console
-# Log anything (except mail) of level info or higher.
-# Don't log private authentication messages!
-*.info;mail.none;authpriv.none;cron.none /var/log/messages
-# The authpriv file has restricted access.
-authpriv.* /var/log/secure
-# Log all the mail messages in one place.
-mail.* -/var/log/maillog
-# Log cron stuff
-cron.* /var/log/cron
-```
+- sekcja RULES w pliku *rsyslog.conf*
+    ```bash
+    #### RULES ####
+    # Log all kernel messages to the console.
+    # Logging much else clutters up the screen.
+    #kern.* /dev/console
+    # Log anything (except mail) of level info or higher.
+    # Don't log private authentication messages!
+    *.info;mail.none;authpriv.none;cron.none /var/log/messages
+    # The authpriv file has restricted access.
+    authpriv.* /var/log/secure
+    # Log all the mail messages in one place.
+    mail.* -/var/log/maillog
+    # Log cron stuff
+    cron.* /var/log/cron
+    ```
 
 **W kolumnie po lewej stronie RULES jest wskazany rodzaj dopasowywanych komunikatów, kolumna po prawej określa miejsce docelowe dla dopasowanych komunikatów. Komunikaty są dopasowywane na podstawie funkcjonalności (mail, cron, kern itd.) i priorytetu (od debug, info, notice do crit, alert i emerg) rozdzielonych kropką.  
 Dlatego mail.info dopasowuje wszystkie komunikaty pochodzące z usługi poczty i mające poziom co najmniej info.**
