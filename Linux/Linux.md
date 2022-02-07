@@ -2198,17 +2198,31 @@ jest to ustawione w *cron.daily*
     - ```x``` - wyjście z polecenia mail  
 
 
-## Sprawdzanie zasobów systemowych za pomocą polecenia sar
+## sar - sprawdzanie zasobów systemowych 
 
 
+### #TODO - przeredagować 
 
+Polecenie sar jest częścią pakietu sysstat. Po jego zainstalowaniu i uruchomieniu usługi
+sysstat system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które
+będzie można wyświetlić później po użyciu określonych opcji polecenia sar.
 
+```bash
+# systemclt enable sysstat
+# systemctl start sysstat
+```
+
+```/var/log/sa/sa??``` - domyślne miejsce docelowe dla logów
+
+```sar``` - przeglądanie logów 
+    - ```-u``` - wyświetla informacje dotyczące procesora 
+    - ```-d``` - wyświetla informacje dotyczące dysku
 
 
 
 
 ### Strona 330
-345
+347
 
 
 ### #TODO - dodać do dnf/yum jak dodać repo z iso
