@@ -2147,7 +2147,7 @@ na porcie 514 TCP).
 ### #TODO - strona 346 - do ogarnięcia procedura 
 
 Procedura konfiguracji loghosta
-■ Edytuj plik /etc/rsyslog.conf w loghoście i usuń znak # na początku wierszy włączających
+■ Edytuj plik /etc/rsyslog.conf w loghoście i usuń znak # na początku wierszy włączających  
 nasłuchiwanie przez demon rsyslogd komunikatów ze zdalnych systemów. Znak # usuń
 z dwóch pierwszych wierszy włączających nasłuchiwanie komunikatów przychodzących
 na porcie 514 UDP (domyślnie), a także z dwóch wierszy po wierszu zezwalającym
@@ -2156,15 +2156,15 @@ module(load="imudp") # needs to be done just once
 input(type="imudp" port="514")
 module(load="imtcp") # needs to be done just once
 input(type="imtcp" port="514")
-■ Zmodyfikuj konfigurację zapory sieciowej w taki sposób, aby umożliwiała kierowanie
+■ Zmodyfikuj konfigurację zapory sieciowej w taki sposób, aby umożliwiała kierowanie  
 komunikatów do Twojego loghosta. (W rozdziale 25. znajdziesz dokładne informacje o tym,
 jak otwierać określone porty zapory sieciowej w celu zapewnienia dostępu do systemu).
 ■ Ponownie uruchom usługę rsyslog (service rsyslog restart lub systemctl restart
-rsyslog.service).
+rsyslog.service).  
 ■ Jeżeli usługa jest uruchomiona, powinieneś zobaczyć, że nasłuchuje na włączonych
 portach (514 dla ruchu sieciowego UDP i/lub TCP). Wydaj polecenie netstat i sprawdź,
 czy demon rsyslogd faktycznie nasłuchuje na portach 514 (IPv4 i IPv6) dla ruchu
-sieciowego UDP i TCP:
+sieciowego UDP i TCP:  
 
 ```bash
 # netstat -tupln | grep 514
