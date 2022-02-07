@@ -2224,27 +2224,28 @@ będzie można wyświetlić później po użyciu określonych opcji polecenia sa
 
 ### df - Wyświetlanie dostępnej powierzchni dyskowej
 
-```df``` - wyświetla dostępną wolną powierzchnię w systemie plików
-    - ```-h``` - human readable - użycie większych jednostek 
-    - ```-t``` - Wyświetlenie informacji tylko o systemie plików wskazanego rodzaju
-    - ```-x``` - Wyłączenie wyświetlania informacji o wskazanym rodzaju systemu pliku ( np. *df -x tmpfs* )
-    - ```-a``` - include pseudo, duplicate, inaccessible file systems
-    - ```-i``` - list inodes information instead of block usage
-    - ```--block-size=#``` - Wyświetlenie wolnego miejsca w jednostkach *np. G, M*
+```df``` - wyświetla dostępną wolną powierzchnię w systemie plików  
+    - ```-h``` - human readable - użycie większych jednostek   
+    - ```-t``` - Wyświetlenie informacji tylko o systemie plików wskazanego rodzaju  
+    - ```-x``` - Wyłączenie wyświetlania informacji o wskazanym rodzaju systemu pliku ( np. *df -x tmpfs* )  
+    - ```-a``` - include pseudo, duplicate, inaccessible file systems  
+    - ```-i``` - list inodes information instead of block usage  
+    - ```--block-size=#``` - Wyświetlenie wolnego miejsca w jednostkach *np. G, M*  
 
 ### du - Sprawdzanie zużycia miejsca na dysku
 
 ```du``` - wyświetla ilośc miejsca którą zajmują pliki i katalogi, domyślnie działa rekursywnie, na koniec podaje ilość miejsca zajętą przez dany katalog 
+
  
 ```bash
-    du /var
-    ...
-    1.4M    ./log
-    0       ./mail
-    0       ./opt
-    0       ./snap
-    0       ./tmp
-    792M    .
+du /var
+...
+1.4M    ./log
+0       ./mail
+0       ./opt
+0       ./snap
+0       ./tmp
+792M    .
 ```
 
 
