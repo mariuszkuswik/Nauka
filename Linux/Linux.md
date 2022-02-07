@@ -1947,9 +1947,9 @@ $ exit
 ```
 
 
-### scp i rsync - kopiowanie plików między systemami
+## scp i rsync - kopiowanie plików między systemami
 
-#### scp 
+### scp 
 
 Przykład działania scp, kopiowanie ze zdalnego systemu na nasz odbywa się anagloicznie 
 
@@ -1968,7 +1968,7 @@ Cechy *scp* :
 - Utrata dowiązań symbolicznych - scp zastępuje linki symboliczne plikami do których prowadzą 
 - Niepotrzebnie powtarzane kopiowanie - Pliki są ponownie kopiowane, nawet jeżeli już istnieją w miejscu docelowym
 
-#### rsync 
+### rsync 
 
 - Rsync nie kopiuje plików jeżeli w miejscu docelowym już się znajdują, oszczędza to czas, 
 **atrybuty plików ( data utworzenia itd ) zostają zachowane** 
@@ -2001,7 +2001,7 @@ sftp>
 ```put``` - upload pliku  
 
 
-## Uwierzytelnianie ssh na podstawie klucza (bez użycia hasła)
+## Uwierzytelnianie ssh na podstawie klucza
 
 
 - **Klucz prywatny** - przechowywany na serwerze docelowym 
