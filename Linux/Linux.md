@@ -2235,27 +2235,28 @@ będzie można wyświetlić później po użyciu określonych opcji polecenia sa
 ### du - Sprawdzanie zużycia miejsca na dysku
 
 ```du``` - wyświetla ilośc miejsca którą zajmują pliki i katalogi, domyślnie działa rekursywnie, na koniec podaje ilość miejsca zajętą przez dany katalog 
+    - ```-h``` - human readable - użycie większych jednostek
+    - ```-s``` - wyświetla miejsce zajmowane przez dany katalog, bez wyświetlania plików
 
- 
-```bash
-$du /var
-
-...
-1.4M    ./log
-0       ./mail
-0       ./opt
-0       ./snap
-0       ./tmp
-792M    .
-```
+```du -h /home/janek```
+> 114k /home/janek/httpd/stuff
+234k /home/janek/httpd
+137k /home/janek/uucp/data
+701k /home/janek/uucp
+1.0M /home/janek
 
 
 
 
 
 
-### Strona 330
-348
+
+
+
+
+
+### Strona 348
+350
 
 
 ### #TODO - dodać do dnf/yum jak dodać repo z iso
