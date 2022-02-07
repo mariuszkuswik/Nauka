@@ -2010,15 +2010,8 @@ sftp>
 Do klucza prywatnego można nadać hasło które będzie wykorzystywane przy uwierzytelnienia 
 
 
-```ssh-keygen``` - generowanie pary kluczy 
-
-
-- Kopiowanie klucza publicznego na host zdalny 
-
-```bash
-ssh-copy-id -i ~/.ssh/id_rsa.pub janek@10.140.67.23
-```
-> janek@10.140.67.23's password: ***************
+- ```ssh-keygen``` - generowanie pary kluczy 
+- ```ssh-copy-id -i ~/.ssh/id_rsa.pub janek@10.140.67.23``` - Kopiowanie klucza publicznego na host zdalny 
 
 
 
