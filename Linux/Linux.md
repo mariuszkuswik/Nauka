@@ -2102,11 +2102,11 @@ Domyślny format komunikatu w pliku /var/log/messages został podzielony na pię
 części i jest określony przez następujący wpis w pliku /etc/rsyslog.conf:  
 ```module(load="builtin:omfile" Template="RSYSLOG_TraditionalFileFormat")```  
 
-■ data i godzina zarejestrowania komunikatu;
-■ nazwa komputera, z którego pochodzi komunikat;
-■ nazwa programu lub usługi, której dotyczy komunikat;
-■ ujęty w nawias kwadratowy numer procesu programu, z którego pochodzi komunikat;
-■ rzeczywisty tekst komunikatu.
+■ data i godzina zarejestrowania komunikatu;  
+■ nazwa komputera, z którego pochodzi komunikat;  
+■ nazwa programu lub usługi, której dotyczy komunikat;  
+■ ujęty w nawias kwadratowy numer procesu programu, z którego pochodzi komunikat;  
+■ rzeczywisty tekst komunikatu.  
 
 
 ## Konfigurowanie i używanie loghost za pomocą rsyslog
@@ -2140,12 +2140,61 @@ Nazwa **loghost** jest stosowana zazwyczaj, dzieki temu można łatwo podmienić
 
 ## Zmiany po stronie loghosta
 
+Loghost skonfigurowany do akceptowania komunikatów musi nasłuchiwać ich na standardowych
+portach (514 UDP, choć może być skonfigurowany również do akceptowania komunikatów
+na porcie 514 TCP).
 
+### #TODO - strona 346 - do ogarnięcia procedura 
+
+Procedura konfiguracji loghosta
+■ Edytuj plik /etc/rsyslog.conf w loghoście i usuń znak # na początku wierszy włączających
+nasłuchiwanie przez demon rsyslogd komunikatów ze zdalnych systemów. Znak # usuń
+z dwóch pierwszych wierszy włączających nasłuchiwanie komunikatów przychodzących
+na porcie 514 UDP (domyślnie), a także z dwóch wierszy po wierszu zezwalającym
+na nasłuchiwanie komunikatów przez protokół TCP (również na porcie 514).
+module(load="imudp") # needs to be done just once
+input(type="imudp" port="514")
+module(load="imtcp") # needs to be done just once
+input(type="imtcp" port="514")
+■ Zmodyfikuj konfigurację zapory sieciowej w taki sposób, aby umożliwiała kierowanie
+komunikatów do Twojego loghosta. (W rozdziale 25. znajdziesz dokładne informacje o tym,
+jak otwierać określone porty zapory sieciowej w celu zapewnienia dostępu do systemu).
+■ Ponownie uruchom usługę rsyslog (service rsyslog restart lub systemctl restart
+rsyslog.service).
+■ Jeżeli usługa jest uruchomiona, powinieneś zobaczyć, że nasłuchuje na włączonych
+portach (514 dla ruchu sieciowego UDP i/lub TCP). Wydaj polecenie netstat i sprawdź,
+czy demon rsyslogd faktycznie nasłuchuje na portach 514 (IPv4 i IPv6) dla ruchu
+sieciowego UDP i TCP:
+# netstat -tupln | grep 514
+tcp 0 0 0.0.0.0:514 0.0.0.0:* LISTEN 25341/rsyslogd
+tcp 0 0 :::514 :::* LISTEN 25341/rsyslogd
+udp 0 0 0.0.0.0:514 0.0.0.0:* 25341/rsyslogd
+udp 0 0 :::514 :::* 25341/rsyslogd
+
+
+
+
+## Obserwowanie komunikatów za pomocą usługi logwatch
+
+*logwatch* polega na pobieraniu każdej nocy komunikatów, które mogą
+przedstawiać problem. Są one umieszczane w wiadomości e-mail wysyłanej na adres podany
+przez administratora.
+Logwatch trzeba zainstalować - ```yum install logwatch```
+
+logwatch jest uruchamiana jako zadanie mechanizmu cron (0logwatch) umieszczone w /etc/cron.daily
+
+```/etc/logwatch/conf/logwatch.conf``` - config
+```man logwatch.conf``` - man dla configu
+
+Domyślnie po zainstalowaniu logwatch wysyła maila raz dziennie,  
+jest to ustawione w *cron.daily*
+
+```mail``` - polecenie służy do lokalnego przeglądania maili, można przy jego pomocy sprawdzić czy logwatch dobrze działa 
 
 
 
 ### Strona 330
-344
+345
 
 
 ### #TODO - dodać do dnf/yum jak dodać repo z iso
