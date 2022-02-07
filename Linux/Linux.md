@@ -2234,7 +2234,7 @@ będzie można wyświetlić później po użyciu określonych opcji polecenia sa
 
 ### du - Sprawdzanie zużycia miejsca na dysku
 
-```du``` - wyświetla ilośc miejsca którą zajmują pliki i katalogi, domyślnie działa rekursywnie, na koniec podaje ilość miejsca zajętą przez dany katalog 
+```du``` - wyświetla ilośc miejsca którą zajmują pliki i katalogi, domyślnie działa rekursywnie, na koniec podaje ilość miejsca zajętą przez dany katalog   
     - ```-h``` - human readable - użycie większych jednostek  
     - ```-s``` - wyświetla miejsce zajmowane przez dany katalog, bez wyświetlania plików  
 
