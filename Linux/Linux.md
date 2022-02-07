@@ -1974,9 +1974,9 @@ Cechy *scp* :
 **atrybuty plików ( data utworzenia itd ) zostają zachowane** 
 
 
--a - archive - archiwizacja przed kopiowaniem 
--v - verbose - pokazuje więcej informacji przy kopiowaniu 
--l - links - kopiuje linki symboliczne jako linki ( nie pliki do których prowadzą )
+- ```-a``` - archive - archiwizacja przed kopiowaniem 
+- ```-v``` - verbose - pokazuje więcej informacji przy kopiowaniu 
+- ```-l``` - links - kopiuje linki symboliczne jako linki ( nie pliki do których prowadzą )
 
 
 Przykład : 
@@ -1985,13 +1985,45 @@ rsync -avl janek@10.140.67.23:/usr/share/man/man1/ /tmp/
 ```
 
 
-## sftp - Interaktywne kopiowanie za pomocą 
+## sftp - Interaktywne kopiowanie
+
+**WAŻNE - sftp nie ma nic wspólnego z protokołem ftp !**
+sftp to interaktywna sesja ssh, pozwalająca na łatwe kopiowanie plików 
+
+```sftp janek@jd.example.com``` - połączenie z hostem przez *sftp* 
+> Connecting to jd.example.com
+janek@jd.example.com's password: ***************
+sftp>
+
+```?``` - wyświetlenie komend
+```get``` - pobieranie pliku
+```put``` - upload pliku
+
+
+## Uwierzytelnianie ssh na podstawie klucza (bez użycia hasła)
+
+
+- **Klucz prywatny** - przechowywany na serwerze docelowym 
+- **Klucz publiczny** - używany przez hosty do łączenia z serwerem 
+
+Do klucza prywatnego można nadać hasło które będzie wykorzystywane przy uwierzytelnienia 
+
+
+```ssh-keygen``` - generowanie pary kluczy 
+
+Kopiowanie klucza publicznego na host zdalny 
+
+```bash
+ssh-copy-id -i ~/.ssh/id_rsa.pub janek@10.140.67.23
+```
+> janek@10.140.67.23's password: ***************
+
 
 
 
 
 ### Strona 330
-338
+340
 
 
 
