@@ -2451,29 +2451,29 @@ konfiguracyjnym jednostki usługi sshd. Jednostka usługi sshd jest wymagana prz
 multi-user.target. Innymi słowy podczas aktywowania jednostki multi-user.target
 następuje uruchomienie jednostki sshd.
 
-Wyyświetlenie jednostki, które zostaną aktywowane przez jednostkę celu:
 
-```systemctl show --property "Wants" multi-user.target```
+```systemctl show multi-user.target``` - Show properties of one or more units, jobs, or the manager itself. If no argument is specified, properties of the manager will be shown. 
 
-```systemctl show multi-user.target```
+
+```bash
+# Wyświetlenie jednostki, które zostaną aktywowane przez jednostkę celu:
+
+systemctl show --property "Wants" multi-user.target
+```
 
 > Wants=irqbalance.service firewalld.service plymouth-quit.service
 systemd-update-utmp-runlevel.service systemd-ask-password-wall.path...
 (END) q
 
-
 jednostka celu (.target) to po prostu grupa innych jednostek, nie wszystkie jednostki w tej grupie są jednostkami usług — mamy tutaj jednostki ścieżek i inne jednostki celu.
 
 
-Jednostka celu ma wymienione oczekiwania (Wants) i wymagania (Requires). Oczekiwania
-oznaczają, że wszystkie wymienione jednostki zostaną wskazane do aktywacji (uruchomienia).
-Jeżeli zakończy się to niepowodzeniem i nie uda się uruchomić jednostki, nie stanowi to
-problemu — jednostka celu będzie kontynuowała działanie. We wcześniejszym przykładzie
-zostały wyświetlone jedynie oczekiwane jednostki.
-Wymagania są znacznie bardziej rygorystyczne niż oczekiwania i potencjalnie mogą doprowadzić
-do katastrofy. Wymagania oznaczają, że wszystkie wymienione jednostki zostaną wskazane do
-aktywacji (uruchomienia). Jeżeli zakończy się to niepowodzeniem i nie uda się uruchomić
-jednostki, wówczas cała grupa jednostek zostanie dezaktywowana. 
+Jednostka celu ma wymienione :
+	- **oczekiwania (Wants)** - wszystkie wymienione jednostki zostaną wskazane do aktywacji (uruchomienia). 
+	Jeżeli zakończy się to niepowodzeniem i nie uda się uruchomić jednostki, **jednostka celu będzie kontynuowała działanie.** 
+	
+	- **wymagania (Requires)** - wszystkie wymienione jednostki zostaną wskazane do aktywacji (uruchomienia).
+	 Jeżeli zakończy się to niepowodzeniem i nie uda się uruchomić jednostki, **wówczas cała grupa jednostek zostanie dezaktywowana.**
 
 
 
