@@ -2296,6 +2296,20 @@ Polecenie ip route show wskazuje, że adres 192.168.122.1 zapewnia trasę prowad
 
 ```route``` - starsza alternatywa dla ip route   
 
+### #TODO - ogarnąc jak interpretować tablicę routingu
+
+```tracepath``` - traceroute - sprawdza trasę między jednym hostem a drugim
+
+### Wyświetlanie nazw hosta i domeny
+
+```hostname``` - wyświetla hostname
+> spike.example.com
+
+```dnsdomainname``` - wyświetla samą domenę 
+> example.com
+
+
+## Konfigurowanie interfejsów sieciowych
 
 
 
