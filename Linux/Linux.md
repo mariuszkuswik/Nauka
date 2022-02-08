@@ -2345,7 +2345,7 @@ Pozostałe sieciowe pliki konfiguracyjne :
 ### #TODO - opisać jak działa 
 
 
-### runlevele/Standardowe poziomy działania w Linuksie
+### Runlevele/Standardowe poziomy działania w Linuksie
 ##### Tabela 15.1
 
 | Poziom działania |  Nazwa | Opis |
@@ -2359,12 +2359,23 @@ Pozostałe sieciowe pliki konfiguracyjne :
 | 6 | Ponowne uruchomienie systemu | Serwer jest ponownie uruchamiany. |
 
 
+### #TODO - sprawdzić jak w systemd zmienia się runlevele
+
+### #TODO - strona 384 - opisć init 
+
+
+```init 3``` zmienia aktualnie działający runlevel na 3 
+```runlevel``` - wyświetla aktualnie działający runlevel 
+
+```/etc/inittab``` - ustawienia domyślne dla runleveli 
+
+
  
 
 
 
 ### Strona 348
-387
+388
 
 373 - strona na której skończyłem sieci 
 383 - strona na ktorej zacząłem po sieciach 
