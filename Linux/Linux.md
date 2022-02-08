@@ -2377,6 +2377,21 @@ Pozostałe sieciowe pliki konfiguracyjne :
 - Czym są targety systemd
 - jak zmienić runlevel za pomocą systemd 
 
+Jednostki w systemd
+■ automount,
+■ device,
+■ mount,
+■ path,
+■ service,
+■ snapshot,
+■ socket,
+■ target,
+■ timer,
+■ swap,
+■ slice,
+■ scope. 
+
+
 
 ##### Przykładowy plik jednostki usługi systemd
 
@@ -2408,13 +2423,13 @@ WantedBy=multi-user.target
  
 
 Podstawowy plik konfiguracyjny jednostki usługi zawiera następujące opcje:  
-    - Description - Opis usługi (wiersz komentarza).  
-    - Documentation - Lista stron podręcznika systemowego dotyczących demona sshd i jego pliku konfiguracyjnego.  
-    - After - Konfiguruje kolejność. Innymi słowy jest to lista jednostek, które powinny być aktywowane przed uruchomieniem tej jednostki.  
-    - Environment File - Pliki konfiguracyjne jednostki.  
-    - ExecStart - Polecenie użyte do uruchomienia usługi.  
-    - ExecReload - Polecenie użyte do ponownego wczytania usługi.  
-    - WantedBy - Jednostka docelowa, do której należy usługa.   
+    - **Description** - Opis usługi (wiersz komentarza).  
+    - **Documentation** - Lista stron podręcznika systemowego dotyczących demona sshd i jego pliku konfiguracyjnego.  
+    - **After** - Konfiguruje kolejność. Innymi słowy jest to lista jednostek, które powinny być aktywowane przed uruchomieniem tej jednostki.  
+    - **Environment File** - Pliki konfiguracyjne jednostki.  
+    - **ExecStart** - Polecenie użyte do uruchomienia usługi.  
+    - **ExecReload** - Polecenie użyte do ponownego wczytania usługi.  
+    - **WantedBy** - Jednostka docelowa, do której należy usługa.   
 
 
 
