@@ -2388,7 +2388,7 @@ cat /lib/systemd/system/sshd.service
 Description=OpenSSH server daemon  
 Documentation=man:sshd(8) man:sshd_config(5)  
 After=network.target sshd-keygen.target  
-> [Service]  
+[Service]  
 Type=notify  
 EnvironmentFile=-/etc/crypto-policies/back-ends/opensshserver.config  
 EnvironmentFile=-/etc/sysconfig/sshd  
@@ -2407,14 +2407,14 @@ WantedBy=multi-user.target
 WantedBy=multi-user.target   
  
 
-Podstawowy plik konfiguracyjny jednostki usługi zawiera następujące opcje:
-    - Description - Opis usługi (wiersz komentarza).
-    - Documentation - Lista stron podręcznika systemowego dotyczących demona sshd i jego pliku konfiguracyjnego.
-    - After - Konfiguruje kolejność. Innymi słowy jest to lista jednostek, które powinny być aktywowane przed uruchomieniem tej jednostki.
-    - Environment File - Pliki konfiguracyjne jednostki.
-    - ExecStart - Polecenie użyte do uruchomienia usługi.
-    - ExecReload - Polecenie użyte do ponownego wczytania usługi.
-    - WantedBy - Jednostka docelowa, do której należy usługa. 
+Podstawowy plik konfiguracyjny jednostki usługi zawiera następujące opcje:  
+    - Description - Opis usługi (wiersz komentarza).  
+    - Documentation - Lista stron podręcznika systemowego dotyczących demona sshd i jego pliku konfiguracyjnego.  
+    - After - Konfiguruje kolejność. Innymi słowy jest to lista jednostek, które powinny być aktywowane przed uruchomieniem tej jednostki.  
+    - Environment File - Pliki konfiguracyjne jednostki.  
+    - ExecStart - Polecenie użyte do uruchomienia usługi.  
+    - ExecReload - Polecenie użyte do ponownego wczytania usługi.  
+    - WantedBy - Jednostka docelowa, do której należy usługa.   
 
 
 
