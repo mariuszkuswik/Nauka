@@ -2364,10 +2364,10 @@ Pozostałe sieciowe pliki konfiguracyjne :
 ### #TODO - strona 384 - opisć init 
 
 
-```init 3``` zmienia aktualnie działający runlevel na 3 
-```runlevel``` - wyświetla aktualnie działający runlevel 
-
-```/etc/inittab``` - ustawienia domyślne dla runleveli 
+```init 3``` zmienia aktualnie działający runlevel na 3   
+```runlevel``` - wyświetla aktualnie działający runlevel   
+  
+```/etc/inittab``` - ustawienia domyślne dla runleveli   
 
 
  
@@ -2378,34 +2378,37 @@ Pozostałe sieciowe pliki konfiguracyjne :
 - jak zmienić runlevel za pomocą systemd 
 
 
-Przykładowy plik jednostki usługi systemd
+##### Przykładowy plik jednostki usługi systemd
 
 ```bash
 cat /lib/systemd/system/sshd.service
 ```
 
-> [Unit]
-Description=OpenSSH server daemon
-Documentation=man:sshd(8) man:sshd_config(5)
-After=network.target sshd-keygen.target
-[Service]
-Type=notify
-EnvironmentFile=-/etc/crypto-policies/back-ends/opensshserver.config
-EnvironmentFile=-/etc/sysconfig/sshd
-ExecStart=/usr/sbin/sshd -D $OPTIONS $CRYPTO_POLICY
-ExecReload=/bin/kill -HUP $MAINPID
-c528defda93e9420916cfa7705790125
-c528defda93e9420916cfa7705790125
-ROZDZIA Ł 15. Uruchamianie i zatrzymywanie usług 393
-15
-KillMode=process
-Restart=on-failure
-RestartSec=42s
-[Install]
-WantedBy=multi-user.target
-[Install]
-WantedBy=multi-user.target 
-
+> [Unit]  
+Description=OpenSSH server daemon  
+Documentation=man:sshd(8) man:sshd_config(5)  
+After=network.target sshd-keygen.target  
+  
+[Service]  
+Type=notify  
+EnvironmentFile=-/etc/crypto-policies/back-ends/opensshserver.config  
+EnvironmentFile=-/etc/sysconfig/sshd  
+ExecStart=/usr/sbin/sshd -D $OPTIONS $CRYPTO_POLICY  
+ExecReload=/bin/kill -HUP $MAINPID  
+c528defda93e9420916cfa7705790125  
+c528defda93e9420916cfa7705790125  
+ROZDZIA Ł 15. Uruchamianie i zatrzymywanie usług 393  
+15  
+KillMode=process  
+Restart=on-failure  
+RestartSec=42s  
+  
+[Install]  
+WantedBy=multi-user.target  
+  
+[Install]   
+WantedBy=multi-user.target   
+ 
 
 Podstawowy plik konfiguracyjny jednostki usługi zawiera następujące opcje:
     - Description - Opis usługi (wiersz komentarza).
