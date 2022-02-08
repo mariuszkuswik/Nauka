@@ -2422,7 +2422,7 @@ Podstawowy plik konfiguracyjny jednostki usługi zawiera następujące opcje:
 
 
 ### Strona 348
-388
+393
 
 373 - strona na której skończyłem sieci 
 383 - strona na ktorej zacząłem po sieciach 
