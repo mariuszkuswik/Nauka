@@ -2384,7 +2384,7 @@ Przykładowy plik jednostki usługi systemd
 cat /lib/systemd/system/sshd.service
 ```
 
-[Unit]
+> [Unit]
 Description=OpenSSH server daemon
 Documentation=man:sshd(8) man:sshd_config(5)
 After=network.target sshd-keygen.target
