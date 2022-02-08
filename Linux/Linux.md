@@ -2316,7 +2316,10 @@ Polecenie ip route show wskazuje, że adres 192.168.122.1 zapewnia trasę prowad
 
 ```nmtui``` - pozwala skonfigurować podstawowe ustawienia sieci, **zmiana ip, ustawienie hostname, dns**
 
-![nmtui](nmtui.png)
+![nmtui](obrazy/nmtui.png)
+##### Menu nmtui 
+
+```/etc/sysconfig/network-script``` - folder dla configów w których ustawiane są interfejsy sieciowe i trasy niestandardowe 
 
 
 
