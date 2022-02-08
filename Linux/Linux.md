@@ -2476,7 +2476,20 @@ Jednostka celu ma wymienione :
 
 
 
+
+
+
 ##Koniec Biblii
+
+
+### Strona 348
+393
+
+373 - strona na której skończyłem sieci 
+383 - strona na ktorej zacząłem po sieciach 
+
+### #TODO - dodać do dnf/yum jak dodać repo z iso
+https://access.redhat.com/solutions/1355683
 
 
 
