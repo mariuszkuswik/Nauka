@@ -2468,12 +2468,11 @@ systemd-update-utmp-runlevel.service systemd-ask-password-wall.path...
 jednostka celu (.target) to po prostu grupa innych jednostek, nie wszystkie jednostki w tej grupie są jednostkami usług — mamy tutaj jednostki ścieżek i inne jednostki celu.
 
 
-Jednostka celu ma wymienione :
-	- **oczekiwania (Wants)** - wszystkie wymienione jednostki zostaną wskazane do aktywacji (uruchomienia). 
-	Jeżeli zakończy się to niepowodzeniem i nie uda się uruchomić jednostki, **jednostka celu będzie kontynuowała działanie.** 
-	
-	- **wymagania (Requires)** - wszystkie wymienione jednostki zostaną wskazane do aktywacji (uruchomienia).
-	 Jeżeli zakończy się to niepowodzeniem i nie uda się uruchomić jednostki, **wówczas cała grupa jednostek zostanie dezaktywowana.**
+Jednostka celu ma wymienione :  
+	- **oczekiwania (Wants)** - wszystkie wymienione jednostki zostaną wskazane do aktywacji (uruchomienia).   
+	Jeżeli zakończy się to niepowodzeniem i nie uda się uruchomić jednostki, **jednostka celu będzie kontynuowała działanie.**   
+	- **wymagania (Requires)** - wszystkie wymienione jednostki zostaną wskazane do aktywacji (uruchomienia).  
+	 Jeżeli zakończy się to niepowodzeniem i nie uda się uruchomić jednostki, **wówczas cała grupa jednostek zostanie dezaktywowana.**  
 
 
 
