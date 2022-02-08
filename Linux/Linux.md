@@ -2312,7 +2312,15 @@ Polecenie ip route show wskazuje, że adres 192.168.122.1 zapewnia trasę prowad
 
 ### Konfigurowanie sieci z poziomu powłoki
 
+#### nmtui - podstawowa konfiguracja sieci z interfejsu
+
+```nmtui``` - pozwala skonfigurować podstawowe ustawienia sieci, **zmiana ip, ustawienie hostname, dns**
+
 ![nmtui](nmtui.png)
+
+
+
+
 
 
 
