@@ -2377,20 +2377,34 @@ Pozostałe sieciowe pliki konfiguracyjne :
 - Czym są targety systemd
 - jak zmienić runlevel za pomocą systemd 
 
-Jednostki w systemd
-■ automount,
-■ device,
-■ mount,
-■ path,
-■ service,
-■ snapshot,
-■ socket,
-■ target,
-■ timer,
-■ swap,
-■ slice,
-■ scope. 
 
+### Podstawy pracy z demonem systemd
+
+W przypadku demona SysVinit usługi są uruchamiane i zatrzymywane na podstawie poziomu
+działania. Demon systemd wie o istnieniu poziomów działania, choć implementuje je w zupełnie
+inny sposób — za pomocą jednostek docelowych. Pomimo że podstawowym zadaniem demona
+systemd jest uruchamianie i zatrzymywanie usług, potrafi on również zarządzać innymi jednostkami.
+Jednostka to po prostu grupa składająca się z nazwy, typu i pliku konfiguracyjnego skoncentrowana
+na określonej usłudze lub akcji.
+
+
+Jednostki w systemd
+■ automount  
+■ device  
+■ mount  
+■ path  
+■ service   
+■ snapshot  
+■ socket   
+■ target   
+■ timer  
+■ swap  
+■ slice  
+■ scope  
+
+Dwie podstawowe jednostki demona systemd ważne podczas pracy z usługami to jednostki
+usług i jednostki celów. Jednostka usługi jest przeznaczona do zarządzania demonami
+na serwerze Linuksa, a jednostka celu to po prostu grupa innych jednostek. 
 
 
 ##### Przykładowy plik jednostki usługi systemd
@@ -2432,23 +2446,38 @@ Podstawowy plik konfiguracyjny jednostki usługi zawiera następujące opcje:
     - **WantedBy** - Jednostka docelowa, do której należy usługa.   
 
 
+Zwróć uwagę, że jednostka docelowa, multi-user.target, została wymieniona w pliku
+konfiguracyjnym jednostki usługi sshd. Jednostka usługi sshd jest wymagana przez
+multi-user.target. Innymi słowy podczas aktywowania jednostki multi-user.target
+następuje uruchomienie jednostki sshd.
+
+Wyyświetlenie jednostki, które zostaną aktywowane przez jednostkę celu:
+
+```systemctl show --property "Wants" multi-user.target```
+
+```systemctl show multi-user.target```
+
+> Wants=irqbalance.service firewalld.service plymouth-quit.service
+systemd-update-utmp-runlevel.service systemd-ask-password-wall.path...
+(END) q
+
+
+jednostka celu (.target) to po prostu grupa innych jednostek, nie wszystkie jednostki w tej grupie są jednostkami usług — mamy tutaj jednostki ścieżek i inne jednostki celu.
+
+
+Jednostka celu ma wymienione oczekiwania (Wants) i wymagania (Requires). Oczekiwania
+oznaczają, że wszystkie wymienione jednostki zostaną wskazane do aktywacji (uruchomienia).
+Jeżeli zakończy się to niepowodzeniem i nie uda się uruchomić jednostki, nie stanowi to
+problemu — jednostka celu będzie kontynuowała działanie. We wcześniejszym przykładzie
+zostały wyświetlone jedynie oczekiwane jednostki.
+Wymagania są znacznie bardziej rygorystyczne niż oczekiwania i potencjalnie mogą doprowadzić
+do katastrofy. Wymagania oznaczają, że wszystkie wymienione jednostki zostaną wskazane do
+aktywacji (uruchomienia). Jeżeli zakończy się to niepowodzeniem i nie uda się uruchomić
+jednostki, wówczas cała grupa jednostek zostanie dezaktywowana. 
 
 
 
-
-### Strona 348
-393
-
-373 - strona na której skończyłem sieci 
-383 - strona na ktorej zacząłem po sieciach 
-
-### #TODO - dodać do dnf/yum jak dodać repo z iso
-https://access.redhat.com/solutions/1355683
-
-
-
-[Go Top](#LinuxBash)
-# Koniec Biblii
+##Koniec Biblii
 
 
 
