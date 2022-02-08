@@ -2346,10 +2346,10 @@ Pozostałe sieciowe pliki konfiguracyjne :
 
 
 ### Standardowe poziomy działania/runlevele w Linuksie
-
+##### Tabela 15.1
 
 | Poziom działania |  Nazwa | Opis |
-|--|--|
+|--|--|--|
 | 0  | System zatrzymany | Wszystkie usługi zostały zamknięte, a serwer zatrzymany. |
 | 1 lub S | Tryb pojedynczego użytkownika | Użytkownik root zostaje automatycznie zalogowany do serwera. Inni użytkownicy nie mogą się zalogować do serwera. Dostępny jest jedynie interfejs powłoki. Usługi sieciowe nie są uruchamiane. |
 | 2 | Tryb wielodostępny | Użytkownicy mogą logować się do serwera, ale dostępny jest tylko interfejs powłoki. W niektórych systemach są uruchamiane interfejsy sieciowe i usługi, w innych nie. Początkowo ten poziom działania był używany do uruchomienia urządzeń terminali, do których mogli się logować użytkownicy (przy czym usługi sieciowe były niedostępne). |
