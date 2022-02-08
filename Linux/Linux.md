@@ -2287,7 +2287,6 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 
 ## Sprawdzanie informacji o routingu
 
-
 ```ip route show``` - wyświetlenie tablicy routingu
 > default via 192.168.122.1 dev ens3 proto dhcp metric 20100    
 192.168.122.0/24 dev ens3 proto kernel scope link src 192.168.122.194 metric 100   
@@ -2311,12 +2310,17 @@ Polecenie ip route show wskazuje, że adres 192.168.122.1 zapewnia trasę prowad
 
 ## Konfigurowanie interfejsów sieciowych
 
+### Konfigurowanie sieci z poziomu powłoki
+
+![nmtui](nmtui.png)
+
+
 
 
 
 
 ### Strona 348
-357
+364
 
 
 ### #TODO - dodać do dnf/yum jak dodać repo z iso
