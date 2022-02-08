@@ -2374,8 +2374,8 @@ Pozostałe sieciowe pliki konfiguracyjne :
 ## Inicjalizacja systemd 
 
 ### #TODO - strona 388 - powtórzyć i ogarnąc to co było 
-    - Czym są targety systemd
-    - jak zmienić runlevel za pomocą systemd 
+- Czym są targety systemd
+- jak zmienić runlevel za pomocą systemd 
 
 
 Przykładowy plik jednostki usługi systemd
