@@ -2345,7 +2345,7 @@ Pozostałe sieciowe pliki konfiguracyjne :
 ### #TODO - opisać jak działa 
 
 
-### Standardowe poziomy działania/runlevele w Linuksie
+### runlevele/Standardowe poziomy działania w Linuksie
 ##### Tabela 15.1
 
 | Poziom działania |  Nazwa | Opis |
