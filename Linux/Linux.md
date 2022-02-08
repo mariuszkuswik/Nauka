@@ -2310,6 +2310,8 @@ Polecenie ip route show wskazuje, że adres 192.168.122.1 zapewnia trasę prowad
 
 ## Konfigurowanie interfejsów sieciowych
 
+### #TODO - rozdział sieci ogólnie do uzupełnienia 
+
 ### Konfigurowanie sieci z poziomu powłoki
 
 #### nmtui - podstawowa konfiguracja sieci z interfejsu
@@ -2319,20 +2321,53 @@ Polecenie ip route show wskazuje, że adres 192.168.122.1 zapewnia trasę prowad
 ![nmtui](https://github.com/mariuszkuswik/Nauka/blob/biblia/Linux/Obrazy/nmtui.png)
 ##### Menu nmtui 
 
-```/etc/sysconfig/network-script``` - folder dla configów w których ustawiane są interfejsy sieciowe i trasy niestandardowe 
+```/etc/sysconfig/network-script``` - folder dla configów w których ustawiane są interfejsy sieciowe i trasy niestandardowe  
+```/usr/share/doc/initscripts/sysconfig.txt``` - instrukcje konfiguracyjne dla skryptów sieciowych
 
 
+Pozostałe sieciowe pliki konfiguracyjne : 
+
+- /etc/hostname
+- /etc/sysconfig/network
+- /etc/hosts
+- /etc/resolv.conf
+- /etc/nsswitch.conf
 
 
+### #TODO - od strony 373 do końca sieci do ogarnięcia 
+
+## Definiowanie aliasu interfejsu sieciowego
+
+# Uruchamianie i zatrzymywanie usług
+
+## Demon inicjalizacji (init lub systemd)
+
+### #TODO - opisać jak działa 
 
 
+### Standardowe poziomy działania/runlevele w Linuksie
 
+
+| Poziom działania |  Nazwa | Opis |
+|--|--|
+| 0  | System zatrzymany | Wszystkie usługi zostały zamknięte, a serwer zatrzymany. |
+| 1 lub S | Tryb pojedynczego użytkownika | Użytkownik root zostaje automatycznie zalogowany do serwera. Inni użytkownicy nie mogą się zalogować do serwera. Dostępny jest jedynie interfejs powłoki. Usługi sieciowe nie są uruchamiane. |
+| 2 | Tryb wielodostępny | Użytkownicy mogą logować się do serwera, ale dostępny jest tylko interfejs powłoki. W niektórych systemach są uruchamiane interfejsy sieciowe i usługi, w innych nie. Początkowo ten poziom działania był używany do uruchomienia urządzeń terminali, do których mogli się logować użytkownicy (przy czym usługi sieciowe były niedostępne). |
+| 3 | Rozszerzony tryb wielodostępny | Użytkownicy mogą się logować do serwera, ale dostępny jest tylko interfejs powłoki. Interfejsy sieciowe i usługi są uruchomione. Jest to powszechnie stosowany poziom działania dla serwerów. |
+| 4 | Zdefiniowany przez użytkownika | Ten poziom działania użytkownicy mogą dostosowywać do własnych potrzeb. | 
+| 5 | Tryb graficzny | Użytkownicy mogą logować się do serwera. Dostępne są interfejsy powłoki i graficzny. Usługi sieciowe są uruchomione. Jest to powszechnie używany poziom działania dla systemów biurkowych. |
+| 6 | Ponowne uruchomienie systemu | Serwer jest ponownie uruchamiany. |
+
+
+ 
 
 
 
 ### Strona 348
-364
+387
 
+373 - strona na której skończyłem sieci 
+383 - strona na ktorej zacząłem po sieciach 
 
 ### #TODO - dodać do dnf/yum jak dodać repo z iso
 https://access.redhat.com/solutions/1355683
@@ -2394,7 +2429,8 @@ Return - Zwraca wartos funkcji
 	2. Config  
 		```IPADDR="$adres_ip"
 		NETMASK="255.255.255.0"
-		GATEWAY="$adres_bramy"```
+		GATEWAY="$adres_bramy
+        ONBOOT=yes"```
 	### ***Po wszystkich zmianach configu musimy przeładować połączenie w network managerze***
 	3. Przeładowanie 
 		```nmcli connection down $connectionName``` 
