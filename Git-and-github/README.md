@@ -68,10 +68,12 @@ This documents contains some of the basic commands that you will need to get sta
 ### Dlaczego nie działa
 
 1. Start SSH agent in the background.
+```eval "$(ssh-agent -s)"```
+2. Start SSH agent in the background.
 ```$ ssh-agent -s```
 > Agent pid 59566
 
-2. Dodaj klucz
+3. Dodaj klucz
 ```ssh-add ~/.ssh/github```
 
 
