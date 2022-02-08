@@ -2388,8 +2388,7 @@ cat /lib/systemd/system/sshd.service
 Description=OpenSSH server daemon  
 Documentation=man:sshd(8) man:sshd_config(5)  
 After=network.target sshd-keygen.target  
-  
-[Service]  
+> [Service]  
 Type=notify  
 EnvironmentFile=-/etc/crypto-policies/back-ends/opensshserver.config  
 EnvironmentFile=-/etc/sysconfig/sshd  
@@ -2402,10 +2401,8 @@ ROZDZIA Ł 15. Uruchamianie i zatrzymywanie usług 393
 KillMode=process  
 Restart=on-failure  
 RestartSec=42s  
-  
 [Install]  
 WantedBy=multi-user.target  
-  
 [Install]   
 WantedBy=multi-user.target   
  
