@@ -2489,6 +2489,11 @@ Jednostka celu ma wymienione :
 
 
 ### #TODO - czym jest jednostka celu a czym jednostka usługi  strona 394
+### #TODO - proces uruchamiania systemu z systemd
+- W chwili uruchomienia systemu systemd aktywuje jednostkę default.target. Jest ona aliasem dla multi-user.target lub graphical.target.
+Dlatego w zależności od sposobu zdefiniowania aliasu uruchomione zostaną usługi wskazane
+przez jednostkę celu. 
+
 
 Podstawowy plik konfiguracyjny jednostki celu zawiera następujące opcje:
     - **Description.** Opis danej jednostki celu.
@@ -2506,6 +2511,30 @@ Podstawowy plik konfiguracyjny jednostki celu zawiera następujące opcje:
     - **AllowIsolate.** Ta opcja to wartość boolowska yes lub no. Wartość yes oznacza, że podczas
     aktywowania danej jednostki celu, tutaj multi-user.target, aktywowane będą jej
     zależności, a wszystkie pozostałe jednostki będą dezaktywowane. 
+
+
+
+Plik /etc/inittab nie ma już żadnego faktycznego zastosowania. Spójrz na przykładową zawartość
+pliku /etc/inittab na serwerze Linuksa, który używa demona systemd:
+# cat /etc/inittab
+# inittab is no longer used.
+#
+# ADDING CONFIGURATION HERE WILL HAVE NO EFFECT ON YOUR SYSTEM.
+#
+# Ctrl-Alt-Delete is handled by
+# /etc/systemd/system/ctrl-alt-del.target
+#
+# systemd uses 'targets' instead of runlevels.
+# By default, there are two main targets:
+#
+# multi-user.target: analogous to runlevel 3
+# graphical.target: analogous to runlevel 5
+#
+# To view current default target, run:
+# systemctl get-default
+#
+# To set a default target, run:
+# systemctl set-default TARGET.target 
 
 
 
