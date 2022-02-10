@@ -2409,6 +2409,19 @@ na serwerze Linuksa, a jednostka celu to po prostu grupa innych jednostek.
 
 ##### Przykładowy plik jednostki usługi systemd
 
+
+#### Informacje na temat plików konfiguracyjnych systemd !!!
+```bash
+man systemd.service  
+man systemd.target   
+man systemd.unit  
+```
+
+
+```man -k systemd``` - dokumentacja na temat narzędzi systemd
+
+
+
 ```bash
 cat /lib/systemd/system/sshd.service
 ```
@@ -2475,7 +2488,7 @@ Jednostka celu ma wymienione :
 	 Jeżeli zakończy się to niepowodzeniem i nie uda się uruchomić jednostki, **wówczas cała grupa jednostek zostanie dezaktywowana.**  
 
 
-### #TODO - czym jest jednostka celu a czym jednostka usługi 
+### #TODO - czym jest jednostka celu a czym jednostka usługi  strona 394
 
 Podstawowy plik konfiguracyjny jednostki celu zawiera następujące opcje:
     - **Description.** Opis danej jednostki celu.
@@ -2496,11 +2509,14 @@ Podstawowy plik konfiguracyjny jednostki celu zawiera następujące opcje:
 
 
 
+
+
+
 ##Koniec Biblii
 
 
 ### Strona 393
-393
+394
 
 373 - strona na której skończyłem sieci 
 383 - strona na ktorej zacząłem po sieciach 
