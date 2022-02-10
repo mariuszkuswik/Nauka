@@ -2475,14 +2475,31 @@ Jednostka celu ma wymienione :
 	 Jeżeli zakończy się to niepowodzeniem i nie uda się uruchomić jednostki, **wówczas cała grupa jednostek zostanie dezaktywowana.**  
 
 
+### #TODO - czym jest jednostka celu a czym jednostka usługi 
 
+Podstawowy plik konfiguracyjny jednostki celu zawiera następujące opcje:
+    - **Description.** Opis danej jednostki celu.
+    - **Documentation.** Odpowiednia strona podręcznika systemowego dotyczącego systemd.
+    - **Requires.** Jeżeli jednostka multi-user.target zostanie aktywowana, wówczas aktywowana
+    zostanie wymieniona w tym miejscu jednostka celu. Jeżeli ta jednostka celu zostanie
+    dezaktywowana lub ulegnie awarii, to oznacza także dezaktywację multi-user.target.
+    W przypadku braku opcji After i Before następuje jednoczesne aktywowanie
+    multi-user.target i jednostki celu.
+    - **Conflicts.** Ta opcja pozwala uniknąć konfliktów w jednostkach. Uruchomienie
+    multi-user.target oznacza zatrzymanie wymienionych w tym miejscu jednostek
+    i usług oraz na odwrót.
+    - **After.** Konfiguruje kolejność. Innymi słowy to jest lista jednostek, które powinny być
+    aktywowane przed uruchomieniem tej jednostki.
+    - **AllowIsolate.** Ta opcja to wartość boolowska yes lub no. Wartość yes oznacza, że podczas
+    aktywowania danej jednostki celu, tutaj multi-user.target, aktywowane będą jej
+    zależności, a wszystkie pozostałe jednostki będą dezaktywowane. 
 
 
 
 ##Koniec Biblii
 
 
-### Strona 348
+### Strona 393
 393
 
 373 - strona na której skończyłem sieci 
