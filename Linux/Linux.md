@@ -2538,6 +2538,34 @@ pliku /etc/inittab na serwerze Linuksa, który używa demona systemd:
 
 
 
+Aby sprawdzić jaki obecnie domyślny poziom działania możemy wyświetlić plik ```/etc/systemd/system/default.target```
+
+```bash
+# ls -l /etc/systemd/system/default.target
+lrwxrwxrwx. 1 root root 36 Mar 13 17:27
+ /etc/systemd/system/default.target ->
+ /lib/systemd/system/runlevel3.target 
+```
+
+
+## Sprawdzanie stanu usługi 
+
+
+
+```systemctl status cups.service``` - wyświetla status usługi ( w tym przypadku wydruku )
+> cups.service - CUPS Scheduler
+ Loaded: loaded (/lib/systemd/system/cups.service; enabled)
+ Active: active (running) since Wed 2019-09-18 17:32:27 EDT; 3 days ago
+ Docs: man:cupsd(8)
+Main PID: 874 (cupsd)
+ Status: "Scheduler is running..."
+ Tasks: 1 (limit: 12232)
+ Memory: 3.1M
+ CGroup: /system.slice/cups.service
+ └─874 /usr/sbin/cupsd –l 
+
+## Uruchamianie i zatrzymywanie usług 
+
 
 
 
