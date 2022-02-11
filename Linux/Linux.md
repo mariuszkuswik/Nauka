@@ -2702,7 +2702,7 @@ jest użycie wcześniej omówionej opcji stop.
 
 
 ### Strona 400
-402
+404
 
 373 - strona na której skończyłem sieci 
 383 - strona na ktorej zacząłem po sieciach 
