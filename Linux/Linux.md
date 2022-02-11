@@ -2564,16 +2564,39 @@ Main PID: 874 (cupsd)
  CGroup: /system.slice/cups.service
  └─874 /usr/sbin/cupsd –l 
 
+
 ## Uruchamianie i zatrzymywanie usług 
 
+### Zatrzymywanie usługi za pomocą demona systemd
+
+
+### #TODO strona 400 
+systemctl - opisać wszystkie opcje 
+	- status
+	- stop 
+	- start
+	- restart ?
+	- reload ?
+
+
+```systemctl status cups.service``` - sprawdzenie statusu usługi cups 
+> cups.service - CUPS Printing Service
+ Loaded: loaded (/lib/systemd/system/cups.service; enabled)
+ Active: active (running) since Mon, 20 Apr 2020 12:36:3...
+ Main PID: 1315 (cupsd)
+ CGroup: name=systemd:/system/cups.service
+ 1315 /usr/sbin/cupsd -f 
+
+
+```systemctl stop cups.service``` - zatrzymanie usługi cups 
 
 
 
 ##Koniec Biblii
 
 
-### Strona 393
-394
+### Strona 400
+400
 
 373 - strona na której skończyłem sieci 
 383 - strona na ktorej zacząłem po sieciach 
