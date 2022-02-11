@@ -2574,12 +2574,19 @@ Main PID: 874 (cupsd)
 systemctl - opisać wszystkie opcje i samo polecenie systemctl  
 systemctl - bez żadnych parametrów wyświetla wszystie jednostki ? - opisać dokładnie   
 	- status - sprawdzenie statusu usługi  
+
 	- stop - zatrzymanie    
 	- start - uruchomienie   
-	- enable - trwałe uruchomienie ? usługa włączy się po restarcie systemu   
+
 	- restart - restart, jeżeli usługa nie działała to **zostanie uruchomiona**  
 	- conrestart - restart warunkowy - jeżeli usługa nie działała to **nie zostanie uruchomiona**  
+
 	- reload - Ponowne wczytanie plików konfiguracyjnych  
+
+	- enable - trwałe uruchomienie ? usługa włączy się po restarcie systemu   
+	- disable - trwałe wyłączenie ? usługa włączy się po restarcie systemu   
+	- mask  - trwałe wyłączenie usługi, uniemożliwiające uruchomienie jej kiedykolwiek w systemie 
+
 
 
 ```systemctl status cups.service``` - sprawdzenie statusu usługi cups   
@@ -2641,7 +2648,7 @@ Wykonanie operacji **reload** zamiast restart nie powoduje zakłócenia działal
 systemctl reload sshd.service - Ponowne wczytanie plików konfiguracyjnych dla sshd
 
 
-Włączanie trwałej usług
+## Włączanie trwałej usług
 
 
 
@@ -2671,7 +2678,7 @@ Włączanie trwałej usług
 
 
 ### Strona 400
-400
+402
 
 373 - strona na której skończyłem sieci 
 383 - strona na ktorej zacząłem po sieciach 
