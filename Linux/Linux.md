@@ -2514,8 +2514,10 @@ Podstawowy plik konfiguracyjny jednostki celu zawiera następujące opcje:
 
 
 
-Plik /etc/inittab nie ma już żadnego faktycznego zastosowania. Spójrz na przykładową zawartość
-pliku /etc/inittab na serwerze Linuksa, który używa demona systemd:
+Plik /etc/inittab nie ma już żadnego faktycznego zastosowania. 
+Przykładowy plik /etc/inittab na serwerze Linuksa, który używa demona systemd:
+
+```bash
 # cat /etc/inittab
 # inittab is no longer used.
 #
@@ -2535,7 +2537,7 @@ pliku /etc/inittab na serwerze Linuksa, który używa demona systemd:
 #
 # To set a default target, run:
 # systemctl set-default TARGET.target 
-
+```
 
 
 Aby sprawdzić jaki obecnie domyślny poziom działania możemy wyświetlić plik ```/etc/systemd/system/default.target```
@@ -2593,33 +2595,31 @@ systemctl - opisać wszystkie opcje
 Ponowne uruchomienie usługi oznacza jej zatrzymanie, a następnie ponowne uruchomienie.
 Jeżeli usługa nie była wcześniej uruchomiona, opcja restart powoduje po prostu jej uruchomienie. 
 
-```systemctl restart cups.service``` - restart usługi cups 
 
-
-
+- ```systemctl restart cups.service``` - Restart usługi cups 
 
 - ```systemctl conrestart cups.service``` - Restart usługi w trybie warunkowym - usługa zrestartuje się **tylko jeżeli była już wcześniej uruchomiona**
 
 ```bash
 systemctl status cups.service
 ```
-> cups.service - CUPS Printing Service
- Loaded: loaded (/lib/systemd/system/cups.service; enabled)
- Active: inactive (dead) since Tue, 21 Apr 2020 06:03:32...
- Process: 17108 ExecStart=/usr/sbin/cupsd -f
- (code=exited, status=0/SUCCESS)
- CGroup: name=systemd:/system/cups.service
+> cups.service - CUPS Printing Service  
+ Loaded: loaded (/lib/systemd/system/cups.service; enabled)  
+ Active: inactive (dead) since Tue, 21 Apr 2020 06:03:32...  
+ Process: 17108 ExecStart=/usr/sbin/cupsd -f  
+ (code=exited, status=0/SUCCESS)  
+ CGroup: name=systemd:/system/cups.service  
 
 ```bash
 systemctl condrestart cups.service
 systemctl status cups.service
 ```
-> cups.service - CUPS Printing Service
- Loaded: loaded (/lib/systemd/system/cups.service; enabled)
- Active: inactive (dead) since Tue, 21 Apr 2020 06:03:32...
- Process: 17108 ExecStart=/usr/sbin/cupsd -f
- (code=exited, status=0/SUCCESS)
- CGroup: name=systemd:/system/cups.service 
+> cups.service - CUPS Printing Service  
+ Loaded: loaded (/lib/systemd/system/cups.service; enabled)  
+ Active: inactive (dead) since Tue, 21 Apr 2020 06:03:32...  
+ Process: 17108 ExecStart=/usr/sbin/cupsd -f  
+ (code=exited, status=0/SUCCESS)  
+ CGroup: name=systemd:/system/cups.service   
 
 
 
@@ -2630,7 +2630,7 @@ systemctl status cups.service
 
 
 
-##Koniec Biblii
+## Koniec Biblii
 
 
 ### Strona 400
