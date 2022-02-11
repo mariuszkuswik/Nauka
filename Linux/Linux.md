@@ -2588,7 +2588,45 @@ systemctl - opisać wszystkie opcje
  1315 /usr/sbin/cupsd -f 
 
 
+### Ponowne uruchamianie usługi za pomocą demona systemd 
+
+Ponowne uruchomienie usługi oznacza jej zatrzymanie, a następnie ponowne uruchomienie.
+Jeżeli usługa nie była wcześniej uruchomiona, opcja restart powoduje po prostu jej uruchomienie. 
+
+```systemctl restart cups.service``` - restart usługi cups 
+
+
+
+
+- ```systemctl conrestart cups.service``` - Restart usługi w trybie warunkowym - usługa zrestartuje się **tylko jeżeli była już wcześniej uruchomiona**
+
+```bash
+systemctl status cups.service
+```
+> cups.service - CUPS Printing Service
+ Loaded: loaded (/lib/systemd/system/cups.service; enabled)
+ Active: inactive (dead) since Tue, 21 Apr 2020 06:03:32...
+ Process: 17108 ExecStart=/usr/sbin/cupsd -f
+ (code=exited, status=0/SUCCESS)
+ CGroup: name=systemd:/system/cups.service
+
+```bash
+systemctl condrestart cups.service
+systemctl status cups.service
+```
+> cups.service - CUPS Printing Service
+ Loaded: loaded (/lib/systemd/system/cups.service; enabled)
+ Active: inactive (dead) since Tue, 21 Apr 2020 06:03:32...
+ Process: 17108 ExecStart=/usr/sbin/cupsd -f
+ (code=exited, status=0/SUCCESS)
+ CGroup: name=systemd:/system/cups.service 
+
+
+
 ```systemctl stop cups.service``` - zatrzymanie usługi cups 
+
+
+
 
 
 
