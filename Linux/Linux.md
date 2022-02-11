@@ -2571,24 +2571,24 @@ Main PID: 874 (cupsd)
 
 
 ### #TODO strona 400 
-systemctl - opisać wszystkie opcje i samo polecenie systemctl
-systemctl - bez żadnych parametrów wyświetla wszystie jednostki ? - opisać dokładnie 
-	- status - sprawdzenie statusu usługi
-	- stop - zatrzymanie  
-	- start - uruchomienie 
-	- enable - trwałe uruchomienie ? usługa włączy się po restarcie systemu 
-	- restart - restart, jeżeli usługa nie działała to **zostanie uruchomiona**
-	- conrestart - restart warunkowy - jeżeli usługa nie działała to **nie zostanie uruchomiona**
-	- reload - Ponowne wczytanie plików konfiguracyjnych
+systemctl - opisać wszystkie opcje i samo polecenie systemctl  
+systemctl - bez żadnych parametrów wyświetla wszystie jednostki ? - opisać dokładnie   
+	- status - sprawdzenie statusu usługi  
+	- stop - zatrzymanie    
+	- start - uruchomienie   
+	- enable - trwałe uruchomienie ? usługa włączy się po restarcie systemu   
+	- restart - restart, jeżeli usługa nie działała to **zostanie uruchomiona**  
+	- conrestart - restart warunkowy - jeżeli usługa nie działała to **nie zostanie uruchomiona**  
+	- reload - Ponowne wczytanie plików konfiguracyjnych  
 
 
-```systemctl status cups.service``` - sprawdzenie statusu usługi cups 
-> cups.service - CUPS Printing Service
- Loaded: loaded (/lib/systemd/system/cups.service; enabled)
- Active: active (running) since Mon, 20 Apr 2020 12:36:3...
- Main PID: 1315 (cupsd)
- CGroup: name=systemd:/system/cups.service
- 1315 /usr/sbin/cupsd -f 
+```systemctl status cups.service``` - sprawdzenie statusu usługi cups   
+> cups.service - CUPS Printing Service  
+ Loaded: loaded (/lib/systemd/system/cups.service; enabled)  
+ Active: active (running) since Mon, 20 Apr 2020 12:36:3...  
+ Main PID: 1315 (cupsd)   
+ CGroup: name=systemd:/system/cups.service  
+ 1315 /usr/sbin/cupsd -f   
 
 
 ## Ponowne uruchamianie usługi za pomocą demona systemd 
@@ -2641,6 +2641,7 @@ Wykonanie operacji **reload** zamiast restart nie powoduje zakłócenia działal
 systemctl reload sshd.service - Ponowne wczytanie plików konfiguracyjnych dla sshd
 
 
+Włączanie trwałej usług
 
 
 
@@ -2657,7 +2658,6 @@ systemctl reload sshd.service - Ponowne wczytanie plików konfiguracyjnych dla s
 
 
 
-```systemctl stop cups.service``` - zatrzymanie usługi cups 
 
 
 
