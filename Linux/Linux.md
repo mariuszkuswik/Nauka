@@ -2567,18 +2567,19 @@ Main PID: 874 (cupsd)
  └─874 /usr/sbin/cupsd –l 
 
 
-## Uruchamianie i zatrzymywanie usług 
-
-### Zatrzymywanie usługi za pomocą demona systemd
+## Uruchamianie i zatrzymywanie usług za pomocą demona systemd
 
 
 ### #TODO strona 400 
-systemctl - opisać wszystkie opcje 
-	- status
-	- stop 
-	- start
-	- restart ?
-	- reload ?
+systemctl - opisać wszystkie opcje i samo polecenie systemctl
+systemctl - bez żadnych parametrów wyświetla wszystie jednostki ? - opisać dokładnie 
+	- status - sprawdzenie statusu usługi
+	- stop - zatrzymanie  
+	- start - uruchomienie 
+	- enable - trwałe uruchomienie ? usługa włączy się po restarcie systemu 
+	- restart - restart, jeżeli usługa nie działała to **zostanie uruchomiona**
+	- conrestart - restart warunkowy - jeżeli usługa nie działała to **nie zostanie uruchomiona**
+	- reload - Ponowne wczytanie plików konfiguracyjnych
 
 
 ```systemctl status cups.service``` - sprawdzenie statusu usługi cups 
@@ -2590,19 +2591,20 @@ systemctl - opisać wszystkie opcje
  1315 /usr/sbin/cupsd -f 
 
 
-### Ponowne uruchamianie usługi za pomocą demona systemd 
+## Ponowne uruchamianie usługi za pomocą demona systemd 
 
-Ponowne uruchomienie usługi oznacza jej zatrzymanie, a następnie ponowne uruchomienie.
+Ponowne uruchomienie usługi oznacza jej zatrzymanie, a następnie ponowne uruchomienie.  
 Jeżeli usługa nie była wcześniej uruchomiona, opcja restart powoduje po prostu jej uruchomienie. 
 
 
 - ```systemctl restart cups.service``` - Restart usługi cups 
-
 - ```systemctl conrestart cups.service``` - Restart usługi w trybie warunkowym - usługa zrestartuje się **tylko jeżeli była już wcześniej uruchomiona**
+
 
 ```bash
 systemctl status cups.service
 ```
+
 > cups.service - CUPS Printing Service  
  Loaded: loaded (/lib/systemd/system/cups.service; enabled)  
  Active: inactive (dead) since Tue, 21 Apr 2020 06:03:32...  
@@ -2610,10 +2612,14 @@ systemctl status cups.service
  (code=exited, status=0/SUCCESS)  
  CGroup: name=systemd:/system/cups.service  
 
+
 ```bash
+# Warunkowy restart
 systemctl condrestart cups.service
+# Status usługi
 systemctl status cups.service
 ```
+
 > cups.service - CUPS Printing Service  
  Loaded: loaded (/lib/systemd/system/cups.service; enabled)  
  Active: inactive (dead) since Tue, 21 Apr 2020 06:03:32...  
@@ -2621,9 +2627,40 @@ systemctl status cups.service
  (code=exited, status=0/SUCCESS)  
  CGroup: name=systemd:/system/cups.service   
 
+```# Usługa nie została uruchomiona przez condrestart ponieważ przed wykonaniem polecenia nie działała```
+
+
+## Ponowne wczytywanie usługi za pomocą demona systemd 
+
+Po wydaniu polecenia reload usługa nie zostaje zatrzymana, **ponownie wczytane zostają jedynie jej pliki konfiguracyjne.**    
+Nie wszystkie usługi mają zaimplementowaną funkcjonalność ponownego wczytania.    
+Wykonanie operacji **reload** zamiast restart nie powoduje zakłócenia działalności danej usługi.
+
+
+
+systemctl reload sshd.service - Ponowne wczytanie plików konfiguracyjnych dla sshd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ```systemctl stop cups.service``` - zatrzymanie usługi cups 
+
+
+
 
 
 
