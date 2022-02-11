@@ -2651,26 +2651,50 @@ systemctl reload sshd.service - Ponowne wczytanie plików konfiguracyjnych dla s
 ## Włączanie trwałej usług
 
 
+enable - Definjuje usługę jako zawsze uruchamianą razem z systemem (czyli rónież po restarcie).  
+
+
+```bash
+systemctl status cups.service
+```
+> cups.service - CUPS Printing Service  
+ Loaded: loaded (/lib/systemd/system/cups.service; disabled)  
+ Active: inactive (dead) since Tue, 21 Apr 2020 06:42:38 ...  
+ Main PID: 17172 (code=exited, status=0/SUCCESS)  
+ CGroup: name=systemd:/system/cups.service   
+
+
+```bash
+systemctl enable cups.service
+```
+
+> Created symlink /etc/systemd/system/printer.target.wants/cups.service  
+ → /usr/lib/systemd/system/cups.service.  
+Created symlink /etc/systemd/system/sockets.target.wants/cups.socket  
+ → /usr/lib/systemd/system/cups.socket.  
+Created symlink /etc/systemd/system/multi-user.target.wants/cups.path  
+ → /usr/lib/systemd/system/cups.path.  
+
+```bash
+systemctl status cups.service
+```
+
+> cups.service - CUPS Printing Service  
+ Loaded: loaded (/lib/systemd/system/cups.service; enabled)  
+ Active: inactive (dead) since Tue, 21 Apr 2020 06:42:38...  
+ Main PID: 17172 (code=exited, status=0/SUCCESS)  
+ CGroup: name=systemd:/system/cups.service   
 
 
 
+```Po użyciu polecenia systemctl z opcją enable stan usługi cups.service zmienił się z wyłączonego (disabled) na włączony (enabled).```
 
 
+## Wyłączanie usługi za pomocą demona systemctl
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+disable - uniemożliwia uruchomienie danej usługi razem z systemem.
+Jednak takie polecenie nie powoduje natychmiastowego zatrzymania usługi. W tym celu konieczne
+jest użycie wcześniej omówionej opcji stop.
 
 
 
