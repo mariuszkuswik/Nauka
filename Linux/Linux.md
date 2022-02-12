@@ -435,9 +435,8 @@ sygnałów z poziomu powłoki zaliczamy
 ```$ killall -9 testme``` - kilall wysyła sygnał na podstawie nazwy proces
 
 
-### Tabela z syganłami dla procesów 
-### #TODO - tabela do poprawienia 
-
+### Tabela z syganłami dla procesów
+##### Tabela 6.1, strona 165
 
 | Sygnał | Liczba | Opis |
 |--|--|--|
@@ -451,48 +450,6 @@ sygnałów z poziomu powłoki zaliczamy
 | SIGSTOP | 17,19,23 | Zatrzymanie procesu |
 
 
-
-
-
-
-<table>
-    <tr>
-        <th>Sygnał</th>
-        <th>Liczba</th>
-        <th>Opis</th>
-    </tr>
-    <tr>
-        <td>SIGHUP</td>
-        <td>SIGINT</td>
-        <td>SIGQUIT</td>
-        <td>SIGABRT</td>
-        <td>SIGKILL</td>
-        <td>SIGTERM</td>
-        <td>SIGCONT</td>
-        <td>SIGSTOP</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>6</td>
-        <td>9</td>
-        <td>15</td>
-        <td>19, 18, 25</td>
-        <td>17, 19, 23</td>
-    </tr>
-    <tr>
-        <td>Wykryto zerwanie połączenia z terminalem kontrolnym lub zamknięcie jego procesu</td>
-        <td>Przerwanie z poziomu klawiatury</td>
-        <td>Zakończenie działania zainicjowane z poziomu klawiatury</td>
-        <td>Sygnał przerwania z abort(3)</td>
-        <td>Natychmiastowe zakończenie działania</td>
-        <td>Sygnał zakończenia działania procesu</td>
-        <td>Kontynuowanie działania wcześniej wstrzymanego procesu</td>
-        <td>Zatrzymanie procesu</td>
-    </tr>
-</table>
- 
 Zwróć uwagę na istnienie wielu liczb reprezentujących sygnały SIGCONT i SIGSTOP, ponieważ
 poszczególne architektury sprzętowe używają różnych liczb wskazujących na te sygnały.
 Na przykład architektury x86 i Power w większości przypadków wykorzystują wartość
