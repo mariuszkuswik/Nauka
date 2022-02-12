@@ -2787,8 +2787,7 @@ systemctl get-default
 
 > multi-user.target
 
-```Po ponownym uruchomieniu systemu multi-user.target będzie trwałą jednostką celu. Wszystkie usługi zdefiniowane w tej jednostce zostaną uruchomione (aktywowane) razem
-z systemem.```
+```Po ponownym uruchomieniu systemu multi-user.target będzie trwałą jednostką celu. Wszystkie usługi zdefiniowane w tej jednostce zostaną uruchomione (aktywowane) razem z systemem.```
 
 
 ## Dodawanie nowej usługi do demona systemd
