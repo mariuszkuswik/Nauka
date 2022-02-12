@@ -20,9 +20,36 @@ Configure a HTTP server, which can be accessed through http://station.domain40.e
 Configure autofs to make sure after login successfully, it has the home directory autofs, which is shared as /rhome/ldapuser40 at the ip: 172.24.40.10. and it also requires that, other ldap users can use the home directory normally.
 
 
-Configure the system synchronous as 172.24.40.10.
+- Configure the system synchronous as 172.24.40.10.
+```bash
+FOR RHEL8:
+sudo yum -y install chrony
+$ sudo vi /etc/chrony.conf
+server 192.168.25.3
+sudo timedatectl set-ntp true
+sudo systemctl enable --now chronyd
+```
 
-Create a volume group, and set 16M as a extends. And divided a volume group containing 50 extends on volume group lv, make it as ext4 file system, and mounted automatically under /mnt/data.
+
+- Create a volume group, and set 16M as a extends. And divided a volume group containing 50 extends on volume group lv, make it as ext4 file system, and mounted automatically under /mnt/data.
+```bash
+assume that /dev/sdb2 and /dev/sdb3 were created (lsblk to verify it)
+
+#pvcreate /dev/sdb{2,3}
+#pvdisplay /dev/sdb* (verify)
+
+#vgcreate VG01 --physicalextentsize 16M /dev/sdb{2,3}
+#vgdisplay /dev/VG01 (verify)
+
+#lvcreate --extents 50 --name LV01 VG01
+#lvdisplay /dev/VG01 (verify)
+
+#blkid /dev/VG01/LV01 (get UUID=XXX-XX-XX)
+#mkdir -p /mnt/data
+#echo "UUID=XXX-XX-XX /mnt/data ext4 defaults 0 0" | tee -a /etc/fstab
+#mount -a
+```
+
 
 Upgrading the kernel as 2.6.36.7.1, and configure the system to Start the default kernel, keep the old kernel available.
 
