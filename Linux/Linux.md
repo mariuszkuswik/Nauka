@@ -2792,27 +2792,26 @@ systemctl get-default
 
 ## Dodawanie nowej usługi do demona systemd
 
-```man systemd.syntax``` - ogólne zasady składni
-```man systemd.unit``` - opisanie poszczególnych sekcji pliku 
-```man systemd.service``` - ogólny opis tworzenia usługi ?
+```man systemd.syntax``` - ogólne zasady składni  
+```man systemd.unit``` - opisanie poszczególnych sekcji pliku   
+```man systemd.service``` - ogólny opis tworzenia usługi ?  
 
 
-1. Utworzenie pliku skryptu nowej usługi lub dostosowanej do własnych potrzeb.
-2. Przeniesienie skryptu usługi do odpowiedniego katalogu, aby umożliwić demonowi
-systemd zarządzanie tą usługą.
-3. Dodanie usługi do sekcji Wants wybranej jednostki celu, aby usługa była automatycznie
-uruchamiana z innymi.
+1. Utworzenie pliku skryptu nowej usługi lub dostosowanej do własnych potrzeb.  
+2. Przeniesienie skryptu usługi do odpowiedniego katalogu, aby umożliwić demonowi systemd zarządzanie tą usługą.   
+3. Dodanie usługi do sekcji Wants wybranej jednostki celu, aby usługa była automatycznie uruchamiana z innymi.   
 
 
 Krok 1. Utworzenie pliku skryptu nowej usługi lub dostosowanej do własnych potrzeb  
 
-- Jeżeli dostosowujesz do własnych potrzeb skrypt istniejącej usługi, wykonaj kopię oryginalnego pliku jednostki w katalogu /lib/systemd/system i wprowadź żądane modyfikacje.
+- Jeżeli dostosowujesz do własnych potrzeb skrypt istniejącej usługi, wykonaj kopię oryginalnego pliku jednostki w katalogu /lib/systemd/system i wprowadź żądane modyfikacje.  
  
-Minimum dla działania usługi to zdefiniowanie opcji *Description* i *ExecStart*
-> [Unit]
-Description=My New Service
-[Service]
-ExecStart=/usr/bin/My_New_Service
+Minimum dla działania usługi to zdefiniowanie opcji *Description* i *ExecStart*  
+
+> [Unit]  
+Description=My New Service  
+[Service]  
+ExecStart=/usr/bin/My_New_Service  
 
 
 
