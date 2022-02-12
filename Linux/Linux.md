@@ -436,7 +436,7 @@ sygnałów z poziomu powłoki zaliczamy
 
 
 ### Tabela z syganłami dla procesów
-##### Tabela 6.1, strona 165
+
 
 | Sygnał | Liczba | Opis |
 |--|--|--|
@@ -448,7 +448,7 @@ sygnałów z poziomu powłoki zaliczamy
 | SIGTERM | 15 | Sygnał zakończenia działania procesu |
 | SIGCONT | 19,18,25 | Kontynuowanie działania wcześniej wstrzymanego procesu |
 | SIGSTOP | 17,19,23 | Zatrzymanie procesu |
-
+##### Tabela 6.1, strona 165
 
 Zwróć uwagę na istnienie wielu liczb reprezentujących sygnały SIGCONT i SIGSTOP, ponieważ
 poszczególne architektury sprzętowe używają różnych liczb wskazujących na te sygnały.
