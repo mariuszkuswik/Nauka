@@ -850,6 +850,12 @@ strona 235
 ```-c``` - configfiles 
 ```-v``` - sprawdzenie czy jakieś pliki nie zostały zmodyfikowane ? doczytać 
 
+### #TODO - Przykłady poniżej do opisania 
+
+- rpm -qpi - wyświetla informacje o pakiecie  
+- rpm -qpc - wyświetla pliki konfiguracyjne 
+
+
 ```rmp -q firefox``` 
 > firefox-67.0-4.fc30.x86_64
 
@@ -2791,7 +2797,7 @@ System będzie używał tych plików tylko wtedy, gdy w katalogu ```/etc/systemd
 **WAŻNE** : Podczas tworzenia nowej usługi lub dostosowanej do własnych potrzeb, aby wprowadzona zmiana nie wymagała ponownego uruchomienia systemu, konieczne jest wydanie specjalnego polecenia z poziomu powłoki: ```systemctl daemon-reload```
 
 
-#### Krok 3. Dodanie usługi do katalogu Wants
+### Krok 3. Dodanie usługi do katalogu Wants
 
 Ostatni krok wykonuje się tylko wtedy gdy chcesz, aby nowa usługa była uruchamiana z *określoną jednostką celu demona systemd*.
 
@@ -2830,19 +2836,41 @@ Po wykonaniu tej procedury jednostka zostanie zostanie aktywowana (uruchomiona) 
 
 # Serwer wydruku 
 
+## Konfigurowanie drukarek
+
+```http://localhost:631/``` - strona konfiguracyjna dla drukarek udostępnionych przez CUPS
+
+Aby zmiany wprowadzone w przeglądarce zostały zastosowane konieczne może być wydanie polecenia ```systemctl restart cups.service```
+
+Domyślnie strona konfiguracyjna cups jest dostępna tylko z lokalnego systemu, aby udostępnić ją należy wejść w zakładkę *Administracja* i otworzyć port TCP na firewallu
 
 
+### Dodawanie drukarki, która nie została wykryta automatycznie
 
+### #TODO - strona 417 - zastanowić się czy to dodawać 
+1. Add Printer (Dodawanie drukarki). 
+2. 
 
+### #TODO - strona 417 - tu skończyłem prace z drukarkami 
 
 ## Koniec Biblii
 
 
+# Serwer WWW
+
+
+
+
 ### Strona 404
-413
+435
+
 
 373 - strona na której skończyłem sieci 
 383 - strona na ktorej zacząłem po sieciach 
+417 - strona na której skończyłem drukarki 
+435 - strona od której wznowiłem po drukarkach
+
+
 
 ### #TODO - dodać do dnf/yum jak dodać repo z iso
 https://access.redhat.com/solutions/1355683
