@@ -2692,7 +2692,7 @@ systemctl status cups.service
 
 ## Wyłączanie usługi za pomocą demona systemctl
 
-disable - uniemożliwia uruchomienie danej usługi razem z systemem.
+**disable** - uniemożliwia uruchomienie danej usługi razem z systemem.  
 Polecenie **nie powoduje natychmiastowego zatrzymania usługi.** - W tym celu konieczne jest użycie wcześniej omówionej opcji stop.
 
 
@@ -2716,7 +2716,7 @@ Main PID: 17172 (cupsd)
 CGroup: name=systemd:/system/cups.service  
 17172 /usr/sbin/cupsd -f  
   
-W powyższym przykładzie widać, że usługa pozostałą włączona ale nie włączy się przy następnym uruchomieniu systemu.  
+```W powyższym przykładzie widać, że usługa pozostałą włączona ale nie włączy się przy następnym uruchomieniu systemu.```  
   
 ```bash  
 systemctl status dbus.service  
