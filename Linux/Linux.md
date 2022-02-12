@@ -2748,7 +2748,7 @@ Main PID: 707 (dbus-daemon)
 Podczas gdy trwała usługa to taka, która jest uruchamiana razem z systemem, trwały (domyślny) **poziom działania** (runlevel dla SysVinit) lub **trwała jednostka celu** (target dla systemd) oznacza grupę usług uruchamianych razem z systemem. 
 
 
-## Konfigurowanie domyślnego poziomu działania lub jednostki celu
+## Konfigurowanie domyślnego poziomu działania (runlevelu) lub jednostki celu (target)
 
 | **systemd targets** |**SystemV runlevel**  | **target aliases**|**Description** |
 |--|--|--|--|
@@ -2764,9 +2764,8 @@ Podczas gdy trwała usługa to taka, która jest uruchamiana razem z systemem, t
 | poweroff.target|0 |  runlevel0.target | Halts the system and turns the power off|
 
 
-
-
-### #TODO - ogarnąc jak działają runlevele w systemd
+- ```systemctl get-default``` - wyświetlenie domyślnego targetu 
+- ```systemctl set-default``` - ustawienie domyślnego targetu 
 
 ```bash
 systemctl get-default
@@ -2788,6 +2787,23 @@ systemctl get-default
 
 > multi-user.target
 
+```Po ponownym uruchomieniu systemu multi-user.target będzie trwałą jednostką celu. Wszystkie usługi zdefiniowane w tej jednostce zostaną uruchomione (aktywowane) razem
+z systemem.```
+
+
+## Dodawanie nowej usługi do demona systemd
+
+1. Utworzenie pliku skryptu nowej usługi lub dostosowanej do własnych potrzeb.
+2. Przeniesienie skryptu usługi do odpowiedniego katalogu, aby umożliwić demonowi
+systemd zarządzanie tą usługą.
+3. Dodanie usługi do sekcji Wants wybranej jednostki celu, aby usługa była automatycznie
+uruchamiana z innymi.
+
+
+Krok 1. Utworzenie pliku skryptu nowej usługi lub dostosowanej do własnych potrzeb
+- Jeżeli dostosowujesz do własnych potrzeb skrypt istniejącej usługi, wykonaj kopię oryginalnego pliku jednostki w katalogu /lib/systemd/system i wprowadź żądane modyfikacje.
+
+
 
 
 
@@ -2795,7 +2811,7 @@ systemctl get-default
 
 
 ### Strona 404
-404
+407
 
 373 - strona na której skończyłem sieci 
 383 - strona na ktorej zacząłem po sieciach 
