@@ -38,12 +38,6 @@
 5. [Wirtualizacja](#wirtualizacja)
 
 
-## System Linux 
-
-
-
-
-# Biblia
 
 # Używanie Powłoki 
 
@@ -54,18 +48,20 @@
 ```man -f``` - wyświetlenie wszystkich możliwych sekcji pomocy dla danej komendy  
 
 ## info - pomoc podobna do manula 
+
+```info -a``` - wyświetla wszystkie manuale i pozwala wybrać 
 ### #TODO - dodać opis
 
 
 # #TODO - Dodać zwijanie przy opisach poleceń i skrócić część notatek 
 
-### <code>id</code>
+### ```id```
 
 
 id pokazuje id uzytkownika i gid ( id grupy uzytkownika)
 
 Więcej informacji o tożsamości użytkownika dostarcza polecenie id:
-<code>$ id</code>
+```$ id```
 > uid=1000(chris) gid=1000(chris) groups=1005(sales), 7(lp)
 
 nazwa użytkownika to chris, (uid) 1000. Podstawową grupą użytkownika **chris**, podstawową grupą również jest **chris** (gid) 1000. 
@@ -78,13 +74,13 @@ jeszcze informacje dodatkowe. Te dane mogą mieć następującą postać:**
 > context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
 
 
-### <code>type</code>
+### ```type```
 
 Określenie źródła poszczególnych poleceń powłoki jest możliwe po wydaniu polecenia type.
 (Jeżeli używana powłoka jest inna niż bash, wtedy należy skorzystać z polecenia which).
 Na przykład określenie miejsca położenia polecenia bash jest możliwe po wpisaniu:
 
-<code>$ type bash</code>
+```$ type bash```
 > bash is /bin/bash
 
 Jeżeli sprawdzane polecenie znajduje się
@@ -92,7 +88,7 @@ w kilku miejscach, wówczas dodanie opcji -a spowoduje wyświetlenie wszystkich 
 lokalizacji danego polecenia. Na przykład polecenie type -a ls powinno wyświetlić położenie
 systemowego polecenia ls i polecenia zdefiniowanego za pomocą aliasu.
 
-<code>$ type -a ls</code>
+```$ type -a ls```
 
 > ls is aliased to `ls --color -F'
 > ls is /usr/bin/ls
@@ -441,6 +437,24 @@ sygnałów z poziomu powłoki zaliczamy
 
 ### Tabela z syganłami dla procesów 
 ### #TODO - tabela do poprawienia 
+
+
+| Sygnał | Liczba | Opis |
+|--|--|--|
+| SIGHUP | 1 | Wykryto zerwanie połączenia z terminalem kontrolnym lub zamknięcie jego procesu |
+| SIGINT | 2 | Przerwanie z poziomu klawiatury |
+| SIGQUIT | 3 | Zakończenie działania zainicjowane z poziomu klawiatury |
+| SIGABRT | 6 | Sygnał przerwania z abort(3) |
+| SIGKILL | 9 | Natychmiastowe zakończenie działania |
+| SIGTERM | 15 | Sygnał zakończenia działania procesu |
+| SIGCONT | 19,18,25 | Kontynuowanie działania wcześniej wstrzymanego procesu |
+| SIGSTOP | 17,19,23 | Zatrzymanie procesu |
+
+
+
+
+
+
 <table>
     <tr>
         <th>Sygnał</th>
@@ -2833,6 +2847,10 @@ System będzie używał tych plików tylko wtedy, gdy w katalogu ```/etc/systemd
 
 
 #### Krok 3. Dodanie usługi do katalogu Wants
+
+Ostatni krok jest opcjonalny. Należy go wykonać tylko wtedy, gdy chcesz, aby nowa usługa była
+uruchamiana z określoną jednostką celu demona systemd. 
+
 
 
 
