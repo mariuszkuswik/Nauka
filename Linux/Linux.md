@@ -2793,13 +2793,33 @@ System będzie używał tych plików tylko wtedy, gdy w katalogu ```/etc/systemd
 
 #### Krok 3. Dodanie usługi do katalogu Wants
 
-Ostatni krok jest opcjonalny. Należy go wykonać tylko wtedy, gdy chcesz, aby nowa usługa była
-uruchamiana z określoną jednostką celu demona systemd. 
+Ostatni krok wykonuje się tylko wtedy gdy chcesz, aby nowa usługa była uruchamiana z *określoną jednostką celu demona systemd*.
+
+1. Dodanie linku do usługi w **katalogu Wants** danej jednostki celu
+```bash
+# Przykładowy katalog wants - w tym przypadku multi-user.target
+ ls -l /etc/systemd/system/multi-user.target.wants
+```
+
+> lrwxrwxrwx. 1 root root 37 Nov 2 22:29 abrt-ccpp.service -> /lib/systemd/system/abrt-ccpp.service  
+lrwxrwxrwx. 1 root root 33 Nov 2 22:29 abrtd.service -> /lib/systemd/system/abrtd.service  
+...  
+lrwxrwxrwx. 1 root root 32 Apr 26 20:05 sshd.service -> /lib/systemd/system/sshd.service  
+
+```bash
+# Dodanie soft linku w katalogu Wants dla nowo utworzonej usługi
+ln -s /etc/systemd/system/My_New_Service.service
+```
+
+> /etc/systemd/system/multi-user.target.wants/My_New_Service.service
 
 
+2. na końcu pliku konfiguracyjnego jednostki usługi dodaj wiersz WantedBy=desired.target
 
-
-
+```bash
+[Install]
+WantedBy=multi-user.target
+```
 
 
 ## Koniec Biblii
