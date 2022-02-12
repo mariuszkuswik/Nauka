@@ -2853,16 +2853,62 @@ Domyślnie strona konfiguracyjna cups jest dostępna tylko z lokalnego systemu, 
 
 ### #TODO - strona 417 - tu skończyłem prace z drukarkami 
 
-## Koniec Biblii
 
 
 # Serwer WWW
 
+## Pakiet httpd
+
+```/etc/httpd/conf/httpd.conf``` - podstawowy plik konfiguracyjny dla pakietu *httpd*  
+```/etc/httpd/conf.d/welcome.conf``` - definjuje fomyślną stronę internetową 
+
+
+```rpm -qpc httpd-*rpm``` - wyświetlenie plików konfiguracyjnych dla pakietu *httpd*  
+
+> /etc/httpd/conf.d/autoindex.conf
+/etc/httpd/conf.d/userdir.conf
+/etc/httpd/conf.d/welcome.conf
+/etc/httpd/conf.modules.d/00-base.conf
+/etc/httpd/conf.modules.d/00-dav.conf
+...
+/etc/httpd/conf/httpd.conf
+/etc/httpd/conf/magic
+/etc/logrotate.d/httpd
+/etc/sysconfig/htcacheclean
+
+```dnf groupinfo "web-server"```
+dnf install httpd - instalacja samego pakietu httpd
+dnf groupinstall web-server - instalacja httpd i dodatków 
+
+httpd działa jako usługa więc trzeba ją włączyć 
+
+```bash
+systemctl enable httpd.service
+systemctl start httpd.service
+```
+
+```systemctl edit httpd``` - edycja opcji demona httpd
+
+
+## Zabezpieczanie serwera Apache
+
+
+
+
+strona 439
+
+## Koniec Biblii
+
+
+# Itexams, pytania ktore rozwiazalem  
+przerobione :
+https://www.examtopics.com/exams/redhat/ex200/view/
+przerobione do 5 pytania 
 
 
 
 ### Strona 404
-435
+440
 
 
 373 - strona na której skończyłem sieci 
