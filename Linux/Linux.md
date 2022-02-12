@@ -687,7 +687,6 @@ Domyślnie sudo działa bez wpisywania hasła przez 5 minut, zmiany można dokon
 | gshadow | Zawiera zaszyfrowane hasła grup |
 
  
- 
 
 
 ### journalctl, przeglądania dziennika zdarzeń systemd
@@ -829,12 +828,6 @@ Więcej informacji w podręczniku str 279
 ![Instalacja](instalacja_linux_1.png)
 
 
-
-# Strona przed zmianami z pociągu, sprawdzić czy nie ma czegoś do opisania 
-
-# Początek zmian pociągowych 
-
-## #TODO - Sprawdzić czy to co wrzuciłem z braków to wszystko  
 
 ## Opcje rozruchowe dla plików typu kickstart i zdalnych repozytoriów
 Strona 234
@@ -1223,16 +1216,12 @@ i usunąć.
 
 Podczas tworzenia konta dla Marii polecenie useradd wykonuje następujące zadania:
 
-■ Odczyt plików /etc/login.defs i /etc/default/useradd w celu pobrania wartości
-domyślnych używanych w trakcie tworzenia nowego konta.
-■ Sprawdzenie parametrów polecenia powłoki i określenie, które wartości domyślne
-należy nadpisać.
-■ Utworzenie wpisu nowego użytkownika w plikach /etc/passwd i /etc/shadow,
-na podstawie wartości domyślnych oraz podanych w poleceniu powłoki.
-■ Utworzenie wszystkich wpisów grup w pliku /etc/group. (Dystrybucja Fedora tworzy grupę, używając nazwy nowego użytkownika).
-■ Utworzenie w katalogu /home katalogu domowego na podstawie nazwy użytkownika.
-■ Skopiowanie wszystkich plików z katalogu /etc/skel do katalogu domowego nowego
-użytkownika. Katalog wzorcowy zawiera zwykle skrypty startowe logowania i aplikacji.
+- Odczyt plików ```/etc/login.defs``` i ```/etc/default/useradd``` w celu pobrania wartości domyślnych używanych w trakcie tworzenia nowego konta.
+- Sprawdzenie parametrów polecenia powłoki i określenie, które wartości domyślne należy nadpisać.
+- Utworzenie wpisu nowego użytkownika w plikach ```/etc/passwd``` i ```/etc/shadow```, na podstawie wartości domyślnych oraz podanych w poleceniu powłoki.
+- Utworzenie wszystkich wpisów grup w pliku ```/etc/group```. (Dystrybucja Fedora tworzy grupę, używając nazwy nowego użytkownika).
+- Utworzenie w katalogu ```/home``` katalogu domowego na podstawie nazwy użytkownika.
+- Skopiowanie wszystkich plików z katalogu ```/etc/skel``` do katalogu domowego nowego użytkownika. Katalog wzorcowy zawiera zwykle skrypty startowe logowania i aplikacji.
 
 ### Strona 273 do tabeli 
 
@@ -1474,9 +1463,9 @@ Do zdefiniowania domyślnych uprawnień ACL służy opcja ```d:```
 W RHEL systemy plików *xfs* i *ext* są automatycznie tworzone z włączoną obsługą ACL.
 
 Jak włączyć ACL :  
-    ■ Dodanie opcji acl do piątego pola w wierszu zdefiniowanym w pliku **/etc/fstab**, co powoduje automatyczne zamontowanie danego systemu plików podczas uruchamiania systemu.  
-    ■ Umieszczenie wiersza acl w polu Default mount options w superbloku systemu plików, co powoduje użycie opcji acl podczas zarówno automatycznego, jak i ręcznego montowania systemu plików.  
-    ■ Dodanie opcji acl do polecenia mount podczas ręcznego montowania systemu plików za pomocą polecenia mount.  
+    - Dodanie opcji acl do piątego pola w wierszu zdefiniowanym w pliku **/etc/fstab**, co powoduje automatyczne zamontowanie danego systemu plików podczas uruchamiania systemu.  
+    - Umieszczenie wiersza acl w polu Default mount options w superbloku systemu plików, co powoduje użycie opcji acl podczas zarówno automatycznego, jak i ręcznego montowania systemu plików.  
+    - Dodanie opcji acl do polecenia mount podczas ręcznego montowania systemu plików za pomocą polecenia mount.  
 
 
 
