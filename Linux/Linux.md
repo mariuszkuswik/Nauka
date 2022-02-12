@@ -2745,6 +2745,7 @@ Main PID: 707 (dbus-daemon)
 
 **mask** - usługa nie zostanie włączona nawet jeśli jest ona zależnością innej usługi, inaczej niż w przypadku opcji **disabled** 
 
+Podczas gdy trwała usługa to taka, która jest uruchamiana razem z systemem, trwały (domyślny) **poziom działania** (runlevel dla SysVinit) lub **trwała jednostka celu** (target dla systemd) oznacza grupę usług uruchamianych razem z systemem. 
 
 
 ## Konfigurowanie domyślnego poziomu działania lub jednostki celu
@@ -2763,7 +2764,6 @@ Main PID: 707 (dbus-daemon)
 | poweroff.target|0 |  runlevel0.target | Halts the system and turns the power off|
 
 
-Podczas gdy trwała usługa to taka, która jest uruchamiana razem z systemem, trwały (domyślny) **poziom działania** (runlevel dla SysVinit) lub **trwała jednostka celu** (target dla systemd) oznacza grupę usług uruchamianych razem z systemem. 
 
 
 ### #TODO - ogarnąc jak działają runlevele w systemd
