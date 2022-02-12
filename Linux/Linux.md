@@ -2802,7 +2802,7 @@ systemctl get-default
 3. Dodanie usługi do sekcji Wants wybranej jednostki celu, aby usługa była automatycznie uruchamiana z innymi.   
 
 
-#### Krok 1. Utworzenie pliku skryptu nowej usługi lub dostosowanej do własnych potrzeb  
+### Krok 1. Utworzenie pliku skryptu nowej usługi lub dostosowanej do własnych potrzeb  
 
 - Jeżeli dostosowujesz do własnych potrzeb skrypt istniejącej usługi, wykonaj kopię oryginalnego pliku jednostki w katalogu /lib/systemd/system i wprowadź żądane modyfikacje.  
  
@@ -2814,7 +2814,7 @@ Description=My New Service
 ExecStart=/usr/bin/My_New_Service  
 
 
-#### Krok 2. Przeniesienie skryptu usługi do odpowiedniego katalogu
+### Krok 2. Przeniesienie skryptu usługi do odpowiedniego katalogu
 
 Plik konfiguracyjny jednostki usługi można umieścić w jednym z dwóch następujących katalogów:
 
@@ -2827,7 +2827,7 @@ Plik konfiguracyjny jednostki usługi można umieścić w jednym z dwóch nastę
 
 System będzie używał tych plików tylko wtedy, gdy w katalogu ```/etc/systemd/system``` nie istnieje już plik o takiej samej nazwie.  
 
-##### tldr : Dlatego najlepszym miejscem na umieszczenie pliku konfiguracyjnego jednostki nowej usługi lub usługi dostosowanej do własnych potrzeb jest katalog ```/etc/systemd/system```  
+#### TLDR : Dlatego najlepszym miejscem na umieszczenie pliku konfiguracyjnego jednostki nowej usługi lub usługi dostosowanej do własnych potrzeb jest katalog ```/etc/systemd/system```  
 
 **WAŻNE** : Podczas tworzenia nowej usługi lub dostosowanej do własnych potrzeb, aby wprowadzona zmiana nie wymagała ponownego uruchomienia systemu, konieczne jest wydanie specjalnego polecenia z poziomu powłoki: ```systemctl daemon-reload```
 
