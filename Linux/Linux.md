@@ -2708,31 +2708,38 @@ rm '/etc/systemd/system/multi-user.target.wants/cups.path'
 ```bash
 systemctl status cups.service
 ```
+  
+> cups.service - CUPS Printing Service  
+Loaded: loaded (/lib/systemd/system/cups.service; disabled )  
+Active: active (running) since Tue, 21 Apr 2020 06:06:41...  
+Main PID: 17172 (cupsd)  
+CGroup: name=systemd:/system/cups.service  
+17172 /usr/sbin/cupsd -f  
+  
+W powyższym przykładzie widać, że usługa pozostałą włączona ale nie włączy się przy następnym uruchomieniu systemu.  
+  
+```bash  
+systemctl status dbus.service  
+```  
 
-> cups.service - CUPS Printing Service
-Loaded: loaded (/lib/systemd/system/cups.service; disabled )
-Active: active (running) since Tue, 21 Apr 2020 06:06:41...
-Main PID: 17172 (cupsd)
-CGroup: name=systemd:/system/cups.service
-17172 /usr/sbin/cupsd -f
+> dbus.service - D-Bus System Message Bus  
+Loaded: loaded (/lib/systemd/system/dbus.service; static)  
+Active: active (running) since Mon, 20 Apr 2020 12:35:...  
+Main PID: 707 (dbus-daemon)  
+...  
+  
+```bash  
+systemctl disable dbus.service  
+systemctl status dbus.service  
+```  
 
-W powyższym przykładzie widać, że usługa pozostałą włączona ale nie włączy się przy następnym uruchomieniu systemu.
-
-# systemctl status dbus.service
-dbus.service - D-Bus System Message Bus
-Loaded: loaded (/lib/systemd/system/dbus.service; static)
-Active: active (running) since Mon, 20 Apr 2020 12:35:...
-Main PID: 707 (dbus-daemon)
-...
-# systemctl disable dbus.service
-# systemctl status dbus.service
-dbus.service - D-Bus System Message Bus
-Loaded: loaded (/lib/systemd/system/dbus.service; static)
-Active: active (running) since Mon, 20 Apr 2020 12:35:...
-Main PID: 707 (dbus-daemon)
-...
-
-System nie pozwala na wyłączenie usług statycznych takich jak dbus
+> dbus.service - D-Bus System Message Bus  
+Loaded: loaded (/lib/systemd/system/dbus.service; static)  
+Active: active (running) since Mon, 20 Apr 2020 12:35:...  
+Main PID: 707 (dbus-daemon)  
+...  
+  
+System nie pozwala na wyłączenie usług statycznych takich jak dbus  
 
 ## Stałe wyłączenie usługi 
 
