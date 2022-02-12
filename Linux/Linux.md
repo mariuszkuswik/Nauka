@@ -2693,15 +2693,57 @@ systemctl status cups.service
 ## Wyłączanie usługi za pomocą demona systemctl
 
 disable - uniemożliwia uruchomienie danej usługi razem z systemem.
-Jednak takie polecenie nie powoduje natychmiastowego zatrzymania usługi. W tym celu konieczne
-jest użycie wcześniej omówionej opcji stop.
+Polecenie **nie powoduje natychmiastowego zatrzymania usługi.** - W tym celu konieczne jest użycie wcześniej omówionej opcji stop.
 
+
+```bash
+systemctl disable cups.service
+```
+
+> rm '/etc/systemd/system/printer.target.wants/cups.service'
+rm '/etc/systemd/system/sockets.target.wants/cups.socket'
+rm '/etc/systemd/system/multi-user.target.wants/cups.path'
+
+
+```bash
+systemctl status cups.service
+```
+
+> cups.service - CUPS Printing Service
+Loaded: loaded (/lib/systemd/system/cups.service; disabled )
+Active: active (running) since Tue, 21 Apr 2020 06:06:41...
+Main PID: 17172 (cupsd)
+CGroup: name=systemd:/system/cups.service
+17172 /usr/sbin/cupsd -f
+
+W powyższym przykładzie widać, że usługa pozostałą włączona ale nie włączy się przy następnym uruchomieniu systemu.
+
+# systemctl status dbus.service
+dbus.service - D-Bus System Message Bus
+Loaded: loaded (/lib/systemd/system/dbus.service; static)
+Active: active (running) since Mon, 20 Apr 2020 12:35:...
+Main PID: 707 (dbus-daemon)
+...
+# systemctl disable dbus.service
+# systemctl status dbus.service
+dbus.service - D-Bus System Message Bus
+Loaded: loaded (/lib/systemd/system/dbus.service; static)
+Active: active (running) since Mon, 20 Apr 2020 12:35:...
+Main PID: 707 (dbus-daemon)
+...
+
+System nie pozwala na wyłączenie usług statycznych takich jak dbus
+
+## Stałe wyłączenie usługi 
+
+
+Jeżeli 
 
 
 ## Koniec Biblii
 
 
-### Strona 400
+### Strona 404
 404
 
 373 - strona na której skończyłem sieci 
