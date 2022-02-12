@@ -2823,11 +2823,23 @@ WantedBy=multi-user.target
 
 Po wykonaniu tej procedury jednostka zostanie zostanie aktywowana (uruchomiona) po aktywowaniu jednostki multi-user.target.
 
+
+### #TODO - ćwiczenia systemd do zrobienia, strona 412
+
+
+
+# Serwer wydruku 
+
+
+
+
+
+
 ## Koniec Biblii
 
 
 ### Strona 404
-410
+413
 
 373 - strona na której skończyłem sieci 
 383 - strona na ktorej zacząłem po sieciach 
