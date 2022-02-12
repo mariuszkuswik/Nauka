@@ -437,7 +437,6 @@ sygnałów z poziomu powłoki zaliczamy
 
 ### Tabela z syganłami dla procesów
 
-
 | Sygnał | Liczba | Opis |
 |--|--|--|
 | SIGHUP | 1 | Wykryto zerwanie połączenia z terminalem kontrolnym lub zamknięcie jego procesu |
@@ -448,7 +447,9 @@ sygnałów z poziomu powłoki zaliczamy
 | SIGTERM | 15 | Sygnał zakończenia działania procesu |
 | SIGCONT | 19,18,25 | Kontynuowanie działania wcześniej wstrzymanego procesu |
 | SIGSTOP | 17,19,23 | Zatrzymanie procesu |
+
 ##### Tabela 6.1, strona 165
+
 
 Zwróć uwagę na istnienie wielu liczb reprezentujących sygnały SIGCONT i SIGSTOP, ponieważ
 poszczególne architektury sprzętowe używają różnych liczb wskazujących na te sygnały.
@@ -673,22 +674,20 @@ Domyślnie sudo działa bez wpisywania hasła przez 5 minut, zmiany można dokon
 
 
 
-### #TODO - Strona 203 - katalogi do uzupełnienia, przerobić na tabelę 
-Wybrane spośród najbardziej interesujących plików konfiguracyjnych w katalogu /etc
+### Wybrane spośród najbardziej interesujących plików konfiguracyjnych w katalogu /etc
+##### Tabela 8.1 strona 203
 
-Plik Opis  
-bashrc Ustawienia konfiguracyjne powłoki bash, których zasięg obejmuje cały system. (W niektórych dystrybucjach Linuksa
-plik nosi nazwę bash.bashrc).
-crontab Ustawienie godzin uruchamiania zautomatyzowanych zadań oraz zmiennych powiązanych ze środowiskiem cron
-(na przykład SHELL i PATH).
-exports Plik zawiera listę katalogów lokalnych dostępnych do współdzielenia ze zdalnymi komputerami za pomocą
-Network File System (NFS).
-fstab Identyfikacja najczęściej stosowanych urządzeń magazynujących dane (dysk twardy, napędy DVD i CD-ROM itd.) oraz
-miejsc zamontowania ich w systemie Linux. Plik jest używany przez polecenie mount do wyboru systemów plików
-montowanych podczas uruchamiania komputera.
-group Identyfikacja nazw oraz identyfikatorów grup (GID), które zostały zdefiniowane w systemie. Uprawnienia grup w Linuksie
-są definiowane przez drugi bądź trzeci zbiór bitów rwx (read, write, execute) powiązanych z każdym plikiem i katalogiem.
-gshadow Zawiera zaszyfrowane hasła grup
+| Plik | Opis |
+|--|--|
+| bashrc | Ustawienia konfiguracyjne powłoki bash, których zasięg obejmuje cały system. (W niektórych dystrybucjach Linuksa plik nosi nazwę bash.bashrc). |
+| crontab | Ustawienie godzin uruchamiania zautomatyzowanych zadań oraz zmiennych powiązanych ze środowiskiem cron (na przykład SHELL i PATH). |
+| exports | Plik zawiera listę katalogów lokalnych dostępnych do współdzielenia ze zdalnymi komputerami za pomocą Network File System (NFS). |
+| fstab | Identyfikacja najczęściej stosowanych urządzeń magazynujących dane (dysk twardy, napędy DVD i CD-ROM itd.) oraz miejsc zamontowania ich w systemie Linux. Plik jest używany przez polecenie mount do wyboru systemów plików montowanych podczas uruchamiania komputera. |
+| group | Identyfikacja nazw oraz identyfikatorów grup (GID), które zostały zdefiniowane w systemie. Uprawnienia grup w Linuksie są definiowane przez drugi bądź trzeci zbiór bitów rwx (read, write, execute) powiązanych z każdym plikiem i katalogiem. |
+| gshadow | Zawiera zaszyfrowane hasła grup |
+
+ 
+ 
 
 
 ### journalctl, przeglądania dziennika zdarzeń systemd
