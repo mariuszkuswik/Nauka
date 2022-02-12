@@ -2814,13 +2814,14 @@ ln -s /etc/systemd/system/My_New_Service.service
 > /etc/systemd/system/multi-user.target.wants/My_New_Service.service
 
 
-2. na końcu pliku konfiguracyjnego jednostki usługi dodaj wiersz WantedBy=desired.target
+2. Na końcu pliku konfiguracyjnego jednostki usługi dodaj wiersz WantedBy=desired.target (np. multi-user.target)
 
 ```bash
 [Install]
 WantedBy=multi-user.target
 ```
 
+Po wykonaniu tej procedury jednostka zostanie zostanie aktywowana (uruchomiona) po aktywowaniu jednostki multi-user.target.
 
 ## Koniec Biblii
 
