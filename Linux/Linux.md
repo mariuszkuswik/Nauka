@@ -2651,7 +2651,7 @@ systemctl reload sshd.service - Ponowne wczytanie plików konfiguracyjnych dla s
 ## Włączanie trwałej usług
 
 
-enable - Definjuje usługę jako zawsze uruchamianą razem z systemem (czyli rónież po restarcie).  
+**enable** - Definjuje usługę jako zawsze uruchamianą razem z systemem (czyli rónież po restarcie).  
 
 
 ```bash
