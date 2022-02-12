@@ -2890,7 +2890,26 @@ systemctl start httpd.service
 ```systemctl edit httpd``` - edycja opcji demona httpd
 
 
-## Zabezpieczanie serwera Apache
+## Apache i zapora sieciowa
+
+```netstat -tupln | grep httpd``` - Sprawdzenie portów wykorzystywanych przez httpd
+
+> tcp6 0 0 :::80 :::* LISTEN 29169/httpd
+tcp6 0 0 :::443 :::* LISTEN 29169/httpd 
+
+Dane wyjściowe wyraźnie pokazują, że demon httpd (proces o identyfikatorze 29169)
+nasłuchuje na wszystkich adresach dla portów 80 (:::80) i 443 (:::443). Oba porty są
+powiązane z protokołem TCP (tcp6). W celu otworzenia tych portów w Fedorze i Red Hat
+Enterprise Linux konieczne jest dodanie reguł zapory sieciowej
+
+W bieżących wydaniach Fedory 30 oraz RHEL 7 i 8 należy przejść do okna zapory sieciowej
+(w tym celu trzeba na ekranie Podgląd środowiska graficznego GNOME 3 wpisać Zapora
+sieciowa). W wyświetlonym oknie należy z rozwijanego menu Konfiguracja wybrać opcję
+Trwałe. Następnie w strefie publicznej (public) trzeba zaznaczyć pola wyboru znajdujące się
+obok usług http i https. Powiązane z nimi porty zostaną natychmiast otworzone.
+
+
+## Apache i SELinux
 
 
 
@@ -2899,22 +2918,20 @@ strona 439
 
 ## Koniec Biblii
 
+### Strona 404
+441
+
+373 - strona na której skończyłem sieci 
+383 - strona na ktorej zacząłem po sieciach 
+417 - strona na której skończyłem drukarki 
+435 - strona od której wznowiłem po drukarkach
+
 
 # Itexams, pytania ktore rozwiazalem  
 przerobione :
 https://www.examtopics.com/exams/redhat/ex200/view/
 przerobione do 5 pytania 
 
-
-
-### Strona 404
-440
-
-
-373 - strona na której skończyłem sieci 
-383 - strona na ktorej zacząłem po sieciach 
-417 - strona na której skończyłem drukarki 
-435 - strona od której wznowiłem po drukarkach
 
 
 
