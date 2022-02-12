@@ -2935,7 +2935,7 @@ przerobione do 5 pytania
 
 - do ogarniecia :
     - FTP, jak dziala, jak pobierac pliki (wedlug komentarzy nie ma juz na egzaminie, mimo wszystko podstawy dobrze miec)
-
+    - httpd ? - niby nie ma
 
 
 
