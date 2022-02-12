@@ -2743,8 +2743,52 @@ Main PID: 707 (dbus-daemon)
 
 ## Stałe wyłączenie usługi 
 
+**mask** - usługa nie zostanie włączona nawet jeśli jest ona zależnością innej usługi, inaczej niż w przypadku opcji **disabled** 
 
-Jeżeli 
+
+
+## Konfigurowanie domyślnego poziomu działania lub jednostki celu
+
+| **systemd targets** |**SystemV runlevel**  | **target aliases**|**Description** |
+|--|--|--|--|
+| default.target |  | | This target is always aliased with a symbolic link to either **multi-user.target** or **graphical.target**. systemd always uses the **default.target** to start the system. The **default.target** should never be aliased to **halt.target**, **poweroff.target**, or **reboot.target**.|
+| graphical.target| 5|runlevel5.target	|**Multi-user.target** with a GUI |
+| |4 | runlevel4.target|Unused. Runlevel 4 was identical to runlevel 3 in the SystemV world. This target could be created and customized to start local services without changing the default **multi-user.target**. |
+| multi-user.target| 3|runlevel3.target |All services running, but command-line interface (CLI) only |
+| | 2| runlevel2.target|Multi-user, without NFS, but all other non-GUI services running |
+| rescue.target|1 | runlevel1.target|A basic system, including mounting the filesystems with only the most basic services running and a rescue shell on the main console |
+| emergency.target| S| | Single-user mode—no services are running; filesystems are not mounted. This is the most basic level of operation with only an emergency shell running on the main console for the user to interact with the system.|
+| halt.target| | |Halts the system without powering it down |
+| reboot.target| 6|runlevel6.target | Reboot|
+| poweroff.target|0 |  runlevel0.target | Halts the system and turns the power off|
+
+
+Podczas gdy trwała usługa to taka, która jest uruchamiana razem z systemem, trwały (domyślny) **poziom działania** (runlevel dla SysVinit) lub **trwała jednostka celu** (target dla systemd) oznacza grupę usług uruchamianych razem z systemem. 
+
+
+### #TODO - ogarnąc jak działają runlevele w systemd
+
+```bash
+systemctl get-default
+```
+
+> graphical.target
+
+```bash
+systemctl set-default runlevel3.target
+```
+
+> Removed /etc/systemd/system/default.target.
+Created symlink /etc/systemd/system/default.target →
+/usr/lib/systemd/system/multi-user.target.
+
+```bash
+systemctl get-default
+```
+
+> multi-user.target
+
+
 
 
 ## Koniec Biblii
