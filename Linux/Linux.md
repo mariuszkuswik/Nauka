@@ -2739,7 +2739,7 @@ Active: active (running) since Mon, 20 Apr 2020 12:35:...
 Main PID: 707 (dbus-daemon)  
 ...  
   
-System nie pozwala na wyłączenie usług statycznych takich jak dbus  
+**System nie pozwala na wyłączenie usług statycznych takich jak dbus**   
 
 ## Stałe wyłączenie usługi 
 
