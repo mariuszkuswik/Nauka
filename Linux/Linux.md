@@ -2927,10 +2927,14 @@ strona 439
 435 - strona od której wznowiłem po drukarkach
 
 
-# Itexams, pytania ktore rozwiazalem  
-przerobione :
+# Itexams
+  
+- przerobione :
 https://www.examtopics.com/exams/redhat/ex200/view/
 przerobione do 5 pytania 
+
+- do ogarniecia :
+    - FTP, jak dziala, jak pobierac pliki (wedlug komentarzy nie ma juz na egzaminie, mimo wszystko podstawy dobrze miec)
 
 
 
