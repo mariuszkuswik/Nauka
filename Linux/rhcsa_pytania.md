@@ -254,24 +254,66 @@ According to the question that only the owner user (root) and group member (sysa
 ```
 
 
-Who ever creates the files/directories on a data group owner should automatically be in the same group owner as data.
+- Who ever creates the files/directories on a data group owner should automatically be in the same group owner as data.
+```bash
+1. chmod g+s /data
+2. Verify using: ls -ld /data
+Permission should be like this: drwxrws--- 2 root sysadmin 4096 Mar 16 18:08 /data
+If SGID bit is set on directory then who every users creates the files on directory group owner automatically the owner of parent directory. To set the SGID bit: chmod g+s directory To Remove the SGID bit: chmod g-s directory
+```
+
+
+- Your System is going to use as a Router for two networks. One Network is 192.168.0.0/24 and Another Network is 192.168.1.0/24. Both network's IP address has assigned. How will you forward the packets from one network to another network?
+```bash
+
+
+```
+
+
+- /data Directory is shared from the server1.example.com server. Mount the shared directory that:
+```bash
+# In RHEL8 and because de request is not with autofs, we can proceed in this way:
+mount server1.example.com server:/data /mnt
+
+1. vi /etc/auto.master
+/mnt /etc /auto.misc --timeout=50
+vi /etc/auto.misc
+data -rw,soft,intr server1.example.com:/data
+service autofs restart
+chkconfig autofs on
+When you mount the other filesystem, you should unmount the mounted filesystem, Automount feature of linux helps to mount at access time and after certain seconds, when user unaccess the mounted directory, automatically unmount the filesystem.
+/etc/auto.master is the master configuration file for autofs service. When you start the service, it reads the mount point as defined in /etc/auto.master.
+
+```
+
+
+- You are new System Administrator and from now you are going to handle the system and your main task is Network monitoring, Backup and Restore. But you don't know the root password. Change the root password to redhat and login in default Runlevel.
+```bash
+# In RHEL8
+- reboot the system
+- press "e" letter
+- Add "rd.break" at the end of de line thet begening with "Linux" in grub menu
+- ctrl + x
+- # mount -o remount,rw /sysroot
+- # chroot /sysroot
+- # passwd
+- #  touch /.autorelabel
+- # exit
+- # logout
+```
 
 
 
-Your System is going to use as a Router for two networks. One Network is 192.168.0.0/24 and Another Network is 192.168.1.0/24. Both network's IP address has assigned. How will you forward the packets from one network to another network?
+- You are a System administrator. Using Log files very easy to monitor the system. Now there are 50 servers running as Mail, Web, Proxy, DNS services etc. You want to centralize the logs from all servers into on LOG Server. How will you configure the LOG Server to accept logs from remote host?
+```bash
+By default, system accept the logs only generated from local host. To accept the Log from other host configure: vi /etc/sysconfig/syslog SYSLOGD_OPTIONS="-m 0 -r"
 
-
-
-/data Directory is shared from the server1.example.com server. Mount the shared directory that:
-
-
-
-You are new System Administrator and from now you are going to handle the system and your main task is Network monitoring, Backup and Restore. But you don't know the root password. Change the root password to redhat and login in default Runlevel.
-
-
-
-
-You are a System administrator. Using Log files very easy to monitor the system. Now there are 50 servers running as Mail, Web, Proxy, DNS services etc. You want to centralize the logs from all servers into on LOG Server. How will you configure the LOG Server to accept logs from remote host?
+Where -
+-m 0 disables 'MARK' messages.
+-r enables logging from remote machines
+-x disables DNS lookups on messages received with -r
+service syslog restart
+```
 
 
 
@@ -352,8 +394,13 @@ fdisk -cu /dev/vda// Create a 1G partition, modified when needed partx ""a /dev/
 Restart and check all the questions requirements.
 ```
 
-Your System is configured in 192.168.0.0/24 Network and your nameserver is 192.168.0.254. Make successfully resolve to server1.example.com.
-
+- Your System is configured in 192.168.0.0/24 Network and your nameserver is 192.168.0.254. Make successfully resolve to server1.example.com.
+```bash
+nameserver is specified in question,
+1. Vi /etc/resolv.conf
+nameserver 192.168.0.254
+2. host server1.example.com
+```
 
 Some users home directory is shared from your system. Using showmount -e localhost command, the shared directory is not shown. Make access the shared users home directory.
 

@@ -2918,6 +2918,10 @@ strona 439
 
 ## Koniec Biblii
 
+
+
+
+
 ### Strona 404
 441
 
@@ -2925,6 +2929,22 @@ strona 439
 383 - strona na ktorej zacząłem po sieciach 
 417 - strona na której skończyłem drukarki 
 435 - strona od której wznowiłem po drukarkach
+
+
+You are new System Administrator and from now you are going to handle the system and your main task is Network monitoring, Backup and Restore. But you don't know the root password. Change the root password to redhat and login in default Runlevel.
+```bash
+# In RHEL8
+- reboot the system
+- press "e" letter
+- Add "rd.break" at the end of de line thet begening with "Linux" in grub menu
+- ctrl + x
+- # mount -o remount,rw /sysroot
+- # chroot /sysroot
+- # passwd
+- #  touch /.autorelabel
+- # exit
+- # logout
+```
 
 
 # Itexams
