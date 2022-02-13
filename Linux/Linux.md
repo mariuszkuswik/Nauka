@@ -2958,7 +2958,7 @@ strona 448
 
 The term Virtual Host refers to the practice of running more than one web site (such as company1.example.com and company2.example.com ) on a single machine.  
   
-**WAżNE** - Po włączeniu pierwszego kontenera VirtualHost domyślna dyrektywa DocumentRoot (/var/www/html) nie będzie już używana podczas uzyskiwania dostępu do serwera za pomocą adresu IP lub nazwy niezdefiniowanej w kontenerze VirtualHost.  
+**WAŻNE** - Po włączeniu pierwszego kontenera VirtualHost domyślna dyrektywa DocumentRoot (/var/www/html) nie będzie już używana podczas uzyskiwania dostępu do serwera za pomocą adresu IP lub nazwy niezdefiniowanej w kontenerze VirtualHost.  
 Zamiast tego pierwszy kontener VirtualHost zostanie użyty jako domyślna lokalizacja dla serwera.
 
 
