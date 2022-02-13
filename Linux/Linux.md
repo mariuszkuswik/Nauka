@@ -2910,13 +2910,20 @@ obok usług http i https. Powiązane z nimi porty zostaną natychmiast otworzone
 
 
 ## Apache i SELinux
-
-
-
-
-
-
 strona 439
+
+```man httpd_selinux``` - pomoc w temacie selinux dla httpd
+    - ```yum install selinux-policy-doc``` - jeżeli ta strona jest niedostępna to można ją zainstalować 
+
+```/etc/sysconfig/selinux``` - plik konfiguracyjny SELinux
+
+```SELINUX=permissive``` - ustawienie powoduje źe zdarzenia są notowane ale nic nie jest blokowane
+
+
+## Edytowanie plików konfiguracyjnych serwera Apache
+
+
+
 
 ## Koniec Biblii
 
@@ -2924,8 +2931,8 @@ strona 439
 
 
 
-### Strona 404
-441
+### Strona 441
+
 
 373 - strona na której skończyłem sieci 
 383 - strona na ktorej zacząłem po sieciach 
