@@ -2996,6 +2996,7 @@ strona 450
 ```apachectl graceful``` - powpduje wczytanie nowego configu bez odłączania klientów   
   
 ```/var/log/httpd/error.log``` - logi dla httpd  
+```/var/log/xferlogs``` - logi dla pobieranych i uploadowanych plików 
 
 Przykładowy błąd, problem wskazuje że inny program jest dołączony do portu 80  
 
@@ -3027,8 +3028,13 @@ Dane wyjściowe wskazują, że proces httpd o *PID 2105* nasłuchuje na porcie 8
 
 TCP 21 - port do uwierzytelniania ftp
 TCP 20 - port na którym serwer przekazuje dane użytkownikowi 
-
 sprawdzić oba ^
+
+- Port 21 musi być otwarty
+- Jeżeli SELinux działa w trybie enforce to konieczne jest włączenie opcji boolowskiej
+- Domyślnie użytkownik *anonymous* może tylko pobierać pliki, użytkownik zalogowany może pobierać i zapisywać zgodnie z uprawnieniami danego folderu 
+
+
 
 ---
 
@@ -3057,13 +3063,31 @@ od serwera połączenia pasywnego i losowo wybranego numeru portu.
 
 ```/etc/vsftpd/vsftpd.conf``` - **główny config**  
 ```/etc/vsftpd/ftpusers``` i ```/etc/vsftpd/user_list``` - domyślnie zawierają **black listę użytkowników**   
-```/etc/pam.d/vsftpd``` - definiuje sposób uwierzytelniania na serwerze FTP  
+```/etc/pam.d/vsftpd``` - definiuje **sposób uwierzytelniania** na serwerze FTP  
 
 
 ```/etc/logrotate.d/vsftpd``` - konfiguracja sposobu **rotacji logów**  
 
 
+
 ## Uruchamianie usługi vsftpd
+
+vsftpd włącza się jak każdą usługę systemd
+
+```netstat -tupln | grep vsftpd``` - sprawdzenie czy demon ftp nasłuchuje  
+
+> tcp 0 0 0.0.0.0:21 0.0.0.0:* LISTEN 4229/vsftpd  
+
+
+```ftp 127.0.0.1``` - logowanie do lokalnego serwera *FTP* 
+
+
+
+
+
+
+## Zabezpieczanie serwera FTP
+
 
 
 
