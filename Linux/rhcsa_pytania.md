@@ -114,12 +114,12 @@ df -h
 ```
 
 
-Add admin group and set gid=600 -
+- Add admin group and set gid=600 -
 ```bash
 groupadd -g 600 admin
 ```
 
-Add users: user2, user3. The Additional group of the two users: user2, user3 is the admin group Password: redhat
+- Add users: user2, user3. The Additional group of the two users: user2, user3 is the admin group Password: redhat
 ```bash
 useradd -G admin user2
 useradd -G admin user3
@@ -145,16 +145,40 @@ cat <<EOF> /etc/cron.d/echo_file
 EOF
 ```
 
-Configure a default software repository for your system. One YUM has already provided to configure your system on http://server.domain11.example.com/pub/ x86_64/Server, and can be used normally.
+- Configure a default software repository for your system. One YUM has already provided to configure your system on http://server.domain11.example.com/pub/ x86_64/Server, and can be used normally.
+```bash
+dnf config-manager --add-repo=http://server.domain11.example.com/pub/ x86_64/Server/BaseOs
+
+vi local-rhel8.repo
+# add gpgcheck=0 in the config file
+
+[LocalRepo_BaseOS]
+name=LocalRepo_BaseOS
+metadata_expire=-1
+enabled=1
+gpgcheck=0
+baseurl=http://server.domain11.example.com/pub/ x86_64/Server/BaseOS/
+
+```
+
+- Adjust the size of the Logical Volume. Adjust the size of the vo Logical Volume, its file system size should be 290M. Make sure that the content of this system is complete. Note: the partition size is rarely accurate to the same size as required, so in the range 270M to 320M is acceptable.
+```bash
+# rhel8
+umount /dev/mapper/my_vol2-lvshare /mnt/data
+lvreduce -r -L 290M /dev/my_vol2/lvshare
+lsblk
+mount -a
+```
+
+- Configure /var/tmp/fstab Permission. Copy the file /etc/fstab to /var/tmp/fstab. Configure var/tmp/fstab permissions as the following: Owner of the file /var/tmp/fstab is Root, belongs to group root File /var/tmp/fstab cannot be executed by any user User natasha can read and write /var/tmp/fstab User harry cannot read and write /var/tmp/fstab All other users (present and future) can read var/tmp/fstab.
+```bash
+cp /etc/fstab /var/tmp/
+/var/tmp/fstab view the owner setfacl -m u:natasha:rw- /var/tmp/fstab setfacl -m u:haryy:--- /var/tmp/fstab
+Use getfacl /var/tmp/fstab to view permissions
+```
 
 
-Adjust the size of the Logical Volume. Adjust the size of the vo Logical Volume, its file system size should be 290M. Make sure that the content of this system is complete. Note: the partition size is rarely accurate to the same size as required, so in the range 270M to 320M is acceptable.
-
-
-Configure /var/tmp/fstab Permission. Copy the file /etc/fstab to /var/tmp/fstab. Configure var/tmp/fstab permissions as the following: Owner of the file /var/tmp/fstab is Root, belongs to group root File /var/tmp/fstab cannot be executed by any user User natasha can read and write /var/tmp/fstab User harry cannot read and write /var/tmp/fstab All other users (present and future) can read var/tmp/fstab.
-
-
-Please open the ip_forward, and take effect permanently.
+- Please open the ip_forward, and take effect permanently.
 
 
 
@@ -205,23 +229,45 @@ You are a System administrator. Using Log files very easy to monitor the system.
 
 
 
-Create a Shared Directory. Create a shared directory /home/admins, make it has the following characteristics: /home/admins belongs to group adminuser This directory can be read and written by members of group adminuser Any files created in /home/ admin, group automatically set as adminuser.
+- Create a Shared Directory. Create a shared directory /home/admins, make it has the following characteristics: /home/admins belongs to group adminuser This directory can be read and written by members of group adminuser Any files created in /home/ admin, group automatically set as adminuser.
+```bash
+mkdir -p /home/admins
+groupadd adminuser
+chown :adminuser /home/admins
+setfacl -m g:adminuser:rwx /home/admins
+chmod g+s /home/admins/
+```
 
 
-Configure NTP. Configure NTP service, Synchronize the server time, NTP server: classroom.example.com
+- Configure NTP. Configure NTP service, Synchronize the server time, NTP server: classroom.example.com
+```bash
+yum -y install chrony
+systemctl enable --now chronyd
+vim etc/chrony.conf
+# (change on server classroom.example.com iburs)
+systemctl reload chronyd
+timedatectl set-ntp true
+```
 
 
 
+- Configure a user account. Create a user iar uid is 3400. Password is redhat ï¼Œ
+```bash
+useradd -u 3400 iar
+id iar
+passwd iar
+```
 
-Configure a user account. Create a user iar uid is 3400. Password is redhat ï¼Œ
+
+- Search files. Find out files owned by jack, and copy them to directory /root/findresults
+```bash
+mkdir -p /root/findresults
+find / -user jack -type f -exec cp -avrf {} /root/findresults/ \;
+ls -l /root/findresults
+```
 
 
-
-Search files. Find out files owned by jack, and copy them to directory /root/findresults
-
-
-
-Search a String - Find out all the columns that contains the string seismic within /usr/share/dict/words, then copy all these columns to /root/lines.tx in original order, there is no blank line, all columns must be the accurate copy of the original columns.
+- Search a String - Find out all the columns that contains the string seismic within /usr/share/dict/words, then copy all these columns to /root/lines.tx in original order, there is no blank line, all columns must be the accurate copy of the original columns.
 
 
 
