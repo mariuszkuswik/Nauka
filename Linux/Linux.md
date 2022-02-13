@@ -3054,16 +3054,13 @@ od serwera połączenia pasywnego i losowo wybranego numeru portu.
 ```rpm -qc vsftpd``` - wyświetlenie plików konfiguracyjnych   
 ```rpm -qd vsftpd``` - wyświetlenie dostępnej domkumentacji   
 
-```man vsftpd``` - dokumentacja dotycząca procesu demona  
-````man vsftpd.conf```` - dokumentacja dotycząca configu   
 
-```/etc/vsftpd/vsftpd.conf``` - główny plik konfiguracyjny  
-
-```/etc/vsftpd/ftpusers``` i ```/etc/vsftpd/user_list``` - domyślnie zawierają black listę użytkowników   
-
+```/etc/vsftpd/vsftpd.conf``` - **główny config**  
+```/etc/vsftpd/ftpusers``` i ```/etc/vsftpd/user_list``` - domyślnie zawierają **black listę użytkowników**   
 ```/etc/pam.d/vsftpd``` - definiuje sposób uwierzytelniania na serwerze FTP  
 
-```/etc/logrotate.d/vsftpd``` - konfiguracja sposobu rotacji plików dzienników zdarzeń  
+
+```/etc/logrotate.d/vsftpd``` - konfiguracja sposobu **rotacji logów**  
 
 
 ## Uruchamianie usługi vsftpd
