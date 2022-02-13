@@ -2928,6 +2928,12 @@ strona 439
 ```/etc/httpd/conf/httpd.conf``` - podstawowy plik konfiguracyjny 
 ```/etc/httpd/conf.d``` - katalog w którym znajdują się inne pliki używane do konfiguracji *apache* (na podstawie wiersza *Include* w pliku /etc/httpd/httpd.conf) 
 
+```apachectl configtest``` - sprawdzenie configu apache, *dobrze jets używać przed restartem usługi*
+
+
+
+
+
 ## Używanie dyrektyw
 
 Opisać jakoś 
@@ -2942,6 +2948,9 @@ strona 445
 strona 448
 
 
+## Umożliwienie użytkownikom publikowania własnej treści
+
+strona 450
 
 
 
@@ -2950,7 +2959,7 @@ strona 448
 
 
 ### Strona 441
-448
+450
 
 
 
