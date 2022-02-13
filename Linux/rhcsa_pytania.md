@@ -1,4 +1,7 @@
-Configure your Host Name, IP Address, Gateway and DNS. Host name: station.domain40.example.com /etc/sysconfig/network hostname=abc.com hostname abc.com IP Address:172.24.40.40/24 - Gateway172.24.40.1 - DNS:172.24.40.1 -
+Configure your Host Name, IP Address, Gateway and DNS. 
+Host name: station.domain40.example.com 
+/etc/sysconfig/network 
+hostname=abc.com hostname abc.com IP Address:172.24.40.40/24 - Gateway172.24.40.1 - DNS:172.24.40.1 -
 
 Create a catalog under /home named admins. Its respective group is requested to be the admin group. The group users could read and write, while other users are not allowed to access it. The files created by users from the same group should also be the admin group.
 

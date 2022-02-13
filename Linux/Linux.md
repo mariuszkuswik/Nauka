@@ -1631,6 +1631,12 @@ Wyświetlanie informacji na temat LVM :
     - ```lvs vg_name``` - alternatywna, kompaktowa wersja
 
 
+LVM breaks up each physical volume into extents. A logical volume consists of a set of extents. Each extent is either wholly unused, or wholly in used by a particular logical volume: extents cannot be subdivided. Extents are the elementary blocks of LVM allocation.
+
+**This extent is the minimum amount by which the logical volume may be increased or decreased in size.**
+
+https://unix.stackexchange.com/questions/341077/lvm-volume-group-what-are-extents
+
 ## Tworzenie woluminów logicznych LVM
 
 **/dev/mapper** - ścieżka w której znajdują się *lvm*y 
@@ -2950,10 +2956,12 @@ strona 445
 
 strona 448
 
+The term Virtual Host refers to the practice of running more than one web site (such as company1.example.com and company2.example.com ) on a single machine.
+
 **WAżNE** - Po włączeniu pierwszego kontenera VirtualHost domyślna dyrektywa DocumentRoot (/var/www/html) nie będzie już używana podczas uzyskiwania dostępu do serwera za pomocą adresu IP lub nazwy niezdefiniowanej w kontenerze VirtualHost.
 Zamiast tego pierwszy kontener VirtualHost zostanie użyty jako domyślna lokalizacja dla serwera.
 
-The term Virtual Host refers to the practice of running more than one web site (such as company1.example.com and company2.example.com ) on a single machine.
+
 
 
 1. Utworzenie nowego pliku w folderze ```/etc/httpd/conf.d``` 
@@ -2961,16 +2969,49 @@ The term Virtual Host refers to the practice of running more than one web site (
 vim /etc/httpd/conf.d/example.org
 ```
 
-2. Edycja pliku, minimalny config dla virtual hosta
+2. Edycja pliku, niżej **minimalny config** dla virtual hosta
+```html
 <VirtualHost *:80>
     ServerName www.example.org
     DocumentRoot /var/www/html/example.org/
 </VirtualHost>
+```
+
+3. Sprawdzenie configu
+```bash
+apachectl configtest
+```
+> Syntax OK
+
+4. 
 
 
 ## Umożliwienie użytkownikom publikowania własnej treści
 
 strona 450
+
+## Rozwiązywanie problemów z serwerem WWW
+
+```apachectl configtest``` - sprawdza poprawnośc configu
+```apachectl graceful``` - powpduje wczytanie nowego configu bez odłączania klientów 
+
+```/var/log/httpd/error.log``` - logi dla httpd
+
+Przykładowy błąd, problem wskazuje że inny program jest dołączony do portu 80
+
+> [crit] (98)Address already in use: make_sock: could not bind to port 80
+
+Może to oznaczać że uruchomiony jest inny proces apache (polecenie apachectl zwykle to wychwytuje) lub zdefiniowano dołączenie tego samego adresu IP i portu w więcej niż tylko jednym miejscu.
+
+Wyświetlenie listy programów wraz z portami TCP w stanie LISTEN:
+
+```bash
+netstat -nltp
+```
+
+> Active Internet connections (only servers)
+Proto Local Address Foreign Address State PID/Program name
+tcp6 :::80 :::* LISTEN 2105/httpd
 
 
 
@@ -2979,7 +3020,7 @@ strona 450
 
 
 ### Strona 441
-450
+457
 
 
 
