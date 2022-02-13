@@ -2922,6 +2922,26 @@ strona 439
 
 ## Edytowanie plików konfiguracyjnych serwera Apache
 
+```http://lcaolhost/manual``` - **instrukcje online do apache** 
+
+
+```/etc/httpd/conf/httpd.conf``` - podstawowy plik konfiguracyjny 
+```/etc/httpd/conf.d``` - katalog w którym znajdują się inne pliki używane do konfiguracji *apache* (na podstawie wiersza *Include* w pliku /etc/httpd/httpd.conf) 
+
+## Używanie dyrektyw
+
+Opisać jakoś 
+
+
+## Ustawienia domyślne
+
+strona 445
+
+## Dodawanie serwera wirtualnego do serwera Apache
+
+strona 448
+
+
 
 
 
@@ -2929,9 +2949,9 @@ strona 439
 
 
 
-
-
 ### Strona 441
+448
+
 
 
 373 - strona na której skończyłem sieci 
