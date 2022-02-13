@@ -2933,12 +2933,7 @@ strona 439
 
 
 
-
-
-
 ```apachectl configtest``` - sprawdzenie configu apache, *dobrze jets używać przed restartem usługi*
-
-
 
 
 
@@ -2954,6 +2949,23 @@ strona 445
 ## Dodawanie serwera wirtualnego do serwera Apache
 
 strona 448
+
+**WAżNE** - Po włączeniu pierwszego kontenera VirtualHost domyślna dyrektywa DocumentRoot (/var/www/html) nie będzie już używana podczas uzyskiwania dostępu do serwera za pomocą adresu IP lub nazwy niezdefiniowanej w kontenerze VirtualHost.
+Zamiast tego pierwszy kontener VirtualHost zostanie użyty jako domyślna lokalizacja dla serwera.
+
+The term Virtual Host refers to the practice of running more than one web site (such as company1.example.com and company2.example.com ) on a single machine.
+
+
+1. Utworzenie nowego pliku w folderze ```/etc/httpd/conf.d``` 
+```bash
+vim /etc/httpd/conf.d/example.org
+```
+
+2. Edycja pliku, minimalny config dla virtual hosta
+<VirtualHost *:80>
+    ServerName www.example.org
+    DocumentRoot /var/www/html/example.org/
+</VirtualHost>
 
 
 ## Umożliwienie użytkownikom publikowania własnej treści
