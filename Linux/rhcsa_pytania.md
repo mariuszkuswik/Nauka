@@ -22,9 +22,9 @@ Configure autofs to make sure after login successfully, it has the home director
 
 - Configure the system synchronous as 172.24.40.10.
 ```bash
-FOR RHEL8:
+# FOR RHEL8:
 sudo yum -y install chrony
-$ sudo vi /etc/chrony.conf
+sudo vi /etc/chrony.conf
 server 192.168.25.3
 sudo timedatectl set-ntp true
 sudo systemctl enable --now chronyd
@@ -33,42 +33,42 @@ sudo systemctl enable --now chronyd
 
 - Create a volume group, and set 16M as a extends. And divided a volume group containing 50 extends on volume group lv, make it as ext4 file system, and mounted automatically under /mnt/data.
 ```bash
-assume that /dev/sdb2 and /dev/sdb3 were created (lsblk to verify it)
+# assume that /dev/sdb2 and /dev/sdb3 were created (lsblk to verify it)
 
-#pvcreate /dev/sdb{2,3}
-#pvdisplay /dev/sdb* (verify)
+pvcreate /dev/sdb{2,3}
+pvdisplay /dev/sdb* (verify)
 
-#vgcreate VG01 --physicalextentsize 16M /dev/sdb{2,3}
-#vgdisplay /dev/VG01 (verify)
+vgcreate VG01 --physicalextentsize 16M /dev/sdb{2,3}
+vgdisplay /dev/VG01 (verify)
 
-#lvcreate --extents 50 --name LV01 VG01
-#lvdisplay /dev/VG01 (verify)
+lvcreate --extents 50 --name LV01 VG01
+lvdisplay /dev/VG01 (verify)
 
-#blkid /dev/VG01/LV01 (get UUID=XXX-XX-XX)
-#mkdir -p /mnt/data
-#echo "UUID=XXX-XX-XX /mnt/data ext4 defaults 0 0" | tee -a /etc/fstab
-#mount -a
+blkid /dev/VG01/LV01 (get UUID=XXX-XX-XX)
+mkdir -p /mnt/data
+echo "UUID=XXX-XX-XX /mnt/data ext4 defaults 0 0" | tee -a /etc/fstab
+mount -a
 ```
 
 
 - Upgrading the kernel as 2.6.36.7.1, and configure the system to Start the default kernel, keep the old kernel available.
 ```bash
-To update Kernel:
-#rpm -ivh [kernel.rmp] --> Install a rpm package in verbose mode
-OR
-#yum install kernel --> (If you're using repositories)
+# To update Kernel:
+rpm -ivh [kernel.rmp] --> Install a rpm package in verbose mode
+# OR
+yum install kernel --> (If you're using repositories)
 
-It's important to know that this doesn't replace the actual kernel. It is installed along the actual kernel and you can select any available kernel to boot the system in case of troubleshooting.
-Also, the system onlny saves a maximum of 4 kernels. If you already have 4, and install a 5th kernel, this one will replace the oldest kernel.
------------
-To set a default kernel:
-- We can use grubby command tool.
-#grubby --default-kernel --> Get default kernel (It's probably that the latest installed be selected)
-#grubby --info=ALL | grep ^kernel --> This command list all kernel paths for the available kernels.
-#grubby --set-default=[kernel path obtained from the above command]
+# It's important to know that this doesn't replace the actual kernel. It is installed along the actual kernel and you can select any available kernel to boot the system in case of troubleshooting.
+# Also, the system onlny saves a maximum of 4 kernels. If you already have 4, and install a 5th kernel, this one will replace the oldest kernel.
+# -----------
+# To set a default kernel:
+# - We can use grubby command tool.
+grubby --default-kernel --> Get default kernel (It's probably that the latest installed be selected)
+grubby --info=ALL | grep ^kernel --> This command list all kernel paths for the available kernels.
+grubby --set-default=[kernel path obtained from the above command]
 
-Reboot and verify
-#uname -r --> Get the loaded kernel
+# Reboot and verify
+uname -r --> Get the loaded kernel
 ```
 
 
