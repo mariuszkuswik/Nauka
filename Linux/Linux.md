@@ -3013,6 +3013,18 @@ netstat -nltp
 Proto Local Address Foreign Address State PID/Program name  
 tcp6 :::80 :::* LISTEN 2105/httpd  
 
+Dane wyjściowe wskazują, że proces httpd o *PID 2105* nasłuchuje na porcie 80,    
+*jeżeli inny proces nasłuchuje na tym samym porcie to również zostanie wyświetlony*   
+
+
+```httpd -X``` - uruchomienie demona httpd w trybie debugowania, powoduj 
+
+
+### #TODO - strona 460 - ćwiczenia httpd 
+
+
+# Serwer FTP
+
 
 
 ## Koniec Biblii
@@ -3020,7 +3032,7 @@ tcp6 :::80 :::* LISTEN 2105/httpd
 
 
 ### Strona 441
-457
+463
 
 
 
