@@ -72,7 +72,7 @@ Reboot and verify
 ```
 
 
-Create a 512M partition, make it as ext4 file system, mounted automatically under /mnt/data and which take effect automatically at boot-start.
+- Create a 512M partition, make it as ext4 file system, mounted automatically under /mnt/data and which take effect automatically at boot-start.
 ```bash
 #fdisk -l (to check for empty disk)
 #fdisk /dev/sdd (format disk in question)
@@ -93,7 +93,7 @@ Exit out of the Insert mode and type: :wq!
 ```
 
 
-Create a volume group, and set 8M as a extends. Divided a volume group containing 50 extends on volume group lv (lvshare), make it as ext4 file system, and mounted automatically under /mnt/data. And the size of the floating range should set between 380M and 400M.
+- Create a volume group, and set 8M as a extends. Divided a volume group containing 50 extends on volume group lv (lvshare), make it as ext4 file system, and mounted automatically under /mnt/data. And the size of the floating range should set between 380M and 400M.
 
 ```bash
 -- lets say we are going to work on /dev/vda3 ,
