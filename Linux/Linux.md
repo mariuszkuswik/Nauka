@@ -2731,6 +2731,8 @@ Podczas gdy trwała usługa to taka, która jest uruchamiana razem z systemem, t
 
 - ```systemctl get-default``` - wyświetlenie domyślnego targetu 
 - ```systemctl set-default``` - ustawienie domyślnego targetu 
+- ```systemctl isolate``` - zmiana obecnego targetu
+
 
 ```bash
 systemctl get-default
@@ -2920,13 +2922,19 @@ strona 439
 ```SELINUX=permissive``` - ustawienie powoduje źe zdarzenia są notowane ale nic nie jest blokowane
 
 
-## Edytowanie plików konfiguracyjnych serwera Apache
+## Apache/httpd - Edytowanie plików konfiguracyjnych
 
 ```http://lcaolhost/manual``` - **instrukcje online do apache** 
 
 
 ```/etc/httpd/conf/httpd.conf``` - podstawowy plik konfiguracyjny 
 ```/etc/httpd/conf.d``` - katalog w którym znajdują się inne pliki używane do konfiguracji *apache* (na podstawie wiersza *Include* w pliku /etc/httpd/httpd.conf) 
+```/etc/httpd/conf.modules.d``` - miejsce na dodatkowe moduły dla httpd
+
+
+
+
+
 
 ```apachectl configtest``` - sprawdzenie configu apache, *dobrze jets używać przed restartem usługi*
 
