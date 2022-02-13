@@ -3041,6 +3041,22 @@ od serwera połączenia pasywnego i losowo wybranego numeru portu.
 ---
 
 
+```/var/ftp``` - domyślny katalog dla użutkownika anonimowego   
+```/home/username``` - domyślny katalog dla użytkowników zalogowanych,   
+*użytkownik zalogowany może poruszać się po wszystkich katalogach do których ma uprawnienia*   
+
+
+```lftp``` i ```ftp``` - komendy do łączenia z serwerem FTP  
+
+
+## vsftpd - Instalowanie serwera FTP 
+
+```rpm -qc vsftpd``` - wyświetlenie plików konfiguracyjnych   
+```rpm -qd vsftpd``` - wyświetlenie dostępnej domkumentacji   
+
+```man vsftpd``` - dokumentacja dotycząca procesu demona  
+````man vsftpd.conf```` - dokumentacja dotycząca configu   
+
 
 
 
