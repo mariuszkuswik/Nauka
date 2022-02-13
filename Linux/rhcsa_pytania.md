@@ -403,6 +403,28 @@ nameserver 192.168.0.254
 ```
 
 Some users home directory is shared from your system. Using showmount -e localhost command, the shared directory is not shown. Make access the shared users home directory.
+```bash
+NFS Server:
+- dnf install nfs-utils libnfsidmap
+- systemctl enable rpcbind & nfs-server
+- systemctl start rpcbind, nfs-server, rpc-statd, nfs-idmapd
+- vi /etc/exports
+- add /home/user 192.168.x.x (rw,sync,no_root_squash)
+- exportfs -rv
+- showmount -e
+- Optional: may need to enable the rule on firewalld or stop it altogether for it to work on remote clients
+
+NFS Client:
+- dnf install nfs-utils rpcbind
+- systemctl start rpcbind
+- ps -ef | egrep “firewalld:iptables” (may need to stop these two services, or add appropriate rules for mounting to work across server and client)
+- Create a mount point
+- Mount 192.168.x.x:/dir /mountpoint
+```
+
+
+
+
 
 Verify the File whether Shared or not ? : cat /etc/exports Start the nfs service: service nfs start Start the portmap service: service portmap start Make automatically start the nfs service on next reboot: chkconfig nfs on Make automatically start the portmap service on next reboot: chkconfig portmap on Verify either sharing or not: showmount -e localhost Check that default firewall is running on system? If running flush the iptables using iptables -F and stop the iptables service.
 

@@ -2914,6 +2914,8 @@ obok usług http i https. Powiązane z nimi porty zostaną natychmiast otworzone
 
 
 
+
+
 strona 439
 
 ## Koniec Biblii
@@ -2952,7 +2954,8 @@ You are new System Administrator and from now you are going to handle the system
 - przerobione :
 https://www.examtopics.com/exams/redhat/ex200/view/
 https://www.examtopics.com/exams/redhat/ex200/view/7/
-przerobione do 27 pytania 
+https://www.examtopics.com/exams/redhat/ex200/view/11/
+przerobione do 41 pytania 
 
 - do ogarniecia :
     - FTP, jak dziala, jak pobierac pliki (wedlug komentarzy nie ma juz na egzaminie, mimo wszystko podstawy dobrze miec)
