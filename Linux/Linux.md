@@ -3083,9 +3083,6 @@ vsftpd włącza się jak każdą usługę systemd
 
 
 
-
-
-
 ## Zabezpieczanie serwera FTP
 
 
@@ -3100,7 +3097,7 @@ vsftpd włącza się jak każdą usługę systemd
 
 
 ### Strona 441
-466
+468
 
 
 
