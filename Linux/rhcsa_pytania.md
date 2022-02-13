@@ -128,7 +128,7 @@ echo “redhat” | passwd --stdin user3
 ```
 
 
-Copy /etc/fstab to /var/tmp name admin, the user1 could read, write and modify it, while user2 without any permission.
+- Copy /etc/fstab to /var/tmp name admin, the user1 could read, write and modify it, while user2 without any permission.
 ```bash
 useradd -M user1
 useradd -M user2
@@ -138,7 +138,7 @@ setfacl -m u:user2:--- /vat/tmp/fstab
 ````
 
 
-Configure a task: plan to run echo "file" command at 14:23 every day.
+- Configure a task: plan to run echo "file" command at 14:23 every day.
 ```bash
 cat <<EOF> /etc/cron.d/echo_file
 23 14 * * * /usr/bin/echo 'file'
@@ -402,7 +402,7 @@ nameserver 192.168.0.254
 2. host server1.example.com
 ```
 
-Some users home directory is shared from your system. Using showmount -e localhost command, the shared directory is not shown. Make access the shared users home directory.
+- Some users home directory is shared from your system. Using showmount -e localhost command, the shared directory is not shown. Make access the shared users home directory.
 ```bash
 NFS Server:
 - dnf install nfs-utils libnfsidmap
@@ -470,7 +470,7 @@ User mary must configure a task. Requirement: The local time at 14:23 every day 
 
 
 
-Copy /etc/fstab document to /var/TMP directory. According the following requirements to configure the permission of this document. ? The owner of this document must be root. ? This document belongs to root group. ? User mary have read and write permissions for this document. ? User alice have read and execute permissions for this document. ? Create user named bob, set uid is 1000. Bob have read and write permissions for this document. ? All users has read permission for this document in the system.
+- Copy /etc/fstab document to /var/TMP directory. According the following requirements to configure the permission of this document. ? The owner of this document must be root. ? This document belongs to root group. ? User mary have read and write permissions for this document. ? User alice have read and execute permissions for this document. ? Create user named bob, set uid is 1000. Bob have read and write permissions for this document. ? All users has read permission for this document in the system.
 
 
 
