@@ -3057,6 +3057,17 @@ od serwera połączenia pasywnego i losowo wybranego numeru portu.
 ```man vsftpd``` - dokumentacja dotycząca procesu demona  
 ````man vsftpd.conf```` - dokumentacja dotycząca configu   
 
+```/etc/vsftpd/vsftpd.conf``` - główny plik konfiguracyjny  
+
+```/etc/vsftpd/ftpusers``` i ```/etc/vsftpd/user_list``` - domyślnie zawierają black listę użytkowników   
+
+```/etc/pam.d/vsftpd``` - definiuje sposób uwierzytelniania na serwerze FTP  
+
+```/etc/logrotate.d/vsftpd``` - konfiguracja sposobu rotacji plików dzienników zdarzeń  
+
+
+## Uruchamianie usługi vsftpd
+
 
 
 
@@ -3068,7 +3079,7 @@ od serwera połączenia pasywnego i losowo wybranego numeru portu.
 
 
 ### Strona 441
-463
+466
 
 
 
