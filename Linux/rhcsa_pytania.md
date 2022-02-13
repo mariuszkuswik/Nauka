@@ -179,14 +179,54 @@ Use getfacl /var/tmp/fstab to view permissions
 
 
 - Please open the ip_forward, and take effect permanently.
+```bash
+
+```
 
 
+- Open kmcrl value of 5 , and can verify in /proc/ cmdline
+```bash
+# this is not found in rhcsa 2021
 
-Open kmcrl value of 5 , and can verify in /proc/ cmdline
+grubby --update-kernel=ALL --args="kmcrl=5"
+cat /boot/grub2/grubenv
+systemctl reboot
+cat /proc/cmdline
+
+```
 
 
-Configure iptables, there are two domains in the network, the address of local domain is 172.24.0.0/16 other domain is 172.25.0.0/16, now refuse domain 172.25.0.0/16 to access the server.
+- Configure iptables, there are two domains in the network, the address of local domain is 172.24.0.0/16 other domain is 172.25.0.0/16, now refuse domain 172.25.0.0/16 to access the server.
+```bash
+Use fdisk /dev/hda ->To create new partition.
 
+Type n-> For New partition -
+It will ask for Logical or Primary Partitions. Press l for logical.
+It will ask for the Starting Cylinder: Use the Default by pressing Enter Key.
+Type the Size: +100M ->You can Specify either Last cylinder of Size here.
+Press P to verify the partitions lists and remember the partitions name. Default System ID is 83 that means Linux Native.
+Type t to change the System ID of partition.
+
+Type Partition Number -
+Type 82 that means Linux Swap.
+Press w to write on partitions table.
+Either Reboot or use partprobe command.
+mkswap /dev/hda? ->To create Swap File system on partition.
+swapon /dev/hda? ->To enable the Swap space from partition.
+free -m ->Verify Either Swap is enabled or not.
+vi /etc/fstab/dev/hda? swap swap defaults 0 0
+Reboot the System and verify that swap is automatically enabled or not.
+
+
+In RHEL8 for fstab configuration is not more recommended to use absolute patch to the device like /dev/sda7.
+The recommendation is to use the UUID identifier instead.
+To get the swap or any other filesystem's UUID use the command blkid.
+This will show you all filesystems UUIDs in example:
+/dev/sda7: UUID="361ed5b5-872a-4e49-ba70-91efb28b2bb4" TYPE="swap" PARTUUID="caa5e8f6-01"
+
+Copy the section UUID="361ed5b5-872a-4e49-ba70-91efb28b2bb4" and use it in fstab as follows.
+UUID="361ed5b5-872a-4e49-ba70-91efb28b2bb4" swap swap defaults 0 0
+```
 
 
 There are two different networks, 192.168.0.0/24 and 192.168.1.0/24. Your System is in 192.168.0.0/24 Network. One RHEL6 Installed System is going to use as a Router. All required configuration is already done on Linux Server. Where 192.168.0.254 and 192.168.1.254 IP Address are assigned on that Server. How will make successfully ping to 192.168.1.0/24 Network's Host?
@@ -204,8 +244,14 @@ One Logical Volume is created named as myvol under vo volume group and is mounte
 We are working on /data initially the size is 2GB. The /dev/test0/lvtestvolume is mount on /data. Now you required more space on /data but you already added all disks belong to physical volume. You saw that you have unallocated space around 5 GB on your harddisk. Increase the size of lvtestvolume by 5GB.
 
 
-Make on data that only the user owner and group owner member can fully access.
-
+- Make on data that only the user owner and group owner member can fully access.
+```bash
+chmod 770 /data
+Verify using : ls -ld /data Preview should be like:
+drwxrwx--- 2 root sysadmin 4096 Mar 16 18:08 /data
+To change the permission on directory we use the chmod command.
+According to the question that only the owner user (root) and group member (sysadmin) can fully access the directory so: chmod 770 /data
+```
 
 
 Who ever creates the files/directories on a data group owner should automatically be in the same group owner as data.
@@ -268,14 +314,43 @@ ls -l /root/findresults
 
 
 - Search a String - Find out all the columns that contains the string seismic within /usr/share/dict/words, then copy all these columns to /root/lines.tx in original order, there is no blank line, all columns must be the accurate copy of the original columns.
+```bash
+grep seismic /usr/share/dict/words > /root/lines.txt
+```
+
+
+- Create a backup - Create a backup file named /root/backup.tar.bz2, contains the content of /usr/local, tar must use bzip2 to compress.
+```bash
+# Simple to understand and execute,
+
+[root@station ~]# yum install bzip2
+[root@station ~]# tar -cvf /root/backup.tar /usr/local/
+[root@station ~]# du -sh /root/backup.tar
+20K /root/backup.tar
+[root@station ~]# bzip2 /root/backup.tar
+[root@station ~]# du -sh /root/backup.tar.bz2
+4.0K /root/backup.tar.bz2
+[root@station ~]#
+```
+
+
+- Create a logical volume - Create a new logical volume as required: Name the logical volume as database, belongs to datastore of the volume group, size is 50 PE. Expansion size of each volume in volume group datastore is 16MB. Use ext3 to format this new logical volume, this logical volume should automatically mount to /mnt/database
+```bash
+# vgcreate -s 16M datastore /dev/sdxx
+# lvcreate -l 50 -n database datastore
+# lvs
+# mkdir /mnt/database
+# mkfs.ext3 /dev/datastore/database
+# echo "/dev/datastore/database /mnt/database/ ext3 defaults 0 0" >> /etc/fstab
+# mount -a
+# df -h
 
 
 
-Create a backup - Create a backup file named /root/backup.tar.bz2, contains the content of /usr/local, tar must use bzip2 to compress.
-
-
-Create a logical volume - Create a new logical volume as required: Name the logical volume as database, belongs to datastore of the volume group, size is 50 PE. Expansion size of each volume in volume group datastore is 16MB. Use ext3 to format this new logical volume, this logical volume should automatically mount to /mnt/database
-
+fdisk -cu /dev/vda// Create a 1G partition, modified when needed partx ""a /dev/vda pvcreate /dev/vdax vgcreate datastore /dev/vdax ""s 16M lvcreate"" l 50 ""n database datastore mkfs.ext3 /dev/datastore/database mkdir /mnt/database mount /dev/datastore/database /mnt/database/ df ""Th vi /etc/fstab
+/dev/datastore /database /mnt/database/ ext3 defaults 0 0 mount ""a
+Restart and check all the questions requirements.
+```
 
 Your System is configured in 192.168.0.0/24 Network and your nameserver is 192.168.0.254. Make successfully resolve to server1.example.com.
 
