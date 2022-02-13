@@ -2920,26 +2920,26 @@ obok usług http i https. Powiązane z nimi porty zostaną natychmiast otworzone
 ## Apache i SELinux
 strona 439
 
-```man httpd_selinux``` - pomoc w temacie selinux dla httpd
-    - ```yum install selinux-policy-doc``` - jeżeli ta strona jest niedostępna to można ją zainstalować 
+```man httpd_selinux``` - pomoc w temacie selinux dla httpd  
+    - ```yum install selinux-policy-doc``` - jeżeli ta strona jest niedostępna to można ją zainstalować   
+  
+```/etc/sysconfig/selinux``` - plik konfiguracyjny SELinux  
 
-```/etc/sysconfig/selinux``` - plik konfiguracyjny SELinux
-
-```SELINUX=permissive``` - ustawienie powoduje źe zdarzenia są notowane ale nic nie jest blokowane
+```SELINUX=permissive``` - ustawienie powoduje źe zdarzenia są notowane ale nic nie jest blokowane  
 
 
 ## Apache/httpd - Edytowanie plików konfiguracyjnych
 
-```http://lcaolhost/manual``` - **instrukcje online do apache** 
+```http://lcaolhost/manual``` - **instrukcje online do apache**   
 
 
-```/etc/httpd/conf/httpd.conf``` - podstawowy plik konfiguracyjny 
-```/etc/httpd/conf.d``` - katalog w którym znajdują się inne pliki używane do konfiguracji *apache* (na podstawie wiersza *Include* w pliku /etc/httpd/httpd.conf) 
-```/etc/httpd/conf.modules.d``` - miejsce na dodatkowe moduły dla httpd
+```/etc/httpd/conf/httpd.conf``` - podstawowy plik konfiguracyjny   
+```/etc/httpd/conf.d``` - katalog w którym znajdują się inne pliki używane do konfiguracji *apache* (na podstawie wiersza *Include* w pliku /etc/httpd/httpd.conf)   
+```/etc/httpd/conf.modules.d``` - miejsce na dodatkowe moduły dla httpd  
 
+  
 
-
-```apachectl configtest``` - sprawdzenie configu apache, *dobrze jets używać przed restartem usługi*
+```apachectl configtest``` - sprawdzenie configu apache, *dobrze jets używać przed restartem usługi*  
 
 
 
@@ -2956,9 +2956,9 @@ strona 445
 
 strona 448
 
-The term Virtual Host refers to the practice of running more than one web site (such as company1.example.com and company2.example.com ) on a single machine.
-
-**WAżNE** - Po włączeniu pierwszego kontenera VirtualHost domyślna dyrektywa DocumentRoot (/var/www/html) nie będzie już używana podczas uzyskiwania dostępu do serwera za pomocą adresu IP lub nazwy niezdefiniowanej w kontenerze VirtualHost.
+The term Virtual Host refers to the practice of running more than one web site (such as company1.example.com and company2.example.com ) on a single machine.  
+  
+**WAżNE** - Po włączeniu pierwszego kontenera VirtualHost domyślna dyrektywa DocumentRoot (/var/www/html) nie będzie już używana podczas uzyskiwania dostępu do serwera za pomocą adresu IP lub nazwy niezdefiniowanej w kontenerze VirtualHost.  
 Zamiast tego pierwszy kontener VirtualHost zostanie użyty jako domyślna lokalizacja dla serwera.
 
 
@@ -2992,26 +2992,26 @@ strona 450
 
 ## Rozwiązywanie problemów z serwerem WWW
 
-```apachectl configtest``` - sprawdza poprawnośc configu
-```apachectl graceful``` - powpduje wczytanie nowego configu bez odłączania klientów 
+```apachectl configtest``` - sprawdza poprawnośc configu  
+```apachectl graceful``` - powpduje wczytanie nowego configu bez odłączania klientów   
+  
+```/var/log/httpd/error.log``` - logi dla httpd  
 
-```/var/log/httpd/error.log``` - logi dla httpd
+Przykładowy błąd, problem wskazuje że inny program jest dołączony do portu 80  
 
-Przykładowy błąd, problem wskazuje że inny program jest dołączony do portu 80
+> [crit] (98)Address already in use: make_sock: could not bind to port 80  
 
-> [crit] (98)Address already in use: make_sock: could not bind to port 80
-
-Może to oznaczać że uruchomiony jest inny proces apache (polecenie apachectl zwykle to wychwytuje) lub zdefiniowano dołączenie tego samego adresu IP i portu w więcej niż tylko jednym miejscu.
-
-Wyświetlenie listy programów wraz z portami TCP w stanie LISTEN:
+Może to oznaczać że uruchomiony jest inny proces apache (polecenie apachectl zwykle to wychwytuje) lub zdefiniowano dołączenie tego samego adresu IP i portu w więcej niż tylko jednym miejscu.  
+  
+Wyświetlenie listy programów wraz z portami TCP w stanie LISTEN:  
 
 ```bash
 netstat -nltp
 ```
 
-> Active Internet connections (only servers)
-Proto Local Address Foreign Address State PID/Program name
-tcp6 :::80 :::* LISTEN 2105/httpd
+> Active Internet connections (only servers)  
+Proto Local Address Foreign Address State PID/Program name  
+tcp6 :::80 :::* LISTEN 2105/httpd  
 
 
 
