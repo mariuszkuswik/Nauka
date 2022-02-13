@@ -51,29 +51,99 @@ assume that /dev/sdb2 and /dev/sdb3 were created (lsblk to verify it)
 ```
 
 
-Upgrading the kernel as 2.6.36.7.1, and configure the system to Start the default kernel, keep the old kernel available.
+- Upgrading the kernel as 2.6.36.7.1, and configure the system to Start the default kernel, keep the old kernel available.
+```bash
+To update Kernel:
+#rpm -ivh [kernel.rmp] --> Install a rpm package in verbose mode
+OR
+#yum install kernel --> (If you're using repositories)
 
+It's important to know that this doesn't replace the actual kernel. It is installed along the actual kernel and you can select any available kernel to boot the system in case of troubleshooting.
+Also, the system onlny saves a maximum of 4 kernels. If you already have 4, and install a 5th kernel, this one will replace the oldest kernel.
+-----------
+To set a default kernel:
+- We can use grubby command tool.
+#grubby --default-kernel --> Get default kernel (It's probably that the latest installed be selected)
+#grubby --info=ALL | grep ^kernel --> This command list all kernel paths for the available kernels.
+#grubby --set-default=[kernel path obtained from the above command]
+
+Reboot and verify
+#uname -r --> Get the loaded kernel
+```
 
 
 Create a 512M partition, make it as ext4 file system, mounted automatically under /mnt/data and which take effect automatically at boot-start.
+```bash
+#fdisk -l (to check for empty disk)
+#fdisk /dev/sdd (format disk in question)
+#n (new partition)
+#p (for primary)
+#Enter (use the first sector by default)
+#+size 512M (to specify the size)
+#Enter
+#w (to write the changes)
+#fdisk -l /dev/sdd1 (to verify partition has been created)
+#mkfs.ext4 /dev/sdd1 (to format the partition with ext4 file system)
+#mkdir /mnt/data (to create the mount point)
+#mount /dev/sdd1 (mount the partition)
+#vi /etc/fstab (to configure auto mount after each boot)
+Press Shift G to go to the last line and press O to start in new line in Insert mode. Enter the following (ensure you press TAB for each part of the entry):
+/dev/sdd1 /mnt/data /ext4 defaults 0 0
+Exit out of the Insert mode and type: :wq!
+```
 
 
 Create a volume group, and set 8M as a extends. Divided a volume group containing 50 extends on volume group lv (lvshare), make it as ext4 file system, and mounted automatically under /mnt/data. And the size of the floating range should set between 380M and 400M.
 
+```bash
+-- lets say we are going to work on /dev/vda3 ,
+make sure this disk has no mount point,if any than unmount them
+ex. umount /mnt/data
+
+partprobe
+vgcreate -s 8M vg1 /dev/vda3
+lvcreate -n lvshare -l 50 vg1
+mkfs.ext4 /dev/vg1/lvshare
+mkdir -p /mnt/data
+vim /etc/fstab
+/dev/vg1/lvshare /mnt/data ext4 defaults 0 0
+mount -a
+partprobe
+df -h
+
+```
+
 
 Add admin group and set gid=600 -
-
+```bash
+groupadd -g 600 admin
+```
 
 Add users: user2, user3. The Additional group of the two users: user2, user3 is the admin group Password: redhat
-
+```bash
+useradd -G admin user2
+useradd -G admin user3
+echo “redhat” | passwd --stdin user2
+echo “redhat” | passwd --stdin user3
+```
 
 
 Copy /etc/fstab to /var/tmp name admin, the user1 could read, write and modify it, while user2 without any permission.
-
+```bash
+useradd -M user1
+useradd -M user2
+cp /etc/fstab /vat/tmp/
+setfacl -m u:user1:rw- /var/tmp/fstab
+setfacl -m u:user2:--- /vat/tmp/fstab
+````
 
 
 Configure a task: plan to run echo "file" command at 14:23 every day.
-
+```bash
+cat <<EOF> /etc/cron.d/echo_file
+23 14 * * * /usr/bin/echo 'file'
+EOF
+```
 
 Configure a default software repository for your system. One YUM has already provided to configure your system on http://server.domain11.example.com/pub/ x86_64/Server, and can be used normally.
 
