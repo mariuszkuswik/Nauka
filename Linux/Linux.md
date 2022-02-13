@@ -3029,12 +3029,15 @@ TCP 21 - port do uwierzytelniania ftp
 TCP 20 - port na którym serwer przekazuje dane użytkownikowi 
 
 sprawdzić oba ^
+
 ---
+
 Po uwierzytelnieniu (port TCP 21) następuje nawiązanie drugiego połączenia między klientem
 i serwerem. FTP obsługuje typy połączeń aktywnych i pasywnych. W przypadku aktywnego
 połączenia FTP serwer przekazuje klientowi dane z portu TCP 20 do losowo wybranego portu
 o numerze większym niż 1023. Natomiast w przypadku pasywnego połączenia FTP klient żąda
 od serwera połączenia pasywnego i losowo wybranego numeru portu.
+
 ---
 
 
