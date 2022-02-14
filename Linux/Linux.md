@@ -3221,7 +3221,7 @@ chmod 775 /var/ftp/uploads
 
 
 ### Strona 468
-474
+475
 
 
 
