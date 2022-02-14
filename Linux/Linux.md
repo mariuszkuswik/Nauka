@@ -516,7 +516,7 @@ Potiwerdzenie zmiany nice procesu na 5 za pomocą polecenia **top**
 ##  Odczytanie danych podanych przez użytkownika
 
 ```read -s``` = secret, ukrywa znaki wpisywane przez użytkownika  
-```read -p``` <Tekst dla uzytkownika\> = prompt, tekst dla uzytkownika   
+```read -p "$Tekst_dla_uzytkownika"``` = prompt, tekst dla uzytkownika   
   
 ```read -p "Ile masz lat i wzrostu" wiek wzrost``` - Komenda wyświetla wiadomośc i zapisuje podane wartość do zmiennej **wiek** i **wzrost**     
    
