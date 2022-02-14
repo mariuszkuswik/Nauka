@@ -1,5 +1,13 @@
 
 
+
+[Oreilly Practice Exam A](#RHCSA-Practice-Exam-A)
+[Oreilly Practice Exam B](#RHCSA-Practice-Exam-B)
+[Oreilly Practice Exam C](#RHCSA-Practice-Exam-C)
+[Oreilly Practice Exam D](#RHCSA-Practice-Exam-D)
+[Examptopics](#Examptopics)
+
+
 # RHCSA Practice Exam A
 
 [Oreilly Practice Exam A](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780137341641/exama.xhtml#exama)
@@ -60,39 +68,77 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 [Oreilly Practice Exam B](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780137341641/examb.xhtml#examb)
 
 
-Create user student with password password, and user root with password password.
+1. Create user student with password password, and user root with password password.
 
-Configure your system to automatically loop-mount the ISO of the installation disk on the directory /repo. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
+2. Configure your system to automatically loop-mount the ISO of the installation disk on the directory /repo. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
-Create a 1-GB XFS partition on /dev/sdb. Mount it persistently on the directory /mydata, using the label mylabel.
+3. Create a 1-GB XFS partition on /dev/sdb. Mount it persistently on the directory /mydata, using the label mylabel.
 
-Set default values for new users. Ensure that an empty file with the name NEWFILE is copied to the home directory of each new user that is created.
+4. Set default values for new users. Ensure that an empty file with the name NEWFILE is copied to the home directory of each new user that is created.
 
-Create users laura and linda and make them members of the group livingopensource as a secondary group membership. Also, create users lisa and lori and make them members of the group operations as a secondary group.
+5. Create users laura and linda and make them members of the group livingopensource as a secondary group membership. Also, create users lisa and lori and make them members of the group operations as a secondary group.
 
-Create shared group directories /groups/livingopensource and /groups/operations and make sure these groups meet the following requirements:
+6. Create shared group directories /groups/livingopensource and /groups/operations and make sure these groups meet the following requirements:
+    - Members of the group livingopensource have full access to their directory.
+    - Members of the group operations have full access to their directory.
+    - Users should be allowed to delete only their own files.
+    - Others should have no access to any of the directories.
 
-Members of the group livingopensource have full access to their directory.
+7. Create a 2-GiB swap partition and mount it persistently.
 
-Members of the group operations have full access to their directory.
+8. Resize the LVM logical volume that contains the root file system and add 1 GiB.
 
-Users should be allowed to delete only their own files.
+9. Set your server to use the recommended tuned profile.
 
-Others should have no access to any of the directories.
+10. Create user vicky with the custom UID 2008.
 
-Create a 2-GiB swap partition and mount it persistently.
+11. Configure your server to synchronize time with myserver.example.com. (Note that this server does not have to exist.)
 
-Resize the LVM logical volume that contains the root file system and add 1 GiB.
-
-Set your server to use the recommended tuned profile.
-
-Create user vicky with the custom UID 2008.
-
-Configure your server to synchronize time with myserver.example.com. (Note that this server does not have to exist.)
-
-Install a web server and ensure that it is started automatically.
+12. Install a web server and ensure that it is started automatically.
 
 
+# RHCSA Practice Exam C
+
+[Oreilly Practice Exam C](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780137341641/examc.xhtml#examc)
+
+1. Create user student with password password, and user root with password password.
+
+2. Configure your system to automatically loop-mount the ISO of the installation disk on the directory /repo. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
+
+3. Reboot your server. Assume that you don’t know the root password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
+
+4. Set default values for new users. Make sure that any new user password has a length of at least six characters and must be used for at least three days before it can be reset.
+
+5. Create users edwin and santos and make them members of the group sales as a secondary group membership. Also, create users serene and alex and make them members of the group account as a secondary group.
+
+6. Create shared group directories /groups/sales and /groups/account, and make sure these groups meet the following requirements:
+    - Members of the group sales have full access to their directory.
+    - Members of the group account have full access to their directory.
+    - Users have permissions to delete only their own files, but alex is the general manager, so user alex has access to delete all users’ files.
+
+7. Create a 4-GiB volume group, using a physical extent size of 2 MiB. In this volume group, create a 1-GiB logical volume with the name myfiles and mount it persistently on /myfiles.
+
+8. Create a group sysadmins. Make users edwin and santos members of this group and ensure that all members of this group can run all administrative commands using sudo.
+
+9. Optimize your server with the appropriate profile that optimizes throughput.
+
+10. Add a new disk to your virtual machine with a size of 10 GiB. On this disk, create a VDO volume with a size of 50 GiB and mount it persistently.
+
+11. Configure your server to synchronize time with serverabc.example.com, where serverabc is an alias to myserver.example.com. Note that this server does not have to exist to accomplish this exercise.
+
+12. Configure a web server to use the nondefault document root /webfiles. In this directory, create a file index.html that has the contents hello world and then test that it works.
+
+13. Configure your system to automatically start a mariadb container. This container should expose its services at port 3306 and use the directory /var/mariadb-container on the host for persistent storage of files it writes to the /var directory.
+
+14. Configure your system such that the container created in step 14 is automatically started as a Systemd user container.
+
+
+
+
+
+# RHCSA Practice Exam D
+
+[# RHCSA Practice Exam D]()
 
 
 
