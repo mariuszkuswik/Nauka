@@ -65,41 +65,35 @@
 ### id
 
 
-id pokazuje id uzytkownika i gid ( id grupy uzytkownika)
+id pokazuje *id* uzytkownika i *gid* ( id grupy uzytkownika)
 
 ```bash
 id "$username"
 ```
+
 > uid=1000(chris) gid=1000(chris) groups=1005(sales), 7(lp)
 
-nazwa użytkownika to chris, (uid) 1000. Podstawową grupą użytkownika **chris**, podstawową grupą również jest **chris** (gid) 1000.   
-Użytkownik chris należy również do innych grup o nazwach **sales** (gid 1005) i **lp** (gid 7).  
+Nazwa użytkownika to chris, (uid) 1000, podstawową grupą użytkownika jest **chris** (gid) 1000, użytkownik chris należy również do innych grup o nazwach **sales** (gid 1005) i **lp** (gid 7).  
 
----
 
-W dystrybucjach systemu Linux, w których jest włączony mechanizm SELinux (Security Enhanced Linux), takich jak Fedora i Red Hat Enterprise Linux, na końcu danych wyjściowych polecenia id znajdują się jeszcze informacje dodatkowe. Te dane mogą mieć następującą postać:   
+Jeżeli jest włączony SELinux to na końcu danych wyjściowych polecenia id znajdują się jeszcze informacje dodatkowe. Te dane mogą mieć następującą postać:
 
 > context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023  
-
----
-
 
 
 
 ### type
 
-Określenie źródła poszczególnych poleceń powłoki jest możliwe po wydaniu polecenia type.
+Pokazuje gdzie znajduje się dane polecenie
 (Jeżeli używana powłoka jest inna niż bash, wtedy należy skorzystać z polecenia which).
-Na przykład określenie miejsca położenia polecenia bash jest możliwe po wpisaniu:
+Np. określenie położenia polecenia *bash*
 
 ```$ type bash```
 > bash is /bin/bash
 
-Jeżeli sprawdzane polecenie znajduje się
-w kilku miejscach, wówczas dodanie opcji -a spowoduje wyświetlenie wszystkich znanych
-lokalizacji danego polecenia. Na przykład polecenie type -a ls powinno wyświetlić położenie
-systemowego polecenia ls i polecenia zdefiniowanego za pomocą aliasu.
-
+```type -a "$command"``` wyświetla wszystkie znane położenia danego polecenia, 
+np. polecenie type -a ls wyświetla położenie systemowego polecenia ls i polecenia zdefiniowanego za pomocą aliasu.
+ 
 ```$ type -a ls```
 
 > ls is aliased to `ls --color -F'
