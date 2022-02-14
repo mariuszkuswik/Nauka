@@ -12,6 +12,12 @@
 
 1. [System](#system-linux)
 2. [Biblia](#Biblia)
+    - [Korzystanie z pomocy](#Korzystanie-z-pomocy)
+        - [man](#man)
+        - [info](#info)
+    - [Używanie Powłoki](#Używanie-Powłoki)
+        - [id](#id)
+        - 
     - [Uprawnienia](#Uprawnienia)
         - [Umask](#umask---definiowanie-uprawnień-domyślnych)
         - [Chown](#chown---Zmiana-właściciela-pliku)
@@ -38,43 +44,49 @@
 5. [Wirtualizacja](#wirtualizacja)
 
 
+# Korzystanie z pomocy
 
-# Używanie Powłoki 
-
-## man - manual 
+## man  
 
 ```man man``` - pomoc odnośnie mana   
 ```man -k``` - wyszukiwanie komend   
 ```man -f``` - wyświetlenie wszystkich możliwych sekcji pomocy dla danej komendy  
 
-## info - pomoc podobna do manula 
+## info
 
 ```info -a``` - wyświetla wszystkie manuale i pozwala wybrać 
 ### #TODO - dodać opis
 
 
+# Używanie Powłoki 
+
 # #TODO - Dodać zwijanie przy opisach poleceń i skrócić część notatek 
 
-### ```id```
+### id
 
 
 id pokazuje id uzytkownika i gid ( id grupy uzytkownika)
 
-Więcej informacji o tożsamości użytkownika dostarcza polecenie id:
-```$ id```
+```bash
+id "$username"
+```
 > uid=1000(chris) gid=1000(chris) groups=1005(sales), 7(lp)
 
-nazwa użytkownika to chris, (uid) 1000. Podstawową grupą użytkownika **chris**, podstawową grupą również jest **chris** (gid) 1000. 
-Użytkownik chris należy również do innych grup o nazwach **sales** (gid 1005) i **lp** (gid 7).
+nazwa użytkownika to chris, (uid) 1000. Podstawową grupą użytkownika **chris**, podstawową grupą również jest **chris** (gid) 1000.   
+Użytkownik chris należy również do innych grup o nazwach **sales** (gid 1005) i **lp** (gid 7).  
 
-**W dystrybucjach systemu Linux, w których jest włączony mechanizm SELinux (Security Enhanced Linux),
-takich jak Fedora i Red Hat Enterprise Linux, na końcu danych wyjściowych polecenia id znajdują się
-jeszcze informacje dodatkowe. Te dane mogą mieć następującą postać:** 
-    
-> context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+---
+
+W dystrybucjach systemu Linux, w których jest włączony mechanizm SELinux (Security Enhanced Linux), takich jak Fedora i Red Hat Enterprise Linux, na końcu danych wyjściowych polecenia id znajdują się jeszcze informacje dodatkowe. Te dane mogą mieć następującą postać:   
+
+> context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023  
+
+---
 
 
-### ```type```
+
+
+### type
 
 Określenie źródła poszczególnych poleceń powłoki jest możliwe po wydaniu polecenia type.
 (Jeżeli używana powłoka jest inna niż bash, wtedy należy skorzystać z polecenia which).
@@ -3288,6 +3300,12 @@ accept_timeout=60
 connect_timeout=60
 anon_max_rate=50000
 ```
+
+
+## Używanie klientów FTP
+
+
+
 
 ## Koniec Biblii
 
