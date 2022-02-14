@@ -212,13 +212,16 @@ Zmiana rekurencyjna właściciela i grupy dla katalogu
 
 # Praca z plikami tekstowymi 
 
-### Wpisywanie tekstu do pliku przy pomocy ```cat```
+## Wpisywanie tekstu do pliku przy pomocy ```cat```
+
+```bash
 cat << tekst > /tmp/yourfilehere
 These contents will be written to the file.
         This line is indented.
 tekst
+```
 
-### Vim 
+## Vim 
 
 ```ZZ``` - wyjście z zapisem 
 ```:qw``` - wyjście z zapisem
@@ -234,9 +237,9 @@ tekst
 ```:!bash``` - otwiera nowego shella, **exit** wychodzi z shella i wraca do terminala 
 
 
-## Wyszukiwanie plików 
+# Wyszukiwanie plików 
 
-### Locate 
+## Locate 
 
 Wyszukuje na podstawie nazw w swojej bazie danych, jest przez to wydajniejszy,
 znajduje wszystkie pliki które zawierają podaną nazwę w swojej ścieżce,
@@ -252,7 +255,7 @@ domyślnie **locate** nie przeszukuje
  
 - ```locate -i``` - wyszukuje pliki niezależnie od wielkości liter
 
-### Find 
+## Find 
 
 Przeprowadza wyszukiwanie w całym systemie plików, jest wolniejszy niż locate,
 Po znalezieniu plików można na nich przeprowadzać pewne
@@ -352,7 +355,7 @@ Każde polecenie musi zostać zakończone backslashem i średnikiem (\;)
     > < mv ... /var/allusers/dict.dat > ? y
     > < mv ... /var/allusers/five > ? y
 
-### Grep 
+## Grep 
 
 ```grep [opcja] [pattern] [plik]``` - wyszukuje patternu w podanych plikach  
 
@@ -362,9 +365,9 @@ Każde polecenie musi zostać zakończone backslashem i średnikiem (\;)
 ```-l``` - wyśiwetla **nazwy plików** zawierających podaną frazę, bez wyświetlania zawartości   
 
 
-## Zarządzanie uruchomionymi procesami
+# Zarządzanie uruchomionymi procesami
 
-### ps
+## ps
 
 ```ps aux``` - wyświetla wszystkie uruchomione procesy dla wszystkich użytkowników w systemie 
 ```-e``` - wyświetla wsyzystkie działające procesy 
@@ -379,7 +382,7 @@ pamięć operacyjna),comm (pełne polecenie, które zostało wydane)
 ```sort=-[nazwa_kolumny]``` - sortowanie odwrotne po nazwie kolumny 
 
 
-### top 
+## top 
 
 ```h``` - w oknie top w każdym momencie można użyć ```h``` - wyświetla to pomoc   
   
@@ -415,7 +418,7 @@ pamięć operacyjna),comm (pełne polecenie, które zostało wydane)
 
 ## Zamykanie procesu i zmiana jego priorytetu
 
-### Kończenie działania procesów 
+## Kończenie działania procesów 
 
 Do najczęściej używanych
 sygnałów z poziomu powłoki zaliczamy 
@@ -453,7 +456,7 @@ Na przykład architektury x86 i Power w większości przypadków wykorzystują w
 gdy ostatnia — w architekturze MIPS.
 
 
-### Definiowanie priorytetu procesu za pomocą poleceń nice i renice
+## nice i renice - definiowanie priorytetu procesu
 
 - Procesy mają wartości **-20 do 19, im niższa wartość tym proces ma wyższy priorytet**, domyślnie jest 0,
 - Zwykły użytkownik może przypisać większą wartość priorytetu, ale nie niższą. Dlatego jeśli użytkownik przypisze procesowi wartość 10 dla priorytetu, a później będzie
@@ -479,10 +482,11 @@ Potiwerdzenie zmiany nice procesu na 5 za pomocą polecenia **top**
 ### #TODO - szrobić ćwiczenia od nowa
 
 
-## Skrypty powłoki 
+# Skrypty powłoki 
 
-### Debugowanie
-Na początku skryptu można umieścić polecenie set -x w celu wyświetlenia każdego polecenia wykonywanego przez skrypt.
+## Debugowanie
+
+**Przydatne !** - Na początku skryptu można umieścić polecenie set -x w celu wyświetlenia każdego polecenia wykonywanego przez skrypt.
 
 ```$ set -x mojskrypt``` lub ```$ bash -x mojskrypt``` - wyświetla każdą wykonywana komendę ( **równwnież to co jest przypisane pod alias **)
 
@@ -494,20 +498,22 @@ Na początku skryptu można umieścić polecenie set -x w celu wyświetlenia ka�
 
 ## Zmienne specjalne
 
-- **$?** - wynik ostatniej komendy 
-_( najczesciej  0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )_
-- **$$** - numer procesu używanego przez komende
-- **!$** - ostatni użyty argument 
-- **$0** - nazwa programu 
-- **$1** - argumenty, zaczynaja sie od jednego, nie musi byc to jeden 
-- **$#** - Liczba podanych parametrów 
-- **$*** - Wszystkie parametry jako string 
-- **$@** - Podane parametry w postaci tablicy 
-
 ```man bash``` - Pełna lista zmiennych specjalnych
 
+| Zmienna |Opis  |
+|--|--|
+| $? | wynik ostatniej komendy _( najczesciej 0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )_   |
+| $$ | numer procesu używanego przez komende   |
+| !$ | ostatni użyty argument   |
+| $0 | nazwa programu   |
+| $1 | argumenty, zaczynaja sie od jednego, nie musi byc to jeden  |
+| $# | Liczba podanych parametrów |
+| $* | Wszystkie parametry jako string |
+| $@ | Podane parametry w postaci tablicy |
 
-###  Odczytanie danych podanych przez użytkownika
+
+
+##  Odczytanie danych podanych przez użytkownika
 
 ```read -s``` = secret, ukrywa znaki wpisywane przez użytkownika 
 ```read -p``` <Tekst dla uzytkownika\> = prompt, tekst dla uzytkownika 
