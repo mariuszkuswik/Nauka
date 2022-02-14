@@ -3101,6 +3101,19 @@ Aby zezwolić na dostęp do serwera FTP bez otwierania w systemie dostępu do in
 ## Konfigurowanie SELinux dla serwera FTP
 
 
+```getenforce``` - sprawdzenie czy SELinux jest włączony   
+    - ```enforcing or 1``` - włączony   
+    - ```permisive or 0``` - zdarzenia są raportowane ale nic nie jest blokowane    
+    - ```disabled``` - wyłączonu    
+
+```/etc/sysconfig/selinux``` **zmiennna SELINUX=** - ustawienie stanu SELinux  
+
+```man ftpd_selinux``` - pomoc dla ftpd odnośnie SELinux  
+
+```dnf install selinux-policy-doc``` - instalacja instrukcji dla usług odnośnie SELinux   
+
+
+
 
 
 
