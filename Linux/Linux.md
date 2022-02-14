@@ -3085,6 +3085,20 @@ vsftpd włącza się jak każdą usługę systemd
 
 ## Zabezpieczanie serwera FTP
 
+## Otwieranie zapory sieciowej dla FTP
+
+```firewalld``` - służy do zarządzania zaporą sieciową 
+
+```/etc/firewalld/zones``` - folder zawierający reguł zapory 
+
+W Rhel7 jest opcja konfiguracja zapory z GUI 
+
+Aby zezwolić na dostęp do serwera FTP bez otwierania w systemie dostępu do innych usług, w zaporze sieciowej trzeba będzie dodać pewne reguły. Przede wszystkim konieczne jest zezwolenie systemowi na akceptowanie żądań TCP na porcie 21. Następnie trzeba wczytać moduł zapewniający śledzenie połączenia.  
+  
+
+
+
+## Konfigurowanie SELinux dla serwera FTP
 
 
 
@@ -3096,8 +3110,8 @@ vsftpd włącza się jak każdą usługę systemd
 
 
 
-### Strona 441
-468
+### Strona 468
+470
 
 
 
