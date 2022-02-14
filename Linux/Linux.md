@@ -3230,9 +3230,9 @@ uprawnienia do pliku będzie miał tylko *janek* (rw-------)
 
 ```/usr/share/doc/vsftpd/EXAMPLE/INTERNET_SITE/vsftpd.conf``` - przykładowy config dla ftp udostępnianego w interneci 
 
-Zawartość przykładowego configu
+#### Zawartość przykładowego configu, pogrupowane w sekcjach 
 
-Uprawnienia dostępu  
+1. Uprawnienia dostępu  
 ```bash
 # Access rights
 
@@ -3251,7 +3251,7 @@ anon_other_write_enable=NO
 ```
   
 
-Bezpieczeństwo  
+2. Bezpieczeństwo  
 ```bash
 # Security
 
@@ -3264,7 +3264,7 @@ pasv_min_port=50000
 pasv_max_port=60000
 ```
 
-Funkcjonalnośc serwera
+3. Funkcjonalność serwera
 ```bash
 # Features
 
@@ -3276,7 +3276,7 @@ ascii_download_enable=NO
 async_abor_enable=YES
 ```
 
-Wydajnośc 
+4. Wydajność 
 
 ```bash
 # Performance
