@@ -1243,17 +1243,17 @@ Podczas tworzenia konta dla Marii polecenie useradd wykonuje następujące zadan
 | -c *"komentarz"* | Komenatrz do opisu konta, najczęściej pełne imię i nazwisko |
 | -d *katalog_domowy* | Wartością domyślną jest */home/username* ale możemy to zmienić |
 | -D | **Podane informacje zostaną zapisane jako ustawienia domyślne** dla wszystkich nowo tworzonych kont. Nowe konto użytkownika nie zostanie utworzone. |
-| -e data_upływu_ważności_konta | |
-| -g nazwa_grupy | Ustawienie grupy podstawowej |
-|  -G lista_grup |  **Dodanie nowego użytkownika do rozdzielonej przecinkami listy grup** (na przykład -G wheel,sales,tech,lunch). W poleceniu usermod, musi zostać podane -aG samo -G usuwa dotychczasowe grupy i nadpisuje je podanymi w poleceniu  |
-| -k katalog_wzorcowy |  |
+| -e *data_upływu_ważności_konta* | |
+| -g *nazwa_grupy* | Ustawienie grupy podstawowej |
+|  -G *lista_grup* |  **Dodanie nowego użytkownika do rozdzielonej przecinkami listy grup** (na przykład -G wheel,sales,tech,lunch). W poleceniu usermod, musi zostać podane -aG samo -G usuwa dotychczasowe grupy i nadpisuje je podanymi w poleceniu  |
+| -k *katalog_wzorcowy* |  |
 | -m |  |
-| -M |  |
+| -M | Katalog domowy nowego użytkownika nie zostanie utworzony, nawet jeśli domyślnie ustawione zachowanie nakazuje jego utworzenie |
 | -n |  |
 | -o |  |
 | -p *hasło* |  |
-| -s *shell* |  |
-| -u  |  |
+| -s *shell* | Wskazanie powłoki używanej w tworzonym koncie (na przykład *-s /bin/csh*). |
+| -u *id_użytkownika* |  |
 
 
 
