@@ -3082,23 +3082,18 @@ vsftpd włącza się jak każdą usługę systemd
 ```ftp 127.0.0.1``` - logowanie do lokalnego serwera *FTP* 
 
 
-
 ## Zabezpieczanie serwera FTP
 
-## Otwieranie zapory sieciowej dla FTP
+### Otwieranie zapory sieciowej dla FTP
 
 ```firewalld``` - służy do zarządzania zaporą sieciową 
-
 ```/etc/firewalld/zones``` - folder zawierający reguł zapory 
 
-W Rhel7 jest opcja konfiguracja zapory z GUI 
-
-Aby zezwolić na dostęp do serwera FTP bez otwierania w systemie dostępu do innych usług, w zaporze sieciowej trzeba będzie dodać pewne reguły. Przede wszystkim konieczne jest zezwolenie systemowi na akceptowanie żądań TCP na porcie 21. Następnie trzeba wczytać moduł zapewniający śledzenie połączenia.  
+- W Rhel7 jest opcja konfiguracja zapory z GUI 
+- Aby zezwolić na dostęp do serwera FTP **należy otworzyć port 21** a następnie trzeba wczytać moduł zapewniający śledzenie połączenia.   
   
 
-
-
-## Konfigurowanie SELinux dla serwera FTP
+### Konfigurowanie SELinux dla serwera FTP
 
 ```dnf install selinux-policy-doc``` - instalacja instrukcji dla usług odnośnie SELinux  
 ```man ftpd_selinux``` - pomoc dla ftpd odnośnie SELinux   
@@ -3163,11 +3158,11 @@ Konta nie mające uprawnień do shella (/sbin/nologin) mogą mieć dostęp do FT
 Jednym ze sposobów ograniczenia dostępu do użytkowników posiadających zwykłe konta użytkowników w systemie jest użycie ustawień chroot.  
 Oto kilka przykładów takich ustawień:  
 
-```bash
-chroot_local_user=YES
-chroot_list_enable=YES
-chroot_list_file=/etc/vsftpd/chroot_list
-```
+    ```bash
+    chroot_local_user=YES
+    chroot_list_enable=YES
+    chroot_list_file=/etc/vsftpd/chroot_list
+    ```
 
 Po zastosowaniu tych ustawień można utworzyć listę użytkowników lokalnych, a następnie
 dodać ich do pliku /etc/vsftpd/chroot_list. Gdy któryś z użytkowników wymienionych w tym
@@ -3201,17 +3196,52 @@ Jest to jedna z funkcjonalności omówionych w następnej sekcji
     anon_mkdir_write_enable=YES
     ```
 
-Po włączeniu opcji zapisu dla użytkownika anonimowego bedzie mógł zapisywać pliki podkatalog w katalogu /var/ftp posiadający uprawnienia zapisu dla użytkownika ftp, grupy ftp lub pozostałych użytkowników.  
-Powszechnie stosowanym rozwiązaniem jest tworzenie przeznaczonego na przekazywane pliki katalogu z uprawnieniem zapisu.  
+Po włączeniu opcji zapisu dla użytkownika anonimowego bedzie on mógł zapisywać pliki podkatalog w katalogu ```/var/ftp```   
+do folderu uprawnienia musi mieć użytkownik ftp, grupa ftp lub others.   
+Powszechnie stosowanym rozwiązaniem jest tworzenie przeznaczonego na przekazywane pliki katalogu z uprawnieniem zapisu.   
 
 
-Utworzenie folderu uploads dla **użytkownika anonimowego** 
+Utworzenie folderu uploads dla **użytkownika anonimowego**  
+
+    ```bash
+    mkdir /var/ftp/uploads
+    chown ftp:ftp /var/ftp/uploads
+    chmod 775 /var/ftp/uploads
+    ```
+
+Określone dla tego katalogu uprawnienia 775, pozwalają zobaczyć istniejące w nim pliki użytkownikowi anonimowemu ale bez prawa do ich zmiany bądź nadpisania.   
+
+Jeżeli chcemy zablokować możliwość usuwania plików dodanych przez użytkowników anonimowych to możemy zastosować opcję chown, którą można umieszczamy w pliku ```vsftpd.conf```  
+Po uploadowaniu pliku właścicielem stanie sie wskazany użytkownik,  
 
 ```bash
-mkdir /var/ftp/uploads
-chown ftp:ftp /var/ftp/uploads
-chmod 775 /var/ftp/uploads
+chown_uploads=YES
+chown_username=janek
 ```
+
+Po zastosowaniu powyższej zmiany pliki uploadowane przez użytkownika anonimowego będą należały do uzytkownika *janek* i grupy *ftp*,  
+uprawnienia do pliku będzie miał tylko *janek* (rw-------)
+
+
+### Konfigurowanie vsftpd do udostępnienia serwera w internecie
+
+
+```rpm -qpd``` - wyświetlenie plików z dokumentacją (razem z przykładowymi plikami konfiguracyjnymi dla vsftpd) 
+
+```/usr/share/doc/vsftpd/EXAMPLE/INTERNET_SITE/vsftpd.conf``` - przykładowy config dla ftp udostępnianego w interneci 
+
+```bash
+# Zawartość przykładowego configu
+# Access rights
+anonymous_enable=YES
+local_enable=NO
+c528defda93e9420916cfa7705790125476 C Z Ę Ś Ć I V . Administracja serwerem
+write_enable=NO
+anon_upload_enable=NO
+anon_mkdir_write_enable=NO
+anon_other_write_enable=NO
+```
+
 
 
 
