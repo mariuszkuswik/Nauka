@@ -3103,7 +3103,7 @@ Aby zezwolić na dostęp do serwera FTP bez otwierania w systemie dostępu do in
 
 ```getenforce``` - sprawdzenie czy SELinux jest włączony   
     - ```enforcing or 1``` - włączony   
-    - ```permisive or 0``` - zdarzenia są raportowane ale nic nie jest blokowane    
+    - ```permissive or 0``` - zdarzenia są raportowane ale nic nie jest blokowane    
     - ```disabled``` - wyłączonu    
 
 ```/etc/sysconfig/selinux``` **zmiennna SELINUX=** - ustawienie stanu SELinux  
@@ -3111,6 +3111,19 @@ Aby zezwolić na dostęp do serwera FTP bez otwierania w systemie dostępu do in
 ```man ftpd_selinux``` - pomoc dla ftpd odnośnie SELinux  
 
 ```dnf install selinux-policy-doc``` - instalacja instrukcji dla usług odnośnie SELinux   
+
+Jeżeli ftp nie działa to można przełączyć tymczasowo SELinux w tryb **permissive**, sprawdzić czy coś się zmieni a następnie wrócić do **enforcing**  
+
+
+## Powiązywanie uprawnień Linuksa z vsftpd
+
+Serwer vsftpd używa standardowych uprawnień Linuksa,  
+
+Dla użytkownika **anonymous** działają uprawnienia przypisane standardowo dla **others**,  
+aby uzytkownik anonimowy mógł wyświetlić lub pobrać plik, others musi miec przynajmniej uprawnienia do odczytu (------r--)  
+żeby **anonymous** miał dostęp do folderu others musi mieć przynajmniej uprawnienia execute (--------x)  
+
+W przypadku **zwykłych użytkowników**, jeżeli użytkownik ma dostęp do pliku w systemie to będzie miał też dostęp na serwerze FTP,   
 
 
 
@@ -3124,7 +3137,7 @@ Aby zezwolić na dostęp do serwera FTP bez otwierania w systemie dostępu do in
 
 
 ### Strona 468
-470
+473
 
 
 
