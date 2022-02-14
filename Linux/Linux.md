@@ -3100,17 +3100,18 @@ Aby zezwolić na dostęp do serwera FTP bez otwierania w systemie dostępu do in
 
 ## Konfigurowanie SELinux dla serwera FTP
 
+```dnf install selinux-policy-doc``` - instalacja instrukcji dla usług odnośnie SELinux
+```man ftpd_selinux``` - pomoc dla ftpd odnośnie SELinux 
+
 
 ```getenforce``` - sprawdzenie czy SELinux jest włączony   
-    - ```enforcing or 1``` - włączony   
-    - ```permissive or 0``` - zdarzenia są raportowane ale nic nie jest blokowane    
-    - ```disabled``` - wyłączonu    
+- ```enforcing or 1``` - włączony   
+- ```permissive or 0``` - zdarzenia są raportowane ale nic nie jest blokowane    
+- ```disabled``` - wyłączonu    
+
 
 ```/etc/sysconfig/selinux``` **zmiennna SELINUX=** - ustawienie stanu SELinux  
-
-```man ftpd_selinux``` - pomoc dla ftpd odnośnie SELinux  
-
-```dnf install selinux-policy-doc``` - instalacja instrukcji dla usług odnośnie SELinux   
+   
 
 Jeżeli ftp nie działa to można przełączyć tymczasowo SELinux w tryb **permissive**, sprawdzić czy coś się zmieni a następnie wrócić do **enforcing**  
 
@@ -3146,9 +3147,12 @@ local_enable=YES
 
 Konta nie mające uprawnień do shella (/sbin/nologin) mogą mieć dostęp do FTP  
 
-vsftpd.conf  
-- ```userlist_enable=YES``` - ustawienie pliku user_list jako **blacklista**  
-- ```userlist_enable=NO``` - ustawienie pliku user_list jako **whitelista**  
+```bash
+# ustawienie pliku user_list jako **blacklista**  
+```userlist_enable=YES```
+# ustawienie pliku user_list jako **whitelista**   
+```userlist_enable=NO```  
+```
 
 ```/etc/vsftpd/user_list``` - lista użytkowników którzy w zależności od ustawienia jako jedyni *mają lub nie mają* dostępu do FTP 
 ```/etc/vsftpd/ftpusers``` - plik  zawsze zawiera nazwy użytkowników, którzy **nie mają** dostępu do serwera, niezależnie od wartości opcji ```userlist_enable```
@@ -3179,7 +3183,10 @@ Jest to jedna z funkcjonalności omówionych w następnej sekcji
 
 ## Przekazywanie plików do serwera FTP
 
-w pliku vsftpd.conf ```write_enable=YES``` - umożliwienie użytkownikom wrzucania plików na serwer 
+```bash
+# Umożliwienie użytkownikom wrzucania plików na serwer
+write_enable=YES
+```   
 
 
 
