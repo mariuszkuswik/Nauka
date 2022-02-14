@@ -778,8 +778,8 @@ RHCSA Practice Exam 1
 
 Welcome to the first practice exam for the Red Hat Certified System Administrator (RHCSA) Complete Video Course, Third Edition. This exam should take you one hour.
 This test exam requires the following setup:
-	- A cleanly installed RHEL 8 virtual machine with the name server3.
-	- Unless specifically mentioned, all tasks described next should be performed on the virtual machine.
+- A cleanly installed RHEL 8 virtual machine with the name server3.
+- Unless specifically mentioned, all tasks described next should be performed on the virtual machine.
 
 	- Bring down the virtual machine you have pre-installed and, in the KVM software, add an additional 5GiB hard disk to the virtual machine.
 	
@@ -830,13 +830,13 @@ This test exam requires the following setup:
 Welcome to the second practice exam for the Red Hat Certified System Administrator (RHCSA) Complete Video Course, Third Edition. This exam should take you two hours.  
 Create a virtual machine with the name server4. Make sure it meets the following requirements:  
 
-		- A 20GiB hard disk is available.
-		
-		- The root password is set to "password".
-		
-		- The user "student" is created, with the password "password".
-		
-		- Use custom partitioning to create a 1GiB /boot partition and a 12GiB / partition.
+	- A 20GiB hard disk is available.
+	
+	- The root password is set to "password".
+	
+	- The user "student" is created, with the password "password".
+	
+	- Use custom partitioning to create a 1GiB /boot partition and a 12GiB / partition.
 	
 	- Configure your installation disk as the default repository. Make sure to disable all other repositories.
 	
