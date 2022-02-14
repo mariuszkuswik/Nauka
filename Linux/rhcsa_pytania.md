@@ -829,14 +829,13 @@ This test exam requires the following setup:
 
 Welcome to the second practice exam for the Red Hat Certified System Administrator (RHCSA) Complete Video Course, Third Edition. This exam should take you two hours.  
 Create a virtual machine with the name server4. Make sure it meets the following requirements:  
+- A 20GiB hard disk is available.
 
-	- A 20GiB hard disk is available.
-	
-	- The root password is set to "password".
-	
-	- The user "student" is created, with the password "password".
-	
-	- Use custom partitioning to create a 1GiB /boot partition and a 12GiB / partition.
+- The root password is set to "password".
+
+- The user "student" is created, with the password "password".
+
+- Use custom partitioning to create a 1GiB /boot partition and a 12GiB / partition.
 	
 	- Configure your installation disk as the default repository. Make sure to disable all other repositories.
 	
