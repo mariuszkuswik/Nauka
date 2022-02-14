@@ -1251,11 +1251,11 @@ Podczas tworzenia konta dla Marii polecenie useradd wykonuje następujące zadan
 | -k *katalog_wzorcowy* |  |
 | -m | Ustawienie katalogu wzorcowego zawierającego pliki konfiguracyjne oraz skrypty logowania, które  powinny zostać skopiowane do katalogu domowego tworzonego użytkownika. **Ten parametr może być użyty tylko w połączeniu z opcją -m.** *(Jeżeli opcja ta nie zostanie użyta, zastosowany będzie katalog /etc/skel)* |
 | -M | Katalog domowy nowego użytkownika nie zostanie utworzony, nawet jeśli domyślnie ustawione zachowanie nakazuje jego utworzenie |
-| -n |  |
-| -o |  |
-| -p *hasło* |  |
+| -n | Wyłączenie domyślnego zachowania polegającego na utworzeniu nowej grupy, która odpowiada nazwie i identyfikatorowi nowego użytkownika. |
+| -o | Opcja używana wraz z *-u uid* do utworzenia konta użytkownika, który będzie miał taki sam identyfikator jak inny użytkownik. (W ten sposób można posiadać dwie różne nazwy użytkownika z prawem dostępu do takiego samego zestawu plików i katalogów). |
+| -p *hasło* | Ustalenie hasła dla tworzonego konta. Hasło powinno być zaszyfrowane. Zamiast podawania w tym miejscu zaszyfrowanego hasła można po prostu później użyć polecenia passwd użytkownik i dodać hasło dla danego użytkownika. |
 | -s *shell* | Wskazanie powłoki używanej w tworzonym koncie (na przykład *-s /bin/csh*). |
-| -u *id_użytkownika* |  |
+| -u *id_użytkownika* | Ustawienie numeru identyfikacyjnego dla konta użytkownika (na przykład -u 1793). Bez użycia opcji -u zachowanie domyślne polega na automatycznym przypisaniu pierwszego wolnego numeru. W poleceniu zapis *id_użytkownika* trzeba zastąpić wybranym numerem identyfikacyjnym. Te numery automatycznie przypisywane zwykłym użytkownikom rozpoczynają się od wartości 1000. Dlatego identyfikatory dla zwykłych użytkowników należy wybierać w sposób, który nie będzie kolidował z automatycznie przypisywanymi identyfikatorami. |
 
 
 
