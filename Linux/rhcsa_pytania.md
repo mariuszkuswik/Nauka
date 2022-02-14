@@ -1,13 +1,14 @@
 
 
 
-[Oreilly Practice Exam A](#RHCSA-Practice-Exam-A)  
-[Oreilly Practice Exam B](#RHCSA-Practice-Exam-B)  
-[Oreilly Practice Exam C](#RHCSA-Practice-Exam-C)  
-[Oreilly Practice Exam D](#RHCSA-Practice-Exam-D)  
-[Examptopics](#Examptopics)   
+1. [Oreilly](#Oreilly)
+    - [Oreilly Practice Exam A](#RHCSA-Practice-Exam-A)  
+    - [Oreilly Practice Exam B](#RHCSA-Practice-Exam-B)  
+    - [Oreilly Practice Exam C](#RHCSA-Practice-Exam-C)  
+    - [Oreilly Practice Exam D](#RHCSA-Practice-Exam-D)  
+2. [Examptopics](#Examptopics)   
 
-# Oreilly egzaminy, informacje wstępne 
+# Oreilly
 
 Here are some tips to ensure your exam starts with a clean environment:
     - You do not need any external servers or resources.
@@ -16,7 +17,7 @@ Here are some tips to ensure your exam starts with a clean environment:
     - No sample solutions are provided for these practice exams. On the real exam, you need to be able to verify the solutions for yourself as well.
     - You should be able to complete each exam within two hours.
 
-# RHCSA Practice Exam A
+## RHCSA Practice Exam A
 
 [Oreilly Practice Exam A](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780137341641/exama.xhtml#exama)
 
@@ -64,7 +65,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 
 
-# RHCSA Practice Exam B
+## RHCSA Practice Exam B
 
 [Oreilly Practice Exam B](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780137341641/examb.xhtml#examb)
 
@@ -104,7 +105,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 12. Install a web server and ensure that it is started automatically.
 
 
-# RHCSA Practice Exam C
+## RHCSA Practice Exam C
 
 [Oreilly Practice Exam C](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780137341641/examc.xhtml#examc)
 
@@ -151,7 +152,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 
 
-# RHCSA Practice Exam D
+## RHCSA Practice Exam D
 
 [# RHCSA Practice Exam D](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780137341641/examd.xhtml#examd)
 
