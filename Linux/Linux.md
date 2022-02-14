@@ -3258,7 +3258,8 @@ anon_other_write_enable=NO
 # anon będzie miał uprawnienia tylko do plików do ktorych upranienia ma others (------r--)
 anon_world_readable_only=YES
 connect_from_port_20=YES
-# Opcja ukrywa faktyczne uprawnienia przypisane plikowi, użytkownik podłączony do ftp będzie widział że właścicielem wszystkich jest ftp
+# Opcja ukrywa faktyczne uprawnienia przypisane plikowi, 
+# użytkownik podłączony do ftp będzie widział że właścicielem wszystkich jest ftp
 hide_ids=YES
 pasv_min_port=50000
 pasv_max_port=60000
