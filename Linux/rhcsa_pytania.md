@@ -776,6 +776,8 @@ https://learning.oreilly.com/learning-paths/red-hat-certified/820409150000000000
 
 # RHCSA Practice Exam 1
 
+[Oreily Vander 1](https://learning.oreilly.com/learning-paths/red-hat-certified/8204091500000000003/9780136552512-/ch01.xhtml)
+
 RHCSA Practice Exam 1
 
 Welcome to the first practice exam for the Red Hat Certified System Administrator (RHCSA) Complete Video Course, Third Edition. This exam should take you one hour.
@@ -828,6 +830,7 @@ This test exam requires the following setup:
 
 # RHCSA Practice Exam 2
 
+[Oreily Vander 2](https://learning.oreilly.com/learning-paths/red-hat-certified/8204091500000000003/9780136552512-/ch02.xhtml)
 
 Welcome to the second practice exam for the Red Hat Certified System Administrator (RHCSA) Complete Video Course, Third Edition. This exam should take you two hours.  
 Create a virtual machine with the name server4. Make sure it meets the following requirements:  
