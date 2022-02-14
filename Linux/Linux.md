@@ -1275,7 +1275,7 @@ znaczenie pola jest określane na podstawie położenia w wierszu,
 - ```/etc/skel``` - folder zawiera pliki domyślne, które będą kopiowane do katalogu domowego użytkownika
   
 
-### useradd - Ustalanie ustawień domyślnych użytkownika
+## useradd - Ustalanie ustawień domyślnych użytkownika
 
 Polecenie useradd stosuje wartości domyślne podczas tworzenia nowych kont, które odczytuje z plików */etc/login.defs* oraz */etc/default/useradd*  
   
@@ -1288,7 +1288,7 @@ Zmiana wartości domyślnych dla **useradd** :
         np. ```useradd -D -b /home/everyone -s /bin/tcsh``` - zmienia domyślny home-folder na */garage* i shell na *tcsh*  
 
 
-### usermod - Modyfikowanie ustawień użytkownika
+## usermod - Modyfikowanie ustawień użytkownika
 
 **usermod** - służy do modyfikowania ustawień użytkownika, wiele parametrów pokrywa się z **useradd**
 
@@ -1298,7 +1298,7 @@ Zmiana wartości domyślnych dla **useradd** :
 - ```man 8 usermod``` - pełna lista parametrów możliwych do zmiany 
 
 
-### userdel - Usuwanie użytkownika
+## userdel - Usuwanie użytkownika
 
 - ```userdel chris``` - usunięcie użytkownika *chris*, domyślnie usuwany **jest sam użytkownik** 
 
@@ -1313,7 +1313,7 @@ samo usunięcie użytkownika nie zmienia właściciela pliku
 ```find / -nouser -ls``` - odnalezienie plików *nienależących do nikogo*
 
 
-### Grupy kont użytkowników
+## Grupy kont użytkowników
 
 ### #TODO - strona 279, ogarnąć jak działa polecenie newgrp i gpasswd
 
@@ -1341,7 +1341,7 @@ powłoki polecenie newgrp sales, będzie mógł tymczasowo użyć sales jako swo
 podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
 
 
-### Tworzenie grup kont
+## Tworzenie grup kont
 
 - **groupadd** - tworzenie grup 
     - ```groupadd kings``` - utworzenie grupy kings z pierwszym wolnym GID (group ID)    
@@ -1352,13 +1352,13 @@ podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
     - ```groupmod -n jacks jokers``` - zmiana nazwy grupy jokers 
 
 
-## Definiowanie uprawnień za pomocą listy ACL
+# Definiowanie uprawnień za pomocą listy ACL
 
 
 ### #TODO - Strona 281 - do skrócenia  
 
 
-### Definiowanie ACL za pomocą setfacl
+## Definiowanie ACL za pomocą setfacl
 
 - ```setfacl``` - modyfikuje uprawnienia (-m) lub usuwa uprawnienia ACL (-x) 
 
@@ -1456,7 +1456,7 @@ Jak włączyć ACL :
     > Default mount options: user_xattr acl  
   
 
-### Sposoby na zamontowanie opcji acl  
+## Sposoby na zamontowanie opcji acl  
 
 1. Dodanie opcji montowania **acl** za pomocą polecenia **tune2fs -o**  
    
@@ -1546,7 +1546,7 @@ MBR - stara wersja, ograniczenie do 4 partycji podstawowych + parycje logiczne n
 GUID - nowa wersja, ograniczenie do 128 partycji podstawowych ( chyba tyle partycji), maksymalny rozmar 9,4ZB (zetabajty)
 
 
-### parted - wyświetlanie i edycja partycji 
+## parted - wyświetlanie i edycja partycji 
 
 **cfdisk** - łatwiejsza wersja fdisku 
 
@@ -1793,12 +1793,11 @@ free -m
 ### #TODO - Ćwiczenia do zrobienia - strona 319
 
 
-# 13. Wprowadzenie do administracji serwerem
+# Wprowadzenie do administracji serwerem
 
+## Monitorowanie serwera
 
-Monitorowanie serwera
-
-man rsyslogd 
+```man rsyslogd``` 
 
 Dzięki usłudze rsyslog (demon rsyslogd) można zebrać pochodzące z wielu różnych usług
 informacje o znaczeniu krytycznym i o błędach, a następnie umieścić je w plikach dzienników
@@ -1847,9 +1846,9 @@ openssh-server.x86_64 7.9p1-5.fc30 @anaconda
 Minimum bezpieczeństwa to ustawienie *no* dla opcji *PermitRootLogin*  
 
 
-### Używanie narzędzi klienta SSH
+## Używanie narzędzi klienta SSH
 
-### Używanie ssh do zdalnego logowania
+## Używanie ssh do zdalnego logowania
 
 ```~/.ssh/known_hosts``` - plik z kluczami publicznymi zaufanych hostów i ich adresami IP - chcąc zalogować się na któryś musi On zostać dodany   
 
@@ -1906,12 +1905,11 @@ memo 100%|****************| 153 0:00
 
 
 Cechy *scp* :
+- Utrata atrybutów - uprawnienia oraz znaczniki daty i godziny nie są kopiowane  
+- Utrata dowiązań symbolicznych - scp zastępuje linki symboliczne plikami do których prowadzą   
+- Niepotrzebnie powtarzane kopiowanie - Pliki są ponownie kopiowane, nawet jeżeli już istnieją w miejscu docelowym  
 
-- Utrata atrybutów - uprawnienia oraz znaczniki daty i godziny nie są kopiowane
-- Utrata dowiązań symbolicznych - scp zastępuje linki symboliczne plikami do których prowadzą 
-- Niepotrzebnie powtarzane kopiowanie - Pliki są ponownie kopiowane, nawet jeżeli już istnieją w miejscu docelowym
-
-### rsync 
+## rsync 
 
 Rsync nie kopiuje plików jeżeli w miejscu docelowym już się znajdują, oszczędza to czas,   
 **atrybuty plików ( data utworzenia itd ) zostają zachowane** 
