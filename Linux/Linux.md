@@ -524,11 +524,7 @@ read -p "$Tekst_dla_uzytkownika"
 
 # Komenda wyświetla wiadomośc i zapisuje podane wartość do zmiennej **wiek** i **wzrost**
 read -p "Ile masz lat i wzrostu" wiek wzrost
-```    
-  
-   
-   
-```bash
+
 read -s -p "Enter a password for the new user "$1": " USER_PASSWORD  
 ```
 
