@@ -145,7 +145,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 # RHCSA Practice Exam D
 
-[# RHCSA Practice Exam D]()
+[# RHCSA Practice Exam D](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780137341641/examd.xhtml#examd)
 
 
 Install a RHEL 8 or CentOS 8 virtual machine that meets the following requirements:
