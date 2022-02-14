@@ -1236,18 +1236,20 @@ Podczas tworzenia konta dla Marii polecenie useradd wykonuje następujące zadan
 - Utworzenie w katalogu ```/home``` katalogu domowego na podstawie nazwy użytkownika.
 - Skopiowanie wszystkich plików z katalogu ```/etc/skel``` do katalogu domowego nowego użytkownika. Katalog wzorcowy zawiera zwykle skrypty startowe logowania i aplikacji.
 
+
 ### Strona 273 do tabeli 
+
 
 | Opcja | Opis |
 |--|--|
 | -c *"komentarz"* | Komenatrz do opisu konta, najczęściej pełne imię i nazwisko |
 | -d *katalog_domowy* | Wartością domyślną jest */home/username* ale możemy to zmienić |
 | -D | **Podane informacje zostaną zapisane jako ustawienia domyślne** dla wszystkich nowo tworzonych kont. Nowe konto użytkownika nie zostanie utworzone. |
-| -e *data_upływu_ważności_konta* | |
+| -e *data_upływu_ważności_konta* | Ustalenie daty upływu ważności konta w postaci RRRR-MM-DD |
 | -g *nazwa_grupy* | Ustawienie grupy podstawowej |
 |  -G *lista_grup* |  **Dodanie nowego użytkownika do rozdzielonej przecinkami listy grup** (na przykład -G wheel,sales,tech,lunch). W poleceniu usermod, musi zostać podane -aG samo -G usuwa dotychczasowe grupy i nadpisuje je podanymi w poleceniu  |
 | -k *katalog_wzorcowy* |  |
-| -m |  |
+| -m | Ustawienie katalogu wzorcowego zawierającego pliki konfiguracyjne oraz skrypty logowania, które  powinny zostać skopiowane do katalogu domowego tworzonego użytkownika. **Ten parametr może być użyty tylko w połączeniu z opcją -m.** *(Jeżeli opcja ta nie zostanie użyta, zastosowany będzie katalog /etc/skel)* |
 | -M | Katalog domowy nowego użytkownika nie zostanie utworzony, nawet jeśli domyślnie ustawione zachowanie nakazuje jego utworzenie |
 | -n |  |
 | -o |  |
