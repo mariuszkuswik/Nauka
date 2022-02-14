@@ -3153,6 +3153,8 @@ Konta nie mające uprawnień do shella (/sbin/nologin) mogą mieć dostęp do FT
 ```/etc/vsftpd/ftpusers``` - plik  zawsze zawiera nazwy użytkowników, którzy **nie mają** dostępu do serwera, niezależnie od wartości opcji ```userlist_enable```
 
 
+### #TODO - ogarnąć jak działa chroot dla ftp 
+
 Jednym ze sposobów ograniczenia dostępu do użytkowników posiadających zwykłe konta użytkowników w systemie jest użycie ustawień chroot.  
 Oto kilka przykładów takich ustawień:  
 
@@ -3171,6 +3173,12 @@ Jeżeli dozwolone jest przekazywanie plików do serwera FTP, katalogi, do który
 pliki od użytkownika, muszą mieć uprawnienia zapisu przez użytkownika. Jednak przekazane
 pliki mogą być przechowywane z inną nazwą użytkownika niż ten, który przekazał dany plik.
 Jest to jedna z funkcjonalności omówionych w następnej sekcji
+
+
+
+## Przekazywanie plików do serwera FTP
+
+
 
 
 
