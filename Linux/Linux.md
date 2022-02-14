@@ -17,7 +17,7 @@
         - [info](#info)
     - [Używanie Powłoki](#Używanie-Powłoki)
         - [id](#id)
-        - 
+        - [type](#type)
     - [Uprawnienia](#Uprawnienia)
         - [Umask](#umask---definiowanie-uprawnień-domyślnych)
         - [Chown](#chown---Zmiana-właściciela-pliku)
@@ -99,6 +99,8 @@ np. polecenie type -a ls wyświetla położenie systemowego polecenia ls i polec
 > ls is aliased to `ls --color -F'
 > ls is /usr/bin/ls
 
+
+### Formatowanie ogarnięte
 
 
 
