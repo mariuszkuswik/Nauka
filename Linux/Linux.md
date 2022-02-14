@@ -3113,7 +3113,7 @@ Aby zezwolić na dostęp do serwera FTP bez otwierania w systemie dostępu do in
 ```/etc/sysconfig/selinux``` **zmiennna SELINUX=** - ustawienie stanu SELinux   
    
 
-Jeżeli ftp nie działa to można przełączyć tymczasowo SELinux w tryb **permissive**, sprawdzić czy coś się zmieni a następnie wrócić do **enforcing**   
+*Jeżeli ftp nie działa* to można przełączyć tymczasowo SELinux w tryb **permissive**, sprawdzić czy coś się zmieni a następnie wrócić do **enforcing**   
 
 
 ### Powiązywanie uprawnień Linuksa z vsftpd
@@ -3183,11 +3183,24 @@ Jest to jedna z funkcjonalności omówionych w następnej sekcji
 
 ## Przekazywanie plików do serwera FTP
 
-```bash
-# Umożliwienie użytkownikom wrzucania plików na serwer
-write_enable=YES
-```   
 
+
+- Dla **użytkowników zalogowanych** przekazywanie plików na serwer jest domyślnie włączone (write_enable=YES)   
+
+    ```bash
+    # Umożliwienie użytkownikom zalogowanym na przekazywanie plików do serwera 
+    write_enable=YES  
+    ```   
+
+- **Użytkownicy anonimowi** mają domyślnie zablokowane przekazywanie plików i tworzenie folderów na serwerze   
+
+    ```bash
+    # Włączenie przekazywania plików przez użytkowników anonimowych
+    anon_upload_enable=YES
+
+    # Umożliwienie użytkownikom anonimowym tworzenia folderów 
+    anon_mkdir_write_enable=YES
+    ```
 
 
 
