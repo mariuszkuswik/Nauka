@@ -90,7 +90,8 @@ Np. określenie położenia polecenia *bash*
 ```$ type bash```
 > bash is /bin/bash
 
-```type -a "$command"``` wyświetla wszystkie znane położenia danego polecenia, 
+```type -a "$command"``` - wyświetla wszystkie znane położenia danego polecenia,  
+ 
 np. polecenie type -a ls wyświetla położenie systemowego polecenia ls i polecenia zdefiniowanego za pomocą aliasu.
  
 ```$ type -a ls```
