@@ -516,13 +516,17 @@ Potiwerdzenie zmiany nice procesu na 5 za pomocą polecenia **top**
 ##  Odczytanie danych podanych przez użytkownika
 
 ```bash
-```read -s``` = secret, ukrywa znaki wpisywane przez użytkownika  
+# secret, ukrywa znaki wpisywane przez użytkownika
+read -s   
 
 # prompt, tekst dla uzytkownika
 read -p "$Tekst_dla_uzytkownika"
+
+# Komenda wyświetla wiadomośc i zapisuje podane wartość do zmiennej **wiek** i **wzrost**
+read -p "Ile masz lat i wzrostu" wiek wzrost
 ```    
   
-```read -p "Ile masz lat i wzrostu" wiek wzrost``` - Komenda wyświetla wiadomośc i zapisuje podane wartość do zmiennej **wiek** i **wzrost**     
+   
    
 ```bash
 read -s -p "Enter a password for the new user "$1": " USER_PASSWORD  
