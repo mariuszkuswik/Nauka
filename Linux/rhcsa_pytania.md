@@ -10,7 +10,7 @@
 
 # Oreilly
 
-Here are some tips to ensure your exam starts with a clean environment:  
+**Here are some tips to ensure your exam starts with a clean environment:**  
     - You do not need any external servers or resources.  
     - Do not register or connect to any external repositories.  
     - Install a new VM according to the instructions in each practice exam.  
