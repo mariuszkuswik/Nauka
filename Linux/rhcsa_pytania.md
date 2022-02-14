@@ -19,7 +19,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 - Server with GUI installation pattern
 
 
-1. Create user **student** with password password, and user root with password **password**.
+1. Create user **student** with password **password**, and user root with password **password**.
 
 2. Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
@@ -67,7 +67,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 - Server with GUI installation pattern
 
 
-1. Create user **student** with password password, and user root with password password.
+1. Create user **student** with password **password**, and user root with password **password**.
 
 2. Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
@@ -108,7 +108,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 
 
-1. Create user **student** with password password, and user root with password password.
+1. Create user **student** with password **password**, and user root with password **password**.
 
 2. Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
@@ -116,7 +116,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 4. Set default values for new users. Make sure that any new user password has a length of at least six characters and must be used for at least three days before it can be reset.
 
-5. Create users edwin and santos and make them members of the group sales as a secondary group membership. Also, create users serene and alex and make them members of the group account as a secondary group.
+5. Create users **edwin** and **santos** and make them members of the group sales as a secondary group membership. Also, create users serene and alex and make them members of the group account as a secondary group.
 
 6. Create shared group directories /groups/sales and /groups/account, and make sure these groups meet the following requirements:
     - Members of the group sales have full access to their directory.
@@ -125,7 +125,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 7. Create a 4-GiB volume group, using a physical extent size of 2 MiB. In this volume group, create a 1-GiB logical volume with the name myfiles and mount it persistently on /myfiles.
 
-8. Create a group sysadmins. Make users edwin and santos members of this group and ensure that all members of this group can run all administrative commands using sudo.
+8. Create a group sysadmins. Make users **edwin** and **santos** members of this group and ensure that all members of this group can run all administrative commands using sudo.
 
 9. Optimize your server with the appropriate profile that optimizes throughput.
 
@@ -155,15 +155,15 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 - Server with GUI installation pattern
 
 
-1. Create user **student** with password password, and user root with password password.
+1. Create user **student** with password **password**, and user root with password **password**.
 
 2. Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
-3. Create a 500-MiB partition on your second hard disk, and format it with the Ext4 file system. Mount it persistently on the directory **/mydata**, using the label mydata.
+3. Create a 500-MiB partition on your second hard disk, and format it with the Ext4 file system. Mount it persistently on the directory **/mydata**, using the label **mydata**.
 
 4. Set default values for new users. A user should get a warning three days before expiration of the current password. Also, new passwords should have a maximum lifetime of 120 days.
 
-5. Create users edwin and santos and make them members of the group livingopensource as a secondary group membership. Also, create users serene and alex and make them members of the group operations as a secondary group.
+5. Create users **edwin** and **santos** and make them members of the group livingopensource as a secondary group membership. Also, create users serene and alex and make them members of the group operations as a secondary group.
 
 6. Create shared group directories /groups/livingopensource and /groups/operations, and make sure the groups meet the following requirements:
     - Members of the group livingopensource have full access to their directory.
