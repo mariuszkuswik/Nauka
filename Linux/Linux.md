@@ -92,9 +92,10 @@ Np. określenie położenia polecenia *bash*
 
 ```type -a "$command"``` - wyświetla wszystkie znane położenia danego polecenia,  
 *np. polecenie type -a ls wyświetla położenie systemowego polecenia ls i polecenia zdefiniowanego za pomocą aliasu.*
- 
+   
+   
 ```$ type -a ls```
-
+  
 > ls is aliased to `ls --color -F'
 > ls is /usr/bin/ls
 
@@ -157,18 +158,15 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 ### Formatowanie ogarnięte
 
 ### Ważne ! - **Użycie liter podczas rekurencyjnej zmiany uprawnień za pomocą polecenia chmod sprawdza się lepiej niż zastosowanie liczb do tego celu**,
-ponieważ bity można zmieniać wybiórczo zamiast wszystkich uprawnień jednocześnie.   
+Ponieważ bity można zmieniać wybiórczo zamiast wszystkich uprawnień jednocześnie.   
 Załóżmy na przykład, że chcemy usunąć uprawnienia „pozostałych użytkowników” bez zmiany innych uprawnień zdefiniowanych dla plików i katalogów.   
 W takim przypadku można wydać następujące polecenie:  
 
 ```$ chmod -R o-w $HOME/myapps```
 
-To polecenie powoduje rekurencyjne usunięcie uprawnień „pozostałych użytkowników” dla
-wszystkich plików i katalogów znajdujących się w katalogu myapps. Jeżeli do zdefiniowania
-uprawnień użylibyśmy liczby, np. 644, uprawnienie wykonywania zostałoby usunięte dla
-wszystkich katalogów. Liczba 755 oznaczałaby włączenie uprawnienia wykonywania także
-dla zwykłych plików. Opcja o-w umożliwia wyłączenie tylko jednego bitu i pozostawienie
-pozostałych bitów bez zmian.
+To polecenie powoduje rekurencyjne usunięcie uprawnień „pozostałych użytkowników” dla wszystkich plików i katalogów znajdujących się w katalogu myapps. Jeżeli do zdefiniowania
+uprawnień użylibyśmy liczby, np. 644, uprawnienie wykonywania zostałoby usunięte dla wszystkich katalogów.   
+Liczba 755 oznaczałaby włączenie uprawnienia wykonywania także dla zwykłych plików. Opcja o-w umożliwia wyłączenie tylko jednego bitu i pozostawienie pozostałych bitów bez zmian.  
 
    
 ### Umask - Definiowanie uprawnień domyślnych 
@@ -180,7 +178,7 @@ pozostałych bitów bez zmian.
 - Tymczasowa zmiana 
     ```umask 777``` 
 
-- Stałą zmiana 
+- Stała zmiana 
     Jeżeli wartość umask chcesz zmienić trwale, polecenie umask musisz dodać do pliku .bashrc
     znajdującego się w katalogu domowym (polecenie to umieść gdzieś na końcu pliku).
     Po następnym uruchomieniu powłoki wartość umask będzie odpowiadała zdefiniowanej
@@ -211,10 +209,8 @@ Dla mv jest użycie opcji -b. W takim przypadku, jeśli w położeniu
 docelowym istnieje już plik o danej nazwie, to przed przeniesieniem nowego pliku nastąpi
 utworzenie kopii zapasowej już istniejącego
 
-### Przydatne !
-wydanie polecenia mv, cp lub rm z ukośnikiem
-na początku, np. \rm ogromny_katalog. Ukośnik powoduje użycie polecenia rm, a nie jego aliasu
 
+**Przydatne !** - wydanie polecenia mv, cp lub rm z ukośnikiem na początku, np. \rm ogromny_katalog. Ukośnik powoduje użycie polecenia rm, a nie jego aliasu
 
 
 ## Praca z plikami tekstowymi 
