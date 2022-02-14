@@ -1238,6 +1238,24 @@ Podczas tworzenia konta dla Marii polecenie useradd wykonuje następujące zadan
 
 ### Strona 273 do tabeli 
 
+| Opcja | Opis |
+|--|--|
+| -c *"komentarz"* | |
+| -d *katalog_domowy* | |
+| -D | |
+| -e data_upływu_ważności_konta | |
+| -g nazwa_grupy | Ustawienie grupy podstawowej |
+|  -G lista_grup |  **Dodanie nowego użytkownika do rozdzielonej przecinkami listy grup** (na przykład -G wheel,sales,tech,lunch). W poleceniu usermod, musi zostać podane -aG samo -G usuwa dotychczasowe grupy i nadpisuje je podanymi w poleceniu  |
+| -k katalog_wzorcowy |  |
+| -m |  |
+| -M |  |
+| -n |  |
+| -o |  |
+| -p *hasło* |  |
+| -s *shell* |  |
+| -u  |  |
+
+
 -c komentarz
 -c "miejsce na komentarz"
 Opcja powoduje dodanie opisu do nowego konta. Bardzo często opisem jest pełne imię i nazwisko
@@ -3307,7 +3325,7 @@ anon_max_rate=50000
 
 
 ### Strona 468
-475
+477
 
 
 
