@@ -39,8 +39,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 5. Create users **edwin** and **santos** and make them members of the group livingopensource as a secondary group membership. Also, create users serene and alex and make them members of the group operations as a secondary group.
 
 6. Create shared group directories **/groups/livingopensource** and **/groups/operations**, and make sure the groups meet the following requirements:
-
-7. Members of the group livingopensource have full access to their directory.
+    - Members of the group livingopensource have full access to their directory.
     - Members of the group operations have full access to their directory.
     - New files that are created in the group directory are group owned by the group owner of the parent directory.
     - Others have no access to the group directories.
