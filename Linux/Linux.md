@@ -3144,6 +3144,14 @@ anonymous_enable=NO
 local_enable=YES  
 ```
 
+Konta nie mające uprawnień do shella mają dostęp do FTP  
+
+```userlist_enable=YES``` - ustawienie pliku user_list jako **blacklista**
+```userlist_enable=NO``` - ustawienie pliku user_list jako **whitelista**
+
+```/etc/vsftpd/user_list``` - lista użytkowników którzy w zależności od ustawienia jako jedyni *mają lub nie mają* dostępu do FTP 
+
+
 
 
 
@@ -3151,8 +3159,6 @@ local_enable=YES
 
 
 ## Koniec Biblii
-
-
 
 
 
