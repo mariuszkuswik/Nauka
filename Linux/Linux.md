@@ -3146,8 +3146,9 @@ local_enable=YES
 
 Konta nie mające uprawnień do shella (/sbin/nologin) mogą mieć dostęp do FTP  
 
-```userlist_enable=YES``` - ustawienie pliku user_list jako **blacklista**
-```userlist_enable=NO``` - ustawienie pliku user_list jako **whitelista**
+vsftpd.conf
+    - ```userlist_enable=YES``` - ustawienie pliku user_list jako **blacklista**
+    - ```userlist_enable=NO``` - ustawienie pliku user_list jako **whitelista**
 
 ```/etc/vsftpd/user_list``` - lista użytkowników którzy w zależności od ustawienia jako jedyni *mają lub nie mają* dostępu do FTP 
 ```/etc/vsftpd/ftpusers``` - plik  zawsze zawiera nazwy użytkowników, którzy **nie mają** dostępu do serwera, niezależnie od wartości opcji ```userlist_enable```
@@ -3177,6 +3178,8 @@ Jest to jedna z funkcjonalności omówionych w następnej sekcji
 
 
 ## Przekazywanie plików do serwera FTP
+
+w pliku vsftpd.conf ```write_enable=YES``` - umożliwienie użytkownikom wrzucania plików na serwer 
 
 
 
