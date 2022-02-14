@@ -3230,20 +3230,32 @@ uprawnienia do pliku będzie miał tylko *janek* (rw-------)
 
 ```/usr/share/doc/vsftpd/EXAMPLE/INTERNET_SITE/vsftpd.conf``` - przykładowy config dla ftp udostępnianego w interneci 
 
-```bash
-# Zawartość przykładowego configu
-# Access rights
-anonymous_enable=YES
-local_enable=NO
-c528defda93e9420916cfa7705790125476 C Z Ę Ś Ć I V . Administracja serwerem
-write_enable=NO
-anon_upload_enable=NO
-anon_mkdir_write_enable=NO
-anon_other_write_enable=NO
-```
+Zawartość przykładowego configu
 
-
-
+    ```bash
+    # Access rights
+    # Włączenie dostępu dla użytkowników anonimowych 
+    anonymous_enable=YES
+    # Wyłączenie dostępu dla kont lokalnych, każdy będzie musiał korzystać z konta użytkownika anonimowego
+    local_enable=NO
+    # Nikt nie może przekazywac plików
+    write_enable=NO
+    # Użytkownik anonimowy nie może przekazywać plików 
+    anon_upload_enable=NO
+    # anon nie może tworzyć katalogów
+    anon_mkdir_write_enable=NO
+    # anon nie może zapisisywac innych elementów 
+    anon_other_write_enable=NO
+    ```
+  
+    ```bash
+    # Security
+    anon_world_readable_only=YES
+    connect_from_port_20=YES
+    hide_ids=YES
+    pasv_min_port=50000
+    pasv_max_port=60000
+    ```
 
 
 ## Koniec Biblii
