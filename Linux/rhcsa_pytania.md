@@ -19,9 +19,9 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 - Server with GUI installation pattern
 
 
-1. Create user student with password password, and user root with password **password**.
+1. Create user **student** with password password, and user root with password **password**.
 
-2. Configure your system to automatically loop-mount the ISO of the installation disk on the directory /repo. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
+2. Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
 3. Reboot your server. Assume that you don’t know the root password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
 
@@ -37,7 +37,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
     - Others have no access to the group directories.
     - Members of the group operations have read access to the directory/groups/livingopensource.
 
-8. Create a 2-GiB volume group, using 8-MiB physical extents. In this volume group, create a 500-MiB logical volume with the name mydata, and mount it persistently on the directory /mydata.
+8. Create a 2-GiB volume group, using 8-MiB physical extents. In this volume group, create a 500-MiB logical volume with the name mydata, and mount it persistently on the directory **/mydata**.
 
 9. Find all files that are owned by user edwin and copy them to the directory/rootedwinfiles.
 
@@ -67,11 +67,11 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 - Server with GUI installation pattern
 
 
-1. Create user student with password password, and user root with password password.
+1. Create user **student** with password password, and user root with password password.
 
-2. Configure your system to automatically loop-mount the ISO of the installation disk on the directory /repo. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
+2. Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
-3. Create a 1-GB XFS partition on /dev/sdb. Mount it persistently on the directory /mydata, using the label mylabel.
+3. Create a 1-GB XFS partition on /dev/sdb. Mount it persistently on the directory **/mydata**, using the label mylabel.
 
 4. Set default values for new users. Ensure that an empty file with the name NEWFILE is copied to the home directory of each new user that is created.
 
@@ -108,9 +108,9 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 
 
-1. Create user student with password password, and user root with password password.
+1. Create user **student** with password password, and user root with password password.
 
-2. Configure your system to automatically loop-mount the ISO of the installation disk on the directory /repo. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
+2. Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
 3. Reboot your server. Assume that you don’t know the root password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
 
@@ -153,6 +153,35 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 - 20 GB of disk space using default partitioning
 - One additional 20-GB disk that does not have partitions installed
 - Server with GUI installation pattern
+
+
+1. Create user **student** with password password, and user root with password password.
+
+2. Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
+
+3. Create a 500-MiB partition on your second hard disk, and format it with the Ext4 file system. Mount it persistently on the directory **/mydata**, using the label mydata.
+
+4. Set default values for new users. A user should get a warning three days before expiration of the current password. Also, new passwords should have a maximum lifetime of 120 days.
+
+5. Create users edwin and santos and make them members of the group livingopensource as a secondary group membership. Also, create users serene and alex and make them members of the group operations as a secondary group.
+
+6. Create shared group directories /groups/livingopensource and /groups/operations, and make sure the groups meet the following requirements:
+    - Members of the group livingopensource have full access to their directory.
+    - Members of the group operations have full access to their directory.
+    - Others has no access to any of the directories.
+    - Alex is general manager, so user alex has read access to all files in both directories and has permissions to delete all files that are created in both directories.
+
+7. Create a 1-GiB swap partition and mount it persistently.
+
+8. Find all files that have the SUID permission set, and write the result to the file /root/suidfiles.
+
+9. Create a 1-GiB LVM volume group. In this volume group, create a 512-MiB swap volume and mount it persistently.
+
+10. Add a 10-GiB disk to your virtual machine. On this disk, create a Stratis pool and volume. Use the name stratisvol for the volume, and mount it persistently on the directory /stratis.
+
+11. Install a web server and configure it to listen on port 8080.
+
+12. Create a configuration that allows user edwin to run all administrative commands using sudo.
 
 
 
