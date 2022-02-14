@@ -781,8 +781,6 @@ This test exam requires the following setup:
 	- A cleanly installed RHEL 8 virtual machine with the name server3.
 	- Unless specifically mentioned, all tasks described next should be performed on the virtual machine.
 
----
-
 	- Bring down the virtual machine you have pre-installed and, in the KVM software, add an additional 5GiB hard disk to the virtual machine.
 	
 	- A repository is available at http://rhatcert.com/repo. Configure your server3 to use this repository and disable usage of any other repositories.
