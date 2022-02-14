@@ -3184,15 +3184,14 @@ Jest to jedna z funkcjonalności omówionych w następnej sekcji
 ## Przekazywanie plików do serwera FTP
 
 
-
-- Dla **użytkowników zalogowanych** przekazywanie plików na serwer jest domyślnie włączone (write_enable=YES)   
+- **Użytkownicy zalogowani** - przekazywanie plików na serwer jest domyślnie włączone (write_enable=YES)   
 
     ```bash
     # Umożliwienie użytkownikom zalogowanym na przekazywanie plików do serwera 
     write_enable=YES  
     ```   
 
-- **Użytkownicy anonimowi** mają domyślnie zablokowane przekazywanie plików i tworzenie folderów na serwerze   
+- **Użytkownicy anonimowi** - mają domyślnie zablokowane przekazywanie plików i tworzenie folderów na serwerze   
 
     ```bash
     # Włączenie przekazywania plików przez użytkowników anonimowych
@@ -3201,6 +3200,18 @@ Jest to jedna z funkcjonalności omówionych w następnej sekcji
     # Umożliwienie użytkownikom anonimowym tworzenia folderów 
     anon_mkdir_write_enable=YES
     ```
+
+Po włączeniu opcji zapisu dla użytkownika anonimowego bedzie mógł zapisywać pliki podkatalog w katalogu /var/ftp posiadający uprawnienia zapisu dla użytkownika ftp, grupy ftp lub pozostałych użytkowników.  
+Powszechnie stosowanym rozwiązaniem jest tworzenie przeznaczonego na przekazywane pliki katalogu z uprawnieniem zapisu.  
+
+
+Utworzenie folderu uploads dla **użytkownika anonimowego** 
+
+```bash
+mkdir /var/ftp/uploads
+chown ftp:ftp /var/ftp/uploads
+chmod 775 /var/ftp/uploads
+```
 
 
 
