@@ -486,14 +486,14 @@ Potiwerdzenie zmiany nice procesu na 5 za pomocą polecenia **top**
 
 ## Debugowanie
 
-**Przydatne !** - Na początku skryptu można umieścić polecenie set -x w celu wyświetlenia każdego polecenia wykonywanego przez skrypt.
+**Przydatne !** - Na początku skryptu można umieścić polecenie set -x w celu wyświetlenia każdego polecenia wykonywanego przez skrypt.  
 
-```$ set -x mojskrypt``` lub ```$ bash -x mojskrypt``` - wyświetla każdą wykonywana komendę ( **równwnież to co jest przypisane pod alias **)
-
-```nazwa_zmiennej=$(echo "test")``` - przypisanie komendy pod zmienną 
-```BILANS="$BiezacyBilans"``` - przypisanie zmiennej BILANS wartości zmiennej BiezacyBilans 
-
-```unset zmienna``` - zwolnienie zmiennej ```zmienna```
+```$ set -x mojskrypt``` lub ```$ bash -x mojskrypt``` - wyświetla każdą wykonywana komendę ( **równwnież to co jest przypisane pod alias **)  
+  
+```nazwa_zmiennej=$(echo "test")``` - przypisanie komendy pod zmienną   
+```BILANS="$BiezacyBilans"``` - przypisanie zmiennej BILANS wartości zmiennej BiezacyBilans   
+  
+```unset zmienna``` - zwolnienie zmiennej ```zmienna```  
 
 
 ## Zmienne specjalne
