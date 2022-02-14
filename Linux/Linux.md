@@ -3144,17 +3144,33 @@ anonymous_enable=NO
 local_enable=YES  
 ```
 
-Konta nie mające uprawnień do shella mają dostęp do FTP  
+Konta nie mające uprawnień do shella (/sbin/nologin) mogą mieć dostęp do FTP  
 
 ```userlist_enable=YES``` - ustawienie pliku user_list jako **blacklista**
 ```userlist_enable=NO``` - ustawienie pliku user_list jako **whitelista**
 
 ```/etc/vsftpd/user_list``` - lista użytkowników którzy w zależności od ustawienia jako jedyni *mają lub nie mają* dostępu do FTP 
+```/etc/vsftpd/ftpusers``` - plik  zawsze zawiera nazwy użytkowników, którzy **nie mają** dostępu do serwera, niezależnie od wartości opcji ```userlist_enable```
 
 
+Jednym ze sposobów ograniczenia dostępu do użytkowników posiadających zwykłe konta użytkowników w systemie jest użycie ustawień chroot.  
+Oto kilka przykładów takich ustawień:  
 
+```bash
+chroot_local_user=YES
+chroot_list_enable=YES
+chroot_list_file=/etc/vsftpd/chroot_list
+```
 
+Po zastosowaniu tych ustawień można utworzyć listę użytkowników lokalnych, a następnie
+dodać ich do pliku /etc/vsftpd/chroot_list. Gdy któryś z użytkowników wymienionych w tym
+pliku zaloguje się do serwera FTP, nie będzie mógł wyjść poza strukturę katalogów znajdujących
+się w jego katalogu domowym.
 
+Jeżeli dozwolone jest przekazywanie plików do serwera FTP, katalogi, do których mają trafić
+pliki od użytkownika, muszą mieć uprawnienia zapisu przez użytkownika. Jednak przekazane
+pliki mogą być przechowywane z inną nazwą użytkownika niż ten, który przekazał dany plik.
+Jest to jedna z funkcjonalności omówionych w następnej sekcji
 
 
 
@@ -3163,7 +3179,7 @@ Konta nie mające uprawnień do shella mają dostęp do FTP
 
 
 ### Strona 468
-473
+474
 
 
 
