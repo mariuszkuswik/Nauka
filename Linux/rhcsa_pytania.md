@@ -10,12 +10,12 @@
 
 # Oreilly
 
-Here are some tips to ensure your exam starts with a clean environment:
-    - You do not need any external servers or resources.
-    - Do not register or connect to any external repositories.
-    - Install a new VM according to the instructions in each practice exam.
-    - No sample solutions are provided for these practice exams. On the real exam, you need to be able to verify the solutions for yourself as well.
-    - You should be able to complete each exam within two hours.
+Here are some tips to ensure your exam starts with a clean environment:  
+    - You do not need any external servers or resources.  
+    - Do not register or connect to any external repositories.  
+    - Install a new VM according to the instructions in each practice exam.  
+    - No sample solutions are provided for these practice exams. On the real exam, you need to be able to verify the solutions for yourself as well.  
+    - You should be able to complete each exam within two hours.  
 
 ## RHCSA Practice Exam A
 
