@@ -1,23 +1,16 @@
 
 
 
-[Oreilly Practice Exam A](#RHCSA-Practice-Exam-A)
-[Oreilly Practice Exam B](#RHCSA-Practice-Exam-B)
-[Oreilly Practice Exam C](#RHCSA-Practice-Exam-C)
-[Oreilly Practice Exam D](#RHCSA-Practice-Exam-D)
-[Examptopics](#Examptopics)
+[Oreilly Practice Exam A](#RHCSA-Practice-Exam-A)  
+[Oreilly Practice Exam B](#RHCSA-Practice-Exam-B)  
+[Oreilly Practice Exam C](#RHCSA-Practice-Exam-C)  
+[Oreilly Practice Exam D](#RHCSA-Practice-Exam-D)  
+[Examptopics](#Examptopics)   
 
 
 # RHCSA Practice Exam A
 
 [Oreilly Practice Exam A](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780137341641/exama.xhtml#exama)
-
-Install a RHEL 8 or CentOS 8 virtual machine that meets the following requirements:
-- 2 GB of RAM
-- 20 GB of disk space using default partitioning
-- One additional 20-GB disk that does not have partitions installed
-- Server with GUI installation pattern
-
 
 Install a RHEL 8 or CentOS 8 virtual machine that meets the following requirements:
 - 2 GB of RAM
@@ -67,6 +60,12 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 [Oreilly Practice Exam B](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780137341641/examb.xhtml#examb)
 
+Install a RHEL 8 or CentOS 8 virtual machine that meets the following requirements:
+- 2 GB of RAM
+- 20 GB of disk space using default partitioning
+- One additional 20-GB disk that does not have partitions installed
+- Server with GUI installation pattern
+
 
 1. Create user student with password password, and user root with password password.
 
@@ -100,6 +99,14 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 # RHCSA Practice Exam C
 
 [Oreilly Practice Exam C](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780137341641/examc.xhtml#examc)
+
+Install a RHEL 8 or CentOS 8 virtual machine that meets the following requirements:
+- 2 GB of RAM
+- 20 GB of disk space using default partitioning
+- One additional 20-GB disk that does not have partitions installed
+- Server with GUI installation pattern
+
+
 
 1. Create user student with password password, and user root with password password.
 
@@ -139,6 +146,13 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 # RHCSA Practice Exam D
 
 [# RHCSA Practice Exam D]()
+
+
+Install a RHEL 8 or CentOS 8 virtual machine that meets the following requirements:
+- 2 GB of RAM
+- 20 GB of disk space using default partitioning
+- One additional 20-GB disk that does not have partitions installed
+- Server with GUI installation pattern
 
 
 
