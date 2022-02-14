@@ -527,9 +527,9 @@ read -p "Ile masz lat i wzrostu" wiek wzrost
 
 # Prompt, secret, pobranie pierwszego parametru od użytkownika do zmiennej USER_PASSWORD
 read -s -p "Enter a password for the new user "$1": " USER_PASSWORD  
-```
 
-```$MIASTO``` jest skróconym zapisem ```${MIASTO}```  
+$MIASTO jest skróconym zapisem ${MIASTO}
+```  
 
 
 ### Przykłady przypisania zmiennych w powłoce bash 
