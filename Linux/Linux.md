@@ -81,7 +81,6 @@ Jeżeli jest włączony SELinux to na końcu danych wyjściowych polecenia id zn
 > context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023  
 
 
-
 ### type
 
 Pokazuje gdzie znajduje się dane polecenie
@@ -100,16 +99,10 @@ np. polecenie type -a ls wyświetla położenie systemowego polecenia ls i polec
 > ls is /usr/bin/ls
 
 
-### Formatowanie ogarnięte
-
-
-
 ### Katalogi z komendami 
    
 Większość poleceń dostarczanych z Linuksem znajduje się w katalogach /bin, /usr/bin oraz /usr/local/bin.
 Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne 
-
-
 
 
 ## Uprawnienia 
@@ -139,9 +132,10 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 - a - all
 - u - user
 - g - group
-- o - others
+- o - others  
+    
   
-- w - write
+- w - write  
 - r - read
 - x - execute
 
@@ -159,13 +153,13 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
     Wynikiem wykonania tego polecenia chmod będą uprawnienia r-xr-x---:
     ```$ chmod ug+rx plik```
 
-## Ważne !
 
-**Użycie liter podczas rekurencyjnej zmiany uprawnień za pomocą polecenia chmod sprawdza się
-lepiej niż zastosowanie liczb do tego celu** , ponieważ bity można zmieniać wybiórczo zamiast
-wszystkich uprawnień jednocześnie. Załóżmy na przykład, że chcemy usunąć uprawnienia
-„pozostałych użytkowników” bez zmiany innych uprawnień zdefiniowanych dla plików
-i katalogów. W takim przypadku można wydać następujące polecenie:
+### Formatowanie ogarnięte
+
+### Ważne ! - **Użycie liter podczas rekurencyjnej zmiany uprawnień za pomocą polecenia chmod sprawdza się lepiej niż zastosowanie liczb do tego celu**,
+ponieważ bity można zmieniać wybiórczo zamiast wszystkich uprawnień jednocześnie.   
+Załóżmy na przykład, że chcemy usunąć uprawnienia „pozostałych użytkowników” bez zmiany innych uprawnień zdefiniowanych dla plików i katalogów.   
+W takim przypadku można wydać następujące polecenie:  
 
 ```$ chmod -R o-w $HOME/myapps```
 
