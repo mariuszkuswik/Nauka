@@ -210,7 +210,7 @@ docelowym istnieje już plik o danej nazwie, to przed przeniesieniem nowego plik
 utworzenie kopii zapasowej już istniejącego
 
 
-**Przydatne !** - wydanie polecenia mv, cp lub rm z ukośnikiem na początku, np. \rm ogromny_katalog. Ukośnik powoduje użycie polecenia rm, a nie jego aliasu
+#### Przydatne ! - wydanie polecenia mv, cp lub rm z ukośnikiem na początku, np. \rm ogromny_katalog. Ukośnik powoduje użycie polecenia rm, a nie jego aliasu
 
 
 ## Praca z plikami tekstowymi 
