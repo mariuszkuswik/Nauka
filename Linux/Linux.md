@@ -3261,6 +3261,19 @@ anon_max_rate=50000
 
 ## Używanie klientów FTP
 
+Aby zalogować się do serwera FTP jako konkretny użytkownik, w przeglądarce WWW Firefox
+trzeba nazwę hosta poprzedzić notacją użytkownik:hasło@:host
+
+```ftp://chris:MypassWd5@localhost```
+
+## Uzyskiwanie dostępu do serwera FTP za pomocą polecenia lftp
+
+```yum install lftp```
+
+Dodanie -u nazwa_użytkownika pozwala podać hasło (po wyświetleniu takiego żądania) i uzyskać dostęp do serwera FTP jako zalogowany użytkownik.
+Jeżeli wydasz polecenie lftp i podasz jedynie nazwę serwera FTP, zostanie podjęta próba nawiązania z tym serwerem FTP połączenia w ramach konta użytkownika anonimowego.
+
+
 
 
 
@@ -3269,7 +3282,7 @@ anon_max_rate=50000
 
 
 ### Strona 468
-477
+478
 
 
 
