@@ -7,6 +7,8 @@
     - [Oreilly Practice Exam C](#RHCSA-Practice-Exam-C)  
     - [Oreilly Practice Exam D](#RHCSA-Practice-Exam-D)  
 2. [Examptopics](#Examptopics)   
+3. [RHCSA Sander 1](#RHCSA-Practice-Exam-1)
+4. [RHCSA Sander 2](#RHCSA-Practice-Exam-2)
 
 # Oreilly
 
