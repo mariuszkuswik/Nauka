@@ -62,7 +62,7 @@
 
 # #TODO - Dodać zwijanie przy opisach poleceń i skrócić część notatek 
 
-### id
+## id
 
 
 id pokazuje *id* uzytkownika i *gid* ( id grupy uzytkownika)
@@ -81,7 +81,7 @@ Jeżeli jest włączony SELinux to na końcu danych wyjściowych polecenia id zn
 > context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023  
 
 
-### type
+## type
 
 Pokazuje gdzie znajduje się dane polecenie
 (Jeżeli używana powłoka jest inna niż bash, wtedy należy skorzystać z polecenia which).
@@ -100,27 +100,27 @@ Np. określenie położenia polecenia *bash*
 > ls is /usr/bin/ls
 
 
-### Katalogi z komendami 
+## Katalogi z komendami 
    
 Większość poleceń dostarczanych z Linuksem znajduje się w katalogach /bin, /usr/bin oraz /usr/local/bin.
 Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne 
 
 
-## Uprawnienia 
+# Uprawnienia 
 
-### Plik 
+## Plik 
 
 - Read - Wyświetlenie zawartości pliku
 - Write - Zmiana zawartości pliku, zmianajego nazwy lub usunięcie pliku
 - Execute - Uruchomienie pliku jako programu
 
-### Katalog 
+## Katalog 
 
 - Read - Wyświetlenie plików oraz podkatalogów danego katalogu
 - Write - Dodawanie plików lub podkatalogów do danego katalogu, usunięcie plików lub katalogów z danego katalogu
 - Execute - Wejście do katalogu, przeszukiwanie lub uruchomienie programu znajdującego się w nim, dostęp do metadanych pliku (wielkość, znaczniki czasu) dla wszystkich plików znajdujących się w tym katalogu
 
-### Uprawnienia liczbowe  
+## Uprawnienia liczbowe  
 
 - 4 - read
 - 2 - write 
@@ -128,7 +128,7 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 
 ```chmod -R 755 $HOME/myapps``` - zmiana uprawnien rekurencyjnie dla calego katalogu 
 
-### Uprawnienia tekstowe 
+## Uprawnienia tekstowe 
 
 - a - all
 - u - user
@@ -169,7 +169,7 @@ uprawnień użylibyśmy liczby, np. 644, uprawnienie wykonywania zostałoby usun
 Liczba 755 oznaczałaby włączenie uprawnienia wykonywania także dla zwykłych plików. Opcja o-w umożliwia wyłączenie tylko jednego bitu i pozostawienie pozostałych bitów bez zmian.  
 
    
-### Umask - Definiowanie uprawnień domyślnych 
+## Umask - Definiowanie uprawnień domyślnych 
 
 ```umask``` - Wyświetla obecnie ustawiony umask 
 
@@ -191,7 +191,7 @@ Without any change in default umask permissions, all files created by user root 
 ![Umask wyjaśnienie](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/umask_permissions.png)
 
 
-### chown - Zmiana właściciela pliku 
+## chown - Zmiana właściciela pliku 
 
 Zmiana właściciela użytkownika i grupy na janek
 ```chown janek:janek /home/janek/notatka.txt```
@@ -199,21 +199,21 @@ Zmiana właściciela użytkownika i grupy na janek
 Zmiana rekurencyjna właściciela i grupy dla katalogu  
 ```chown -R janek:janek /media/myusb```
 
-### cp - kopiowanie plikow 
+## cp - kopiowanie plikow 
 
 ```cp -a test test2``` - kopia zachowała znaczniki daty i godziny oraz uprawnienia. Bez tej opcji użyte zostaną znaczniki daty i godziny oraz uprawnienia określone przez wartość umask
 
-### mv - przenoszenie plików 
+## mv - przenoszenie plików 
 
 Dla mv jest użycie opcji -b. W takim przypadku, jeśli w położeniu
 docelowym istnieje już plik o danej nazwie, to przed przeniesieniem nowego pliku nastąpi
 utworzenie kopii zapasowej już istniejącego
 
 
-#### Przydatne ! - wydanie polecenia mv, cp lub rm z ukośnikiem na początku, np. \rm ogromny_katalog. Ukośnik powoduje użycie polecenia rm, a nie jego aliasu
+### Przydatne ! - wydanie polecenia mv, cp lub rm z ukośnikiem na początku, np. \rm ogromny_katalog. Ukośnik powoduje użycie polecenia rm, a nie jego aliasu
 
 
-## Praca z plikami tekstowymi 
+# Praca z plikami tekstowymi 
 
 ### Wpisywanie tekstu do pliku przy pomocy ```cat```
 cat << tekst > /tmp/yourfilehere
