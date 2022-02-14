@@ -3232,8 +3232,10 @@ uprawnienia do pliku będzie miał tylko *janek* (rw-------)
 
 Zawartość przykładowego configu
 
+Uprawnienia dostępu  
 ```bash
 # Access rights
+
 # Włączenie dostępu dla użytkowników anonimowych 
 anonymous_enable=YES
 # Wyłączenie dostępu dla kont lokalnych, każdy będzie musiał korzystać z konta użytkownika anonimowego
@@ -3249,16 +3251,42 @@ anon_other_write_enable=NO
 ```
   
 
-
+Bezpieczeństwo  
 ```bash
 # Security
+
+# anon będzie miał uprawnienia tylko do plików do ktorych upranienia ma others (------r--)
 anon_world_readable_only=YES
 connect_from_port_20=YES
+# Opcja ukrywa faktyczne uprawnienia przypisane plikowi, użytkownik podłączony do ftp będzie widział że właścicielem wszystkich jest ftp
 hide_ids=YES
 pasv_min_port=50000
 pasv_max_port=60000
 ```
 
+Funkcjonalnośc serwera
+```bash
+# Features
+
+# Informacje o przekazaniach i pobraniach plików będą przekazane do /var/log/xferlog
+xferlog_enable=YES
+# Zabrania ls -R, mogłoby to wymagać wielu zasobów
+ls_recurse_enable=NO
+ascii_download_enable=NO
+async_abor_enable=YES
+```
+
+Wydajnośc 
+
+```bash
+# Performance
+one_process_model=YES
+idle_session_timeout=120
+data_connection_timeout=300
+accept_timeout=60
+connect_timeout=60
+anon_max_rate=50000
+```
 
 ## Koniec Biblii
 
