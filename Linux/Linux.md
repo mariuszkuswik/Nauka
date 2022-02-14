@@ -528,6 +528,7 @@ read -p "Ile masz lat i wzrostu" wiek wzrost
 # Prompt, secret, pobranie pierwszego parametru od użytkownika do zmiennej USER_PASSWORD
 read -s -p "Enter a password for the new user "$1": " USER_PASSWORD  
 
+### #TODO - Sprawdzić jak to opisać 
 $MIASTO jest skróconym zapisem ${MIASTO}
 ```  
 
