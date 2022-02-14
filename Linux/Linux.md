@@ -3115,7 +3115,8 @@ Aby zezwolić na dostęp do serwera FTP bez otwierania w systemie dostępu do in
 Jeżeli ftp nie działa to można przełączyć tymczasowo SELinux w tryb **permissive**, sprawdzić czy coś się zmieni a następnie wrócić do **enforcing**  
 
 
-## Powiązywanie uprawnień Linuksa z vsftpd
+### Powiązywanie uprawnień Linuksa z vsftpd
+
 
 Serwer vsftpd używa standardowych uprawnień Linuksa,  
 
@@ -3124,6 +3125,25 @@ aby uzytkownik anonimowy mógł wyświetlić lub pobrać plik, others musi miec 
 żeby **anonymous** miał dostęp do folderu others musi mieć przynajmniej uprawnienia execute (--------x)  
 
 W przypadku **zwykłych użytkowników**, jeżeli użytkownik ma dostęp do pliku w systemie to będzie miał też dostęp na serwerze FTP,   
+
+
+### Konfigurowanie serwera FTP
+
+
+```/etc/vsftpd/vsftpd.conf``` - przeprowadza sie tu większość konfiguracji usługi vsftpd  
+```/usr/share/doc/vsftpd``` - przykładowe pliki konfiguracyjne vsftpd  
+
+Pamiętaj o ponownym uruchomieniu usługi vsftpd po wprowadzeniu jakichkolwiek zmian.  
+
+
+Domyślnie wszyscy **użytkownicy lokalni mają dostęp** do ftp a użytkownicy **anonimowi nie**  
+Poniższe ustawienia to zapewniają :  
+
+```bash
+anonymous_enable=NO  
+local_enable=YES  
+```
+
 
 
 
