@@ -2163,7 +2163,7 @@ będzie można wyświetlić później po użyciu określonych opcji polecenia sa
 
 ## Sprawdzanie ilości wolnego miejsca
 
-### df - Wyświetlanie dostępnej powierzchni dyskowej
+## df - Wyświetlanie dostępnej powierzchni dyskowej
 
 ```df``` - wyświetla dostępną wolną powierzchnię w systemie plików  
     - ```-h``` - human readable - użycie większych jednostek   
@@ -2173,7 +2173,7 @@ będzie można wyświetlić później po użyciu określonych opcji polecenia sa
     - ```-i``` - list inodes information instead of block usage  
     - ```--block-size=#``` - Wyświetlenie wolnego miejsca w jednostkach *np. G, M*  
 
-### du - Sprawdzanie zużycia miejsca na dysku
+## du - Sprawdzanie zużycia miejsca na dysku
 
 ```du``` - wyświetla ilośc miejsca którą zajmują pliki i katalogi, domyślnie działa rekursywnie, na koniec podaje ilość miejsca zajętą przez dany katalog   
     - ```-h``` - human readable - użycie większych jednostek  
@@ -2187,7 +2187,7 @@ będzie można wyświetlić później po użyciu określonych opcji polecenia sa
 1.0M /home/janek  
 
 
-### find - Określanie zużycia miejsca na dysku
+## find - Określanie zużycia miejsca na dysku
 
 - Wyszukanie plików należących do użytkownika janek, wywietlenie dokładnych informacji przy pomocy ls, wyświetlenie katalogów bez ich zawartości, posortowanie po wielkości plików 
 
@@ -2240,7 +2240,7 @@ Polecenie ip route show wskazuje, że adres 192.168.122.1 zapewnia trasę prowad
 
 ```tracepath``` - traceroute - sprawdza trasę między jednym hostem a drugim
 
-### Wyświetlanie nazw hosta i domeny
+## Wyświetlanie nazw hosta i domeny
 
 ```hostname``` - wyświetla hostname
 > spike.example.com
@@ -2329,7 +2329,7 @@ Jednostka to po prostu grupa składająca się z nazwy, typu i pliku konfiguracy
 na określonej usłudze lub akcji.
 
 
-Jednostki w systemd
+Jednostki w systemd  
 ■ automount  
 ■ device  
 ■ mount  
@@ -2459,7 +2459,8 @@ Plik /etc/inittab nie ma już żadnego faktycznego zastosowania.
 Przykładowy plik /etc/inittab na serwerze Linuksa, który używa demona systemd:
 
 ```bash
-# cat /etc/inittab
+cat /etc/inittab
+
 # inittab is no longer used.
 #
 # ADDING CONFIGURATION HERE WILL HAVE NO EFFECT ON YOUR SYSTEM.
@@ -2907,10 +2908,8 @@ strona 439
 ```/etc/httpd/conf.d``` - katalog w którym znajdują się inne pliki używane do konfiguracji *apache* (na podstawie wiersza *Include* w pliku /etc/httpd/httpd.conf)   
 ```/etc/httpd/conf.modules.d``` - miejsce na dodatkowe moduły dla httpd  
 
-  
 
 ```apachectl configtest``` - sprawdzenie configu apache, *dobrze jets używać przed restartem usługi*  
-
 
 
 ## Używanie dyrektyw
