@@ -3372,12 +3372,15 @@ systemctl start smb.service
 systemctl status smb.service 
 ```
 
-```smbclient -L "$hostname"``` - polecenie wyświetla podstawowe informacje o serwerze Samba, **bez wpisywania hasła smbclient pozwala sprawdzić jakie usługi oferuje serwer**  
-
+```smbclient -L "$hostname"``` - polecenie wyświetla podstawowe informacje o serwerze Samba, 
+**bez wpisywania hasła smbclient pozwala sprawdzić jakie usługi oferuje serwer**    
+  
+    
 ```bash
 smbclient -L localhost
 Enter SAMBA\root's password: <ENTER>
 ```
+
 
 > Anonymous login successful  
 Sharename Type Comment   
@@ -3401,6 +3404,7 @@ Przy domyślnej konfiguracji Samby (co widać po powyższym wyniku):
 
 
 ## nmbd - uruchamianie serwera nazw NetBIOS
+
 
 
 
