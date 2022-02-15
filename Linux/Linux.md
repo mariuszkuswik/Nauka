@@ -34,6 +34,8 @@
         - [useradd](#useradd---Ustalanie-ustawień-domyślnych-użytkownika)
         - [usermod](#usermod---Modyfikowanie-ustawień-użytkownika)
         - [userdel](#userdel---Usuwanie-użytkownika)
+    - [Serwer FTP](#Serwer-FTP)
+    - [Samba - serwer plików](#Samba---serwer-plików)
 - [Koniec Biblii](#Koniec-Biblii)
 2. [Skryptowanie](#skryptowanie)
 	- [Zmienne specjalne](#zmienne-specjalne)
