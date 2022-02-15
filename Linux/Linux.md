@@ -3355,18 +3355,24 @@ Jak zalogować się jako użytkownik anonimowy za pomocą klienta ftp (nie lftp!
 ## Uruchamianie i zatrzymywanie Samby
 
 
-Z serwerem Samba są powiązane dwie podstawowe
-usługi, z których każda ma oddzielnego demona usługi:
+Z serwerem Samba są powiązane dwie podstawowe usługi, z których każda ma oddzielnego demona usługi:    
 
-- **smb** -  Kontroluje proces demona, który dostarcza dostępne dla klientów Windowsa usługi współdzielenia plików i drukarek.
-- **nmb** - Kontroluje proces demona nmbd. Dzięki dostarczeniu usługi mapowania nazwy NetBIOS na adres nmbd ma możliwość mapowania żądań pochodzących od klientów Windowsa na nazwy NetBIOS, aby następnie mogły zostać skonwertowane na adresy IP
+- **smb** -  Kontroluje proces demona, który dostarcza dostępne dla klientów Windowsa usługi współdzielenia plików i drukarek.  
+- **nmb** - Kontroluje proces demona nmbd. Dzięki dostarczeniu usługi mapowania nazwy NetBIOS na adres nmbd ma możliwość mapowania żądań pochodzących od klientów Windowsa na nazwy   NetBIOS, aby następnie mogły zostać skonwertowane na adresy IP    
 
-Aby za pomocą Samby współdzielić pliki i drukarki z innymi systemami Linux, wymagana jest jedynie usługa smb. 
+Aby za pomocą Samby współdzielić pliki i drukarki z innymi systemami Linux, wymagana jest jedynie usługa smb.   
 
 ## smb - Uruchamianie usługi Samby
 
-Usługa smb powoduje uruchomienie serwera smbd. Dzięki niej pliki i drukarki w systemie lokalnym stają się dostępne dla innych komputerów znajdujących się w sieci. 
+Usługa **smb** powoduje uruchomienie serwera smbd. Dzięki niej pliki i drukarki w systemie lokalnym stają się dostępne dla innych komputerów znajdujących się w sieci.  
 
+```bash
+systemctl enable smb.service
+systemctl start smb.service
+systemctl status smb.service 
+```
+
+```smbclient -L "$hostname"``` - polecenie wyświetla podstawowe informacje o serwerze Samba, **bez wpisywania hasła smbclient pozwala sprawdzić jakie usługi oferuje serwer**  
 
 
 
