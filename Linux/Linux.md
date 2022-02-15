@@ -3405,6 +3405,27 @@ Przy domyślnej konfiguracji Samby (co widać po powyższym wyniku):
 
 ## nmbd - uruchamianie serwera nazw NetBIOS
 
+Jeżeli w sieci nie działa jeszcze żaden serwer domeny Windowsa, jak ma to miejsce w omawianym przykładzie, można uruchomić usługę nmb w hoście Samby, aby zapewnić tego rodzaju usługę.  
+
+Uruchamianie usługi   
+
+```bash
+systemctl enable nmb.service
+systemctl start nmb.service
+systemctl status nmb.service
+```
+
+Po uruchomieniu usługi nmb
+
+```smbclient -L localhost```
+
+> ...
+Workgroup Master
+\--------- -------
+SAMBA FEDORA30
+
+nmblookup -U localhost FEDORA30
+
 
 
 
@@ -3414,7 +3435,7 @@ Przy domyślnej konfiguracji Samby (co widać po powyższym wyniku):
 
 
 ### Strona 478
-485
+488
 
 
 
