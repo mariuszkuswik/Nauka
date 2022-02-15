@@ -10,7 +10,6 @@
 # Spis treści
 [Koniec Biblii](#Koniec-biblii)
 
-1. [System](#system-linux)
 2. [Biblia](#Biblia)
     - [Korzystanie z pomocy](#Korzystanie-z-pomocy)
         - [man](#man)
@@ -18,6 +17,7 @@
     - [Używanie Powłoki](#Używanie-Powłoki)
         - [id](#id)
         - [type](#type)
+    - [Praca z plikami tekstowymi](#Praca-z-plikami-tekstowymi)
     - [Uprawnienia](#Uprawnienia)
         - [Umask](#umask---definiowanie-uprawnień-domyślnych)
         - [Chown](#chown---Zmiana-właściciela-pliku)
