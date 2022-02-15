@@ -3285,6 +3285,8 @@ Poruszanie się po lftp :
 
 ### #TODO - strona 481 ćwiczenia dla ftp, sprawdzić czy zrobiłem dobrze  
 
+### Ćwiczenia do rozdziału 
+
 1. Ustal nazwę pakietu dostarczającego usługę Very Secure FTP Daemon
 - Jak grepować dnf provides i jak szukać tego komendą rpm
 ```dnf provides vsftpd```
@@ -3319,6 +3321,8 @@ i osłony TCP zostały skonfigurowane w sposób zapewniający dostęp do tego ka
 
 10. Za pomocą dowolnie wybranego klienta FTP odwiedź katalog /pub/debian-meetings
 na serwerze ftp.gnome.org i wyświetl zawartość tego katalogu.
+- coś mi nie wyszło, nie widzę katalogu pub a terminalem nawet nie jestem w stanie się zalogować 
+
 
 
 Jak zalogować się jako użytkownik anonimowy za pomocą klienta ftp (nie lftp!)
@@ -3326,11 +3330,11 @@ Jak zalogować się jako użytkownik anonimowy za pomocą klienta ftp (nie lftp!
 
 
 
-
-
-
 # Samba - Serwer plików 
 
+## Instalowanie Samby
+
+samba-client - zawiera narzędzia, takie jak smbclient (nawiązywanie połączenia z Sambą i udziałami Windowsa), nmblookup (wyszukiwanie adresówhostów) i findsmb (wyszukiwanie hostów SMB w sieci).
 
 
 
@@ -3342,7 +3346,7 @@ Jak zalogować się jako użytkownik anonimowy za pomocą klienta ftp (nie lftp!
 
 
 ### Strona 478
-
+483
 
 
 
