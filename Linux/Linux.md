@@ -3274,6 +3274,21 @@ trzeba nazwę hosta poprzedzić notacją użytkownik:hasło@:host
 ```-u``` - user, lftp zapyta o hasło 
 logując się bez opcji user logujemy się jako uzytkownik anonimowy 
 
+Poruszanie się po lftp :
+- ```?``` - wyświetlenie pomocy 
+- ```get "$filename"``` - pobranie pliku 
+- ```put "$filename"``` - upload pliku 
+- ```mmv "$filename"``` - przeniesienie pliku 
+- ```!<shell-command>``` - użycie lokalnego shella 
+
+### #TODO - strona 481 ćwiczenia dla ftp 
+
+
+
+
+
+# Samba - Serwer plików 
+
 
 
 
