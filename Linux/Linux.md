@@ -3424,9 +3424,14 @@ Workgroup Master
 \--------- -------
 SAMBA FEDORA30
 
-nmblookup -U localhost FEDORA30
+
+```nmblookup -U localhost FEDORA30``` - do serwera nmbd wykonać zapytanie pobierające adres IP hosta FEDORA30
+
+> querying FEDORA30 on 127.0.0.1
+192.168.122.81 FEDORA30<00>
 
 
+## Zatrzymywanie usług Samby (smb) i NetBIOS (nmb)
 
 
 
