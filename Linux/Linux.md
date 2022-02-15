@@ -3283,7 +3283,47 @@ Poruszanie się po lftp :
 - ```mmv "$filename"``` - przeniesienie pliku 
 - ```!<shell-command>``` - użycie lokalnego shella 
 
-### #TODO - strona 481 ćwiczenia dla ftp 
+### #TODO - strona 481 ćwiczenia dla ftp, sprawdzić czy zrobiłem dobrze  
+
+1. Ustal nazwę pakietu dostarczającego usługę Very Secure FTP Daemon
+- Jak grepować dnf provides i jak szukać tego komendą rpm
+```dnf provides vsftpd```
+
+2. W swoim systemie zainstaluj pakiet serwera Very Secure FTP Daemon i poszukaj znajdujących się w nim plików konfiguracyjnych.
+```rpm -qc vsfptd```
+
+3. W usłudze serwera Very Secure FTP Daemon włącz obsługę anonimowego FTP i wyłącz możliwość logowania się użytkowników lokalnych.
+- W pliku /etc/vsftpd/vsftpd.conf 
+anonymous_enable=YES
+local_enable=NO
+
+4. Uruchom usługę serwera Very Secure FTP Daemon i zdefiniuj jej uruchamianie razem z systemem.
+
+```bash
+systemctl start vsftpd
+systemctl enable vsftpd
+systemctl status vsftpd
+```
+
+5. W systemie zawierającym działający serwer FTP utwórz plik o nazwie test w katalogu anonimowego FTP. Ten plik powinien zawierać ciąg tekstowy Witaj na serwerze vsftpd
+echo "Witaj na serwerze ftp" > /var/ftp/test
+
+8. Skonfiguruj serwer vsftpd w sposób umożliwiający użytkownikom anonimowym przekazywanie plików do katalogu o nazwie in.
+- Nie wiem jak to zrobić 
+
+9. Zainstaluj klienta FTP o nazwie lftp (jeżeli nie masz pod ręką drugiego systemu Linux,
+lftp zainstaluj w hoście zawierającym uruchomiony serwer FTP). Jeśli nie możesz
+przekazywać plików do katalogu in, sprawdź, czy zapora sieciowa, mechanizm SELinux
+i osłony TCP zostały skonfigurowane w sposób zapewniający dostęp do tego katalogu.
+- Nie wiem jak to zrobić 
+
+10. Za pomocą dowolnie wybranego klienta FTP odwiedź katalog /pub/debian-meetings
+na serwerze ftp.gnome.org i wyświetl zawartość tego katalogu.
+
+
+Jak zalogować się jako użytkownik anonimowy za pomocą klienta ftp (nie lftp!)
+
+
 
 
 
