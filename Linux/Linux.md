@@ -3270,8 +3270,11 @@ trzeba nazwę hosta poprzedzić notacją użytkownik:hasło@:host
 
 ```yum install lftp```
 
-Dodanie -u nazwa_użytkownika pozwala podać hasło (po wyświetleniu takiego żądania) i uzyskać dostęp do serwera FTP jako zalogowany użytkownik.
-Jeżeli wydasz polecenie lftp i podasz jedynie nazwę serwera FTP, zostanie podjęta próba nawiązania z tym serwerem FTP połączenia w ramach konta użytkownika anonimowego.
+
+```-u``` - user, lftp zapyta o hasło 
+logując się bez opcji user logujemy się jako uzytkownik anonimowy 
+
+
 
 
 
@@ -3281,8 +3284,8 @@ Jeżeli wydasz polecenie lftp i podasz jedynie nazwę serwera FTP, zostanie podj
 
 
 
-### Strona 468
-478
+### Strona 478
+
 
 
 
