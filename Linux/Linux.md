@@ -3334,8 +3334,38 @@ Jak zalogować się jako użytkownik anonimowy za pomocą klienta ftp (nie lftp!
 
 ## Instalowanie Samby
 
-samba-client - zawiera narzędzia, takie jak smbclient (nawiązywanie połączenia z Sambą i udziałami Windowsa), nmblookup (wyszukiwanie adresówhostów) i findsmb (wyszukiwanie hostów SMB w sieci).
+- samba-client - zawiera narzędzia, takie jak smbclient (nawiązywanie połączenia z Sambą i udziałami Windowsa), nmblookup (wyszukiwanie adresówhostów) i findsmb (wyszukiwanie hostów SMB w sieci).
 
+- samba-winbind — zawiera komponenty pozwalające serwerowi Samba w Linuksie stać się członkiem domeny Windowsa, łącznie z korzystaniem w Linuksie z konta użytkownika Windowsa i jego grupy.
+
+```rpm -qc samba-common``` - wyświetla pliki konfiguracyjne samby 
+
+
+```/etc/samba``` - główny folder plików konfiguracyjnych samby
+- ```smb.conf``` - główny config, służy do przechowywania ustawień globalnych serwera Samba oraz informacji o poszczególnych udziałach plików i drukarek 
+- ```lmhosts``` - pozwala mapować nazwy hostów Samba NetBIOS na adresy IP
+- ```smbusers``` - *(nie istnieje domyślnie ale można go utworzyć)*, mapuje nazwy użytkowników systemu Linux na nazwy systemu Windows
+
+```man smbpasswd``` - zmiana hasła
+```man smbclient``` - nawiązanie połączenia z serwerem samba 
+```man nmblookup``` - wyszukiwanie informacji NetBIOS
+
+
+
+## Uruchamianie i zatrzymywanie Samby
+
+
+Z serwerem Samba są powiązane dwie podstawowe
+usługi, z których każda ma oddzielnego demona usługi:
+
+- **smb** -  Kontroluje proces demona, który dostarcza dostępne dla klientów Windowsa usługi współdzielenia plików i drukarek.
+- **nmb** - Kontroluje proces demona nmbd. Dzięki dostarczeniu usługi mapowania nazwy NetBIOS na adres nmbd ma możliwość mapowania żądań pochodzących od klientów Windowsa na nazwy NetBIOS, aby następnie mogły zostać skonwertowane na adresy IP
+
+Aby za pomocą Samby współdzielić pliki i drukarki z innymi systemami Linux, wymagana jest jedynie usługa smb. 
+
+## smb - Uruchamianie usługi Samby
+
+Usługa smb powoduje uruchomienie serwera smbd. Dzięki niej pliki i drukarki w systemie lokalnym stają się dostępne dla innych komputerów znajdujących się w sieci. 
 
 
 
@@ -3346,7 +3376,7 @@ samba-client - zawiera narzędzia, takie jak smbclient (nawiązywanie połączen
 
 
 ### Strona 478
-483
+485
 
 
 
