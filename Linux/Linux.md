@@ -3379,19 +3379,19 @@ smbclient -L localhost
 Enter SAMBA\root's password: <ENTER>
 ```
 
-> Anonymous login successful
-Sharename Type Comment
-\--------- ---- -------
-print$ Disk Printer Drivers
-IPC$ IPC IPC Service
-(Samba Server Version 4.10.10)
-deskjet Printer deskjet
-Reconnecting with SMB1 for workgroup listing.
-Anonymous login successful
-Server Comment
-\--------- -------
-Workgroup Master
-\--------- -------
+> Anonymous login successful  
+Sharename Type Comment   
+\--------- ---- -------  
+print$ Disk Printer Drivers  
+IPC$ IPC IPC Service   
+(Samba Server Version 4.10.10)  
+deskjet Printer deskjet  
+Reconnecting with SMB1 for workgroup listing.  
+Anonymous login successful  
+Server Comment  
+\--------- -------  
+Workgroup Master  
+\--------- -------  
 
 
 Przy domyślnej konfiguracji Samby (co widać po powyższym wyniku):
