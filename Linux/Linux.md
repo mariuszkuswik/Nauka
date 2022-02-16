@@ -3435,6 +3435,9 @@ SAMBA FEDORA30
 
 
 
+
+
+
 ## Koniec Biblii
 
 
