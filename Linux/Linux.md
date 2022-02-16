@@ -3552,6 +3552,11 @@ Plik smb.conf składa się z następujących predefiniowanych sekcji:
 - [print$] - definiuje katalog jako katalog sterowników dla drukarki współdzielonej
 
 
+```#``` lub ```;``` - komentarze 
+
+
+
+
 
 
 
@@ -3561,7 +3566,7 @@ Plik smb.conf składa się z następujących predefiniowanych sekcji:
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 488
-492
+493
 
 
 373 - strona na której skończyłem sieci 
