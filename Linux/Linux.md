@@ -3554,10 +3554,31 @@ Plik smb.conf składa się z następujących predefiniowanych sekcji:
 
 ```#``` lub ```;``` - komentarze 
 
+```locate smb.conf.example``` - wyświetla lokalizację przykładowego configu
 
 
+## Konfigurowanie sekcji [global]
 
 
+#### Przykład sekcji [global] pliku smb.conf:
+
+```bash
+    [global]
+        workgroup = SAMBA
+        security = user
+        passdb backend = tdbsam
+        printing = cups
+        printcap name = cups
+        load printers = yes
+        cups options = raw
+    ; netbios name = MYSERVER
+    ; interfaces = lo eth0 192.168.12.2/24 192.168.13.2/24
+    ; hosts allow = 127. 192.168.12. 192.168.13.
+```
+
+- workgroup = SAMBA - grupa robocza/domena, w tej grupie znajduje się serwer Samba
+- security = user - domyślny typ zabezpieczeń (security) został określony jako user (nazwa użytkownika i hasło Samby)
+- passdb backend = tdbsam - 
 
 
 
@@ -3566,7 +3587,7 @@ Plik smb.conf składa się z następujących predefiniowanych sekcji:
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 488
-493
+494
 
 
 373 - strona na której skończyłem sieci 
