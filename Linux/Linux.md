@@ -3521,64 +3521,64 @@ w systemie po zainstalowaniu pakietu **selinux-policy-doc**.
 ### #TODO - strona 492-493, do opisania jak działają konteksty plików i opisać całość bardziej  
 
 
-- ```semanage fcontext``` - definjowanie reguły kontekstu pliku
-- ```restorecon``` - zastosowanie reguł 
+- ```semanage fcontext``` - definjowanie reguły kontekstu pliku  
+- ```restorecon``` - zastosowanie reguł  
 
-Na przykład jeśli chcesz współdzielić katalog /mystuff, najpierw musisz go utworzyć razem z odpowiednimi uprawnieniami, a następnie wydać następujące polecenia i tym samym zapewnić Sambie uprawnienia odczytu i zapisu do tego katalogu:
+Na przykład jeśli chcesz współdzielić katalog /mystuff, najpierw musisz go utworzyć razem z odpowiednimi uprawnieniami, a następnie wydać następujące polecenia i tym samym zapewnić Sambie uprawnienia odczytu i zapisu do tego katalogu:  
 
 
 Definiowanie nowej reguły kontekstu pliku : 
 
 ```bash
-semanage fcontext -a -t samba_share_t "/mystuff(/.*)?"
-# restorecon -v /mystuff
+semanage fcontext -a -t samba_share_t "/mystuff(/.*)?"  
+# restorecon -v /mystuff  
 ```
 
 # Konfigurowanie Samby
 
 
-```/etc/samba/smb.conf``` - plik /etc/samba/smb.conf zawiera ustawienia przeznaczone do konfigurowania serwera Samba, definiowania drukarek współdzielonych, konfigurowania uwierzytelnienia oraz tworzenia katalogów współdzielonych. 
+```/etc/samba/smb.conf``` - plik /etc/samba/smb.conf zawiera ustawienia przeznaczone do konfigurowania serwera Samba, definiowania drukarek współdzielonych, konfigurowania uwierzytelnienia oraz tworzenia katalogów współdzielonych.   
 
-Plik smb.conf składa się z następujących predefiniowanych sekcji:
+Plik smb.conf składa się z następujących predefiniowanych sekcji:  
 
-- [global] - usatwienia mają zastosowanie dla całego serwera Samba, 
-    - opis serwera
-    - grupa robocza (domena)
-    - ścieżka do logów
-    - i inne ustawienia 
+- [global] - usatwienia mają zastosowanie dla całego serwera Samba,    
+    - opis serwera  
+    - grupa robocza (domena)  
+    - ścieżka do logów  
+    - i inne ustawienia   
 
-- [homes] - określa czy użytkownicy posiadający konto na serwerze mają dostęp do katalogów domowych
-- [printers] - określa czy Samba może udostępniać drukarki które został skonfigurowane w Linuksie (za pomocą serwera CUPS)
-- [print$] - definiuje katalog jako katalog sterowników dla drukarki współdzielonej
+- [homes] - określa czy użytkownicy posiadający konto na serwerze mają dostęp do katalogów domowych  
+- [printers] - określa czy Samba może udostępniać drukarki które został skonfigurowane w Linuksie (za pomocą serwera CUPS)  
+- [print$] - definiuje katalog jako katalog sterowników dla drukarki współdzielonej  
 
 
-```#``` lub ```;``` - komentarze 
+```#``` lub ```;``` - komentarze   
 
-```locate smb.conf.example``` - wyświetla lokalizację przykładowego configu
+```locate smb.conf.example``` - wyświetla lokalizację przykładowego configu  
 
 
 ## Konfigurowanie sekcji [global]
 
 
-#### Przykład sekcji [global] pliku smb.conf:
+#### Przykład sekcji [global] pliku smb.conf:  
 
-```bash
-    [global]
-        workgroup = SAMBA
-        security = user
-        passdb backend = tdbsam
-        printing = cups
-        printcap name = cups
-        load printers = yes
-        cups options = raw
-    ; netbios name = MYSERVER
-    ; interfaces = lo eth0 192.168.12.2/24 192.168.13.2/24
-    ; hosts allow = 127. 192.168.12. 192.168.13.
+```bash  
+    [global]  
+        workgroup = SAMBA  
+        security = user  
+        passdb backend = tdbsam  
+        printing = cups  
+        printcap name = cups  
+        load printers = yes  
+        cups options = raw  
+    ; netbios name = MYSERVER  
+    ; interfaces = lo eth0 192.168.12.2/24 192.168.13.2/24  
+    ; hosts allow = 127. 192.168.12. 192.168.13.  
 ```
 
-- workgroup = SAMBA - grupa robocza/domena, w tej grupie znajduje się serwer Samba
-- security = user - domyślny typ zabezpieczeń (security) został określony jako user (nazwa użytkownika i hasło Samby)
-- passdb backend = tdbsam - 
+- workgroup = SAMBA - grupa robocza/domena, w tej grupie znajduje się serwer Samba  
+- security = user - domyślny typ zabezpieczeń (security) został określony jako user (nazwa użytkownika i hasło Samby)  
+- passdb backend = tdbsam -   
 
 
 
