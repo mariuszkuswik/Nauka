@@ -3441,9 +3441,17 @@ Podczas konfiguracji serwera należy sprawdzić :
 ## Konfigurowanie zapory sieciowej dla Samby
 
 
-- Port **TCP 445** - *podstawowy port na którym nasłuchuje demon smbd*, zapora sieciowa musi nasłuchiwać pakietów żądań przychodzących do tego portu, aby serwer Samba mógł działać
-- Port **TCP 139** - *nmbd*, demon smbd nasłuchuje na porcie 139 aby mógł obsługiwać sesje użytkowników związanych z **NetBIOS**, 
-- Porty **UDP 137 i 138** - 
+- Port **TCP 445** - *podstawowy port na którym nasłuchuje demon smbd*, zapora sieciowa musi nasłuchiwać pakietów żądań przychodzących do tego portu, aby serwer Samba mógł działać  
+- Port **TCP 139** - *nmbd*, demon smbd nasłuchuje na porcie 139 aby mógł obsługiwać sesje użytkowników związanych z **NetBIOS**, *obsługa Samby bez tego portu jest możliwa ale nie zalecana*  
+- Porty **UDP 137 i 138** - *demon nmbd* używa tych portów do obsługi przychodzących żądań NetBIOS, *te porty muszą zostać otwarte dla nmbd*  
+
+
+
+### Otwarcie zapory przy pomocy GUI 
+
+Przechodzimy do okna *Konfiguracja zapory sieciowej* i zaznaczamy pola wyboru obok elementów *samba* i *samba-client* w strefie *publicznej (public)* na karcie Usługi.   
+Porty te stają się dostępne natychmiast (nie ma konieczności ponownego uruchomienia usługi firewalld).  
+
 
 
 
