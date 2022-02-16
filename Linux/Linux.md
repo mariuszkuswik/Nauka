@@ -3429,6 +3429,21 @@ SAMBA FEDORA30
 192.168.122.81 FEDORA30<00>
 
 
+## Zabezpieczanie Samby
+
+Podczas konfiguracji serwera należy sprawdzić : 
+
+- Zaporę sieciową  - Domyślnie zapora blokuje dostęp do usług użytkownikom z zewnątrz
+- SELinux - należy włączyć opcje boolowskie umożliwiające użytkownikom dostęp 
+- Host i działania użytkownika - w configu można wskazać hosty i użytkowników którzy mają dostęp do serwera 
+
+
+## Konfigurowanie zapory sieciowej dla Samby
+
+
+- Port **TCP 445** - *podstawowy port na którym nasłuchuje demon smbd*, zapora sieciowa musi nasłuchiwać pakietów żądań przychodzących do tego portu, aby serwer Samba mógł działać
+- Port **TCP 139** - *nmbd*, demon smbd nasłuchuje na porcie 139 aby mógł obsługiwać sesje użytkowników związanych z **NetBIOS**, 
+- Porty **UDP 137 i 138** - 
 
 
 
