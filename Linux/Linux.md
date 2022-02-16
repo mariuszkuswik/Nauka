@@ -3485,8 +3485,23 @@ COMMIT
 ## Konfigurowanie SELinux dla Samby
 
 
+W przypadku mechanizmu SELinux działającego w trybie wymuszenia,w kontekście użycia Samby
+z SELinux trzeba uwzględnić kontekst pliku i opcje boolowskie. Kontekst pliku musi być poprawnie
+zdefiniowany dla katalogu współdzielonego przez Sambę. Opcje boolowskie natomiast pozwalają
+nadpisywać domyślne podejście w zakresie zabezpieczania pewnych funkcjonalności Samby.
+
+### #TODO - sprawdzić czy jest opcja zainstalowania tego manuala z iso systemowego 
+
+Informacje dotyczące ograniczania Samby przez SQLinux znajdziesz na stronie podręcznika
+systemowego samba_linux (polecenie man samba_linux). Podręcznik ten będzie się znajdował
+w systemie po zainstalowaniu pakietu **selinux-policy-doc**. 
 
 
+## Opcje boolowskie SELinux związane z Sambą
+
+```bash
+semanage boolean -l | egrep "smb|samba"
+```
 
 
 
