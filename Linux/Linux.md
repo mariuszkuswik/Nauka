@@ -3537,6 +3537,21 @@ semanage fcontext -a -t samba_share_t "/mystuff(/.*)?"
 # Konfigurowanie Samby
 
 
+```/etc/samba/smb.conf``` - plik /etc/samba/smb.conf zawiera ustawienia przeznaczone do konfigurowania serwera Samba, definiowania drukarek współdzielonych, konfigurowania uwierzytelnienia oraz tworzenia katalogów współdzielonych. 
+
+Plik smb.conf składa się z następujących predefiniowanych sekcji:
+
+- [global] - usatwienia mają zastosowanie dla całego serwera Samba, 
+    - opis serwera
+    - grupa robocza (domena)
+    - ścieżka do logów
+    - i inne ustawienia 
+
+- [homes] - określa czy użytkownicy posiadający konto na serwerze mają dostęp do katalogów domowych
+- [printers] - określa czy Samba może udostępniać drukarki które został skonfigurowane w Linuksie (za pomocą serwera CUPS)
+- [print$] - definiuje katalog jako katalog sterowników dla drukarki współdzielonej
+
+
 
 
 
