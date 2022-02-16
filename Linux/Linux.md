@@ -3450,71 +3450,78 @@ Podczas konfiguracji serwera należy sprawdzić :
 ### Otwarcie zapory przy pomocy GUI 
 
 Przechodzimy do okna *Konfiguracja zapory sieciowej* i zaznaczamy pola wyboru obok elementów *samba* i *samba-client* w strefie *publicznej (public)* na karcie Usługi.   
-Porty te stają się dostępne natychmiast (nie ma konieczności ponownego uruchomienia usługi firewalld).  
+Porty te stają się dostępne natychmiast (nie ma konieczności ponownego uruchomienia usługi firewalld).    
 
-```/etc/sysconfig/iptables``` - plik konfiguracyjny dla iptables
+```/etc/sysconfig/iptables``` - plik konfiguracyjny dla iptables  
 
-Plik konfiguracyjny **iptables** dla portów **smbd i nmbd**
+Plik konfiguracyjny **iptables** dla portów **smbd i nmbd**  
 
 ```bash 
-*filter
-:INPUT ACCEPT [0:0]
-:FORWARD ACCEPT [0:0]
-:OUTPUT ACCEPT [0:0]
--A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
--A INPUT -p icmp -j ACCEPT
--A INPUT -i lo -j ACCEPT
-
-# Porty dla snmbd i nmbd
--I INPUT -m state --state NEW -m udp -p udp --dport 137 -j ACCEPT
--I INPUT -m state --state NEW -m udp -p udp --dport 138 -j ACCEPT
--I INPUT -m state --state NEW -m tcp -p tcp --dport 139 -j ACCEPT
--I INPUT -m state --state NEW -m tcp -p tcp --dport 445 -j ACCEPT
-### 
-
--A INPUT -j REJECT --reject-with icmp-host-prohibited
--A FORWARD -j REJECT --reject-with icmp-host-prohibited
-COMMIT
-```
+*filter  
+:INPUT ACCEPT [0:0]  
+:FORWARD ACCEPT [0:0]  
+:OUTPUT ACCEPT [0:0]  
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT  
+-A INPUT -p icmp -j ACCEPT  
+-A INPUT -i lo -j ACCEPT  
+  
+# Porty dla snmbd i nmbd  
+-I INPUT -m state --state NEW -m udp -p udp --dport 137 -j ACCEPT  
+-I INPUT -m state --state NEW -m udp -p udp --dport 138 -j ACCEPT  
+-I INPUT -m state --state NEW -m tcp -p tcp --dport 139 -j ACCEPT  
+-I INPUT -m state --state NEW -m tcp -p tcp --dport 445 -j ACCEPT  
+###   
+  
+-A INPUT -j REJECT --reject-with icmp-host-prohibited  
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited  
+COMMIT  
+```  
 
 #### Reguły powinny być dodawane gdzieś przed ostatnimi regułami **REJECT**
 
-```systemctl restart iptables``` - Po zaktualizowaniu reguł usługę iptables należy zrestartować 
+```systemctl restart iptables``` - Po zaktualizowaniu reguł usługę iptables należy zrestartować   
 
 
 ## Konfigurowanie SELinux dla Samby
 
 
-W przypadku mechanizmu SELinux działającego w trybie wymuszenia,w kontekście użycia Samby
-z SELinux trzeba uwzględnić kontekst pliku i opcje boolowskie. Kontekst pliku musi być poprawnie
-zdefiniowany dla katalogu współdzielonego przez Sambę. Opcje boolowskie natomiast pozwalają
-nadpisywać domyślne podejście w zakresie zabezpieczania pewnych funkcjonalności Samby.
+W przypadku mechanizmu SELinux działającego w trybie wymuszenia,w kontekście użycia Samby  
+z SELinux trzeba uwzględnić kontekst pliku i opcje boolowskie. Kontekst pliku musi być poprawnie  
+zdefiniowany dla katalogu współdzielonego przez Sambę. Opcje boolowskie natomiast pozwalają  
+nadpisywać domyślne podejście w zakresie zabezpieczania pewnych funkcjonalności Samby.  
 
 ### #TODO - sprawdzić czy jest opcja zainstalowania tego manuala z iso systemowego 
 
-Informacje dotyczące ograniczania Samby przez SQLinux znajdziesz na stronie podręcznika
-systemowego samba_linux (polecenie man samba_linux). Podręcznik ten będzie się znajdował
-w systemie po zainstalowaniu pakietu **selinux-policy-doc**. 
+Informacje dotyczące ograniczania Samby przez SQLinux znajdziesz na stronie podręcznika  
+systemowego samba_linux (polecenie man samba_linux). Podręcznik ten będzie się znajdował  
+w systemie po zainstalowaniu pakietu **selinux-policy-doc**.   
 
 
 ## Opcje boolowskie SELinux związane z Sambą
 
-```bash
-semanage boolean -l | egrep "smb|samba"
-```
+```semanage boolean -l | egrep "smb|samba"``` - wyświetlenie opcji boolowskich powiązanych z Sambą   
+
+### #TODO - sprawdzić czy jest opcja na wyświetlenie w manie co robi która zmienna  
+- sprawdzić czy nie opisac bardziej poszczególnych zmiennych bollowych, strona 492  
+
+
+- ```setsebool``` - służy do włączania i wyłączania opcji boolowskich SELinux  
+    - ```-P``` - zmiana jest stała   
+
+
+```setsebool -P samba_export_all_ro on``` - zezwolenie sambie na udostępnianie plików i folderów z uprawnieniami do odczytu, **zmiana będzie stała**    
+
+
 
 
 
 
 ## Koniec Biblii
 
-
+### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 488
-
-
-
-
+491
 
 
 373 - strona na której skończyłem sieci 
