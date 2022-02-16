@@ -3507,13 +3507,18 @@ w systemie po zainstalowaniu pakietu **selinux-policy-doc**.
 
 - ```setsebool``` - służy do włączania i wyłączania opcji boolowskich SELinux  
     - ```-P``` - zmiana jest stała   
-
+- ```getsebool "$zmienna"``` - wyświetla obecny status zmiennej  
+  
 
 ```setsebool -P samba_export_all_ro on``` - zezwolenie sambie na udostępnianie plików i folderów z uprawnieniami do odczytu, **zmiana będzie stała**    
-```getsebool samba_export_all_ro``` - sprawdzenie czy zmienna została poprawnie zmieniona   
+```getsebool samba_export_all_ro``` - wyświetlenie statusu zmiennej dla potwierdzenia zmiany      
 
 > samba_export_all_ro --> on  
 
+
+## Definiowanie kontekstu pliku SELinux dla Samby
+
+### #TODO - strona 492, do opisania jak działają konteksty plików 
 
 
 
@@ -3525,7 +3530,7 @@ w systemie po zainstalowaniu pakietu **selinux-policy-doc**.
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 488
-491
+492
 
 
 373 - strona na której skończyłem sieci 
