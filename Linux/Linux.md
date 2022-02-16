@@ -3454,6 +3454,7 @@ Porty te stają się dostępne natychmiast (nie ma konieczności ponownego uruch
 
 ```/etc/sysconfig/iptables``` - plik konfiguracyjny dla iptables
 
+Plik konfiguracyjny **iptables** dla portów **smbd i nmbd**
 
 ```bash 
 *filter
@@ -3475,6 +3476,13 @@ Porty te stają się dostępne natychmiast (nie ma konieczności ponownego uruch
 -A FORWARD -j REJECT --reject-with icmp-host-prohibited
 COMMIT
 ```
+
+#### Reguły powinny być dodawane gdzieś przed ostatnimi regułami **REJECT**
+
+```systemctl restart iptables``` - Po zaktualizowaniu reguł usługę iptables należy zrestartować 
+
+
+## Konfigurowanie SELinux dla Samby
 
 
 
