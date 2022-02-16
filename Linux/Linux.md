@@ -3407,7 +3407,7 @@ Przy domyślnej konfiguracji Samby (co widać po powyższym wyniku):
 
 Jeżeli w sieci nie działa jeszcze żaden serwer domeny Windowsa, jak ma to miejsce w omawianym przykładzie, można uruchomić usługę nmb w hoście Samby, aby zapewnić tego rodzaju usługę.  
 
-Uruchamianie usługi   
+Po uruchomieniu usługi **nmb** serwer będzie głównym serwerem grupy roboczej 
 
 ```bash
 systemctl enable nmb.service
@@ -3415,9 +3415,7 @@ systemctl start nmb.service
 systemctl status nmb.service
 ```
 
-Po uruchomieniu usługi nmb
-
-```smbclient -L localhost```
+```smbclient -L localhost``` - wyświetlenie informacji o serwerze *NetBIOS* działającym na serwerze *samby*
 
 > ...
 Workgroup Master
@@ -3431,7 +3429,9 @@ SAMBA FEDORA30
 192.168.122.81 FEDORA30<00>
 
 
-## Zatrzymywanie usług Samby (smb) i NetBIOS (nmb)
+
+
+
 
 
 
@@ -3442,8 +3442,10 @@ SAMBA FEDORA30
 
 
 
-### Strona 478
-488
+### Strona 488
+
+
+
 
 
 
