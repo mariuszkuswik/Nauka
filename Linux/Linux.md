@@ -3518,7 +3518,23 @@ w systemie po zainstalowaniu pakietu **selinux-policy-doc**.
 
 ## Definiowanie kontekstu pliku SELinux dla Samby
 
-### #TODO - strona 492, do opisania jak działają konteksty plików 
+### #TODO - strona 492-493, do opisania jak działają konteksty plików i opisać całość bardziej  
+
+
+- ```semanage fcontext``` - definjowanie reguły kontekstu pliku
+- ```restorecon``` - zastosowanie reguł 
+
+Na przykład jeśli chcesz współdzielić katalog /mystuff, najpierw musisz go utworzyć razem z odpowiednimi uprawnieniami, a następnie wydać następujące polecenia i tym samym zapewnić Sambie uprawnienia odczytu i zapisu do tego katalogu:
+
+
+Definiowanie nowej reguły kontekstu pliku : 
+
+```bash
+semanage fcontext -a -t samba_share_t "/mystuff(/.*)?"
+# restorecon -v /mystuff
+```
+
+# Konfigurowanie Samby
 
 
 
