@@ -3510,6 +3510,10 @@ w systemie po zainstalowaniu pakietu **selinux-policy-doc**.
 
 
 ```setsebool -P samba_export_all_ro on``` - zezwolenie sambie na udostępnianie plików i folderów z uprawnieniami do odczytu, **zmiana będzie stała**    
+```getsebool samba_export_all_ro``` - sprawdzenie czy zmienna została poprawnie zmieniona   
+
+> samba_export_all_ro --> on  
+
 
 
 
