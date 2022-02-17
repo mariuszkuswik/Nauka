@@ -3576,9 +3576,21 @@ Plik smb.conf składa się z następujących predefiniowanych sekcji:
     ; hosts allow = 127. 192.168.12. 192.168.13.  
 ```
 
-- workgroup = SAMBA - grupa robocza/domena, w tej grupie znajduje się serwer Samba  
-- security = user - domyślny typ zabezpieczeń (security) został określony jako user (nazwa użytkownika i hasło Samby)  
-- passdb backend = tdbsam -   
+- ```workgroup = SAMBA``` - grupa robocza/domena, w tej grupie znajduje się serwer Samba   
+- ```security = user``` - domyślny typ zabezpieczeń (security) został określony jako user (nazwa użytkownika i hasło Samby)    
+- ```passdb backend = tdbsam``` - użycie bazy danych backendu Samby do przechowywania haseł. Istnieje możliwość użycia polecenia **smbpasswd** w celu zdefiniowania haseł poszczególnych użytkowników     
+
+
+- ```cups options = raw``` - umożliwia windowsowi używanie własnych sterowników drukarek  
+
+- ```netbios name = MYSERVER``` - domyślnie nazwą NetBIOSową serwera Samba jest hostname ale w sekcji *global* można skonfigurować inną, w configu powyżej *opcja jest zakomentowana*
+- ```interfaces = lo eth0 192.168.12./24 192.168.13.2/24``` - zezwolenie określonym hostom na dostęp, jeżeli chcemy zezwolić całej podsieci to wybieramy np. 192.168.12./24  
+
+
+
+
+
+
 
 
 
@@ -3586,8 +3598,8 @@ Plik smb.conf składa się z następujących predefiniowanych sekcji:
 
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
-### Strona 488
-494
+### Strona 494
+
 
 
 373 - strona na której skończyłem sieci 
