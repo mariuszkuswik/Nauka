@@ -3635,7 +3635,7 @@ katalogów domowych. Oto domyślna konfiguracja tej sekcji:
 
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
-### Strona 494
+### Strona 496
 
 
 
