@@ -3588,7 +3588,44 @@ Plik smb.conf składa się z następujących predefiniowanych sekcji:
 
 
 
+## Konfigurowanie sekcji [homes]
 
+Sekcja [homes] jest domyślnie skonfigurowana w taki sposób, aby umożliwić wszystkim
+użytkownikom kont Samby uzyskanie dostępu za pomocą serwera Samba do własnych
+katalogów domowych. Oto domyślna konfiguracja tej sekcji:
+
+```bash
+[homes]
+    comment = Home Directories
+    valid users = %S, %D%w%S
+    browseable = No
+    read only = No
+    inherit acls = Yes
+```
+
+### TODO - strona 495 - opisać 
+
+
+## Konfigurowanie sekcji [printers]
+
+### TODO - strona 496 - opisać 
+
+
+## Definiowanie katalogu współdzielonego Samby
+
+
+- Utworzenie współdzielonego katalogu Samby, katalog będzie widoczny dla wszystkich użytkowników w sieci, zdefiniowanie kontekstu dla SeLinux
+    ```bash
+    mkdir /var/salesdata
+    chmod 775 /var/salesdata
+    chown chris:chris /var/salesdata
+    semanage fcontext -a -t samba_share_t /var/salesdata
+    restorecon -v /var/salesdata
+    touch /var/salesdata/test
+    ls -lZ /var/salesdata/test
+    ```
+
+> -rw-r--r--. 1 root root unconfined_u:object_r:samba_share_t:s0 0 Dec 24 14:35 /var/salesdata/test
 
 
 
