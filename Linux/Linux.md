@@ -3776,6 +3776,8 @@ Reconnecting with SMB1 for workgroup listing.
     ```
 
 
+### #TODO - strona 505 ćwiczenia do Samby
+
 
 
 
@@ -3785,7 +3787,7 @@ Reconnecting with SMB1 for workgroup listing.
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 496
-504
+505
 
 
 373 - strona na której skończyłem sieci 
