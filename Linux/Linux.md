@@ -3695,9 +3695,9 @@ Reconnecting with SMB1 for workgroup listing.
 
 ### Ograniczanie dostępu do Samby na podstawie interfejsów sieciowych
 
-Aby ograniczyć dostęp do wszystkich udziałów, można w pliku smb.conf zdefiniować globalne ustawienia dotyczące interfejsów.   
+- Aby ograniczyć dostęp do wszystkich udziałów, można w pliku smb.conf zdefiniować globalne ustawienia dotyczące interfejsów.   
+    ```interfaces = lo 192.168.22.15/24``` - przykład wpisu w sekcji global ograniczającego dostęp do użytkowników seystemu lokalnego ( lo - loopback) i systemom znajdującym się w sieci 192.168.22   
 
-```interfaces = lo 192.168.22.15/24``` - przykład wpisu w sekcji global ograniczającego dostęp do użytkowników seystemu lokalnego ( lo - loopback) i systemom znajdującym się w sieci 192.168.22   
 
 ### Ograniczanie dostępu do Samby na podstawie hostów
 
@@ -3708,7 +3708,7 @@ Aby ograniczyć dostęp do wszystkich udziałów, można w pliku smb.conf zdefin
     hosts allow = 192.168.22. EXCEPT 192.168.22.99
     # Wykorzystuje notację maski sieciowej do wskazania 192.168.5 jako zbioru dozwolonych adresów
     hosts allow = 192.168.5.0/255.255.255.0
-    # DOzowlone hosty sieci .example.com i jeden (!) host market.example.net
+    # Dozowlone hosty sieci .example.com i jeden (!) host market.example.net
     hosts allow = .example.com market.example.net
     # Zabrania dostępu, formuła jest ta sama 
     hosts deny = evil.example.org 192.168.99.
