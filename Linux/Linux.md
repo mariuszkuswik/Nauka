@@ -3670,7 +3670,7 @@ Reconnecting with SMB1 for workgroup listing.
 ```
 
 **WAŻNE !** - Udział Samby ma postać *//host/udział* lub *\\host\udział*, jednak w przypadku drugiej z postacie należy użyć postaci \\\\localhost\\salesdata  
-    - Ukośniki mają w powłoce funckję specjalną (podobnie jak ```*``` czy ```?```) więc **aby użyć literału ukośnika należy go poprzedzić ukośnikiem**   
+    - **Ukośniki mają w powłoce funckję specjalną** (podobnie jak ```*``` czy ```?```) **więc aby użyć literału ukośnika należy go poprzedzić ukośnikiem**   
 
 - Otworzenie klienta samby do pracy z katalogiem udostępnionym jako użytkownik *chris*
 
