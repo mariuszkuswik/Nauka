@@ -3727,8 +3727,52 @@ Reconnecting with SMB1 for workgroup listing.
     Retype new SMB password: *******
     ```
 
-Hasła samby przechowuje plik - ```/var/lib/samba/private/passdb.tdb```
+- ```valid users = jacek,chris``` - wpis nadający dostęp do udziału użytkownikowi *jacek i chris*  
 
+- **Umożliwienie zapisu na udziale - write list**
+    W przypadku w którym do udziału zastosowane jest ```read only = yes```użytkownicy wpisani do ```write list``` nadal mogą zapisywać pliki na udziale    
+        ```write list = jacek, chris```    
+
+    - Opcja ```write list``` może zawierać nazwę grupy lokalnej (/etc/grpups),     
+    aby zdefinjować dostęp do grupy przed jej nazwą należy dodać ```+```  
+        ```write list = jacek, chris, +market```  
+
+
+## Uzyskiwanie dostępu do udziału Samby
+
+### Montowanie udziału Samby za pomocą powłoki Linuksa
+
+```yum install cifs-utils -y``` - wymagane do zamontowania udziału *samby*
+
+- **Tymczasowe** montowanie udziału cifs 
+
+    ```bash
+    # Utworzenie lokalnego katalogu w którym będzie zamontowany udział samby
+    mkdir /mnt/sales
+    # Zamontowanie z systemem plików cifs i jako użytkownik chris
+    mount -t cifs -o user=chris //192.168.0.119/salesdata /mnt/sales
+    # Serwer pyta o hasło dla użytkownika *samby* 
+    Password for chris@//192.168.122.119/salesdata: *******
+
+    ls /mnt/sales
+    file1   file2   dir1
+    ```
+
+**WAŻNE !** - niezależnie kto stworzy pliki w zamontowanym folderze ich właścicielem będzie *chris* - jako osoba z której uprawnieniami został zamontowany udział  
+
+
+- **Stałe** monfowanie udziału cifs
+
+
+    ```bash
+    //192.168.0.119/salesdata /mnt/sales cifs credentials=/root/cif.txt 0 0
+    ```
+Dla podanego przykładu należy utworzyć plik txt zawierający login i hasło użytkownika chris, 
+
+    ```
+    user=chris
+    pass=mypass
+    ```
 
 
 
@@ -3738,7 +3782,7 @@ Hasła samby przechowuje plik - ```/var/lib/samba/private/passdb.tdb```
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 496
-499
+503
 
 
 373 - strona na której skończyłem sieci 
