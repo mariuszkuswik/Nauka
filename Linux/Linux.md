@@ -3620,12 +3620,56 @@ katalogów domowych. Oto domyślna konfiguracja tej sekcji:
     chmod 775 /var/salesdata
     chown chris:chris /var/salesdata
     semanage fcontext -a -t samba_share_t /var/salesdata
+    # Zastosowanie ustawień SeLinux, verbose
     restorecon -v /var/salesdata
     touch /var/salesdata/test
     ls -lZ /var/salesdata/test
     ```
 
 > -rw-r--r--. 1 root root unconfined_u:object_r:samba_share_t:s0 0 Dec 24 14:35 /var/salesdata/test
+
+## Dodawanie do Samby katalogu współdzielonego
+
+Przykładowy wpis dla katalogu /var/salesdata w pliku /etc/samba/samba.conf
+```bash
+[salesdata]
+    comment = Sales data for current year
+    path = /var/salesdata
+    read only = no
+;   browseable = yes
+    valid users = chris
+```
+
+Użytkownik który otzymuje tu uprawnienia to chris (użytkownik samby a nie lokalny), wynika to z konfiguracji sekcji global (passdb backend = tdbsam)  
+
+
+## Sprawdzanie pod kątem udziału Samby
+
+
+```systemctl restart smb.service``` - restart demona smb, jest to konieczne w celu zaktualizowania configu  
+
+```smbclient -L localhost -U chris``` - wyświetlenie zawartości udostępnionego katalogu dla użytkownika samby *chris*
+
+```bash
+# Zapytanie o hasło użytkownika grupy roboczej "SAMBA 
+Enter SAMBA\chris's password: *******
+    Sharename Type Comment
+    --------- ---- -------
+    salesdata Disk Sales data for current year
+    print$ Disk Printer Drivers
+    IPC$ IPC IPC Service (Samba 4.10.4)
+    chris Disk Home Directories
+    Reconnecting with SMB1 for workgroup listing.
+    Server Comment
+--------- -------
+Workgroup Master
+--------- -------
+SAMBA     FEDORA30
+...
+```
+
+
+
 
 
 
@@ -3636,7 +3680,7 @@ katalogów domowych. Oto domyślna konfiguracja tej sekcji:
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 496
-
+498
 
 
 373 - strona na której skończyłem sieci 
