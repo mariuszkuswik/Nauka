@@ -3696,6 +3696,7 @@ Reconnecting with SMB1 for workgroup listing.
 ### Ograniczanie dostępu do Samby na podstawie interfejsów sieciowych
 
 - Aby ograniczyć dostęp do wszystkich udziałów, można w pliku smb.conf zdefiniować globalne ustawienia dotyczące interfejsów.   
+
     ```interfaces = lo 192.168.22.15/24``` - przykład wpisu w sekcji global ograniczającego dostęp do użytkowników seystemu lokalnego ( lo - loopback) i systemom znajdującym się w sieci 192.168.22   
 
 
