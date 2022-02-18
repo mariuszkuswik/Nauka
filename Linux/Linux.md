@@ -3630,17 +3630,18 @@ katalogów domowych. Oto domyślna konfiguracja tej sekcji:
 
 ## Dodawanie do Samby katalogu współdzielonego
 
-Przykładowy wpis dla katalogu /var/salesdata w pliku /etc/samba/samba.conf
-```bash
-[salesdata]
-    comment = Sales data for current year
-    path = /var/salesdata
-    read only = no
-;   browseable = yes
-    valid users = chris
-```
+- Przykładowy wpis dla katalogu /var/salesdata w pliku /etc/samba/samba.conf
 
-Użytkownik który otzymuje tu uprawnienia to chris (użytkownik samby a nie lokalny), wynika to z konfiguracji sekcji global (passdb backend = tdbsam)  
+    ```bash
+    [salesdata]
+        comment = Sales data for current year
+        path = /var/salesdata
+        read only = no
+    ;   browseable = yes
+        valid users = chris
+    ```
+
+    Użytkownik który otzymuje tu uprawnienia to chris (użytkownik samby a nie lokalny), wynika to z konfiguracji sekcji global (passdb backend = tdbsam)  
 
 
 ## Sprawdzanie pod kątem udziału Samby
@@ -3668,9 +3669,27 @@ Reconnecting with SMB1 for workgroup listing.
 ...
 ```
 
+**WAŻNE !** - Udział Samby ma postać *//host/udział* lub *\\host\udział*, jednak w przypadku drugiej z postacie należy użyć postaci \\\\localhost\\salesdata  
+    - Ukośniki mają w powłoce funckję specjalną (podobnie jak ```*``` czy ```?```) więc **aby użyć literału ukośnika należy go poprzedzić ukośnikiem**   
 
+- Otworzenie klienta samby do pracy z katalogiem udostępnionym jako użytkownik *chris*
 
+    ```bash
+    smbclient -U chris //localhost/salesdata
 
+    Enter SAMBA\chris's password: ********
+    Try "help" to get a list of possible commands.
+
+    smb: \> lcd /etc
+    smb: \> put hosts
+    putting file hosts as \hosts (43.5 kb/s) (average 43.5 kb/s)
+    smb: \> ls
+    .           D           0           Sun Dec 29 09:52:51 2020
+    ..          D           0           Sun Dec 29 09:11:50 2020
+    hosts       A           89          Sun Dec 29 09:52:51 2020
+                39941 blocks of size 524288. 28197 blocks available
+    smb: \> quit
+    ```
 
 
 
