@@ -3626,7 +3626,7 @@ katalogów domowych. Oto domyślna konfiguracja tej sekcji:
     ls -lZ /var/salesdata/test
     ```
 
-> -rw-r--r--. 1 root root unconfined_u:object_r:samba_share_t:s0 0 Dec 24 14:35 /var/salesdata/test
+    > -rw-r--r--. 1 root root unconfined_u:object_r:samba_share_t:s0 0 Dec 24 14:35 /var/salesdata/test
 
 ## Dodawanie do Samby katalogu współdzielonego
 
@@ -3667,6 +3667,9 @@ Reconnecting with SMB1 for workgroup listing.
     SAMBA       FEDORA30
 ...
 ```
+
+
+
 
 
 
