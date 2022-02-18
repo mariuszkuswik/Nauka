@@ -3653,18 +3653,18 @@ Użytkownik który otzymuje tu uprawnienia to chris (użytkownik samby a nie lok
 ```bash
 # Zapytanie o hasło użytkownika grupy roboczej "SAMBA 
 Enter SAMBA\chris's password: *******
-    Sharename Type Comment
-    --------- ---- -------
-    salesdata Disk Sales data for current year
-    print$ Disk Printer Drivers
-    IPC$ IPC IPC Service (Samba 4.10.4)
-    chris Disk Home Directories
-    Reconnecting with SMB1 for workgroup listing.
-    Server Comment
---------- -------
-Workgroup Master
---------- -------
-SAMBA     FEDORA30
+    Sharename   Type    Comment
+    ---------   ----    -------
+    salesdata   Disk    Sales data for current year
+    print$      Disk    Printer Drivers
+    IPC$        IPC     IPC Service (Samba 4.10.4)
+    chris       Disk    Home Directories
+Reconnecting with SMB1 for workgroup listing.
+    Server      Comment
+    ---------   -------
+    Workgroup   Master
+    ---------   -------
+    SAMBA       FEDORA30
 ...
 ```
 
