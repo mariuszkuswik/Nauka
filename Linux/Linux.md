@@ -3765,9 +3765,10 @@ Reconnecting with SMB1 for workgroup listing.
 
 
     ```bash
-    //192.168.0.119/salesdata /mnt/sales cifs credentials=/root/cif.txt 0 0
+    //192.168.0.119/salesdata /mnt/sales cifs credentials=/root/cifs.txt 0 0
     ```
-Dla podanego przykładu należy utworzyć plik txt zawierający login i hasło użytkownika chris, 
+    **Dla podanego przykładu należy utworzyć plik txt zawierający login i hasło użytkownika chris, w podanym przykłądzie ```/root/cifs.txt```**
+
 
     ```
     user=chris
@@ -3777,12 +3778,14 @@ Dla podanego przykładu należy utworzyć plik txt zawierający login i hasło u
 
 
 
+
+
 ## Koniec Biblii
 
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 496
-503
+504
 
 
 373 - strona na której skończyłem sieci 
