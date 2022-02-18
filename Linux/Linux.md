@@ -3671,7 +3671,7 @@ Reconnecting with SMB1 for workgroup listing.
 ...
 ```
 
-**WAŻNE !** - Udział Samby ma postać *//host/udział* lub *\\host\udział*, jednak w przypadku drugiej z postacie należy użyć postaci \\\\localhost\\salesdata  
+- **WAŻNE !** - Udział Samby ma postać *//host/udział* lub *\\host\udział*, jednak w przypadku drugiej z postacie należy użyć postaci \\\\localhost\\salesdata  
     - **Ukośniki mają w powłoce funckję specjalną** (podobnie jak ```*``` czy ```?```) **więc aby użyć literału ukośnika należy go poprzedzić ukośnikiem**   
 
 - Otworzenie klienta samby do pracy z katalogiem udostępnionym jako użytkownik *chris*
@@ -3715,9 +3715,17 @@ Reconnecting with SMB1 for workgroup listing.
     hosts deny = evil.example.org 192.168.99.
     ```
 
+### Ograniczanie dostępu do Samby na podstawie użytkowników
 
+- Aby umożliwić użytkownikowi dostęp do serwera Samba, konieczne jest zdefiniowanie hasła dla tego użytkownika, wyjątkiem jest użytkownik anonimowy
 
+- Nadanie hasła dla użytkownika Samby o nazwie jacek:
 
+    ```bash
+    smbpasswd -a jacek
+    New SMB password: *******
+    Retype new SMB password: *******
+    ```
 
 
 
