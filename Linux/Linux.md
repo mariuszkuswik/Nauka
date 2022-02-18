@@ -3719,7 +3719,7 @@ Reconnecting with SMB1 for workgroup listing.
 
 - Aby umożliwić użytkownikowi dostęp do serwera Samba, konieczne jest zdefiniowanie hasła dla tego użytkownika, wyjątkiem jest użytkownik anonimowy
 
-- Nadanie hasła dla użytkownika Samby o nazwie jacek:
+- **Dodanie nowego użytkownika** samby jacek i nadanie mu hasła (aby tylko zmienić hasło należy usunąć opcję ```-a```) 
 
     ```bash
     smbpasswd -a jacek
@@ -3727,7 +3727,7 @@ Reconnecting with SMB1 for workgroup listing.
     Retype new SMB password: *******
     ```
 
-
+Hasła samby przechowuje plik - ```/var/lib/samba/private/passdb.tdb```
 
 
 
