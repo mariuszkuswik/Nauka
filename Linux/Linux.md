@@ -3646,6 +3646,8 @@ katalogów domowych. Oto domyślna konfiguracja tej sekcji:
 
 ## Sprawdzanie pod kątem udziału Samby
 
+```smbpasswd``` - zmiana hasła dla użytkownika samby 
+### #TODO - sprawdzić czy użytkownika samby trzeba dodac czy wystarczy mu przepisać hasło, ogarnąć dokładniej 
 
 ```systemctl restart smb.service``` - restart demona smb, jest to konieczne w celu zaktualizowania configu  
 
@@ -3691,6 +3693,31 @@ Reconnecting with SMB1 for workgroup listing.
     smb: \> quit
     ```
 
+### Ograniczanie dostępu do Samby na podstawie interfejsów sieciowych
+
+Aby ograniczyć dostęp do wszystkich udziałów, można w pliku smb.conf zdefiniować globalne ustawienia dotyczące interfejsów.   
+
+```interfaces = lo 192.168.22.15/24``` - przykład wpisu w sekcji global ograniczającego dostęp do użytkowników seystemu lokalnego ( lo - loopback) i systemom znajdującym się w sieci 192.168.22   
+
+### Ograniczanie dostępu do Samby na podstawie hostów
+
+- Przykłady opcji hosts allow i hosts deny, można je zastosować w opcji [global] lub w sekcjach dowolnych katalogów współdzielonych:   
+  
+    ```bash
+    # Zezwala wszystkim w sieci poza 192.168.22.99, kropka na końcu jest obowiązkowa !
+    hosts allow = 192.168.22. EXCEPT 192.168.22.99
+    # Wykorzystuje notację maski sieciowej do wskazania 192.168.5 jako zbioru dozwolonych adresów
+    hosts allow = 192.168.5.0/255.255.255.0
+    # DOzowlone hosty sieci .example.com i jeden (!) host market.example.net
+    hosts allow = .example.com market.example.net
+    # Zabrania dostępu, formuła jest ta sama 
+    hosts deny = evil.example.org 192.168.99.
+    ```
+
+
+
+
+
 
 
 
@@ -3702,7 +3729,7 @@ Reconnecting with SMB1 for workgroup listing.
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 496
-498
+499
 
 
 373 - strona na której skończyłem sieci 
