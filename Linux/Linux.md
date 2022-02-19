@@ -3833,7 +3833,8 @@ W celu współdzielenia systemu plików NFS z poziomu systemu Linux trzeba ekspo
 
 ## Konfiguracja pliku /etc/exports
 
-
+Format pliku /etc/exports jest następujący:
+*Katalog         Komputer (opcje…)       Komputer (opcje…)*  # Komentarze
 
 
 
