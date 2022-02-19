@@ -3803,6 +3803,36 @@ Udział NFS można montować za pośrednictwem Cockpit
 
 ```man mount.nfs``` - opcje montowania udziału nfs 
 
+### #TODO - sprawdzić dokładniej jak to opisać 
+```nfsmount.conf``` - 
+
+
+```man showmount``` - informacje o użyciu polecenia showmount do wyświetlenia katalogów współdzielonych, które są udostępniane przez serwery NFS
+
+
+Dokładniejsze informacje na temat nfs 
+```bash
+rpm -qi nfs-utils
+rpm -qc nfs-utils
+rpm -ql nfs-utils | grep bin
+```
+
+## Uruchamianie usługi NFS
+
+```nfs-server``` - podstawowa usługa NFS
+
+Usługa nfs-server wymaga również uruchomionej usługi **RPC (rpcbind)**. Jeżeli usługa **rpcbind** nie działa, zostanie uruchomiona automatycznie przez *nfs-server*.
+
+
+## Współdzielenie systemów plików NFS
+
+W celu współdzielenia systemu plików NFS z poziomu systemu Linux trzeba eksportować go z systemu serwera. Eksportowanie jest przeprowadzane poprzez dodanie wpisów do katalogu ```/etc/exports```.
+
+
+
+
+## Konfiguracja pliku /etc/exports
+
 
 
 
