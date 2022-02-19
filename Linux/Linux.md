@@ -3780,14 +3780,34 @@ Reconnecting with SMB1 for workgroup listing.
 
 
 
+# Serwer plików NFS
+
+#### Instalacja 
+```nfs-server``` - usługa dla serwera nfs   
+
+Udział NFS można montować za pośrednictwem Cockpit  
+
+```yum install nfs-utils``` - instalacja nfs (w nowszych wersjach jest dostępny domyśłnie)  
+
+#### Dokumentacja
+```rpm -qd nfs-utils | less``` - wyświetlenie plików z dokumentacją   
+```/usr/share/doc/nfs-utils``` - część dokumentacji dla NFS, większość jest dostępna w manualu  
+
+
+
+
+
+
+
 
 
 ## Koniec Biblii
 
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
-### Strona 496
-505
+### Strona 507
+510
+
   
 
 373 - strona na której skończyłem sieci 
