@@ -3801,6 +3801,8 @@ Udział NFS można montować za pośrednictwem Cockpit
 ```man nfsd``` -  opcje które można przekazywać demonowi serwera ```rpc.nfsd``` i za pomocą których można np. uruchomić serwer w trybie debugowania
 
 
+```man mount.nfs``` - opcje montowania udziału nfs 
+
 
 
 
