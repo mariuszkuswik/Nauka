@@ -3782,13 +3782,13 @@ Reconnecting with SMB1 for workgroup listing.
 
 # Serwer plików NFS
 
-#### Instalacja 
+### Instalacja 
 
 **Przydatne** - Udział NFS można montować za pośrednictwem Cockpit  
 
 ```yum install nfs-utils``` - instalacja nfs (w nowszych wersjach jest dostępny domyśłnie)  
 
-#### Dokumentacja
+### Dokumentacja
 
 - ```rpm -qd nfs-utils | less``` - wyświetlenie plików z dokumentacją  
 
