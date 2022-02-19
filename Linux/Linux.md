@@ -3790,7 +3790,16 @@ Reconnecting with SMB1 for workgroup listing.
 
 #### Dokumentacja
 
-- ```rpm -qd nfs-utils | less``` - wyświetlenie plików z dokumentacją     
+- ```rpm -qd nfs-utils | less``` - wyświetlenie plików z dokumentacją  
+
+```bash
+# Ogólne infomracje na temat pakietu nfs
+rpm -qi nfs-utils
+# Configi
+rpm -qc nfs-utils
+# Wylistowanie plików w pakiecie nfs-utils
+rpm -ql nfs-utils | grep bin
+```   
   
 - ```man exports``` - (/etc/exports) config nfs, plik udostępniający katalogi  
 - ```man exportfs``` - zawiera informacje o tym, jak współdzielić i wyświetlać listę katalogów wymienionych w pliku */etc/exports*  
@@ -3807,12 +3816,6 @@ Reconnecting with SMB1 for workgroup listing.
 - ```man showmount``` - informacje o użyciu polecenia showmount do wyświetlenia katalogów współdzielonych, które są udostępniane przez serwery NFS  
 
 
-Dokładniejsze informacje na temat nfs 
-```bash
-rpm -qi nfs-utils
-rpm -qc nfs-utils
-rpm -ql nfs-utils | grep bin
-```
 
 ## Uruchamianie usługi NFS
 
