@@ -3790,10 +3790,15 @@ Udział NFS można montować za pośrednictwem Cockpit
 ```yum install nfs-utils``` - instalacja nfs (w nowszych wersjach jest dostępny domyśłnie)  
 
 #### Dokumentacja
+
 ```rpm -qd nfs-utils | less``` - wyświetlenie plików z dokumentacją   
 ```/usr/share/doc/nfs-utils``` - część dokumentacji dla NFS, większość jest dostępna w manualu  
 
+```man exports``` - (/etc/exports) config nfs, plik udostępniający katalogi
+```man exportfs``` - zawiera informacje o tym, jak współdzielić i wyświetlać listę katalogów wymienionych w pliku /etc/exports
 
+
+```man nfsd``` -  opcje które można przekazywać demonowi serwera ```rpc.nfsd``` i za pomocą których można np. uruchomić serwer w trybie debugowania
 
 
 
