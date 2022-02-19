@@ -3782,9 +3782,9 @@ Reconnecting with SMB1 for workgroup listing.
 
 # Serwer plików NFS
 
-### Instalacja 
-
 **Przydatne** - Udział NFS można montować za pośrednictwem Cockpit  
+
+### Instalacja 
 
 ```yum install nfs-utils``` - instalacja nfs (w nowszych wersjach jest dostępny domyśłnie)  
 
