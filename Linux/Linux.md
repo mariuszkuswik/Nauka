@@ -3788,7 +3788,7 @@ Reconnecting with SMB1 for workgroup listing.
 
 ### Strona 496
 505
-
+  
 
 373 - strona na której skończyłem sieci 
 383 - strona na ktorej zacząłem po sieciach 
