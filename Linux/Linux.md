@@ -3791,23 +3791,21 @@ Udział NFS można montować za pośrednictwem Cockpit
 
 #### Dokumentacja
 
-```rpm -qd nfs-utils | less``` - wyświetlenie plików z dokumentacją   
-```/usr/share/doc/nfs-utils``` - część dokumentacji dla NFS, większość jest dostępna w manualu  
-
-```man exports``` - (/etc/exports) config nfs, plik udostępniający katalogi
-```man exportfs``` - zawiera informacje o tym, jak współdzielić i wyświetlać listę katalogów wymienionych w pliku /etc/exports
-
-
-```man nfsd``` -  opcje które można przekazywać demonowi serwera ```rpc.nfsd``` i za pomocą których można np. uruchomić serwer w trybie debugowania
-
-
-```man mount.nfs``` - opcje montowania udziału nfs 
+- ```rpm -qd nfs-utils | less``` - wyświetlenie plików z dokumentacją     
+  
+- ```man exports``` - (/etc/exports) config nfs, plik udostępniający katalogi  
+- ```man exportfs``` - zawiera informacje o tym, jak współdzielić i wyświetlać listę katalogów wymienionych w pliku */etc/exports*  
+  
+  
+- ```man nfsd``` -  opcje które można przekazywać demonowi serwera ```rpc.nfsd``` i za pomocą których można np. uruchomić serwer w trybie debugowania  
+  
+   
+- ```man mount.nfs``` - opcje montowania udziału nfs   
 
 ### #TODO - sprawdzić dokładniej jak to opisać 
-```nfsmount.conf``` - 
-
-
-```man showmount``` - informacje o użyciu polecenia showmount do wyświetlenia katalogów współdzielonych, które są udostępniane przez serwery NFS
+- ```nfsmount.conf``` -   
+  
+- ```man showmount``` - informacje o użyciu polecenia showmount do wyświetlenia katalogów współdzielonych, które są udostępniane przez serwery NFS  
 
 
 Dokładniejsze informacje na temat nfs 
@@ -3826,15 +3824,15 @@ Usługa nfs-server wymaga również uruchomionej usługi **RPC (rpcbind)**. Jeż
 
 ## Współdzielenie systemów plików NFS
 
-W celu współdzielenia systemu plików NFS z poziomu systemu Linux trzeba eksportować go z systemu serwera. Eksportowanie jest przeprowadzane poprzez dodanie wpisów do katalogu ```/etc/exports```.
+W celu współdzielenia systemu plików NFS z poziomu systemu Linux trzeba eksportować go z systemu serwera. Eksportowanie jest przeprowadzane poprzez dodanie wpisów do katalogu ```/etc/exports```
 
 
 
 
 ## Konfiguracja pliku /etc/exports
 
-Format pliku /etc/exports jest następujący:
-*Katalog         Komputer (opcje…)       Komputer (opcje…)*  # Komentarze
+Format pliku /etc/exports jest następujący:  
+*Katalog         Komputer (opcje…)       Komputer (opcje…)*  # Komentarze  
 
 
 
