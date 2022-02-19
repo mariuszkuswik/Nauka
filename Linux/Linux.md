@@ -3783,9 +3783,8 @@ Reconnecting with SMB1 for workgroup listing.
 # Serwer plików NFS
 
 #### Instalacja 
-```nfs-server``` - usługa dla serwera nfs   
 
-Udział NFS można montować za pośrednictwem Cockpit  
+**Przydatne** - Udział NFS można montować za pośrednictwem Cockpit  
 
 ```yum install nfs-utils``` - instalacja nfs (w nowszych wersjach jest dostępny domyśłnie)  
 
@@ -3842,7 +3841,7 @@ Format pliku /etc/exports jest następujący:
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 507
-510
+511
 
   
 
