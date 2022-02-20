@@ -3895,7 +3895,7 @@ w grupie NIS. W celu wskazanie grupy NIS należy nazwę grupy poprzedzić znakie
 at (@), na przykład @grupa 
 
 
-
+### Opcje dostępu w pliku /etc/exports
 
 
 
