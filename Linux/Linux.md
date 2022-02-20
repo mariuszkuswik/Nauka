@@ -3833,10 +3833,29 @@ W celu współdzielenia systemu plików NFS z poziomu systemu Linux trzeba ekspo
 
 ## Konfiguracja pliku /etc/exports
 
+```man exports``` - więcej opcji dla montowania 
+
 Format pliku /etc/exports jest następujący:  
 *Katalog         Komputer (opcje…)       Komputer (opcje…)*  # Komentarze  
 
-Katalog - 
+Przykład : 
+```bash
+/home/joe       192.168.0.(rw)      192.168.1.10(ro) # Katalog /home/joe jest udostępniony dla hostów z podsieci 192.168.0. jako read/write oraz jednego 192.168.0.10 jako read-only 
+/pub (ro,insecure,all_squash)                        # Katalog dostępny publicznie
+```
+
+
+- Katalog - nazwa katalogu wspoldzielonego 
+- Komputer - podsieć lub pojedyńczy hostname dla którego udostępniony ma być katalog, można ich wskazać wiele jak pokazane jest powyżej
+- Opcje - mogą zawierać różne opcje definiujące środki bezpieczeństwa związane ze współdzielonym katalogiem
+
+
+
+
+
+
+
+
 
 
 ## Koniec Biblii
