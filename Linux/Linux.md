@@ -3950,12 +3950,14 @@ SELINUX=enforcing
 ```
 
 
-nfs_export_all_ro - umożliwia współdzielenie przez NFS plików *read only*, pliki będą mogły być współdzielone **niezależnie od kontekstu pliku SELinux**    
-nfs_export_all_rw - umożliwia współdzielenie za pomocą NFS plików o uprawnieniach do odczytu i zapisu. Podobnie jak poprzednia opcja, także ta działa **niezależnie od kontekstu pliku SELinux**  
+- **nfs_export_all_ro** - umożliwia współdzielenie przez NFS plików *read only*, pliki będą mogły być współdzielone **niezależnie od kontekstu pliku SELinux**    
+- **nfs_export_all_rw** - umożliwia współdzielenie za pomocą NFS plików o uprawnieniach do odczytu i zapisu. Podobnie jak poprzednia opcja, także ta działa **niezależnie od kontekstu pliku SELinux**  
 - **use_nfs_home_dirs** - umożliwia **współdzielenie katalogów domowych**  
   
 
 ```setsebool -P use_nfs_home_dirs on``` - włączenie opcji SELinux
+
+
 
 
 
@@ -3964,7 +3966,7 @@ nfs_export_all_rw - umożliwia współdzielenie za pomocą NFS plików o uprawni
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 511
-515
+519
 
   
 
