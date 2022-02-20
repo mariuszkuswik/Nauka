@@ -3958,6 +3958,27 @@ SELINUX=enforcing
 ```setsebool -P use_nfs_home_dirs on``` - włączenie opcji SELinux
 
 
+Oczywiście możesz zignorować wszystkie opcje boolowskie związane ze współdzieleniem
+plików przez serwer NFS. W tym celu musisz zmienić kontekst pliku wszystkim plikom
+i katalogom, które chcesz współdzielić za pomocą NFS. Konteksty pliku public_content_t
+i public_content_rw_t mogą być przypisane dowolnym katalogom przeznaczonym do
+współdzielenia za pomocą NFS (lub innym protokołom współdzielenia plików, takim jak
+HTTP, FTP itd.). Na przykład aby dodać regułę umożliwiającą współdzielenie katalogu
+/whatever i jego wszystkich podkatalogów jako udziału NFS o uprawnieniach odczytu i zapisu,
+a później zastosować tę regułę, należy wydać następujące polecenia:
+
+```semanage fcontext -a -t public_content_rw_t "/whatever(/.*)?"```
+```restorecon -F -R -v /whatever```
+
+Jeżeli chcesz umożliwić użytkownikom jedynie odczytywanie plików z danego katalogu, ale nie
+zapisywanie w nim plików, musisz takiemu katalogowi przypisać kontekst pliku public_content_t.
+
+
+## Używanie systemów plików NFS
+
+
+
+
 
 
 
