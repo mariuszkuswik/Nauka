@@ -3864,6 +3864,7 @@ Przykład :
     ```bash
     /home/joe       192.168.1.10(ro) 
     ```
+
 - Wiele hostów    
 
     ```bash
@@ -3873,34 +3874,25 @@ Przykład :
 - Sieć IP - maska jest wymagana
 
     ```bash
-    /usr/local      10.0.0.0/255.0.0.0   172.16.0.0/255.255.0.0
-    /home           192.168.18.0/255.255.255.0
+    /usr/local      10.0.0.0/255.0.0.0(rw)   172.16.0.0/255.255.0.0(rw)
+    /home           192.168.18.0/255.255.255.0(rw)
     ```
 
-- Domena TCP/IP
-
-```bash
-
-```
-
-
-
-192.168.18.0/24
-
-
-
-- Katalog dostępny dla wszystkich z domeny linuxtoys.net
+- Domena TCP/IP 
 
     ```bash
-    /cal *.linuxtoys.net(rw) 
+    # Wszystkie hosty z domeny przyklad.com
+    /aal            *.przyklad.com(rw)
+    # Hosty z nazwą kończącą się na boje, np. przeboje, wyboje będące w domenie przykład.com 
+    /bbl            *boje.przyklad.com(ro)
+    # Hosty składające się z trzech dowolnych liter w domenie przyklad.com
+    /ccl            ???.przyklad.com(rw)
     ```
 
-
-klon - dostęp dla jednego hosta 
-*.linuxtoys.net(rw) - dostęp hostów z całej domeny 
-10.0.0.0/255.0.0.0 172.16.0.0/255.255.0.0 - dostęp dla podzieci 10.0.0.0 i 172.16.0.0 **(muszą być podane maski)**
-
-
+### #TODO - sprawdzić jak to opisać 
+- Grupy NIS istnieje możliwość zezwolenia na dostęp komputerom znajdującym się
+w grupie NIS. W celu wskazanie grupy NIS należy nazwę grupy poprzedzić znakiem
+at (@), na przykład @grupa 
 
 
 
