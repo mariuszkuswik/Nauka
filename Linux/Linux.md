@@ -49,6 +49,10 @@
 
 # Korzystanie z pomocy
 
+- [man](#man)
+- [info](#info)
+
+
 ## man  
 
 ```man man``` - pomoc odnośnie mana   
@@ -62,6 +66,10 @@
 
 
 # Używanie Powłoki 
+
+- [id](#id)
+- [type](#type)
+
 
 # #TODO - Dodać zwijanie przy opisach poleceń i skrócić część notatek 
 
@@ -110,6 +118,9 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 
 
 # Uprawnienia 
+
+- [Umask](#umask---definiowanie-uprawnień-domyślnych)
+- [Chown](#chown---Zmiana-właściciela-pliku)
 
 ## Plik 
 
@@ -241,6 +252,10 @@ tekst
 
 
 # Wyszukiwanie plików 
+
+- [Locate](#locate-1)
+- [Find](#find)
+- [Grep](#grep)
 
 ## Locate 
 
@@ -1213,6 +1228,9 @@ i usunąć.
 
 ## Zarządzanie kontami użytkowników
 
+- [useradd](#useradd---Ustalanie-ustawień-domyślnych-użytkownika)
+- [usermod](#usermod---Modyfikowanie-ustawień-użytkownika)
+- [userdel](#userdel---Usuwanie-użytkownika)
 
 
 ### useradd - Dodawanie użytkowników
