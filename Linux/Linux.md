@@ -3836,7 +3836,9 @@ W celu współdzielenia systemu plików NFS z poziomu systemu Linux trzeba ekspo
 ```man exports``` - więcej opcji dla montowania 
 
 Format pliku /etc/exports jest następujący:  
+```bash
 *Katalog         Komputer (opcje…)       Komputer (opcje…)*  # Komentarze  
+```
 
 Przykład : 
 ```bash
