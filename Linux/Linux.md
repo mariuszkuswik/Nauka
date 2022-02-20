@@ -3897,6 +3897,28 @@ at (@), na przykład @grupa
 
 ### Opcje dostępu w pliku /etc/exports
 
+- **ro** - read only - klient może zamontować system plików **tylko do odczytu**  
+- **rw** - read write - katalog jest wyeksportowany w trybie do **odczytu i zapisu**    
+
+
+### #TODO - sprawdzić jak dokładnie opisać użytkownika i grupę nobody
+Mapowanie opcji użytkownika w pliku /etc/exports :  
+
+Użytkownik i grupa nfsnobody lub nobody - 
+  
+- root_squash - mapuje użytkownika/grupę root zdalnego serwera jako **nobody**, w ten sposób użytkownik zdalny nie ma dostępu do całego filesystemu   
+
+- all_squash - wszyscy użytkownicy/grupy są mapowani jako nobody
+
+
+### Eksportowanie współdzielonych systemów plików
+
+- ```exportfs``` - wyeksportowanie (udostępnienie) udziałów udostępnionych w pliku /etc/exports
+    - ```-a``` - wybiera **wszystkie katalogi do wyeksportowania** 
+    - ```-r``` - **synchronizacja udostępnionych katalogów z tym co jest w configu** - jeżeli któryś katalog już tam nie występuje to nie będzie dalej udostępniany 
+    - ```-v``` - **s** - więcej danych wyjściowych 
+
+
 
 
 
@@ -3908,7 +3930,7 @@ at (@), na przykład @grupa
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 511
-513
+515
 
   
 
