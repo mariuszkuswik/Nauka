@@ -3984,6 +3984,9 @@ SELINUX=enforcing
 ```setsebool -P use_nfs_home_dirs on``` - włączenie opcji SELinux
 
 
+
+### #TODO - format do poprawienia 
+
 Oczywiście możesz zignorować wszystkie opcje boolowskie związane ze współdzieleniem
 plików przez serwer NFS. W tym celu musisz zmienić kontekst pliku wszystkim plikom
 i katalogom, które chcesz współdzielić za pomocą NFS. Konteksty pliku public_content_t
@@ -4002,9 +4005,15 @@ zapisywanie w nim plików, musisz takiemu katalogowi przypisać kontekst pliku p
 
 ## Używanie systemów plików NFS
 
+Użycie opcji noauto w przypadku katalogu NFS wymienionego w pliku /etc/fstab powoduje jego nieaktywność aż do wydania polecenia mount
+Opcje montowania można definiować nie tylko w pliku /etc/fstab, ale również w /etc/nfs-mount.conf   
 
 
+### Wyświetlanie udziałów NFS
 
+showmount -e server.example.com
+/export/myshare client.example.com
+/mnt/public *
 
 
 
@@ -4013,7 +4022,7 @@ zapisywanie w nim plików, musisz takiemu katalogowi przypisać kontekst pliku p
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 511
-519
+520
 
   
 
