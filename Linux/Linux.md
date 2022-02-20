@@ -3862,19 +3862,19 @@ Przykład :
 - Pojedynczy komputer
 
     ```bash
-    /home/joe    192.168.1.10(ro) 
+    /home/joe       192.168.1.10(ro) 
     ```
 - Wiele hostów    
 
     ```bash
-    /usr/local klon(rw)  swierk(ro,root_squash)
+    /usr/local      klon(rw)  swierk(ro,root_squash)
     ```
 
 - Sieć IP - maska jest wymagana
 
     ```bash
-    /usr/local  10.0.0.0/255.0.0.0 172.16.0.0/255.255.0.0
-    /home       192.168.18.0/255.255.255.0
+    /usr/local      10.0.0.0/255.0.0.0   172.16.0.0/255.255.0.0
+    /home           192.168.18.0/255.255.255.0
     ```
 
 - Domena TCP/IP
