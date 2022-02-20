@@ -3845,15 +3845,14 @@ Katalog         Komputer (opcje…)       Komputer (opcje…)  # Komentarze
 
 Przykład : 
 
-### #TODO - dopisać co robią opcje z nawiasów 
 ```bash
-# Katalog dostępny dla wszystkich, dopisać co robią opcje
+# Katalog dostępny dla wszystkich, wszyscy użytkownicy/grupy są mapowani jako nobody
 /pub (ro,insecure,all_squash)      
 
 # Katalog udostępniony dla jednego hosta 192.168.1.10 jako read-only
 /home/joe      192.168.1.10(ro) 
 
-# Dostęp mają hosty klon i swierk
+# Dostęp mają hosty klon i swierk, użytkownicy/grupy z UID od 0 do 99 są mapowani jako nobody
 /home klon(rw,squash uids=0-99) swierk(rw,squash uids=0-99)
 ```
 
