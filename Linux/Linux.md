@@ -3950,15 +3950,12 @@ SELINUX=enforcing
 ```
 
 
-nfs_export_all_ro - umożliwia współdzielenie przez NFS plików *read only*, pliki będą mogły być współdzielone **niezależnie od kontekstu pliku SELinux**   
+nfs_export_all_ro - umożliwia współdzielenie przez NFS plików *read only*, pliki będą mogły być współdzielone **niezależnie od kontekstu pliku SELinux**    
 nfs_export_all_rw - umożliwia współdzielenie za pomocą NFS plików o uprawnieniach do odczytu i zapisu. Podobnie jak poprzednia opcja, także ta działa **niezależnie od kontekstu pliku SELinux**  
 - **use_nfs_home_dirs** - umożliwia **współdzielenie katalogów domowych**  
+  
 
-
-Z omówionych tutaj opcji boolowskich pierwsze dwie są włączone domyślnie, trzecia zaś jest
-wyłączona. Jeżeli chcesz włączyć trzecią opcję, wydaj następujące polecenie:
-
-- ```setsebool -P use_nfs_home_dirs on``` - włączenie opcji SELinux
+```setsebool -P use_nfs_home_dirs on``` - włączenie opcji SELinux
 
 
 
