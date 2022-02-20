@@ -3840,8 +3840,11 @@ Format pliku /etc/exports jest następujący:
 
 Przykład : 
 ```bash
-/home/joe       192.168.0.(rw)      192.168.1.10(ro) # Katalog /home/joe jest udostępniony dla hostów z podsieci 192.168.0. jako read/write oraz jednego 192.168.0.10 jako read-only 
-/pub (ro,insecure,all_squash)                        # Katalog dostępny publicznie
+# Katalog /home/joe jest udostępniony dla hostów z podsieci 192.168.0. jako read/write oraz jednego 192.168.0.10 jako read-only
+/home/joe       192.168.0.(rw)      192.168.1.10(ro) 
+
+# Katalog dostępny publicznie
+/pub (ro,insecure,all_squash)                        
 ```
 
 
