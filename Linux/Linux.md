@@ -51,6 +51,7 @@
 
 - [man](#man)
 - [info](#info)
+- [Gora](#Spis-treści)
 
 
 ## man  
@@ -69,6 +70,8 @@
 
 - [id](#id)
 - [type](#type)
+
+- [Gora](#Spis-treści)
 
 
 # #TODO - Dodać zwijanie przy opisach poleceń i skrócić część notatek 
@@ -121,6 +124,8 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 
 - [Umask](#umask---definiowanie-uprawnień-domyślnych)
 - [Chown](#chown---Zmiana-właściciela-pliku)
+
+- [Gora](#Spis-treści)
 
 ## Plik 
 
@@ -256,6 +261,8 @@ tekst
 - [Locate](#locate-1)
 - [Find](#find)
 - [Grep](#grep)
+
+- [Gora](#Spis-treści)
 
 ## Locate 
 
