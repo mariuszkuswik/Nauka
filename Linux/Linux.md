@@ -3817,19 +3817,19 @@ rpm -ql nfs-utils | grep bin
 
 
 
-## Uruchamianie usługi NFS
+### Uruchamianie usługi NFS
 
 ```nfs-server``` - podstawowa usługa NFS
 
 Usługa nfs-server wymaga również uruchomionej usługi **RPC (rpcbind)**. Jeżeli usługa **rpcbind** nie działa, zostanie uruchomiona automatycznie przez *nfs-server*.
 
 
-## Współdzielenie systemów plików NFS
+### Współdzielenie systemów plików NFS
 
 W celu współdzielenia systemu plików NFS z poziomu systemu Linux trzeba eksportować go z systemu serwera. Eksportowanie jest przeprowadzane poprzez dodanie wpisów do katalogu ```/etc/exports```
 
 
-## Konfiguracja pliku /etc/exports
+### Konfiguracja pliku /etc/exports
 
 ```man exports``` - więcej opcji dla montowania 
 
@@ -3903,7 +3903,7 @@ at (@), na przykład @grupa
 ### #TODO - sprawdzić jak dokładnie opisać użytkownika i grupę nobody
 Mapowanie opcji użytkownika w pliku /etc/exports :  
 
-Użytkownik i grupa nfsnobody lub nobody - 
+- Użytkownik i grupa nfsnobody lub nobody -   
   
 - root_squash - mapuje użytkownika/grupę root zdalnego serwera jako **nobody**, w ten sposób użytkownik zdalny nie ma dostępu do całego filesystemu   
 
@@ -3918,7 +3918,24 @@ Użytkownik i grupa nfsnobody lub nobody -
     - ```-v``` - **s** - więcej danych wyjściowych 
 
 
+## Bezpieczeństwo NFS
 
+
+### Otwieranie zapory sieciowej dla NFS
+
+ konieczne jest otworzenie portów TCP i UDP
+2049 (nfs) i 111 (rpcbind)
+
+
+otworzone porty TCP i UDP 20048,
+aby polecenie showmount mogło wykonywać zapytania pochodzące z rpc.mountd na serwerze
+dostarczające informacje o dostępnych katalogach współdzielonych NFS
+
+
+netstat - umożliwia sprawdzenie nasłuchiwania na portach, pomocne po uruchomieniu usługi nfs 
+
+
+### Konfigurowanie SELinux dla serwera NFS
 
 
 
