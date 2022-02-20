@@ -3829,8 +3829,6 @@ Usługa nfs-server wymaga również uruchomionej usługi **RPC (rpcbind)**. Jeż
 W celu współdzielenia systemu plików NFS z poziomu systemu Linux trzeba eksportować go z systemu serwera. Eksportowanie jest przeprowadzane poprzez dodanie wpisów do katalogu ```/etc/exports```
 
 
-
-
 ## Konfiguracja pliku /etc/exports
 
 ```man exports``` - więcej opcji dla montowania 
@@ -3840,19 +3838,67 @@ Format pliku /etc/exports jest następujący:
 Katalog         Komputer (opcje…)       Komputer (opcje…)  # Komentarze  
 ```
 
-Przykład : 
-```bash
-# Katalog /home/joe jest udostępniony dla hostów z podsieci 192.168.0. jako read/write oraz jednego 192.168.0.10 jako read-only
-/home/joe       192.168.0.(rw)      192.168.1.10(ro) 
-
-# Katalog dostępny publicznie
-/pub (ro,insecure,all_squash)                        
-```
-
-
 - Katalog - nazwa katalogu wspoldzielonego 
 - Komputer - podsieć lub pojedyńczy hostname dla którego udostępniony ma być katalog, można ich wskazać wiele jak pokazane jest powyżej
 - Opcje - mogą zawierać różne opcje definiujące środki bezpieczeństwa związane ze współdzielonym katalogiem
+
+
+Przykład : 
+
+### #TODO - dopisać co robią opcje z nawiasów 
+```bash
+# Katalog dostępny dla wszystkich, dopisać co robią opcje
+/pub (ro,insecure,all_squash)      
+
+# Katalog udostępniony dla jednego hosta 192.168.1.10 jako read-only
+/home/joe      192.168.1.10(ro) 
+
+# Dostęp mają hosty klon i swierk
+/home klon(rw,squash uids=0-99) swierk(rw,squash uids=0-99)
+```
+
+### Nazwy komputerów w pliku /etc/exports
+
+- Pojedynczy komputer
+
+    ```bash
+    /home/joe    192.168.1.10(ro) 
+    ```
+- Wiele hostów    
+
+    ```bash
+    /usr/local klon(rw)  swierk(ro,root_squash)
+    ```
+
+- Sieć IP - maska jest wymagana
+
+    ```bash
+    /usr/local  10.0.0.0/255.0.0.0 172.16.0.0/255.255.0.0
+    /home       192.168.18.0/255.255.255.0
+    ```
+
+- Domena TCP/IP
+
+```bash
+
+```
+
+
+
+192.168.18.0/24
+
+
+
+- Katalog dostępny dla wszystkich z domeny linuxtoys.net
+
+    ```bash
+    /cal *.linuxtoys.net(rw) 
+    ```
+
+
+klon - dostęp dla jednego hosta 
+*.linuxtoys.net(rw) - dostęp hostów z całej domeny 
+10.0.0.0/255.0.0.0 172.16.0.0/255.255.0.0 - dostęp dla podzieci 10.0.0.0 i 172.16.0.0 **(muszą być podane maski)**
 
 
 
@@ -3870,7 +3916,7 @@ Przykład :
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 511
-
+513
 
   
 
