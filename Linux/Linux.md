@@ -3837,7 +3837,7 @@ W celu współdzielenia systemu plików NFS z poziomu systemu Linux trzeba ekspo
 
 Format pliku /etc/exports jest następujący:  
 ```bash
-*Katalog         Komputer (opcje…)       Komputer (opcje…)*  # Komentarze  
+Katalog         Komputer (opcje…)       Komputer (opcje…)  # Komentarze  
 ```
 
 Przykład : 
@@ -3853,6 +3853,8 @@ Przykład :
 - Katalog - nazwa katalogu wspoldzielonego 
 - Komputer - podsieć lub pojedyńczy hostname dla którego udostępniony ma być katalog, można ich wskazać wiele jak pokazane jest powyżej
 - Opcje - mogą zawierać różne opcje definiujące środki bezpieczeństwa związane ze współdzielonym katalogiem
+
+
 
 
 
