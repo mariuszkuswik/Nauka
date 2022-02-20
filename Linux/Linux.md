@@ -3836,15 +3836,15 @@ W celu współdzielenia systemu plików NFS z poziomu systemu Linux trzeba ekspo
 Format pliku /etc/exports jest następujący:  
 *Katalog         Komputer (opcje…)       Komputer (opcje…)*  # Komentarze  
 
-
+Katalog - 
 
 
 ## Koniec Biblii
 
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
-### Strona 507
-511
+### Strona 511
+
 
   
 
