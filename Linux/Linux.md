@@ -4067,7 +4067,9 @@ Opcje stosowane w fstabie lub przy użyciu *mount -o*
 ```man 5 nfs``` - wyświetlenie opcji montowania dla udziałów nfs    
 
 - **hard** - jeżeli serwer NFS stanie sie niedostępny to proces używający katalogu eksporowanego **zostanie wstrzymany** do chwili kiedy serwer ponownie stanie się dostępny, *opcja domyślnie stosowana*    
-- **soft** - jeżeli serwer NFS stanie sie niedostępny to proces używający katalogu eksporowanego po upłynięciu określonego czasu **zakończy działanie niepowodzeniem**      
+- **soft** - jeżeli serwer NFS stanie sie niedostępny to proces używający katalogu eksporowanego po upłynięciu określonego czasu **zakończy działanie niepowodzeniem** 
+
+### #TODO - do przeredagowania
 - **rsize** - wyrażona w bajtach wielkość bloku danych używanego przez klienta podczas odczytywania danych z serwera NFS. Wartością domyślną jest 1024. Używając większej liczby (na przykład 8192), można uzyskać większą wydajność w szybkich (takich jak LAN) i względnie bezbłędnych sieciach (czyli takich, w których nie dochodzi do wielu zakłóceń i kolizji).   
 - **wsize** — to wyrażona w bajtach wielkość bloku danych używanego przez klienta podczas zapisywania danych na serwerze NFS. Wartością domyślną jest 1024. Kwestie wydajności są takie same jak w przypadku opcji rsize.  
 - **timeo=#** — opcja ustawia czas, po upłynięciu którego nastąpi próba przeprowadzenia kolejnej transmisji, jeżeli poprzednia zakończyła się osiągnięciem czasu wygaśnięcia ważności. # oznacza liczbę dziesiątych części sekundy. Wartością domyślną jest siedem dziesiątych sekundy. Każdy kolejny okres wygaśnięcia ważności jest podwajany (aż do maksymalnie 60 sekund). Tę wartość można zwiększyć, jeżeli istnieje pewność, że osiągnięcie czasu upłynięcia ważności jest związane z wolną odpowiedzią serwera bądź wolnym połączeniem sieciowym.  
@@ -4080,12 +4082,10 @@ w przypadku montowania wolnych lub dostępnych sporadycznie systemów plików NF
 
 
 
-
-Nie wszystkie opcje muszą zostać umieszczone w pliku /etc/fstab. Po stronie klienta można
-skonfigurować plik /etc/nfsmount.conf razem z sekcjami Mount, Server i Global. W sekcji Mount
-można zdefiniować opcje montowania, które będą używane podczas montowania systemu plików
-NFS w określonym punkcie montowania. Sekcja Server pozwala dodać opcje przeznaczone dla systemów plików montowanych z konkretnego serwera NFS. Z kolei sekcja Global zawiera
-opcje stosowane podczas montowania każdego udziału NFS przez klienta.
+- ```/etc/nfsmount.conf``` - config po stronie klienta uzywany do określenia jak montować udziały NFS, plik dzieli się na sekcje:   
+    - Mount - opcje montowania *dla udziałów NFS stosowanych w określonym punkcie montowania*
+    - Server - opcje *dla udziałów montowanych z konkretnego serwera NFS*
+    - Global - opcje *dla każdego montowanego udziału NFS* 
 
 
 
@@ -4100,7 +4100,7 @@ opcje stosowane podczas montowania każdego udziału NFS przez klienta.
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 520
-522
+523
 
   
 
