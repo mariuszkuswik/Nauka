@@ -36,7 +36,7 @@
         - [userdel](#userdel---Usuwanie-użytkownika)
     - [Serwer FTP](#Serwer-FTP)
     - [Samba](#Samba---serwer-plików)
-    - [NFS](#NFS---Serwer plików)
+    - [NFS](#NFS---Serwer-plików)
 - [Koniec Biblii](#Koniec-Biblii)
 2. [Skryptowanie](#skryptowanie)
 	- [Zmienne specjalne](#zmienne-specjalne)
