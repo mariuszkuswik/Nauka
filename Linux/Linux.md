@@ -4011,9 +4011,34 @@ Opcje montowania można definiować nie tylko w pliku /etc/fstab, ale również 
 
 ### Wyświetlanie udziałów NFS
 
-showmount -e server.example.com
-/export/myshare client.example.com
-/mnt/public *
+```showmount -e server.example.com``` - wyświetlenie jakie katalogi są udostępnione na podanym serwerze 
+
+> /export/myshare client.example.com        # Katalog /exports/myshare jest dostępny dla client.example.com
+/mnt/public *                               # Katalog /mnt/public jest dostępny dla wszystkich 
+
+
+### Montowanie udziałów NFS
+
+
+#### Tymczasowe montowanie
+
+```mount server:/tmp /mnt/server``` - przykład ręcznego, tymczasowego montowania 
+```mount -t nfs4``` - wyświetlenie dysków zamontowanych z konkretnym filesystemem (nfs4)
+
+#### Fstab
+
+- Format montowania w fstab
+    ```bash
+    server:katalog_udostepniony    punkt_montowania    nfs     opcje   0 0
+    ```
+
+- Przykłady montowania udziałów NFS w fstab
+    ```bash
+    klon:/stuff     /mnt/klon       nfs     bg,rsize=8192,wsize=8192    0 0
+    dab:/apps       /dab/apps       nfs     noauto,ro   0 0
+    ```
+
+
 
 
 
@@ -4021,8 +4046,8 @@ showmount -e server.example.com
 
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
-### Strona 511
-520
+### Strona 520
+
 
   
 
