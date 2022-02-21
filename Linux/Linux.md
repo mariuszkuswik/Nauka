@@ -3822,6 +3822,8 @@ Reconnecting with SMB1 for workgroup listing.
 
 ### Dokumentacja
 
+```man 5 nfs``` - wyświetlenie opcji montowania dla udziałów nfs   
+
 - ```rpm -qd nfs-utils | less``` - wyświetlenie plików z dokumentacją  
 
 ```bash
@@ -4048,13 +4050,33 @@ Opcje montowania można definiować nie tylko w pliku /etc/fstab, ale również 
 More info can be found in the kernel source directory Documentation/filesystems 
 
 
+System plików NFS jest domyślnie montowany w trybie do odczytu i zapisu. Jednak wartością domyślną
+dla eksportowanych systemów plików jest tylko odczyt. Jeżeli nie możesz dokonać zapisu w systemie
+plików NFS, warto sprawdzić, czy został wyeksportowany z serwera w trybie do odczytu i zapisu.
+
+
+- Montowanie systemów plików typu noauto
+    Jeżeli w opcjach montowania katalogu w pliku fstab podamy *noauto* to udział nie zostanie automatycznie zamontowany,   
+    ```mount /mount_point``` - zamontowanie udziału /mount_point który miał przypisaną opcję noauto  
+
+
+### Używanie opcji montowania
+
+Opcje stosowane w fstabie lub przy użyciu *mount -o* 
+
+```man 5 nfs``` - wyświetlenie opcji montowania dla udziałów nfs  
+
+- **hard** - jeżeli serwer NFS stanie sie niedostępny to proces używający katalogu eksporowanego **zostanie wstrzymany** do chwili kiedy serwer ponownie stanie się dostępny, *opcja domyślnie stosowana* 
+- **soft** - jeżeli serwer NFS stanie sie niedostępny to proces używający katalogu eksporowanego po upłynięciu określonego czasu **zakończy działanie niepowodzeniem**    
+- **rsize** -  
+
 
 ## Koniec Biblii
 
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 520
-
+522
 
   
 
