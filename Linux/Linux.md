@@ -4040,11 +4040,12 @@ Opcje montowania można definiować nie tylko w pliku /etc/fstab, ale również 
 
 - Przykłady montowania udziałów NFS w fstab
     ```bash
-    klon:/stuff     /mnt/klon       nfs     bg,rsize=8192,wsize=8192    0 0
+    klon:/stuff     /mnt/klon       nfs     bg,rsize=8192,wsize=8192    0 0 # bg - 
     dab:/apps       /dab/apps       nfs     noauto,ro   0 0
-    ```
-
-
+    ``` 
+      
+### #TODO - SPRAWDZiĆ TEN KATALOG, BYĆ MOŻE ŻE JEST TAM WIECEJ DOKUMENTACJI
+More info can be found in the kernel source directory Documentation/filesystems 
 
 
 
