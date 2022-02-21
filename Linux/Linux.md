@@ -3999,32 +3999,32 @@ a później zastosować tę regułę, należy wydać następujące polecenia:
 ```semanage fcontext -a -t public_content_rw_t "/whatever(/.*)?"```
 ```restorecon -F -R -v /whatever```
 
-Jeżeli chcesz umożliwić użytkownikom jedynie odczytywanie plików z danego katalogu, ale nie
-zapisywanie w nim plików, musisz takiemu katalogowi przypisać kontekst pliku public_content_t.
+Jeżeli chcesz umożliwić użytkownikom jedynie odczytywanie plików z danego katalogu, ale nie   
+zapisywanie w nim plików, musisz takiemu katalogowi przypisać kontekst pliku public_content_t.   
 
 
 ## Używanie systemów plików NFS
 
-Użycie opcji noauto w przypadku katalogu NFS wymienionego w pliku /etc/fstab powoduje jego nieaktywność aż do wydania polecenia mount
-Opcje montowania można definiować nie tylko w pliku /etc/fstab, ale również w /etc/nfs-mount.conf   
+Użycie opcji noauto w przypadku katalogu NFS wymienionego w pliku /etc/fstab powoduje jego nieaktywność aż do wydania polecenia mount   
+Opcje montowania można definiować nie tylko w pliku /etc/fstab, ale również w /etc/nfs-mount.conf     
 
 
 ### Wyświetlanie udziałów NFS
 
-```showmount -e server.example.com``` - wyświetlenie jakie katalogi są udostępnione na podanym serwerze 
+```showmount -e server.example.com``` - wyświetlenie jakie katalogi są udostępnione na podanym serwerze   
 
-> /export/myshare client.example.com        # Katalog /exports/myshare jest dostępny dla client.example.com
-/mnt/public *                               # Katalog /mnt/public jest dostępny dla wszystkich 
+> /export/myshare client.example.com        # Katalog /exports/myshare jest dostępny dla client.example.com  
+/mnt/public *                               # Katalog /mnt/public jest dostępny dla wszystkich   
 
 
 ### Montowanie udziałów NFS
 
 
 #### Tymczasowe montowanie
-
-```mount server:/tmp /mnt/server``` - przykład ręcznego, tymczasowego montowania 
-```mount -t nfs4``` - wyświetlenie dysków zamontowanych z konkretnym filesystemem (nfs4)
-
+  
+```mount server:/tmp /mnt/server``` - przykład ręcznego, tymczasowego montowania   
+```mount -t nfs4``` - wyświetlenie dysków zamontowanych z konkretnym filesystemem (nfs4)   
+ 
 #### Fstab
 
 - Format montowania w fstab
