@@ -4062,13 +4062,37 @@ plików NFS, warto sprawdzić, czy został wyeksportowany z serwera w trybie do 
 
 ### Używanie opcji montowania
 
-Opcje stosowane w fstabie lub przy użyciu *mount -o* 
+Opcje stosowane w fstabie lub przy użyciu *mount -o*   
 
-```man 5 nfs``` - wyświetlenie opcji montowania dla udziałów nfs  
+```man 5 nfs``` - wyświetlenie opcji montowania dla udziałów nfs    
 
-- **hard** - jeżeli serwer NFS stanie sie niedostępny to proces używający katalogu eksporowanego **zostanie wstrzymany** do chwili kiedy serwer ponownie stanie się dostępny, *opcja domyślnie stosowana* 
-- **soft** - jeżeli serwer NFS stanie sie niedostępny to proces używający katalogu eksporowanego po upłynięciu określonego czasu **zakończy działanie niepowodzeniem**    
-- **rsize** -  
+- **hard** - jeżeli serwer NFS stanie sie niedostępny to proces używający katalogu eksporowanego **zostanie wstrzymany** do chwili kiedy serwer ponownie stanie się dostępny, *opcja domyślnie stosowana*    
+- **soft** - jeżeli serwer NFS stanie sie niedostępny to proces używający katalogu eksporowanego po upłynięciu określonego czasu **zakończy działanie niepowodzeniem**      
+- **rsize** - wyrażona w bajtach wielkość bloku danych używanego przez klienta podczas odczytywania danych z serwera NFS. Wartością domyślną jest 1024. Używając większej liczby (na przykład 8192), można uzyskać większą wydajność w szybkich (takich jak LAN) i względnie bezbłędnych sieciach (czyli takich, w których nie dochodzi do wielu zakłóceń i kolizji).   
+- **wsize** — to wyrażona w bajtach wielkość bloku danych używanego przez klienta podczas zapisywania danych na serwerze NFS. Wartością domyślną jest 1024. Kwestie wydajności są takie same jak w przypadku opcji rsize.  
+- **timeo=#** — opcja ustawia czas, po upłynięciu którego nastąpi próba przeprowadzenia kolejnej transmisji, jeżeli poprzednia zakończyła się osiągnięciem czasu wygaśnięcia ważności. # oznacza liczbę dziesiątych części sekundy. Wartością domyślną jest siedem dziesiątych sekundy. Każdy kolejny okres wygaśnięcia ważności jest podwajany (aż do maksymalnie 60 sekund). Tę wartość można zwiększyć, jeżeli istnieje pewność, że osiągnięcie czasu upłynięcia ważności jest związane z wolną odpowiedzią serwera bądź wolnym połączeniem sieciowym.  
+- **retrans=#** — opcja ustawia drugorzędne okresy upłynięcia ważności i ponowienia transmisji, zanim nastąpi podstawowy okres upłynięcia ważności.  
+- **retry=#** — opcja ustala liczbę minut, w trakcie których będą następowały próby powtórzenia nieudanego montowania. # oznacza liczbę minut. Wartość domyślna
+wynosi 10 000 minut, czyli około tygodnia.
+- **bg** — jeżeli pierwsza próba montowania zakończy się osiągnięciem czasu wygaśnięcia ważności, wszystkie kolejne próby będą odbywały się w tle. Ta opcja jest bardzo cenna
+w przypadku montowania wolnych lub dostępnych sporadycznie systemów plików NFS. Poprzez umieszczenie żądań montowania w tle system będzie kontynuował montowanie innych systemów plików, zamiast oczekiwać na zakończenie bieżącego zadania.
+- **fg** — jeżeli pierwsza próba montowania zakończy się osiągnięciem czasu wygaśnięcia ważności, wszystkie kolejne próby będą odbywały się na pierwszym planie. To domyślne zachowanie. Te opcję używa się, jeżeli zamontowanie systemu plików jest bardzo ważne przed kontynuacją pracy (na przykład montowany jest katalog /usr)  
+
+
+
+
+Nie wszystkie opcje muszą zostać umieszczone w pliku /etc/fstab. Po stronie klienta można
+skonfigurować plik /etc/nfsmount.conf razem z sekcjami Mount, Server i Global. W sekcji Mount
+można zdefiniować opcje montowania, które będą używane podczas montowania systemu plików
+NFS w określonym punkcie montowania. Sekcja Server pozwala dodać opcje przeznaczone dla systemów plików montowanych z konkretnego serwera NFS. Z kolei sekcja Global zawiera
+opcje stosowane podczas montowania każdego udziału NFS przez klienta.
+
+
+
+
+
+
+
 
 
 ## Koniec Biblii
