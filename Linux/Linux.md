@@ -4080,7 +4080,7 @@ wynosi 10 000 minut, czyli około tygodnia.
 w przypadku montowania wolnych lub dostępnych sporadycznie systemów plików NFS. Poprzez umieszczenie żądań montowania w tle system będzie kontynuował montowanie innych systemów plików, zamiast oczekiwać na zakończenie bieżącego zadania.
 - **fg** — jeżeli pierwsza próba montowania zakończy się osiągnięciem czasu wygaśnięcia ważności, wszystkie kolejne próby będą odbywały się na pierwszym planie. To domyślne zachowanie. Te opcję używa się, jeżeli zamontowanie systemu plików jest bardzo ważne przed kontynuacją pracy (na przykład montowany jest katalog /usr)  
 
-
+---
 
 - ```/etc/nfsmount.conf``` - config po stronie klienta uzywany do określenia jak montować udziały NFS, plik dzieli się na sekcje:   
     - Mount - opcje montowania *dla udziałów NFS stosowanych w określonym punkcie montowania*
