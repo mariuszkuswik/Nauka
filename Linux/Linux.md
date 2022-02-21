@@ -3806,7 +3806,13 @@ Reconnecting with SMB1 for workgroup listing.
 
 
 
-# Serwer plików NFS
+# NFS - Serwer plików   
+
+[Instalacja](#Instalacja)   
+[Dokumentacja](#Dokumentacja)  
+  
+- [Bezpieczeństwo NFS](#Bezpieczeństwo_NFS)  
+
 
 **Przydatne** - Udział NFS można montować za pośrednictwem Cockpit  
 
