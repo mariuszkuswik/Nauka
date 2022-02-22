@@ -4115,11 +4115,12 @@ Domyślne opcje montowania
 
 ## autofs - montowanie systemów plików NFS na żądanie
 
-```/etc/auto.master``` - config dla autofs   
-```man 5 auto.master``` - wyjaśnia skłądnie pliku konfiguracyjnego   
-```man automount``` - montuje udziały nfs dla pliku auto.master   
+- ```/etc/auto.master``` - **config** dla autofs  
+     
+- ```man 5 auto.master``` - wyjaśnia skłądnie pliku konfiguracyjnego   
+- ```man automount``` - montuje udziały nfs dla pliku auto.master   
 
-```yum install autofs``` - instalacja **autofs**   
+- ```yum install autofs``` - **instalacja** autofs   
 
 Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego katalogu, należy po prostu zmienić katalog (cd) na katalog montowania autofs (domyślnie /net lub /var/autofs). W ten sposób współdzielony zasób zostanie automatycznie zamontowany i udostępniony.    
 
