@@ -3946,10 +3946,10 @@ Mapowanie opcji użytkownika w pliku /etc/exports :
 
 ### Eksportowanie współdzielonych systemów plików
 
-- ```exportfs``` - wyeksportowanie (udostępnienie) udziałów udostępnionych w pliku /etc/exports
+- ```exportfs -arv``` - wyeksportowanie (udostępnienie) udziałów udostępnionych w pliku /etc/exports
     - ```-a``` - wybiera **wszystkie katalogi do wyeksportowania** 
     - ```-r``` - **synchronizacja udostępnionych katalogów z tym co jest w configu** - jeżeli któryś katalog już tam nie występuje to nie będzie dalej udostępniany 
-    - ```-v``` - **s** - więcej danych wyjściowych 
+    - ```-v``` - **verbose** - więcej danych wyjściowych 
 
 
 ## Bezpieczeństwo NFS
@@ -4140,6 +4140,8 @@ Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego kat
 3. **Wydanie polecenia które powoduje uruchamianie usługi autofs w trakcie każdego uruchamiania systemu:**  
 
     ```systemctl enable autofs```
+
+
 
 
 
