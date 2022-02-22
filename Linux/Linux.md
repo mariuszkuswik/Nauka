@@ -4150,7 +4150,63 @@ np. ```cd /net/localhost/pub```
 
 ### Automatyczne montowanie katalogów domowych
 
+1. Na serwerze NFS (mynfs.example.com) dostarczającym scentralizowany katalog domowy dla użytkownika janek należy utworzyć konto dla tego użytkownika, którego katalogiem domowym jest /home/shared/janek. W pliku /etc/passwd trzeba odszukać identyfikator tego użytkownika (trzecia wartość), aby można było ją dopasować podczas tworzenia konta użytkownika w innym systemie.
 
+    ```bash
+    mkdir /home/shared
+    useradd -c "Jan Kowalski" -d /home/shared/janek janek
+    grep janek /etc/passwd
+    janek:x:1000:1000:Jan Kowalski:/home/shared/janek:/bin/bash  
+    ```
+
+2. Na serwerze NFS należy wyeksportować katalog /home/shared do wszystkich systemów znajdujących się w sieci lokalnej (w omawianym przykładzie to sieć 192.168.0.*). Dzięki temu będzie można współdzielić katalogi domowe użytkowników, w tym także janka, przez dodanie następującego fragmentu kodu do pliku /etc/exports:  
+    
+    ```bash
+    /etc/exports file to share directories under /home/shared  
+    only to other systems on the 192.168.0.0/24 network:/home/shared 192.168.0.*(rw,insecure)  
+    ```
+
+**WAŻNE !** - W pokazanym tutaj przykładzie opcja insecure umożliwia klientom podczas wykonywania żądań używanie portów o numerach wyższych niż 1024. Część klientów NFS wymaga tej opcji, ponieważ nie ma dostępu do portów zarezerwowanych dla NFS.  
+
+3. Na serwerze NFS ponownie uruchom usługę nfs-server lub, jeśli już działa, wyeksportuj katalog współdzielony.  
+
+    ```bash
+    exportfs -a -r -v
+    ```
+
+4. Na serwerze NFS sprawdź, czy w zaporze sieciowej zostały otwarte niezbędne porty. Więcej informacji na ten temat przedstawiłem w podrozdziale „Kwestie bezpieczeństwa związane z NFS”.  
+
+5. W systemie klienta NFS do pliku /etc/auto.master dodaj wpis określający punkt montowania, w którym ma zostać zamontowany zdalny katalog NFS oraz (dowolnie wybrany) plik zawierający dane wskazujące położenie zdalnego katalogu NFS. Do pliku auto.master dodałem następujący wiersz kodu:  
+
+    ```bash
+    /home/remote /etc/auto.janek
+    ```
+
+6. W systemie klienta NFS do wybranego w poprzednim punkcie pliku
+(w moim przypadku jest to /etc/auto.janek) dodaj następujący wiersz kodu:
+
+    ```bash
+    janek -rw mynfs.example.com:/home/shared/janek
+    ```
+
+7. W systemie klienta NFS ponownie uruchom usługę autofs:
+    
+    ```bash
+    systemctl restart autofs.service
+    ```
+
+8. W systemie klienta NFS utwórz użytkownika o nazwie janek za pomocą polecenia useradd. Wymaga ono podania identyfikatora użytkownika (tutaj jest to janek) na serwerze (tutaj jest to 507), aby system klienta był właścicielem plików znajdujących się w katalogu domowym (na serwerze NFS) tego użytkownika. Po wydaniu zamieszczonych tutaj poleceń nastąpi utworzenie konta użytkownika janek. Jednak otrzymasz komunikat błędu wskazujący, że katalog domowy użytkownika już istnieje (to jest zgodne z prawdą).  
+
+```bash
+# useradd -u 507 -c "Jan Kowalski" -d /home/remote/janek janek
+# passwd janek
+```
+
+> Changing password for user janek.  
+New password: ********  
+Retype new password: ********  
+
+9. W systemie klienta NFS zaloguj się jako użytkownik janek. Jeżeli wszystko działa prawidłowo, po zalogowaniu się i próbie uzyskania dostępu do katalogu domowego, /home/remote/janek, powinien zostać zamontowany katalog /home/shared/janek z serwera mynfs.example.com. Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego właścicielem jest użytkownik o identyfikatorze 507 (w obu systemach jest to janek). Dlatego użytkownik janek w systemie lokalnym powinien mieć możliwość dodawania, usuwania, modyfikowania i wyświetlania plików znajdujących się w tym katalogu. Po wylogowaniu się janka — w rzeczywistości gdy przestanie używać katalogu przez ustalony czas (tutaj jest to 10 minut) — katalog zostanie odmontowany.    
 
 
 
