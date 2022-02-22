@@ -4085,11 +4085,13 @@ w przypadku montowania wolnych lub dostępnych sporadycznie systemów plików NF
 Domyślne opcje montowania 
 
 ```/etc/nfsmount.conf``` - config po stronie klienta uzywany do określenia jak montować udziały NFS, plik dzieli się na sekcje:   
-- Mount - opcje montowania *dla udziałów NFS stosowanych w określonym punkcie montowania*
-- Server - opcje *dla udziałów montowanych z konkretnego serwera NFS*
-- Global - opcje *dla każdego montowanego udziału NFS* 
+- **Mount** - opcje montowania *dla udziałów NFS stosowanych w określonym punkcie montowania*
+- **Server** - opcje *dla udziałów montowanych z konkretnego serwera NFS*
+- **Global** - opcje *dla każdego montowanego udziału NFS* 
 
-- Przykład sekcji Server : 
+--- 
+
+- Przykład sekcji **Server** : 
     
     ```bash
     [ Server "thunder.example.com" ]
@@ -4097,19 +4099,19 @@ Domyślne opcje montowania
         wsize=32k
     ```
 
-- Sekcja NFSMount_Global_Options - opcje domyślne dla każdego udziału NFS, można je nadpisać za pomocą opcji dodanych do pliku */etc/fstab* lub polecenia *mount*
+- Sekcja **NFSMount_Global_Options** - opcje domyślne dla każdego udziału NFS, można je nadpisać za pomocą opcji dodanych do pliku */etc/fstab* lub polecenia *mount*
 
-```bash
-[ NFSMount_Global_Options ]
-# This sets the default version to NFS 4
-Defaultvers=4
-# Sets the number of times a request will be retried before
-# generating a timeout
-Retrans=2
-# Sets the number of minutes before retrying a failed
-# mount to 2 minutes
-Retry=2
-```
+    ```bash
+    [ NFSMount_Global_Options ]
+    # This sets the default version to NFS 4
+    Defaultvers=4
+    # Sets the number of times a request will be retried before
+    # generating a timeout
+    Retrans=2
+    # Sets the number of minutes before retrying a failed
+    # mount to 2 minutes
+    Retry=2
+    ```
 
 ## Używanie autofs w celu montowania systemów plików NFS na żądanie
 
