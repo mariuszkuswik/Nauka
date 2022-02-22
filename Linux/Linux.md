@@ -4180,7 +4180,8 @@ np. ```cd /net/localhost/pub```
 
 4. Na serwerze NFS sprawdź, czy w zaporze sieciowej zostały otwarte niezbędne porty.
 
-5. W systemie klienta NFS do pliku /etc/auto.master dodaj wpis określający punkt montowania, w którym ma zostać zamontowany zdalny katalog NFS oraz (dowolnie wybrany) plik zawierający dane wskazujące położenie zdalnego katalogu NFS. Do pliku auto.master dodałem następujący wiersz kodu:  
+5. W systemie klienta NFS do pliku */etc/auto.master* dodaj wpis określający punkt montowania, w którym ma zostać zamontowany zdalny katalog NFS oraz (dowolnie wybrany) plik zawierający dane wskazujące położenie zdalnego katalogu NFS.  
+Do pliku auto.master dodaj następujący wiersz kodu:    
 
     ```bash
     /home/remote /etc/auto.janek
@@ -4190,7 +4191,7 @@ np. ```cd /net/localhost/pub```
 (w moim przypadku jest to /etc/auto.janek) dodaj następujący wiersz kodu:
 
     ```bash
-    janek -rw mynfs.example.com:/home/shared/janek
+    janek  -rw   mynfs.example.com:/home/shared/janek
     ```
 
 7. W systemie klienta NFS ponownie uruchom usługę autofs:
@@ -4199,23 +4200,59 @@ np. ```cd /net/localhost/pub```
     systemctl restart autofs.service
     ```
 
-8. W systemie klienta NFS utwórz użytkownika o nazwie janek za pomocą polecenia useradd. Wymaga ono podania identyfikatora użytkownika (tutaj jest to janek) na serwerze (tutaj jest to 507), aby system klienta był właścicielem plików znajdujących się w katalogu domowym (na serwerze NFS) tego użytkownika. Po wydaniu zamieszczonych tutaj poleceń nastąpi utworzenie konta użytkownika janek. Jednak otrzymasz komunikat błędu wskazujący, że katalog domowy użytkownika już istnieje (to jest zgodne z prawdą).  
+8. W systemie klienta NFS utwórz użytkownika o nazwie janek o tym samym UUID co na serwerze (tutaj jest to 507) aby system klienta był właścicielem plików znajdujących się w katalogu domowym (na serwerze NFS) tego użytkownika. Po wydaniu zamieszczonych tutaj poleceń nastąpi utworzenie konta użytkownika janek. Jednak otrzymasz komunikat błędu wskazujący, że katalog domowy użytkownika już istnieje (to jest zgodne z prawdą).  
 
     ```bash
     # useradd -u 507 -c "Jan Kowalski" -d /home/remote/janek janek
     # passwd janek
     ```
 
-> Changing password for user janek.  
-New password: ********  
-Retype new password: ********  
+    > Changing password for user janek.  
+    New password: ********  
+    Retype new password: ********  
 
 9. W systemie klienta NFS zaloguj się jako użytkownik janek. Jeżeli wszystko działa prawidłowo, po zalogowaniu się i próbie uzyskania dostępu do katalogu domowego, /home/remote/janek, powinien zostać zamontowany katalog /home/shared/janek z serwera mynfs.example.com. Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego właścicielem jest użytkownik o identyfikatorze 507 (w obu systemach jest to janek). Dlatego użytkownik janek w systemie lokalnym powinien mieć możliwość dodawania, usuwania, modyfikowania i wyświetlania plików znajdujących się w tym katalogu. Po wylogowaniu się janka — w rzeczywistości gdy przestanie używać katalogu przez ustalony czas (tutaj jest to 10 minut) — katalog zostanie odmontowany.    
 
 
 ### Odmontowywanie systemów plików NFS
 
+Komunikat urządzenie jest zajęte pojawiający się podczas próby odmontowania systemu
+oznacza nieudaną próbę wykonania operacji, ponieważ system plików jest nadal używany.
+Najprawdopodobniej jeden z katalogów systemu plików NFS jest katalogiem bieżącym
+w powłoce (lub powłoce innego użytkownika systemu). Inną możliwością jest to, że dowolne
+polecenie zawiera otwarty plik z systemu plików NFS (na przykład edytor tekstowy). Warto
+sprawdzić okna terminalu oraz inne powłoki, zmienić katalogi (polecenie cd) lub po prostu
+zamknąć okna terminalu.
 
+
+Jeżeli system plików nie został odmontowany, można wymusić taką operację (umount -f
+/mnt/klon) lub odmontować i uprzątnąć później (umount -l /mnt/klon). Opcja -l jest zwykle
+lepszym rozwiązaniem, ponieważ wymuszone odmontowanie może spowodować uszkodzenie
+plików, które były modyfikowane w trakcie odmontowywania. Jeszcze inna możliwość to
+wydanie polecenia fuser -v punkt_montowania, które spowoduje wyświetlenie użytkowników
+uniemożliwiających normalne odmontowanie udziału NFS. Następnie wydanie polecenia fuser
+-k punkt_montowania spowoduje zamknięcie procesów uniemożliwiających odmontowanie udziału.
+
+
+
+
+### #TODO - Ćwiczenia NFS strona 529
+
+# Rozwiązywanie problemów z systemem Linux
+
+
+Etapy uruchamiania systemu 
+
+■ włączenie zasilania;
+■ uruchomienie sprzętu (z oprogramowania typu BIOS lub UEFI);
+■ wyszukanie położenia programu rozruchowego i jego uruchomienie;
+■ wybranie systemu operacyjnego z programu rozruchowego;
+■ uruchomienie jądra i początkowego RAM dysku dla wybranego systemu operacyjnego;
+■ rozpoczęcie procesu inicjalizacji (system init lub demon systemd);
+■ uruchomienie wszystkich usług powiązanych z wybranym poziomem aktywności (poziom działania lub cel domyślny).
+
+
+## Rozwiązywanie problemów z programem rozruchowym GRUB
 
 
 
@@ -4225,7 +4262,7 @@ Retype new password: ********
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 523
-526
+536
 
   
 
