@@ -4115,13 +4115,30 @@ Domyślne opcje montowania
 
 ## autofs - montowanie systemów plików NFS na żądanie
 
-**autofs** sprawia, że kiedy ktoś spróbuje użyć danego ponuktu montowania NFS to ten zostanie zamontowany 
+```/etc/auto.master``` - config dla autofs 
+```man 5 auto.master``` - wyjaśnia skłądnie pliku konfiguracyjnego 
+```man automount``` - montuje udziały nfs dla pliku auto.master 
 
-```yum install autofs``` - instalacja autofs
+```yum install autofs``` - instalacja **autofs**
 
-### Automatyczne montowanie katalogu /net
+Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego katalogu, należy po prostu zmienić katalog (cd) na katalog montowania autofs (domyślnie /net lub /var/autofs). W ten sposób współdzielony zasób zostanie automatycznie zamontowany i udostępniony.
 
 
+- Automatyczne montowanie katalogu /net
+
+Procedura włączenia 
+1. W Fedorze lub RHEL jako użytkownik root trzeba z poziomu okna terminalu
+otworzyć plik /etc/auto.master, a następnie znaleźć następujący wiersz:
+/net -hosts
+Wiersz ten powoduje, że katalog /net będzie funkcjonował jako punkt montowania
+dla współdzielonych katalogów NFS, do których chcesz uzyskać dostęp w sieci.
+(Jeżeli na początku wiersza znajduje się znak komentarza, wówczas trzeba go usunąć).
+2. Kolejny krok to uruchomienie usługi poprzez wydanie jako root następującego
+polecenia w Fedorze 30, RHEL 7 i nowszych wydaniach tych systemów:
+# systemctl start autofs.service
+3. W systemach Fedora 30, RHEL 7 i ich nowszych wydaniach poniższe polecenie
+powoduje uruchamianie usługi autofs w trakcie każdego uruchamiania systemu:
+# systemctl enable autofs
 
 
 
