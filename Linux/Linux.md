@@ -4082,14 +4082,22 @@ w przypadku montowania wolnych lub dostępnych sporadycznie systemów plików NF
 
 ---
 
-- ```/etc/nfsmount.conf``` - config po stronie klienta uzywany do określenia jak montować udziały NFS, plik dzieli się na sekcje:   
-    - Mount - opcje montowania *dla udziałów NFS stosowanych w określonym punkcie montowania*
-    - Server - opcje *dla udziałów montowanych z konkretnego serwera NFS*
-    - Global - opcje *dla każdego montowanego udziału NFS* 
+Domyślne opcje montowania 
 
+```/etc/nfsmount.conf``` - config po stronie klienta uzywany do określenia jak montować udziały NFS, plik dzieli się na sekcje:   
+- Mount - opcje montowania *dla udziałów NFS stosowanych w określonym punkcie montowania*
+- Server - opcje *dla udziałów montowanych z konkretnego serwera NFS*
+- Global - opcje *dla każdego montowanego udziału NFS* 
 
+- Przykład sekcji Server : 
+    
+    ```bash
+    [ Server "thunder.example.com" ]
+        rsize=32k
+        wsize=32k
+    ```
 
-
+- Sekcja NFSMount_Global_Options - opcja używana domyślnie 
 
 
 
@@ -4099,8 +4107,8 @@ w przypadku montowania wolnych lub dostępnych sporadycznie systemów plików NF
 
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
-### Strona 520
-523
+### Strona 523
+
 
   
 
