@@ -4113,7 +4113,13 @@ Domyślne opcje montowania
     Retry=2
     ```
 
-## Używanie autofs w celu montowania systemów plików NFS na żądanie
+## autofs - montowanie systemów plików NFS na żądanie
+
+**autofs** sprawia, że kiedy ktoś spróbuje użyć danego ponuktu montowania NFS to ten zostanie zamontowany 
+
+```yum install autofs``` - instalacja autofs
+
+### Automatyczne montowanie katalogu /net
 
 
 
