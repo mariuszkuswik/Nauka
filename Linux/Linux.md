@@ -4160,8 +4160,8 @@ np. ```cd /net/localhost/pub```
     janek:x:1000:1000:Jan Kowalski:/home/shared/janek:/bin/bash  
     ```
 
-2. Na serwerze NFS należy wyeksportować katalog /home/shared
-2. Na serwerze NFS należy wyeksportować katalog /home/shared do wszystkich systemów znajdujących się w sieci lokalnej (w omawianym przykładzie to sieć 192.168.0.*). Dzięki temu będzie można współdzielić katalogi domowe użytkowników, w tym także janka, przez dodanie następującego fragmentu kodu do pliku /etc/exports:  
+2. Na serwerze NFS należy wyeksportować katalog /home/shared do całej sieci lokalnej (w omawianym przykładzie to sieć 192.168.0.*)  
+*Aby to zrobić w /etc/exports należy dodać :*   
     
     ```bash
     # /etc/exports file to share directories under /home/shared  
@@ -4169,8 +4169,8 @@ np. ```cd /net/localhost/pub```
     
     /home/shared 192.168.0.*(rw,insecure)  
     ```
-
-    **WAŻNE !** - W pokazanym tutaj przykładzie opcja insecure umożliwia klientom podczas wykonywania żądań używanie portów o numerach wyższych niż 1024. Część klientów NFS wymaga tej opcji, ponieważ nie ma dostępu do portów zarezerwowanych dla NFS.  
+   
+    **WAŻNE !** - opcja insecure  umożliwia klientom podczas wykonywania żądań używanie portów o numerach wyższych niż 1024. Część klientów NFS wymaga tej opcji, ponieważ nie ma dostępu do portów zarezerwowanych dla NFS.   
 
 3. Na serwerze NFS ponownie uruchom usługę nfs-server lub, jeśli już działa, wyeksportuj katalog współdzielony.  
 
@@ -4178,7 +4178,7 @@ np. ```cd /net/localhost/pub```
     exportfs -a -r -v
     ```
 
-4. Na serwerze NFS sprawdź, czy w zaporze sieciowej zostały otwarte niezbędne porty. Więcej informacji na ten temat przedstawiłem w podrozdziale „Kwestie bezpieczeństwa związane z NFS”.  
+4. Na serwerze NFS sprawdź, czy w zaporze sieciowej zostały otwarte niezbędne porty.
 
 5. W systemie klienta NFS do pliku /etc/auto.master dodaj wpis określający punkt montowania, w którym ma zostać zamontowany zdalny katalog NFS oraz (dowolnie wybrany) plik zawierający dane wskazujące położenie zdalnego katalogu NFS. Do pliku auto.master dodałem następujący wiersz kodu:  
 
