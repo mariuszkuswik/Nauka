@@ -4139,7 +4139,16 @@ Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego kat
 
 3. **Wydanie polecenia które powoduje uruchamianie usługi autofs w trakcie każdego uruchamiania systemu:**  
 
-    ```systemctl enable autofs```
+    ```systemctl enable autofs```  
+   
+   
+Po przeprowadzeniu powyższej procedury, jeżeli mamy dostęp do jakiegoś udziału udostępnionego NFS to będzie on dostępny pod :     
+**/net/hostname/sharename**   
+  
+np. ```cd /net/localhost/pub```  
+  
+
+### Automatyczne montowanie katalogów domowych
 
 
 
@@ -4151,7 +4160,7 @@ Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego kat
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 523
-524
+526
 
   
 
