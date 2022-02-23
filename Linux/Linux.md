@@ -4292,6 +4292,19 @@ Etapy uruchamiania systemu
 
 ## Rozwiązywanie problemów z GRUB
 
+Edycja parametrów jądra odbywa się po najechaniu na dany wiersz i wybranie ```e``` ?
+
+### #TODO - strona 539 - opisać
+Jeżeli mamy problem z selinuxem to możemy go wyłączyć, 
+selinux=0 
+
+
+dmesg - opisac 540 strona
+journalctl - opisać 
+
+
+
+
 
 
 

@@ -1,5 +1,5 @@
-
-
+ 
+# Spis treści
 
 1. [Oreilly](#Oreilly)
     - [Oreilly Practice Exam A](#RHCSA-Practice-Exam-A)  
@@ -9,6 +9,9 @@
 2. [Examptopics](#Examptopics)   
 3. [RHCSA Sander 1](#RHCSA-Practice-Exam-1)
 4. [RHCSA Sander 2](#RHCSA-Practice-Exam-2)
+
+- [Ćwiczenia praktyczne - odpowiedzi](#Ćwiczenia-praktyczne---odpowiedzi)
+
 
 # Oreilly
 
@@ -885,3 +888,22 @@ Create a virtual machine with the name server4. Make sure it meets the following
 	- Configure your system to use PHP version 7.1 as the default version.
 	
 	- Add a new disk to your virtual machine. On this disk, create a VDO volume with a virtual size of 1TiB.
+
+
+
+# Ćwiczenia praktyczne - odpowiedzi
+
+
+## Restart hasła roota
+
+## Zmiana adresu sieci 
+
+## Ustawienie hostname 
+
+## Stworzenie niestandardowego użytkownika ?
+
+## Włączenie SELinux
+
+## Nadanie kontekstu do pliku SELinux
+
+[# Spis treści](#Spis-treści)
