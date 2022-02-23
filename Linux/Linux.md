@@ -15,25 +15,12 @@
         - [man](#man)
         - [info](#info)
     - [Używanie Powłoki](#Używanie-Powłoki)
-        - [id](#id)
-        - [type](#type)
-    - [Praca z plikami tekstowymi](#Praca-z-plikami-tekstowymi)
     - [Uprawnienia](#Uprawnienia)
-        - [Umask](#umask---definiowanie-uprawnień-domyślnych)
-        - [Chown](#chown---Zmiana-właściciela-pliku)
     - [Praca z plikami tekstowymi](#Praca-z-plikami-tekstowymi)
-        - [Vim](#vim)
-        - [Wyszukiwanie plików](#wyszukiwanie-plików)
-            - [Locate](#locate-1)
-            - [Find](#find)
-            - [Grep](#grep)
-    - [Praca z procesami](#Zarządzanie-uruchomionymi-procesami)
-        - [Background and foreground processes](#Background-and-foreground-processes )
+    - [Wyszukiwanie plików](#wyszukiwanie-plików)
+    - [Zarządzanie uruchomionymi procesami](#Zarządzanie-uruchomionymi-procesami)
     - [Administracja systemem linux](#administracja-systemem-linux)
     - [Zarządzanie kontami użytkowników](#Zarządzanie-kontami-użytkowników)
-        - [useradd](#useradd---Ustalanie-ustawień-domyślnych-użytkownika)
-        - [usermod](#usermod---Modyfikowanie-ustawień-użytkownika)
-        - [userdel](#userdel---Usuwanie-użytkownika)
     - [Serwer FTP](#Serwer-FTP)
     - [Samba](#Samba---serwer-plików)
     - [NFS](#NFS---Serwer-plików)
@@ -236,6 +223,8 @@ Zmiana rekurencyjna właściciela i grupy dla katalogu
 
 # Praca z plikami tekstowymi 
 
+- [Vim](#vim)
+
 ## Wpisywanie tekstu do pliku przy pomocy ```cat```
 
 ```bash
@@ -396,6 +385,8 @@ Każde polecenie musi zostać zakończone backslashem i średnikiem (\;)
 
 
 # Zarządzanie uruchomionymi procesami
+
+- [Background and foreground processes](#Background-and-foreground-processes )
 
 ## ps
 
