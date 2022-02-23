@@ -46,6 +46,11 @@
 4. [Sieci](#sieci)
 5. [Wirtualizacja](#wirtualizacja)
 
+# Ćwiczenia praktyczne, jak wykonać
+
+- [Resetowanie hasla roota](https://linuxconfig.org/redhat-8-recover-root-password)
+    - [Co robi touch /.autorelabel](https://unix.stackexchange.com/questions/509798/what-does-touch-autorelabel-do-when-we-reset-the-root-password-in-red-hat-en)
+
 
 # Korzystanie z pomocy
 
