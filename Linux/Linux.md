@@ -32,6 +32,7 @@
     - [Zarządzanie dyskami i systemami plików](#Zarządzanie-dyskami-i-systemami-plików)
         - [Partycjonowanie dysku twardego](#Partycjonowanie-dysku-twardego)
         - [LVM - Używanie menedżera partycji](#LVM---Używanie-menedżera-partycji)
+            - [Tworzenie woluminów logicznych LVM](#tworzenie-woluminów-logicznych-lvm)
     - [Administracja systemem linux](#administracja-systemem-linux)
         - [Administracja siecią](#Administracja-siecią)
             - [Sprawdzanie informacji o routingu](#sprawdzanie-informacji-o-routingu)
@@ -1711,12 +1712,14 @@ https://unix.stackexchange.com/questions/341077/lvm-volume-group-what-are-extent
     df -h /mnt/mymusic/
     ```
   
-3. Powiększenie lvm, alternatywnie można wpisać --size 1G, co ustawi lvm na równo 1GB  
+3. Powiększenie lvm, alternatywnie można wpisać --size 1G, co ustawi lvm na równo 1GB, 
+    **WAŻNE !** - opcja ```-r``` sprawia, że filesystem zostanie rozszerzony automatycznie razem z lvm     
     ```bash
-    lvextend --size +1G /dev/mapper/myvg0-music
+    lvextend -r --size +1G /dev/mapper/myvg0-music
     ```
   
 4. Zmiana wielkości filesystemu (ext2/3/4) tak aby wypełniał całą wielkość woluminu   
+### #TODO - sprawdzić w jaki sposób rozszerzyć filesystem xfs, domyślne na rhel, fsadm (najprawdopodobniej)
     ```bash
     resize2fs -p /dev/mapper/myvg0-music
     ```
