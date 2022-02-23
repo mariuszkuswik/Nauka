@@ -4238,6 +4238,27 @@ uniemożliwiających normalne odmontowanie udziału NFS. Następnie wydanie pole
 
 ### #TODO - Ćwiczenia NFS strona 529
 
+### Ćwiczenia NFS 
+
+1. sudo dnf search nfs*server
+sudo dnf info nfs-utils
+sudo dnf install nfs-utils
+
+2. sudo rpm -qd nfs-utils
+
+3. sudo systemctl start nfs-server.service
+
+4. sudo systemctl status nfs-server.service
+
+5. echo "/var/mystuff    *(ro)" >> /etc/exports
+exportfs -av
+sudo mount localhost:/var/mystuff /tmp/mnt/mystuff
+
+6. ### #TODO - Sprawdzić na osobnej maszynie !
+
+7. 
+
+
 # Rozwiązywanie problemów z systemem Linux
 
 
@@ -4261,8 +4282,8 @@ Etapy uruchamiania systemu
 
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
-### Strona 523
-536
+### Strona 536
+537
 
   
 
