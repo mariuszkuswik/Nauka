@@ -44,6 +44,8 @@
         - [Samba - Serwer plików](#samba---serwer-plików)
         - [NFS - Serwer plików](#nfs---serwer-plików)
     - [Rozwiązywanie problemów z systemem Linux](#rozwiązywanie-problemów-z-systemem-linux)
+        - [Rozwiązywanie problemów z GRUB](#Rozwiązywanie-problemów-z-GRUB)
+    
 - [Koniec Biblii](#Koniec-Biblii)
 
 
@@ -4270,6 +4272,9 @@ sudo mount localhost:/var/mystuff /tmp/mnt/mystuff
 
 # Rozwiązywanie problemów z systemem Linux
 
+- [Rozwiązywanie problemów z GRUB](#Rozwiązywanie-problemów-z-GRUB)
+- [Spis treści](#Spis-treści)
+
 
 Etapy uruchamiania systemu 
 
@@ -4282,7 +4287,7 @@ Etapy uruchamiania systemu
 ■ uruchomienie wszystkich usług powiązanych z wybranym poziomem aktywności (poziom działania lub cel domyślny).
 
 
-## Rozwiązywanie problemów z programem rozruchowym GRUB
+## Rozwiązywanie problemów z GRUB
 
 
 
