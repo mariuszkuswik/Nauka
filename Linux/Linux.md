@@ -1,11 +1,8 @@
 
 # Linux/Bash
 
-# Obecna strona 253 
-- do uzuępnienia czym jest cgroup. tylko mniej więcej, bez szczegółów,
 
-# Odpowiedzi strona 797 
-
+# Odpowiedzi na ćwiczenia strona 797 
 
 # Spis treści
 [Koniec Biblii](#Koniec-biblii)
@@ -28,6 +25,13 @@
             - [Grep](#grep)
     - [Praca z procesami](#Zarządzanie-uruchomionymi-procesami)
         - [Background and foreground processes](#Background-and-foreground-processes )
+    - [Zarządzanie kontami użytkowników](#Zarządzanie-kontami-użytkowników)
+        - [useradd](#useradd---Ustalanie-ustawień-domyślnych-użytkownika)
+        - [usermod](#usermod---Modyfikowanie-ustawień-użytkownika)
+        - [userdel](#userdel---Usuwanie-użytkownika)
+    - [Zarządzanie dyskami i systemami plików](#Zarządzanie-dyskami-i-systemami-plików)
+        - [Partycjonowanie dysku twardego](#Partycjonowanie-dysku-twardego)
+        - [LVM - Używanie menedżera partycji](#LVM---Używanie-menedżera-partycji)
     - [Administracja systemem linux](#administracja-systemem-linux)
         - [Administracja siecią](#Administracja-siecią)
             - [Sprawdzanie informacji o routingu](#sprawdzanie-informacji-o-routingu)
@@ -36,14 +40,13 @@
         - [Uruchamianie i zatrzymywanie usług](#uruchamianie-i-zatrzymywanie-usług)
         - [Serwer wydruku](#serwer-wydruku)
         - [Serwer WWW](#serwer-www)
-    - [Zarządzanie kontami użytkowników](#Zarządzanie-kontami-użytkowników)
-        - [useradd](#useradd---Ustalanie-ustawień-domyślnych-użytkownika)
-        - [usermod](#usermod---Modyfikowanie-ustawień-użytkownika)
-        - [userdel](#userdel---Usuwanie-użytkownika)
-    - [Serwer FTP](#Serwer-FTP)
-    - [Samba](#Samba---serwer-plików)
-    - [NFS](#NFS---Serwer-plików)
+        - [Serwer FTP](#serwer-ftp)
+        - [Samba - Serwer plików](#samba---serwer-plików)
+        - [NFS - Serwer plików](#nfs---serwer-plików)
+    - [Rozwiązywanie problemów z systemem Linux](#rozwiązywanie-problemów-z-systemem-linux)
 - [Koniec Biblii](#Koniec-Biblii)
+
+
 2. [Skryptowanie](#skryptowanie)
 	- [Zmienne specjalne](#zmienne-specjalne)
 	- [Exitcode](#exitcode)
@@ -874,9 +877,6 @@ Więcej informacji w podręczniku str 279
 Strona 234
 
 
-## Partycjonowanie dysku twardego 
-strona 235
-
 
 ## Używanie programu uruchamiającego GRUB
 
@@ -1613,7 +1613,7 @@ Tworzenie filesystemu
 ```partprobe /dev/sbd``` - Załadowanie nowych partycji z dysku /dev/sdb
 
 
-## Używanie menedżera partycji LVM
+## LVM - Używanie menedżera partycji 
 
 
 ![LVM schemat](rys_12_1.png)
@@ -1697,7 +1697,7 @@ https://unix.stackexchange.com/questions/341077/lvm-volume-group-what-are-extent
     ```
 
 
-## Powiększanie woluminów logicznych LVM
+### Powiększanie woluminów logicznych LVM
 
 1. Sprawdzenie dostępnego miejsca na woluminie   
     ```bash
