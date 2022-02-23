@@ -896,6 +896,9 @@ Create a virtual machine with the name server4. Make sure it meets the following
 
 ## Restart hasła roota
 
+### #TODO - dodać swój opis
+[Stronka objaśniająca](https://linuxconfig.org/redhat-8-recover-root-password)
+
 ## Zmiana adresu sieci 
 
 ## Ustawienie hostname 
