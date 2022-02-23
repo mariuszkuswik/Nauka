@@ -4303,6 +4303,14 @@ dmesg - opisac 540 strona
 journalctl - opisać 
 
 
+- Rozwiązywanie problemów w przypadku złego wpisu w fstab 
+
+```bash
+mount -o remount,rw /
+vim /etc/fstab
+mount -a
+reboot
+```
 
 
 
@@ -4313,7 +4321,7 @@ journalctl - opisać
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 536
-537
+542
 
   
 
