@@ -15,12 +15,31 @@
         - [man](#man)
         - [info](#info)
     - [Używanie Powłoki](#Używanie-Powłoki)
+        - [id](#id)
+        - [type](#type)
     - [Uprawnienia](#Uprawnienia)
+        - [Umask](#umask---definiowanie-uprawnień-domyślnych)
+        - [Chown](#chown---Zmiana-właściciela-pliku)
     - [Praca z plikami tekstowymi](#Praca-z-plikami-tekstowymi)
-    - [Wyszukiwanie plików](#wyszukiwanie-plików)
-    - [Zarządzanie uruchomionymi procesami](#Zarządzanie-uruchomionymi-procesami)
+        - [Vim](#vim)
+        - [Wyszukiwanie plików](#wyszukiwanie-plików)
+            - [Locate](#locate-1)
+            - [Find](#find)
+            - [Grep](#grep)
+    - [Praca z procesami](#Zarządzanie-uruchomionymi-procesami)
+        - [Background and foreground processes](#Background-and-foreground-processes )
     - [Administracja systemem linux](#administracja-systemem-linux)
+        - [Administracja siecią](#Administracja-siecią)
+            - [Sprawdzanie informacji o routingu](#sprawdzanie-informacji-o-routingu)
+            - [Wyświetlanie nazw hosta i domeny](#wyświetlanie-nazw-hosta-i-domeny)
+            - [Konfigurowanie interfejsów sieciowych](#konfigurowanie-interfejsów-sieciowych)
+        - [Uruchamianie i zatrzymywanie usług](#uruchamianie-i-zatrzymywanie-usług)
+        - [Serwer wydruku](#serwer-wydruku)
+        - [Serwer WWW](#serwer-www)
     - [Zarządzanie kontami użytkowników](#Zarządzanie-kontami-użytkowników)
+        - [useradd](#useradd---Ustalanie-ustawień-domyślnych-użytkownika)
+        - [usermod](#usermod---Modyfikowanie-ustawień-użytkownika)
+        - [userdel](#userdel---Usuwanie-użytkownika)
     - [Serwer FTP](#Serwer-FTP)
     - [Samba](#Samba---serwer-plików)
     - [NFS](#NFS---Serwer-plików)
@@ -35,9 +54,7 @@
 
 # Ćwiczenia praktyczne, jak wykonać
 
-- [Resetowanie hasla roota](https://linuxconfig.org/redhat-8-recover-root-password)
-    - [Co robi touch /.autorelabel](https://unix.stackexchange.com/questions/509798/what-does-touch-autorelabel-do-when-we-reset-the-root-password-in-red-hat-en)
-
+[Resetowanie hasla roota](https://linuxconfig.org/redhat-8-recover-root-password)
 
 # Korzystanie z pomocy
 
@@ -223,8 +240,6 @@ Zmiana rekurencyjna właściciela i grupy dla katalogu
 
 # Praca z plikami tekstowymi 
 
-- [Vim](#vim)
-
 ## Wpisywanie tekstu do pliku przy pomocy ```cat```
 
 ```bash
@@ -385,8 +400,6 @@ Każde polecenie musi zostać zakończone backslashem i średnikiem (\;)
 
 
 # Zarządzanie uruchomionymi procesami
-
-- [Background and foreground processes](#Background-and-foreground-processes )
 
 ## ps
 
