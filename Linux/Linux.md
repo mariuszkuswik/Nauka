@@ -1499,9 +1499,10 @@ mount | grep home
 
 ```bash
 tune2fs -l /dev/mapper/mybox-home | grep "mount options"  
-    
-Default mount options: user_xattr acl  
 ```
+
+> Default mount options: user_xattr acl  
+
 
 ## Sposoby na zamontowanie opcji acl  
 
