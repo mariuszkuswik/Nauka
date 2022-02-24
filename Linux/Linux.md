@@ -1492,9 +1492,10 @@ Jak włączyć ACL :
 
 ```bash
 mount | grep home 
-
-/dev/mapper/mybox-home on /home type ext4 (rw)  
 ```
+
+> /dev/mapper/mybox-home on /home type ext4 (rw)  
+
 
 ```bash
 tune2fs -l /dev/mapper/mybox-home | grep "mount options"  
