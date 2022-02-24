@@ -2246,7 +2246,7 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 
 # Administracja siecią
 
-- ```ip``` - show / manipulate routing, network devices, interfaces and tunnels    
+#### ```ip``` - show / manipulate routing, network devices, interfaces and tunnels    
     
 
 - ```ip address``` - protocol address management  
@@ -2270,8 +2270,23 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
         ...   
         ```
 
+        ```ifconfig``` - Starsza, chociaż wciąż działająca alternatywa dla komendy ip  
+
+
 - ```ip route``` - routing table management  
     - ```ip route show``` - wyświetlenie tablicy routingu
+
+        ```bash
+        ip route show
+
+        default via 192.168.122.1 dev ens3 proto dhcp metric 20100    
+        192.168.122.0/24 dev ens3 proto kernel scope link src 192.168.122.194 metric 100   
+        ```
+
+        Polecenie ip route show wskazuje, że adres 192.168.122.1 zapewnia trasę prowadzącą do hosta z maszyny wirtualnej RHEL 8 przez interfejs sieciowy ens3. Za pomocą tego interfejsu odbywa się wychodząca z maszyny wirtualnej (192.168.122.194) komunikacja ze wszystkimi adresami w zakresie 192.168.122.0/24.  
+  
+        ```route``` - starsza alternatywa dla ip route     
+
 
 - ```ip link``` - network device configuration  
     - ```-s``` - wyświetla dane statystyczne dotyczące transmisji pakietów oraz wygenerowanych błędów dla każdego interfejsu
@@ -2279,23 +2294,6 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 
 ```nmcli``` - network manager cli   
 
-### Wyświetlenie ogólnej konfiguracji sieci 
-
-
-
-```ifconfig``` - Starsza, chociaż wciąż działająca alternatywa dla komendy ip  
-
-
-
-### Sprawdzanie informacji o routingu
-
-```ip route show```
-> default via 192.168.122.1 dev ens3 proto dhcp metric 20100    
-192.168.122.0/24 dev ens3 proto kernel scope link src 192.168.122.194 metric 100   
-
-Polecenie ip route show wskazuje, że adres 192.168.122.1 zapewnia trasę prowadzącą do hosta z maszyny wirtualnej RHEL 8 przez interfejs sieciowy ens3. Za pomocą tego interfejsu odbywa się wychodząca z maszyny wirtualnej (192.168.122.194) komunikacja ze wszystkimi adresami w zakresie 192.168.122.0/24.  
-
-```route``` - starsza alternatywa dla ip route   
 
 ### #TODO - ogarnąc jak interpretować tablicę routingu
 
@@ -2310,7 +2308,7 @@ Polecenie ip route show wskazuje, że adres 192.168.122.1 zapewnia trasę prowad
 > example.com
 
 
-### Konfigurowanie interfejsów sieciowych
+## Konfigurowanie interfejsów sieciowych
 
 
 
