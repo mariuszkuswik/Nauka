@@ -35,7 +35,7 @@
             - [Tworzenie woluminów logicznych LVM](#tworzenie-woluminów-logicznych-lvm)
     - [Administracja systemem linux](#administracja-systemem-linux)
         - [Administracja siecią](#Administracja-siecią)
-            - [Komenda ip](#ip---show-and-manipulate-routing,-network-devices,-interfaces-and-tunnels) 
+            - [Komenda ip](#ip---show-and-manipulate-routing-network-devices-interfaces-and-tunnels)  
             - [Sprawdzanie informacji o routingu](#sprawdzanie-informacji-o-routingu)
             - [Wyświetlanie nazw hosta i domeny](#wyświetlanie-nazw-hosta-i-domeny)
             - [Konfigurowanie interfejsów sieciowych](#konfigurowanie-interfejsów-sieciowych)
