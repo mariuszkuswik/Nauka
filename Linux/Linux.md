@@ -2247,7 +2247,15 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 
 # Administracja siecią
 
-#### ip - show / manipulate routing, network devices, interfaces and tunnels    
+- [Komenda ip](#ip---show-/-manipulate-routing,-network-devices,-interfaces-and-tunnels) 
+- [Sprawdzanie informacji o routingu](#sprawdzanie-informacji-o-routingu)
+- [Wyświetlanie nazw hosta i domeny](#wyświetlanie-nazw-hosta-i-domeny)
+- [Konfigurowanie interfejsów sieciowych](#konfigurowanie-interfejsów-sieciowych)
+
+[Spis treści](#spis-tre%C5%9Bci)
+
+
+### ip - show / manipulate routing, network devices, interfaces and tunnels    
     
 
 - ```ip address``` - protocol address management  
