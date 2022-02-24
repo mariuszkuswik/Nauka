@@ -2256,7 +2256,7 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
         ip address show
         ```   
 
-        > 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue   
+        ``` 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue   
                 state UNKNOWN group default qlen 1000   
             link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00   
             inet 127.0.0.1/8 scope host lo   
@@ -2268,6 +2268,7 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
             link/ether 30:85:a9:04:9b:f9 brd ff:ff:ff:ff:ff:ff   
         3: wlp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500   
         ...   
+        ```
 
 - ```ip route``` - routing table management  
     - ```ip route show``` - wyświetlenie tablicy routingu
