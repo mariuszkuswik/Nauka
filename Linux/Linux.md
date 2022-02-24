@@ -35,6 +35,7 @@
             - [Tworzenie woluminów logicznych LVM](#tworzenie-woluminów-logicznych-lvm)
     - [Administracja systemem linux](#administracja-systemem-linux)
         - [Administracja siecią](#Administracja-siecią)
+            - [Komenda ip](#ip) 
             - [Sprawdzanie informacji o routingu](#sprawdzanie-informacji-o-routingu)
             - [Wyświetlanie nazw hosta i domeny](#wyświetlanie-nazw-hosta-i-domeny)
             - [Konfigurowanie interfejsów sieciowych](#konfigurowanie-interfejsów-sieciowych)
@@ -2246,7 +2247,8 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 
 # Administracja siecią
 
-#### ```ip``` - show / manipulate routing, network devices, interfaces and tunnels    
+#### ```ip```
+- show / manipulate routing, network devices, interfaces and tunnels    
     
 
 - ```ip address``` - protocol address management  
@@ -2292,7 +2294,7 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
     - ```-s``` - wyświetla dane statystyczne dotyczące transmisji pakietów oraz wygenerowanych błędów dla każdego interfejsu
     
 
-```nmcli``` - network manager cli   
+#### ```nmcli``` - network manager cli   
 
 
 ### #TODO - ogarnąc jak interpretować tablicę routingu
