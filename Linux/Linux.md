@@ -67,7 +67,7 @@
 
 - [man](#man)
 - [info](#info)
-- [Gora](#Spis-treści)
+[Spis treści](#spis-treści)
 
 
 ## man  
@@ -87,7 +87,7 @@
 - [id](#id)
 - [type](#type)
 
-- [Gora](#Spis-treści)
+[Spis treści](#spis-treści)
 
 
 # #TODO - Dodać zwijanie przy opisach poleceń i skrócić część notatek 
@@ -141,7 +141,7 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 - [Umask](#umask---definiowanie-uprawnień-domyślnych)
 - [Chown](#chown---Zmiana-właściciela-pliku)
 
-- [Gora](#Spis-treści)
+[Spis treści](#spis-treści)
 
 ## Plik 
 
@@ -278,7 +278,7 @@ tekst
 - [Find](#find)
 - [Grep](#grep)
 
-- [Gora](#Spis-treści)
+[Spis treści](#spis-treści)
 
 ## Locate 
 
@@ -2252,7 +2252,7 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 - [Wyświetlanie nazw hosta i domeny](#wyświetlanie-nazw-hosta-i-domeny)
 - [Konfigurowanie interfejsów sieciowych](#konfigurowanie-interfejsów-sieciowych)
 
-[Spis treści](#spis-tre%C5%9Bci)
+[Spis treści](#spis-treści)
 
 ####
 ### ```ip``` - show and manipulate routing, network devices, interfaces and tunnels    
