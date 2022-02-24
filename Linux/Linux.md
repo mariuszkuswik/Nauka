@@ -1490,12 +1490,17 @@ Jak włączyć ACL :
 
 #### Sprawdzenie czy opcja acl została włączona, wyświetlenie opcji montowania systemu:
 
-    ```mount | grep home```  
-    > /dev/mapper/mybox-home on /home type ext4 (rw)  
-  
-    ```tune2fs -l /dev/mapper/mybox-home | grep "mount options"```  
-    > Default mount options: user_xattr acl  
-  
+    ```bash
+    mount | grep home 
+
+    /dev/mapper/mybox-home on /home type ext4 (rw)  
+    ```
+
+    ```bash
+    tune2fs -l /dev/mapper/mybox-home | grep "mount options"  
+    
+    Default mount options: user_xattr acl  
+    ```
 
 ## Sposoby na zamontowanie opcji acl  
 
