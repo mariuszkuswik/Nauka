@@ -2247,35 +2247,40 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 # Administracja siecią
 
 - ```ip``` - show / manipulate routing, network devices, interfaces and tunnels    
+    
+
+- ```ip address``` - protocol address management  
     - ```ip address show``` - wyświetlenie informacji o wszystkich interfejsach sieciowych   
         - ```-s``` - wyświetla dane statystyczne dotyczące transmisji pakietów oraz wygenerowanych błędów dla każdego interfejsu  
-- ```ip address``` - protocol address management  
 
-- ```ip route``` - routing table management    
+        ```bash
+        ip address show
+        ```   
+
+        > 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue   
+                state UNKNOWN group default qlen 1000   
+            link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00   
+            inet 127.0.0.1/8 scope host lo   
+                valid_lft forever preferred_lft forever   
+            inet6 ::1/128 scope host   
+                valid_lft forever preferred_lft forever   
+        2: enp4s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500   
+                qdisc fq_codel state DOWN group default qlen 1000   
+            link/ether 30:85:a9:04:9b:f9 brd ff:ff:ff:ff:ff:ff   
+        3: wlp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500   
+        ...   
+
+- ```ip route``` - routing table management  
+    - ```ip route show``` - wyświetlenie tablicy routingu
+
 - ```ip link``` - network device configuration  
+
   
 ```nmcli``` - network manager cli   
 
 ### Wyświetlenie ogólnej konfiguracji sieci 
 
- 
-   
-```bash
-ip address show
-```   
 
-> 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue   
-        state UNKNOWN group default qlen 1000   
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00   
-    inet 127.0.0.1/8 scope host lo   
-        valid_lft forever preferred_lft forever   
-    inet6 ::1/128 scope host   
-        valid_lft forever preferred_lft forever   
-2: enp4s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500   
-        qdisc fq_codel state DOWN group default qlen 1000   
-    link/ether 30:85:a9:04:9b:f9 brd ff:ff:ff:ff:ff:ff   
-3: wlp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500   
-...   
 
 ```ifconfig``` - Starsza, chociaż wciąż działająca alternatywa dla komendy ip  
 
@@ -2283,7 +2288,7 @@ ip address show
 
 ### Sprawdzanie informacji o routingu
 
-```ip route show``` - wyświetlenie tablicy routingu
+```ip route show```
 > default via 192.168.122.1 dev ens3 proto dhcp metric 20100    
 192.168.122.0/24 dev ens3 proto kernel scope link src 192.168.122.194 metric 100   
 
@@ -2304,13 +2309,11 @@ Polecenie ip route show wskazuje, że adres 192.168.122.1 zapewnia trasę prowad
 > example.com
 
 
-## Konfigurowanie interfejsów sieciowych
-
-### Sieci 
-  
+### Konfigurowanie interfejsów sieciowych
 
 
-- Jak ustawić ip i brame 
+
+- Jak ustawić statyczny adres ip i brame 
 	1. wejscie w config ```/etc/sysconfig/network-scripts/ifcfg-"$device_name"
 	2. Config  
 		```IPADDR="$adres_ip"
