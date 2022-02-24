@@ -2251,31 +2251,31 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 
 - ```ip address``` - protocol address management  
     - ```ip address show``` - wyświetlenie informacji o wszystkich interfejsach sieciowych   
-        - ```-s``` - wyświetla dane statystyczne dotyczące transmisji pakietów oraz wygenerowanych błędów dla każdego interfejsu  
+  
+    ```bash
+    ip address show
+    ```   
 
-            ```bash
-            ip address show
-            ```   
-
-            > 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue   
-                    state UNKNOWN group default qlen 1000   
-                link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00   
-                inet 127.0.0.1/8 scope host lo   
-                    valid_lft forever preferred_lft forever   
-                inet6 ::1/128 scope host   
-                    valid_lft forever preferred_lft forever   
-            2: enp4s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500   
-                    qdisc fq_codel state DOWN group default qlen 1000   
-                link/ether 30:85:a9:04:9b:f9 brd ff:ff:ff:ff:ff:ff   
-            3: wlp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500   
-            ...   
+    > 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue   
+            state UNKNOWN group default qlen 1000   
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00   
+        inet 127.0.0.1/8 scope host lo   
+            valid_lft forever preferred_lft forever   
+        inet6 ::1/128 scope host   
+            valid_lft forever preferred_lft forever   
+    2: enp4s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500   
+            qdisc fq_codel state DOWN group default qlen 1000   
+        link/ether 30:85:a9:04:9b:f9 brd ff:ff:ff:ff:ff:ff   
+    3: wlp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500   
+    ...   
 
 - ```ip route``` - routing table management  
     - ```ip route show``` - wyświetlenie tablicy routingu
 
 - ```ip link``` - network device configuration  
+    - ```-s``` - wyświetla dane statystyczne dotyczące transmisji pakietów oraz wygenerowanych błędów dla każdego interfejsu
+    
 
-  
 ```nmcli``` - network manager cli   
 
 ### Wyświetlenie ogólnej konfiguracji sieci 
