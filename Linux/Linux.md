@@ -76,6 +76,9 @@
 ```man man``` - pomoc odnośnie mana   
 ```man -k``` - wyszukiwanie komend   
 ```man -f``` - wyświetlenie wszystkich możliwych sekcji pomocy dla danej komendy  
+man -k . - wyświetlenie wszystkich którkich opisów stron   
+
+
 
 ## info
 
@@ -4438,6 +4441,60 @@ W dystrybucji Fedora lub RHEL wydaj polecenie yum update i wyklucz wszystkie dos
 
 
 # Bezpieczeństwo w systemie Linux
+
+
+### Procedura na wypadek awarii
+
+W systemie Linux mamy do dyspozycji następujące narzędzia przeznaczone do tworzenia
+kopii zapasowej:
+■ amanda (Advanced Maryland Automatic Network Disk Archiver),  
+■ cpio,  
+■ dump/restore,  
+■ tar,  
+■ rsync.  
+
+Spośród wymienionych narzędzi przeważnie tylko *amanda* nie jest domyślnie zainstalowana w systemie. Mimo to amanda jest wyjątkowo popularnym narzędziem, ponieważ charakteryzuje  
+się ogromną elastycznością i pozwala również tworzyć kopię zapasową systemu Windows.    
+
+
+### Zabezpieczanie kont użytkowników
+
+Oto kilka dodatkowych reguł, których zastosowanie
+jest konieczne dla zwiększenia poziomu bezpieczeństwa dzięki prawidłowemu zarządzaniu
+kontami użytkowników:
+
+■ Przeznaczenie danego konta dla tylko jednego użytkownika.  
+
+■ **Ograniczenie dostępu do konta użytkownika root.** - Aby zapewnić możliwość kontrolowania, kto może używać konta roota,
+należy skorzystać z polityki dotyczącej stosowania mechanizmu sudo zamiast zezwalać na
+logowanie się do konta użytkownika root.   
+  
+Po wydaniu polecenia journalctl -f można na żywo obserwować wszelkie próby
+uzyskania dostępu do sudo, a także wszelkie pozostałe komunikaty systemowe.  
+  
+Po udzieleniu użytkownikowi uprawnień sudo można spróbować ograniczyć dostęp
+roota do określonych poleceń. Do tego celu należy wykorzystać plik /etc/sudoers
+(za pomocą polecenia visudo).   
+
+■ Określenie daty ważności kont tymczasowych. - Jeżeli trzeba korzystać z usług konsultantów, stażystów lub pracowników tymczasowych, którzy
+również muszą mieć dostęp do systemów Linux, wówczas bardzo ważne jest utworzenie im
+kont z określoną datą ważności. Zdefiniowanie takiej daty to rodzaj zabezpieczenia, jeżeli
+administrator zapomni o usunięciu tymczasowego konta użytkownika, który nie musi już mieć
+dostępu do systemów organizacji    
+
+  
+Format polecenia to usermod -e rrrr-mm-dd nazwa_użytkownika.
+W tym przykładzie konto użytkownika tomek wygasa 1 stycznia 2021 roku:
+
+```usermod -e 2021-01-01 tomek```
+
+
+
+
+
+■ Usunięcie nieużywanych kont użytkowników.
+
+
 
 
 
