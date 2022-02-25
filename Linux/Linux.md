@@ -4518,12 +4518,10 @@ Account expires : Jan 01, 2021
 
 [Spis treści](#spis-tre%C5%9Bci)
 
-
-
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
 ### Strona 573
-
+576
 
   
 
