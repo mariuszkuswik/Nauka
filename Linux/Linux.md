@@ -4548,6 +4548,7 @@ W przypadku już istniejących kont wiek hasła trzeba będzie kontrolować za p
 **chage**. 
 
 #### Opcje polecenia chage dotyczące kontrolowania wieku hasła
+##### Tabela 22.2
 
 | Opcja | Opis | 
 |--|--|
@@ -4555,7 +4556,7 @@ W przypadku już istniejących kont wiek hasła trzeba będzie kontrolować za p
 | -m | **Określenie minimalnej liczby dni**, które muszą minąć, zanim będzie możliwa zmiana hasła. Odpowiednik opcji  **PASS_MIN_DAYS** w pliku /etc/login.defs. |
 | -w | **Określenie liczby dni, przez które użytkownik będzie ostrzegany** o konieczności zmiany hasła. Odpowiednik opcji **PASS_WARN_AGE** w pliku /etc/login.defs. |
 
-##### Tabela 22.2
+
 
 
 ## Koniec Biblii
