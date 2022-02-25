@@ -4490,11 +4490,9 @@ W tym przykładzie konto użytkownika tomek wygasa 1 stycznia 2021 roku:
 
 
 - ```chage``` - wyświetlanie i modyfikowanie informacji dotyczących wieku hasła        
-    - ```-l``` powoduje wyświetlenie listy informacji, do których dostęp ma polecenie chage.   
-        
-        - ```chage -l mariusz```  
-  
-            > Last password change                                    : Oct 19, 2021  
+    - ```-l``` powoduje wyświetlenie listy informacji, do których dostęp ma polecenie 
+    - ```chage -l mariusz```  
+        > Last password change                                    : Oct 19, 2021  
             Password expires                                        : never  
             Password inactive                                       : never  
             Account expires                                         : never  
