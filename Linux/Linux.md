@@ -4506,22 +4506,68 @@ wyświetlenie daty ważności konta.
 # chage -l tomek | grep Account
 Account expires : Jan 01, 2021
 
-■ Usunięcie nieużywanych kont użytkowników.
+### Usunięcie nieużywanych kont użytkowników.
+
+### Używanie zabezpieczenia w postaci hasła
+
+### Wymuszanie stosowania najlepszych praktyk dotyczących haseł
+
+Dobrym punktem wyjścia będzie funkcjonalność w postaci dołączanych
+modułów uwierzytelniania (PAM). Dzięki niej można zdefiniować dokładne wymagania, które
+muszą spełniać hasła. Na przykład w celu zagwarantowania, że hasło będzie miało przynajmniej
+12 znaków, składało się z przynajmniej dwóch cyfr, trzech wielkich liter i dwóch małych liter
+oraz będzie inne od wszelkich pozostałych haseł, można dodać następujący wiersz kodu do
+pliku ```/etc/pam.d/common-password lub /etc/pam.d/common-auth```:
+
+```password requisite pam_cracklib.so minlen=12, dcredit=2, ucredit=3, lcredit=2, difok=4```
 
 
+wartości domyślne w pliku /etc/login.defs używane podczas tworzenia nowych kont. Plik ten zawiera pewne ustawienia, które mają wpływ na wiek i długość hasła.
+
+```
+PASS_MAX_DAYS 30
+PASS_MIN_DAYS 5 PASS_MIN_LEN 16 PASS_WARN_AGE 7
+```
+
+W omawianym przykładzie maksymalna liczba dni, PASS_MAX_DAYS, po upływie których hasło
+musi zostać zmienione, wynosi 30. 
 
 
+**Aby uniemożliwić użytkownikom zmianę hasła na nowe i natychmiast przywrócenie poprzedniego**, wartość **PASS_MIN_DAY**S powinna być większa niż 0. W omawianym przykładzie hasło będzie mogło zostać ponownie zmienione najwcześniej po upływie 5 dni.
 
+
+Ustawienie **PASS_WARN_AGE** określa liczbę dni, przez które użytkownik jest ostrzegany, że będzie
+musiał zmienić hasło. Użytkownicy potrzebują wielu ostrzeżeń i przypomnień, więc w omawianym
+przykładzie ostrzeżenie będzie wyświetlane przez 7 dni.
+
+**PASS_MIN_LEN** można zmusić użytkowników do stosowania haseł o określonej minimalnej
+liczbie znaków. 
+
+
+W przypadku już istniejących kont wiek hasła trzeba będzie kontrolować za pomocą polecenia
+**chage**. 
+
+#### Opcje polecenia chage dotyczące kontrolowania wieku hasła
+
+| Opcja | Opis | 
+|--|--|
+| -M | **Określenie maksymalnej liczby dni**, które muszą minąć, zanim będzie konieczna zmiana hasła. Odpowiednik opcji  **PASS_MAX_DAYS** w pliku /etc/login.defs. | 
+| -m | **Określenie minimalnej liczby dni**, które muszą minąć, zanim będzie możliwa zmiana hasła.Odpowiednik opcji  **PASS_MIN_DAYS** w pliku /etc/login.defs. |
+| -w | **Określenie liczby dni, przez które użytkownik będzie ostrzegany** o konieczności zmiany hasła. Odpowiednik opcji **PASS_WARN_AGE** w pliku /etc/login.defs. |
+
+##### Tabela 22.2
 
 
 ## Koniec Biblii
+
+### Strona 573
+581
 
 [Spis treści](#spis-tre%C5%9Bci)
 
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
-### Strona 573
-576
+
 
   
 
