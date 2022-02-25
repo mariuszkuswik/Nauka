@@ -47,6 +47,7 @@
         - [NFS - Serwer plików](#nfs---serwer-plików)
     - [Rozwiązywanie problemów z systemem Linux](#rozwiązywanie-problemów-z-systemem-linux)
         - [Rozwiązywanie problemów z GRUB](#Rozwiązywanie-problemów-z-GRUB)
+    - [Bezpieczeństwo w systemie Linux](#Bezpieczeństwo-w-systemie-Linux)
     
 - [Koniec Biblii](#Koniec-Biblii)
 
@@ -1510,7 +1511,8 @@ tune2fs -l /dev/mapper/mybox-home | grep "mount options"
    
     ```tune2fs -o acl /dev/sdc1```  
    
-    ```tune2fs -l /dev/sdc1 | grep "mount options"```  
+    ```tune2fs -l /dev/sdc1 | grep "mount options"``` 
+
     > Default mount options: acl  
   
 Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```   
@@ -2261,7 +2263,6 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 
 [Spis treści](#spis-treści)
 
-####
 ### ```ip``` - show and manipulate routing, network devices, interfaces and tunnels    
     
 
@@ -2308,7 +2309,9 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
     - ```-s``` - wyświetla dane statystyczne dotyczące transmisji pakietów oraz wygenerowanych błędów dla każdego interfejsu
     
 
-#### ```nmcli``` - network manager cli   
+### #TODO - opisać jak działa 
+
+### ```nmcli``` - network manager cli   
 
 
 ### #TODO - ogarnąc jak interpretować tablicę routingu
@@ -2340,14 +2343,16 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 		```nmcli connection down $connectionName``` 
 		```nmcli connection up $connectionName```  
 - Jak dodać DNS 
-	1. wejscie w config ```/etc/sysconfig/network-scripts/ifcfg-"$device_name"
+	1. wejscie w config ```/etc/sysconfig/network-scripts/ifcfg-"$device_name"```
 	2. Config 
-		```DNS1="$adres_DNS"
+		```
+        DNS1="$adres_DNS"
 		DNS2="$adres_DNS2"
-		DNS... ```
+		DNS...
+        ```
 - Jak dodać routing 
 	- komenda ip route odpowiada za routing  
-		```ip route add default via "$ip_address" dev "$network_card_name"
+		```ip route add default via "$ip_address" dev "$network_card_name"```
 
 
 https://serverfault.com/questions/810636/how-to-manage-dns-in-networkmanager-via-console-nmcli
@@ -4430,20 +4435,26 @@ Error: rpmdb open fails
    
 W dystrybucji Fedora lub RHEL wydaj polecenie yum update i wyklucz wszystkie dostępne pakiety dla jądra
 
+
+
+# Bezpieczeństwo w systemie Linux
+
+
+
+
+
 ## Koniec Biblii
+
+[Spis treści](#spis-tre%C5%9Bci)
+
+
 
 ### #TODO - sprawdzić jak jeszcze mozna wyszukiwac instrukcji w manie 
 
-### Strona 542
-573
+### Strona 573
+
 
   
-
-# Techniki zapewnienia bezpieczeństwa w systemie Linux
-
-
-
-
 
 373 - strona na której skończyłem sieci 
 383 - strona na ktorej zacząłem po sieciach 
