@@ -4552,7 +4552,7 @@ W przypadku już istniejących kont wiek hasła trzeba będzie kontrolować za p
 | Opcja | Opis | 
 |--|--|
 | -M | **Określenie maksymalnej liczby dni**, które muszą minąć, zanim będzie konieczna zmiana hasła. Odpowiednik opcji  **PASS_MAX_DAYS** w pliku /etc/login.defs. | 
-| -m | **Określenie minimalnej liczby dni**, które muszą minąć, zanim będzie możliwa zmiana hasła.Odpowiednik opcji  **PASS_MIN_DAYS** w pliku /etc/login.defs. |
+| -m | **Określenie minimalnej liczby dni**, które muszą minąć, zanim będzie możliwa zmiana hasła. Odpowiednik opcji  **PASS_MIN_DAYS** w pliku /etc/login.defs. |
 | -w | **Określenie liczby dni, przez które użytkownik będzie ostrzegany** o konieczności zmiany hasła. Odpowiednik opcji **PASS_WARN_AGE** w pliku /etc/login.defs. |
 
 ##### Tabela 22.2
