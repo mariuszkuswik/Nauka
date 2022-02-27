@@ -4557,12 +4557,57 @@ W przypadku już istniejących kont wiek hasła trzeba będzie kontrolować za p
 | -w | **Określenie liczby dni, przez które użytkownik będzie ostrzegany** o konieczności zmiany hasła. Odpowiednik opcji **PASS_WARN_AGE** w pliku /etc/login.defs. |
 
 
+```bash
+# Zmiana parametrów hasła dla konta tim   
+chage -M 30 -m 5 -W 7 tim
+
+# Wyświetlenie zastosowanych ustawień
+chage -l tim | grep days
+```
+
+> Minimum number of days between password change : 5
+Maximum number of days between password change : 30
+Number of days of warning before password expires : 7
+
+
+Polecenia chage można użyć jako innej metody kontroli daty ważności konta, na podstawie
+daty ważności hasła do danego konta. Wcześniej zastosowałem narzędzie usermod do
+kontrolowania daty ważności konta. Polecenie chage z opcjami -M i -I powoduje zablokowanie
+konta.
+
+Jak widać, nie zostały zdefiniowane żadne ustawienia związane z datą ważności (Password expires)
+lub nieaktywnością (Password inactive) hasła. Natomiast tutaj mamy przykład użycia opcji -I,
+która powoduje zablokowanie konta po upływie podanej liczby dni (tutaj pięciu) od chwili
+wygaśnięcia hasła konta użytkownika (tutaj tomek):
+
+```bash
+# chage -I 5 tomek
+# chage -l tomek | grep Password
+```
+
+> Password expires : never
+Password inactive : never
+
+
+Zwróć uwagę na to, że ustawienia nie zostały zmienione! Bez określenia daty ważności hasła
+użycie opcji -I nie ma żadnego efektu. Dlatego po użyciu opcji –M, powodującej zdefiniowanie
+maksymalnej liczby dni, po których upływie następuje utrata ważności hasła, będzie można
+zgodnie z oczekiwaniami zastosować opcję -I.
+
+```bash
+# chage -M 30 -I 5 tim
+# chage -l tim | grep Password
+```
+
+> Password expires : Mar 03, 2017
+Password inactive : Mar 08, 2017
+
 
 
 ## Koniec Biblii
 
-### Strona 573
-581
+### Strona 581
+
 
 [Spis treści](#spis-tre%C5%9Bci)
 
