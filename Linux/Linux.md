@@ -4660,9 +4660,6 @@ $ ls -l /usr/bin/sudo
 Polecenia takie jak passwd i sudo zostały zaprojektowane do stosowania jako programy SUID. Pomimo tego, że są one wykonywane przez użytkownika root, zwykły użytkownik może użyć polecenia passwd do zmiany własnego hasła, a polecenia sudo do podniesienia uprawnień,   
 *o ile dany użytkownik został wymieniony w pliku ```/etc/sudoers```*.   
 
-Znacznie bardziej niebezpieczna sytuacja wystąpi, gdy haker utworzy polecenie bash z uprawnieniami SUID, ponieważ wówczas każda osoba wydająca to polecenie będzie mogła zmienić wszystko w systemie z wykorzystaniem uprawnień użytkownika root.
-
-
 
 Używając polecenia find, można sprawdzić system pod kątem ukrytych lub innych poleceń, które niepotrzebnie mają w systemie nadane uprawnienia SUID i SGID. 
 
@@ -4672,17 +4669,15 @@ Używając polecenia find, można sprawdzić system pod kątem ukrytych lub inny
 find / -perm /6000 -ls
 ```
 
-> 4597316 52 -rwxr-sr-x 1 root games 51952 Dec 21 2013 /usr/bin/atc
-4589119 20 -rwxr-sr-x 1 root tty 19552 Nov 18 2013 /usr/bin/write
-4587931 60 -rwsr-xr-x 1 root root 57888 Aug 2 2013 /usr/bin/at
-c528defda93e9420916cfa7705790125R O Z D Z I AŁ 2 2 . Podstawy bezpieczeństwa systemu Linux 585
-22
-4588045 60 -rwsr-xr-x 1 root root 57536 Sep 25 2013 /usr/bin/crontab
-4588961 32 -rwsr-xr-x 1 root root 32024 Nov 18 2013 /usr/bin/su
-...
-5767487 85 -rwsrwsr-x 1 root root 68928 Sep 13 11:52 /var/.bin/myvi
-...
-
+> 4597316 52 -rwxr-sr-x 1 root games 51952 Dec 21 2013 /usr/bin/atc    
+4589119 20 -rwxr-sr-x 1 root tty 19552 Nov 18 2013 /usr/bin/write  
+4587931 60 -rwsr-xr-x 1 root root 57888 Aug 2 2013 /usr/bin/at     
+4588045 60 -rwsr-xr-x 1 root root 57536 Sep 25 2013 /usr/bin/crontab  
+4588961 32 -rwsr-xr-x 1 root root 32024 Nov 18 2013 /usr/bin/su  
+...  
+5767487 85 -rwsrwsr-x 1 root root 68928 Sep 13 11:52 /var/.bin/myvi  
+...   
+   
 
 
 ## Koniec Biblii
