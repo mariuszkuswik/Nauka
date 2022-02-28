@@ -4552,9 +4552,9 @@ W przypadku już istniejących kont wiek hasła trzeba będzie kontrolować za p
 
 | Opcja | Opis | 
 |--|--|
-| -M | **Określenie maksymalnej liczby dni**, które muszą minąć, zanim będzie konieczna zmiana hasła. Odpowiednik opcji  **PASS_MAX_DAYS** w pliku /etc/login.defs. | 
-| -m | **Określenie minimalnej liczby dni**, które muszą minąć, zanim będzie możliwa zmiana hasła. Odpowiednik opcji  **PASS_MIN_DAYS** w pliku /etc/login.defs. |
-| -w | **Określenie liczby dni, przez które użytkownik będzie ostrzegany** o konieczności zmiany hasła. Odpowiednik opcji **PASS_WARN_AGE** w pliku /etc/login.defs. |
+| -M | **Maximum number of days between password change**, liczba dni które muszą minąć, zanim będzie konieczna zmiana hasła. Odpowiednik opcji  **PASS_MAX_DAYS** w pliku /etc/login.defs. | 
+| -m | **Minimum number of days between password change**, liczba dni które muszą minąć, zanim będzie możliwa zmiana hasła. Odpowiednik opcji  **PASS_MIN_DAYS** w pliku /etc/login.defs. |
+| -w | **Number of days of warning before password expires** liczba dni przez które użytkownik będzie ostrzegany o konieczności zmiany hasła. Odpowiednik opcji **PASS_WARN_AGE** w pliku /etc/login.defs. |
 
 
 ```bash
@@ -4570,11 +4570,9 @@ Maximum number of days between password change : 30
 Number of days of warning before password expires : 7
 
 
-Polecenia chage można użyć jako innej metody kontroli daty ważności konta, na podstawie
-daty ważności hasła do danego konta. Wcześniej zastosowałem narzędzie usermod do
-kontrolowania daty ważności konta. Polecenie chage z opcjami -M i -I powoduje zablokowanie
-konta.
+Polecenie chage z opcjami -M i -I powoduje zablokowanie konta.
 
+Przykład 
 Jak widać, nie zostały zdefiniowane żadne ustawienia związane z datą ważności (Password expires)
 lub nieaktywnością (Password inactive) hasła. Natomiast tutaj mamy przykład użycia opcji -I,
 która powoduje zablokowanie konta po upływie podanej liczby dni (tutaj pięciu) od chwili
@@ -4588,11 +4586,7 @@ wygaśnięcia hasła konta użytkownika (tutaj tomek):
 > Password expires : never
 Password inactive : never
 
-
-Zwróć uwagę na to, że ustawienia nie zostały zmienione! Bez określenia daty ważności hasła
-użycie opcji -I nie ma żadnego efektu. Dlatego po użyciu opcji –M, powodującej zdefiniowanie
-maksymalnej liczby dni, po których upływie następuje utrata ważności hasła, będzie można
-zgodnie z oczekiwaniami zastosować opcję -I.
+Zwróć uwagę na to, że ustawienia nie zostały zmienione! Bez określenia daty ważności hasła użycie opcji -I nie ma żadnego efektu. Dlatego po użyciu opcji –M, powodującej zdefiniowanie maksymalnej liczby dni, po których upływie następuje utrata ważności hasła, będzie można zgodnie z oczekiwaniami zastosować opcję -I.
 
 ```bash
 # chage -M 30 -I 5 tim
@@ -4602,11 +4596,82 @@ zgodnie z oczekiwaniami zastosować opcję -I.
 > Password expires : Mar 03, 2017
 Password inactive : Mar 08, 2017
 
+Po wprowadzeniu tych zmian konto użytkownika tomek zostanie zablokowane po 5 dniach
+od chwili wygaśnięcia hasła. Takie rozwiązanie okazuje się użyteczne, gdy pracownik opuścił
+firmę, ale jego konto użytkownika nie zostało jeszcze usunięte z systemu. W zależności od
+stosowanych w firmie reguł bezpieczeństwa warto rozważyć blokowanie wszystkich kont
+użytkowników po upływie określonej liczby dni od chwili utraty ważności hasła.
+
+
+### Pliki passwd i shadow
+
+Plik /etc/shadow zawiera poza nazwą konta i hasłem w postaci wartości hash także inne dane:
+■ liczbę dni (od 1 stycznia 1970 roku), które upłynęły od chwili zmiany hasła;
+■ liczbę dni, po których upływie można będzie zmienić hasło;
+■ liczbę dni, po których upływie trzeba będzie zmienić hasło;
+■ liczbę dni, przez które użytkownik będzie ostrzegany o konieczności zmiany hasła;
+■ liczbę dni, po których upływie od chwili wygaśnięcia hasła nastąpi zablokowanie danego
+konta użytkownika;
+■ liczbę dni (od 1 stycznia 1970 roku), które upłynęły od chwili zablokowania konta.
+
+
+### Zabezpieczanie systemu plików
+
+#### Zarządzanie niebezpiecznymi uprawnieniami systemu plików
+
+Pliki z uprawnieniami SUID w kategorii Owner i uprawnieniami wykonywania w kategorii Other pozwalają każdemu stać się tymczasowym właścicielem pliku podczas jego wykonywania w pamięci. Największe związane z tym zagrożenie występuje, gdy właścicielem pliku jest
+użytkownik root. Podobnie pliki z uprawnieniami SGID w kategorii Group i uprawnieniami wykonywania w kategorii Other pozwalają każdemu stać się tymczasowym członkiem grupy pliku podczas jego wykonywania w pamięci. Uprawnienia SGID można nadawać również katalogom. To powoduje, że wszystkim plikom tworzonym w danym katalogu zostaje przypisany identyfikator grupy odpowiadający identyfikatorowi grupy tego katalogu. Pliki wykonywalne z nadanymi uprawnieniami SUID i SGUID są ulubionym celem atakujących.
+
+Najlepszym rozwiązaniem jest ograniczenie do niezbędnego minimum liczby plików z takimi uprawnieniami. 
+
+Przykładami są pliki zawierające polecenia passwd i sudo. Każdy z tych plików powinien zachowywać własne uprawnienia SUID.
+
+```bash
+$ ls -l /usr/bin/passwd
+```
+
+> -rwsr-xr-x. 1 root root 28804 Aug 17 20:50 /usr/bin/passwd
+
+```bash
+$ ls -l /usr/bin/sudo
+```
+
+> ---s--x--x. 2 root root 77364 Nov 3 08:10 /usr/bin/sudo
+
+Polecenia takie jak passwd i sudo zostały zaprojektowane do stosowania jako programy SUID.
+Pomimo tego, że są one wykonywane przez użytkownika root, zwykły użytkownik może użyć
+polecenia passwd do zmiany własnego hasła, a polecenia sudo do podniesienia uprawnień, o ile
+dany użytkownik został wymieniony w pliku /etc/sudoers. Znacznie bardziej niebezpieczna
+sytuacja wystąpi, gdy haker utworzy polecenie bash z uprawnieniami SUID, ponieważ wówczas
+każda osoba wydająca to polecenie będzie mogła zmienić wszystko w systemie z
+wykorzystaniem uprawnień użytkownika root.
+
+
+
+Używając polecenia find, można sprawdzić system pod kątem ukrytych lub innych poleceń,
+które niepotrzebnie mają w systemie nadane uprawnienia SUID i SGID. Spójrz na przykład:
+
+```bash
+find / -perm /6000 -ls
+```
+
+> 4597316 52 -rwxr-sr-x 1 root games 51952 Dec 21 2013 /usr/bin/atc
+4589119 20 -rwxr-sr-x 1 root tty 19552 Nov 18 2013 /usr/bin/write
+4587931 60 -rwsr-xr-x 1 root root 57888 Aug 2 2013 /usr/bin/at
+c528defda93e9420916cfa7705790125R O Z D Z I AŁ 2 2 . Podstawy bezpieczeństwa systemu Linux 585
+22
+4588045 60 -rwsr-xr-x 1 root root 57536 Sep 25 2013 /usr/bin/crontab
+4588961 32 -rwsr-xr-x 1 root root 32024 Nov 18 2013 /usr/bin/su
+...
+5767487 85 -rwsrwsr-x 1 root root 68928 Sep 13 11:52 /var/.bin/myvi
+...
+
 
 
 ## Koniec Biblii
 
 ### Strona 581
+582
 
 
 [Spis treści](#spis-tre%C5%9Bci)
