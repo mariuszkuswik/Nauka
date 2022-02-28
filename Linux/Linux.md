@@ -4732,13 +4732,13 @@ Oct 19 11:43:04 localhost.localdomain kernel: Command line:
 ...  
 ```
 
-```journalctl -u nazwa_usługi``` - Wyświetlenie komunikatów dotyczących określonej usługi:   
+- ```journalctl -u nazwa_usługi``` - Wyświetlenie komunikatów dotyczących określonej usługi:   
 
-```bash
-journalctl -u NetworkManager.service
-journalctl -u httpd.service
-journalctl -u avahi-daemon.service
-```
+    ```bash
+    journalctl -u NetworkManager.service
+    journalctl -u httpd.service
+    journalctl -u avahi-daemon.service
+    ```
 
 ## Koniec Biblii
 
