@@ -4605,14 +4605,14 @@ użytkowników po upływie określonej liczby dni od chwili utraty ważności ha
 
 ### Pliki passwd i shadow
 
-Plik /etc/shadow zawiera poza nazwą konta i hasłem w postaci wartości hash także inne dane:
-■ liczbę dni (od 1 stycznia 1970 roku), które upłynęły od chwili zmiany hasła;
-■ liczbę dni, po których upływie można będzie zmienić hasło;
-■ liczbę dni, po których upływie trzeba będzie zmienić hasło;
-■ liczbę dni, przez które użytkownik będzie ostrzegany o konieczności zmiany hasła;
-■ liczbę dni, po których upływie od chwili wygaśnięcia hasła nastąpi zablokowanie danego
-konta użytkownika;
-■ liczbę dni (od 1 stycznia 1970 roku), które upłynęły od chwili zablokowania konta.
+Plik /etc/shadow zawiera poza nazwą konta i hasłem w postaci wartości hash także inne dane:    
+    
+■ liczbę dni (od 1 stycznia 1970 roku), które upłynęły od chwili zmiany hasła;  
+■ liczbę dni, po których upływie można będzie zmienić hasło;  
+■ liczbę dni, po których upływie trzeba będzie zmienić hasło;  
+■ liczbę dni, przez które użytkownik będzie ostrzegany o konieczności zmiany hasła;  
+■ liczbę dni, po których upływie od chwili wygaśnięcia hasła nastąpi zablokowanie danego konta użytkownika;  
+■ liczbę dni (od 1 stycznia 1970 roku), które upłynęły od chwili zablokowania konta.  
 
 
 ### Zabezpieczanie systemu plików
