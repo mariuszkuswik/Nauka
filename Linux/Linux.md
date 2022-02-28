@@ -4688,13 +4688,62 @@ uprawnień i właściciela pozwala na zmianę plików należących do roota. Nie
 
 ### Blokowanie systemu plików
 
+Dopisac coś o tym jak można blokować systemy w fstabie
+
+## Monitorowanie systemów
+
+### Monitorowanie logów 
+
+### #TODO - strona 589 - tabela 22.3 do opracowania 
+
+### TODO - 590 strona tavela 22.4
+T A B E L A 2 2 . 4 . Pliki dzienników zdarzeń, których zawartość jest wyświetlana za pomocą poleceń specjalnych
+Nazwa pliku Polecenie
+btmp dump-utmp btmp
+dmesg dmesg
+lastlog lastlog
+wtmp dump-utmp wtmp
+
+ journalctl - wyświetla logi systemd 
+
+ Aby zapoznać się ze stronami komunikatów dotyczących jądra, należy z poziomu powłoki
+wydać następujące polecenie:
+
+### #TODO - formatowanie do poprawienia, strona 590
+
+```bash
+journalctl -k
+```
+
+> Logs begin at Sun 2019-06-09 18:59:23 EDT, end at
+Sun 2019-10-20 18:11:06 EDT.
+Oct 19 11:43:04 localhost.localdomain kernel:
+Linux version 5.0.9-301.fc30.x86_64
+(mockbuild@bkernel04.phx2.fedoraproject.org)
+(gcc version 9.0.1 20190312 (Red Hat 9.0.1-0.10) (GCC))
+#1 SMP Tue Apr 23 23:57:35 UTC 2019
+Oct 19 11:43:04 localhost.localdomain kernel: Command line:
+BOOT_IMAGE=(hd0,msdos1)/vmlinuz-5.0.9-301.fc30.x86_64
+root=/dev/mapper/fedora_localhost--live-root ro
+resume=/dev/mapper/fedora_localhost--live-swap
+rd.lvm.lv=fedora_localhost-live/root
+rd.lvm.lv=fedora_localhost-live/swap rhgb quiet
+...
 
 
+W celu wyświetlenia komunikatów dotyczących określonej usługi należy użyć opcji -u i podać
+nazwę usługi:
+
+```bash
+journalctl -u NetworkManager.service
+journalctl -u httpd.service
+journalctl -u avahi-daemon.service
+```
 
 ## Koniec Biblii
 
 ### Strona 581
-586
+590
 
 
 [Spis treści](#spis-tre%C5%9Bci)
