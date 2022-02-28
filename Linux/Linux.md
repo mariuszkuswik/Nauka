@@ -52,7 +52,7 @@
         - [Pliki passwd i shadow](#Pliki-passwd-i-shadow)
         - [Zabezpieczanie systemu plików](#Zabezpieczanie-systemu-plików)
     
-    
+
 - [Koniec Biblii](#Koniec-Biblii)
 
 
@@ -4445,6 +4445,12 @@ W dystrybucji Fedora lub RHEL wydaj polecenie yum update i wyklucz wszystkie dos
 
 
 # Bezpieczeństwo w systemie Linux
+
+- [Zabezpieczanie kont użytkowników](#Zabezpieczanie-kont-użytkowników)
+- [Pliki passwd i shadow](#Pliki-passwd-i-shadow)
+- [Zabezpieczanie systemu plików](#Zabezpieczanie-systemu-plików)
+
+[Spis treści](#spis-tre%C5%9Bci)
 
 
 ### Procedura na wypadek awarii
