@@ -4501,7 +4501,7 @@ W tym przykładzie konto użytkownika tomek wygasa 1 stycznia 2021 roku:
 
 - ```chage``` - wyświetlanie i modyfikowanie informacji dotyczących wieku hasła        
     - ```-l``` powoduje wyświetlenie listy informacji, do których dostęp ma polecenie 
-    - ```console
+    ```console
         # chage -l mariusz  
         
         Last password change                                    : Oct 19, 2021  
@@ -4511,7 +4511,7 @@ W tym przykładzie konto użytkownika tomek wygasa 1 stycznia 2021 roku:
             Minimum number of days between password change          : 0  
             Maximum number of days between password change          : 99999  
             Number of days of warning before password expires       : 7  
-        ```
+    ```
 
 Dla zachowania prostoty dane wyjściowe polecenia chage trzeba potokować do polecenia grep i przeszukać je pod kątem słowa Account. To spowoduje
 wyświetlenie daty ważności konta.  
