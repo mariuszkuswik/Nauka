@@ -4696,8 +4696,10 @@ Dopisac coś o tym jak można blokować systemy w fstabie
 
 ### #TODO - strona 589 - tabela 22.3 do opracowania 
 
-### TODO - 590 strona tavela 22.4
-T A B E L A 2 2 . 4 . Pliki dzienników zdarzeń, których zawartość jest wyświetlana za pomocą poleceń specjalnych
+
+
+#### Pliki logów które posiadają polecenia specjalne  
+##### Tabela 22.4, strona 590  
 
 | Nazwa | pliku Polecenie |
 |--|--|
@@ -4706,35 +4708,32 @@ T A B E L A 2 2 . 4 . Pliki dzienników zdarzeń, których zawartość jest wyś
 | lastlog | lastlog |
 | wtmp | dump-utmp wtmp |
 
-```journalctl``` - wyświetla logi systemd 
+##### ```journalctl``` - wyświetla logi systemd 
 
-Aby zapoznać się ze stronami komunikatów dotyczących jądra, należy z poziomu powłoki wydać następujące polecenie:
+- ```journalctl -k``` - Wyświetla komunikaty tylko **na temat jądra**   
 
-### #TODO - formatowanie do poprawienia, strona 590
+    ```console
+    # journalctl -k
 
+    Logs begin at Sun 2019-06-09 18:59:23 EDT, end at  
+        Sun 2019-10-20 18:11:06 EDT.  
+    Oct 19 11:43:04 localhost.localdomain kernel:  
+        Linux version 5.0.9-301.fc30.x86_64  
+        (mockbuild@bkernel04.phx2.fedoraproject.org)  
+        (gcc version 9.0.1 20190312 (Red Hat 9.0.1-0.10) (GCC))  
+    #1 SMP Tue Apr 23 23:57:35 UTC 2019  
+    Oct 19 11:43:04 localhost.localdomain kernel: Command line:  
+            BOOT_IMAGE=(hd0,msdos1)/vmlinuz-5.0.9-301.fc30.x86_64  
+        root=/dev/mapper/  fedora_localhost--live-root ro  
+        resume=/dev/mapper/  fedora_localhost--live-swap  
+        rd.lvm.lv=fedora_localhost-live/root  
+        rd.lvm.lv=fedora_localhost-live/swap   rhgb quiet
+    ...  
+    ```
 
-```console
-# journalctl -k
+- ```journalctl -u nazwa_usługi``` - Wyświetlenie komunikatów **dotyczących określonej usługi**:   
 
-Logs begin at Sun 2019-06-09 18:59:23 EDT, end at  
-    Sun 2019-10-20 18:11:06 EDT.  
-Oct 19 11:43:04 localhost.localdomain kernel:  
-    Linux version 5.0.9-301.fc30.x86_64  
-    (mockbuild@bkernel04.phx2.fedoraproject.org)  
-    (gcc version 9.0.1 20190312 (Red Hat 9.0.1-0.10) (GCC))  
-#1 SMP Tue Apr 23 23:57:35 UTC 2019  
-Oct 19 11:43:04 localhost.localdomain kernel: Command line:  
-        BOOT_IMAGE=(hd0,msdos1)/vmlinuz-5.0.9-301.fc30.x86_64  
-    root=/dev/mapper/  fedora_localhost--live-root ro  
-    resume=/dev/mapper/  fedora_localhost--live-swap  
-    rd.lvm.lv=fedora_localhost-live/root  
-    rd.lvm.lv=fedora_localhost-live/swap   rhgb quiet
-...  
-```
-
-- ```journalctl -u nazwa_usługi``` - Wyświetlenie komunikatów dotyczących określonej usługi:   
-
-    ```bash
+    ```console
     journalctl -u NetworkManager.service
     journalctl -u httpd.service
     journalctl -u avahi-daemon.service
