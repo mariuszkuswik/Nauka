@@ -4711,11 +4711,10 @@ wydać następujące polecenie:
 
 ### #TODO - formatowanie do poprawienia, strona 590
 
-```bash
-journalctl -k
-```
 
-```
+```console
+# journalctl -k
+
 Logs begin at Sun 2019-06-09 18:59:23 EDT, end at  
     Sun 2019-10-20 18:11:06 EDT.  
 Oct 19 11:43:04 localhost.localdomain kernel:  
