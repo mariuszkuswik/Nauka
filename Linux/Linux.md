@@ -71,18 +71,12 @@
 
 # Korzystanie z pomocy
 
-- [man](#man)
-- [info](#info)
-[Spis treści](#spis-treści)
-
-
 ## man  
 
 - ```man man``` - pomoc odnośnie mana   
 - ```man -k``` - wyszukiwanie komend   
     - ```man -k .``` - wyświetlenie wszystkich którkich opisów stron
 - ```man -f``` - wyświetlenie wszystkich możliwych sekcji pomocy dla danej komendy  
-
 
 
 
@@ -94,8 +88,8 @@
 
 # Używanie Powłoki 
 
-- [id](#id)
-- [type](#type)
+- [id](#id)  
+- [type](#type)  
 
 [Spis treści](#spis-treści)
 
@@ -107,11 +101,11 @@
 
 id pokazuje *id* uzytkownika i *gid* ( id grupy uzytkownika)
 
-```bash
-id "$username"
-```
+```console
+# id chris
 
-> uid=1000(chris) gid=1000(chris) groups=1005(sales), 7(lp)
+uid=1000(chris) gid=1000(chris) groups=1005(sales), 7(lp)
+```
 
 Nazwa użytkownika to chris, (uid) 1000, podstawową grupą użytkownika jest **chris** (gid) 1000, użytkownik chris należy również do innych grup o nazwach **sales** (gid 1005) i **lp** (gid 7).  
 
@@ -127,18 +121,21 @@ Pokazuje gdzie znajduje się dane polecenie
 (Jeżeli używana powłoka jest inna niż bash, wtedy należy skorzystać z polecenia which).
 Np. określenie położenia polecenia *bash*
 
-```$ type bash```
-> bash is /bin/bash
+```console
+$ type bash
+bash is /bin/bash
+```
 
 ```type -a "$command"``` - wyświetla wszystkie znane położenia danego polecenia,  
 *np. polecenie type -a ls wyświetla położenie systemowego polecenia ls i polecenia zdefiniowanego za pomocą aliasu.*
    
    
-```$ type -a ls```
+```console
+$ type -a ls
   
-> ls is aliased to `ls --color -F'
-> ls is /usr/bin/ls
-
+ls is aliased to `ls --color -F'
+ls is /usr/bin/ls
+```
 
 ## Katalogi z komendami 
    
