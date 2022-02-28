@@ -4571,17 +4571,19 @@ W przypadku już istniejących kont wiek hasła trzeba będzie kontrolować za p
 | -w | **Number of days of warning before password expires** liczba dni przez które użytkownik będzie ostrzegany o konieczności zmiany hasła. Odpowiednik opcji **PASS_WARN_AGE** w pliku /etc/login.defs. |
 
 
-```bash
-# Zmiana parametrów hasła dla konta tim   
-chage -M 30 -m 5 -W 7 tim
+```console
+### Zmiana parametrów hasła dla konta tim   
+# chage -M 30 -m 5 -W 7 tim
 
-# Wyświetlenie zastosowanych ustawień
-chage -l tim | grep days
-```
+### Wyświetlenie zastosowanych ustawień
+# chage -l tim | grep days
 
-> Minimum number of days between password change : 5
+Minimum number of days between password change : 5
 Maximum number of days between password change : 30
 Number of days of warning before password expires : 7
+```
+
+> 
 
 
 Polecenie chage z opcjami -M i -I powoduje zablokowanie konta.
@@ -4592,23 +4594,25 @@ lub nieaktywnością (Password inactive) hasła. Natomiast tutaj mamy przykład 
 która powoduje zablokowanie konta po upływie podanej liczby dni (tutaj pięciu) od chwili
 wygaśnięcia hasła konta użytkownika (tutaj tomek):
 
-```bash
+```console
 # chage -I 5 tomek
 # chage -l tomek | grep Password
+
+Password expires : never
+Password inactive : never
 ```
 
-> Password expires : never
-Password inactive : never
+> 
 
 Zwróć uwagę na to, że ustawienia nie zostały zmienione! Bez określenia daty ważności hasła użycie opcji -I nie ma żadnego efektu. Dlatego po użyciu opcji –M, powodującej zdefiniowanie maksymalnej liczby dni, po których upływie następuje utrata ważności hasła, będzie można zgodnie z oczekiwaniami zastosować opcję -I.
 
-```bash
+```console
 # chage -M 30 -I 5 tim
 # chage -l tim | grep Password
-```
 
-> Password expires : Mar 03, 2017
+Password expires : Mar 03, 2017
 Password inactive : Mar 08, 2017
+```
 
 Po wprowadzeniu tych zmian konto użytkownika tomek zostanie zablokowane po 5 dniach
 od chwili wygaśnięcia hasła. Takie rozwiązanie okazuje się użyteczne, gdy pracownik opuścił
@@ -4645,17 +4649,18 @@ Uprawnienia SGID można nadawać również katalogom. To powoduje, że wszystkim
    
 **Przykładami są pliki zawierające polecenia passwd i sudo.** Każdy z tych plików powinien zachowywać własne uprawnienia SUID.
 
-```bash
+```console
 $ ls -l /usr/bin/passwd
+
+-rwsr-xr-x. 1 root root 28804 Aug 17 20:50 /usr/bin/passwd
 ```
 
-> -rwsr-xr-x. 1 root root 28804 Aug 17 20:50 /usr/bin/passwd
-
-```bash
+```console
 $ ls -l /usr/bin/sudo
+
+---s--x--x. 2 root root 77364 Nov 3 08:10 /usr/bin/sudo
 ```
 
-> ---s--x--x. 2 root root 77364 Nov 3 08:10 /usr/bin/sudo
 
 Polecenia takie jak passwd i sudo zostały zaprojektowane do stosowania jako programy SUID. Pomimo tego, że są one wykonywane przez użytkownika root, zwykły użytkownik może użyć polecenia passwd do zmiany własnego hasła, a polecenia sudo do podniesienia uprawnień,   
 *o ile dany użytkownik został wymieniony w pliku ```/etc/sudoers```*.   
