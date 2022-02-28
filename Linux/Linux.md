@@ -4698,16 +4698,18 @@ Dopisac coś o tym jak można blokować systemy w fstabie
 
 ### TODO - 590 strona tavela 22.4
 T A B E L A 2 2 . 4 . Pliki dzienników zdarzeń, których zawartość jest wyświetlana za pomocą poleceń specjalnych
-Nazwa pliku Polecenie
+
+| Nazwa | pliku Polecenie |
+|--|--|
+
 btmp dump-utmp btmp
 dmesg dmesg
 lastlog lastlog
 wtmp dump-utmp wtmp
 
- journalctl - wyświetla logi systemd 
+```journalctl``` - wyświetla logi systemd 
 
- Aby zapoznać się ze stronami komunikatów dotyczących jądra, należy z poziomu powłoki
-wydać następujące polecenie:
+Aby zapoznać się ze stronami komunikatów dotyczących jądra, należy z poziomu powłoki wydać następujące polecenie:
 
 ### #TODO - formatowanie do poprawienia, strona 590
 
@@ -4731,8 +4733,7 @@ Oct 19 11:43:04 localhost.localdomain kernel: Command line:
 ...  
 ```
 
-W celu wyświetlenia komunikatów dotyczących określonej usługi należy użyć opcji -u i podać
-nazwę usługi:
+```journalctl -u nazwa_usługi``` - Wyświetlenie komunikatów dotyczących określonej usługi:   
 
 ```bash
 journalctl -u NetworkManager.service
