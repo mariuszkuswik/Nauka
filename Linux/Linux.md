@@ -4678,12 +4678,23 @@ find / -perm /6000 -ls
 5767487 85 -rwsrwsr-x 1 root root 68928 Sep 13 11:52 /var/.bin/myvi  
 ...   
    
+Zwróć uwagę na odkrycie przez polecenie find innych poleceń z niepotrzebnie nadanymi
+uprawnieniami SUID i SGID. Te znalezione polecenia mogą zostać wydane przez zwykłych
+użytkowników w celu zwiększenia uprawnień z dowolnego powodu. W przykładzie znajduje się
+również plik myvi, który użytkownik próbuje ukryć. Jest to kopia polecenia vi, która z powodu
+uprawnień i właściciela pozwala na zmianę plików należących do roota. Nie ulega wątpliwości,
+że ten użytkownik próbuje zrobić coś, czego nie powinien.
+
+
+### Blokowanie systemu plików
+
+
 
 
 ## Koniec Biblii
 
 ### Strona 581
-582
+586
 
 
 [Spis treści](#spis-tre%C5%9Bci)
