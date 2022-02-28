@@ -4665,11 +4665,10 @@ Używając polecenia find, można sprawdzić system pod kątem ukrytych lub inny
 
 *Przykład:*  
 
-```bash
-find / -perm /6000 -ls
-```
+```console
+# find / -perm /6000 -ls
 
-> 4597316 52 -rwxr-sr-x 1 root games 51952 Dec 21 2013 /usr/bin/atc    
+4597316 52 -rwxr-sr-x 1 root games 51952 Dec 21 2013 /usr/bin/atc    
 4589119 20 -rwxr-sr-x 1 root tty 19552 Nov 18 2013 /usr/bin/write  
 4587931 60 -rwsr-xr-x 1 root root 57888 Aug 2 2013 /usr/bin/at     
 4588045 60 -rwsr-xr-x 1 root root 57536 Sep 25 2013 /usr/bin/crontab  
@@ -4677,7 +4676,8 @@ find / -perm /6000 -ls
 ...  
 5767487 85 -rwsrwsr-x 1 root root 68928 Sep 13 11:52 /var/.bin/myvi  
 ...   
-   
+```
+
 Zwróć uwagę na odkrycie przez polecenie find innych poleceń z niepotrzebnie nadanymi
 uprawnieniami SUID i SGID. Te znalezione polecenia mogą zostać wydane przez zwykłych
 użytkowników w celu zwiększenia uprawnień z dowolnego powodu. W przykładzie znajduje się
@@ -4697,6 +4697,32 @@ Dopisac coś o tym jak można blokować systemy w fstabie
 ### #TODO - strona 589 - tabela 22.3 do opracowania 
 
 
+#### Wybrane pliki logów w katalogu /var/log 
+##### Tabrla 22.3, strona 589
+
+| Nazwa systemowego dziennika zdarzeń | Nazwa pliku | Opis |  
+|--|--|--|
+| Apache Access Log | /var/log/httpd/access_log | Plik zawiera żądania względem serwera Apache. |
+| Apache Error Log  | /var/log/httpd/error_log  |  Plik zawiera błędy, które wystąpiły w klientach próbujących uzyskać dane z serwera Apache. |
+| Bad Logins Log | btmp | Zawiera informacje o nieudanych próbach logowania. |
+| Boot | Log boot.log | Zawiera komunikaty wskazujące uruchomione i zamknięte usługi systemowe oraz (ewentualnie) te, których uruchomienie lub zatrzymanie zakończyło się niepowodzeniem. Najnowsze komunikaty są umieszczone na końcu pliku. |
+| Kernel Log | dmesg | Zapis komunikatów wyświetlanych przez jądro w trakcie uruchamiania systemu. |
+| Cron log | cron | Zawiera komunikaty stanu demona crond. |
+| FTP Log | vsftpd.log | Plik zawiera komunikaty związane z trybem transferu używanym przez demona vsftpd (serwer FTP). |
+| FTP Transfer Log | xferlog | Zawiera informacje o plikach transferowanych za pomocą usługi FTP. |
+| Last Log | lastlog | Zawiera informacje o godzinie ostatniego zalogowania się danego użytkownika do systemu. |
+| Login/out Log | wtmp | Zawiera historię logowania i wylogowania się z systemu. |
+| Mail Log | maillog | Zawiera informacje o adresach, z których i do których zostały wysłane wiadomości e-mail. Plik jest użyteczny w trakcie wykrywania spamu. |
+Samba Log | /var/log/samba/smbd.log   /var/log/samba/nmbd.log | Komunikaty demona serwera Samba. |
+Security Log secure Zapis daty, godziny oraz czasu trwania prób zalogowania i sesji.
+Sendmail Log sendmail Komunikaty błędów zapisane przez demona sendmail.
+Squid Log /var/log/squid/access.log Plik zawiera komunikaty związane z serwerem proxy i buforowania.
+System Log messages Plik dziennika zdarzeń ogólnego przeznaczenia, w którym są zapisywane
+komunikaty wielu programów.
+UUCP Log uucp Komunikaty stanu pochodzące z demona protokołu Unix to Unix Copy Protocol.
+YUM Log yum.log Zawiera komunikaty związane z pakietami oprogramowania RPM.
+X.Org X11 Log Xorg.0.log Komunikaty wygenerowane przez serwer X systemu X.Org
+
 
 #### Pliki logów które posiadają polecenia specjalne  
 ##### Tabela 22.4, strona 590  
@@ -4708,7 +4734,7 @@ Dopisac coś o tym jak można blokować systemy w fstabie
 | lastlog | lastlog |
 | wtmp | dump-utmp wtmp |
 
-##### ```journalctl``` - wyświetla logi systemd 
+#### ```journalctl``` - wyświetla logi systemd 
 
 - ```journalctl -k``` - Wyświetla komunikaty tylko **na temat jądra**   
 
