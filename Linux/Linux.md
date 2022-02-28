@@ -78,10 +78,11 @@
 
 ## man  
 
-```man man``` - pomoc odnośnie mana   
-```man -k``` - wyszukiwanie komend   
-```man -f``` - wyświetlenie wszystkich możliwych sekcji pomocy dla danej komendy  
-man -k . - wyświetlenie wszystkich którkich opisów stron   
+- ```man man``` - pomoc odnośnie mana   
+- ```man -k``` - wyszukiwanie komend   
+    - ```man -k .``` - wyświetlenie wszystkich którkich opisów stron
+- ```man -f``` - wyświetlenie wszystkich możliwych sekcji pomocy dla danej komendy  
+
 
 
 
