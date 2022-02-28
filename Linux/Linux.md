@@ -4502,9 +4502,13 @@ W tym przykładzie konto użytkownika tomek wygasa 1 stycznia 2021 roku:
 
 
 Dla zachowania prostoty dane wyjściowe polecenia chage trzeba potokować do polecenia grep i przeszukać je pod kątem słowa Account. To spowoduje
-wyświetlenie daty ważności konta.
-# chage -l tomek | grep Account
-Account expires : Jan 01, 2021
+wyświetlenie daty ważności konta.  
+
+```bash
+chage -l tomek | grep Account
+```
+
+> Account expires : Jan 01, 2021
 
 ### Usunięcie nieużywanych kont użytkowników.
 
