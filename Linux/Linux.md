@@ -4694,9 +4694,6 @@ Dopisac coś o tym jak można blokować systemy w fstabie
 
 ### Monitorowanie logów 
 
-### #TODO - strona 589 - tabela 22.3 do opracowania 
-
-
 #### Wybrane pliki logów w katalogu /var/log 
 ##### Tabrla 22.3, strona 589
 
@@ -4726,7 +4723,9 @@ Dopisac coś o tym jak można blokować systemy w fstabie
 | lastlog | lastlog |
 | wtmp | dump-utmp wtmp |
 
+
 #### ```journalctl``` - wyświetla logi systemd 
+
 
 - ```journalctl -k``` - Wyświetla komunikaty tylko **na temat jądra**   
 
