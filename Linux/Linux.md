@@ -4657,7 +4657,8 @@ $ ls -l /usr/bin/sudo
 
 > ---s--x--x. 2 root root 77364 Nov 3 08:10 /usr/bin/sudo
 
-Polecenia takie jak passwd i sudo zostały zaprojektowane do stosowania jako programy SUID. Pomimo tego, że są one wykonywane przez użytkownika root, zwykły użytkownik może użyć polecenia passwd do zmiany własnego hasła, a polecenia sudo do podniesienia uprawnień, *o ile dany użytkownik został wymieniony w pliku /etc/sudoers*.   
+Polecenia takie jak passwd i sudo zostały zaprojektowane do stosowania jako programy SUID. Pomimo tego, że są one wykonywane przez użytkownika root, zwykły użytkownik może użyć polecenia passwd do zmiany własnego hasła, a polecenia sudo do podniesienia uprawnień,   
+*o ile dany użytkownik został wymieniony w pliku ```/etc/sudoers```*.   
 
 Znacznie bardziej niebezpieczna sytuacja wystąpi, gdy haker utworzy polecenie bash z uprawnieniami SUID, ponieważ wówczas każda osoba wydająca to polecenie będzie mogła zmienić wszystko w systemie z wykorzystaniem uprawnień użytkownika root.
 
