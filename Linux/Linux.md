@@ -4623,14 +4623,16 @@ Plik /etc/shadow zawiera poza nazwą konta i hasłem w postaci wartości hash ta
 
 #### Zarządzanie niebezpiecznymi uprawnieniami systemu plików
 
-Pliki **z uprawnieniami SUID w kategorii Owner i execute w kategorii Other** pozwalają każdemu stać się tymczasowym właścicielem pliku podczas jego wykonywania w pamięci.   
-Największe związane z tym zagrożenie występuje, gdy właścicielem pliku jest użytkownik root.   
-Podobnie **pliki z uprawnieniami SGID w kategorii Group i execute w kategorii Other** pozwalają każdemu stać się tymczasowym członkiem grupy pliku podczas jego wykonywania w pamięci.   
-Uprawnienia SGID można nadawać również katalogom. To powoduje, że wszystkim plikom tworzonym w danym katalogu zostaje przypisany identyfikator grupy odpowiadający identyfikatorowi grupy tego katalogu.   
-Pliki wykonywalne z nadanymi uprawnieniami SUID i SGUID są ulubionym celem atakujących.
-
-*Najlepszym rozwiązaniem jest ograniczenie do niezbędnego minimum liczby plików z takimi uprawnieniami.*  
-
+Pliki **z uprawnieniami SUID w kategorii Owner i execute w kategorii Other** pozwalają każdemu stać się tymczasowym właścicielem pliku podczas jego wykonywania w pamięci.  
+Największe związane z tym zagrożenie występuje, gdy właścicielem pliku jest użytkownik root.  
+   
+    
+Podobnie **pliki z uprawnieniami SGID w kategorii Group i execute w kategorii Other** pozwalają każdemu stać się tymczasowym członkiem grupy pliku podczas jego wykonywania w pamięci.     
+Uprawnienia SGID można nadawać również katalogom. To powoduje, że wszystkim plikom tworzonym w danym katalogu zostaje przypisany identyfikator grupy odpowiadający identyfikatorowi grupy tego katalogu.  
+    
+    
+*Pliki wykonywalne z nadanymi uprawnieniami SUID i SGUID są ulubionym celem atakujących. Najlepszym rozwiązaniem jest ograniczenie do niezbędnego minimum liczby plików z takimi uprawnieniami.*  
+   
 **Przykładami są pliki zawierające polecenia passwd i sudo.** Każdy z tych plików powinien zachowywać własne uprawnienia SUID.
 
 ```bash
