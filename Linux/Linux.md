@@ -51,6 +51,7 @@
         - [Zabezpieczanie kont użytkowników](#Zabezpieczanie-kont-użytkowników)
         - [Pliki passwd i shadow](#Pliki-passwd-i-shadow)
         - [Zabezpieczanie systemu plików](#Zabezpieczanie-systemu-plików)
+    - [SELinux](#SELinux)
     
 
 - [Koniec Biblii](#Koniec-Biblii)
@@ -4585,7 +4586,6 @@ Maximum number of days between password change : 30
 Number of days of warning before password expires : 7
 ```
 
-> 
 
 
 Polecenie chage z opcjami -M i -I powoduje zablokowanie konta.
@@ -4763,10 +4763,21 @@ Dopisac coś o tym jak można blokować systemy w fstabie
     journalctl -u avahi-daemon.service
     ```
 
+# SELinux
+
+- [Zalety SELinux](#Zalety-SELinux)
+- [Sposób działania SELinux](#Sposób-działania-SELinux)
+- [Konfiguracja SELinux](#Konfiguracja-SELinux)
+- [Rozwiązywanie problemów związanych z SELinux](#Rozwiązywanie-problemów-związanych-z-SELinux)
+- [Informacje dodatkowe o SELinux](#Informacje-dodatkowe-o-SELinux)
+
+[Spis treści](#spis-tre%C5%9Bci)
+
+
 ## Koniec Biblii
 
 ### Strona 581
-590
+639
 
 
 [Spis treści](#spis-tre%C5%9Bci)
@@ -4782,7 +4793,7 @@ Dopisac coś o tym jak można blokować systemy w fstabie
 417 - strona na której skończyłem drukarki 
 435 - strona od której wznowiłem po drukarkach
 554 - strona na której skończyłem rozwiązywanie problemów 
-
+590 - strona na której skończyłem bezpieczeństwo 
 
 You are new System Administrator and from now you are going to handle the system and your main task is Network monitoring, Backup and Restore. But you don't know the root password. Change the root password to redhat and login in default Runlevel.
 ```bash
