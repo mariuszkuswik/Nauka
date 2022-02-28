@@ -48,6 +48,10 @@
     - [Rozwiązywanie problemów z systemem Linux](#rozwiązywanie-problemów-z-systemem-linux)
         - [Rozwiązywanie problemów z GRUB](#Rozwiązywanie-problemów-z-GRUB)
     - [Bezpieczeństwo w systemie Linux](#Bezpieczeństwo-w-systemie-Linux)
+        - [Zabezpieczanie kont użytkowników](#Zabezpieczanie-kont-użytkowników)
+        - [Pliki passwd i shadow](#Pliki-passwd-i-shadow)
+        - [Zabezpieczanie systemu plików](#Zabezpieczanie-systemu-plików)
+    
     
 - [Koniec Biblii](#Koniec-Biblii)
 
