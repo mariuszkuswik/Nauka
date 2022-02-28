@@ -4701,11 +4701,10 @@ T A B E L A 2 2 . 4 . Pliki dzienników zdarzeń, których zawartość jest wyś
 
 | Nazwa | pliku Polecenie |
 |--|--|
-
-btmp dump-utmp btmp
-dmesg dmesg
-lastlog lastlog
-wtmp dump-utmp wtmp
+| btmp | dump-utmp btmp |
+| dmesg | dmesg |
+| lastlog | lastlog |
+| wtmp | dump-utmp wtmp |
 
 ```journalctl``` - wyświetla logi systemd 
 
