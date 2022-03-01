@@ -4506,15 +4506,16 @@ bazę danych RPM. W celu potwierdzenia, że problem jest związany z bazą danyc
 wydać polecenie yum check. Spójrz na przykładowe dane wyjściowe polecenia, gdy owa baza
 danych jest uszkodzona:
 
-```# yum check```
+```console
+# yum check
 
-> error: db4 error(11) from dbenv->open: Resource temporarily unavailable  
+error: db4 error(11) from dbenv->open: Resource temporarily unavailable  
 error: cannot open Packages index using db4 - Resource temporarily  
 unavailable (11)  
 error cannot open Packages database in /var/lib/rpm  
 CRITICAL:yum.main:  
 Error: rpmdb open fails  
-  
+``` 
    
 W dystrybucji Fedora lub RHEL wydaj polecenie yum update i wyklucz wszystkie dostępne pakiety dla jądra
 
