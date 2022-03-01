@@ -3710,11 +3710,13 @@ w systemie po zainstalowaniu pakietu **selinux-policy-doc**.
 - ```getsebool "$zmienna"``` - wyświetla obecny status zmiennej  
   
 
-```setsebool -P samba_export_all_ro on``` - zezwolenie sambie na udostępnianie plików i folderów z uprawnieniami do odczytu, **zmiana będzie stała**    
-```getsebool samba_export_all_ro``` - wyświetlenie statusu zmiennej dla potwierdzenia zmiany      
-
-> samba_export_all_ro --> on  
-
+- ```setsebool -P samba_export_all_ro on``` - zezwolenie sambie na udostępnianie plików i folderów z uprawnieniami do odczytu, **zmiana będzie stała**    
+- ```getsebool samba_export_all_ro``` - wyświetlenie statusu zmiennej dla potwierdzenia zmiany      
+    ```console
+    # getsebool samba_export_all_ro
+    
+    samba_export_all_ro --> on  
+    ```
 
 ## Definiowanie kontekstu pliku SELinux dla Samby
 
