@@ -33,6 +33,8 @@
         - [Partycjonowanie dysku twardego](#Partycjonowanie-dysku-twardego)
         - [LVM - Używanie menedżera partycji](#LVM---Używanie-menedżera-partycji)
             - [Tworzenie woluminów logicznych LVM](#tworzenie-woluminów-logicznych-lvm)
+    - [Kompresja](#Kompresja)
+        - [tar](#tar)
     - [Administracja systemem linux](#administracja-systemem-linux)
         - [Administracja siecią](#Administracja-siecią)
             - [Komenda ip](#ip---show-and-manipulate-routing-network-devices-interfaces-and-tunnels)  
@@ -703,6 +705,33 @@ done
 ### #TODO - sed - dodać opis, strona 183
 
 # #TODO - Strona 186 - ćwiczenia do rozdziału, do zrobienia 
+
+# Kompresja
+
+- [tar](#tar)
+[Spis treści](#spis-tre%C5%9Bci)
+
+## tar
+
+TAR OPCJE (-CYFRA - poziom kompresji, im wiecej tym mocniej) DOCELOWY_PLIK CO_ARCHIWIZUJEMY
+
+- c ​- crate
+- x -​ extract - (flaga -C po nazwie archiwum pozwala wskazac target folder). Podajac jako drugi paramer pelna nazwe pliku w archiwum extractuje sie tylko go
+- f ​- nazwa pliku (musi byc ostatnia flaga)
+- ​ v ​- verbose
+- r ​- dodanie pliku (plik skompresowany | co dodac)
+- u ​ - updatuje istniejacy w archiwum plik
+- z ​ - kompresja GZIPEm podczas tworzenia only
+- j -​ kompreska BZIP2 podczas tworzenia only 
+
+Z kolei przy GZIP lub BZIP2 to dajemy KOMENDA CO_DO_KOMPRESJI 
+Rozpakowywanie to flaga -D (zakladam, ze od ​ decompress ​) 
+
+Dla kompatybilnosci z Windowsem jest tez​ **ZIP** ​i **UNZIP** ( ​nie sa domyslnie zainstalowane!!!)​. 
+Uzycie jest dosc proste: 
+ZIP -R (recursive) FILE_NAME /CO_DO_ZROBIENIA UNZIP NAZWA_PLIKU
+
+
 
 
 # Administracja systemem Linux
@@ -1755,6 +1784,8 @@ https://unix.stackexchange.com/questions/341077/lvm-volume-group-what-are-extent
 ```man fs``` - informacje na temat filesystemów w Linuxie  
 ```cat /proc/filesystems``` - wyświetlenie obsługiwanych systemów plików  
 
+
+
 ### Wybrane Filesystemy
 
 | Rodzaj | Opis |
@@ -1840,6 +1871,9 @@ free -m
 
 
 ## mount i umount
+
+```findmnt``` - pokazuje to samo co mount ale w ładniejszej formie   
+```df -Th``` - wyświetla filesystemy dla disk free
 
 ```mount /dev/device /mnt/mount_point``` - wyświetla obecnie zamontowane systemy plików   
 - ```-o``` - opcje montowania  
