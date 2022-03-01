@@ -2371,8 +2371,7 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 
 ## Wyświetlanie nazw hosta i domeny
 
-```hostname``` - wyświetla hostname
-    
+- ```hostname``` - wyświetla hostname
     ```console
     # hostname
 
