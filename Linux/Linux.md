@@ -2317,12 +2317,6 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
     - ```ip -s link``` - interfejsy oraz informacje o przesłanych pakietach 
 
 
-
-    
-
-
-
-
 ### ```ip``` - show and manipulate routing, network devices, interfaces and tunnels    
 
 - ```ip address``` - protocol address management  
@@ -2368,11 +2362,6 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
     - ```-s``` - wyświetla dane statystyczne dotyczące transmisji pakietów oraz wygenerowanych błędów dla każdego interfejsu
     
 
-### #TODO - opisać jak działa 
-
-### ```nmcli``` - network manager cli   
-
-
 ### #TODO - ogarnąc jak interpretować tablicę routingu
 
 ```tracepath``` - traceroute - sprawdza trasę między jednym hostem a drugim
@@ -2388,6 +2377,38 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 
 ## Konfigurowanie interfejsów sieciowych
 
+- **Network Manager** - służy do zarzadzania polaczeniami, jest to demon który wczytuje skrypty konfiguracyjne dla network interfaców
+
+```/etc/sysconfig/network-scripts/ifcfg-"$network_interface_name``` - skrypty dla network interfaców, nazwa to ifcfg-nazwa_urządzenia
+
+```nmcli``` - 
+
+```nmcli con reload``` - Zaktualizowanie konfiguracji dla urządzeń sieciowych (ifcfg-interface), **wszelkie zmiany przy pomocy komendy ip nie są trwałe**  
+
+
+
+
+
+
+ Jezeli sie przeedytuje ten plik to by zmiany chwycily daje sie​ NMCLI CON RELOAD ​. Cokolwiek sie nie zmieni za pomoca komendy​ IP ​ jest 'nonpersistent' (cokolwiek to nie znaczy w kontekscie sieci). By tematy byly trwale trzeba uzyc komend ​ NMCLI ​ lub ​ NMTUI ​. To pierwsze to oczywiscie command line, a ​ TUI ​to tekstowe. Oczywiscie tekstowe sie latwiej uzywa. NMCLI CON SHOW ​ - pokazuje wszystkie polaczenia i ich przypisania do urzadzen (aktywne i nieaktywne). Jak sie jako ostatni parametr poda nazwe to sie dostaje dodatkowe info o konkretnym polaczeniu. NMCLI DEV STATUS ​ by zobaczyc status urzadzen (wszystkich) NMCLI DEV SHOW ​ lub urzadzenia podanego jako parametr TUTAJ JEST DODAWANIE/MODYFIKOWANIE USTAWIEN POLACZEN, ALE TO JEST GLUPIE WPISYWANIE KOMEND BEZ WYTLUMACZENIA. Zakladaja chyba, ze musi byc
+
+uzywane ​ NMTUI ​. Generalnie najwazniejsze to jest samo dodanie polaczenia: NMCLI CON ADD CON-NAME TUTAJ_JAKAS_NAZWA OPCJE (autoconnect no ifname NAZWA_INTERFEJSU) NMCLI CON UP/DOWN/DELETE NAZWA_POLACZENIA ​by wystartowac Za pomoca ​ NMTUI ​ da sie:
+
+
+- edytowac polaczenie (wpierw trzeba po zmianach je ​ deaktywowac ​i potem ​ aktywowac ponownie!!! Najlepiej SYSTEMCTL RESTART NETWORK ​)
+- zmienic nazwe hosta
+- aktywowac polaczenie By zmienic nazwe hosta mozna:
+​ hostnamectl set-hostname nazwa_hosta ​ (​ HOSTNAMECTL STATUS ​ by sprawdzic)
+z ​ NMTUI
+edytowac z palca​ /ETC/HOSTS Ustawienie DNSow: (domyslnie leza w ​ /etc/resolv.conf ​) *Use ​ nmtui ​to set the DNS name servers.
+Set the ​ DNS1 ​and ​ DNS2 ​in the ​ ifcfg network connection ​ configuration file in /etc/sysconfig/network-scripts ​.
+Use a ​ DHCP ​server that is configured to hand out the address of the ​ DNS ​name server.
+Use ​ nmcli con mod [+]ipv4.dns Notice that if your computer is configured to get the network configuration from a DHCP server, the DNS server is also set via the DHCP server. If you do not want this to happen, you have two options:
+Edit the ​ ifcfg configuration file ​ to include the option ​ PEERDNS=no ​.
+Use ​ nmcli con mod ipv4.ignore-auto-dns yes ​. To verify host name resolution, you can use the ​ GETENT HOSTS SERVERNAME ​ command. This command searches in both ​ /etc/hosts ​ and DNS to resolve the hostname that has been specified. Jesli chce sie zamienic kolejnosc resolvovania edytuje sie plik ​ /ETC/NSSWITCH.CONF
+
+
+### ```nmcli``` - network manager cli   
 
 
 - Jak ustawić statyczny adres ip i brame 
