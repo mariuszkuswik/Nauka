@@ -1345,16 +1345,17 @@ Każdy wiersz pliku /etc/passwd przedstawia konto pojedynczego użytkownika.
 znaczenie pola jest określane na podstawie położenia w wierszu,   
     ```bash
     # login:hasło:user id:group id:komentarz:katalog domowy:shell   
-    maria:x:1002:1007:Maria Kowalska:/home/maria:/bin/tcsh
+      maria:x:1002:1007:Maria Kowalska:/home/maria:/bin/tcsh
     ```    
 
 - ```/etc/shadow``` zawiera **zaszyfrowane hasła użytkowników** i opcjonalnie o ich wygaśnięciu  
     - ```man 5 shadow``` - konstrukcja pliku   
 
 - ```/etc/group``` - text file that **defines the groups on the system**. There is one entry per line, with the following format:  
-    - ```wheel:x:10:mariusz```    
-    > group_name:password:GID:user_list  
-
+    ```bash
+    # group_name:password:GID:user_list
+      wheel:x:10:mariusz    
+    ```
 - ```/etc/skel``` - folder zawiera pliki domyślne, które będą kopiowane do katalogu domowego użytkownika
   
 
