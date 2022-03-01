@@ -2311,16 +2311,16 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 [Spis treści](#spis-treści)
 
 
-- ```ip address``` - protocol address management  
-    - ```ip address show``` - pokazuje interfejsy sieciowe i dokładne dane
-- ```ip route``` - routing table management  
-    - ```ip route show``` - wyświetla tablicę routingu 
-- ```ip link``` - network device configuration  
-    - ```ip link show``` - pokazuje stan i MAC interfejsów 
-    - ```ip -s link``` - interfejsy oraz informacje o przesłanych pakietach 
-
-
 ### ```ip``` - show and manipulate routing, network devices, interfaces and tunnels    
+
+- ```ip address``` - protocol address management    
+    - ```ip address show``` - pokazuje interfejsy sieciowe i dokładne dane  
+- ```ip route``` - routing table management    
+    - ```ip route show``` - wyświetla tablicę routingu   
+- ```ip link``` - network device configuration    
+    - ```ip link show``` - pokazuje stan i MAC interfejsów   
+    - ```ip -s link``` - interfejsy oraz informacje o przesłanych pakietach   
+
 
 - ```ip address``` - protocol address management  
     - ```ip address show``` - wyświetlenie informacji o wszystkich interfejsach sieciowych   
@@ -2381,19 +2381,19 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 ## Konfigurowanie interfejsów sieciowych
 
 - **Network Manager** - służy do zarzadzania polaczeniami, jest to demon który wczytuje skrypty konfiguracyjne dla network interfaców
-
-```/etc/sysconfig/network-scripts/ifcfg-"$network_interface_name``` - skrypty dla network interfaców, nazwa to ifcfg-nazwa_urządzenia
-
-```nmcli``` - 
-
-```nmcli con reload``` - Zaktualizowanie konfiguracji dla urządzeń sieciowych (ifcfg-interface), **wszelkie zmiany przy pomocy komendy ip nie są trwałe**  
-
+- ```/etc/sysconfig/network-scripts/ifcfg-"$network_interface_name``` - skrypty dla network interfaców, nazwa pojedyńczego pliku to ifcfg-nazwa_urządzenia,   
+**wszyskite zmiany muszą być zatwierdzone przez** ```nmcli con reload```    
+    - ```nmcli``` - Zarządzanie network managerem za pomocą **komend tekstowych**     
+        - ```nmcli con reload``` - Zaktualizowanie konfiguracji dla urządzeń sieciowych (ifcfg-interface), **wszelkie zmiany przy pomocy komendy ip nie są trwałe**
+    - ```nmtui``` - Zarządzanie network managerem za pomocą **terminalowego GUI**  
 
 
 
+  
 
 
- Jezeli sie przeedytuje ten plik to by zmiany chwycily daje sie​ NMCLI CON RELOAD ​. Cokolwiek sie nie zmieni za pomoca komendy​ IP ​ jest 'nonpersistent' (cokolwiek to nie znaczy w kontekscie sieci). By tematy byly trwale trzeba uzyc komend ​ NMCLI ​ lub ​ NMTUI ​. To pierwsze to oczywiscie command line, a ​ TUI ​to tekstowe. Oczywiscie tekstowe sie latwiej uzywa. NMCLI CON SHOW ​ - pokazuje wszystkie polaczenia i ich przypisania do urzadzen (aktywne i nieaktywne). Jak sie jako ostatni parametr poda nazwe to sie dostaje dodatkowe info o konkretnym polaczeniu. NMCLI DEV STATUS ​ by zobaczyc status urzadzen (wszystkich) NMCLI DEV SHOW ​ lub urzadzenia podanego jako parametr TUTAJ JEST DODAWANIE/MODYFIKOWANIE USTAWIEN POLACZEN, ALE TO JEST GLUPIE WPISYWANIE KOMEND BEZ WYTLUMACZENIA. Zakladaja chyba, ze musi byc
+
+ Cokolwiek sie nie zmieni za pomoca komendy​ IP ​ jest 'nonpersistent' (cokolwiek to nie znaczy w kontekscie sieci). By tematy byly trwale trzeba uzyc komend ​ NMCLI ​ lub ​ NMTUI ​. To pierwsze to oczywiscie command line, a ​ TUI ​to tekstowe. Oczywiscie tekstowe sie latwiej uzywa. NMCLI CON SHOW ​ - pokazuje wszystkie polaczenia i ich przypisania do urzadzen (aktywne i nieaktywne). Jak sie jako ostatni parametr poda nazwe to sie dostaje dodatkowe info o konkretnym polaczeniu. NMCLI DEV STATUS ​ by zobaczyc status urzadzen (wszystkich) NMCLI DEV SHOW ​ lub urzadzenia podanego jako parametr TUTAJ JEST DODAWANIE/MODYFIKOWANIE USTAWIEN POLACZEN, ALE TO JEST GLUPIE WPISYWANIE KOMEND BEZ WYTLUMACZENIA. Zakladaja chyba, ze musi byc
 
 uzywane ​ NMTUI ​. Generalnie najwazniejsze to jest samo dodanie polaczenia: NMCLI CON ADD CON-NAME TUTAJ_JAKAS_NAZWA OPCJE (autoconnect no ifname NAZWA_INTERFEJSU) NMCLI CON UP/DOWN/DELETE NAZWA_POLACZENIA ​by wystartowac Za pomoca ​ NMTUI ​ da sie:
 
