@@ -4193,11 +4193,14 @@ Opcje montowania można definiować nie tylko w pliku /etc/fstab, ale również 
 
 ### Wyświetlanie udziałów NFS
 
-```showmount -e server.example.com``` - wyświetlenie jakie katalogi są udostępnione na podanym serwerze   
+- ```showmount -e server.example.com``` - wyświetlenie jakie katalogi są udostępnione na podanym serwerze   
 
-> /export/myshare client.example.com        # Katalog /exports/myshare jest dostępny dla client.example.com  
-/mnt/public *                               # Katalog /mnt/public jest dostępny dla wszystkich   
+    ```console
+    # showmount -e server.example.com 
 
+    /export/myshare client.example.com        # Katalog /exports/myshare jest dostępny dla client.example.com  
+    /mnt/public *                               # Katalog /mnt/public jest dostępny dla wszystkich   
+    ```
 
 ### Montowanie udziałów NFS
 
