@@ -2383,7 +2383,7 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 - **Network Manager** - służy do zarzadzania polaczeniami, jest to demon który wczytuje skrypty konfiguracyjne dla network interfaców  
   
   
-- ```/etc/sysconfig/network-scripts/ifcfg-"$network_interface_name``` - skrypty dla network interfaców, nazwa pojedyńczego pliku to ifcfg-nazwa_urządzenia,   
+- **Pliki konfiguracyjne dla interfejsów** - ```/etc/sysconfig/network-scripts/ifcfg-"$network_interface_name"``` - nazwa pojedyńczego pliku to ifcfg-nazwa_urządzenia,   
 **wszyskite zmiany muszą być zatwierdzone przez** ```nmcli con reload```    
     - ```nmcli``` - Zarządzanie network managerem za pomocą **komend tekstowych**     
         - ```nmcli con reload``` - Zaktualizowanie konfiguracji dla urządzeń sieciowych (ifcfg-interface), **wszelkie zmiany przy pomocy komendy ip nie są trwałe**
