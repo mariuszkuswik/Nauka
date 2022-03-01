@@ -2307,8 +2307,23 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 
 [Spis treści](#spis-treści)
 
-### ```ip``` - show and manipulate routing, network devices, interfaces and tunnels    
+
+- ```ip address``` - protocol address management  
+    - ```ip address show``` - pokazuje interfejsy sieciowe i dokładne dane
+- ```ip route``` - routing table management  
+    - ```ip route show``` - wyświetla tablicę routingu 
+- ```ip link``` - network device configuration  
+    - ```ip link show``` - pokazuje stan i MAC interfejsów 
+    - ```ip -s link``` - interfejsy oraz informacje o przesłanych pakietach 
+
+
+
     
+
+
+
+
+### ```ip``` - show and manipulate routing, network devices, interfaces and tunnels    
 
 - ```ip address``` - protocol address management  
     - ```ip address show``` - wyświetlenie informacji o wszystkich interfejsach sieciowych   
