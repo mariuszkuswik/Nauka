@@ -1344,8 +1344,8 @@ Każdy wiersz pliku /etc/passwd przedstawia konto pojedynczego użytkownika.
 - ```/etc/passwd``` - **Informacje na temat kont użytkowników** znajdują się w */etc/passwd* i są oddzielone dwukropkiem, 
 znaczenie pola jest określane na podstawie położenia w wierszu,   
     ```console
-    maria:x:1002:1007:Maria Kowalska:/home/maria:/bin/tcsh
     login:hasło:user id:group id:komentarz:katalog domowy:shell   
+    maria:x:1002:1007:Maria Kowalska:/home/maria:/bin/tcsh
     ```    
 
 - ```/etc/shadow``` zawiera **zaszyfrowane hasła użytkowników** i opcjonalnie o ich wygaśnięciu  
