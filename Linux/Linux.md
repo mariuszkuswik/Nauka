@@ -71,13 +71,17 @@
 
 # Korzystanie z pomocy
 
+/usr/share/doc - zawiera więcej instrukcji systemowych, ```pinfo``` pozwala przeglądać je po linkach
+
 ## man  
+
+- ```mandb``` - update bazy danych mana
 
 - ```man man``` - pomoc odnośnie mana   
 - ```man -k``` - wyszukiwanie komend   
     - ```man -k .``` - wyświetlenie wszystkich którkich opisów stron
 - ```man -f``` - wyświetlenie wszystkich możliwych sekcji pomocy dla danej komendy  
-
+  
 
 
 ## info
