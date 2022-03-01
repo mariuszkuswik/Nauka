@@ -2372,13 +2372,15 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 ## Wyświetlanie nazw hosta i domeny
 
 ```hostname``` - wyświetla hostname
+    
     ```console
     # hostname
 
     spike.example.com
     ```
 
-- ```dnsdomainname``` - wyświetla samą domenę 
+```dnsdomainname``` - wyświetla samą domenę 
+    
     ```console
     # dnsdomainname
 
