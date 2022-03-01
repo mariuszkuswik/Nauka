@@ -3572,30 +3572,28 @@ systemctl start smb.service
 systemctl status smb.service 
 ```
 
-```smbclient -L "$hostname"``` - polecenie wyświetla podstawowe informacje o serwerze Samba, 
+- ```smbclient -L "$hostname"``` - polecenie wyświetla podstawowe informacje o serwerze Samba, 
 **bez wpisywania hasła smbclient pozwala sprawdzić jakie usługi oferuje serwer**    
-  
-    
-```bash
-smbclient -L localhost
-Enter SAMBA\root's password: <ENTER>
-```
+      
+    ```console
+    # smbclient -L localhost
 
+    Enter SAMBA\root's password: <ENTER>
 
-> Anonymous login successful  
-Sharename Type Comment   
-\--------- ---- -------  
-print$ Disk Printer Drivers  
-IPC$ IPC IPC Service   
-(Samba Server Version 4.10.10)  
-deskjet Printer deskjet  
-Reconnecting with SMB1 for workgroup listing.  
-Anonymous login successful  
-Server Comment  
-\--------- -------  
-Workgroup Master  
-\--------- -------  
-
+    Anonymous login successful  
+    Sharename Type Comment   
+    \--------- ---- -------  
+    print$ Disk Printer Drivers  
+    IPC$ IPC IPC Service   
+    (Samba Server Version 4.10.10)  
+    deskjet Printer deskjet  
+    Reconnecting with SMB1 for workgroup listing.  
+    Anonymous login successful  
+    Server Comment  
+    \--------- -------  
+    Workgroup Master  
+    \--------- -------  
+    ```
 
 Przy domyślnej konfiguracji Samby (co widać po powyższym wyniku):
 - Wszystkie drukarki współdzielone za pomocą serwera CUPS w systemie Linux są domyślnie dostępne na serwerze Samba uruchomionym w tym samym systemie.
