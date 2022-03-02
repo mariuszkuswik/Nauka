@@ -4951,19 +4951,14 @@ Zalety SELinux:
 
 - Używa najmniejszych możliwych uprawnień podczas dostępu do podmiotu (np. użytkowników i procesów). Wyrażenie najmniejsze możliwe uprawnienia oznacza, że każdy podmiot otrzymuje ograniczony zestaw uprawnień, które są niezbędne. 
 
+- Proces nie może uzyskać dostępu do innych procesów lub ich plików, o ile nie otrzyma specjalnych uprawnień. Obszary działalności procesów są nazywane „domenami”.
 
 
 
-
-- Pozwala umieścić proces w piaskownicy. Zwrot umieścić proces w piaskownicy (ang. process
-sandboxing) oznacza, że proces działa we własnym obszarze, w tzw. piaskownicy. Nie może
-uzyskać dostępu do innych procesów lub ich plików, o ile nie otrzyma specjalnych
-uprawnień. Obszary działalności procesów są nazywane „domenami”.
-
-- Pozwala przetestować funkcjonalność przed implementacją. Oferuje również tryb
-liberalny, który ummożliwia sprawdzenie, jaki efekt będzie miało zastosowanie
-technologii SELinux w systemie. W trybie liberalnym SELinux wciąż rejestruje wszelkie
+- Pozwala przetestować funkcjonalność przed implementacją. Oferuje tryb liberalny (permissive ? ### #TODO - sprawdzić pisownię), który ummożliwia sprawdzenie, jaki efekt będzie miało zastosowanie SELinux. W trybie liberalnym SELinux wciąż rejestruje wszelkie
 naruszenia reguł bezpieczeństwa (określane mianem AVC denials), ale im nie zapobiega.
+
+
 
 
 W przypadku **braku SELinux** przykładowy proces httpd może między innymi do :
