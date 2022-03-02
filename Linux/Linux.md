@@ -4927,7 +4927,7 @@ Opisać !!!
 
 
 **SELinux** zwiększa poziom bezpieczeństwa systemu Linux za pomocą dostępu na podstawie ról **RBAC** (*Role-based access control*) stosowanego dla podmiotów i obiektów (takich jak procesy i zasoby).   
-„Tradycyjny” mechanizm zapewnienia bezpieczeństwa w systemie Linux używa tzw. uznaniowej kontroli dostępu (**DAC** *discretionary access control*)  
+„Tradycyjny” mechanizm zapewnienia bezpieczeństwa w systemie Linux używa tzw. uznaniowej kontroli dostępu **DAC** (*discretionary access control*)  
   
        
 W przypadku **DAC** proces może uzyskać dostęp do dowolnego pliku, katalogu, urządzenia lub innego zasobu, który na to pozwala.   
