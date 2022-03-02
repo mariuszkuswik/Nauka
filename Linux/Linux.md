@@ -1513,9 +1513,9 @@ Do zdefiniowania domyślnych uprawnień ACL służy opcja ```d:```
         ```console
         # getfacl /tmp/maria/  
         
-        \# file: tmp/maria/  
-        \# owner: maria  
-        \# group: maria  
+        # file: tmp/maria/  
+        # owner: maria  
+        # group: maria  
         user::rwx  
         group::rwx  
         other::r-x  
