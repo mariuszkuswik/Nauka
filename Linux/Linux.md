@@ -1,7 +1,4 @@
 
-# Linux/Bash
-
-
 # Odpowiedzi na ćwiczenia strona 797 
 
 # Spis treści
