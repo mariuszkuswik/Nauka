@@ -4887,10 +4887,13 @@ Dopisac coś o tym jak można blokować systemy w fstabie
 
 ### Włączenie SELinux
 
+
+
+
 #### NA EGZAMINIE NA SAM KONIEC SELINUX MUSI BYC ENABLED I W ENFORCING MODE!!!
 
 Opisać !!!     
-- Element
+- Element 
 - Policy 
 - Source domain
 - Target domain 
@@ -4958,9 +4961,16 @@ Wyszukanie opcji boolowskich dla Samby
 
 ## Zalety SELinux 
 
-"Tradycyjny” mechanizm zapewnienia bezpieczeństwa w systemie Linux używa tzw. uznaniowej kontroli dostępu (ang. discretionary access control, DAC).    
+
+SELinux to system z obowiązkową kontrolą dostępu (**MAC** - *Mandatory Access Control*), który realizuje politykę kontroli dostępu opartą na rolach (**RBAC** - *Role Based Access Control*) za pomocą domenowego systemu kontroli dostępu (**DTAC** - *Dynamically Typed Access Control*).    
+"Tradycyjny” mechanizm zapewnienia bezpieczeństwa w systemie Linux używa uznaniowej kontroli dostępu (**DAC** - *discretionary access control*).     
+
 W przypadku **DAC** proces może uzyskać dostęp do dowolnego pliku, katalogu, urządzenia lub innego zasobu, który na to pozwala.   
-Natomiast w przypadku **RBAC** proces może uzyskać dostęp jedynie do wyraźnie wskazanych zasobów, na podstawie przypisanej mu roli.  
+Natomiast w przypadku **RBAC** (*Role-based access control*) proces może uzyskać dostęp jedynie do wyraźnie wskazanych zasobów, na podstawie przypisanej mu roli.  
+
+Ideą SELinuksa jest odebranie procesom tych uprawnień, które nie są im potrzebne. Dzięki temu zniszczenia, jakie mogą zostać poczynione w razie włamania do systemu, będą znikome
+
+
 
 
 Selinux przypisuje procesowi dostęp na podstawie polityk, zgodnie z następującymi regułami :  
