@@ -4971,6 +4971,11 @@ Natomiast w przypadku **RBAC** (*Role-based access control*) proces może uzyska
 Ideą SELinuksa jest odebranie procesom tych uprawnień, które nie są im potrzebne. Dzięki temu zniszczenia, jakie mogą zostać poczynione w razie włamania do systemu, będą znikome
 
 
+- MAC - Mandatory Access Control
+    - MAC jest to system obowiązkowej kontroli dostępu. W przeciwieństwie do DAC (Discretionary Access Control) - najczęściej stosowanego w Linuksie modelu kontroli dostępu nie pozwala on użytkownikowi decydować o prawach dostępu do obiektów i zabezpieczeniach. Zamiast tego są one definiowane odgórnie przez administratora. W przypadku SELinuksa są one zapisane w postaci reguł Policy.
+
+
+
 
 
 Selinux przypisuje procesowi dostęp na podstawie polityk, zgodnie z następującymi regułami :  
