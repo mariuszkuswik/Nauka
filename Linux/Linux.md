@@ -1777,9 +1777,7 @@ https://unix.stackexchange.com/questions/341077/lvm-volume-group-what-are-extent
     lvextend -r --size +1G /dev/mapper/myvg0-music
     ```
   
-4. Zmiana wielkości filesystemu (ext2/3/4) tak aby wypełniał całą wielkość woluminu   
-### #TODO - sprawdzić w jaki sposób rozszerzyć filesystem xfs, domyślne na rhel, fsadm (najprawdopodobniej)
-    
+4. Zmiana wielkości filesystemu (ext2/3/4) tak aby wypełniał całą wielkość woluminu    
     ```console
     resize2fs -p /dev/mapper/myvg0-music
     ```
@@ -1788,6 +1786,7 @@ https://unix.stackexchange.com/questions/341077/lvm-volume-group-what-are-extent
     ```console
     df -h /mnt/mymusic/
     ```
+### #TODO - sprawdzić w jaki sposób rozszerzyć filesystem xfs, domyślne na rhel, fsadm (najprawdopodobniej)
 
 ### #TODO - dodać zmniejszanie wolumniów LVM
 
