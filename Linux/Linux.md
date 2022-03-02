@@ -49,11 +49,20 @@
         - [NFS - Serwer plików](#nfs---serwer-plików)
     - [Rozwiązywanie problemów z systemem Linux](#rozwiązywanie-problemów-z-systemem-linux)
         - [Rozwiązywanie problemów z GRUB](#Rozwiązywanie-problemów-z-GRUB)
+        - [Proces rozruchu za pomocą demona systemd](#Proces-rozruchu-za-pomocą-demona-systemd)
+        - [Rozwiązywanie problemów z pakietami oprogramowania](#Rozwiązywanie-problemów-z-pakietami-oprogramowania)
+        - [Użycie mechanizmu cron do uaktualniania oprogramowania](#Użycie-mechanizmu-cron-do-uaktualniania-oprogramowania)
+        - [Rozwiązywanie problemów z buforem i bazą danych RPM](#Rozwiązywanie-problemów-z-buforem-i-bazą-danych-RPM)
     - [Bezpieczeństwo w systemie Linux](#Bezpieczeństwo-w-systemie-Linux)
         - [Zabezpieczanie kont użytkowników](#Zabezpieczanie-kont-użytkowników)
         - [Pliki passwd i shadow](#Pliki-passwd-i-shadow)
         - [Zabezpieczanie systemu plików](#Zabezpieczanie-systemu-plików)
     - [SELinux](#SELinux)
+        - [Zalety SELinux](#Zalety-SELinux)
+        - [Sposób działania SELinux](#Sposób-działania-SELinux)
+        - [Konfiguracja SELinux](#Konfiguracja-SELinux)
+        - [Rozwiązywanie problemów związanych z SELinux](#Rozwiązywanie-problemów-związanych-z-SELinux)
+        - [Informacje dodatkowe o SELinux](#Informacje-dodatkowe-o-SELinux)
     
 
 - [Koniec Biblii](#Koniec-Biblii)
@@ -4453,7 +4462,13 @@ sudo mount localhost:/var/mystuff /tmp/mnt/mystuff
 # Rozwiązywanie problemów z systemem Linux
 
 - [Rozwiązywanie problemów z GRUB](#Rozwiązywanie-problemów-z-GRUB)
-- [Spis treści](#Spis-treści)
+- [Proces rozruchu za pomocą demona systemd](#Proces-rozruchu-za-pomocą-demona-systemd)
+- [Rozwiązywanie problemów z pakietami oprogramowania](#Rozwiązywanie-problemów-z-pakietami-oprogramowania)
+- [Użycie mechanizmu cron do uaktualniania oprogramowania](#Użycie-mechanizmu-cron-do-uaktualniania-oprogramowania)
+- [Rozwiązywanie problemów z buforem i bazą danych RPM](#Rozwiązywanie-problemów-z-buforem-i-bazą-danych-RPM)
+
+
+[Spis treści](#Spis-treści)
 
 
 Etapy uruchamiania systemu 
@@ -4878,6 +4893,55 @@ Natomiast w przypadku **RBAC** proces może uzyskać dostęp jedynie do wyraźni
 Selinux przypisuje procesowi dostęp na podstawie polityk, zgodnie z następującymi regułami :  
 ■ Proces może uzyskać dostęp tylko do zasobów zawierających wyraźnie zdefiniowane etykiety.  
 ■ Potencjalnie niebezpieczna funkcjonalność, np. uprawnienie zapisu do katalogu, jest dostępna w postaci opcji boolowskiej, którą można włączyć lub wyłączyć.  
+
+Usługa, taka jak serwer WWW, zawierająca zdefiniowaną politykę SELinux jest często instalowana
+razem ze zbiorem określonych etykiet dla pewnych plików i katalogów. Dlatego proces, w ramach
+którego działa dany serwer, może odczytywać i zapisywać pliki znajdujące się jedynie w określonych
+katalogach. Jeżeli chcesz to zmienić, musisz dodać odpowiednie etykiety SELinux dla plików
+i katalogów, do których proces ma mieć dostęp.
+
+
+Trzeba wyraźnie powiedzieć, że SELinux nie jest zamiennikiem DAC, lecz dodatkową warstwą
+bezpieczeństwa.
+■ Reguły DAC są w użyciu, gdy stosowany jest mechanizm SELinux.
+■ Najpierw są sprawdzane reguły DAC i jeśli dostęp jest dozwolony, dopiero wówczas są
+sprawdzane polityki SELinux.
+■ Jeżeli reguły DAC nie zezwalają na dostęp, polityki SELinux nie zostaną sprawdzone.
+
+Jeżeli użytkownik spróbuje wykonać plik, dla którego nie ma uprawnień wykonywania (rw-),
+wtedy „tradycyjna” kontrola DAC odmówi dostępu. Dlatego w takim przypadku polityki
+SELinux nie zostaną sprawdzone.
+
+
+Zalety SELinux: 
+- Implementuje model kontroli dostępu RBAC, który jest uznawany za najsilniejszy.
+
+- Używa najmniejszych możliwych uprawnień podczas dostępu do podmiotu (np. użytkowników
+i procesów). Wyrażenie najmniejsze możliwe uprawnienia oznacza, że każdy podmiot
+otrzymuje ograniczony zestaw uprawnień, które są niezbędne do tego, aby mógł wykonać
+swoje zadanie. Dzięki zaimplementowaniu reguły najmniejszych możliwych uprawnień
+użytkownik lub proces ma ograniczone możliwości w zakresie przypadkowego (lub celowego)
+uszkodzenia obiektu.
+
+- Pozwala umieścić proces w piaskownicy. Zwrot umieścić proces w piaskownicy (ang. process
+sandboxing) oznacza, że proces działa we własnym obszarze, w tzw. piaskownicy. Nie może
+uzyskać dostępu do innych procesów lub ich plików, o ile nie otrzyma specjalnych
+uprawnień. Obszary działalności procesów są nazywane „domenami”.
+
+- Pozwala przetestować funkcjonalność przed implementacją. Oferuje również tryb
+liberalny, który ummożliwia sprawdzenie, jaki efekt będzie miało zastosowanie
+technologii SELinux w systemie. W trybie liberalnym SELinux wciąż rejestruje wszelkie
+naruszenia reguł bezpieczeństwa (określane mianem AVC denials), ale im nie zapobiega.
+
+
+W przypadku **braku SELinux** przykładowy proces httpd może między innymi do :
+
+■ Uzyskać dostęp do dowolnego pliku lub katalogu na podstawie uprawnień odczytu, zapisu i wykonywalności nadanych określonemu właścicielowi elementu i grupie.   
+■ Przeprowadzić potencjalnie niebezpieczne operacje, takie jak zezwolenie na przekazanie plików bądź zmianę ograniczeń systemowych.  
+■ Nasłuchiwać żądań przychodzących na dowolnym porcie.  
+
+
+
 
 
 
