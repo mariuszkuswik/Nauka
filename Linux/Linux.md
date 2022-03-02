@@ -4938,7 +4938,7 @@ Selinux przypisuje procesowi dostęp na podstawie polityk, zgodnie z następują
 - Proces może uzyskać dostęp tylko do zasobów zawierających wyraźnie zdefiniowane etykiety.  
 - Potencjalnie niebezpieczna funkcjonalność, np. uprawnienie zapisu do katalogu, jest dostępna w postaci opcji boolowskiej, którą można włączyć lub wyłączyć.  
 
-SELinux nie jest zamiennikiem DAC, lecz dodatkową warstwą bezpieczeństwa.
+**SELinux nie jest zamiennikiem DAC, lecz dodatkową warstwą bezpieczeństwa.**
 - Reguły DAC są w użyciu, gdy stosowany jest mechanizm SELinux.
 - Najpierw są sprawdzane reguły DAC i jeśli dostęp jest dozwolony, dopiero wówczas są sprawdzane polityki SELinux.
 - Jeżeli reguły DAC nie zezwalają na dostęp, polityki SELinux nie zostaną sprawdzone.
