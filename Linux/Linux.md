@@ -1767,7 +1767,7 @@ https://unix.stackexchange.com/questions/341077/lvm-volume-group-what-are-extent
     ```  
   
 2. Sprawdzenie ile miejsca zajmuje filesystem   
-    ```bash
+    ```console
     df -h /mnt/mymusic/
     ```
   
@@ -1779,12 +1779,13 @@ https://unix.stackexchange.com/questions/341077/lvm-volume-group-what-are-extent
   
 4. Zmiana wielkości filesystemu (ext2/3/4) tak aby wypełniał całą wielkość woluminu   
 ### #TODO - sprawdzić w jaki sposób rozszerzyć filesystem xfs, domyślne na rhel, fsadm (najprawdopodobniej)
-    ```bash
+    
+    ```console
     resize2fs -p /dev/mapper/myvg0-music
     ```
   
 5. Sprawdzenie czy filesystem został powiększony   
-    ```bash
+    ```console
     df -h /mnt/mymusic/
     ```
 
