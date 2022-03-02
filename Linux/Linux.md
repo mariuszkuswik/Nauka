@@ -5062,6 +5062,19 @@ kontekstem bezpieczeństwa SELinux. Ten kontekst bezpieczeństwa (identyfikator)
 określany mianem etykiety bezpieczeństwa.
 
 
+Przypisanie kontekstu bezpieczeństwa dotyczy podmiotu (np. procesy i użytkownicy). Każdy
+kontekst bezpieczeństwa ma określoną nazwę. Ta nazwa będzie uzależniona od przypisanego
+obiektu lub podmiotu: pliki mają kontekst pliku, użytkownicy mają kontekst użytkownika,
+a procesy mają kontekst procesu, nazywany również domeną.
+
+Reguły pozwalające na uzyskanie dostępu są nazywane regułami dostępu lub regułami polityki.
+Reguła polityki to proces SELinux udzielający lub odmawiający dostępu do określonego typu
+bezpieczeństwa systemu. Jeżeli powrócimy do porównania SELinux ze strażnikiem, SELinux
+można uznać za strażnika, który musi zobaczyć kontekst bezpieczeństwa podmiotu (identyfikator)
+i przejrzeć reguły polityki (zajrzeć do podręcznika zawierającego te reguły), zanim udzieli lub
+odmówi dostępu do obiektu. Dlatego typ wymuszenia gwarantuje, że tylko określone „typy”
+podmiotów mogą uzyskać dostęp do określonych „typów” obiektów.
+
 
 
 
@@ -5075,7 +5088,7 @@ określany mianem etykiety bezpieczeństwa.
 ## Koniec Biblii
 
 ### Strona 639
-
+642
 
 
 [Spis treści](#spis-tre%C5%9Bci)
