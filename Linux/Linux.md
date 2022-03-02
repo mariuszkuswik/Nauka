@@ -1713,47 +1713,48 @@ https://unix.stackexchange.com/questions/341077/lvm-volume-group-what-are-extent
 **/dev/mapper** - ścieżka w której znajdują się *lvm*y 
 
 1. Nadanie flagi lvm w programie parted 
-    ```bash
-    # Odpalenie parted
-    parted /dev/sdb
+    ```console
+    ### Odpalenie parted
+    # parted /dev/sdb
 
-    # opcja set dla ustawienia nowej flagi 
-    set 
+    ### opcja set dla ustawienia nowej flagi 
+    # set 
 
-    # Pierwsza partycja 
-    1
+    ### Pierwsza partycja 
+    # 1
 
-    # Flaga lvm 
-    lvm
+    ### Flaga lvm 
+    # lvm
     ```
 
 2. Dodanie woluminu fizycznego 
-    ```bash
-    # pvcreate disk_name
+    ```console
+    ### pvcreate disk_name
     pvcreate /dev/sdb1
     ```
 
 3. Dodanie grupy woluminów na woluminie fizycznym 
-    ```bash
-    # vgcreate volume_group_name physical_volume_name
+    ```console
+    ### vgcreate volume_group_name physical_volume_name
     vgcreate myvg0 /dev/sdb1
     ```
 
 4. Dodanie woluminu logicznego o wybranej nazwie 
-    ```bash
-    # lvreate -n lvm_name --size size volume_group_name 
+    ```console
+    ### lvreate -n lvm_name --size size volume_group_name 
     lvcreate -n music --size 1G myvg0
     ```
 
 5. Potwierdzenie utworzenia woluminu logicznego
-    ```bash
-    # Wyświetlenie szczegółowych informacji o lvm ( w tym ścieżki )
-    lvdisplay
-    > LV Path /dev/myvg0/music
+    ```console
+    ### Wyświetlenie szczegółowych informacji o lvm ( w tym ścieżki )
+    # lvdisplay
+    
+    LV Path /dev/myvg0/music
     ```
 
 6. Utworzenie filesystemu na woluminie logicznym 
-    ```bash 
+    ```console 
     # mkfs.filesystem_name lvm_path
     mkfs.xfs /dev/myvg0/music
     ```
@@ -1762,7 +1763,7 @@ https://unix.stackexchange.com/questions/341077/lvm-volume-group-what-are-extent
 ### Powiększanie woluminów logicznych LVM
 
 1. Sprawdzenie dostępnego miejsca na woluminie   
-    ```bash
+    ```console
     vgs myvg0
     ```  
   
