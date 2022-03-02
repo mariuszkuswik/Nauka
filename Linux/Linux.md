@@ -1510,7 +1510,6 @@ Zdefiniowanie domyślnych uprawnień ACL dla katalogu pozwala na ich dziedziczen
 Do zdefiniowania domyślnych uprawnień ACL służy opcja ```d:```    
 
 - ```setfacl -m d:g:market:rwx /tmp/maria/``` - polecenie sprawia, że w folderze maria wszystkie uprawnienia dla grupy market będą dziedziczone  
-  
     ```console
     # getfacl /tmp/maria/  
     
