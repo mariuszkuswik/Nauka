@@ -4896,8 +4896,43 @@ Dopisac coś o tym jak można blokować systemy w fstabie
     
 
 
+### #TODO - do sformatowania
+
+```getenforce``` - sprawdzenie czy SELinux jest włączony     
+- ```enforcing or 1``` - włączony    
+- ```permissive or 0``` - zdarzenia są raportowane ale nic nie jest blokowane     
+- ```disabled``` - wyłączony     
 
 
+```/etc/sysconfig/selinux``` **zmiennna SELINUX=** - ustawienie stanu SELinux   
+
+
+Wyszukanie opcji boolowskich dla Samby 
+```semanage boolean -l | egrep "smb|samba"``` - wyświetlenie opcji boolowskich powiązanych z Sambą   
+
+
+- ```setsebool``` - służy do włączania i wyłączania opcji boolowskich SELinux  
+    - ```-P``` - zmiana jest stała   
+- ```getsebool "$zmienna"``` - wyświetla obecny status zmiennej  
+
+
+
+- ```setsebool -P samba_export_all_ro on``` - zezwolenie sambie na udostępnianie plików i folderów z uprawnieniami do odczytu, **zmiana będzie stała**    
+- ```getsebool samba_export_all_ro``` - wyświetlenie statusu zmiennej dla potwierdzenia zmiany      
+    ```console
+    # getsebool samba_export_all_ro
+    
+    samba_export_all_ro --> on  
+    ```
+	
+	
+	
+	
+	
+	- ```semanage fcontext``` - definjowanie reguły kontekstu pliku  
+- ```restorecon``` - zastosowanie reguł  
+
+### 
 
 ### #TODO - strona 639 - do przeredagowania
 
