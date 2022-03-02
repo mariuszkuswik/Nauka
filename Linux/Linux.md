@@ -4866,11 +4866,33 @@ Dopisac coś o tym jak można blokować systemy w fstabie
 
 [Spis treści](#spis-tre%C5%9Bci)
 
+### #TODO - strona 639 - do przeredagowania
+
+## Zalety SELinux 
+
+"Tradycyjny” mechanizm zapewnienia bezpieczeństwa w systemie Linux używa tzw. uznaniowej kontroli dostępu (ang. discretionary access control, DAC).    
+W przypadku **DAC** proces może uzyskać dostęp do dowolnego pliku, katalogu, urządzenia lub innego zasobu, który na to pozwala.   
+Natomiast w przypadku **RBAC** proces może uzyskać dostęp jedynie do wyraźnie wskazanych zasobów, na podstawie przypisanej mu roli.  
+
+
+Selinux przypisuje procesowi dostęp na podstawie polityk, zgodnie z następującymi regułami :  
+■ Proces może uzyskać dostęp tylko do zasobów zawierających wyraźnie zdefiniowane etykiety.  
+■ Potencjalnie niebezpieczna funkcjonalność, np. uprawnienie zapisu do katalogu, jest dostępna w postaci opcji boolowskiej, którą można włączyć lub wyłączyć.  
+
+
+
+## Sposób działania SELinux
+## Konfiguracja SELinux
+## Rozwiązywanie problemów związanych z SELinux
+## Informacje dodatkowe o SELinux
+
+
+
 
 ## Koniec Biblii
 
-### Strona 581
-639
+### Strona 639
+
 
 
 [Spis treści](#spis-tre%C5%9Bci)
