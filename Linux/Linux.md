@@ -5217,4 +5217,4 @@ Najważniejsza część systemów operacyjnych z rodziny Linux / Unix. Pierwsze 
 
 
 
-[Idz na górę](#linuxbash) 
+[Spis treści](#spis-tre%C5%9Bci) 
