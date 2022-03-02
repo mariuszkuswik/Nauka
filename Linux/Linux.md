@@ -4942,24 +4942,18 @@ SELinux nie jest zamiennikiem DAC, lecz dodatkową warstwą bezpieczeństwa.
 - Reguły DAC są w użyciu, gdy stosowany jest mechanizm SELinux.
 - Najpierw są sprawdzane reguły DAC i jeśli dostęp jest dozwolony, dopiero wówczas są sprawdzane polityki SELinux.
 - Jeżeli reguły DAC nie zezwalają na dostęp, polityki SELinux nie zostaną sprawdzone.
-
-
-
-
-Jeżeli użytkownik spróbuje wykonać plik, dla którego nie ma uprawnień wykonywania (rw-),
-wtedy „tradycyjna” kontrola DAC odmówi dostępu. Dlatego w takim przypadku polityki
-SELinux nie zostaną sprawdzone.
+    
+    
+Jeżeli użytkownik spróbuje wykonać plik, dla którego nie ma uprawnień wykonywania (rw-), wtedy „tradycyjna” kontrola DAC odmówi dostępu. **Dlatego w takim przypadku polityki SELinux nie zostaną sprawdzone.**
 
 
 Zalety SELinux: 
-- Implementuje model kontroli dostępu RBAC, który jest uznawany za najsilniejszy.
 
-- Używa najmniejszych możliwych uprawnień podczas dostępu do podmiotu (np. użytkowników
-i procesów). Wyrażenie najmniejsze możliwe uprawnienia oznacza, że każdy podmiot
-otrzymuje ograniczony zestaw uprawnień, które są niezbędne do tego, aby mógł wykonać
-swoje zadanie. Dzięki zaimplementowaniu reguły najmniejszych możliwych uprawnień
-użytkownik lub proces ma ograniczone możliwości w zakresie przypadkowego (lub celowego)
-uszkodzenia obiektu.
+- Używa najmniejszych możliwych uprawnień podczas dostępu do podmiotu (np. użytkowników i procesów). Wyrażenie najmniejsze możliwe uprawnienia oznacza, że każdy podmiot otrzymuje ograniczony zestaw uprawnień, które są niezbędne. 
+
+
+
+
 
 - Pozwala umieścić proces w piaskownicy. Zwrot umieścić proces w piaskownicy (ang. process
 sandboxing) oznacza, że proces działa we własnym obszarze, w tzw. piaskownicy. Nie może
