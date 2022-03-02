@@ -1755,7 +1755,7 @@ https://unix.stackexchange.com/questions/341077/lvm-volume-group-what-are-extent
 
 6. Utworzenie filesystemu na woluminie logicznym 
     ```console 
-    # mkfs.filesystem_name lvm_path
+    ### mkfs.filesystem_name lvm_path
     mkfs.xfs /dev/myvg0/music
     ```
 
