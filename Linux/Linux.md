@@ -3290,7 +3290,7 @@ vsftpd włącza się jak każdą usługę systemd
 ```getenforce``` - sprawdzenie czy SELinux jest włączony     
 - ```enforcing or 1``` - włączony    
 - ```permissive or 0``` - zdarzenia są raportowane ale nic nie jest blokowane     
-- ```disabled``` - wyłączonu     
+- ```disabled``` - wyłączony     
 
 
 ```/etc/sysconfig/selinux``` **zmiennna SELINUX=** - ustawienie stanu SELinux   
@@ -4878,6 +4878,27 @@ Dopisac coś o tym jak można blokować systemy w fstabie
 
 [Spis treści](#spis-tre%C5%9Bci)
 
+### Włączenie SELinux
+
+#### NA EGZAMINIE NA SAM KONIEC SELINUX MUSI BYC ENABLED I W ENFORCING MODE!!!
+
+
+- ```getenforce``` - sprawdzenie czy SELinux jest włączony     
+    - ```enforcing or 1``` - włączony    
+    - ```permissive or 0``` - zdarzenia są raportowane ale nic nie jest blokowane     
+    - ```disabled``` - wyłączony  
+
+### Stałe włączenie SELinux
+
+- ```/etc/sysconfig/selinux``` - plik konfiguracyjny SELinux  
+    Zmienna SELinux decyduje o tym jaki stan będzie miał SELinux po reboocie
+    - ```SELINUX=permissive``` - ustawienie powoduje źe zdarzenia są notowane ale nic nie jest blokowane  
+    
+
+
+
+
+
 ### #TODO - strona 639 - do przeredagowania
 
 ## Zalety SELinux 
@@ -4937,6 +4958,14 @@ W przypadku **braku SELinux** przykładowy proces httpd może między innymi do 
 ■ Przeprowadzić potencjalnie niebezpieczne operacje, takie jak zezwolenie na przekazanie plików bądź zmianę ograniczeń systemowych.  
 ■ Nasłuchiwać żądań przychodzących na dowolnym porcie.  
 
+
+W przypadku systemu stosującego ograniczenia nakładane przez SELinux demon httpd jest znacznie
+bardziej kontrolowany. W omawianym przykładzie demon httpd będzie mógł nasłuchiwać jedynie
+na porcie dozwolonym przez SELinux. Ponadto SELinux uniemożliwi demonowi httpd uzyskanie
+dostępu do każdego pliku, dla którego nie został zdefiniowany odpowiedni kontekst bezpieczeństwa.
+Potencjalnie niebezpieczne operacje są w technologii SELinux wyłączone za pomocą opcji boolowskich.
+To wszystko w praktyce oznacza, że SELinux znacznie ogranicza ryzyko uzyskania dostępu do
+systemu przez złośliwie działający kod i ogólnie ogranicza jego aktywność w systemie Linux.
 
 
 
