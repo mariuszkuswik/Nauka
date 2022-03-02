@@ -4918,42 +4918,6 @@ Opisać !!!
 
 
 
-### #TODO - opisać jakoś sensownie sam SELinux, reszta do sformatowania
-
-###############
-
-```getenforce``` - sprawdzenie czy SELinux jest włączony     
-- ```enforcing or 1``` - włączony    
-- ```permissive or 0``` - zdarzenia są raportowane ale nic nie jest blokowane     
-- ```disabled``` - wyłączony     
-
-
-```/etc/sysconfig/selinux``` **zmiennna SELINUX=** - ustawienie stanu SELinux   
-
-
-Wyszukanie opcji boolowskich dla Samby 
-```semanage boolean -l | egrep "smb|samba"``` - wyświetlenie opcji boolowskich powiązanych z Sambą   
-
-
-- ```setsebool``` - służy do włączania i wyłączania opcji boolowskich SELinux  
-    - ```-P``` - zmiana jest stała   
-- ```getsebool "$zmienna"``` - wyświetla obecny status zmiennej  
-
-
-
-- ```setsebool -P samba_export_all_ro on``` - zezwolenie sambie na udostępnianie plików i folderów z uprawnieniami do odczytu, **zmiana będzie stała**    
-- ```getsebool samba_export_all_ro``` - wyświetlenie statusu zmiennej dla potwierdzenia zmiany      
-    ```console
-    # getsebool samba_export_all_ro
-    
-    samba_export_all_ro --> on  
-    ```
-	
-	- ```semanage fcontext``` - definjowanie reguły kontekstu pliku  
-- ```restorecon``` - zastosowanie reguł  
-
-###############
-
 
 
 
@@ -4962,39 +4926,25 @@ Wyszukanie opcji boolowskich dla Samby
 ## Zalety SELinux 
 
 
-SELinux to system z obowiązkową kontrolą dostępu (**MAC** - *Mandatory Access Control*), który realizuje politykę kontroli dostępu opartą na rolach (**RBAC** - *Role Based Access Control*) za pomocą domenowego systemu kontroli dostępu (**DTAC** - *Dynamically Typed Access Control*).    
-"Tradycyjny” mechanizm zapewnienia bezpieczeństwa w systemie Linux używa uznaniowej kontroli dostępu (**DAC** - *discretionary access control*).     
-
+**SELinux** zwiększa poziom bezpieczeństwa systemu Linux za pomocą dostępu na podstawie ról **RBAC** (*Role-based access control*) stosowanego dla podmiotów i obiektów (takich jak procesy i zasoby).   
+„Tradycyjny” mechanizm zapewnienia bezpieczeństwa w systemie Linux używa tzw. uznaniowej kontroli dostępu (**DAC** *discretionary access control*)  
+  
+       
 W przypadku **DAC** proces może uzyskać dostęp do dowolnego pliku, katalogu, urządzenia lub innego zasobu, który na to pozwala.   
 Natomiast w przypadku **RBAC** (*Role-based access control*) proces może uzyskać dostęp jedynie do wyraźnie wskazanych zasobów, na podstawie przypisanej mu roli.  
-
-Ideą SELinuksa jest odebranie procesom tych uprawnień, które nie są im potrzebne. Dzięki temu zniszczenia, jakie mogą zostać poczynione w razie włamania do systemu, będą znikome
-
-
-- MAC - Mandatory Access Control
-    - MAC jest to system obowiązkowej kontroli dostępu. W przeciwieństwie do DAC (Discretionary Access Control) - najczęściej stosowanego w Linuksie modelu kontroli dostępu nie pozwala on użytkownikowi decydować o prawach dostępu do obiektów i zabezpieczeniach. Zamiast tego są one definiowane odgórnie przez administratora. W przypadku SELinuksa są one zapisane w postaci reguł Policy.
-
-
-
-
-
+  
+    
 Selinux przypisuje procesowi dostęp na podstawie polityk, zgodnie z następującymi regułami :  
-■ Proces może uzyskać dostęp tylko do zasobów zawierających wyraźnie zdefiniowane etykiety.  
-■ Potencjalnie niebezpieczna funkcjonalność, np. uprawnienie zapisu do katalogu, jest dostępna w postaci opcji boolowskiej, którą można włączyć lub wyłączyć.  
+- Proces może uzyskać dostęp tylko do zasobów zawierających wyraźnie zdefiniowane etykiety.  
+- Potencjalnie niebezpieczna funkcjonalność, np. uprawnienie zapisu do katalogu, jest dostępna w postaci opcji boolowskiej, którą można włączyć lub wyłączyć.  
 
-Usługa, taka jak serwer WWW, zawierająca zdefiniowaną politykę SELinux jest często instalowana
-razem ze zbiorem określonych etykiet dla pewnych plików i katalogów. Dlatego proces, w ramach
-którego działa dany serwer, może odczytywać i zapisywać pliki znajdujące się jedynie w określonych
-katalogach. Jeżeli chcesz to zmienić, musisz dodać odpowiednie etykiety SELinux dla plików
-i katalogów, do których proces ma mieć dostęp.
+SELinux nie jest zamiennikiem DAC, lecz dodatkową warstwą bezpieczeństwa.
+- Reguły DAC są w użyciu, gdy stosowany jest mechanizm SELinux.
+- Najpierw są sprawdzane reguły DAC i jeśli dostęp jest dozwolony, dopiero wówczas są sprawdzane polityki SELinux.
+- Jeżeli reguły DAC nie zezwalają na dostęp, polityki SELinux nie zostaną sprawdzone.
 
 
-Trzeba wyraźnie powiedzieć, że SELinux nie jest zamiennikiem DAC, lecz dodatkową warstwą
-bezpieczeństwa.
-■ Reguły DAC są w użyciu, gdy stosowany jest mechanizm SELinux.
-■ Najpierw są sprawdzane reguły DAC i jeśli dostęp jest dozwolony, dopiero wówczas są
-sprawdzane polityki SELinux.
-■ Jeżeli reguły DAC nie zezwalają na dostęp, polityki SELinux nie zostaną sprawdzone.
+
 
 Jeżeli użytkownik spróbuje wykonać plik, dla którego nie ma uprawnień wykonywania (rw-),
 wtedy „tradycyjna” kontrola DAC odmówi dostępu. Dlatego w takim przypadku polityki
@@ -5056,6 +5006,16 @@ systemu za pomocą następujących metod:
 
 ### #TODO - dopisać z notatek od chlebika na temat wyświetlania portów SELinux itd 
 
+
+
+
+
+### Przemyśleć 
+- MAC - Mandatory Access Control
+    - MAC jest to system obowiązkowej kontroli dostępu. W przeciwieństwie do DAC (Discretionary Access Control) - najczęściej stosowanego w Linuksie modelu kontroli dostępu nie pozwala on użytkownikowi decydować o prawach dostępu do obiektów i zabezpieczeniach. Zamiast tego są one definiowane odgórnie przez administratora. W przypadku SELinuksa są one zapisane w postaci reguł Policy.
+
+
+
 ```ls -lZ``` - wyświetlenie uprawnień SELinux
 
 ```console
@@ -5089,6 +5049,44 @@ można uznać za strażnika, który musi zobaczyć kontekst bezpieczeństwa podm
 i przejrzeć reguły polityki (zajrzeć do podręcznika zawierającego te reguły), zanim udzieli lub
 odmówi dostępu do obiektu. Dlatego typ wymuszenia gwarantuje, że tylko określone „typy”
 podmiotów mogą uzyskać dostęp do określonych „typów” obiektów.
+
+
+
+### #TODO - opisać jakoś sensownie sam SELinux, reszta do sformatowania
+
+###############
+
+```getenforce``` - sprawdzenie czy SELinux jest włączony     
+- ```enforcing or 1``` - włączony    
+- ```permissive or 0``` - zdarzenia są raportowane ale nic nie jest blokowane     
+- ```disabled``` - wyłączony     
+
+
+```/etc/sysconfig/selinux``` **zmiennna SELINUX=** - ustawienie stanu SELinux   
+
+
+Wyszukanie opcji boolowskich dla Samby 
+```semanage boolean -l | egrep "smb|samba"``` - wyświetlenie opcji boolowskich powiązanych z Sambą   
+
+
+- ```setsebool``` - służy do włączania i wyłączania opcji boolowskich SELinux  
+    - ```-P``` - zmiana jest stała   
+- ```getsebool "$zmienna"``` - wyświetla obecny status zmiennej  
+
+
+
+- ```setsebool -P samba_export_all_ro on``` - zezwolenie sambie na udostępnianie plików i folderów z uprawnieniami do odczytu, **zmiana będzie stała**    
+- ```getsebool samba_export_all_ro``` - wyświetlenie statusu zmiennej dla potwierdzenia zmiany      
+    ```console
+    # getsebool samba_export_all_ro
+    
+    samba_export_all_ro --> on  
+    ```
+	
+	- ```semanage fcontext``` - definjowanie reguły kontekstu pliku  
+- ```restorecon``` - zastosowanie reguł  
+
+###############
 
 
 
