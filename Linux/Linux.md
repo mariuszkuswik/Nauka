@@ -30,6 +30,7 @@
         - [Partycjonowanie dysku twardego](#Partycjonowanie-dysku-twardego)
         - [LVM - Używanie menedżera partycji](#LVM---Używanie-menedżera-partycji)
             - [Tworzenie woluminów logicznych LVM](#tworzenie-woluminów-logicznych-lvm)
+            - [Powiększanie woluminów logicznych LVM](#Powiększanie-woluminów-logicznych-LVM)
     - [Kompresja](#Kompresja)
         - [tar](#tar)
     - [Administracja systemem linux](#administracja-systemem-linux)
@@ -1787,6 +1788,7 @@ https://unix.stackexchange.com/questions/341077/lvm-volume-group-what-are-extent
     df -h /mnt/mymusic/
     ```
 
+### #TODO - dodać zmniejszanie wolumniów LVM
 
 ## Montowanie systemów plików
 
@@ -4882,21 +4884,35 @@ Dopisac coś o tym jak można blokować systemy w fstabie
 
 #### NA EGZAMINIE NA SAM KONIEC SELINUX MUSI BYC ENABLED I W ENFORCING MODE!!!
 
+Opisać !!!     
+- Element
+- Policy 
+- Source domain
+- Target domain 
+- Context 
+- Rule 
+- Labels 
 
 - ```getenforce``` - sprawdzenie czy SELinux jest włączony     
     - ```enforcing or 1``` - włączony    
     - ```permissive or 0``` - zdarzenia są raportowane ale nic nie jest blokowane     
     - ```disabled``` - wyłączony  
 
+**System można uruchomić w różnych trybach ale aby je zmienić należy zrebootować system !**
+
+
 ### Stałe włączenie SELinux
 
 - ```/etc/sysconfig/selinux``` - plik konfiguracyjny SELinux  
     Zmienna SELinux decyduje o tym jaki stan będzie miał SELinux po reboocie
     - ```SELINUX=permissive``` - ustawienie powoduje źe zdarzenia są notowane ale nic nie jest blokowane  
-    
 
 
-### #TODO - do sformatowania
+
+
+### #TODO - opisać jakoś sensownie sam SELinux, reszta do sformatowania
+
+###############
 
 ```getenforce``` - sprawdzenie czy SELinux jest włączony     
 - ```enforcing or 1``` - włączony    
@@ -4925,14 +4941,13 @@ Wyszukanie opcji boolowskich dla Samby
     samba_export_all_ro --> on  
     ```
 	
-	
-	
-	
-	
 	- ```semanage fcontext``` - definjowanie reguły kontekstu pliku  
 - ```restorecon``` - zastosowanie reguł  
 
-### 
+###############
+
+
+
 
 ### #TODO - strona 639 - do przeredagowania
 
@@ -5003,10 +5018,23 @@ To wszystko w praktyce oznacza, że SELinux znacznie ogranicza ryzyko uzyskania 
 systemu przez złośliwie działający kod i ogólnie ogranicza jego aktywność w systemie Linux.
 
 
-
-
-
 ## Sposób działania SELinux
+
+#### Tryb wymuszenia
+
+SELinux działa i wymusza wszystkie reguły 
+
+Tryb wymuszenia jest niezbędny do implementacji modelu RBAC. Zapewnia bezpieczeństwo
+systemu za pomocą następujących metod:  
+  
+    ■ Oznaczanie obiektów jako określonych typów bezpieczeństwa.  
+    ■ Przypisywanie podmiotów do określonych domen i ról.  
+    ■ Dostarczanie reguł pozwalających określonym domenom i rolom uzyskać dostępdo konkretnych typów obiektów.
+
+
+
+
+
 ## Konfiguracja SELinux
 ## Rozwiązywanie problemów związanych z SELinux
 ## Informacje dodatkowe o SELinux
