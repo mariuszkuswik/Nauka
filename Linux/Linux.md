@@ -5036,6 +5036,31 @@ systemu za pomocą następujących metod:
     ■ Przypisywanie podmiotów do określonych domen i ról.  
     ■ Dostarczanie reguł pozwalających określonym domenom i rolom uzyskać dostępdo konkretnych typów obiektów.
 
+### wyświetlenie kontekstu pliku 
+
+
+### #TODO - dopisać z notatek od chlebika na temat wyświetlania portów SELinux itd 
+
+```ls -lZ``` - wyświetlenie uprawnień SELinux
+
+```console
+# ls -lZ
+
+-rw-rw-r--. jkowalski jkowalski unconfined_u:object_r:user_home_t:s0... my_stuff
+```
+
+Polecenie ls -Z powoduje wyświetlenie czterech elementów dotyczących pliku powiązanych z mechanizmem SELinux:
+użytkownik (unconfined_u),
+rola (object_r),
+typ (user_home_t),
+poziom (s0).
+
+
+Te cztery elementy RBAC (użytkownik, rola, typ i poziom) są używane w kontroli dostępu
+SELinux do określenia odpowiednich poziomów dostępu. Wszystkie razem są nazywane
+kontekstem bezpieczeństwa SELinux. Ten kontekst bezpieczeństwa (identyfikator) jest czasami
+określany mianem etykiety bezpieczeństwa.
+
 
 
 
