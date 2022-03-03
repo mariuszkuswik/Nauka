@@ -4885,10 +4885,8 @@ Dopisac coś o tym jak można blokować systemy w fstabie
 
 [Spis treści](#spis-tre%C5%9Bci)
 
+
 ### Włączenie SELinux
-
-
-
 
 #### NA EGZAMINIE NA SAM KONIEC SELINUX MUSI BYC ENABLED I W ENFORCING MODE!!!
 
@@ -4916,12 +4914,6 @@ Opisać !!!
     - ```SELINUX=permissive``` - ustawienie powoduje źe zdarzenia są notowane ale nic nie jest blokowane  
 
 
-
-
-
-
-
-### #TODO - strona 639 - do przeredagowania
 
 ## Zalety SELinux 
 
@@ -4973,9 +4965,16 @@ W przypadku systemu **stosującego SELinux** demon httpd jest znacznie bardziej 
 
 
 
-## Sposób działania SELinux
 
-#### Tryb wymuszenia
+
+## Sposób działania SELinux
+### wyświetlenie kontekstu pliku 
+
+
+### #TODO - dopisać z notatek od chlebika na temat wyświetlania portów SELinux itd 
+
+
+#### Enforcement - Tryb wymuszenia
 
 SELinux działa i wymusza wszystkie reguły 
 
@@ -4986,28 +4985,21 @@ systemu za pomocą następujących metod:
     ■ Przypisywanie podmiotów do określonych domen i ról.  
     ■ Dostarczanie reguł pozwalających określonym domenom i rolom uzyskać dostępdo konkretnych typów obiektów.
 
-### wyświetlenie kontekstu pliku 
-
-
-### #TODO - dopisać z notatek od chlebika na temat wyświetlania portów SELinux itd 
-
-
-
-
-
-### Przemyśleć 
-- MAC - Mandatory Access Control
-    - MAC jest to system obowiązkowej kontroli dostępu. W przeciwieństwie do DAC (Discretionary Access Control) - najczęściej stosowanego w Linuksie modelu kontroli dostępu nie pozwala on użytkownikowi decydować o prawach dostępu do obiektów i zabezpieczeniach. Zamiast tego są one definiowane odgórnie przez administratora. W przypadku SELinuksa są one zapisane w postaci reguł Policy.
-
-
-
-```ls -lZ``` - wyświetlenie uprawnień SELinux
+**Standardowe informacje DAC**:  
 
 ```console
-# ls -lZ
+$ls -l my_stuff
+
+-rw-rw-r--. 1 jkowalski jkowalski 0 Feb 12 06:57 my_stuff
+```
+
+
+```console
+$ ls -lZ my_stuff
 
 -rw-rw-r--. jkowalski jkowalski unconfined_u:object_r:user_home_t:s0... my_stuff
 ```
+
 
 Polecenie ls -Z powoduje wyświetlenie czterech elementów dotyczących pliku powiązanych z mechanizmem SELinux:
 użytkownik (unconfined_u),
@@ -5085,7 +5077,7 @@ Wyszukanie opcji boolowskich dla Samby
 
 ## Koniec Biblii
 
-### Strona 639
+### Strona 642
 642
 
 
