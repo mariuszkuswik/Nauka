@@ -5012,16 +5012,10 @@ Ta nazwa będzie uzależniona od przypisanego obiektu lub podmiotu:
 - użytkownicy - *kontekst użytkownika*,
 - procesy - *kontekst procesu*, nazywany również *domeną*.
 
-typ wymuszenia gwarantuje, że tylko określone „typy” podmiotów mogą uzyskać dostęp do określonych „typów” obiektów.
-
-
-### Bezpieczeństwo wielopoziomowe
-
-### Implementacja modelu bezpieczeństwa SELinux
 
 ### Tryby działania SELinux
 
-Mechanizm SELinux jest dostarczany razem z trzema trybami działania:  enforcing, permissive i disabled.
+Mechanizm SELinux jest dostarczany razem z trzema trybami działania: 
 
 - **enforcing** - Tryb wymuszenia - SELinux jest włączony, a **wszystkie reguły polityki bezpieczeństwa muszą być spełnione**.
 
@@ -5030,6 +5024,44 @@ Mechanizm SELinux jest dostarczany razem z trzema trybami działania:  enforcing
 - **disabled** - Tryb wyłączony - Używana jest **tylko uznaniowa kontrola dostępu (*DAC*)**.  
 Jeżeli istnieje taka możliwość, Red Hat zaleca użycie trybu liberalnego dla SELinux zamiast całkowitego wyłączania tego mechanizmu bezpieczeństwa.  
 
+
+### Kontekst bezpieczeństwa mechanizmu SELinux
+
+Jak wcześniej wspomniałem, kontekst bezpieczeństwa SELinux to metoda używana do
+klasyfikacji obiektów (takich jak pliki) i podmiotów (takich jak użytkownicy i programy).
+Zdefiniowany kontekst bezpieczeństwa pozwala również SELinux na wymuszanie reguł
+c528defda93e9420916cfa7705790125R O Z D Z I AŁ 2 4 . Zwiększenie bezpieczeństwa systemu Linux za pomocą SELinux 645
+24
+polityki dotyczących uzyskiwania przez podmioty dostępu do obiektów. Kontekst
+bezpieczeństwa składa się z czterech atrybutów: użytkownika, roli, typu i poziomu.
+Użytkownik. Ten atrybut zapewnia mapowanie między nazwą użytkownika systemu Linux
+i nazwą mechanizmu SELinux. Wartością tego atrybutu nie jest nazwa logowania
+użytkownika, lecz jest wykorzystywana specjalnie jako nazwa użytkownika SELinux.
+Na jej końcu znajduje się litera u, która ułatwia odszukanie tej nazwy w danych
+wyjściowych. Zwykli, nieograniczeni użytkownicy mają w domyślnej polityce docelowej
+atrybut unconfined_u.
+Rola. Rola wyznaczona w organizacji jest mapowana na nazwę roli SELinux. Następnie
+atrybut ten jest przypisywany różnym podmiotom i obiektom. Każda rola ma zapewniony
+dostęp do innych podmiotów i obiektów na podstawie poświadczenia bezpieczeństwa
+i poziomu klasyfikacji obiektu. W przypadku SELinux użytkownikom są przypisywane
+role, które są autoryzowane dla określonych typów lub domen. Za pomocą roli można
+wymuszać, aby konta takie jak root znajdowały się w mniej uprzywilejowanym położeniu.
+Nazwa roli SELinux ma na końcu literę r. W docelowym systemie Linux proces uruchamiany
+przez użytkownika root ma rolę system_r, podczas gdy zwykły użytkownik ma przypisaną
+rolę unconfined_r.
+Typ. Ten atrybut definiuje typ domeny dla procesu, typ użytkownika dla użytkownika
+i typ pliku dla pliku. Zdarza się również, że ten typ jest nazywany typem bezpieczeństwa.
+Większość reguł polityki jest związanych z typem bezpieczeństwa procesu oraz z tym,
+do jakich plików, portów, urządzeń i innych elementów systemu ma dostęp dany proces
+(na podstawie typu bezpieczeństwa). Nazwa typu SELinux kończy się na literę t.
+Poziom. Ten atrybut jest stosowany w bezpieczeństwie wielopoziomowym (MLS) i wymusza
+stosowanie modelu Bell-LaPadula. Jest opcjonalny w trybie wymuszenia, ale wymagany,
+jeśli używasz MLS.
+Poziom MLS to połączenie wartości wrażliwości i kategorii, które razem tworzą dany
+poziom bezpieczeństwa, zapisywany później w postaci wrażliwość : kategoria.
+
+
+### strona 644
 
 
 
