@@ -4993,31 +4993,30 @@ $ls -l my_stuff
 -rw-rw-r--. 1 jkowalski jkowalski 0 Feb 12 06:57 my_stuff
 ```
 
-
+**Wyświetlenie polityki SELinux dla pliku mystuff**:
 ```console
 $ ls -lZ my_stuff
 
 -rw-rw-r--. jkowalski jkowalski unconfined_u:object_r:user_home_t:s0... my_stuff
 ```
 
+```ls -Z``` - powoduje wyświetlenie elementów dotyczących pliku powiązanych z mechanizmem SELinux:
 
-Polecenie ls -Z powoduje wyświetlenie czterech elementów dotyczących pliku powiązanych z mechanizmem SELinux:
-użytkownik (unconfined_u),
-rola (object_r),
-typ (user_home_t),
-poziom (s0).
+- **użytkownik** (unconfined_u),  
+- **rola** (object_r)  
+- **typ** (user_home_t)  
+- **poziom** (s0)  
 
+Wszystkie te elementy razem są nazywane **kontekstem bezpieczeństwa**, ten kontekst bezpieczeństwa (identyfikator) jest czasami określany mianem **etykiety bezpieczeństwa**.  
 
-Te cztery elementy RBAC (użytkownik, rola, typ i poziom) są używane w kontroli dostępu
-SELinux do określenia odpowiednich poziomów dostępu. Wszystkie razem są nazywane
-kontekstem bezpieczeństwa SELinux. Ten kontekst bezpieczeństwa (identyfikator) jest czasami
-określany mianem etykiety bezpieczeństwa.
+Przypisanie kontekstu bezpieczeństwa dotyczy **podmiotu** (np. *procesy i użytkownicy*).
 
+Każdy kontekst bezpieczeństwa ma określoną nazwę.   
+Ta nazwa będzie uzależniona od przypisanegoobiektu lub podmiotu:   
+- pliki - *kontekst pliku*, 
+- użytkownicy - *kontekst użytkownika*,
+- procesy - *kontekst procesu*, nazywany również *domeną*.
 
-Przypisanie kontekstu bezpieczeństwa dotyczy podmiotu (np. procesy i użytkownicy). Każdy
-kontekst bezpieczeństwa ma określoną nazwę. Ta nazwa będzie uzależniona od przypisanego
-obiektu lub podmiotu: pliki mają kontekst pliku, użytkownicy mają kontekst użytkownika,
-a procesy mają kontekst procesu, nazywany również domeną.
 
 Reguły pozwalające na uzyskanie dostępu są nazywane regułami dostępu lub regułami polityki.
 Reguła polityki to proces SELinux udzielający lub odmawiający dostępu do określonego typu
