@@ -4949,7 +4949,7 @@ Jeżeli użytkownik spróbuje wykonać plik, dla którego nie ma uprawnień wyko
 
 Zalety SELinux: 
 
-- Używa najmniejszych możliwych uprawnień podczas dostępu do podmiotu (np. użytkowników i procesów). Wyrażenie najmniejsze możliwe uprawnienia oznacza, że każdy podmiot otrzymuje ograniczony zestaw uprawnień, które są niezbędne. 
+- Używa najmniejszych możliwych uprawnień podczas dostępu do podmiotu (np. użytkowników i procesów), każdy podmiot otrzymuje ograniczony zestaw uprawnień, które są niezbędne. 
 
 - Proces nie może uzyskać dostępu do innych procesów lub ich plików, o ile nie otrzyma specjalnych uprawnień. Obszary działalności procesów są nazywane „domenami”.
 
