@@ -5148,6 +5148,11 @@ Kontekst bezpieczeństwa tego procesu przedstawia się następująco:
     - Kategorie. Ten użytkownik ma dostęp do c0.c1023, czyli wszystkich kategorii (od c0 do c1023).
 
 
+### Typy polityki SELinux
+
+
+
+
 
 
 
@@ -5203,7 +5208,7 @@ Wyszukanie opcji boolowskich dla Samby
 ## Koniec Biblii
 
 ### Strona 642
-644
+647
 
 
 [Spis treści](#spis-tre%C5%9Bci)
