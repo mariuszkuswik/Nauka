@@ -4974,7 +4974,7 @@ W przypadku systemu **stosującego SELinux** demon httpd jest znacznie bardziej 
 ### #TODO - dopisać z notatek od chlebika na temat wyświetlania portów SELinux itd 
 
 
-#### Enforcement - Tryb wymuszenia
+### Enforcement - Tryb wymuszenia
 
 SELinux działa i wymusza wszystkie reguły 
 
