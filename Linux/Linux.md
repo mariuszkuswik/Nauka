@@ -4959,19 +4959,18 @@ naruszenia reguł bezpieczeństwa (określane mianem AVC denials), ale im nie za
 
 W przypadku **braku SELinux** przykładowy proces httpd może między innymi do :
 
+- Uzyskać dostęp do dowolnego pliku lub katalogu na podstawie uprawnień odczytu, zapisu i wykonywalności nadanych określonemu właścicielowi elementu i grupie.   
+- Przeprowadzić potencjalnie niebezpieczne operacje, takie jak zezwolenie na przekazanie plików bądź zmianę ograniczeń systemowych.  
+- Nasłuchiwać żądań przychodzących na dowolnym porcie.  
 
-■ Uzyskać dostęp do dowolnego pliku lub katalogu na podstawie uprawnień odczytu, zapisu i wykonywalności nadanych określonemu właścicielowi elementu i grupie.   
-■ Przeprowadzić potencjalnie niebezpieczne operacje, takie jak zezwolenie na przekazanie plików bądź zmianę ograniczeń systemowych.  
-■ Nasłuchiwać żądań przychodzących na dowolnym porcie.  
 
 
-W przypadku systemu stosującego ograniczenia nakładane przez SELinux demon httpd jest znacznie
-bardziej kontrolowany. W omawianym przykładzie demon httpd będzie mógł nasłuchiwać jedynie
-na porcie dozwolonym przez SELinux. Ponadto SELinux uniemożliwi demonowi httpd uzyskanie
-dostępu do każdego pliku, dla którego nie został zdefiniowany odpowiedni kontekst bezpieczeństwa.
-Potencjalnie niebezpieczne operacje są w technologii SELinux wyłączone za pomocą opcji boolowskich.
-To wszystko w praktyce oznacza, że SELinux znacznie ogranicza ryzyko uzyskania dostępu do
-systemu przez złośliwie działający kod i ogólnie ogranicza jego aktywność w systemie Linux.
+W przypadku systemu **stosującego SELinux** demon httpd jest znacznie bardziej kontrolowany
+
+- SELinux uniemożliwi demonowi httpd uzyskanie dostępu do każdego pliku, dla którego nie został zdefiniowany odpowiedni kontekst bezpieczeństwa.
+- Potencjalnie niebezpieczne operacje są w technologii SELinux wyłączone za pomocą opcji boolowskich.
+- Demon httpd będzie mógł nasłuchiwać jedynie na porcie dozwolonym przez SELinux. 
+
 
 
 ## Sposób działania SELinux
