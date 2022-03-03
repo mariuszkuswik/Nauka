@@ -5115,7 +5115,7 @@ Kontekst bezpieczeństwa tego pliku przedstawia się następująco:
 
 #### Proces ma kontekst bezpieczeństwa
 
-Standardowe wyświetlenie informacji o procesach (używanie ```ps aux``` jest niezalecane) 
+- Standardowe wyświetlenie informacji o procesach (używanie **ps aux jest niezalecane**):  
 
 ```console
 ### -e - wszystkie procesy
@@ -5127,13 +5127,11 @@ Standardowe wyświetlenie informacji o procesach (używanie ```ps aux``` jest ni
 4 S 0 5350 5342 0 80 0 - 1684 wait pts/1 00:00:00 bash
 ```
 
-
-Jeżeli chcesz wyświetlić informacje o kontekście bezpieczeństwa procesu, musisz wydać
-polecenie ps wraz z opcją -Z. W tym przykładzie dane wyjściowe polecenia ps -eZ zostały
-potokowane do polecenia grep, które wyszukuje jedynie procesy działające w powłoce:
+- Wyświetlenie kontekstu bezpieczeństwa procesu:  
 
 ```console
 ### -Z - wyświetlenie kontekstu procesu 
+### grep wyszukuje tylko procesy otwarte w powłoce
 # ps -eZ | grep bash
 
 unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 1589 pts/0 00:00:00 bash
@@ -5141,19 +5139,15 @@ unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 5289 pts/1 00:00:00 bash
 unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 5350 pts/1 00:00:00 bash
 ```
 
-
 Kontekst bezpieczeństwa tego procesu przedstawia się następująco:
-Użytkownik. Ten proces jest mapowany na użytkownika SELinux unconfined_u.
-Rola. Ten proces działa w roli unconfined_r.
-Typ. Ten proces działa w domenie unconfined_t.
-Poziom.
-Wrażliwość. Ten użytkownik ma tylko jeden poziom wrażliwości — najniższy, s0.
-Kategorie. Ten użytkownik ma dostęp do c0.c1023, czyli wszystkich kategorii
-(od c0 do c1023).
-Wszystkie konteksty bezpieczeństwa można zmienić, aby spełnić określone wymagania
-organizacji w zakresie zapewnienia bezpieczeństwa. Jednak zanim dowiesz się, jak można
-zmieniać ustawienia kontekstów bezpieczeństwa, musisz poznać jeszcze jeden komponent
-SELinux, czyli typy polityki SELinux.
+- Użytkownik. Ten proces jest mapowany na użytkownika SELinux unconfined_u.
+- Rola. Ten proces działa w roli unconfined_r.
+- Typ. Ten proces działa w domenie unconfined_t.
+- Poziom.
+    - Wrażliwość. Ten użytkownik ma tylko jeden poziom wrażliwości — najniższy, s0.
+    - Kategorie. Ten użytkownik ma dostęp do c0.c1023, czyli wszystkich kategorii (od c0 do c1023).
+
+
 
 
 
