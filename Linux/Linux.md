@@ -4966,10 +4966,7 @@ W przypadku systemu **stosującego SELinux** demon httpd jest znacznie bardziej 
 
 
 
-
 ## Sposób działania SELinux
-### wyświetlenie kontekstu pliku 
-
 
 ### #TODO - dopisać z notatek od chlebika na temat wyświetlania portów SELinux itd 
 
@@ -4978,12 +4975,11 @@ W przypadku systemu **stosującego SELinux** demon httpd jest znacznie bardziej 
 
 SELinux działa i wymusza wszystkie reguły 
 
-Tryb wymuszenia jest niezbędny do implementacji modelu RBAC. Zapewnia bezpieczeństwo
-systemu za pomocą następujących metod:  
-  
-    ■ Oznaczanie obiektów jako określonych typów bezpieczeństwa.  
-    ■ Przypisywanie podmiotów do określonych domen i ról.  
-    ■ Dostarczanie reguł pozwalających określonym domenom i rolom uzyskać dostępdo konkretnych typów obiektów.
+Tryb wymuszenia jest niezbędny do implementacji modelu **RBAC**.  
+Zapewnia bezpieczeństwo systemu za pomocą następujących metod:  
+- Oznaczanie obiektów jako określonych typów bezpieczeństwa.  
+- Przypisywanie podmiotów do określonych domen i ról.  
+- Dostarczanie reguł pozwalających określonym domenom i rolom uzyskać dostępdo konkretnych typów obiektów.  
 
 **Standardowe informacje DAC**:  
 
