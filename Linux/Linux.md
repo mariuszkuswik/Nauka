@@ -5065,10 +5065,21 @@ poziom bezpieczeństwa, zapisywany później w postaci wrażliwość : kategoria
 
 ### Strona 646
 
+### Wyświetlanie kontekstu  
+
+Generalnie zazwyczaj chcąc poznać kontekst bezpieczeństwa dodajemy opcję -Z, 
+
+np. 
+```console
+ps -elZ
+id -Z
+ls -lZ
+```
+
 #### Użytkownik ma kontekst bezpieczeństwa
 
-Aby poznać kontekst użytkownika SELinux, z poziomu powłoki wydaj polecenie id.
-Oto przykład tego polecenia dla użytkownika jkowalski:
+
+Wyświetlenie kontekstu dla obecnego użytkownika :
 
 ```console
 $ id
