@@ -4968,7 +4968,6 @@ W przypadku systemu **stosującego SELinux** demon httpd jest znacznie bardziej 
 
 ## Sposób działania SELinux
 
-### #TODO - dopisać z notatek od chlebika na temat wyświetlania portów SELinux itd 
 
 
 ### Enforcing - Tryb wymuszenia
@@ -5024,22 +5023,22 @@ typ wymuszenia gwarantuje, że tylko określone „typy” podmiotów mogą uzys
 
 Mechanizm SELinux jest dostarczany razem z trzema trybami działania:  enforcing, permissive i disabled.
 
-- **Disabled** - Tryb wyłączony - Używana jest tylko uznaniowa kontrola dostępu (*DAC*).  
+- **enforcing** - Tryb wymuszenia - SELinux jest włączony, a **wszystkie reguły polityki bezpieczeństwa muszą być spełnione**.
+
+- **permissive** - Tryb liberalny - SELinux jest włączony, ale **nie wymusza stosowania reguł polityki**. Dlatego nawet gdy reguła polityki wskazuje na odmowę dostępu, dostęp do danego obiektu jest zapewniony. Natomiast **w dzienniku zdarzeń zostaje umieszczony komunikat** informujący, że dostęp do danego obiektu powinien być zabroniony.
+
+- **disabled** - Tryb wyłączony - Używana jest **tylko uznaniowa kontrola dostępu (*DAC*)**.  
 Jeżeli istnieje taka możliwość, Red Hat zaleca użycie trybu liberalnego dla SELinux zamiast całkowitego wyłączania tego mechanizmu bezpieczeństwa.  
 
 
 
 
-
-Tryb wymuszenia
-Nazwa tego trybu mówi sama za siebie. W trybie wymuszenia mechanizm SELinux jest
-włączony, a wszystkie reguły polityki bezpieczeństwa muszą być spełnione.
-
-
+###############
 
 ### #TODO - opisać jakoś sensownie sam SELinux, reszta do sformatowania
 
-###############
+### #TODO - dopisać z notatek od chlebika na temat wyświetlania portów SELinux itd 
+
 
 ```getenforce``` - sprawdzenie czy SELinux jest włączony     
 - ```enforcing or 1``` - włączony    
