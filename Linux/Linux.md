@@ -4953,15 +4953,12 @@ Zalety SELinux:
 
 - Proces nie może uzyskać dostępu do innych procesów lub ich plików, o ile nie otrzyma specjalnych uprawnień. Obszary działalności procesów są nazywane „domenami”.
 
-
-
-- Pozwala przetestować funkcjonalność przed implementacją. Oferuje tryb liberalny (permissive ? ### #TODO - sprawdzić pisownię), który ummożliwia sprawdzenie, jaki efekt będzie miało zastosowanie SELinux. W trybie liberalnym SELinux wciąż rejestruje wszelkie
+- Pozwala przetestować funkcjonalność przed implementacją, oferuje tryb liberalny (**permissive**), który ummożliwia sprawdzenie, jaki efekt będzie miało zastosowanie SELinux. W trybie *permissive* SELinux wciąż rejestruje wszelkie
 naruszenia reguł bezpieczeństwa (określane mianem AVC denials), ale im nie zapobiega.
 
 
-
-
 W przypadku **braku SELinux** przykładowy proces httpd może między innymi do :
+
 
 ■ Uzyskać dostęp do dowolnego pliku lub katalogu na podstawie uprawnień odczytu, zapisu i wykonywalności nadanych określonemu właścicielowi elementu i grupie.   
 ■ Przeprowadzić potencjalnie niebezpieczne operacje, takie jak zezwolenie na przekazanie plików bądź zmianę ograniczeń systemowych.  
