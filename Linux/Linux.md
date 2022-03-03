@@ -5061,7 +5061,54 @@ Poziom MLS to połączenie wartości wrażliwości i kategorii, które razem two
 poziom bezpieczeństwa, zapisywany później w postaci wrażliwość : kategoria.
 
 
-### strona 644
+### Strona 646
+
+#### Użytkownik ma kontekst bezpieczeństwa
+
+Aby poznać kontekst użytkownika SELinux, z poziomu powłoki wydaj polecenie id.
+Oto przykład tego polecenia dla użytkownika jkowalski:
+
+```console
+$ id
+
+uid=1000(jkowalski) gid=1000(jkowalski) groups=1000(jkowalski)
+context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+```
+
+
+Kontekst bezpieczeństwa tego użytkownika przedstawia się następująco:
+
+- Użytkownik. Nazwa użytkownika jkowalski w systemie Linux jest mapowana
+na użytkownika SELinux unconfined_u.
+
+- Rola. Użytkownik SELinux unconfined_u jest mapowany na rolę unconfined_r.
+
+- Typ. Użytkownikowi został przypisany typ unconfined_t.
+
+- Poziom.
+    - Wrażliwość. Ten użytkownik ma tylko jeden poziom wrażliwości — najniższy, s0.
+    - Kategorie. Ten użytkownik ma dostęp do c0.c1023, czyli wszystkich kategorii (od c0 do c1023).
+
+
+
+#### Plik ma kontekst bezpieczeństwa
+
+Plik również ma kontekst bezpieczeństwa. Aby poznać kontekst bezpieczeństwa pliku, użyj polecenia ls wraz z opcją -Z. Oto przykład kontekstu bezpieczeństwa dla pliku my_stuff:
+
+```console
+$ ls -Z my_stuff
+
+-rw-rw-r--. jkowalski jkowalski
+unconfined_u:object_r:user_home_t:s0 my_stuff
+```
+
+Kontekst bezpieczeństwa tego pliku przedstawia się następująco:
+- Użytkownik. Plik my_stuff w systemie Linux jest mapowany na użytkownika SELinux unconfined_u.
+- Rola. Ten plik jest mapowany na rolę object_r.
+- Typ. Ten plik jest uznawany za część domeny user_home_t.
+- Poziom.
+    - Wrażliwość. Ten użytkownik ma tylko jeden poziom wrażliwości — najniższy, s0.
+    - Kategorie. Wartość MCS nie została zdefiniowana dla tego pliku.
 
 
 
