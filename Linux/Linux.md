@@ -4984,7 +4984,7 @@ Zapewnia bezpieczeństwo systemu za pomocą następujących metod:
 **Standardowe informacje DAC**:  
 
 ```console
-$ls -l my_stuff
+$ ls -l my_stuff
 
 -rw-rw-r--. 1 jkowalski jkowalski 0 Feb 12 06:57 my_stuff
 ```
