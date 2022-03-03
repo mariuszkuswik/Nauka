@@ -5008,19 +5008,32 @@ Wszystkie te elementy razem są nazywane **kontekstem bezpieczeństwa**, ten kon
 Przypisanie kontekstu bezpieczeństwa dotyczy **podmiotu** (np. *procesy i użytkownicy*).
 
 Każdy kontekst bezpieczeństwa ma określoną nazwę.   
-Ta nazwa będzie uzależniona od przypisanegoobiektu lub podmiotu:   
+Ta nazwa będzie uzależniona od przypisanego obiektu lub podmiotu:   
 - pliki - *kontekst pliku*, 
 - użytkownicy - *kontekst użytkownika*,
 - procesy - *kontekst procesu*, nazywany również *domeną*.
 
+typ wymuszenia gwarantuje, że tylko określone „typy” podmiotów mogą uzyskać dostęp do określonych „typów” obiektów.
 
-Reguły pozwalające na uzyskanie dostępu są nazywane regułami dostępu lub regułami polityki.
-Reguła polityki to proces SELinux udzielający lub odmawiający dostępu do określonego typu
-bezpieczeństwa systemu. Jeżeli powrócimy do porównania SELinux ze strażnikiem, SELinux
-można uznać za strażnika, który musi zobaczyć kontekst bezpieczeństwa podmiotu (identyfikator)
-i przejrzeć reguły polityki (zajrzeć do podręcznika zawierającego te reguły), zanim udzieli lub
-odmówi dostępu do obiektu. Dlatego typ wymuszenia gwarantuje, że tylko określone „typy”
-podmiotów mogą uzyskać dostęp do określonych „typów” obiektów.
+
+### Bezpieczeństwo wielopoziomowe
+
+### Implementacja modelu bezpieczeństwa SELinux
+
+### Tryby działania SELinux
+
+Mechanizm SELinux jest dostarczany razem z trzema trybami działania:  enforcing, permissive i disabled.
+
+- **Disabled** - Tryb wyłączony - Używana jest tylko uznaniowa kontrola dostępu (*DAC*).  
+Jeżeli istnieje taka możliwość, Red Hat zaleca użycie trybu liberalnego dla SELinux zamiast całkowitego wyłączania tego mechanizmu bezpieczeństwa.  
+
+
+
+
+
+Tryb wymuszenia
+Nazwa tego trybu mówi sama za siebie. W trybie wymuszenia mechanizm SELinux jest
+włączony, a wszystkie reguły polityki bezpieczeństwa muszą być spełnione.
 
 
 
@@ -5073,7 +5086,7 @@ Wyszukanie opcji boolowskich dla Samby
 ## Koniec Biblii
 
 ### Strona 642
-642
+644
 
 
 [Spis treści](#spis-tre%C5%9Bci)
