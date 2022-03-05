@@ -5311,6 +5311,24 @@ W kolejnym fragmencie kodu zamieściłem przykład pliku konfiguracyjnego SELinu
 SELINUXTYPE=mls
 ```
 
+### Zarządzanie kontekstem bezpieczeństwa SELinux
+
+Kontekst bezpieczeństwa SELinux umożliwia wymuszenie stosowania reguł polityki przez odmioty uzyskujące dostęp do obiektów. 
+
+```secon``` - wyświetlenia bieżących kontekstów SELinux dla pliku i procesu
+
+#### Opcje polecenia secon
+##### Tabela 24.1
+
+| Opcja || Opis |
+|--||--|
+| -u || Powoduje wyświetlenie użytkownika kontekstu bezpieczeństwa. |
+| -r || Powoduje wyświetlenie roli kontekstu bezpieczeństwa. |
+| -t || Powoduje wyświetlenie typu kontekstu bezpieczeństwa. |
+| -s || Powoduje wyświetlenie poziomu wrażliwości kontekstu bezpieczeństwa. |
+| -c || Powoduje wyświetlenie poświadczenia bezpieczeństwa kontekstu bezpieczeństwa |
+| -m || Powoduje wyświetlenie w postaci zakresu MLS poziomu wrażliwości i poświadczenia bezpieczeństwa dla danego kontekstu bezpieczeństwa. |
+
 
 
 
@@ -5323,7 +5341,7 @@ SELINUXTYPE=mls
 ## Koniec Biblii
 
 ### Strona 647
-651
+652
 
 
 [Spis treści](#spis-tre%C5%9Bci)
