@@ -5353,7 +5353,41 @@ role: object_r
 type: passwd_file_t
 ```
 
+Polecenie secon **nie wyświetli kontekstu bezpieczeństwa użytkownika**.   
+Jeżeli chcesz poznać ten kontekst, musisz wydać polecenie ```id```.  
 
+
+### Zarządzanie kontekstem bezpieczeństwa użytkownika
+
+```semanage login -l``` - Czy pamiętasz, że każdy identyfikator użytkownika systemowego jest mapowany na identyfikator użytkownika SELinux? Aby wyświetlić listę mapowania w systemie. Jeżeli identyfikator użytkownika nie zostanie wymieniony w danych wyjściowych, oznacza to użycie mapowania „domyślnego”, w którym nazwa logowania (Login Name) to _default_.
+
+Zwróć uwagę na powiązanie ustawień MLS/MCS z poszczególnymi użytkownikami SELinux.
+
+```console
+# semanage login -l
+Login Name SELinux User MLS/MCS Range Service
+__default__ unconfined_u s0-s0:c0.c1023 *
+root unconfined_u s0-s0:c0.c1023 *
+```
+
+```semanage user -l``` - wyświetlić listę bieżących użytkowników SELinux i powiązane z nimi role
+
+```console
+# semanage user -l
+
+Labeling MLS/ MLS/
+SELinux User Prefix MCS Level MCS Range SELinux Roles
+guest_u user s0 s0 guest_r
+...
+user_u user s0 s0 user_r
+xguest_u user s0 s0 xguest_r
+```
+
+```semanage user -a nazwa_użytkownika_SELinux``` - dodanie nowej nazwy użytkownika SELinux
+
+```semanage login -a -s login_nazwy_użytkownika_SELinux``` -  mapować identyfikator na nowo dodaną nazwę użytkownika SELinux, trzeba wydać polecenie
+
+Więcej informacji na temat ```semanage``` znajdziesz w ```man semanage```.
 
 
 
