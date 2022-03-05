@@ -5265,6 +5265,53 @@ Memory protection checking: actual (secure)
 Max kernel policy version: 31
 ```
 
+```setenforce``` "$nowa_wartość" - TYMCZASOWO zmienia tryb działania selinux (do czasu reboota)
+**Na stałe tryb zmienia się w configu**
+
+■ 1 dla trybu wymuszenia,  
+■ 0 dla trybu liberalnego.  
+
+
+
+Aby zmodyfikować na tryb **NA STAŁE** w pliku ```/etc/selinux/config```, wiersz ```SELINUX=``` należy zmienić na jeden z następujących:  
+■ SELINUX=disabled  
+■ SELINUX=enforcing   
+■ SELINUX=permissive   
+
+
+### Ustawianie typu polityki SELinux
+
+Wybrany typ polityki SELinux będzie miał wpływ na użyte pakiety: TE, MLS lub bazowy.
+Ten rodzaj ustawienia bezpośrednio wpływa na reguły polityki, które są stosowane podczas
+określania dostępu do obiektu.
+
+
+Domyślnie wybrany typ polityki to docelowa (targeted). Jej zmianę przeprowadza się w pliku ```/etc/selinux/config```. Wartość``` SELINUXTYPE=``` zmień na jedną z następujących:  
+  
+■ SELINUXTYPE=targeted  
+■ SELINUXTYPE=mls  
+■ SELINUXTYPE=minimum  
+
+
+Jeżeli zdecydujesz się na typ mls lub minimum, musisz się najpierw upewnić, że został zainstalowany odpowiedni pakiet polityki. Można to sprawdzić przez wydanie następującego polecenia:  
+```$ yum list selinux-policy-mls or yum list selinux-policy-minimum```
+
+
+W kolejnym fragmencie kodu zamieściłem przykład pliku konfiguracyjnego SELinux ```/etc/selinux/config```, w którym typ polityki został ustawiony jako mls.   
+*Zmiana typu polityki nastąpi po ponownym uruchomieniu systemu.*
+
+```bash
+# This file controls the state of SELinux on the system.
+...
+# SELINUXTYPE= type of policy in use. Possible values are:
+# targeted - Targeted processes are protected,
+# minimum - Modification of targeted policy.
+# Only selected processes are protected.
+# mls - Multi Level Security protection.
+SELINUXTYPE=mls
+```
+
+
 
 
 ## Rozwiązywanie problemów związanych z SELinux
@@ -5275,8 +5322,8 @@ Max kernel policy version: 31
 
 ## Koniec Biblii
 
-### Strona 642
-647
+### Strona 647
+651
 
 
 [Spis treści](#spis-tre%C5%9Bci)
