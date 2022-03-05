@@ -5320,14 +5320,14 @@ Kontekst bezpieczeństwa SELinux umożliwia wymuszenie stosowania reguł polityk
 #### Opcje polecenia secon
 ##### Tabela 24.1
 
-| Opcja || Opis |
-|--||--|
-| -u || Powoduje wyświetlenie użytkownika kontekstu bezpieczeństwa. |
-| -r || Powoduje wyświetlenie roli kontekstu bezpieczeństwa. |
-| -t || Powoduje wyświetlenie typu kontekstu bezpieczeństwa. |
-| -s || Powoduje wyświetlenie poziomu wrażliwości kontekstu bezpieczeństwa. |
-| -c || Powoduje wyświetlenie poświadczenia bezpieczeństwa kontekstu bezpieczeństwa |
-| -m || Powoduje wyświetlenie w postaci zakresu MLS poziomu wrażliwości i poświadczenia bezpieczeństwa dla danego kontekstu bezpieczeństwa. |
+| Opcja | Opis |
+|--|--|
+| -u | Powoduje wyświetlenie użytkownika kontekstu bezpieczeństwa. |
+| -r | Powoduje wyświetlenie roli kontekstu bezpieczeństwa. |
+| -t | Powoduje wyświetlenie typu kontekstu bezpieczeństwa. |
+| -s | Powoduje wyświetlenie poziomu wrażliwości kontekstu bezpieczeństwa. |
+| -c | Powoduje wyświetlenie poświadczenia bezpieczeństwa kontekstu bezpieczeństwa |
+| -m | Powoduje wyświetlenie w postaci zakresu MLS poziomu wrażliwości i poświadczenia bezpieczeństwa dla danego kontekstu bezpieczeństwa. |
 
 
 
