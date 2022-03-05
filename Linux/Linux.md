@@ -5316,18 +5316,44 @@ SELINUXTYPE=mls
 Kontekst bezpieczeństwa SELinux umożliwia wymuszenie stosowania reguł polityki przez odmioty uzyskujące dostęp do obiektów. 
 
 ```secon``` - wyświetlenia bieżących kontekstów SELinux dla pliku i procesu
+    ```-p``` - wyświetlenie kontekstu procesu 
+    ```-f``` - wyświetlenie kontekstu procesu 
 
 #### Opcje polecenia secon
 ##### Tabela 24.1
 
 | Opcja | Opis |
 |--|--|
-| -u | Powoduje wyświetlenie użytkownika kontekstu bezpieczeństwa. |
-| -r | Powoduje wyświetlenie roli kontekstu bezpieczeństwa. |
-| -t | Powoduje wyświetlenie typu kontekstu bezpieczeństwa. |
-| -s | Powoduje wyświetlenie poziomu wrażliwości kontekstu bezpieczeństwa. |
-| -c | Powoduje wyświetlenie poświadczenia bezpieczeństwa kontekstu bezpieczeństwa |
-| -m | Powoduje wyświetlenie w postaci zakresu MLS poziomu wrażliwości i poświadczenia bezpieczeństwa dla danego kontekstu bezpieczeństwa. |
+| -u | user - wyświetlenie **użytkownika kontekstu bezpieczeństwa**. |
+| -r | role - wyświetlenie **roli kontekstu bezpieczeństwa**. |
+| -t | type - wyświetlenie **typu kontekstu bezpieczeństwa**. |
+| -s | wyświetlenie poziomu wrażliwości kontekstu bezpieczeństwa. |
+| -c | wyświetlenie poświadczenia bezpieczeństwa kontekstu bezpieczeństwa |
+| -m | wyświetlenie w postaci zakresu MLS poziomu wrażliwości i poświadczenia bezpieczeństwa dla danego kontekstu bezpieczeństwa. |
+
+
+```secon -urt -p "$process_id"``` - wyświetlenie kontekstu procesu o "$id" 
+```secon -urt -f "$file_path"``` - wyświetlenie kontekstu pliku ze ścieżką "$file_path" 
+
+Wyświetlenie kontekstu dla procesu *systemd* 
+
+```console
+# secon -urt -p 1
+user: system_u
+role: system_r
+type: init_t
+```
+
+Wyświetlenie kontekst bezpieczeństwa pliku *passwd*
+
+```console
+# secon -urt -f /etc/passwd
+user: system_u
+role: object_r
+type: passwd_file_t
+```
+
+
 
 
 
