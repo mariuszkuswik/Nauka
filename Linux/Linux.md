@@ -80,6 +80,15 @@
 
 # Korzystanie z pomocy
 
+
+### #TODO - przeredagować, w linuxie jest dokumentacja w html, opisać jak się do niej dostać
+W systemie Linux znajduje się dokumentacja, w formacie plików HTML, dotycząca różnych
+modułów polityki dostępu. Aby ją wyświetlić w systemie Fedora lub Red Hat Enterprise Linux,
+należy uruchomić przeglądarkę WWW, a następnie przejść w niej pod adres file:///usr/share/
+doc/selinux-policy/html/index.html. Natomiast w przypadku Ubuntu jest to adres
+file:///usr/share/doc/selinux-policy-doc/html/index.html. 
+
+
 /usr/share/doc - zawiera więcej instrukcji systemowych, ```pinfo``` pozwala przeglądać je po linkach
 
 ## man  
@@ -5210,6 +5219,54 @@ Wyszukanie opcji boolowskich dla Samby
 
 
 ## Konfiguracja SELinux
+
+Pliki konfiguracyjne i polityki znajdują się w katalogu ```/etc/selinux.``` 
+
+Podstawowy plik konfiguracyjny to ```/etc/selinux/config```   
+jego zawartość jest następująca:   
+
+```bash
+# cat /etc/selinux/config
+# This file controls the state of SELinux on the system.
+# SELINUX= can take one of these three values:
+# enforcing - SELinux security policy is enforced.
+# permissive - SELinux prints warnings instead of enforcing.
+# disabled - SELinux is fully disabled.
+SELINUX=enforcing
+# SELINUXTYPE= can take one of these three values:
+# targeted - Targeted processes are protected,
+# minimum - Modification of targeted policy.
+# Only selected processes are protected.
+# mls - Multi Level Security protection.
+SELINUXTYPE=targeted
+```
+
+Ten główny plik konfiguracyjny umożliwia określenie typu działania i polityki.
+
+### Ustawianie trybu działania SELinux
+
+```getenforce``` - sprawdzić bieżący tryb działania SELinux w systemie
+
+```sestatus``` - wyświetlić zarówno aktualny tryb działania, jak i tryb ustawiony w pliku konfiguracyjnym
+
+```console
+# getenforce
+Enforcing
+# sestatus
+SELinux status: enabled
+SELinuxfs mount: /sys/fs/selinux
+SELinux root directory: /etc/selinux
+Loaded policy name: targeted
+Current mode: enforcing
+Mode from config file: enforcing
+Policy MLS status: enabled
+Policy deny_unknown status: allowed
+Memory protection checking: actual (secure)
+Max kernel policy version: 31
+```
+
+
+
 ## Rozwiązywanie problemów związanych z SELinux
 ## Informacje dodatkowe o SELinux
 
