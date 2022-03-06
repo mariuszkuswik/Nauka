@@ -5408,9 +5408,7 @@ Więcej informacji na temat ```semanage``` znajdziesz w ```man semanage```.
 | chcon | Służy do zmiany etykiety kontekstu bezpieczeństwa pliku |
 | fixfiles | Służy do wywołania narzędzia restorecon lub setfiles. |
 | restorecon | Działa dokładnie tak samo jak setfiles, ale korzysta z innego interfejsu. | 
-| setfiles | Służy do weryfikacji i/lub poprawienia etykiet kontekstu bezpieczeństwa. Można go użyć do weryfikacji etykiety pliku
-i/lub zmiany etykiety pliku po dodaniu do systemu nowego modułu polityki. Działa dokładnie tak samo jak restorecon,
-ale korzysta z innego interfejsu. |
+| setfiles | Służy do weryfikacji i/lub poprawienia etykiet kontekstu bezpieczeństwa. Można go użyć do weryfikacji etykiety pliku i /lub zmiany etykiety pliku po dodaniu do systemu nowego modułu polityki. Działa dokładnie tak samo jak restorecon, ale korzysta z innego interfejsu. |
 
 
 ## Rozwiązywanie problemów związanych z SELinux
