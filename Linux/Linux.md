@@ -5390,6 +5390,27 @@ xguest_u user s0 s0 xguest_r
 Więcej informacji na temat ```semanage``` znajdziesz w ```man semanage```.
 
 
+### Zarządzanie kontekstem bezpieczeństwa pliku
+
+```ls -Z "$file_path"``` - sprawdzić aktualną etykietę (czyli kontekst bezpieczeństwa)
+
+```console
+# ls -Z /etc/passwd
+-rw-r--r--. root root system_u:object_r:etc_t:s0 /etc/passwd
+```
+
+#### **Polecenia do zarządzania etykietami kontekstu bezpieczeństwa pliku**
+##### Tabela 24.2
+
+| Polecenie | Opis |
+|--|--|
+| chcat | Służy do zmiany kategorii etykiety kontekstu bezpieczeństwa pliku |
+| chcon | Służy do zmiany etykiety kontekstu bezpieczeństwa pliku |
+| fixfiles | Służy do wywołania narzędzia restorecon lub setfiles. |
+| restorecon | Działa dokładnie tak samo jak setfiles, ale korzysta z innego interfejsu. | 
+| setfiles | Służy do weryfikacji i/lub poprawienia etykiet kontekstu bezpieczeństwa. Można go użyć do weryfikacji etykiety pliku
+i/lub zmiany etykiety pliku po dodaniu do systemu nowego modułu polityki. Działa dokładnie tak samo jak restorecon,
+ale korzysta z innego interfejsu. |
 
 
 ## Rozwiązywanie problemów związanych z SELinux
@@ -5401,7 +5422,7 @@ Więcej informacji na temat ```semanage``` znajdziesz w ```man semanage```.
 ## Koniec Biblii
 
 ### Strona 647
-652
+653
 
 
 [Spis treści](#spis-tre%C5%9Bci)
