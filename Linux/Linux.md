@@ -5448,10 +5448,40 @@ Polecenia pozwalające zmienić kontekst bezpieczeństwa uruchamianego programu:
 **Polecenie runcon może spowodować wiele problemów, więc zachowaj ostrożność, gdy je stosujesz.** Z kolei narzędzi sandbox oferuje doskonałą ochronę. Pozwala zachować elastyczność podczas testowania nowych programów w systemie Linux.
 
 
+### Zarządzanie pakietami reguł polityki SELinux
 
+strona 654 
 
+```semodule -l``` - wyświetlenie modułów selinux dostępnych w systemie 
 
+```console
+# semodule -l
+abrt
+accountsd
+acct
+...
+xserver
+zabbix
+zarafa
+zebra
+zoneminder
+zosremote
+```
 
+### Zarządzanie mechanizmem SELinux za pomocą opcji boolowskich
+
+Opcje boolowskie można zmienić bez potrzeby ponownego uruchomienia systemu!
+
+```getsebool -a``` - wyświetlenie listy aktualnie użytych w SELinux opcji boolowskich 
+
+```console
+# getsebool -a
+abrt_anon_write --> off
+abrt_handle_event --> off
+...
+xserver_object_manager --> off
+zabbix_can_network --> off
+```
 
 ## Rozwiązywanie problemów związanych z SELinux
 ## Informacje dodatkowe o SELinux
@@ -5462,7 +5492,7 @@ Polecenia pozwalające zmienić kontekst bezpieczeństwa uruchamianego programu:
 ## Koniec Biblii
 
 ### Strona 653
-654
+656
 
 
 [Spis treści](#spis-tre%C5%9Bci)
