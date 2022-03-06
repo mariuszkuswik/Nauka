@@ -5411,6 +5411,48 @@ Więcej informacji na temat ```semanage``` znajdziesz w ```man semanage```.
 | setfiles | Służy do weryfikacji i/lub poprawienia etykiet kontekstu bezpieczeństwa. Można go użyć do weryfikacji etykiety pliku i /lub zmiany etykiety pliku po dodaniu do systemu nowego modułu polityki. Działa dokładnie tak samo jak restorecon, ale korzysta z innego interfejsu. |
 
 
+- polecenie chcon zostało zastosowane do zmiany powiązanego z plikiem file.txt użytkownika SELinux z undefined_u na system_u
+
+```console
+# ls -Z file.txt
+-rw-rw-r--. jkowalski jkowalski
+unconfined_u:object_r:user_home_t:s0 file.txt
+# chcon -u system_u file.txt
+# ls -Z file.txt
+-rw-rw-r--. jkowalski jkowalski
+system_u:object_r:user_home_t:s0 file.txt
+```
+
+Zauważ, że zgodnie z informacjami zamieszczonymi w tabeli 24.2 fixfiles, restorecon i setfiles
+to w zasadzie te same narzędzia. Mimo to restorecon jest najczęściej wybierane, gdy zachodzi
+potrzeba zmiany etykiet plików.   
+**Polecenie restorecon nazwa_pliku powoduje przywrócenie plikowi jego domyślnego kontekstu bezpieczeństwa.**  
+
+### Zarządzanie kontekstem bezpieczeństwa procesu
+
+Sposób uzyskania przez proces kontekstu bezpieczeństwa zależy od tego, jak dany proces został uruchomiony. Weiele procesów jest uruchamianych przez *systemd*, otrzymują One nowe konteksty bezpieczeństwa.   
+Na przykład gdy demon httpd jest uruchamiany przez *demona systemd*, wówczas otrzymuje typ (czyli domenę) httpd_t.   
+Przypisany kontekst jest obsługiwany przez politykę SELinux utworzoną dla danego demona.   
+Jeżeli dla danego procesu nie istnieje żadna polityka, zostanie mu przypisany typ domyślny, unconfined_t.  
+
+
+W przypadku programu lub aplikacji uruchomionych przez użytkownika (proces nadrzędny) nowy proces (czyli proces potomny) dziedziczy kontekst bezpieczeństwa po procesie nadrzędnym.
+
+kontekst bezpieczeństwa procesu zostaje zdefiniowany jeszcze przed uruchomieniem programu i zależy od sposobu uruchomienia tego programu. 
+
+
+Polecenia pozwalające zmienić kontekst bezpieczeństwa uruchamianego programu:
+- ```runcon``` — uruchomienie programu z użyciem opcji umożliwiających określenie użytkownika, roli i typu (domeny).  
+- ```sandbox``` — uruchomienie programu w ściśle kontrolowanej domenie (piaskownicy).  
+
+**Polecenie runcon może spowodować wiele problemów, więc zachowaj ostrożność, gdy je stosujesz.** Z kolei narzędzi sandbox oferuje doskonałą ochronę. Pozwala zachować elastyczność podczas testowania nowych programów w systemie Linux.
+
+
+
+
+
+
+
 ## Rozwiązywanie problemów związanych z SELinux
 ## Informacje dodatkowe o SELinux
 
@@ -5419,8 +5461,8 @@ Więcej informacji na temat ```semanage``` znajdziesz w ```man semanage```.
 
 ## Koniec Biblii
 
-### Strona 647
-653
+### Strona 653
+654
 
 
 [Spis treści](#spis-tre%C5%9Bci)
