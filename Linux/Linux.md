@@ -5491,6 +5491,25 @@ httpd_can_connect_ftp --> off
 ```
 
 
+```setsebool``` - włącza lub wyłącza politykę, możliwe opcje to [on, 1 lub true] lub [off, 0 lub false],   
+polecenie setsebool zmienia stan polityki tymczasowo,  
+    ```-P``` - trwała zmiana stanu polityki (również po reboocie)
+
+
+```console
+# setsebool -P allow_user_exec_content off
+
+### Sprawdzenie czy zmiana została wprowadzona
+# getsebool allow_user_exec_content
+allow_user_exec_content --> off
+```
+
+```yum install policycoreutils-gui``` - instalacja graficznego narzędzia do selinux 
+
+```system-config-selinux``` - uruchomienie graficznego narzędzia do zarządzania selinux
+
+## Monitorowanie SELinux i rozwiązywanie związanych z nim problemów
+
 
 
 
@@ -5504,8 +5523,8 @@ httpd_can_connect_ftp --> off
 
 ## Koniec Biblii
 
-### Strona 653
-656
+### Strona 656
+657
 
 
 [Spis treści](#spis-tre%C5%9Bci)
