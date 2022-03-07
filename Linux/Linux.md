@@ -5483,6 +5483,19 @@ xserver_object_manager --> off
 zabbix_can_network --> off
 ```
 
+```getsebool "$bollean_name"``` - sprawdzenie stanu konkretnej opcji boolowskiej 
+
+```console
+# getsebool httpd_can_connect_ftp
+httpd_can_connect_ftp --> off
+```
+
+
+
+
+
+
+
 ## Rozwiązywanie problemów związanych z SELinux
 ## Informacje dodatkowe o SELinux
 
