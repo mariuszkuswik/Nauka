@@ -5765,7 +5765,7 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
 
 - Zmiana trybu SElinux podczas bootowania systemu 
     - enforcing=0 - zmiana parametru selinux przy bootowaniu na permissive 
-    [selinux_parametry_bootowanie](Obrazy/Cloud_Guru/selinux_parametry_bootowanie.png)
+    ![selinux_parametry_bootowanie](Obrazy/Cloud_Guru/selinux_parametry_bootowanie.png)
 
 
 # Notatki skopiowane z katalogu Linux
