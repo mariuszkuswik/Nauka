@@ -5711,6 +5711,7 @@ Wyświetl karty sieciowe w linuxie, opisz czego się na tej podstawie dowiedzia�
 ### TODO - do uzupelnienia, przynajmniej krotko 
 
 ### firewalld
+
 - W RHEL8 firewall jest zarzadzany przez firewalld, w RHEL7 pod spodem bylo iptables, obecnie jest to nftables
 zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
 	
@@ -5745,8 +5746,26 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
 ```lspci``` - można to powiedzieć na podstawie procesora 
 	
 	
-	
+# CLOUDGURU 
 
+# Firewall 
+
+# SELinux 
+
+- Tryby selinux 
+
+- konfiguracja trybu selinux (plik /etc/selinux/config)
+    - zmiany zostają wprowadzone po reboocie
+
+- sprawdzanie statusu selinux 
+    - sestatus - szczegółowe informacje
+    - getenforce - dostajemy tylko tryb w jakim selinux działa obecnie 
+
+    - setenforce - umożliwia tymczasową zmianę trybu - PO REBOOCIE STOSOWANY JEST TRYB Z CONFIGA 
+
+- Zmiana trybu SElinux podczas bootowania systemu 
+    - enforcing=0 - zmiana parametru selinux przy bootowaniu na permissive 
+    [selinux_parametry_bootowanie](Obrazy/Cloud_Guru/selinux_parametry_bootowanie.png)
 
 
 # Notatki skopiowane z katalogu Linux
