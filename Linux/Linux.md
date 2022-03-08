@@ -5771,8 +5771,10 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
         - **disabled** - nic nie jest blokowane, nic nie jest logowane  
 
 - Zmiana podczas bootowania systemu ( parametry przy odpalaniu systemu)  
-    - Dopisanie/zmiana parametru ```enforcing``` np. ```enforcing=0``` - zmiana parametru selinux przy bootowaniu na   permissive     
+    - Dopisanie/zmiana parametru ```enforcing``` np. ```enforcing=0``` w linijce ```linux``` (parametry jądra)  - zmiana parametru selinux przy bootowaniu na   permissive     
   
+![selinux_boot_permissive](Obrazy/Cloud_Guru/selinux_boot_permissive.png)
+
 ![selinux_parametry_bootowanie](Obrazy/Cloud_Guru/selinux_parametry_bootowanie.png)  
   
 
