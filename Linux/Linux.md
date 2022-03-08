@@ -5752,26 +5752,26 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
 
 # SELinux 
 
-### Tryby selinux 
-
-- sprawdzanie statusu selinux 
-    - sestatus - szczegółowe informacje
-    - getenforce - dostajemy tylko tryb w jakim selinux działa obecnie 
+### Sprawdzanie trybu selinux 
+- ```sestatus``` - szczegółowe informacje
+- ```getenforce``` - dostajemy tylko tryb w jakim selinux działa obecnie 
 
     
-### Zmiana statusu SELinux
+### Zmiana trybu SELinux
 - Tymczasowa zmiana 
-    - setenforce - umożliwia tymczasową zmianę trybu - PO REBOOCIE STOSOWANY JEST TRYB Z CONFIGA  
-- Stała zmiana SELinux - zmiany zostają zastosowane po reboocie
-    - zmiana parametru ```SELINUX=``` w pliku ```/etc/selinux/config``` np. SELINUX=enforcing   
-        - enforcing - selinux działa w pełni, **blokuje**, zdarzenia blokowane są reportowane 
-        - permissive - selinux tylko zapisuje blokowane akcje w logach, **nic nie jest blokowane**  
-        - disabled - nic nie jest blokowane, nic nie jest logowane
-- Zmiana podczas bootowania systemu ( parametry przy odpalaniu systemu)
-    - Dopisanie/zmiana parametru ```enforcing``` np. ```enforcing=0``` - zmiana parametru selinux przy bootowaniu na permissive   
+    - ```setenforce``` - umożliwia tymczasową zmianę trybu - PO REBOOCIE STOSOWANY JEST TRYB Z CONFIGA    
   
-![selinux_parametry_bootowanie](Obrazy/Cloud_Guru/selinux_parametry_bootowanie.png)
+- Stała zmiana SELinux - **zmiany zostają zastosowane po reboocie**  
+    - zmiana parametru ```SELINUX=``` w pliku ```/etc/selinux/config``` np. ```SELINUX=enforcing```     
+        - **enforcing** - selinux działa w pełni, **blokuje**, zdarzenia blokowane są reportowane   
+        - **permissive** - selinux tylko zapisuje blokowane akcje w logach, **nic nie jest blokowane**    
+        - **disabled** - nic nie jest blokowane, nic nie jest logowane  
 
+- Zmiana podczas bootowania systemu ( parametry przy odpalaniu systemu)  
+    - Dopisanie/zmiana parametru ```enforcing``` np. ```enforcing=0``` - zmiana parametru selinux przy bootowaniu na   permissive     
+  
+![selinux_parametry_bootowanie](Obrazy/Cloud_Guru/selinux_parametry_bootowanie.png)  
+  
 
 
 
