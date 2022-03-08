@@ -5584,8 +5584,8 @@ SELinux is preventing httpd from getattr access on the file /var/myserver/servic
 If you believe that httpd should be allowed getattr access on the services file by default.
 Then you should report this as a bug.
 You can generate a local policy module to allow this access.
-Do allow this access for now by executing:
 
+#### Do allow this access for now by executing:
 # ausearch -c 'httpd' --raw | audit2allow -M my-httpd
 # semodule -X 300 -i my-httpd.pp
 
@@ -5601,7 +5601,7 @@ ino=655836 scontext=system_u:system_r:httpd_t:s0
 tcontext=unconfined_u:object_r:var_t:s0 tclass=file permissive=0
 Hash: httpd,httpd_t,var_t,file,getattr
 ```
-
+**Jeżeli w tym przypadku chcesz zezwolić usłudze httpd na uzyskanie dostępu do wskazanego katalogu, możesz wydać polecenia ```ausearch i semodule (wskazane w wierszu powyżej)```. To spowoduje utworzenie nowej polityki SELinux i jej zastosowanie, aby zapewnić dostęp do treści. Jeżeli nie ma innych problemów dotyczących uprawnień, po zastosowaniu nowej polityki demon httpd powinien mieć dostęp do żądanej treści.**
 
 
 ## Rozwiązywanie problemów związanych z SELinux
