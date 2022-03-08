@@ -5748,6 +5748,9 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
 	
 # CLOUDGURU 
 
+1. [Firewall](#firewall)
+1. [Selinux](#selinux)
+
 # Firewall 
 
 # SELinux 
@@ -5773,6 +5776,34 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
 ![selinux_parametry_bootowanie](Obrazy/Cloud_Guru/selinux_parametry_bootowanie.png)  
   
 
+**Jeżeli mamy jakiś problem z selinuxem to jest duża szansa że odpowiednią komendę znajdziemy poprzez grep "$nazwa_usługi" /var/log/messages**
+
+### Konteksty SELinux
+
+Dla większości komend aby sprawdzić kontekst działa parametr ```-Z```,   
+np. 
+```ls -laZ``` - sprawdzenie kontekstu plików 
+```ps -elZ``` - sprawdzenie kontekstu procesów 
+
+#### Sprawdzenie kontekstu pliku 
+
+```ls -laZ "$file_name"``` - wyświetlenie kontekstu pliku 
+
+
+
+
+
+# Rozwiązywanie problemów 
+
+## httpd
+
+1. Sprawdzenie czy usługa działa, jeżeli tak/nie to czy systemd pokazuje jakieś błędy 
+2. Pobranie strony ```curlem``` z podanego serwera
+3. sprawdzenie logów systemd - ```journalctl -u httpd``` - pobranie logów dla konkretnej usługi
+4. sprawdzenie loga audit - ```grep /var/log/audit/audit.log``` - sprawdzić co to jest konkretnie za log, jest od niego demon ```auditd```
+5. sprawdzenie logów - ```grep /var/log/messages``` 
+3. Ustawienie selinux w tryb permissive 
+4. Włączenie odpowiedniej zmiennej boolowskiej ?
 
 
 # Notatki skopiowane z katalogu Linux
