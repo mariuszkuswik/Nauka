@@ -5568,11 +5568,11 @@ type=AVC msg=audit(1580397837.346:275): avc: denied { getattr }for pid=1067
 
 #### Analizowanie logów 
 
-Logi można przekazywać do sealert, tak żeby je łatwiej analizować 
+**Logi można przekazywać do sealert, tak żeby je łatwiej analizować**
 
-```sealert -a "$log_path"``` - przekazanie logu do ```sealert``` dla dalszej analizy 
+- ```sealert -a "$log_path"``` - przekazanie logu do ```sealert``` dla dalszej analizy   
 
-Przekazanie całego logu ```auditd``` do analizy za pomocą ```sealert```
+Przykład przekazania logu do analizy
 
 ```
 # sealert -a /var/log/audit/audit.log
@@ -5602,6 +5602,11 @@ tcontext=unconfined_u:object_r:var_t:s0 tclass=file permissive=0
 Hash: httpd,httpd_t,var_t,file,getattr
 ```
 **Jeżeli w tym przypadku chcesz zezwolić usłudze httpd na uzyskanie dostępu do wskazanego katalogu, możesz wydać polecenia ```ausearch i semodule (wskazane w wierszu powyżej)```. To spowoduje utworzenie nowej polityki SELinux i jej zastosowanie, aby zapewnić dostęp do treści. Jeżeli nie ma innych problemów dotyczących uprawnień, po zastosowaniu nowej polityki demon httpd powinien mieć dostęp do żądanej treści.**
+
+
+
+
+
 
 
 ## Rozwiązywanie problemów związanych z SELinux
