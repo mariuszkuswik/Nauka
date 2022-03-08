@@ -5752,9 +5752,9 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
 
 # SELinux 
 
-- Tryby selinux 
+## Tryby selinux 
 
-- konfiguracja trybu selinux (plik /etc/selinux/config)
+- 
     - zmiany zostają wprowadzone po reboocie
 
 - sprawdzanie statusu selinux 
@@ -5765,9 +5765,11 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
 - Zmiana statusu SELinux
     - Tymczasowa zmiana 
         - setenforce - umożliwia tymczasową zmianę trybu - PO REBOOCIE STOSOWANY JEST TRYB Z CONFIGA  
-    - Stała zmiana SELinux 
-        - zmiana parametru ```SELINUX=``` np.   
-            - test
+    - Stała zmiana SELinux - zmiany zostają zastosowane po reboocie
+        - zmiana parametru ```SELINUX=``` w pliku ```/etc/selinux/config``` np. SELINUX=enforcing   
+            - enforcing - selinux działa w pełni, **blokuje**, zdarzenia blokowane są reportowane 
+            - permissive - selinux tylko zapisuje blokowane akcje w logach, **nic nie jest blokowane**  
+            - disabled - nic nie jest blokowane, nic nie jest logowane
     - Zmiana podczas bootowania systemu ( parametry przy odpalaniu systemu)
         - Dopisanie/zmiana parametru ```enforcing``` np. ```enforcing=0``` - zmiana parametru selinux przy bootowaniu na permissive 
     ![selinux_parametry_bootowanie](Obrazy/Cloud_Guru/selinux_parametry_bootowanie.png)
