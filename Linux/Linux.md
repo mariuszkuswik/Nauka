@@ -74,6 +74,8 @@
 4. [Sieci](#sieci)
 5. [Wirtualizacja](#wirtualizacja)
 
+[CLOUDGURU](#CLOUDGURU) 
+
 # Ćwiczenia praktyczne, jak wykonać
 
 [Resetowanie hasla roota](https://linuxconfig.org/redhat-8-recover-root-password)
@@ -5872,11 +5874,11 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
 	
 # CLOUDGURU 
 
-1. [Pomoc](#pomoc)
-1. [Firewall](#firewall)
-1. [Selinux](#selinux)
+1. [Pomoc](#cg-pomoc)
+1. [Firewall](#cg-firewall)
+1. [Selinux](#cg-selinux)
 
-# Pomoc 
+# CG-Pomoc 
 
 - ```apropos``` wyszukuje strony w pomocy, podobnie jak *man -k*
 - ```man -k``` - wyszukuje strony w pomocy 
@@ -5890,9 +5892,9 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
 
 
 
-# Firewall 
+# CG-Firewall 
 
-# SELinux 
+# CG-SELinux 
 
 - ```semanage boolean -l``` - **wyświetlenie opisu** wszystkich zmiennych SELinux 
 
@@ -5918,6 +5920,7 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
 
 ![selinux_parametry_bootowanie](Obrazy/Cloud_Guru/selinux_parametry_bootowanie.png)  
   
+
 
 **Jeżeli mamy jakiś problem z selinuxem to jest duża szansa że odpowiednią komendę znajdziemy poprzez grep "$nazwa_usługi" /var/log/messages**
 
@@ -5948,6 +5951,25 @@ np.
 5. sprawdzenie logów - ```grep /var/log/messages``` 
 3. Ustawienie selinux w tryb permissive 
 4. Włączenie odpowiedniej zmiennej boolowskiej ?
+
+
+# Kontrola czasu w RHEL
+
+- ```chrony``` - serwer lub klient (zależy od potrzeby) kontroli czasu
+
+- ```chronyd``` - **daemon for synchronisation of the system clock**, can be controlled via local or remote instances of ```chronyc```
+- ```chronyc``` - command line program **used to monitor and control ```chronyd```**
+- ```ntpstat``` - wspiera chronyd ? - domyślnie nie jest zainstalowane 
+
+
+##### Ważne pliki :  
+- ```/etc/chrony.conf``` - config  
+- ```/etc/chrony.keys``` - 
+- ```/usr/share/doc/chrony``` - dokumentacja
+
+
+# Koniec CLOUDGURU 
+
 
 
 # Notatki skopiowane z katalogu Linux
