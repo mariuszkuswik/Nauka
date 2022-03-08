@@ -5508,6 +5508,8 @@ allow_user_exec_content --> off
 
 ```system-config-selinux``` - uruchomienie graficznego narzędzia do zarządzania selinux
 
+
+
 ## Monitorowanie SELinux i rozwiązywanie związanych z nim problemów
 
 Podczas przeglądania reguł polityki dla określonych kontekstów bezpieczeństwa SELinux
@@ -5525,6 +5527,21 @@ Miejsce umieszczenia komunikatu informującego o odmowie dostępu zależy od sta
 Logi w pliku messages powinny być czytelniejsze 
 
 #### Przeglądanie logów SELinux zapisanych przez demona auditd
+
+- Podsumowanie logów auditd
+
+Jeżeli w systemie działa demon auditd, za pomocą polecenia aureport można szybko
+sprawdzać, czy zostały zarejestrowane jakiekolwiek komunikaty dotyczące AVC denial.
+
+aureport analizuje plik ```/var/log/audit/audit.log``` i wyświetla podsumowanie
+
+```console
+# aureport | grep AVC
+Number of AVC's: 1
+```
+
+- Wyszukiwanie w logach auditd 
+
 
 
 
