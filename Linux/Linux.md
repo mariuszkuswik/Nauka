@@ -5880,16 +5880,25 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
 
 # CG-Pomoc 
 
+## Wyszukiwanie pomocy
+
 - ```apropos``` wyszukuje strony w pomocy, podobnie jak *man -k*
 - ```man -k``` - wyszukuje strony w pomocy 
+- ```info``` - wyświetla komendy z opisem  
 
 ## Man
 
+- ```man man``` 
+
 ## Info
+
+```info``` - **Samo wykonanie polecenia info wyświetla przydatne komendy z opisami**
+
+
 
 ## /usr/share/doc
 
-
+Dodatkowa dokumentacja 
 
 
 # CG-Firewall 
@@ -5940,6 +5949,38 @@ np.
 
 
 
+# Kontrola czasu w RHEL
+
+[Cloud_guru - lekcja](https://learn.acloud.guru/course/red-hat-certified-system-administrator-ex200-exam-prep/learn/60dc10ad-0973-4bb6-8a0b-9d987f2c25f3/071c69c6-90ba-4885-9f32-15949b43286f/watch)
+
+
+- ```chrony``` - serwer lub klient (zależy od potrzeby) kontroli czasu
+
+- ```chronyd``` - **daemon for synchronisation of the system clock**, can be controlled via local or remote instances of ```chronyc```
+- ```chronyc``` - command line program **used to monitor and control ```chronyd```**
+- ```ntpstat``` - wspiera chronyd ? - domyślnie nie jest zainstalowane 
+
+
+##### Ważne pliki :  
+
+- ```/etc/chrony.conf``` - config  
+- ```/etc/chrony.keys``` - zawiera klucze ? 
+- ```/usr/share/doc/chrony``` - dokumentacja
+
+## Przykładowe ćwiczenie 
+
+**Synchronizacja czasu pomiędzy serwerami**
+---
+
+1. instalacja chrony i ntpstat 
+
+```console
+dnf install chrony ntpstat -y
+```
+
+2.  
+
+
 # Rozwiązywanie problemów (ogólnie)
 
 ## httpd
@@ -5953,19 +5994,8 @@ np.
 4. Włączenie odpowiedniej zmiennej boolowskiej ?
 
 
-# Kontrola czasu w RHEL
-
-- ```chrony``` - serwer lub klient (zależy od potrzeby) kontroli czasu
-
-- ```chronyd``` - **daemon for synchronisation of the system clock**, can be controlled via local or remote instances of ```chronyc```
-- ```chronyc``` - command line program **used to monitor and control ```chronyd```**
-- ```ntpstat``` - wspiera chronyd ? - domyślnie nie jest zainstalowane 
 
 
-##### Ważne pliki :  
-- ```/etc/chrony.conf``` - config  
-- ```/etc/chrony.keys``` - 
-- ```/usr/share/doc/chrony``` - dokumentacja
 
 
 # Koniec CLOUDGURU 
