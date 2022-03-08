@@ -5766,8 +5766,8 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
     - Tymczasowa zmiana 
         - setenforce - umożliwia tymczasową zmianę trybu - PO REBOOCIE STOSOWANY JEST TRYB Z CONFIGA  
     - Stała zmiana SELinux 
-        - zmiana parametru ```SELINUX=``` np. 
-            - 
+        - zmiana parametru ```SELINUX=``` np.   
+            - test
     - Zmiana podczas bootowania systemu ( parametry przy odpalaniu systemu)
         - Dopisanie/zmiana parametru ```enforcing``` np. ```enforcing=0``` - zmiana parametru selinux przy bootowaniu na permissive 
     ![selinux_parametry_bootowanie](Obrazy/Cloud_Guru/selinux_parametry_bootowanie.png)
