@@ -5510,7 +5510,21 @@ allow_user_exec_content --> off
 
 ## Monitorowanie SELinux i rozwiązywanie związanych z nim problemów
 
+Podczas przeglądania reguł polityki dla określonych kontekstów bezpieczeństwa SELinux
+używa bufora o nazwie Access Vector Cache (AVC). W przypadku odmowy dostępu, określanej
+mianem AVC denial, w pliku dziennika zdarzeń zostaje umieszczony odpowiedni komunikat.
 
+- **Jest to ważne ponieważ w logach mogą występować wpisy z nazwą AVC**
+
+### Dziennik zdarzeń SELinux
+
+Miejsce umieszczenia komunikatu informującego o odmowie dostępu zależy od stanu demonów auditd i rsyslogd
+- **Jeżeli działa demon auditd**, to logi są umieszczone w pliku ```/var/log/audit/audit.log```
+-  **Jeśli demon auditd nie działa**, ale został uruchomiony demon rsyslogd, to logi są umieszczone w pliku ```/var/log/messages```
+
+Logi w pliku messages powinny być czytelniejsze 
+
+#### Przeglądanie logów SELinux zapisanych przez demona auditd
 
 
 
@@ -5523,8 +5537,8 @@ allow_user_exec_content --> off
 
 ## Koniec Biblii
 
-### Strona 656
-657
+### Strona 657
+
 
 
 [Spis treści](#spis-tre%C5%9Bci)
@@ -5748,8 +5762,23 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
 	
 # CLOUDGURU 
 
+1. [Pomoc](#pomoc)
 1. [Firewall](#firewall)
 1. [Selinux](#selinux)
+
+# Pomoc 
+
+- ```apropos``` wyszukuje strony w pomocy, podobnie jak *man -k*
+- ```man -k``` - wyszukuje strony w pomocy 
+
+## Man
+
+## Info
+
+## /usr/share/doc
+
+
+
 
 # Firewall 
 
@@ -5784,12 +5813,13 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
 
 Dla większości komend aby sprawdzić kontekst działa parametr ```-Z```,   
 np. 
-```ls -laZ``` - sprawdzenie kontekstu plików 
-```ps -elZ``` - sprawdzenie kontekstu procesów 
+- ```ls -laZ``` - sprawdzenie kontekstu plików 
+- ```ps -elZ``` - sprawdzenie kontekstu procesów 
 
 #### Sprawdzenie kontekstu pliku 
 
-```ls -laZ "$file_name"``` - wyświetlenie kontekstu pliku 
+- ```ls -laZ "$file_name"``` - wyświetlenie kontekstu pliku 
+
 
 
 
