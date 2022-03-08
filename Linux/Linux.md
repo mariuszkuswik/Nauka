@@ -5572,7 +5572,7 @@ type=AVC msg=audit(1580397837.346:275): avc: denied { getattr }for pid=1067
 
 - ```sealert -a "$log_path"``` - przekazanie logu do ```sealert``` dla dalszej analizy   
 
-Przykład przekazania logu do analizy
+Przykład przekazania logu do analizy : 
 
 ```
 # sealert -a /var/log/audit/audit.log
@@ -5604,7 +5604,36 @@ Hash: httpd,httpd_t,var_t,file,getattr
 **Jeżeli w tym przypadku chcesz zezwolić usłudze httpd na uzyskanie dostępu do wskazanego katalogu, możesz wydać polecenia ```ausearch i semodule (wskazane w wierszu powyżej)```. To spowoduje utworzenie nowej polityki SELinux i jej zastosowanie, aby zapewnić dostęp do treści. Jeżeli nie ma innych problemów dotyczących uprawnień, po zastosowaniu nowej polityki demon httpd powinien mieć dostęp do żądanej treści.**
 
 
+### Rozwiązywanie problemów z rejestracją danych SELinux
 
+Demony które reportują błędy selinux to : 
+- auditd
+- rsyslogd 
+- setroubleshootd
+
+
+### Rozwiązywanie najczęściej pojawiających się problemów z SELinux
+
+- Przy rozwiązywaniu problemów SELinux dobrze jest najpierw sprawdzić klasyczne uprawnnienia DAC (```ls -l```)
+
+#### Użycie niestandardowego katalogu dla usługi
+
+- Jeżeli usługa używa niestandardowego katalogu to trzeba o tym powiadomić SELinux 
+    ```semanage fcontext -a -t httpd_sys_content_t "/abc/www/html(/.*)?"``` - ustawienie kontekstu dla **folderu** /abc/www/html
+
+W celu rzeczywistego przypisania nowego typu kontekstu bezpieczeństwa plikom znajdującym
+się w tym katalogu konieczne jest użycie polecenia restorecon –R:
+
+```console
+# restorecon -R -v /abc/www/html
+# ls -Z /abc/www/html
+unconfined_u:object_r:httpd_sys_content_t:s0 abc
+```
+
+Po wykonaniu tych poleceń demon httpd będzie miał uprawnienia dostępu do plików HTML,
+które znajdują się w katalogu niestandardowym dla tej usług
+
+#### Użycie niestandardowego portu dla usługi
 
 
 
@@ -5865,6 +5894,8 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
 
 # SELinux 
 
+- ```semanage boolean -l``` - **wyświetlenie opisu** wszystkich zmiennych SELinux 
+
 ### Sprawdzanie trybu selinux 
 - ```sestatus``` - szczegółowe informacje
 - ```getenforce``` - dostajemy tylko tryb w jakim selinux działa obecnie 
@@ -5906,7 +5937,7 @@ np.
 
 
 
-# Rozwiązywanie problemów 
+# Rozwiązywanie problemów (ogólnie)
 
 ## httpd
 
