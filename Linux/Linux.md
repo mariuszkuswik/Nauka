@@ -5542,7 +5542,65 @@ Number of AVC's: 1
 
 - Wyszukiwanie w logach auditd 
 
+```ausearch -m "$message_type"``` - przeszukanie loga audit.log z wiadomościami o konkretnym typie 
 
+```console
+# ausearch -m avc
+type=AVC msg=audit(1580397837.344:274): avc: denied { getattr } for pid=1067
+    comm="httpd" path="/var/myserver/services" dev="dm-0" ino=655836
+    scontext=system_u:system_r:httpd_t:s0
+    tcontext=unconfined_u:object_r:var_t:s0 tclass=file permissive=0
+``` 
+
+
+#### Przeglądanie komunikatów SELinux w dzienniku zdarzeń
+
+journalctl również zawiera komunikaty dotyczące odmowy dostępu
+
+```console
+# journalctl | grep AVC
+type=AVC msg=audit(1580397837.346:275): avc: denied { getattr }for pid=1067
+    comm="httpd" path="/var/myserver/services" dev="dm-0" ino=655836
+    scontext=system_u:system_r:httpd_t:s0
+    tcontext=unconfined_u:object_r:var_t:s0 tclass=file permissive=0
+```
+
+
+#### Analizowanie logów 
+
+Logi można przekazywać do sealert, tak żeby je łatwiej analizować 
+
+```sealert -a "$log_path"``` - przekazanie logu do ```sealert``` dla dalszej analizy 
+
+Przekazanie całego logu ```auditd``` do analizy za pomocą ```sealert```
+
+```
+# sealert -a /var/log/audit/audit.log
+
+SELinux is preventing httpd from getattr access on the file /var/myserver/services.
+
+***** Plugin catchall (100. confidence) suggests *************
+
+If you believe that httpd should be allowed getattr access on the services file by default.
+Then you should report this as a bug.
+You can generate a local policy module to allow this access.
+Do allow this access for now by executing:
+
+# ausearch -c 'httpd' --raw | audit2allow -M my-httpd
+# semodule -X 300 -i my-httpd.pp
+
+Additional Information:
+Source Context system_u:system_r:httpd_t:s0
+Target Context unconfined_u:object_r:var_t:s0
+Target Objects /var/myserver/services [ file ]
+...
+Raw Audit Messages
+type=AVC msg=audit(1580397837.346:275): avc: denied { getattr }
+for pid=1067 comm="httpd" path="/var/myserver/services" dev="dm-0"
+ino=655836 scontext=system_u:system_r:httpd_t:s0
+tcontext=unconfined_u:object_r:var_t:s0 tclass=file permissive=0
+Hash: httpd,httpd_t,var_t,file,getattr
+```
 
 
 
@@ -5555,6 +5613,7 @@ Number of AVC's: 1
 ## Koniec Biblii
 
 ### Strona 657
+659
 
 
 
