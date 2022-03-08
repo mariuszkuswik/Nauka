@@ -5761,11 +5761,18 @@ Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
     - sestatus - szczegółowe informacje
     - getenforce - dostajemy tylko tryb w jakim selinux działa obecnie 
 
-    - setenforce - umożliwia tymczasową zmianę trybu - PO REBOOCIE STOSOWANY JEST TRYB Z CONFIGA 
-
-- Zmiana trybu SElinux podczas bootowania systemu 
-    - enforcing=0 - zmiana parametru selinux przy bootowaniu na permissive 
+    
+- Zmiana statusu SELinux
+    - Tymczasowa zmiana 
+        - setenforce - umożliwia tymczasową zmianę trybu - PO REBOOCIE STOSOWANY JEST TRYB Z CONFIGA  
+    - Stała zmiana SELinux 
+        - zmiana parametru ```SELINUX=``` np. 
+            - 
+    - Zmiana podczas bootowania systemu ( parametry przy odpalaniu systemu)
+        - Dopisanie/zmiana parametru ```enforcing``` np. ```enforcing=0``` - zmiana parametru selinux przy bootowaniu na permissive 
     ![selinux_parametry_bootowanie](Obrazy/Cloud_Guru/selinux_parametry_bootowanie.png)
+
+
 
 
 # Notatki skopiowane z katalogu Linux
