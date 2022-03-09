@@ -5959,7 +5959,10 @@ np.
 - ```chronyd``` - **daemon for synchronisation of the system clock**, can be controlled via local or remote instances of ```chronyc```
 - ```chronyc``` - command line program **used to monitor and control ```chronyd```** - działa na tej samej zasadzie co fdisk 
     - ```help``` - wyświetla pomoc
-    - ```sources -v``` - wyświetla dostępne źródła, razem z wyjaśnieniem co znaczą wpisy w tabeli 
+    - ```sources -v``` - wyświetla dostępne źródła, razem z wyjaśnieniem co znaczą wpisy w tabeli   
+    
+    ![chronyc_sources_verbosed](Obrazy/Cloud_Guru/chronyc_sources_verbosed.png)  
+  
 - ```ntpstat``` - wspiera chronyd ? - domyślnie nie jest zainstalowane 
 
 
@@ -5971,7 +5974,7 @@ np.
 
 ## Przykładowe ćwiczenie 
 
-**Synchronizacja czasu pomiędzy serwerami**
+Synchronizacja czasu pomiędzy serwerami
 ---
 
 1. instalacja chrony i ntpstat 
