@@ -5993,6 +5993,30 @@ systemctl status chronyd
 systemctl enable --now chronyd
 ```
 
+3. Dodanie docelowego serwera w configu ```/etc/chrony.conf```
+- w pliku ```/etc/chrony.conf```
+    - server "$sever_address" [option] - składnia opisana w man ```chrony.conf```
+    np. 
+    
+    ```
+    server 169.254.169.123 iburst
+    ```
+
+4. Restart usługi chronyd
+
+```console
+systemctl restart chronyd
+```
+
+
+5. Sprawdzenie czy serwer został zsynchronizowany 
+
+```console
+chronyc sources -v
+```
+
+
+
 # Rozwiązywanie problemów (ogólnie)
 
 ## httpd
