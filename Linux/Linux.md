@@ -5977,8 +5977,8 @@ Poprzednim serwerem czasu był ntp, obecnym chrony
 
 ## Przykładowe ćwiczenie 
 
-Synchronizacja czasu pomiędzy serwerami
----
+### 1. Synchronizacja czasu (klient z serwerem)
+
 
 1. instalacja chrony 
 
