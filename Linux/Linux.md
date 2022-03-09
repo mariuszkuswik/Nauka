@@ -5957,7 +5957,9 @@ np.
 - ```chrony``` - serwer lub klient (zależy od potrzeby) kontroli czasu
 
 - ```chronyd``` - **daemon for synchronisation of the system clock**, can be controlled via local or remote instances of ```chronyc```
-- ```chronyc``` - command line program **used to monitor and control ```chronyd```**
+- ```chronyc``` - command line program **used to monitor and control ```chronyd```** - działa na tej samej zasadzie co fdisk 
+    - ```help``` - wyświetla pomoc
+    - ```sources -v``` - wyświetla dostępne źródła, razem z wyjaśnieniem co znaczą wpisy w tabeli 
 - ```ntpstat``` - wspiera chronyd ? - domyślnie nie jest zainstalowane 
 
 
@@ -5978,8 +5980,12 @@ np.
 dnf install chrony ntpstat -y
 ```
 
-2.  
+2.  Sprawdzenie statusu chronyd i ewentualne odpalenie 
 
+```console
+systemctl status chronyd
+systemctl enable --now chronyd
+```
 
 # Rozwiązywanie problemów (ogólnie)
 
