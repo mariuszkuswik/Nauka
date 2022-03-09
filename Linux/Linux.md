@@ -5980,40 +5980,69 @@ Poprzednim serwerem czasu był ntp, obecnym chrony
 Synchronizacja czasu pomiędzy serwerami
 ---
 
-1. instalacja chrony i ntpstat 
+1. instalacja chrony 
 
 ```console
-dnf install chrony ntpstat -y
+# dnf install chrony -y
 ```
 
 2.  Sprawdzenie statusu chronyd i ewentualne odpalenie 
 
 ```console
-systemctl status chronyd
-systemctl enable --now chronyd
+# systemctl status chronyd
+# systemctl enable --now chronyd
 ```
 
 3. Dodanie docelowego serwera w configu ```/etc/chrony.conf```
 - w pliku ```/etc/chrony.conf```
     - server "$sever_address" [option] - składnia opisana w man ```chrony.conf```
     np. 
-    
-    ```
+
+    ```console
     server 169.254.169.123 iburst
     ```
 
 4. Restart usługi chronyd
 
 ```console
-systemctl restart chronyd
+# systemctl restart chronyd
 ```
 
 
-5. Sprawdzenie czy serwer został zsynchronizowany 
+5. Sprawdzenie czy serwer został zsynchronizowany **(bez wymuszenia synchronizacja może zająć trochę czasu)**
 
 ```console
-chronyc sources -v
+# chronyc sources -v
 ```
+
+6. Wymuszenie synchronizacji 
+
+```console
+# chronyc makestep
+
+200 OK
+```
+
+6. Display parameters about the system’s clock performance
+
+```console
+# chronyc tracking 
+```
+
+7. Sprawdzenie czy zegar jest zsynchronizowany 
+
+```console
+# timedatectl
+
+               Local time: Wed 2022-03-09 12:28:58 EST
+           Universal time: Wed 2022-03-09 17:28:58 UTC
+                 RTC time: Wed 2022-03-09 17:28:58
+                Time zone: America/New_York (EST, -0500)
+--> System clock synchronized: yes <--
+              NTP service: active
+          RTC in local TZ: no
+```
+
 
 
 
