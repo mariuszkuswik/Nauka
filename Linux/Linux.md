@@ -5994,13 +5994,14 @@ Poprzednim serwerem czasu był ntp, obecnym chrony
 ```
 
 3. Dodanie docelowego serwera w configu ```/etc/chrony.conf```
-- w pliku ```/etc/chrony.conf```
-    - server "$sever_address" [option] - składnia opisana w man ```chrony.conf```
-    np. 
+    
+```console
+# vim ```/etc/chrony.conf```
 
-    ```console
-    server 169.254.169.123 iburst
-    ```
+### server "$sever_address" [option] - składnia opisana w man ```chrony.conf```
+
+server 169.254.169.123 iburst
+```
 
 4. Restart usługi chronyd
 
