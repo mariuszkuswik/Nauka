@@ -5954,14 +5954,17 @@ np.
 [Cloud_guru - lekcja](https://learn.acloud.guru/course/red-hat-certified-system-administrator-ex200-exam-prep/learn/60dc10ad-0973-4bb6-8a0b-9d987f2c25f3/071c69c6-90ba-4885-9f32-15949b43286f/watch)
 
 
+Poprzednim serwerem czasu był ntp, obecnym chrony
+
 - ```chrony``` - serwer lub klient (zależy od potrzeby) kontroli czasu
 
 - ```chronyd``` - **daemon for synchronisation of the system clock**, can be controlled via local or remote instances of ```chronyc```
-- ```chronyc``` - command line program **used to monitor and control ```chronyd```** - działa na tej samej zasadzie co fdisk 
+- ```chronyc``` - command line program **used to monitor and control ```chronyd```** - działa na tej samej zasadzie co fdisk, **tabulator mocno pomaga** 
     - ```help``` - wyświetla pomoc
     - ```sources -v``` - wyświetla dostępne źródła, razem z wyjaśnieniem co znaczą wpisy w tabeli   
-    
     ![chronyc_sources_verbosed](Obrazy/Cloud_Guru/chronyc_sources_verbosed.png)  
+    - ```sourcestats -v``` - więcej informacji na temat dostępnych serwerów 
+    - ```serverstats``` - nie wiem ? 
   
 - ```ntpstat``` - wspiera chronyd ? - domyślnie nie jest zainstalowane 
 
