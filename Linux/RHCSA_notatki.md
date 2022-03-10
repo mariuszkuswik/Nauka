@@ -29,15 +29,24 @@ Dodatkowa dokumentacja
 
 # CG-Firewall 
 
+- W RHEL8 firewall jest zarzadzany przez firewalld, w RHEL7 pod spodem bylo iptables, obecnie jest to nftables
+zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
+
+- Pliki konfiguracyjne : 
+	- ```/usr/lib/firewalld``` - katalog z domyslna konfiguracja
+	- ```/etc/firewalld``` - katalog z obecnie dzialajacym configiem 
+
 
 - firewall-cmd - odpowiada za konfigurację zapory 
+    - ```--state``` - wyswietla czy firewall dziala
     - ```--reload``` - zatwierdzenie wprowadzonych zmian
     - ```--check-config``` - sprawdza czy w configu nie ma błędów  
-    - ```--list-all``` - List everything added or enabled
+    - ```--list-all``` - wypisuje wszystkie reguly które obecnie działają  
+    - ```--list-all --permanent``` wypisuje reguły które są zapisane w configu - będą działać po ***reboocie systemu***
     - ```--list-services``` - listuje serwisy dodane do firewalla 
-    - --list-ports - 
-    - --add-service - 
-    - --add-port - 
+    - ```--list-ports``` - 
+    - ```--add-service``` - 
+    - ```--add-port``` - 
 
 ```nmap``` - pozwala skanować porty zdalnej maszyny 
 
