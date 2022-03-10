@@ -61,10 +61,10 @@ zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
     - ```--add-service``` - 
     - ```--add-port``` - 
   
-ZAWSZE TRZEBA PAMIĘTAĆ O OPCJI ```--permanent```,  
+**ZAWSZE TRZEBA PAMIĘTAĆ O OPCJI ```--permanent```**,  
 w przeciwnym wypadku zmiany nie będą stałe   
 
-Otwarcie portu 80
+Otwarcie portu 80 tcp
 
 ```console
 # firewall-cmd --add-port=80/tcp --permanent
@@ -83,10 +83,16 @@ Wylistowanie ustawiń **PERMANENTNYCH** dla firewalla
 # firewall-cmd --list-all --permanent
 ```
 
+Przeładowanie configu firewalla 
 
-```nmap``` - skanuje porty zdalnej maszyny 
-```curl``` - pozwala łatwo sprawdzić czy 
+```console
+# firewall-cmd --reload 
+```  
 
+
+```nmap``` - skanuje porty zdalnej maszyny   
+```curl``` - pozwala łatwo sprawdzić czy   
+  
 
 ## Ćwiczenie 
 
