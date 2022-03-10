@@ -51,6 +51,7 @@ zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
 
 
 - firewall-cmd - odpowiada za konfigurację zapory   
+    
     Zarządzanie firewallem  
     - ```--state``` - wyswietla czy firewall dziala
     - ```--reload``` - zatwierdzenie wprowadzonych zmian
