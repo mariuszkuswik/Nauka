@@ -11,6 +11,7 @@
 - ```apropos``` wyszukuje strony w pomocy, podobnie jak *man -k*
 - ```man -k``` - wyszukuje strony w pomocy 
 - ```info``` - wyświetla komendy z opisem  
+- locate "$szukana_komenda" - powinno wylistować pliki z pomocą 
 
 ## Man
 
@@ -21,10 +22,22 @@
 ```info``` - **Samo wykonanie polecenia info wyświetla przydatne komendy z opisami**
 
 
-
 ## /usr/share/doc
 
 Dodatkowa dokumentacja 
+
+# Wyszukiwanie plików 
+
+## locate 
+
+locate działa na podstawie bazy danych 
+
+locate "$file_name"
+
+updatedb - aktualizuje bazę locate
+
+
+# Tworzenie użytkowników 
 
 
 # CG-Firewall 
@@ -54,23 +67,26 @@ w przeciwnym wypadku zmiany nie będą stałe
 Otwarcie portu 80
 
 ```console
-firewall-cmd --add-port=80/tcp --permanent
+# firewall-cmd --add-port=80/tcp --permanent
 ```
 
 Dodanie serwisu mysql do firewalla
 
 ```console
-firewall-cmd --add-service=http --permanent
+# firewall-cmd --add-service=http --permanent
 ```
 
 
 Wylistowanie ustawiń **PERMANENTNYCH** dla firewalla
 
-firewall-cmd --list-all --permanent
+```console
+# firewall-cmd --list-all --permanent
+```
 
 
+```nmap``` - skanuje porty zdalnej maszyny 
+```curl``` - pozwala łatwo sprawdzić czy 
 
-```nmap``` - pozwala skanować porty zdalnej maszyny 
 
 ## Ćwiczenie 
 
