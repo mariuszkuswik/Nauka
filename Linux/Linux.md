@@ -118,7 +118,7 @@ file:///usr/share/doc/selinux-policy-doc/html/index.html.
 [Spis treści](#spis-treści)
 
 
-# #TODO - Dodać zwijanie przy opisach poleceń i skrócić część notatek 
+### #TODO - Dodać zwijanie przy opisach poleceń i skrócić część notatek 
 
 ## id
 
@@ -722,7 +722,7 @@ done
 
 ### #TODO - sed - dodać opis, strona 183
 
-# #TODO - Strona 186 - ćwiczenia do rozdziału, do zrobienia 
+### #TODO - Strona 186 - ćwiczenia do rozdziału, do zrobienia 
 
 # Kompresja
 
@@ -1454,7 +1454,7 @@ podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
     - ```groupmod -n jacks jokers``` - zmiana nazwy grupy jokers 
 
 
-# Definiowanie uprawnień za pomocą listy ACL
+## Definiowanie uprawnień za pomocą listy ACL
 
 
 ### #TODO - Strona 281 - do skrócenia  
@@ -1650,7 +1650,7 @@ O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dl
 ### #TODO - Ćwiczenia do zrobienia, strona 289 
 
 
-# Zarządzanie dyskami i systemami plików
+## Zarządzanie dyskami i systemami plików
 
 ## Partycjonowanie dysku twardego
 
@@ -2325,7 +2325,7 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
 ```
 
 
-# Administracja siecią
+## Administracja siecią
 
 - [Komenda ip](#ip---show-and-manipulate-routing-network-devices-interfaces-and-tunnels) 
 - [Sprawdzanie informacji o routingu](#sprawdzanie-informacji-o-routingu)
@@ -2516,7 +2516,7 @@ Pozostałe sieciowe pliki konfiguracyjne :
 
 ## Definiowanie aliasu interfejsu sieciowego
 
-# Uruchamianie i zatrzymywanie usług
+## Uruchamianie i zatrzymywanie usług
 
 ## Demon inicjalizacji (init lub systemd)
 
@@ -3050,7 +3050,7 @@ Po wykonaniu tej procedury jednostka zostanie zostanie aktywowana (uruchomiona) 
 
 
 
-# Serwer wydruku 
+## Serwer wydruku 
 
 ## Konfigurowanie drukarek
 
@@ -3071,7 +3071,7 @@ Domyślnie strona konfiguracyjna cups jest dostępna tylko z lokalnego systemu, 
 
 
 
-# Serwer WWW
+## Serwer WWW
 
 ## Pakiet httpd
 
@@ -3230,7 +3230,7 @@ Dane wyjściowe wskazują, że proces httpd o *PID 2105* nasłuchuje na porcie 8
 ### #TODO - strona 460 - ćwiczenia httpd 
 
 
-# Serwer FTP
+## Serwer FTP
 
 TCP 21 - port do uwierzytelniania ftp
 TCP 20 - port na którym serwer przekazuje dane użytkownikowi 
@@ -3565,7 +3565,7 @@ Jak zalogować się jako użytkownik anonimowy za pomocą klienta ftp (nie lftp!
 
 
 
-# Samba - Serwer plików 
+## Samba - Serwer plików 
 
 ## Instalowanie Samby
 
@@ -3769,7 +3769,7 @@ semanage fcontext -a -t samba_share_t "/mystuff(/.*)?"
 # restorecon -v /mystuff  
 ```
 
-# Konfigurowanie Samby
+## Konfigurowanie Samby
 
 
 ```/etc/samba/smb.conf``` - plik /etc/samba/smb.conf zawiera ustawienia przeznaczone do konfigurowania serwera Samba, definiowania drukarek współdzielonych, konfigurowania uwierzytelnienia oraz tworzenia katalogów współdzielonych.   
@@ -4017,7 +4017,7 @@ Reconnecting with SMB1 for workgroup listing.
 
 
 
-# NFS - Serwer plików   
+## NFS - Serwer plików   
 
 [Instalacja](#Instalacja)   
 [Dokumentacja](#Dokumentacja)  
@@ -4474,7 +4474,7 @@ sudo mount localhost:/var/mystuff /tmp/mnt/mystuff
 7. 
 
 
-# Rozwiązywanie problemów z systemem Linux
+## Rozwiązywanie problemów z systemem Linux
 
 - [Rozwiązywanie problemów z GRUB](#Rozwiązywanie-problemów-z-GRUB)
 - [Proces rozruchu za pomocą demona systemd](#Proces-rozruchu-za-pomocą-demona-systemd)
@@ -4886,7 +4886,7 @@ Dopisac coś o tym jak można blokować systemy w fstabie
     journalctl -u avahi-daemon.service
     ```
 
-# SELinux
+## SELinux
 
 - [Zalety SELinux](#Zalety-SELinux)
 - [Sposób działania SELinux](#Sposób-działania-SELinux)
@@ -5648,8 +5648,8 @@ które znajdują się w katalogu niestandardowym dla tej usług
 
 ## Koniec Biblii
 
-### Strona 657
-659
+### Strona 660
+
 
 
 
@@ -5703,7 +5703,7 @@ https://access.redhat.com/solutions/1355683
 
 
 
-
+# Notatki ogólne
 
 ## Skryptowanie 
 
@@ -5903,6 +5903,31 @@ Dodatkowa dokumentacja
 
 # CG-Firewall 
 
+
+- firewall-cmd - odpowiada za konfigurację zapory 
+    - ```--reload``` - zatwierdzenie wprowadzonych zmian
+    - ```--check-config``` - sprawdza czy w configu nie ma błędów  
+    - ```--list-all``` - List everything added or enabled
+    - ```--list-services``` - listuje serwisy dodane do firewalla 
+    - --list-ports - 
+    - --add-service - 
+    - --add-port - 
+
+```nmap``` - pozwala skanować porty zdalnej maszyny 
+
+## Ćwiczenie 
+
+### Otwarcie konkretnego portu na maszynie 
+
+1. Klient - Przeskanowanie serwera na którym działa usługa, sprawdzenie czy ma jakieś otwarte porty
+
+```console
+nmap -A "$remote_ip_address"
+```
+
+2. SerNa serwerze 
+
+
 # CG-SELinux 
 
 - ```semanage boolean -l``` - **wyświetlenie opisu** wszystkich zmiennych SELinux 
@@ -5999,7 +6024,6 @@ Poprzednim serwerem czasu był ntp, obecnym chrony
 # vim ```/etc/chrony.conf```
 
 ### server "$sever_address" [option] - składnia opisana w man ```chrony.conf```
-
 server 169.254.169.123 iburst
 ```
 
