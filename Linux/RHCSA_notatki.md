@@ -52,14 +52,14 @@ zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
 
 - firewall-cmd - odpowiada za konfigurację zapory   
     
-    Zarządzanie firewallem  
-    - ```--state``` - wyswietla czy firewall dziala
-    - ```--reload``` - zatwierdzenie wprowadzonych zmian
-    - ```--list-all --permanent``` wypisuje reguły które są zapisane w configu - będą działać po ***reboocie systemu***
-    
-    Otwieranie portów/usług
-    - ```--add-port "$port_number"/[tcp | udp ]``` - Otwarcie portu dla tcp lub udp
-    - ```--add-service "$service_name"``` - Udostępnienie możliwości komunikacji z usługą (lista dostępna pod tabulatorem)
+    - Zarządzanie firewallem :  
+        - ```--state``` - wyswietla czy firewall dziala
+        - ```--reload``` - zatwierdzenie wprowadzonych zmian
+        - ```--list-all --permanent``` wypisuje reguły które są zapisane w configu - będą działać po ***reboocie systemu***
+        
+    - Otwieranie portów/usług :  
+        - ```--add-port "$port_number"/[tcp | udp ]``` - Otwarcie portu dla tcp lub udp
+        - ```--add-service "$service_name"``` - Udostępnienie możliwości komunikacji z usługą (lista dostępna pod tabulatorem)
 
 
 **ZAWSZE TRZEBA PAMIĘTAĆ O OPCJI ```--permanent```**,  
