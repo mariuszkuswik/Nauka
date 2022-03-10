@@ -50,8 +50,8 @@ zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
 	- ```/etc/firewalld``` - katalog z obecnie dzialajacym configiem 
 
 
-- firewall-cmd - odpowiada za konfigurację zapory 
-    Zarządzanie firewallem
+- firewall-cmd - odpowiada za konfigurację zapory   
+    Zarządzanie firewallem  
     - ```--state``` - wyswietla czy firewall dziala
     - ```--reload``` - zatwierdzenie wprowadzonych zmian
     - ```--list-all --permanent``` wypisuje reguły które są zapisane w configu - będą działać po ***reboocie systemu***
