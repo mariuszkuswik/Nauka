@@ -29,7 +29,7 @@ Dodatkowa dokumentacja
 
 # CG-Firewall 
 
-- W RHEL8 firewall jest zarzadzany przez firewalld, w RHEL7 pod spodem bylo iptables, obecnie jest to nftables
+- W RHEL8 firewall jest zarzadzany przez firewalld, pod spodem jest nftables  
 zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
 
 - Pliki konfiguracyjne : 
@@ -47,6 +47,28 @@ zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
     - ```--list-ports``` - 
     - ```--add-service``` - 
     - ```--add-port``` - 
+  
+ZAWSZE TRZEBA PAMIĘTAĆ O OPCJI ```--permanent```,  
+w przeciwnym wypadku zmiany nie będą stałe   
+
+Otwarcie portu 80
+
+```console
+firewall-cmd --add-port=80/tcp --permanent
+```
+
+Dodanie serwisu mysql do firewalla
+
+```console
+firewall-cmd --add-service=http --permanent
+```
+
+
+Wylistowanie ustawiń **PERMANENTNYCH** dla firewalla
+
+firewall-cmd --list-all --permanent
+
+
 
 ```nmap``` - pozwala skanować porty zdalnej maszyny 
 
@@ -231,6 +253,11 @@ VDO będzie na egzaminie, ogarnąć co i jak !
 [Pytanie dotyczące VDO](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md)
 [artykuł jak to działa](https://hobo.house/2018/09/13/using-vdo-on-centos-rhel7-for-storage-efficiency/)
 
+
+
+
+
+# Restart hasła roota
 
 
 # Rozwiązywanie problemów (ogólnie)
