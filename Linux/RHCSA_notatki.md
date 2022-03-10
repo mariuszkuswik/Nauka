@@ -96,9 +96,9 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
 # telnet 172.20.183.251 90
 ```  
   
-```nmap -A``` - skanuje porty zdalnej maszyny, wyświetla wszystkie informacje      
-```telnet "$remote_ip" "$remote_port"``` - pozwala sprawdzić czy port jest otwarty   
-```curl "$remote_ip"``` - pozwala sprawdzić czy działa serwis http      
+- ```nmap -A``` - skanuje porty zdalnej maszyny, wyświetla wszystkie informacje      
+- ```telnet "$remote_ip" "$remote_port"``` - pozwala sprawdzić czy port jest otwarty   
+- ```curl "$remote_ip"``` - pozwala sprawdzić czy działa serwis http      
 
 
 ## Ćwiczenie 
