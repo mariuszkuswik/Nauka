@@ -40,7 +40,11 @@ updatedb - aktualizuje bazę locate
 # Tworzenie użytkowników 
 
 
-# CG-Firewall 
+# NFS
+
+
+
+# Firewall 
 
 - W RHEL8 firewall jest zarzadzany przez firewalld, pod spodem jest nftables  
 zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
@@ -114,7 +118,7 @@ nmap -A "$remote_ip_address"
 2. SerNa serwerze 
 
 
-# CG-SELinux 
+# SELinux 
 
 - ```semanage boolean -l``` - **wyświetlenie opisu** wszystkich zmiennych SELinux 
 
@@ -261,7 +265,7 @@ server 169.254.169.123 iburst
 
 
 
-# CG-LVM 
+# LVM 
 
 ## Ćwiczenie : 
 Create a new physical volume with volume group in the name of datacontainer, the extent of VG should be 16MB. Also create new logical volume with name datacopy with the size of 50 extents and filesystem vfat mounted under /datasource.
@@ -275,7 +279,7 @@ lsblk
 
 2. 
 
-# CG-VDO 
+# VDO 
 
 VDO będzie na egzaminie, ogarnąć co i jak !
 
@@ -284,6 +288,16 @@ VDO będzie na egzaminie, ogarnąć co i jak !
 
 
 
+
+
+
+
+
+
+# ACL 
+
+getfacl "$shared_directory" - listuje aclki
+setfacl -m u:jill:r-- "$shared_directory" - ustawia uprawnienia 
 
 
 # Restart hasła roota

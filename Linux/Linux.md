@@ -187,10 +187,6 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
 
 ## Uprawnienia liczbowe  
 
-- 4 - read
-- 2 - write 
-- 1 - execute 
-
 ```chmod -R 755 $HOME/myapps``` - zmiana uprawnien rekurencyjnie dla calego katalogu 
 
 ## Uprawnienia tekstowe 
@@ -220,18 +216,15 @@ Katalogi /sbin i /usr/sbin zawierają polecenia administracyjne
     ```$ chmod ug+rx plik```
 
 
-### Formatowanie ogarnięte
-
 ### Ważne ! - **Użycie liter podczas rekurencyjnej zmiany uprawnień za pomocą polecenia chmod sprawdza się lepiej niż zastosowanie liczb do tego celu**,
 Ponieważ bity można zmieniać wybiórczo zamiast wszystkich uprawnień jednocześnie.   
-Załóżmy na przykład, że chcemy usunąć uprawnienia „pozostałych użytkowników” bez zmiany innych uprawnień zdefiniowanych dla plików i katalogów.   
-W takim przypadku można wydać następujące polecenie:  
+Jeżeli chcemy usunąć uprawnienia „pozostałych użytkowników” bez zmiany innych uprawnień zdefiniowanych dla plików i katalogów to używamy:   
 
 ```$ chmod -R o-w $HOME/myapps```
 
-To polecenie powoduje rekurencyjne usunięcie uprawnień „pozostałych użytkowników” dla wszystkich plików i katalogów znajdujących się w katalogu myapps. Jeżeli do zdefiniowania
-uprawnień użylibyśmy liczby, np. 644, uprawnienie wykonywania zostałoby usunięte dla wszystkich katalogów.   
-Liczba 755 oznaczałaby włączenie uprawnienia wykonywania także dla zwykłych plików. Opcja o-w umożliwia wyłączenie tylko jednego bitu i pozostawienie pozostałych bitów bez zmian.  
+Polecenie powoduje rekurencyjne usunięcie uprawnień „pozostałych użytkowników” dla wszystkich plików i katalogów znajdujących się w katalogu myapps. Jeżeli do zdefiniowania uprawnień użylibyśmy liczby, np. 644, uprawnienie wykonywania zostałoby usunięte dla wszystkich katalogów.   
+Liczba 755 oznaczałaby włączenie uprawnienia wykonywania także dla zwykłych plików.    
+opcja o-w umożliwia wyłączenie tylko jednego bitu i pozostawienie pozostałych bitów bez zmian.  
 
    
 ## Umask - Definiowanie uprawnień domyślnych 
@@ -244,8 +237,7 @@ Liczba 755 oznaczałaby włączenie uprawnienia wykonywania także dla zwykłych
     ```umask 777``` 
 
 - Stała zmiana 
-    Jeżeli wartość umask chcesz zmienić trwale, polecenie umask musisz dodać do pliku .bashrc
-    znajdującego się w katalogu domowym (polecenie to umieść gdzieś na końcu pliku).
+    polecenie umask musisz dodać do pliku ```.bashrc``` znajdującego się w katalogu domowym (polecenie to umieść gdzieś na końcu pliku).   
     Po następnym uruchomieniu powłoki wartość umask będzie odpowiadała zdefiniowanej
     w pliku **.bashrc** ( ```/etc/bashrc``` chcąc zmienić dla wszystkich użytkowników )
 
@@ -255,14 +247,6 @@ Without any change in default umask permissions, all files created by user root 
 
 ![Umask wyjaśnienie](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/umask_permissions.png)
 
-
-## chown - Zmiana właściciela pliku 
-
-Zmiana właściciela użytkownika i grupy na janek  
-```chown janek:janek /home/janek/notatka.txt```  
-
-Zmiana rekurencyjna właściciela i grupy dla katalogu    
-```chown -R janek:janek /media/myusb```  
 
 ## cp - kopiowanie plikow 
 
@@ -288,15 +272,7 @@ tekst
 
 ## Vim 
 
-```ZZ``` - wyjście z zapisem 
-```:qw``` - wyjście z zapisem
-
-```ZQ``` - wyjście bez zapisywania 
-```:q!``` - wyjście bez zapisywania 
-
-```u``` - undo 
 ```Ctrl+R``` - redo 
-
 
 ```:!polecenie``` - wydanie polecenia do shella z poziomu vima
 ```:!bash``` - otwiera nowego shella, **exit** wychodzi z shella i wraca do terminala 
@@ -312,10 +288,7 @@ tekst
 
 ## Locate 
 
-Wyszukuje na podstawie nazw w swojej bazie danych, jest przez to wydajniejszy,
-znajduje wszystkie pliki które zawierają podaną nazwę w swojej ścieżce,
-jeżeli nie masz uprawnień do danego pliku/folderu to nie zostanie on odnaleziony,  
-baza domyślnie jest odświeżana raz dziennie, odświeżanie manualne ```updatedb```
+Wyszukuje na podstawie nazw w swojej bazie danych, jest przez to wydajniejszy, jeżeli nie masz uprawnień do danego pliku/folderu to nie zostanie on odnaleziony
 
 - ```updatedb``` - odświeżenie bazy danych locate 
 
@@ -440,13 +413,13 @@ Każde polecenie musi zostać zakończone backslashem i średnikiem (\;)
 
 ## ps
 
-```ps aux``` - wyświetla wszystkie uruchomione procesy dla wszystkich użytkowników w systemie 
-```-e``` - wyświetla wsyzystkie działające procesy 
-```-f``` - full-format, including command lines
-
-
-```-o``` - pozwala na wybranie konkretnych kolumn 
-    - kolumny które mogą zostać wyświetlone = pid,user,uid,group,gid (group id),vsz (zaalokowana pamięć wirtualna),rss (faktycznie użyta
+- ```ps aux``` - wyświetla wszystkie uruchomione procesy dla wszystkich użytkowników w systemie 
+- ```ps -el``` - preferowana forma
+    - ```-e``` - wyświetla wsyzystkie działające procesy 
+    - ```-l``` - long format
+    - ```-f``` - full-format, including command lines
+    - ```-o``` - pozwala na wybranie konkretnych kolumn 
+        - kolumny które mogą zostać wyświetlone = pid,user,uid,group,gid (group id),vsz (zaalokowana pamięć wirtualna),rss (faktycznie użyta
 pamięć operacyjna),comm (pełne polecenie, które zostało wydane)
 
 ```sort=[nazwa_kolumny]``` - sortowanie na podstawie podanej kolumny 
