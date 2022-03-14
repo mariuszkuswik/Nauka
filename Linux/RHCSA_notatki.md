@@ -317,11 +317,11 @@ setfacl -m u:jill:r-- "$shared_directory" - ustawia uprawnienia
 
 
 
+Chlebik
 
-
-|  |  |  |
+| Zadanko | Notatki | Czy opanowane |
 |--|--|--|
-| 001_restore_root_password |  |  |
+| 001_restore_root_password |  | nie |
 | 002_setup_network_parameters |  |  |
 | 003_change_hostname |  |  |
 | 004_enable_selinux |  |  |
