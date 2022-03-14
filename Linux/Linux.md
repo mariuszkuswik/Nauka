@@ -5611,9 +5611,9 @@ drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
 
 - Jeżeli usługa używa niestandardowego katalogu to trzeba o tym powiadomić SELinux 
 
-```semanage``` - służy do zarządzania kontekstami 
-```semanage fcontext``` - zarządza kontekstami plików i folderów 
-```restorecon -R``` - służy do zatwierdzenia zmian na folderach, zmiany etykiet 
+- ```semanage``` - służy do zarządzania kontekstami 
+- ```semanage fcontext``` - zarządza kontekstami plików i folderów 
+- ```restorecon -R``` - służy do zatwierdzenia zmian na folderach, zmiany etykiet 
 
 
 Ustawienie kontekstu dla **folderu** /abc/www/html
