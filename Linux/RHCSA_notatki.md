@@ -1,8 +1,12 @@
 # CLOUDGURU 
 
-1. [Pomoc](#cg-pomoc)
-1. [Firewall](#cg-firewall)
-1. [Selinux](#cg-selinux)
+# Spis treści
+
+1. [Pomoc](#pomoc)
+1. [Firewall](#firewall)
+1. [Selinux](#selinux)
+
+[Koniec](#Koniec)
 
 # CG-Pomoc 
 
@@ -122,6 +126,8 @@ nmap -A "$remote_ip_address"
 
 - ```semanage boolean -l``` - **wyświetlenie opisu** wszystkich zmiennych SELinux 
 
+## Tryby SELinux
+
 ### Sprawdzanie trybu selinux 
 - ```sestatus``` - szczegółowe informacje
 - ```getenforce``` - dostajemy tylko tryb w jakim selinux działa obecnie 
@@ -148,16 +154,40 @@ nmap -A "$remote_ip_address"
 
 **Jeżeli mamy jakiś problem z selinuxem to jest duża szansa że odpowiednią komendę znajdziemy poprzez grep "$nazwa_usługi" /var/log/messages**
 
-### Konteksty SELinux
+## Konteksty SELinux
 
 Dla większości komend aby sprawdzić kontekst działa parametr ```-Z```,   
 np. 
 - ```ls -laZ``` - sprawdzenie kontekstu plików 
 - ```ps -elZ``` - sprawdzenie kontekstu procesów 
 
-#### Sprawdzenie kontekstu pliku 
+
+### Sprawdzenie kontekstu pliku 
 
 - ```ls -laZ "$file_name"``` - wyświetlenie kontekstu pliku 
+
+**Context** is the one with **_t** suffix - *user_home_dit_t*
+
+```console
+# ls -lZ /home
+
+drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
+```
+
+### Przypisanie kontekstu SELinux
+
+semanage - służy do zarządzania kontekstami 
+restorecon - służy do zatwierdzenia zmian
+
+
+
+```yum whatprovides */semanage``` - domyślnie może nie być zainstalowane  
+
+
+
+#### Instalacja
+
+
 
 
 
@@ -357,3 +387,6 @@ Chlebik
 | 034_containers |  |  |
 
 
+### Koniec
+
+[Spis Treści](#Spis-treści)

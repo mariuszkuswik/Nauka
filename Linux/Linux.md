@@ -5595,8 +5595,7 @@ Demony które reportują błędy selinux to :
 - Jeżeli usługa używa niestandardowego katalogu to trzeba o tym powiadomić SELinux 
     ```semanage fcontext -a -t httpd_sys_content_t "/abc/www/html(/.*)?"``` - ustawienie kontekstu dla **folderu** /abc/www/html
 
-W celu rzeczywistego przypisania nowego typu kontekstu bezpieczeństwa plikom znajdującym
-się w tym katalogu konieczne jest użycie polecenia restorecon –R:
+W celu rzeczywistego przypisania nowego typu kontekstu bezpieczeństwa plikom znajdującym się w tym katalogu konieczne jest użycie polecenia ```restorecon –R```:
 
 ```console
 # restorecon -R -v /abc/www/html
@@ -5604,8 +5603,8 @@ się w tym katalogu konieczne jest użycie polecenia restorecon –R:
 unconfined_u:object_r:httpd_sys_content_t:s0 abc
 ```
 
-Po wykonaniu tych poleceń demon httpd będzie miał uprawnienia dostępu do plików HTML,
-które znajdują się w katalogu niestandardowym dla tej usług
+Po wykonaniu tych poleceń demon httpd będzie miał uprawnienia dostępu do plików HTML, które znajdują się w katalogu niestandardowym dla tej usług
+
 
 #### Użycie niestandardowego portu dla usługi
 
