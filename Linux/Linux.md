@@ -5610,20 +5610,18 @@ drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
 ### Przypisanie kontekstu SELinux
 
 Jeżeli usługa używa niestandardowego katalogu to trzeba o tym powiadomić SELinux 
-
 - ```semanage``` - służy do zarządzania kontekstami 
 - ```semanage fcontext``` - zarządza kontekstami plików i folderów 
 - ```restorecon -R``` - służy do zatwierdzenia zmian na folderach, zmiany etykiet 
 
 
-Ustawienie kontekstu dla **folderu** /abc/www/html
+**Ustawienie kontekstu** dla folderu /abc/www/html
 
 ```console
 # semanage fcontext -a -t httpd_sys_content_t "/abc/www/html(/.*)?"
 ```
  
-
-W celu rzeczywistego przypisania nowego typu kontekstu bezpieczeństwa plikom znajdującym się w tym katalogu konieczne jest użycie polecenia ```restorecon –R```:
+```restorecon –R``` - Rzeczywiste przypisanie nowego typu kontekstu plikom w tym katalogu
 
 ```console
 # restorecon -R -v /abc/www/html
@@ -5632,8 +5630,6 @@ unconfined_u:object_r:httpd_sys_content_t:s0 abc
 ```
 
 Po wykonaniu tych poleceń demon httpd będzie miał uprawnienia dostępu do plików HTML, które znajdują się w katalogu niestandardowym dla tej usług
-
-
 
 
 
