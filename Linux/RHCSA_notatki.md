@@ -122,7 +122,9 @@ nmap -A "$remote_ip_address"
 2. SerNa serwerze 
 
 
-# SELinux 
+# SELinux
+
+### #TODO - dodać jak rozwiązywać podstawowe błędy
 
 - ```semanage boolean -l``` - **wyświetlenie opisu** wszystkich zmiennych SELinux 
 
@@ -176,8 +178,11 @@ drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
 
 ### Przypisanie kontekstu SELinux
 
-semanage - służy do zarządzania kontekstami 
-restorecon - służy do zatwierdzenia zmian
+```semanage``` - służy do zarządzania kontekstami 
+```semanage fcontext``` - zarządza kontekstami plików i folderów 
+```restorecon -R``` - służy do zatwierdzenia zmian na folderach, zmiany etykiet 
+
+
 
 
 

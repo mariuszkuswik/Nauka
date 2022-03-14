@@ -5590,10 +5590,34 @@ Demony które reportują błędy selinux to :
 
 - Przy rozwiązywaniu problemów SELinux dobrze jest najpierw sprawdzić klasyczne uprawnnienia DAC (```ls -l```)
 
-#### Użycie niestandardowego katalogu dla usługi
+
+### Sprawdzenie kontekstu pliku 
+
+- ```ls -laZ "$file_name"``` - wyświetlenie kontekstu pliku 
+
+**Context** is the one with **_t** suffix - *user_home_dit_t*
+
+```console
+# ls -lZ /home
+
+drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
+```
+
+### Przypisanie kontekstu SELinux
 
 - Jeżeli usługa używa niestandardowego katalogu to trzeba o tym powiadomić SELinux 
-    ```semanage fcontext -a -t httpd_sys_content_t "/abc/www/html(/.*)?"``` - ustawienie kontekstu dla **folderu** /abc/www/html
+
+```semanage``` - służy do zarządzania kontekstami 
+```semanage fcontext``` - zarządza kontekstami plików i folderów 
+```restorecon -R``` - służy do zatwierdzenia zmian na folderach, zmiany etykiet 
+
+
+Ustawienie kontekstu dla **folderu** /abc/www/html
+
+```console
+semanage fcontext -a -t httpd_sys_content_t "/abc/www/html(/.*)?"
+```
+ 
 
 W celu rzeczywistego przypisania nowego typu kontekstu bezpieczeństwa plikom znajdującym się w tym katalogu konieczne jest użycie polecenia ```restorecon –R```:
 
@@ -5604,6 +5628,9 @@ unconfined_u:object_r:httpd_sys_content_t:s0 abc
 ```
 
 Po wykonaniu tych poleceń demon httpd będzie miał uprawnienia dostępu do plików HTML, które znajdują się w katalogu niestandardowym dla tej usług
+
+
+
 
 
 #### Użycie niestandardowego portu dla usługi
