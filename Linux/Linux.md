@@ -5593,7 +5593,11 @@ Demony które reportują błędy selinux to :
 
 ### Sprawdzenie kontekstu pliku 
 
-- ```ls -laZ "$file_name"``` - wyświetlenie kontekstu pliku 
+Wyświetlenie kontekstu pliku 
+
+```console
+# ls -laZ "$file_name"
+``` 
 
 **Context** is the one with **_t** suffix - *user_home_dit_t*
 
@@ -5615,7 +5619,7 @@ drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
 Ustawienie kontekstu dla **folderu** /abc/www/html
 
 ```console
-semanage fcontext -a -t httpd_sys_content_t "/abc/www/html(/.*)?"
+# semanage fcontext -a -t httpd_sys_content_t "/abc/www/html(/.*)?"
 ```
  
 
