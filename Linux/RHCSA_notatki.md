@@ -1,8 +1,10 @@
 # CLOUDGURU 
 
+# Spis treści
 1. [Pomoc](#cg-pomoc)
 1. [Firewall](#cg-firewall)
 1. [Selinux](#cg-selinux)
+- [Koniec](#koniec)
 
 # CG-Pomoc 
 
@@ -321,3 +323,17 @@ setfacl -m u:jill:r-- "$shared_directory" - ustawia uprawnienia
 
 
 # Koniec CLOUDGURU 
+
+
+# Zmiany urodzinowe 
+
+
+
+# Koniec zmian urodzinowych 
+
+
+
+# Koniec
+
+[Spis treści](#Spis-treści)
+
