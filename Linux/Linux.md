@@ -245,7 +245,7 @@ opcja o-w umożliwia wyłączenie tylko jednego bitu i pozostawienie pozostałyc
 **The pre-defined initial permissions for files and directories are 666 and 777 respectively.**
 Without any change in default umask permissions, all files created by user root will get 644 (666 - 022) permissions and all directories will get 755 (777-022) permissions.
 
-![Umask wyjaśnienie](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/umask_permissions.png)
+![Umask wyjaśnienie](Obrazy/umask_permissions.png)
 
 
 ## cp - kopiowanie plikow 
@@ -903,7 +903,7 @@ Więcej informacji w podręczniku str 279
 
 ### #TODO - jak zbackupować całość systemu 
 
-![Instalacja](instalacja_linux_1.png)
+![Instalacja](Obrazy/instalacja_linux_1.png)
 
 
 
@@ -1568,7 +1568,7 @@ Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```
 ## Dodawanie katalogów współdzielonych przez użytkowników
 
 ##### Tabela 11.4, strona 285
-![Litery i cyfry używane w specjalnych bitach uprawnień](https://github.com/mariuszkuswik/Nauka/blob/biblia/Linux/Obrazy/tabela_11_4.png)
+![Litery i cyfry używane w specjalnych bitach uprawnień](Obrazy/tabela_11_4.png)
 
 
 ## Bit GID - tworzenie katalogów współdzielonych przez grupy
@@ -1665,7 +1665,7 @@ Tworzenie filesystemu
 ## LVM - Używanie menedżera partycji 
 
 
-![LVM schemat](rys_12_1.png)
+![LVM schemat](Obrazy/rys_12_1.png)
 
 Rysunek 12.1 pokazuje, że najpierw tworzymy jeden lub więcej woluminów fizycznych (pv), używamy ich do utworzenia grupy woluminów (vg), aby następnie na jej podstawie tworzymy woluminy logiczne.
 
