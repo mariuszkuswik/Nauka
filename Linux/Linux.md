@@ -2468,7 +2468,8 @@ Verify with cat /etc/resolv.conf. You should not edit /etc/resolv.conf manually 
 
 ```nmtui``` - pozwala skonfigurować podstawowe ustawienia sieci, **zmiana ip, ustawienie hostname, dns**
 
-![nmtui](https://github.com/mariuszkuswik/Nauka/blob/biblia/Linux/Obrazy/nmtui.png)
+![nmtui](Obrazy/nmtui.png)
+
 ##### Menu nmtui 
 
 ```/etc/sysconfig/network-script``` - folder dla configów w których ustawiane są interfejsy sieciowe i trasy niestandardowe  
@@ -5636,7 +5637,15 @@ Po wykonaniu tych poleceń demon httpd będzie miał uprawnienia dostępu do pli
 
 #### Użycie niestandardowego portu dla usługi
 
+Przykład dla ```sshd``` 
 
+1. Odszukanie typu kontekstu bezpieczeństwa usługi
+
+```console
+# semanage port -l | grep ssh
+
+ssh_port_t tcp 22
+```
 
 
 ## Rozwiązywanie problemów związanych z SELinux
