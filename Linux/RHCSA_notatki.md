@@ -12,7 +12,9 @@
 1. [VDO](#vdo)
 
 [Koniec](#Koniec)
-
+  
+    
+    
 # CG-Pomoc 
 
 ## Wyszukiwanie pomocy
