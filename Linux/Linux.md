@@ -5723,7 +5723,15 @@ httpd_can_network_connect --> on
 
 ### #TODO - strona 663 - ćwiczenia do zrobienia 
 
+
 # Zabezpieczanie systemu Linux w sieci
+
+- [Zarządzanie usługami w sieci](#Zarządzanie-usługami-w-sieci)
+- [Kontrola dostępu do usług w sieci](#Kontrola-dostępu-do-usług-w-sieci)
+- [Implementacja zapory sieciowej](#Implementacja-zapory-sieciowej)
+
+[Spis treści](#spis-tre%C5%9Bci)
+
 
 
 
