@@ -5647,6 +5647,32 @@ Przykład dla ```sshd```
 ssh_port_t tcp 22
 ```
 
+2. Z wygenerowanych danych wynika, że **niezbędnym typem kontekstu jest ```ssh_port_t```**.   
+Teraz dodajemy port *47347*  
+
+```console
+# semanage port -a -t ssh_port_t -p tcp 47347
+# semanage port -l | grep ssh
+
+ssh_port_t tcp 47347, 22
+```
+
+3. Edycja configu demona sshd ```/etc/ssh/sshd_config```  
+Dodajemy do niego wiersz ```Port 47347```
+
+4. Dodanie niestandardowego portu do firewalla 
+
+```console
+# firewall-cmd --add-port=47347/tcp
+
+success
+```
+
+5. Restart usługi sshd 
+
+```console
+systemctl restart sshd
+```
 
 ## Rozwiązywanie problemów związanych z SELinux
 ## Informacje dodatkowe o SELinux
