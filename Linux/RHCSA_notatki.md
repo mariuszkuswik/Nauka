@@ -358,38 +358,38 @@ Chlebik
 |--|--|--|
 | 001_restore_root_password |  | nie |
 | 002_setup_network_parameters |  |  |
-| 003_change_hostname |  |  |
-| 004_enable_selinux |  |  |
-| 005_install_apache_and_give_it_permission_to_nfs_resource |  |  |
-| 006_extend_existing_lv_add_label |  |  |
-| 007_assign_sel_context_to_the_directory |  |  |
-| 008_create_users_with_specified_uid |  |  |
-| 009_allow_other_user_to_get_access_to_home_dir |  |  |
-| 010_dir_ownership_via_group |  |  |
-| 011_create_logical_volume_and_add_filesystem |  |  |
-| 012_configure_virtual_console_for_kernel |  |  |
-| 013_create_swap_on_logical_volume |  |  |
-| 014_add_entry_to_cron |  |  |
-| 015_set_default_system_level |  |  |
-| 016_add_additional_remote_yum_repo |  |  |
-| 017_create_physical_partition_and_mount |  |  |
-| 018_update_kernel_and_make_it_default_one |  |  |
-| 019_create_users_with_secondary_groups |  |  |
-| 020_create_folders_with_group_access_rights |  |  |
-| 021_configure_ldap_authentication |  |  |
-| 022_configure_autofs |  |  |
-| 023_configure_ntp_on_the_client |  |  |
-| 024_access_rights_for_file |  |  |
-| 025_create_whole_lvm_stack |  |  |
-| 026_reduce_the_size_of_lv |  |  |
-| 027_create_compressed_archive |  |  |
-| 028_search_string_using_grep_and_redirect |  |  |
-| 029_make_journald_persistent |  |  |
-| 030_setting_up_vdo |  |  |
-| 031_finding_files |  |  |
-| 032_finding_files_with_given_text_in_them |  |  |
-| 033_managing_layered_storage |  |  |
-| 034_containers |  |  |
+| 003_change_hostname |  | razcej tak |
+| 004_enable_selinux |  | raczej tak |
+| 005_install_apache_and_give_it_permission_to_nfs_resource |  | nie |
+| 006_extend_existing_lv_add_label |  | przećwiczyć |
+| 007_assign_sel_context_to_the_directory |  | przećwiczyć |
+| 008_create_users_with_specified_uid |  | tak |
+| 009_allow_other_user_to_get_access_to_home_dir |  | nie |
+| 010_dir_ownership_via_group |  | nies |
+| 011_create_logical_volume_and_add_filesystem |  | przećwiczyć |
+| 012_configure_virtual_console_for_kernel |  | nie |
+| 013_create_swap_on_logical_volume |  | przećwiczyć |
+| 014_add_entry_to_cron |  | przećwiczyć |
+| 015_set_default_system_level |  | tak |
+| 016_add_additional_remote_yum_repo |  | nie |
+| 017_create_physical_partition_and_mount |  | nie |
+| 018_update_kernel_and_make_it_default_one |  | nie |
+| 019_create_users_with_secondary_groups |  | przećwiczyć |
+| 020_create_folders_with_group_access_rights |  | przećwiczyć |
+| 021_configure_ldap_authentication |  | nie |
+| 022_configure_autofs |  | nie |
+| 023_configure_ntp_on_the_client |  | nie |
+| 024_access_rights_for_file |  | przećwiczyć |
+| 025_create_whole_lvm_stack |  | nie |
+| 026_reduce_the_size_of_lv |  | przećwiczyć |
+| 027_create_compressed_archive |  | przećwiczyć |
+| 028_search_string_using_grep_and_redirect |  | przećwiyczć |
+| 029_make_journald_persistent |  | nie |
+| 030_setting_up_vdo |  | nie |
+| 031_finding_files |  | przećwiczyć |
+| 032_finding_files_with_given_text_in_them |  | przećwiczyć |
+| 033_managing_layered_storage |  | nie |
+| 034_containers |  | nie |
 
 
 ### Koniec

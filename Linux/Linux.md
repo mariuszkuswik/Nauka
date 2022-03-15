@@ -5733,12 +5733,53 @@ httpd_can_network_connect --> on
 [Spis treści](#spis-tre%C5%9Bci)
 
 
+### Audyt usług sieciowych
+
+```/etc/services``` - plik mapujący nazwę usługi i numer portu na którym działa 
+
+### Używanie narzędzia nmap w celu sprawdzenia możliwości dostępu do sieci
+
+
+```nmap```   
+
+
+**Skanowanie portów TCP.** W przypadku tego rodzaju skanowania narzędzie nmap próbuje
+nawiązać połączenie z portami za pomocą protokołu TCP (ang. transmission control
+protocol) w serwerze. Jeżeli na danym porcie nasłuchuje jakakolwiek usługa, połączenie
+zostanie nawiązane.  
+TCP to protokół sieciowy używany w zbiorze protokołów sieciowych TCP/IP. TCP to
+protokół zorientowany na połączenie. Jego podstawowym zadaniem jest negocjowanie
+i inicjalizowanie połączenia za pomocą tzw. trzyetapowej wymiany informacji. TCP wysyła
+do zdalnego serwera pakiet synchronizacji (SYN) zawierający konkretny numer portu.
+Zdalny serwer otrzymuje ten pakiet i odpowiada na niego pakietem podziękowania
+(SYN-ACK) kierowanym do serwera inicjującego połączenie, który również odpowiada
+pakietem podziękowania (ACK). W tym momencie połączenie TCP jest oficjalnie
+nawiązane. Taka trzyetapowa wymiana informacji jest często nazywana SYN-SYN-ACK
+lub SYN, SYN-ACK, ACK.  
+Jeżeli zdecydujesz się na ten rodzaj skanowania, narzędzie nmap wykorzysta trzyetapową
+wymianę informacji do zbadania aktywności na zdalnym serwerze. Każda usługa
+używająca protokołu TCP odpowiada na skanowanie.
+
+
+**Skanowanie portów UDP.** W przypadku tego skanowania narzędzie nmap wysyła pakiet
+UDP do każdego skanowanego portu systemu. UDP to kolejny popularny protokół
+w zbiorze protokołów sieciowych TCP/IP. Jednak w przeciwieństwie do TCP jest on
+protokołem bezpołączeniowym. Jeżeli na danym porcie nasłuchuje usługa używająca
+protokołu UDP, udzieli odpowiedzi na skanowanie.
+
+
+### #TODO - dopisać jak działą nmap itd
+
+## Praca z zaporą sieciową
+
+
 
 
 
 ## Koniec Biblii
 
 ### Strona 660
+673
 
 
 
