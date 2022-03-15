@@ -5776,6 +5776,73 @@ protokołu UDP, udzieli odpowiedzi na skanowanie.
 
 
 
+
+
+#### Notatki CG
+
+[Spis treści](#spis-tre%C5%9Bci)
+
+- W RHEL8 firewall jest zarzadzany przez firewalld, pod spodem jest nftables  
+zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
+
+- Pliki konfiguracyjne : 
+	- ```/usr/lib/firewalld``` - katalog z domyslna konfiguracja
+	- ```/etc/firewalld``` - katalog z obecnie dzialajacym configiem 
+
+
+- firewall-cmd - odpowiada za konfigurację zapory   
+    
+    - Zarządzanie firewallem :  
+        - ```--state``` - wyswietla czy firewall dziala
+        - ```--reload``` - zatwierdzenie wprowadzonych zmian
+        - ```--list-all --permanent``` wypisuje reguły które są zapisane w configu - będą działać po ***reboocie systemu***
+        
+    - Otwieranie portów/usług :  
+        - ```--add-port "$port_number"/[tcp | udp ]``` - Otwarcie portu dla tcp lub udp
+        - ```--add-service "$service_name"``` - Udostępnienie możliwości komunikacji z usługą (lista dostępna pod tabulatorem)
+
+
+**ZAWSZE TRZEBA PAMIĘTAĆ O OPCJI ```--permanent```**,  
+w przeciwnym wypadku zmiany nie będą stałe   
+
+Otwarcie portu 80 tcp
+
+```console
+# firewall-cmd --add-port=80/tcp --permanent
+```
+
+Dodanie serwisu mysql do firewalla
+
+```console
+# firewall-cmd --add-service=http --permanent
+```
+
+
+Wylistowanie ustawiń **PERMANENTNYCH** dla firewalla
+
+```console
+# firewall-cmd --list-all --permanent
+```
+
+Przeładowanie configu firewalla 
+
+```console
+# firewall-cmd --reload 
+```
+
+Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie jeżeli działa 
+
+```console
+# telnet 172.20.183.251 90
+```  
+  
+- ```nmap -A``` - skanuje porty zdalnej maszyny, wyświetla wszystkie informacje      
+- ```telnet "$remote_ip" "$remote_port"``` - pozwala sprawdzić czy port jest otwarty   
+- ```curl "$remote_ip"``` - pozwala sprawdzić czy działa serwis http      
+
+
+#### Notatki CG - koniec
+
 ## Koniec Biblii
 
 ### Strona 660
