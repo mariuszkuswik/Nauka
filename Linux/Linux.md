@@ -5674,8 +5674,56 @@ success
 systemctl restart sshd
 ```
 
-## Rozwiązywanie problemów związanych z SELinux
-## Informacje dodatkowe o SELinux
+### Przeniesienie plików prowadzące do utraty ich etykiet kontekstu bezpieczeństwa
+
+Załóżmy, że za pomocą polecenia cp plik został skopiowany z katalogu /etc do /tmp. Następnie
+za pomocą polecenia mv plik wrócił na swoje miejsce. W takim przypadku plik ma kontekst
+bezpieczeństwa katalogu tymczasowego, a nie swój pierwotny kontekst bezpieczeństwa.
+W efekcie system generuje komunikaty odmowy dostępu podczas próby uruchomienia usługi
+używającej tego pliku.   
+Dzięki poleceniu restorecon -R ten problem dość łatwo rozwiązać. Wystarczy wydać to
+polecenie i jako argument podać nazwę pliku, a zostanie przywrócony trwały kontekst
+bezpieczeństwa danego pliku.   
+
+
+### #TODO - Dopisać przywracanie pierwotnego kontekstu plików, powinno być na egzaminie 
+
+
+### Nieprawidłowe ustawienie opcji boolowskich SELinux
+
+
+#### Wyszukani opcji boolowskich 
+
+- ```getsebool -a``` - wyświetlenie wszystkich opcji boolowskich 
+
+Wyszukuje się ```grep```em, przykład dla ```http```
+
+```console
+# getsebool -a | grep http
+
+...
+httpd_can_network_connect --> off
+...
+``` 
+
+#### Ustawienie opcji boolowskich  
+
+```setsebool -P "$boolean_name" [on/off]```
+- ```setsebool``` - ustawia opcje boolowską **tymczasowo** 
+    - ```setsebool -P``` - **USTAWIA OPCJĘ BOOLOWSKĄ TRWALE**
+
+Przykładowe ustawienie opcji boolowskiej
+
+```
+# setsebool -P httpd_can_network_connect on
+# getsebool -a  | grep httpd_can_network_connect
+
+httpd_can_network_connect --> on
+```
+
+### #TODO - strona 663 - ćwiczenia do zrobienia 
+
+# Zabezpieczanie systemu Linux w sieci
 
 
 
