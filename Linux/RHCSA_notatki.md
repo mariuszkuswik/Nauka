@@ -3,8 +3,13 @@
 # Spis treści
 
 1. [Pomoc](#pomoc)
+1. [Wyszukiwanie plików](#Wyszukiwanie-plików) 
+1. [Tworzenie użytkowników](#Tworzenie-użytkowników)
 1. [Firewall](#firewall)
 1. [Selinux](#selinux)
+1. [Kontrola czasu w RHEL](#Kontrola-czasu-w-RHEL)
+1. [LVM](#LVM)
+1. [VDO](#vdo)
 
 [Koniec](#Koniec)
 
@@ -32,6 +37,8 @@ Dodatkowa dokumentacja
 
 # Wyszukiwanie plików 
 
+[Spis treści](#spis-tre%C5%9Bci)
+
 ## locate 
 
 locate działa na podstawie bazy danych 
@@ -42,13 +49,14 @@ updatedb - aktualizuje bazę locate
 
 
 # Tworzenie użytkowników 
-
+[Spis treści](#spis-tre%C5%9Bci)
 
 # NFS
-
+[Spis treści](#spis-tre%C5%9Bci)
 
 
 # Firewall 
+[Spis treści](#spis-tre%C5%9Bci)
 
 - W RHEL8 firewall jest zarzadzany przez firewalld, pod spodem jest nftables  
 zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
@@ -315,6 +323,8 @@ lsblk
 2. 
 
 # VDO 
+
+[Spis treści](#spis-tre%C5%9Bci)
 
 VDO będzie na egzaminie, ogarnąć co i jak !
 
