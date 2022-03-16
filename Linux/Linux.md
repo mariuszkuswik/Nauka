@@ -5788,10 +5788,27 @@ firewall-config - GUI dla zapory sieciowej
 
 
 
+### Narzędzie iptables
+
+■ tabele,
+■ łańcuchy,
+■ polityki,
+■ reguły.
 
 
+#### Tabele netfilter/iptables
 
+### #TODO - strona 679 - opisać 
 
+#### Łańcuchy netfilter/iptables
+
+### #TODO - strona 679 - opisać 
+
+#### Cele, polityki i reguły netfilter/iptables
+
+### #TODO - strona 680 - opisać 
+
+### #TODO - OGARNĄĆ JAK DZIAŁA IPTABLES, od strony 679
 
 #### Notatki CG
 
@@ -5856,12 +5873,29 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
 - ```curl "$remote_ip"``` - pozwala sprawdzić czy działa serwis http      
 
 
+
+# Przetwarzanie w chmurze
+
+[Przejście do chmury i kontenerów](#Przejście-do-chmury-i-kontenerów)
+[Używanie systemu Linux do przetwarzania w chmurze](#Używanie-systemu-Linux-do-przetwarzania-w-chmurze)
+[Wdrażanie systemu Linux w chmurze](#Wdrażanie-systemu-Linux-w-chmurze)
+[Automatyzacja aplikacji i infrastruktury za pomocą Ansible](#Automatyzacja-aplikacji-i-infrastruktury-za-pomocą-Ansible)
+[Używanie Kubernetes do wdrażania aplikacji w kontenerach](#Używanie-Kubernetes-do-wdrażania-aplikacji-w-kontenerach)
+
+
+## Przejście do chmury i kontenerów
+
+
+
+
+
+
 #### Notatki CG - koniec
 
 ## Koniec Biblii
 
 ### Strona 675
-677
+691
 
 
 
