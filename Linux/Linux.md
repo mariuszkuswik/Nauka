@@ -5772,6 +5772,21 @@ protokołu UDP, udzieli odpowiedzi na skanowanie.
 
 ## Praca z zaporą sieciową
 
+## Rozpoczęcie pracy z firewalld
+
+Zaporę można obsługiwać z cockpita lub GUI (firewall-config)
+
+nftables - backed zapory sieciowej
+firewalld - demon zapory  
+
+firewall-config - GUI dla zapory sieciowej 
+
+
+```systemctl status firewalld``` - sprawdzenie statustu demona obsługującego zaporę 
+
+```yum install firewalld firewall-config``` - jeżeli nie jest zainstalowana 
+
+
 
 
 
@@ -5845,8 +5860,10 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
 
 ## Koniec Biblii
 
-### Strona 660
-673
+### Strona 675
+677
+
+
 
 
 
