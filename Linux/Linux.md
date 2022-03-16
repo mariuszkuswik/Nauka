@@ -5876,16 +5876,24 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
 
 # Przetwarzanie w chmurze
 
-[Przejście do chmury i kontenerów](#Przejście-do-chmury-i-kontenerów)
-[Używanie systemu Linux do przetwarzania w chmurze](#Używanie-systemu-Linux-do-przetwarzania-w-chmurze)
-[Wdrażanie systemu Linux w chmurze](#Wdrażanie-systemu-Linux-w-chmurze)
-[Automatyzacja aplikacji i infrastruktury za pomocą Ansible](#Automatyzacja-aplikacji-i-infrastruktury-za-pomocą-Ansible)
-[Używanie Kubernetes do wdrażania aplikacji w kontenerach](#Używanie-Kubernetes-do-wdrażania-aplikacji-w-kontenerach)
+- [Przejście do chmury i kontenerów](#Przejście-do-chmury-i-kontenerów)
+- [Używanie systemu Linux do przetwarzania w chmurze](#Używanie-systemu-Linux-do-przetwarzania-w-chmurze)
+- [Wdrażanie systemu Linux w chmurze](#Wdrażanie-systemu-Linux-w-chmurze)
+- [Automatyzacja aplikacji i infrastruktury za pomocą Ansible](#Automatyzacja-aplikacji-i-infrastruktury-za-pomocą-Ansible)
+- [Używanie Kubernetes do wdrażania aplikacji w kontenerach](#Używanie-Kubernetes-do-wdrażania-aplikacji-w-kontenerach)
+
+[Spis treści](#spis-tre%C5%9Bci)
 
 
 ## Przejście do chmury i kontenerów
 
-
+- Technologie kluczowe dla przetwarzania w chmurze
+- Sposób działania kontenerów systemu Linux
+• Instalacja i uruchamiane oprogramowania kontenerów
+• Pobieranie i uruchamianie obrazów kontenerów
+• Ponowne uruchamianie zatrzymanego kontenera
+• Tworzenie obrazu kontenera
+• Oznaczanie obrazu kontenera tagami i jego przekazywanie do rejestru
 
 
 
