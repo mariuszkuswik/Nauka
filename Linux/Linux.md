@@ -5895,6 +5895,12 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
 • Tworzenie obrazu kontenera
 • Oznaczanie obrazu kontenera tagami i jego przekazywanie do rejestru
 
+[Spis treści](#spis-tre%C5%9Bci)
+
+
+### Kontenery Linuksa
+
+#### Przestrzeń nazw
 
 
 
@@ -5903,7 +5909,7 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
 ## Koniec Biblii
 
 ### Strona 675
-691
+693
 
 
 
