@@ -5887,6 +5887,8 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
 
 ## Przejście do chmury i kontenerów
 
+[Rozpoczęcie pracy z kontenerami Linuksa](#Rozpoczęcie-pracy-z-kontenerami-Linuksa)
+
 - Technologie kluczowe dla przetwarzania w chmurze
 - Sposób działania kontenerów systemu Linux
 • Instalacja i uruchamiane oprogramowania kontenerów
@@ -5896,6 +5898,38 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
 • Oznaczanie obrazu kontenera tagami i jego przekazywanie do rejestru
 
 [Spis treści](#spis-tre%C5%9Bci)
+
+## #TODO - Do uzupełnienia
+### Przestrzeń nazw
+
+### #TODO - strona 693, krótki opis ? 
+
+### Rejestr kontenerów
+
+### #TODO - strona 694, krótki opis ? 
+
+## Rozpoczęcie pracy z kontenerami Linuksa
+
+**Podman** (Pod Manager) - is a fully featured container engine.  Podman provides a Docker-CLI comparable command line that eases the transition from other container engines and allows the management of pods, containers and images.  
+**Simply put: alias docker=podman.**  
+
+Polecenie podman obsługuje większość opcji powłoki polecenia docker używanych w pracy
+z kontenerami. Dlatego **zamiast polecenia docker można wydać polecenie podman**. 
+*Pamiętaj, że podman przedstawia zupełnie inną bazę kodu niż docker pomimo obsługi podobnych opcji służących do zarządzania kontenerami*. 
+W przeciwieństwie do polecenia docker polecenie podman nie wymaga działania żadnej usługi. 
+
+
+#### Instalacja i uruchomienie dockera
+
+```console
+# yum install docker -y
+# systemctl start docker
+# systemctl enable docker
+```
+
+### Pobieranie i uruchamianie kontenerów
+
+
 
 
 ### Kontenery Linuksa
@@ -5908,8 +5942,8 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
 
 ## Koniec Biblii
 
-### Strona 675
-693
+### Strona 693
+
 
 
 
