@@ -5938,11 +5938,23 @@ W przeciwieństwie do polecenia docker polecenie podman nie wymaga działania ż
 #### Komendy podstawowe 
 
 - ```podman pull``` - Pobranie obrazu z rejestru
+- ```podman search``` - wyszukiwanie obrazów 
+
 - ```podman images``` - wyświetlenie
 - ```podman image``` - manage images 
 
-##### 1. Pobranie obrazu 
+```podman ps```  
 
+
+##### Pobranie obrazu 
+
+
+1. Wyszukanie źródła z którego możemy pobrać obraz 
+
+```podman search "$image_name"```
+
+
+2. Pobranie obrazu ze zdalnego lub lokalnego źródła 
 ```podman pull registry.access.redhat.com/ubi8/ubi``` - Pull from a container registry
 
 ```console
@@ -5968,9 +5980,10 @@ REPOSITORY                           TAG         IMAGE ID      CREATED       SIZ
 registry.access.redhat.com/ubi8/ubi  latest      552ac8ae4291  19 hours ago  235 MB
 ```
 
-#### Uruchamianie powłoki w kontenerze
+#### 3. Uruchamianie powłoki w kontenerze
 
-```podman run -it "[$id_kontenera|$nazwa_kontenera]"``` - Uruchomienie shella dla danego kontenera, podajemy ```$id_kontenera``` lub ```$nazwa_kontenera```
+```podman run -it "[$id_kontenera|$nazwa_kontenera]"``` - Uruchomienie shella dla danego kontenera,   
+podajemy ```$id_kontenera``` lub ```$nazwa_kontenera```
 
 
 ```console
@@ -5979,13 +5992,21 @@ registry.access.redhat.com/ubi8/ubi  latest      552ac8ae4291  19 hours ago  235
 [root@e9086da6ed70 /]#
 ```
 
+#### 4. Uruchamianie serwera FTP w kontenerze
+
+### #TODO - strona 697
+
+#### Uruchamianie i zatrzymywanie kontenera
+
+podman ps
+
 
 
 
 
 ## Koniec Biblii
 
-### Strona 693
+### Strona 696
 
 
 
