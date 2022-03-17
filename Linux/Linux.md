@@ -5991,7 +5991,7 @@ podajemy ```$id_kontenera``` lub ```$nazwa_kontenera```
 [root@e9086da6ed70 /]#
 ```
 
-### 4. Uruchamianie serwera FTP w kontenerze
+### Uruchamianie serwera FTP w kontenerze
 
 ### #TODO - strona 697
 
@@ -6000,13 +6000,16 @@ podajemy ```$id_kontenera``` lub ```$nazwa_kontenera```
     - ```-p``` -  mapowanie portów między kontenerem a serwerem lokalnym   
         np. ```-p 20:20``` mapuje port 20 w kontenerze z portem 20 na maszynie lokalnej   
     - ```--rm``` - usuwa kontener po zakończeniu pracy z nim
-    - ```-v``` - 
+    - ```-v``` - zamontowanie plików 
+    - ```--name``` - pozwala nadać nazwę kontenerowi
+
+
 ### Uruchamianie i zatrzymywanie kontenera
 
 - ```podman ps```
     - ```-a``` - wyświetl wszystkie ? 
 
-
+### #TODO - Jak odpalić CLI dla kontenera który juz odpalałem wcześniej
 
 
 
