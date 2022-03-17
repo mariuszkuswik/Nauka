@@ -5874,6 +5874,9 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
 
 
 
+#### Notatki CG - koniec
+
+
 # Przetwarzanie w chmurze
 
 - [Przejście do chmury i kontenerów](#Przejście-do-chmury-i-kontenerów)
@@ -5963,7 +5966,19 @@ REPOSITORY                           TAG         IMAGE ID      CREATED       SIZ
 registry.access.redhat.com/ubi8/ubi  latest      552ac8ae4291  19 hours ago  235 MB
 ```
 
-#### Notatki CG - koniec
+#### Uruchamianie powłoki w kontenerze
+
+Uruchomienie shella dla danego kontenera, podajemy $id_kontenera lub $nazwa_kontenera
+
+```podman run -it "[$id_kontenera|$nazwa_kontenera]"```
+
+```console
+# podman run -it 096cae65a207 bash
+
+[root@e9086da6ed70 /]#
+```
+
+
 
 ## Koniec Biblii
 
