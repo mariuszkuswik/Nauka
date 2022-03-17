@@ -5929,14 +5929,39 @@ W przeciwieństwie do polecenia docker polecenie podman nie wymaga działania ż
 
 ### Pobieranie i uruchamianie kontenerów
 
+#### Pomoc
+- ```man podman-"$command"``` - pomoc dla ```podman [pull|image...]```
 
+#### Komendy podstawowe 
 
+- ```podman pull``` - Pobranie obrazu z rejestru
+- ```podman images``` - wyświetlenie
+- ```podman image``` - manage images 
 
-### Kontenery Linuksa
+##### Pobranie obrazu bazowego RHEL 8 UBI 
 
-#### Przestrzeń nazw
+```console
+# podman pull registry.access.redhat.com/ubi8/ubi
 
+Trying to pull registry.access.redhat.com/ubi8/ubi:latest...
+Getting image source signatures
+Checking if image destination supports signatures
+Copying blob c530010fb61c done
+Copying blob 3de00bb8554b done
+Copying config 552ac8ae42 done
+Writing manifest to image destination
+Storing signatures
+552ac8ae4291e2a8d5622cff4a7f978d3032664b3946831a5606bde9bdedef2a
+```
 
+##### Wyświetlenie listy obrazów kontenerów dostępnych w systemie
+
+```console
+# podman images
+
+REPOSITORY                           TAG         IMAGE ID      CREATED       SIZE
+registry.access.redhat.com/ubi8/ubi  latest      552ac8ae4291  19 hours ago  235 MB
+```
 
 #### Notatki CG - koniec
 
