@@ -5930,12 +5930,12 @@ W przeciwieństwie do polecenia docker polecenie podman nie wymaga działania ż
 # systemctl enable docker
 ```
 
-### Pobieranie i uruchamianie kontenerów
+## Pobieranie i uruchamianie kontenerów
 
-#### Pomoc
+### Pomoc
 - ```man podman-"$command"``` - pomoc dla ```podman [pull|image...]```
 
-#### Komendy podstawowe 
+### Komendy podstawowe 
 
 - ```podman pull``` - Pobranie obrazu z rejestru
 - ```podman search``` - wyszukiwanie obrazów 
@@ -5946,7 +5946,7 @@ W przeciwieństwie do polecenia docker polecenie podman nie wymaga działania ż
 ```podman ps```  
 
 
-##### Pobranie obrazu 
+### Pobranie obrazu 
 
 1. Wyszukanie źródła z którego możemy pobrać obraz 
 
@@ -5970,7 +5970,7 @@ Storing signatures
 552ac8ae4291e2a8d5622cff4a7f978d3032664b3946831a5606bde9bdedef2a
 ```
 
-##### Wyświetlenie listy obrazów kontenerów dostępnych w systemie
+### Wyświetlenie listy obrazów kontenerów dostępnych w systemie
 
 ```console
 # podman images
@@ -5979,7 +5979,7 @@ REPOSITORY                           TAG         IMAGE ID      CREATED       SIZ
 registry.access.redhat.com/ubi8/ubi  latest      552ac8ae4291  19 hours ago  235 MB
 ```
 
-#### Uruchamianie powłoki w kontenerze
+### Uruchamianie powłoki w kontenerze
 
 ```podman run -it "[$id_kontenera|$nazwa_kontenera]"``` - Uruchomienie shella dla danego kontenera,   
 podajemy ```$id_kontenera``` lub ```$nazwa_kontenera```
@@ -5991,7 +5991,7 @@ podajemy ```$id_kontenera``` lub ```$nazwa_kontenera```
 [root@e9086da6ed70 /]#
 ```
 
-#### 4. Uruchamianie serwera FTP w kontenerze
+### 4. Uruchamianie serwera FTP w kontenerze
 
 ### #TODO - strona 697
 
@@ -6001,7 +6001,7 @@ podajemy ```$id_kontenera``` lub ```$nazwa_kontenera```
         np. ```-p 20:20``` mapuje port 20 w kontenerze z portem 20 na maszynie lokalnej
     - ```--rm``` - usuwa kontener po zakończeniu pracy z nim
     - ```-v``` - 
-#### Uruchamianie i zatrzymywanie kontenera
+### Uruchamianie i zatrzymywanie kontenera
 
 - ```podman ps```
     - ```-a``` - wyświetl wszystkie ? 
