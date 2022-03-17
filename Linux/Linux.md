@@ -6016,6 +6016,22 @@ podajemy ```$id_kontenera``` lub ```$nazwa_kontenera```
 - ```podman ps``` -  lists the running containers on the system
     - ```-a``` - wyświetl wszystkie kontenery, **również te wyłączone**
 
+- ```podman start``` - uruchom kontener 
+    - ```-a``` - **attach**, Attach container's STDOUT and STDERR.
+
+```console
+# podman start -a 7da88bd62667
+
+[root@7da88bd62667 /]#
+```
+
+- ```podman stop``` - zatrzymuje działanie kontenera
+
+
+### Tworzenie obrazu kontenera
+
+
+
 ### #TODO - Jak odpalić CLI dla kontenera który juz odpalałem wcześniej
 
 
