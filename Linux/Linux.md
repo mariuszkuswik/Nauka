@@ -5948,7 +5948,6 @@ W przeciwieństwie do polecenia docker polecenie podman nie wymaga działania ż
 
 ##### Pobranie obrazu 
 
-
 1. Wyszukanie źródła z którego możemy pobrać obraz 
 
 ```podman search "$image_name"```
@@ -5980,7 +5979,7 @@ REPOSITORY                           TAG         IMAGE ID      CREATED       SIZ
 registry.access.redhat.com/ubi8/ubi  latest      552ac8ae4291  19 hours ago  235 MB
 ```
 
-#### 3. Uruchamianie powłoki w kontenerze
+#### Uruchamianie powłoki w kontenerze
 
 ```podman run -it "[$id_kontenera|$nazwa_kontenera]"``` - Uruchomienie shella dla danego kontenera,   
 podajemy ```$id_kontenera``` lub ```$nazwa_kontenera```
@@ -5996,9 +5995,16 @@ podajemy ```$id_kontenera``` lub ```$nazwa_kontenera```
 
 ### #TODO - strona 697
 
+- ```podman run``` - do opisania 
+    - ```-d``` - Powoduje uruchomienie kontenera w trybie **detached**
+    - ```-p``` -  mapowanie portów między kontenerem a serwerem lokalnym 
+        np. ```-p 20:20``` mapuje port 20 w kontenerze z portem 20 na maszynie lokalnej
+    - ```--rm``` - usuwa kontener po zakończeniu pracy z nim
+    - ```-v``` - 
 #### Uruchamianie i zatrzymywanie kontenera
 
-podman ps
+- ```podman ps```
+    - ```-a``` - wyświetl wszystkie ? 
 
 
 
