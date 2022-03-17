@@ -5940,6 +5940,10 @@ W przeciwieństwie do polecenia docker polecenie podman nie wymaga działania ż
 - ```podman pull``` - Pobranie obrazu z rejestru
 - ```podman search``` - wyszukiwanie obrazów 
 
+- podman run  
+- podman start   
+- podman attach
+
 - ```podman images``` - wyświetlenie
 - ```podman image``` - manage images 
 
@@ -5998,16 +6002,19 @@ podajemy ```$id_kontenera``` lub ```$nazwa_kontenera```
 - ```podman run``` - do opisania 
     - ```-d``` - Powoduje uruchomienie kontenera w trybie **detached**
     - ```-p``` -  mapowanie portów między kontenerem a serwerem lokalnym   
-        np. ```-p 20:20``` mapuje port 20 w kontenerze z portem 20 na maszynie lokalnej   
+        - ```-p 20:20``` mapuje port 20 w kontenerze z portem 20 na maszynie lokalnej   
+        - ```-p 21100-21110:21100-21110``` - montuje zakres portów 21100-21110 dla tego samego zakresu w maszynie lokalnej
     - ```--rm``` - usuwa kontener po zakończeniu pracy z nim
-    - ```-v``` - zamontowanie plików 
+    - ```-v``` - zamontowanie plików z serwera na kontenerze
+        - ```-v /etc/vsftpd/:/etc/vsftpd/``` - montuje folder vsftpd
+        - ```-v /etc/vsftpd/vsftpd.conf``` - montuje config vsftpd
     - ```--name``` - pozwala nadać nazwę kontenerowi
 
 
 ### Uruchamianie i zatrzymywanie kontenera
 
-- ```podman ps```
-    - ```-a``` - wyświetl wszystkie ? 
+- ```podman ps``` -  lists the running containers on the system
+    - ```-a``` - wyświetl wszystkie kontenery, **również te wyłączone**
 
 ### #TODO - Jak odpalić CLI dla kontenera który juz odpalałem wcześniej
 
@@ -6016,7 +6023,7 @@ podajemy ```$id_kontenera``` lub ```$nazwa_kontenera```
 ## Koniec Biblii
 
 ### Strona 696
-
+698
 
 
 
