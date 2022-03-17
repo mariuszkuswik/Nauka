@@ -5941,7 +5941,9 @@ W przeciwieństwie do polecenia docker polecenie podman nie wymaga działania ż
 - ```podman images``` - wyświetlenie
 - ```podman image``` - manage images 
 
-##### Pobranie obrazu bazowego RHEL 8 UBI 
+##### 1. Pobranie obrazu 
+
+```podman pull registry.access.redhat.com/ubi8/ubi``` - Pull from a container registry
 
 ```console
 # podman pull registry.access.redhat.com/ubi8/ubi
@@ -5968,15 +5970,16 @@ registry.access.redhat.com/ubi8/ubi  latest      552ac8ae4291  19 hours ago  235
 
 #### Uruchamianie powłoki w kontenerze
 
-Uruchomienie shella dla danego kontenera, podajemy $id_kontenera lub $nazwa_kontenera
+```podman run -it "[$id_kontenera|$nazwa_kontenera]"``` - Uruchomienie shella dla danego kontenera, podajemy ```$id_kontenera``` lub ```$nazwa_kontenera```
 
-```podman run -it "[$id_kontenera|$nazwa_kontenera]"```
 
 ```console
 # podman run -it 096cae65a207 bash
 
 [root@e9086da6ed70 /]#
 ```
+
+
 
 
 
