@@ -5890,7 +5890,7 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
 
 ## Przejście do chmury i kontenerów
 
-[Rozpoczęcie pracy z kontenerami Linuksa](#Rozpoczęcie-pracy-z-kontenerami-Linuksa)
+[Kontenery Linuksa](#Kontenery-Linuksa)
 
 - Technologie kluczowe dla przetwarzania w chmurze
 - Sposób działania kontenerów systemu Linux
@@ -5911,7 +5911,7 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
 
 ### #TODO - strona 694, krótki opis ? 
 
-## Rozpoczęcie pracy z kontenerami Linuksa
+## Kontenery Linuksa
 
 **Podman** (Pod Manager) - is a fully featured container engine.  Podman provides a Docker-CLI comparable command line that eases the transition from other container engines and allows the management of pods, containers and images.  
 **Simply put: alias docker=podman.**  
@@ -5997,8 +5997,8 @@ podajemy ```$id_kontenera``` lub ```$nazwa_kontenera```
 
 - ```podman run``` - do opisania 
     - ```-d``` - Powoduje uruchomienie kontenera w trybie **detached**
-    - ```-p``` -  mapowanie portów między kontenerem a serwerem lokalnym 
-        np. ```-p 20:20``` mapuje port 20 w kontenerze z portem 20 na maszynie lokalnej
+    - ```-p``` -  mapowanie portów między kontenerem a serwerem lokalnym   
+        np. ```-p 20:20``` mapuje port 20 w kontenerze z portem 20 na maszynie lokalnej   
     - ```--rm``` - usuwa kontener po zakończeniu pracy z nim
     - ```-v``` - 
 ### Uruchamianie i zatrzymywanie kontenera
