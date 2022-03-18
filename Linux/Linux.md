@@ -5902,6 +5902,9 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
 
 [Spis treści](#spis-tre%C5%9Bci)
 
+This setup sounds like you want a virtual machine, with multiple users, interactive logins, and a service manager. A Docker container typically runs one process and doesn't configure interactive-login parts like PAM or an ssh daemon. You don't generally "start services in a container": a container runs a single service as a foreground process. 
+
+
 ## #TODO - Do uzupełnienia
 ### Przestrzeń nazw
 
@@ -6028,6 +6031,9 @@ podajemy ```$id_kontenera``` lub ```$nazwa_kontenera```
 - ```podman stop``` - zatrzymuje działanie kontenera
 
 
+### #TODO - Jak odpalić CLI dla kontenera który juz odpalałem wcześniej
+
+
 ### Tworzenie obrazu kontenera
 
 Do utworzenia obrazu kontenera potrzebny jest jedynie plik **Dockerfile** opisujący dany obraz
@@ -6041,8 +6047,64 @@ i jego całą zawartość.
 
 ### Oznaczanie obrazu tagiem i przekazywanie obrazu do rejestru
 
+Dotychczas pokazałem przykład tworzenia obiektu kontenera i uruchamiania go w systemie
+lokalnym. Aby obraz kontenera został udostępniony użytkownikom innych systemów, zwykle
+trzeba go przekazać do rejestru obrazów. Wykonaj przedstawioną tutaj procedurę, a oznaczysz
+obraz tagiem w systemie lokalnym i przekażesz go do zdalnego rejestru kontenerów.
 
-### #TODO - Jak odpalić CLI dla kontenera który juz odpalałem wcześniej
+### #TODO - opisać, strona 702
+
+1. **Zainstaluj pakiet rejestru** - np. ```docker-distribution```.
+
+```console
+# yum install docker-distribution -y
+# systemctl start docker-distribution
+# systemctl enable docker-distribution
+# systemctl status docker-distribution
+
+docker-distribution.service-v2 Registry server for Docker
+  Loaded: loaded
+    (/usr/lib/systemd/system/docker-distribution.service;
+    enabled; vendor pres>
+    Active: active (running) since Wed 2020-01-01...
+```
+
+2. **Otwórz port rejestru.** Przekazanie obrazów do rejestru i pobieranie tych obrazów
+w innych systemach gospodarzy wymaga otworzenia portu 5000 w zaporze sieciowej:
+
+```console
+# firewall-cmd --zone=public --add-port=5000/tcp --permanent
+```
+
+3. **Oznacz obraz tagiem.** Dzięki oznaczeniu tagiem obrazu lokalnego można identyfikować
+położenie rejestru, w którym ma być przechowywany obraz. Identyfikator obrazu
+i host.example.com należy zastąpić identyfikatorem swojego obrazu oraz odpowiednią
+nazwą hosta lub adresem IP:
+
+```console
+# podman images | grep vsftpd
+localhost/vsftpd latest aa0274872f23 2 hours ago 607 MB
+
+# podman tag aa0274872f23
+host.example.com:5000/myvsftpd:v1.0
+```
+
+4. **Przekazanie obrazu.** Obraz kontenera przekaż do rejestru lokalnego (zastąp odpowiednimi
+wartościami nazwę hosta i adres IP). Wyłącz opcję tls-verify, ponieważ docker-registry
+używa protokołu HTTP:
+
+```console
+# podman push --tls-verify=false
+host.example.com:5000/myvsftpd:v1.0
+```
+
+5. **Pobierz obraz.** Aby mieć pewność, że obraz jest dostępny w rejestrze, spróbuj go
+pobrać. Usuń obraz z systemu lokalnego lub spróbuj go pobrać w innym komputerze:
+
+```console
+# podman pull --tls-verify=false \
+host.example.com:5000/myvsftpd:v1.0
+```
 
 
 
