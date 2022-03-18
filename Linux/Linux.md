@@ -6129,7 +6129,7 @@ quay.io/myownusername/myvsftpd:v1.0
 ## Koniec Biblii
 
 ### Strona 698
-703
+705
 
 
 
