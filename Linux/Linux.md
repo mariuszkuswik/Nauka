@@ -6030,6 +6030,16 @@ podajemy ```$id_kontenera``` lub ```$nazwa_kontenera```
 
 ### Tworzenie obrazu kontenera
 
+Do utworzenia obrazu kontenera potrzebny jest jedynie plik **Dockerfile** opisujący dany obraz
+i jego całą zawartość.
+
+- ```podman build``` - tworzenie kontenera na podstawie plików konfiguracyjnych 
+    - ```podman build -t vsftpd .``` - przykłądowa komenda, tworzy obaz na podstawie plików w obecnym katalogu
+
+### #TODO - opisać jakoś procedurę 
+
+
+### Oznaczanie obrazu tagiem i przekazywanie obrazu do rejestru
 
 
 ### #TODO - Jak odpalić CLI dla kontenera który juz odpalałem wcześniej
@@ -6038,8 +6048,8 @@ podajemy ```$id_kontenera``` lub ```$nazwa_kontenera```
 
 ## Koniec Biblii
 
-### Strona 696
-698
+### Strona 698
+702
 
 
 
