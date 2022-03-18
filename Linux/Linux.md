@@ -6106,6 +6106,24 @@ pobrać. Usuń obraz z systemu lokalnego lub spróbuj go pobrać w innym kompute
 host.example.com:5000/myvsftpd:v1.0
 ```
 
+Jeżeli korzystasz z rejestru publicznego, co jest lepszym rozwiązaniem pozwalającym na
+współdzielenie obrazów z większą grupą użytkowników, wówczas procedura przekazania
+obrazu do rejestru i pobrania obrazu z rejestru przedstawia się następująco:
+
+```console
+# podman login quay.io
+Username: myownusername
+Password: ***************
+# podman tag aa0274872f23 \
+quay.io/myownusername/myvsftpd:v1.0
+# podman push quay.io/myownusername/myvsftpd:v1.0
+```
+
+
+### Używanie kontenerów w dużych firmach
+
+
+
 
 
 ## Koniec Biblii
