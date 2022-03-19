@@ -6122,14 +6122,18 @@ quay.io/myownusername/myvsftpd:v1.0
 
 ### Używanie kontenerów w dużych firmach
 
+### #TODO - do opisania
+
+# Używanie systemu Linux do przetwarzania w chmurze
+## Ogólne omówienie tematu Linuksa i przetwarzania w chmurze
 
 
 
 
 ## Koniec Biblii
 
-### Strona 698
-705
+### Strona 706
+
 
 
 
