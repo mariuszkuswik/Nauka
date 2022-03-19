@@ -364,7 +364,7 @@ setfacl -m u:jill:r-- "$shared_directory" - ustawia uprawnienia
 
 
 
-Chlebik
+# Chlebik
 
 | Zadanko | Notatki | Czy opanowane |
 |--|--|--|
@@ -402,6 +402,21 @@ Chlebik
 | 032_finding_files_with_given_text_in_them |  | przećwiczyć |
 | 033_managing_layered_storage |  | nie |
 | 034_containers |  | nie |
+
+
+# CG 
+
+| Zadanko | Typ | Rozdział | Notatki | Czy opanowane |
+|--|--|--|--|--|
+| Compressing and Decompressing Files in Linux | Zad | Using Essential Tools |  |  |
+| Accessing Linux Systems Using RHEL 8 | Lab |  |  |
+| Vim Survival Kit | Lab |  |  |
+| Using Input/Output Redirection and Analyzing Text on RHEL 8 | Lab |  |  |
+| Managing Files and Directories on RHEL 8 | Lab |  |  |
+| Quiz: Understanding and Using Essential Tools on RHEL 8 | Quiz |  |  |
+| Creating Simple Shell Scripts - Concepts | Zad | Creating Simple Shell Scripts |  |
+| Creating Simple Shell Scripts - An Example | Zad |  |  |
+
 
 
 ### Koniec
