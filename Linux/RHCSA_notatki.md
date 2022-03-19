@@ -411,11 +411,13 @@ setfacl -m u:jill:r-- "$shared_directory" - ustawia uprawnienia
 | Zad: Compressing and Decompressing Files in Linux | Using Essential Tools |  |  |
 | Lab: Accessing Linux Systems Using RHEL 8 |  |  |
 | Quiz: Understanding and Using Essential Tools on RHEL 8 | Quiz |  |  |
-| Lab: Creating Simple Shell Scripts | Lab | Creating Simple Shell Scripts |  |
-| Quiz: Creating Simple Shell Scripts | Quiz | Creating Simple Shell Scripts |  |
-| Managing the Boot Process on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |
+| Lab: Creating Simple Shell Scripts | Creating Simple Shell Scripts |  |  |
+| Quiz: Creating Simple Shell Scripts | Creating Simple Shell Scripts |  |  |
+| Managing the Boot Process on RHEL 8 | Operating Running Systems on RHEL 8  |  |  |
 | Zad: Understanding Logging and Using Persistent Journals on RHEL 8 | Operating Running Systems on RHEL 8 | [Persistent Journals](https://content.acloud.guru/5cd97cc2-306e-480e-934c-1597b4ab5866/1351620000001-000010.mp4?Expires=1647905190&Signature=b3ATruEet/hmVm1GIMdITDHpg7DI4IawzVH63vdAlL6dHVO4BHvgfdmRpNANa90OESfPp6Kc3Tzy8c2oXEVFlaKHqTxGUn0HyTlVGB1FUZfW0mL72Iszy1XwlylpANmBCA5JqdU0mOyQzbx733A1NFb3LBDTJ5x3TYJyB517CDXKEESZwtGemcQ6FYpqP0501KfQ9Y2uVO+UBt5nErQEc1YKsLkph4EZGL79NB4y+CZQEHrVLxhsmjplrflVBrn6IfyHPbuyLErfQQxkkS2WT7tymOoZOmj6IPmeY2hJKLoAiKxJJ1N++NOB+vUWn9N+XBytLPCqQ+ukptrSlpEVEg==&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jb250ZW50LmFjbG91ZC5ndXJ1LzVjZDk3Y2MyLTMwNmUtNDgwZS05MzRjLTE1OTdiNGFiNTg2Ni8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQ3OTA1MTkwfX19XX0=&Key-Pair-Id=APKAISLU6JPYU7SF6EUA) |  
-| Managing Individual Linux Processes | Zad | Operating Running Systems on RHEL 8 |  |  
+| Zad: Managing Individual Linux Processes |  Operating Running Systems on RHEL 8 |  |  |
+
+
 | Managing Tuned Profiles on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |  
 | Managing the Boot Process on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |  
 | Managing Processes and Tuned Profiles on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |  
