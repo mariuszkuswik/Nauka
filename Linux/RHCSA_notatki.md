@@ -373,7 +373,7 @@ setfacl -m u:jill:r-- "$shared_directory" - ustawia uprawnienia
 | 003_change_hostname |  | razcej tak |
 | 004_enable_selinux |  | raczej tak |
 | 005_install_apache_and_give_it_permission_to_nfs_resource |  | nie |
-| 006_extend_existing_lv_add_label |  | przećwiczyć |
+| 006_extend_existing_lv_add_**Lab**el |  | przećwiczyć |
 | 007_assign_sel_context_to_the_directory |  | przećwiczyć |
 | 008_create_users_with_specified_uid |  | tak |
 | 009_allow_other_user_to_get_access_to_home_dir |  | nie |
@@ -409,13 +409,28 @@ setfacl -m u:jill:r-- "$shared_directory" - ustawia uprawnienia
 | Zadanko | Typ | Rozdział | Notatki | Czy opanowane |
 |--|--|--|--|--|
 | Compressing and Decompressing Files in Linux | Zad | Using Essential Tools |  |  |
-| Accessing Linux Systems Using RHEL 8 | Lab |  |  |
-| Vim Survival Kit | Lab |  |  |
-| Using Input/Output Redirection and Analyzing Text on RHEL 8 | Lab |  |  |
-| Managing Files and Directories on RHEL 8 | Lab |  |  |
-| Quiz: Understanding and Using Essential Tools on RHEL 8 | Quiz |  |  |
+| Accessing Linux Systems Using RHEL 8 | **Lab** |  |  |
+| Vim Survival Kit | **Lab** |  |  |
+| Using Input/Output Redirection and Analyzing Text on RHEL 8 | **Lab** |  |  |
+| Managing Files and Directories on RHEL 8 | **Lab** |  |  |
+| **Quiz**: Understanding and Using Essential Tools on RHEL 8 | **Quiz** |  |  |
 | Creating Simple Shell Scripts - Concepts | Zad | Creating Simple Shell Scripts |  |
-| Creating Simple Shell Scripts - An Example | Zad |  |  |
+| Creating Simple Shell Scripts - An Example | Zad | Creating Simple Shell Scripts |  |
+| Creating Simple Shell Scripts | Lab | Creating Simple Shell Scripts |  |
+| Quiz: Creating Simple Shell Scripts | Quiz | Creating Simple Shell Scripts |  |
+| Managing the Boot Process on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |
+| Understanding Logging and Using Persistent Journals on RHEL 8 |  |  |  |  
+| Managing Individual Linux Processes |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+|  |  |  |  |  
+
+
 
 
 
