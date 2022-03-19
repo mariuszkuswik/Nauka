@@ -419,16 +419,25 @@ setfacl -m u:jill:r-- "$shared_directory" - ustawia uprawnienia
 | Creating Simple Shell Scripts | Lab | Creating Simple Shell Scripts |  |
 | Quiz: Creating Simple Shell Scripts | Quiz | Creating Simple Shell Scripts |  |
 | Managing the Boot Process on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |
-| Understanding Logging and Using Persistent Journals on RHEL 8 |  |  |  |  
-| Managing Individual Linux Processes |  |  |  |  
+| Understanding Logging and Using Persistent Journals on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |  
+| Managing Individual Linux Processes | Zad | Operating Running Systems on RHEL 8 |  |  
+| Managing Tuned Profiles on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |  
+| Managing the Boot Process on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |  
+| Managing Processes and Tuned Profiles on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |  
+| Working with Log Files and Journals on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |  
+| Quiz: Operating Running Systems on RHEL 8 | Quiz | Operating Running Systems on RHEL 8 |  |  
+|--|--|--|--|--|
+| Manipulating Disk Partitions in Linux | Zad | Configuring Local Storage on RHEL 8 |  |  
 |  |  |  |  |  
 |  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
-|  |  |  |  |  
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+
 
 
 
