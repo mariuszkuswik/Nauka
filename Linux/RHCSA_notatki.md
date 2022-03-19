@@ -406,11 +406,15 @@ setfacl -m u:jill:r-- "$shared_directory" - ustawia uprawnienia
 
 # CG 
 
-| Zadanko | Rozdział | Notatki | Czy opanowane | Link |
+| Zadanko | Rozdział | Notatki | Czy opanowane | Link | Lokalny link |
 |--|--|--|--|--|--|
-| Zad: Compressing and Decompressing Files in Linux | Using Essential Tools |  |  |
-| Lab: Accessing Linux Systems Using RHEL 8 |  |  |
-| Quiz: Understanding and Using Essential Tools on RHEL 8 | Quiz |  |  |
+| Zad: Compressing and Decompressing Files in Linux | Using Essential Tools |  |  | |
+| Lab: Accessing Linux Systems Using RHEL 8 |  |  | |
+| Quiz: Understanding and Using Essential Tools on RHEL 8 | Quiz |  |  | |
+
+
+
+
 | Lab: Creating Simple Shell Scripts | Creating Simple Shell Scripts |  |  |
 | Quiz: Creating Simple Shell Scripts | Creating Simple Shell Scripts |  |  |
 | Managing the Boot Process on RHEL 8 | Operating Running Systems on RHEL 8  |  |  |
