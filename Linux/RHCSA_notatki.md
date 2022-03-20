@@ -431,11 +431,41 @@ setfacl -m u:jill:r-- "$shared_directory" - ustawia uprawnienia
 # Logi 
 ## Understanding Logging and Using Persistent Journals on RHEL 8
 
-```journalctl``` - dziennik zdarzeń dla **systemd**, standardowo resetowany przy reboocie
+```grep "$nazwa_szukanej_usługi" `find /var/log -maxdepth 1 -type f` | less ``` - Dobrze jest grepować logi w /var/log, w ten sposób dowiemy się które pliki zawierają logi o nazej usłudze
 
 
+- ```journalctl``` - dziennik zdarzeń dla **systemd**, standardowo resetowany przy reboocie
+    - ```journalctl -k``` - Wyświetla komunikaty tylko **na temat jądra**   `
+    - ```journalctl -u nazwa_usługi``` - Wyświetlenie komunikatów **dotyczących określonej usługi**:   
 
+    ```console
+    journalctl -u NetworkManager.service
+    journalctl -u httpd.service
+    journalctl -u avahi-daemon.service
+    ```
 
-### Koniec
+- ```/var/log/messages```
 
-[Spis Treści](#Spis-treści)
+### #TODO - opisać jakoś 
+
+## Ustawienie stałego journalctl 
+
+```/etc/systemd/journald.conf```
+```man journalctl.conf``` - pomoc dla pliku 
+
+Zmieniamy zmienną ```Storage```
+
+```Storage=persistent``` - powoduje, że odpowiedni katalog jest tworzony w razie potrzeby
+```Storage=auto``` - logi będą zapisywane tylko jeżeli katalog istniał wcześniej 
+
+```bash
+[Journal]
+#Storage=auto
+#Compress=yes
+#Seal=yes
+#SplitMode=uid
+#SyncIntervalSec=5m
+#RateLimitIntervalSec=30s
+#RateLimitBurst=10000
+```
+
