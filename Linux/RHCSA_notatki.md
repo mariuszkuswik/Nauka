@@ -11,8 +11,8 @@
 1. [LVM](#LVM)
 1. [VDO](#vdo)
 
-[Chlebik](#chlebik)
-[Cloud Guru](#cg)
+- [Chlebik](#chlebik)  
+- [Cloud Guru](#cg)  
 
 [Koniec](#Koniec)
   
