@@ -370,7 +370,7 @@ setfacl -m u:jill:r-- "$shared_directory" - ustawia uprawnienia
 | 003_change_hostname |  | razcej tak |
 | 004_enable_selinux |  | raczej tak |
 | 005_install_apache_and_give_it_permission_to_nfs_resource |  | nie |
-| 006_extend_existing_lv_add_**Lab**el |  | przećwiczyć |
+| 006_extend_existing_lv_add_label |  | przećwiczyć |
 | 007_assign_sel_context_to_the_directory |  | przećwiczyć |
 | 008_create_users_with_specified_uid |  | tak |
 | 009_allow_other_user_to_get_access_to_home_dir |  | nie |
