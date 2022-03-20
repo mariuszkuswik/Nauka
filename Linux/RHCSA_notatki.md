@@ -11,6 +11,9 @@
 1. [LVM](#LVM)
 1. [VDO](#vdo)
 
+[Chlebik](#chlebik)
+[Cloud Guru](#cg)
+
 [Koniec](#Koniec)
   
     
@@ -197,12 +200,6 @@ drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
 
 
 ```yum whatprovides */semanage``` - domyślnie może nie być zainstalowane  
-
-
-
-#### Instalacja
-
-
 
 
 
@@ -469,3 +466,6 @@ Zmieniamy zmienną ```Storage```
 #RateLimitBurst=10000
 ```
 
+### Koniec
+
+[Spis treści](#spis-tre%C5%9Bci)
