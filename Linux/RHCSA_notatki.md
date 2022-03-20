@@ -9,6 +9,7 @@
 1. [Tworzenie użytkowników](#Tworzenie-użytkowników)
 1. [Firewall](#firewall)
 1. [Kontrola czasu w RHEL](#Kontrola-czasu-w-RHEL)
+1. [NFS](#nfs)
 1. [LVM](#LVM)
 1. [VDO](#vdo)
 1. [Logi](#acl)
@@ -68,6 +69,7 @@
 - ```apropos``` wyszukuje strony w pomocy, podobnie jak *man -k*
 - ```man -k``` - wyszukuje strony w pomocy 
 - ```info``` - wyświetla komendy z opisem  
+- ```rpm -qd``` - wyświetl pliki z dokumentacją dla danego pakietu
 - locate "$szukana_komenda" - powinno wylistować pliki z pomocą 
 
 ## Man
@@ -128,7 +130,31 @@ updatedb - aktualizuje bazę locate
 # NFS
 [Spis treści](#spis-tre%C5%9Bci)
 
+Egzamin : 
+- Mount and unmount network file systems using NFS
 
+
+### Dokumentacja 
+
+- ```man 5 nfs``` - wyświetlenie opcji montowania dla udziałów nfs   
+- ```rpm -qd nfs-utils | less``` - wyświetlenie plików z dokumentacją
+
+- ```man mount.nfs``` - opcje montowania udziału nfs   
+
+### #TODO - sprawdzić dokładniej jak to opisać 
+- ```nfsmount.conf``` -   
+  
+- ```man showmount``` - informacje o użyciu polecenia showmount do wyświetlenia katalogów współdzielonych, które są udostępniane przez serwery NFS  
+
+
+```bash
+# Ogólne infomracje na temat pakietu nfs
+rpm -qi nfs-utils
+# Configi
+rpm -qc nfs-utils
+# Wylistowanie plików w pakiecie nfs-utils
+rpm -ql nfs-utils | grep bin
+```   
 
 
 # Firewall 
