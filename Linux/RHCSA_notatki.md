@@ -157,6 +157,16 @@ rpm -ql nfs-utils | grep bin
 ```   
 
 
+Udział udostępniony, wpis w fstabie dodany, 
+sprawdzić firewalla i SELinux na serwerze, potem spróbować zamontować udział i nadać kontekst dla procesu httpd
+
+https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/005_install_apache_and_give_it_permission_to_nfs_resource.md
+
+
+
+
+
+
 # Firewall 
 [Spis treści](#spis-tre%C5%9Bci)
 
