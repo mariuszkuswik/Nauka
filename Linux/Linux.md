@@ -6155,25 +6155,6 @@ quay.io/myownusername/myvsftpd:v1.0
 554 - strona na której skończyłem rozwiązywanie problemów 
 590 - strona na której skończyłem bezpieczeństwo 
 
-You are new System Administrator and from now you are going to handle the system and your main task is Network monitoring, Backup and Restore. But you don't know the root password. Change the root password to redhat and login in default Runlevel.
-```console
-### In RHEL8
-- reboot the system
-- press "e" letter
-- Add "rd.break" at the end of de line thet begening with "Linux" in grub menu
-- ctrl + x
-
-# mount -o remount,rw /sysroot
-# chroot /sysroot
-# passwd
-
-### SELinux jest rozjechany więc musi ustalić etykiety od nowa ? 
-### Inaczej nikt nie będzie mógł zalogować się do systemu
-#  touch /.autorelabel
-# exit
-# logout
-```
-
 
 # Itexams
   

@@ -3,13 +3,16 @@
 # Spis treści
 
 1. [Pomoc](#pomoc)
+1. [Przywracanie hasła roota](#Przywracanie-hasła-roota)
+1. [Selinux](#selinux)
 1. [Wyszukiwanie plików](#Wyszukiwanie-plików) 
 1. [Tworzenie użytkowników](#Tworzenie-użytkowników)
 1. [Firewall](#firewall)
-1. [Selinux](#selinux)
 1. [Kontrola czasu w RHEL](#Kontrola-czasu-w-RHEL)
 1. [LVM](#LVM)
 1. [VDO](#vdo)
+1. [Logi](#acl)
+1. [ACL](#acl)
 
 - [Chlebik](#chlebik)  
 - [Cloud Guru](#cg)  
@@ -17,8 +20,48 @@
 [Koniec](#Koniec)
   
     
+# Chlebik
+
+| Zadanko | Notatki | Czy opanowane |
+|--|--|--|
+| 001_restore_root_password | [Przywracanie hasła roota](#Przywracanie-hasła-roota) | do przećwiczenia, WAŻNE |
+| 002_setup_network_parameters |  |  |
+| 003_change_hostname |  | razcej tak |
+| 004_enable_selinux |  | raczej tak |
+| 005_install_apache_and_give_it_permission_to_nfs_resource |  | nie |
+| 006_extend_existing_lv_add_label |  | przećwiczyć |
+| 007_assign_sel_context_to_the_directory |  | przećwiczyć |
+| 008_create_users_with_specified_uid |  | tak |
+| 009_allow_other_user_to_get_access_to_home_dir |  | nie |
+| 010_dir_ownership_via_group |  | nies |
+| 011_create_logical_volume_and_add_filesystem |  | przećwiczyć |
+| 012_configure_virtual_console_for_kernel |  | nie |
+| 013_create_swap_on_logical_volume |  | przećwiczyć |
+| 014_add_entry_to_cron |  | przećwiczyć |
+| 015_set_default_system_level |  | tak |
+| 016_add_additional_remote_yum_repo |  | nie |
+| 017_create_physical_partition_and_mount |  | nie |
+| 018_update_kernel_and_make_it_default_one |  | nie |
+| 019_create_users_with_secondary_groups |  | przećwiczyć |
+| 020_create_folders_with_group_access_rights |  | przećwiczyć |
+| 021_configure_ldap_authentication |  | nie |
+| 022_configure_autofs |  | nie |
+| 023_configure_ntp_on_the_client |  | nie |
+| 024_access_rights_for_file |  | przećwiczyć |
+| 025_create_whole_lvm_stack |  | nie |
+| 026_reduce_the_size_of_lv |  | przećwiczyć |
+| 027_create_compressed_archive |  | przećwiczyć |
+| 028_search_string_using_grep_and_redirect |  | przećwiyczć |
+| 029_make_journald_persistent |  | nie |
+| 030_setting_up_vdo |  | nie |
+| 031_finding_files |  | przećwiczyć |
+| 032_finding_files_with_given_text_in_them |  | przećwiczyć |
+| 033_managing_layered_storage |  | nie |
+| 034_containers |  | nie |
+
+
     
-# CG-Pomoc 
+# Pomoc 
 
 ## Wyszukiwanie pomocy
 
@@ -40,6 +83,32 @@
 
 Dodatkowa dokumentacja 
 
+
+# Przywracanie hasła roota
+
+[Spis treści](#spis-tre%C5%9Bci)
+
+You are new System Administrator and from now you are going to handle the system and your main task is Network monitoring, Backup and Restore. But you don't know the root password. Change the root password to redhat and login in default Runlevel.
+
+```console
+### In RHEL8
+- reboot the system
+- press "e" letter
+- Add "rd.break" at the end of de line thet begening with "Linux" in grub menu
+- ctrl + x
+
+# mount -o remount,rw /sysroot
+# chroot /sysroot
+# passwd
+
+### SELinux jest rozjechany więc musi ustalić etykiety od nowa ? 
+### Inaczej nikt nie będzie mógł zalogować się do systemu
+#  touch /.autorelabel
+# exit
+# logout
+```
+
+
 # Wyszukiwanie plików 
 
 [Spis treści](#spis-tre%C5%9Bci)
@@ -58,6 +127,8 @@ updatedb - aktualizuje bazę locate
 
 # NFS
 [Spis treści](#spis-tre%C5%9Bci)
+
+
 
 
 # Firewall 
@@ -332,73 +403,16 @@ VDO będzie na egzaminie, ogarnąć co i jak !
 
 
 
-
-
-
-
-
-
 # ACL 
 
 getfacl "$shared_directory" - listuje aclki
 setfacl -m u:jill:r-- "$shared_directory" - ustawia uprawnienia 
 
 
-# Restart hasła roota
-
-
-# Rozwiązywanie problemów (ogólnie)
-
-## httpd
-
-1. Sprawdzenie czy usługa działa, jeżeli tak/nie to czy systemd pokazuje jakieś błędy 
-2. Pobranie strony ```curlem``` z podanego serwera
-3. sprawdzenie logów systemd - ```journalctl -u httpd``` - pobranie logów dla konkretnej usługi
-4. sprawdzenie loga audit - ```grep /var/log/audit/audit.log``` - sprawdzić co to jest konkretnie za log, jest od niego demon ```auditd```
-5. sprawdzenie logów - ```grep /var/log/messages``` 
-3. Ustawienie selinux w tryb permissive 
-4. Włączenie odpowiedniej zmiennej boolowskiej ?
 
 
 
-# Chlebik
 
-| Zadanko | Notatki | Czy opanowane |
-|--|--|--|
-| 001_restore_root_password |  | nie |
-| 002_setup_network_parameters |  |  |
-| 003_change_hostname |  | razcej tak |
-| 004_enable_selinux |  | raczej tak |
-| 005_install_apache_and_give_it_permission_to_nfs_resource |  | nie |
-| 006_extend_existing_lv_add_label |  | przećwiczyć |
-| 007_assign_sel_context_to_the_directory |  | przećwiczyć |
-| 008_create_users_with_specified_uid |  | tak |
-| 009_allow_other_user_to_get_access_to_home_dir |  | nie |
-| 010_dir_ownership_via_group |  | nies |
-| 011_create_logical_volume_and_add_filesystem |  | przećwiczyć |
-| 012_configure_virtual_console_for_kernel |  | nie |
-| 013_create_swap_on_logical_volume |  | przećwiczyć |
-| 014_add_entry_to_cron |  | przećwiczyć |
-| 015_set_default_system_level |  | tak |
-| 016_add_additional_remote_yum_repo |  | nie |
-| 017_create_physical_partition_and_mount |  | nie |
-| 018_update_kernel_and_make_it_default_one |  | nie |
-| 019_create_users_with_secondary_groups |  | przećwiczyć |
-| 020_create_folders_with_group_access_rights |  | przećwiczyć |
-| 021_configure_ldap_authentication |  | nie |
-| 022_configure_autofs |  | nie |
-| 023_configure_ntp_on_the_client |  | nie |
-| 024_access_rights_for_file |  | przećwiczyć |
-| 025_create_whole_lvm_stack |  | nie |
-| 026_reduce_the_size_of_lv |  | przećwiczyć |
-| 027_create_compressed_archive |  | przećwiczyć |
-| 028_search_string_using_grep_and_redirect |  | przećwiyczć |
-| 029_make_journald_persistent |  | nie |
-| 030_setting_up_vdo |  | nie |
-| 031_finding_files |  | przećwiczyć |
-| 032_finding_files_with_given_text_in_them |  | przećwiczyć |
-| 033_managing_layered_storage |  | nie |
-| 034_containers |  | nie |
 
 
 # CG 
@@ -465,6 +479,20 @@ Zmieniamy zmienną ```Storage```
 #RateLimitIntervalSec=30s
 #RateLimitBurst=10000
 ```
+
+
+# Rozwiązywanie problemów (ogólnie)
+
+## httpd
+
+1. Sprawdzenie czy usługa działa, jeżeli tak/nie to czy systemd pokazuje jakieś błędy 
+2. Pobranie strony ```curlem``` z podanego serwera
+3. sprawdzenie logów systemd - ```journalctl -u httpd``` - pobranie logów dla konkretnej usługi
+4. sprawdzenie loga audit - ```grep /var/log/audit/audit.log``` - sprawdzić co to jest konkretnie za log, jest od niego demon ```auditd```
+5. sprawdzenie logów - ```grep /var/log/messages``` 
+3. Ustawienie selinux w tryb permissive 
+4. Włączenie odpowiedniej zmiennej boolowskiej ?
+
 
 ### Koniec
 
