@@ -167,7 +167,8 @@ spradzic bledy /var/log/messages
 https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/005_install_apache_and_give_it_permission_to_nfs_resource.md
 
 
-
+Utworzenie filesystemu na nowym lvmie, zmiana wielkości tego filesystemu, 
+zamiana wielkości LVM 
 
 
 
