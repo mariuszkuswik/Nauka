@@ -34,7 +34,7 @@
 | 007_assign_sel_context_to_the_directory | man semanage-fcontext, **jest w przykładach** | tak |
 | 008_create_users_with_specified_uid | man chage | tak, przećwiczyć ! |
 | 009_allow_other_user_to_get_access_to_home_dir |  | nie |
-| 010_dir_ownership_via_group |  | nies |
+| 010_dir_ownership_via_group |  | nie |
 | 011_create_logical_volume_and_add_filesystem |  | przećwiczyć |
 | 012_configure_virtual_console_for_kernel |  | nie |
 | 013_create_swap_on_logical_volume |  | przećwiczyć |
