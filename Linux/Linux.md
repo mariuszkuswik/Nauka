@@ -1428,6 +1428,15 @@ podstawowej — wystarczy podać hasło grupy, gdy system o nie poprosi.
 
 ## Definiowanie uprawnień za pomocą listy ACL
 
+Aby można było używać ACL, ta funkcjonalność musi być włączona dla systemu plików
+podczas jego montowania. 
+
+- ```man acl``` -  ogólne informacje o tym jak działają acl 
+
+- ```man mount ```
+    - ```acl``` dodać w fstab jeżeli domyślnie nie jest włączone w systemie plików 
+
+
 
 ### #TODO - Strona 281 - do skrócenia  
 
