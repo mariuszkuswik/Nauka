@@ -455,19 +455,6 @@ VDO będzie na egzaminie, ogarnąć co i jak !
 
 
 
-# ACL 
-[Spis treści](#spis-tre%C5%9Bci)
-
-
-getfacl "$shared_directory" - listuje aclki
-setfacl -m u:jill:r-- "$shared_directory" - ustawia uprawnienia 
-
-
-
-
-
-
-
 
 # Logi 
 ## Understanding Logging and Using Persistent Journals on RHEL 8
@@ -517,11 +504,44 @@ Zmieniamy zmienną ```Storage```
 
 **Tworzenie katalogów współdzielonych przez grupy**
 
-**Bit SGID** - gdy zostaje ustawiony dla katalogu *(2 lub g+s)*, wówczas **wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.**
+**Bit SGID** - gdy zostaje ustawiony dla katalogu *(2 lub g+s)*, wówczas **wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.**   
+O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grupy    
+
+- *Bit GID* można ustawić poprzez użycie *chmod g+s* lub dodając *2 na początku* uprawnień które nadajemy *np. chmod 2755*  - [Tabela 11.4](#tabela-114-strona-285)
+
+    ```console
+    ### Zmiana grupy dla folderu na shared_folder
+    # chgrp shared_folder GID_test_shared
+
+    ### Dodanie GID do folderu 
+    # chmod 2775 GID_test_shared/
+
+    ### Potwierdzenie dodania bitu GID ( s w miejscu execute dla grupy )
+    # ls -l GID_test_shared/
+    
+    drwxrwsr-x. 2 mariusz shared_folder  4096 Feb  2 12:30 GID_test_shared
+
+    ### Grupą do której należy plik jest shared_folder - skutek przypisania GID
+    # ls -l test_file
+    -rw-rw-r--. 1 mariusz shared_folder 0 Feb 2 12:37 test_file
+    ```
 
 
 # Bit SUID
 [Spis treści](#spis-tre%C5%9Bci)
+
+# ACL 
+[Spis treści](#spis-tre%C5%9Bci)
+
+
+getfacl "$shared_directory" - listuje aclki
+setfacl -m u:jill:r-- "$shared_directory" - ustawia uprawnienia 
+
+
+
+
+
+
 
 
 
@@ -567,7 +587,7 @@ Zmieniamy zmienną ```Storage```
 
 
 
-### Koniec
+# Koniec
 
 [Spis treści](#spis-tre%C5%9Bci)
 
