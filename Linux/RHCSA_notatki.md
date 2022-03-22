@@ -510,6 +510,21 @@ http://miro.borodziuk.eu/index.php/2017/03/13/uprawnienia-specjalne/
 | Sticky bit | 1 lub o+t | 	klejący bit |
 
 
+## Bit SUID
+[Spis treści](#spis-tre%C5%9Bci)
+
+**Bit SUID** - gdy zostaje ustawiony dla katalogu *(4 lub u+s)*, wówczas **proces będzie miał prawa użytkownika który jest właścicielem pliku wykonywalnego, a nie użytkownika który ten plik uruchamia.**  
+O tym, że *SUID* jest przypisany świadczy *litera s* w miejscu execute dla użytkownika   
+*Ustawienie tego bitu na katalogu nie ma żadnego znaczenia, jest ignorowany.*  
+
+
+Plik wykonywalny z ustawionym bitem setuid jest wykonywany przez zwykłych użytkowników z takimi przywilejami jakie posiada właściciel pliku. 
+
+Jeśli bit SUID jest ustawiony, po uruchomieniu polecenia efektywny UID staje się identyfikatorem właściciela pliku, a nie użytkownika, który go uruchamia. Oznacza to, że SUID zapewnia tymczasowe podwyższenie uprawnień podczas wykonywania. Przykładowo, jeśli wykonywany plik był własnością roota i ma ustawiony bit SUID, to bez względu na to, kto uruchamia skrypt lub aplikację, uprawnienia będą tymczasowo równe uprawnieniom roota.
+
+
+
+Dodać coś o tym kto może usuwać pliki
 
 ## Bit SGID
 [Spis treści](#spis-tre%C5%9Bci)
@@ -517,7 +532,7 @@ http://miro.borodziuk.eu/index.php/2017/03/13/uprawnienia-specjalne/
 **Tworzenie katalogów współdzielonych przez grupy**
 
 **Bit SGID** - gdy zostaje ustawiony dla katalogu *(2 lub g+s)*, wówczas **wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.**   
-O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grupy    
+O tym, że *SGID* jest przypisany świadczy *litera s* w miejscu execute dla grupy    
 
 - *Bit GID* można ustawić poprzez użycie *chmod g+s* lub dodając *2 na początku* uprawnień które nadajemy *np. chmod 2755*  - [Tabela 11.4](#tabela-114-strona-285)
 
@@ -539,13 +554,30 @@ O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grup
     ```
 
 
-## Bit SUID
-[Spis treści](#spis-tre%C5%9Bci)
-
-SUID jest specjalnym uprawnieniem dotyczącym skryptów lub aplikacji. Jeśli bit SUID jest ustawiony, po uruchomieniu polecenia efektywny UID staje się identyfikatorem właściciela pliku, a nie użytkownika, który go uruchamia. Oznacza to, że SUID zapewnia tymczasowe podwyższenie uprawnień podczas wykonywania. Przykładowo, jeśli wykonywany plik był własnością roota i ma ustawiony bit SUID, to bez względu na to, kto uruchamia skrypt lub aplikację, uprawnienia będą tymczasowo równe uprawnieniom roota.
 
 ## Bit sticky
 [Spis treści](#spis-tre%C5%9Bci)
+
+**Bit sticky** - gdy zostaje ustawiony dla katalogu *(1 lub u+s)*, wówczas **tylko użytkownik root lub właściciel katalogu może go usunąć.**
+O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dla others*
+
+- *Sticky Bit* można ustawić poprzez użycie *chmod u+s* lub dodając *1 na początku* uprawnień które nadajemy *np. chmod 1755*  - [Tabela 11.4](#tabela-114-strona-285)
+
+    ```bash
+    # Dodanie sticky bitu
+    chmod 1777 Sticky_catalog/
+
+    # Sprawdzenie czy bit został dodany - t w miejscu execute dla others oznacza, że tak
+    ls -l Sticky_catalog
+    drwxrwxrwt. 2 mariusz mariusz        4096 Feb  2 12:57 Sticky_catalog
+
+    # Przelogowanie na użytkownika test 
+    su test
+
+    # Próba usunięcia pliku w folderze ze stickybitem nieudana 
+    rm Sticky_catalog/test_file
+    >rm: cannot remove 'Sticky_catalog/test_file': Operation not permitted 
+    ```
 
 
 
