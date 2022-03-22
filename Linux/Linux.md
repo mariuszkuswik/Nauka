@@ -1582,8 +1582,8 @@ Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```
 
 ## Bit SGID - tworzenie katalogów współdzielonych przez grupy
 
-**Bit SGID** - gdy zostaje ustawiony dla katalogu *(2 lub g+s)*, wówczas **wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.**
-O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grupy
+**Bit SGID** - gdy zostaje ustawiony dla katalogu *(2 lub g+s)*, wówczas **wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.**  
+O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grupy  
 
 - *Bit GID* można ustawić poprzez użycie *chmod g+s* lub dodając *2 na początku* uprawnień które nadajemy *np. chmod 2755*  - [Tabela 11.4](#tabela-114-strona-285)
 
