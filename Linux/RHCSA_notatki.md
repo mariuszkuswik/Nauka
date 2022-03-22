@@ -14,13 +14,19 @@
 1. [VDO](#vdo)
 1. [Logi](#acl)
 1. [ACL](#acl)
+1. [Bit UUID](#Bit-uuid)
+1. [Bit GID](#Bit-git)
+1. [Progress w zadankach na CG](#cg)
+
 
 - [Chlebik](#chlebik)  
 - [Cloud Guru](#cg)  
 
 [Koniec](#Koniec)
   
-    
+
+
+
 # Chlebik
 
 | Zadanko | Notatki | Czy opanowane |
@@ -248,6 +254,8 @@ nmap -A "$remote_ip_address"
 
 
 # SELinux
+[Spis treści](#spis-tre%C5%9Bci)
+
 
 ### #TODO - dodać jak rozwiązywać podstawowe błędy
 
@@ -319,6 +327,8 @@ drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
 
 
 # Kontrola czasu w RHEL
+[Spis treści](#spis-tre%C5%9Bci)
+
 
 [Cloud_guru - lekcja](https://learn.acloud.guru/course/red-hat-certified-system-administrator-ex200-exam-prep/learn/60dc10ad-0973-4bb6-8a0b-9d987f2c25f3/071c69c6-90ba-4885-9f32-15949b43286f/watch)
 
@@ -420,6 +430,7 @@ server 169.254.169.123 iburst
 
 
 # LVM 
+[Spis treści](#spis-tre%C5%9Bci)
 
 ## Ćwiczenie : 
 Create a new physical volume with volume group in the name of datacontainer, the extent of VG should be 16MB. Also create new logical volume with name datacopy with the size of 50 extents and filesystem vfat mounted under /datasource.
@@ -434,8 +445,8 @@ lsblk
 2. 
 
 # VDO 
-
 [Spis treści](#spis-tre%C5%9Bci)
+
 
 VDO będzie na egzaminie, ogarnąć co i jak !
 
@@ -445,6 +456,8 @@ VDO będzie na egzaminie, ogarnąć co i jak !
 
 
 # ACL 
+[Spis treści](#spis-tre%C5%9Bci)
+
 
 getfacl "$shared_directory" - listuje aclki
 setfacl -m u:jill:r-- "$shared_directory" - ustawia uprawnienia 
@@ -454,30 +467,6 @@ setfacl -m u:jill:r-- "$shared_directory" - ustawia uprawnienia
 
 
 
-
-
-# CG 
-
-| Zadanko | Rozdział | Notatki | Czy opanowane | Link | Lokalny link |
-|--|--|--|--|--|--|
-| Zad: Compressing and Decompressing Files in Linux | Using Essential Tools |  |  |  |
-| Lab: Accessing Linux Systems Using RHEL 8 |  |  |  |
-| Quiz: Understanding and Using Essential Tools on RHEL 8 |  |  |  |  |
-| Lab: Creating Simple Shell Scripts | Creating Simple Shell Scripts |  |  |  | 
-| Quiz: Creating Simple Shell Scripts | Creating Simple Shell Scripts |  |  |
-| Managing the Boot Process on RHEL 8 | Operating Running Systems on RHEL 8  |  |  |
-| Zad: Understanding Logging and Using Persistent Journals on RHEL 8 | Operating Running Systems on RHEL 8 |  |  | [Persistent Journals](https://content.acloud.guru/5cd97cc2-306e-480e-934c-1597b4ab5866/1351620000001-000010.mp4?Expires=1647905190&Signature=b3ATruEet/hmVm1GIMdITDHpg7DI4IawzVH63vdAlL6dHVO4BHvgfdmRpNANa90OESfPp6Kc3Tzy8c2oXEVFlaKHqTxGUn0HyTlVGB1FUZfW0mL72Iszy1XwlylpANmBCA5JqdU0mOyQzbx733A1NFb3LBDTJ5x3TYJyB517CDXKEESZwtGemcQ6FYpqP0501KfQ9Y2uVO+UBt5nErQEc1YKsLkph4EZGL79NB4y+CZQEHrVLxhsmjplrflVBrn6IfyHPbuyLErfQQxkkS2WT7tymOoZOmj6IPmeY2hJKLoAiKxJJ1N++NOB+vUWn9N+XBytLPCqQ+ukptrSlpEVEg==&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jb250ZW50LmFjbG91ZC5ndXJ1LzVjZDk3Y2MyLTMwNmUtNDgwZS05MzRjLTE1OTdiNGFiNTg2Ni8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQ3OTA1MTkwfX19XX0=&Key-Pair-Id=APKAISLU6JPYU7SF6EUA) | [Persistent Journals lokalny](#Understanding-Logging-and-Using-Persistent-Journals-on-RHEL-8) | 
-| Zad: Managing Individual Linux Processes |  Operating Running Systems on RHEL 8 |  |  |
-| Managing Tuned Profiles on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |  
-| Managing the Boot Process on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |  
-| Managing Processes and Tuned Profiles on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |  
-| Working with Log Files and Journals on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |  
-| Quiz: Operating Running Systems on RHEL 8 | Quiz | Operating Running Systems on RHEL 8 |  |  
-|--|--|--|--|--|
-| Manipulating Disk Partitions in Linux | Zad | Configuring Local Storage on RHEL 8 |  |  
-|  |  |  |  |  
-| Working with Log Files and Journals on RHEL 8 |  |  |  | |  
-|  |  |  |  |
 
 
 # Logi 
@@ -522,7 +511,22 @@ Zmieniamy zmienną ```Storage```
 ```
 
 
+
+# Bit SGID
+[Spis treści](#spis-tre%C5%9Bci)
+
+**Tworzenie katalogów współdzielonych przez grupy**
+
+**Bit SGID** - gdy zostaje ustawiony dla katalogu *(2 lub g+s)*, wówczas **wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.**
+
+
+# Bit SUID
+[Spis treści](#spis-tre%C5%9Bci)
+
+
+
 # Rozwiązywanie problemów (ogólnie)
+[Spis treści](#spis-tre%C5%9Bci)
 
 ## httpd
 
@@ -535,6 +539,36 @@ Zmieniamy zmienną ```Storage```
 4. Włączenie odpowiedniej zmiennej boolowskiej ?
 
 
+
+
+# CG 
+[Spis treści](#spis-tre%C5%9Bci)
+
+| Zadanko | Rozdział | Notatki | Czy opanowane | Link | Lokalny link |
+|--|--|--|--|--|--|
+| Zad: Compressing and Decompressing Files in Linux | Using Essential Tools |  |  |  |
+| Lab: Accessing Linux Systems Using RHEL 8 |  |  |  |
+| Quiz: Understanding and Using Essential Tools on RHEL 8 |  |  |  |  |
+| Lab: Creating Simple Shell Scripts | Creating Simple Shell Scripts |  |  |  | 
+| Quiz: Creating Simple Shell Scripts | Creating Simple Shell Scripts |  |  |
+| Managing the Boot Process on RHEL 8 | Operating Running Systems on RHEL 8  |  |  |
+| Zad: Understanding Logging and Using Persistent Journals on RHEL 8 | Operating Running Systems on RHEL 8 |  |  | [Persistent Journals](https://content.acloud.guru/5cd97cc2-306e-480e-934c-1597b4ab5866/1351620000001-000010.mp4?Expires=1647905190&Signature=b3ATruEet/hmVm1GIMdITDHpg7DI4IawzVH63vdAlL6dHVO4BHvgfdmRpNANa90OESfPp6Kc3Tzy8c2oXEVFlaKHqTxGUn0HyTlVGB1FUZfW0mL72Iszy1XwlylpANmBCA5JqdU0mOyQzbx733A1NFb3LBDTJ5x3TYJyB517CDXKEESZwtGemcQ6FYpqP0501KfQ9Y2uVO+UBt5nErQEc1YKsLkph4EZGL79NB4y+CZQEHrVLxhsmjplrflVBrn6IfyHPbuyLErfQQxkkS2WT7tymOoZOmj6IPmeY2hJKLoAiKxJJ1N++NOB+vUWn9N+XBytLPCqQ+ukptrSlpEVEg==&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jb250ZW50LmFjbG91ZC5ndXJ1LzVjZDk3Y2MyLTMwNmUtNDgwZS05MzRjLTE1OTdiNGFiNTg2Ni8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQ3OTA1MTkwfX19XX0=&Key-Pair-Id=APKAISLU6JPYU7SF6EUA) | [Persistent Journals lokalny](#Understanding-Logging-and-Using-Persistent-Journals-on-RHEL-8) | 
+| Zad: Managing Individual Linux Processes |  Operating Running Systems on RHEL 8 |  |  |
+| Managing Tuned Profiles on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |  
+| Managing the Boot Process on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |  
+| Managing Processes and Tuned Profiles on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |  
+| Working with Log Files and Journals on RHEL 8 | Zad | Operating Running Systems on RHEL 8 |  |  
+| Quiz: Operating Running Systems on RHEL 8 | Quiz | Operating Running Systems on RHEL 8 |  |  
+|--|--|--|--|--|
+| Manipulating Disk Partitions in Linux | Zad | Configuring Local Storage on RHEL 8 |  |  
+|  |  |  |  |  
+| Working with Log Files and Journals on RHEL 8 |  |  |  | |  
+|  |  |  |  |
+
+
+
 ### Koniec
 
 [Spis treści](#spis-tre%C5%9Bci)
+
+
