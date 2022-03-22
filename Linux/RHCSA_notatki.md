@@ -501,6 +501,8 @@ Zmieniamy zmienną ```Storage```
 
 # SUID, SGID, Sticky bit
 
+http://miro.borodziuk.eu/index.php/2017/03/13/uprawnienia-specjalne/
+
 | Bit | Nadanie | Opis |
 |--|--|--|
 | SUID - setuid | 4 lub u+s | bit identyfikatora użytkownika | 
