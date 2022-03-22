@@ -14,8 +14,8 @@
 1. [VDO](#vdo)
 1. [Logi](#acl)
 1. [ACL](#acl)
-1. [Bit UUID](#Bit-uuid)
-1. [Bit GID](#Bit-git)
+1. [Bit UUID](#Bit-suid)
+1. [Bit GID](#Bit-sgid)
 1. [Progress w zadankach na CG](#cg)
 
 
