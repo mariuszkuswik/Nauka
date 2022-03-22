@@ -584,15 +584,16 @@ O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dl
 # ACL 
 [Spis treści](#spis-tre%C5%9Bci)
 
-
-**WAŻNE !** - Jeżeli katalog ma dopisek **+** na konću uprawnień to są dla niego nadane uprawnienia ACL
-```drwxrw----+ 2 mariusz mariusz 56 Mar 22 19:03 aclki/```
+WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli występuje to **oznacza, że dla pliku są ustawione uprawnienia ACL**   
+```drwxrw----+ 2 mariusz mariusz 56 Mar 22 19:03 aclki/```     
+   
 
 - ```man acl``` -  ogólne informacje o tym jak działają acl 
 - ```man mount ```
     - ```acl``` **obsługa acl powinna być domyślnie dostępna w systemie plików**, jeżeli nie to dodać w fstab jeżeli domyślnie nie jest włączone w systemie plików 
 
-## Pobieranie nadanych ACL, getfacl  
+
+## getfacl, pobieranie nadanych ACL  
 
 - ```getfacl "$shared_directory"``` - Wyświetla ACLki dla pliku    
     - ```getfacl ./a1```  
@@ -608,7 +609,7 @@ O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dl
 
 - ```setfacl -m u:jill:r-- "$shared_directory"``` - ustawia uprawnienia 
 
-## Dodawanie ACL, setfacl
+## setfacl, dodawanie ACL 
 
 - ```setfacl``` - modyfikuje uprawnienia (**--modify**) lub usuwa uprawnienia ACL (**--remove**) 
     - ```setfacl --modify u:nazwa_użytkownika:rwx "$nazwa_folderu"``` - setfacl modyfikuje uprawnienia dla folderu *nazwa_folderu*, 
@@ -643,17 +644,6 @@ O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dl
     group::rwx  
     mask::rwx  
     other::r-x  
-
-
-Przy poleceniu **ls -l** w uprawnieniach w ```rw-rw-r--+``` trzeba zwracać uwagę na ```+```,  
-**Oznacza to, że dla pliku są ustawione uprawnienia ACL**   
-Wydanie polecenia **getfacl** dla tego pliku spowoduje wyświetlenie pełnych informacji o sposobie ustawienia ACL
-
-
-
-
-
-
 
 
 
