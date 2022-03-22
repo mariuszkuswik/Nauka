@@ -1576,11 +1576,19 @@ Potwierdzić można poprzez zamontowanie i próbę użycia ```setfacl```
   
 ## Dodawanie katalogów współdzielonych przez użytkowników
 
-##### Tabela 11.4, strona 285
-![Litery i cyfry używane w specjalnych bitach uprawnień](Obrazy/tabela_11_4.png)
+#### strona 285 - podobna tabela w książce 
+
+| Bit | Nadanie | Opis |
+|--|--|--|
+| SUID - setuid | 4 lub u+s | bit identyfikatora użytkownika | 
+| SGID - setgid | 2 lub g+s | bit identyfikatora grupy |
+| Sticky bit | 1 lub o+t | 	klejący bit |
 
 
-## Bit SGID - tworzenie katalogów współdzielonych przez grupy
+
+### Bit SGID 
+
+**Tworzenie katalogów współdzielonych przez grupy**
 
 **Bit SGID** - gdy zostaje ustawiony dla katalogu *(2 lub g+s)*, wówczas **wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.**  
 O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grupy  
