@@ -584,10 +584,15 @@ O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dl
 # ACL 
 [Spis treści](#spis-tre%C5%9Bci)
 
+
+**WAŻNE !** - Jeżeli katalog ma dopisek **+** na konću uprawnień to są dla niego nadane uprawnienia ACL
+```drwxrw----+ 2 mariusz mariusz 56 Mar 22 19:03 aclki/```
+
 - ```man acl``` -  ogólne informacje o tym jak działają acl 
 - ```man mount ```
     - ```acl``` **obsługa acl powinna być domyślnie dostępna w systemie plików**, jeżeli nie to dodać w fstab jeżeli domyślnie nie jest włączone w systemie plików 
 
+## Pobieranie nadanych ACL, getfacl  
 
 - ```getfacl "$shared_directory"``` - Wyświetla ACLki dla pliku    
     - ```getfacl ./a1```  
@@ -614,14 +619,12 @@ O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dl
     - ```setfacl --remove u:"$nazwa_użytkownika"  "$nazwa_folderu"``` - setfacl usuwa uprawnienia "$nazwa_uzytkownika" dla folderu *nazwa_folderu*  
 
 
-
         **WAŻNE**
           
         Wiersz **mask** określa jakie uprawnienia maksymalne może mieć użytkownik lub grupa - w tym przypadku **read** dla użytkownika **test**,  
         **mask** jest określany **na podstawie uprawnień zwykłej grupy** (*chmod nadaje*), 
         Nawet jeśli użytkownik otrzyma większe uprawnienia ACL to nie będą one miały zastosowania
-        
-
+     
 
     **Przykład użycia :**
 
