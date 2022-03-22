@@ -14,8 +14,7 @@
 1. [VDO](#vdo)
 1. [Logi](#acl)
 1. [ACL](#acl)
-1. [Bit UUID](#Bit-suid)
-1. [Bit GID](#Bit-sgid)
+1. [SUID, SGID, Sticky bit](#SUID,-SGID,-Sticky-bit)
 1. [Progress w zadankach na CG](#cg)
 
 
@@ -499,7 +498,18 @@ Zmieniamy zmienną ```Storage```
 
 
 
-# Bit SGID
+
+# SUID, SGID, Sticky bit
+
+| Bit | Nadanie | Opis |
+|--|--|--|
+| SUID - setuid | 4 lub u+s | bit identyfikatora użytkownika | 
+| SGID - setgid | 2 lub g+s | bit identyfikatora grupy |
+| Sticky bit | 1 lub o+t | 	klejący bit |
+
+
+
+## Bit SGID
 [Spis treści](#spis-tre%C5%9Bci)
 
 **Tworzenie katalogów współdzielonych przez grupy**
@@ -527,12 +537,12 @@ O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grup
     ```
 
 
-# Bit SUID
+## Bit SUID
 [Spis treści](#spis-tre%C5%9Bci)
 
 SUID jest specjalnym uprawnieniem dotyczącym skryptów lub aplikacji. Jeśli bit SUID jest ustawiony, po uruchomieniu polecenia efektywny UID staje się identyfikatorem właściciela pliku, a nie użytkownika, który go uruchamia. Oznacza to, że SUID zapewnia tymczasowe podwyższenie uprawnień podczas wykonywania. Przykładowo, jeśli wykonywany plik był własnością roota i ma ustawiony bit SUID, to bez względu na to, kto uruchamia skrypt lub aplikację, uprawnienia będą tymczasowo równe uprawnieniom roota.
 
-# Bit sticky
+## Bit sticky
 
 [Spis treści](#spis-tre%C5%9Bci)
 
