@@ -1450,7 +1450,7 @@ podczas jego montowania.
         - ```g``` - nadanie uprawnień grupie 
         - ```rwx``` - to uprawnienia jakie zostają nadane w powyższym przykładzie
 
-- ```getfacl``` -  Wyświetla ACLki dla pliku
+- ```getfacl "$shared_directory"``` -  Wyświetla ACLki dla pliku/folderu
     
     - ```getfacl ./a1```  
         > \# file: a1  

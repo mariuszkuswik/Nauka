@@ -584,9 +584,67 @@ O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dl
 # ACL 
 [Spis treści](#spis-tre%C5%9Bci)
 
+- ```man acl``` -  ogólne informacje o tym jak działają acl 
+- ```man mount ```
+    - ```acl``` **obsługa acl powinna być domyślnie dostępna w systemie plików**, jeżeli nie to dodać w fstab jeżeli domyślnie nie jest włączone w systemie plików 
 
-getfacl "$shared_directory" - listuje aclki
-setfacl -m u:jill:r-- "$shared_directory" - ustawia uprawnienia 
+
+- ```getfacl "$shared_directory"``` - Wyświetla ACLki dla pliku    
+    - ```getfacl ./a1```  
+        > \# file: a1  
+        \# owner: mariusz  
+        \# group: mariusz  
+        user::---  
+        user:test:rwx                   #effective:r--  
+        group::rwx                      #effective:r--  
+        mask::r--   
+        other::---   
+
+
+- ```setfacl -m u:jill:r-- "$shared_directory"``` - ustawia uprawnienia 
+
+## Dodawanie ACL, setfacl
+
+- ```setfacl``` - modyfikuje uprawnienia (**--modify**) lub usuwa uprawnienia ACL (**--remove**) 
+    - ```setfacl --modify u:nazwa_użytkownika:rwx "$nazwa_folderu"``` - setfacl modyfikuje uprawnienia dla folderu *nazwa_folderu*, 
+        - ```u``` - wskazuje na nadanie uprawnień użytkownikowi 
+        - ```g``` - nadanie uprawnień grupie 
+        - ```rwx``` - to uprawnienia jakie zostają nadane w powyższym przykładzie
+  
+    - ```setfacl --remove u:"$nazwa_użytkownika"  "$nazwa_folderu"``` - setfacl usuwa uprawnienia "$nazwa_uzytkownika" dla folderu *nazwa_folderu*  
+
+
+
+        **WAŻNE**
+          
+        Wiersz **mask** określa jakie uprawnienia maksymalne może mieć użytkownik lub grupa - w tym przypadku **read** dla użytkownika **test**,  
+        **mask** jest określany **na podstawie uprawnień zwykłej grupy** (*chmod nadaje*), 
+        Nawet jeśli użytkownik otrzyma większe uprawnienia ACL to nie będą one miały zastosowania
+        
+
+
+    **Przykład użycia :**
+
+    ```setfacl -m u:test:rwx ./a1``` 
+
+    ```ls -l ./a1```
+    > drwxrwxr-x+ 2 mariusz mariusz 6 Feb  1 09:20 a1  
+
+    ```getfacl ./a1```  
+    
+    > \# file: a1  
+    \# owner: mariusz  
+    \# group: mariusz  
+    user::rwx  
+    user:test:rwx  
+    group::rwx  
+    mask::rwx  
+    other::r-x  
+
+
+Przy poleceniu **ls -l** w uprawnieniach w ```rw-rw-r--+``` trzeba zwracać uwagę na ```+```,  
+**Oznacza to, że dla pliku są ustawione uprawnienia ACL**   
+Wydanie polecenia **getfacl** dla tego pliku spowoduje wyświetlenie pełnych informacji o sposobie ustawienia ACL
 
 
 
