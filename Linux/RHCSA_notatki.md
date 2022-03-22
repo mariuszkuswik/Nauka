@@ -530,6 +530,14 @@ O tym, że *GID* jest przypisany świadczy *litera s* w miejscu execute dla grup
 # Bit SUID
 [Spis treści](#spis-tre%C5%9Bci)
 
+SUID jest specjalnym uprawnieniem dotyczącym skryptów lub aplikacji. Jeśli bit SUID jest ustawiony, po uruchomieniu polecenia efektywny UID staje się identyfikatorem właściciela pliku, a nie użytkownika, który go uruchamia. Oznacza to, że SUID zapewnia tymczasowe podwyższenie uprawnień podczas wykonywania. Przykładowo, jeśli wykonywany plik był własnością roota i ma ustawiony bit SUID, to bez względu na to, kto uruchamia skrypt lub aplikację, uprawnienia będą tymczasowo równe uprawnieniom roota.
+
+# Bit sticky
+
+[Spis treści](#spis-tre%C5%9Bci)
+
+
+
 # ACL 
 [Spis treści](#spis-tre%C5%9Bci)
 
