@@ -66,7 +66,9 @@
 | 033_managing_layered_storage |  | nie |
 | 034_containers |  | nie |
 
-
+RHCSA7: Task of the day
+Allowed time: 5 minutes.
+Create a user called tom. Create a directory named /private. Use an acl to only allow access (rwx) to tom to the private directory.
     
 # Pomoc 
 
