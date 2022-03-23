@@ -15,6 +15,7 @@
 1. [Logi](#acl)
 1. [ACL](#acl)
 1. [SUID, SGID, Sticky bit](#SUID,-SGID,-Sticky-bit)
+1. [Sysstat](#sysstat)
 1. [Progress w zadankach na CG](#cg)
 
 
@@ -38,11 +39,11 @@
 | 006_extend_existing_lv_add_label |  | tak #TODO, sprawdzić odpowiedzi | 
 | 007_assign_sel_context_to_the_directory | man semanage-fcontext, **jest w przykładach** | tak |
 | 008_create_users_with_specified_uid | man chage | tak, przećwiczyć ! |
-| 009_allow_other_user_to_get_access_to_home_dir |  | nie |
-| 010_dir_ownership_via_group |  | nie |
-| 011_create_logical_volume_and_add_filesystem |  | przećwiczyć |
-| 012_configure_virtual_console_for_kernel |  | nie |
-| 013_create_swap_on_logical_volume |  | przećwiczyć |
+| 009_allow_other_user_to_get_access_to_home_dir | [ACL](#acl) | tak, ćwiczyć dalej |
+| 010_dir_ownership_via_group |  | tak, do zapamiętania! |
+| 011_create_logical_volume_and_add_filesystem |  | tak |
+| 012_configure_virtual_console_for_kernel |  | #TODO - nie wiem o co chodzi |
+| 013_create_swap_on_logical_volume |  | tak, przećwiczyć |
 | 014_add_entry_to_cron |  | przećwiczyć |
 | 015_set_default_system_level |  | tak |
 | 016_add_additional_remote_yum_repo |  | nie |
@@ -662,6 +663,8 @@ WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli wys
 
 
 
+# sysstat
+[Spis treści](#spis-tre%C5%9Bci)
 
 # CG 
 [Spis treści](#spis-tre%C5%9Bci)
