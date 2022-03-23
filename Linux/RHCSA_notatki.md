@@ -35,7 +35,7 @@
 | 002_setup_network_parameters |  | tak, przećwiczyć |
 | 003_change_hostname |  | razcej tak |
 | 004_enable_selinux |  | raczej tak |
-| 005_install_apache_and_give_it_permission_to_nfs_resource |  | nadal do ogarnięcia z odpowiedziami |
+| 005_install_apache_and_give_it_permission_to_nfs_resource |  | nie, nadal do ogarnięcia z odpowiedziami |
 | 006_extend_existing_lv_add_label |  | tak #TODO, sprawdzić odpowiedzi | 
 | 007_assign_sel_context_to_the_directory | man semanage-fcontext, **jest w przykładach** | tak |
 | 008_create_users_with_specified_uid | man chage | tak, przećwiczyć ! |
