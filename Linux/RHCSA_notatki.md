@@ -32,7 +32,7 @@
 | Zadanko | Notatki | Czy opanowane |
 |--|--|--|
 | 001_restore_root_password | [Przywracanie hasła roota](#Przywracanie-hasła-roota) | do przećwiczenia, BARDZO WAŻNE |
-| 002_setup_network_parameters |  |  |
+| 002_setup_network_parameters |  | tak, przećwiczyć |
 | 003_change_hostname |  | razcej tak |
 | 004_enable_selinux |  | raczej tak |
 | 005_install_apache_and_give_it_permission_to_nfs_resource |  | nadal do ogarnięcia z odpowiedziami |
