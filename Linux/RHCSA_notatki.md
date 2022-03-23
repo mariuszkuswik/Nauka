@@ -15,7 +15,7 @@
 1. [Logi](#acl)
 1. [ACL](#acl)
 1. [SUID, SGID, Sticky bit](#SUID,-SGID,-Sticky-bit)
-1. [Sysstat](#sysstat)
+1. [Sysstat](#sar---sysstat)
 1. [Progress w zadankach na CG](#cg)
 
 
@@ -44,7 +44,7 @@
 | 011_create_logical_volume_and_add_filesystem |  | tak |
 | 012_configure_virtual_console_for_kernel |  | #TODO - nie wiem o co chodzi |
 | 013_create_swap_on_logical_volume |  | tak, przećwiczyć |
-| 014_add_entry_to_cron |  | przećwiczyć |
+| 014_add_entry_to_cron | [Sysstat](#sar---sysstat) | tak, przećwiczyć |
 | 015_set_default_system_level |  | tak |
 | 016_add_additional_remote_yum_repo |  | nie |
 | 017_create_physical_partition_and_mount |  | nie |
@@ -663,8 +663,32 @@ WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli wys
 
 
 
-# sysstat
+# sar - sysstat
 [Spis treści](#spis-tre%C5%9Bci)
+
+**sprawdzanie zasobów systemowych**
+
+### #TODO - przeredagować 
+
+Polecenie ```sar``` jest częścią pakietu sysstat. Po jego zainstalowaniu   
+**i uruchomieniu usługi sysstat** ```sudo systemctl sysstat enable --now```  
+system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które będzie można wyświetlić później po użyciu określonych opcji polecenia ```sar```.  
+
+### Włączenie usługi sysstat
+```console
+# systemclt enable sysstat
+# systemctl start sysstat
+```
+
+```/var/log/sa/sa??``` - domyślne miejsce docelowe dla logów  
+
+```sar``` - przeglądanie logów  
+    - ```-A``` - wyświetla wszystkie możliwe informacje o systemie 
+    - ```-u``` - wyświetla informacje dotyczące procesora   
+    - ```-d``` - wyświetla informacje dotyczące dysku  
+
+### #TODO - sar do uzupełnienia, nie było możliwości pobrania na wirtualkę 
+
 
 # CG 
 [Spis treści](#spis-tre%C5%9Bci)
