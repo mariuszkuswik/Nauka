@@ -16,7 +16,9 @@
 1. [ACL](#acl)
 1. [SUID, SGID, Sticky bit](#SUID,-SGID,-Sticky-bit)
 1. [Sysstat](#sar---sysstat)
+1. [Repo](#repo)
 1. [Progress w zadankach na CG](#cg)
+
 
 
 - [Chlebik](#chlebik)  
@@ -45,8 +47,8 @@
 | 012_configure_virtual_console_for_kernel |  | #TODO - nie wiem o co chodzi |
 | 013_create_swap_on_logical_volume |  | tak, przećwiczyć |
 | 014_add_entry_to_cron | [Sysstat](#sar---sysstat) | tak, przećwiczyć |
-| 015_set_default_system_level |  | tak |
-| 016_add_additional_remote_yum_repo |  | nie |
+| 015_set_default_system_level | [Runlevele](#runlevele) | tak |
+| 016_add_additional_remote_yum_repo | [Repo](#repo) | tak, PRZEĆWICZYĆ |
 | 017_create_physical_partition_and_mount |  | nie |
 | 018_update_kernel_and_make_it_default_one |  | nie |
 | 019_create_users_with_secondary_groups |  | przećwiczyć |
@@ -718,7 +720,22 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 
 
 
+
+
+# Runlevele 
+[Spis treści](#spis-tre%C5%9Bci)
+
+```# systemctl set-default graphical.target``` - ustawia tryb graficzny jako działający domyślnie 
+```# systemctl set-default multi-user.target``` - ustawia tryb tekstowy jako działający domyślnie 
+```# systemctl get-default``` - wyświetla obecny defaultowy target 
+
+# Repo
+[Spis treści](#spis-tre%C5%9Bci)
+
+### #TODO - dopisać najprościej jak się da 
+
 # Koniec
+
 
 [Spis treści](#spis-tre%C5%9Bci)
 
