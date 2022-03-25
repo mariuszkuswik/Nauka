@@ -767,6 +767,8 @@ Uncompress and unarchive the resulting file in /root
 
 # Blokowanie połączenia z konkretnego serwera  
 
+## ftp
+
 ```console
 # vi /etc/sysconfig/iptables-config
 IPTABLES_MODULES=”nf_conntrack_ftp nf_nat_ftp”
@@ -777,9 +779,13 @@ IPTABLES_MODULES=”nf_conntrack_ftp nf_nat_ftp”
 # vi /etc/hosts.deny
 vsftpd: .hackers.net: DENY
 ```
+### httpd
 
-
-
+```console
+# vi /etc/httpd/conf/httpd.conf
+Order allow,deny
+Allow from 127.0.0.1 server1.example.com
+```
 
 # Koniec
 
