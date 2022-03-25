@@ -17,6 +17,7 @@
 1. [SUID, SGID, Sticky bit](#SUID,-SGID,-Sticky-bit)
 1. [Sysstat](#sar---sysstat)
 1. [Repo](#repo)
+1. [Blokowanie połączenia z konkretnego serwera](#blokowanie-po%C5%82%C4%85czenia-z-konkretnego-serwera)
 1. [Progress w zadankach na CG](#cg)
 
 
@@ -49,7 +50,7 @@
 | 014_add_entry_to_cron | [Sysstat](#sar---sysstat) | tak, przećwiczyć |
 | 015_set_default_system_level | [Runlevele](#runlevele) | tak |
 | 016_add_additional_remote_yum_repo | [Repo](#repo) | tak, PRZEĆWICZYĆ |
-| 017_create_physical_partition_and_mount |  | nie |
+| 017_create_physical_partition_and_mount |  | tak, przećwiczyć |
 | 018_update_kernel_and_make_it_default_one |  | nie |
 | 019_create_users_with_secondary_groups |  | przećwiczyć |
 | 020_create_folders_with_group_access_rights |  | przećwiczyć |
@@ -737,6 +738,10 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 
 
 
+# Grub
+[Spis treści](#spis-tre%C5%9Bci)
+
+
 # Daily zadanka 
 [Spis treści](#spis-tre%C5%9Bci)
 
@@ -746,6 +751,33 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 
 - Find all files bigger than 100MB and write their names into the /root/results.txt file.
     - Allowed time: 8 minutes.
+
+- Create a XFS file system of 100MB. Mount it under /mnt. Then, increase its size by 50MB
+    - Allowed time: 10 minutes.
+
+- Find all files bigger than 100MB and write their names into the /root/results.txt file.
+    - Allowed time: 8 minutes.
+
+- Archive and compress the content of the /opt directory (create files if none exists).
+Uncompress and unarchive the resulting file in /root
+    - Allowed time: 10 minutes.
+
+- Add 100MB of swap space to the machine using a new logical volume.
+    - Allowed time: 5 minutes.
+
+# Blokowanie połączenia z konkretnego serwera  
+
+```console
+# vi /etc/sysconfig/iptables-config
+IPTABLES_MODULES=”nf_conntrack_ftp nf_nat_ftp”
+# iptables -I INPUT -m state –state NEW -m tcp -p tcp –dport 20 -j ACCEPT
+# iptables -I INPUT -m state –state NEW -m tcp -p tcp –dport 21 -j ACCEPT
+# service iptables save
+# service iptables restart
+# vi /etc/hosts.deny
+vsftpd: .hackers.net: DENY
+```
+
 
 
 
