@@ -750,6 +750,10 @@ firewall-cmd --zone=drop --add-source=x.x.x.x/xx
 
 replace x.x.x.x with the IP and you can add the subnet under /xx
 
+reguły dla danej strefy, do drop dodajemy źródłą które chcemy blokować 
+```
+firewall-cmd --zone=drop --list-all
+```
 
 you could also use /etc/hosts.allow
 /etc/hosts.deny
@@ -803,6 +807,8 @@ Uncompress and unarchive the resulting file in /root
 - Set up time services pointing to default time servers.
     - Allowed time: 5 minutes.
 
+- Create a new user account called "bob" with password "redhat" and set expiration in one week.
+    - Allowed time: 5 minutes.
 
 - Install the appropriate kernel update from http://mirrors.kernel.org/centos/6.4/updates/x86_64/Packages.
 The following conditions must also be met:
