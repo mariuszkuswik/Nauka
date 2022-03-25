@@ -742,6 +742,41 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 [Spis treści](#spis-tre%C5%9Bci)
 
 
+# Blokowanie połączenia z konkretnego serwera  
+
+I just added the following to the drop zone and it worked without any issue:
+
+firewall-cmd --zone=drop --add-source=x.x.x.x/xx
+
+replace x.x.x.x with the IP and you can add the subnet under /xx
+
+
+you could also use /etc/hosts.allow
+/etc/hosts.deny
+
+
+## ftp
+
+```console
+# vi /etc/sysconfig/iptables-config
+IPTABLES_MODULES=”nf_conntrack_ftp nf_nat_ftp”
+# iptables -I INPUT -m state –state NEW -m tcp -p tcp –dport 20 -j ACCEPT
+# iptables -I INPUT -m state –state NEW -m tcp -p tcp –dport 21 -j ACCEPT
+# service iptables save
+# service iptables restart
+# vi /etc/hosts.deny
+vsftpd: .hackers.net: DENY
+```
+### httpd
+
+```console
+# vi /etc/httpd/conf/httpd.conf
+Order allow,deny
+Allow from 127.0.0.1 server1.example.com
+```
+
+
+
 # Daily zadanka 
 [Spis treści](#spis-tre%C5%9Bci)
 
@@ -765,27 +800,14 @@ Uncompress and unarchive the resulting file in /root
 - Add 100MB of swap space to the machine using a new logical volume.
     - Allowed time: 5 minutes.
 
-# Blokowanie połączenia z konkretnego serwera  
+- Set up time services pointing to default time servers.
+    - Allowed time: 5 minutes.
 
-## ftp
 
-```console
-# vi /etc/sysconfig/iptables-config
-IPTABLES_MODULES=”nf_conntrack_ftp nf_nat_ftp”
-# iptables -I INPUT -m state –state NEW -m tcp -p tcp –dport 20 -j ACCEPT
-# iptables -I INPUT -m state –state NEW -m tcp -p tcp –dport 21 -j ACCEPT
-# service iptables save
-# service iptables restart
-# vi /etc/hosts.deny
-vsftpd: .hackers.net: DENY
-```
-### httpd
-
-```console
-# vi /etc/httpd/conf/httpd.conf
-Order allow,deny
-Allow from 127.0.0.1 server1.example.com
-```
+- Install the appropriate kernel update from http://mirrors.kernel.org/centos/6.4/updates/x86_64/Packages.
+The following conditions must also be met:
+– the updated kernel is the default kernel when the system is rebooted.
+– the original kernel remains available and bootable on the system.
 
 # Koniec
 
