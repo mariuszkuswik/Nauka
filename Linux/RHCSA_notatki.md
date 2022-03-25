@@ -734,6 +734,21 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 
 ### #TODO - dopisać najprościej jak się da 
 
+
+
+
+# Daily zadanka 
+[Spis treści](#spis-tre%C5%9Bci)
+
+- Create an EXT4 file system mounted under /vol based on a logical volume of 100MB. Reduce the size to 60MB.
+    - Allowed time: 10 minutes.
+
+
+- Find all files bigger than 100MB and write their names into the /root/results.txt file.
+    - Allowed time: 8 minutes.
+
+
+
 # Koniec
 
 
