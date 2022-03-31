@@ -938,6 +938,8 @@ Create a group "team". Create a directory "shared".
 All files put into the "shared" directory by "steve" or "oliver" should belong to the "team" group and be only visible by them.
     - Allowed time: 10 minutes.
 
+- Create two users "tom" and "engine". "tom" has the UID/GID 3000 and "engine" the UID/GID 4000. "engine" doesn't have an interactive shell.
+    - Allowed time: 5 minutes.
 
 
 # Koniec
