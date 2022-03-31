@@ -733,6 +733,15 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 # autofs 
 [Spis treści](#spis-tre%C5%9Bci)
 
+## Cloudguru
+
+
+
+
+### Koniec cloudguru
+
+
+
 autofs - montowanie systemów plików NFS na żądanie
 
 - ```/etc/auto.master``` - **config** dla autofs  
