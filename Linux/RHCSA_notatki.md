@@ -941,6 +941,10 @@ All files put into the "shared" directory by "steve" or "oliver" should belong t
 - Create two users "tom" and "engine". "tom" has the UID/GID 3000 and "engine" the UID/GID 4000. "engine" doesn't have an interactive shell.
     - Allowed time: 5 minutes.
 
+- Add 100MB of swap space to the machine using a new logical volume.
+    - Allowed time: 5 minutes.
+
+
 
 # Koniec
 
