@@ -21,6 +21,8 @@
 1. [Progress w zadankach na CG](#cg)
 1. [autofs](#autofs)
 
+1. [Daily zadanka](#daily-zadanka)
+
 
 - [Chlebik](#chlebik)  
 - [Cloud Guru](#cg)  
@@ -930,6 +932,13 @@ Uncompress and unarchive the resulting file in /root
 The following conditions must also be met:
     – the updated kernel is the default kernel when the system is rebooted.
     – the original kernel remains available and bootable on the system.
+
+- Create two new user accounts "steve" and "oliver".
+Create a group "team". Create a directory "shared".
+All files put into the "shared" directory by "steve" or "oliver" should belong to the "team" group and be only visible by them.
+    - Allowed time: 10 minutes.
+
+
 
 # Koniec
 
