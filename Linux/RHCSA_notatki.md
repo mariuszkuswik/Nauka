@@ -32,8 +32,8 @@
 
 # Chlebik
 
-| Zadanko | Notatki | Czy opanowane |
-|--|--|--|
+| Zadanko | Link | Notatki | Czy opanowane |
+|--|--|--|--|
 | 001_restore_root_password | [Przywracanie hasła roota](#Przywracanie-hasła-roota) | do przećwiczenia, BARDZO WAŻNE |
 | 002_setup_network_parameters |  | tak, przećwiczyć |
 | 003_change_hostname |  | razcej tak |
@@ -51,7 +51,7 @@
 | 015_set_default_system_level | [Runlevele](#runlevele) | tak |
 | 016_add_additional_remote_yum_repo | [Repo](#repo) | tak, PRZEĆWICZYĆ |
 | 017_create_physical_partition_and_mount |  | tak, przećwiczyć |
-| 018_update_kernel_and_make_it_default_one |  | nie |
+| 018_update_kernel_and_make_it_default_one |  | NIE, przećwiczyć |
 | 019_create_users_with_secondary_groups |  | przećwiczyć |
 | 020_create_folders_with_group_access_rights |  | przećwiczyć |
 | 021_configure_ldap_authentication |  | nie |
