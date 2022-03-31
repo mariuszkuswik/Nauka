@@ -19,7 +19,7 @@
 1. [Repo](#repo)
 1. [Blokowanie połączenia z konkretnego serwera](#blokowanie-po%C5%82%C4%85czenia-z-konkretnego-serwera)
 1. [Progress w zadankach na CG](#cg)
-
+1. [autofs](#autofs)
 
 
 - [Chlebik](#chlebik)  
@@ -34,7 +34,7 @@
 
 | Zadanko | Link | Notatki | Czy opanowane |
 |--|--|--|--|
-| 001_restore_root_password | [Przywracanie hasła roota](#Przywracanie-hasła-roota) | do przećwiczenia, BARDZO WAŻNE |
+| 001_restore_root_password | | [Przywracanie hasła roota](#Przywracanie-hasła-roota) | do przećwiczenia, BARDZO WAŻNE |
 | 002_setup_network_parameters |  | tak, przećwiczyć |
 | 003_change_hostname |  | razcej tak |
 | 004_enable_selinux |  | raczej tak |
@@ -52,10 +52,10 @@
 | 016_add_additional_remote_yum_repo | [Repo](#repo) | tak, PRZEĆWICZYĆ |
 | 017_create_physical_partition_and_mount |  | tak, przećwiczyć |
 | 018_update_kernel_and_make_it_default_one |  | NIE, przećwiczyć |
-| 019_create_users_with_secondary_groups |  | przećwiczyć |
-| 020_create_folders_with_group_access_rights |  | przećwiczyć |
-| 021_configure_ldap_authentication |  | nie |
-| 022_configure_autofs |  | nie |
+| 019_create_users_with_secondary_groups |  | tak, przećwiczyć |
+| 020_create_folders_with_group_access_rights |  | tak, przećwiczyć |
+| 021_configure_ldap_authentication |  | nie, raczej nie ma na egzaminie |
+| 022_configure_autofs |  | [#autofs](#autofs) | nie |
 | 023_configure_ntp_on_the_client |  | nie |
 | 024_access_rights_for_file |  | przećwiczyć |
 | 025_create_whole_lvm_stack |  | nie |
@@ -730,10 +730,117 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 ```# systemctl set-default multi-user.target``` - ustawia tryb tekstowy jako działający domyślnie 
 ```# systemctl get-default``` - wyświetla obecny defaultowy target 
 
+# autofs 
+[Spis treści](#spis-tre%C5%9Bci)
+
+autofs - montowanie systemów plików NFS na żądanie
+
+- ```/etc/auto.master``` - **config** dla autofs  
+     
+- ```man 5 auto.master``` - wyjaśnia skłądnie pliku konfiguracyjnego   
+- ```man automount``` - montuje udziały nfs dla pliku auto.master   
+
+- ```yum install autofs``` - **instalacja** autofs   
+
+Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego katalogu, należy po prostu zmienić katalog (cd) na katalog montowania autofs (domyślnie /net lub /var/autofs). W ten sposób współdzielony zasób zostanie automatycznie zamontowany i udostępniony.    
+
+
+#### Automatyczne montowanie katalogu /net   
+
+1. **Otworzyć plik /etc/auto.master, a następnie znaleźć następujący wiersz:**  
+
+    ```/net -hosts```
+
+    Wiersz ten powoduje, że katalog /net będzie funkcjonował jako punkt montowania dla współdzielonych katalogów NFS, do których chcesz uzyskać dostęp w sieci. *(Jeżeli na początku wiersza znajduje się znak komentarza, wówczas trzeba go usunąć)*.  
+
+2. **Wydanie polecenia:**  
+
+    ```systemctl start autofs.service```
+
+3. **Wydanie polecenia które powoduje uruchamianie usługi autofs w trakcie każdego uruchamiania systemu:**  
+
+    ```systemctl enable autofs```  
+   
+   
+Po przeprowadzeniu powyższej procedury, jeżeli mamy dostęp do jakiegoś udziału udostępnionego NFS to będzie on dostępny pod :     
+**/net/hostname/sharename**   
+  
+np. ```cd /net/localhost/pub```  
+  
+
+### Automatyczne montowanie katalogów domowych
+
+1. Na serwerze NFS (mynfs.example.com) na którym zjanduje się *katalog domowy* użytkownika *janek* należy utworzyć konto dla tego użytkownika,  
+**UUID użytkownika janek na hoscie i kliencie musi być takie samo**  
+
+    ```bash
+    mkdir /home/shared
+    useradd -c "Jan Kowalski" -d /home/shared/janek janek
+    grep janek /etc/passwd
+    janek:x:1000:1000:Jan Kowalski:/home/shared/janek:/bin/bash  
+    ```
+
+2. Na serwerze NFS należy wyeksportować katalog /home/shared do całej sieci lokalnej (w omawianym przykładzie to sieć 192.168.0.*)  
+*Aby to zrobić w /etc/exports należy dodać :*   
+    
+    ```bash
+    # /etc/exports file to share directories under /home/shared  
+    # only to other systems on the 192.168.0.0/24 network:
+    
+    /home/shared 192.168.0.*(rw,insecure)  
+    ```
+   
+    **WAŻNE !** - opcja insecure  umożliwia klientom podczas wykonywania żądań używanie portów o numerach wyższych niż 1024. Część klientów NFS wymaga tej opcji, ponieważ nie ma dostępu do portów zarezerwowanych dla NFS.   
+
+3. Na serwerze NFS ponownie uruchom usługę nfs-server lub, jeśli już działa, wyeksportuj katalog współdzielony.  
+
+    ```bash
+    exportfs -a -r -v
+    ```
+
+4. Na serwerze NFS sprawdź, czy w zaporze sieciowej zostały otwarte niezbędne porty.
+
+5. W systemie klienta NFS do pliku */etc/auto.master* dodaj wpis określający punkt montowania, w którym ma zostać zamontowany zdalny katalog NFS oraz (dowolnie wybrany) plik zawierający dane wskazujące położenie zdalnego katalogu NFS.  
+Do pliku auto.master dodaj następujący wiersz kodu:    
+
+    ```bash
+    /home/remote /etc/auto.janek
+    ```
+
+6. W systemie klienta NFS do wybranego w poprzednim punkcie pliku
+(w moim przypadku jest to /etc/auto.janek) dodaj następujący wiersz kodu:
+
+    ```bash
+    janek  -rw   mynfs.example.com:/home/shared/janek
+    ```
+
+7. W systemie klienta NFS ponownie uruchom usługę autofs:
+    
+    ```bash
+    systemctl restart autofs.service
+    ```
+
+8. W systemie klienta NFS utwórz użytkownika o nazwie janek o tym samym UUID co na serwerze (tutaj jest to 507) aby system klienta był właścicielem plików znajdujących się w katalogu domowym (na serwerze NFS) tego użytkownika. Po wydaniu zamieszczonych tutaj poleceń nastąpi utworzenie konta użytkownika janek. Jednak otrzymasz komunikat błędu wskazujący, że katalog domowy użytkownika już istnieje (to jest zgodne z prawdą).  
+
+    ```console
+    # useradd -u 507 -c "Jan Kowalski" -d /home/remote/janek janek
+    # passwd janek
+
+    Changing password for user janek.  
+    New password: ********  
+    Retype new password: ********  
+    ```
+
+
+9. W systemie klienta NFS zaloguj się jako użytkownik janek. Jeżeli wszystko działa prawidłowo, po zalogowaniu się i próbie uzyskania dostępu do katalogu domowego, /home/remote/janek, powinien zostać zamontowany katalog /home/shared/janek z serwera mynfs.example.com. Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego właścicielem jest użytkownik o identyfikatorze 507 (w obu systemach jest to janek). Dlatego użytkownik janek w systemie lokalnym powinien mieć możliwość dodawania, usuwania, modyfikowania i wyświetlania plików znajdujących się w tym katalogu. Po wylogowaniu się janka — w rzeczywistości gdy przestanie używać katalogu przez ustalony czas (tutaj jest to 10 minut) — katalog zostanie odmontowany.    
+
+
 # Repo
 [Spis treści](#spis-tre%C5%9Bci)
 
 ### #TODO - dopisać najprościej jak się da 
+
+
 
 
 
