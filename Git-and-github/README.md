@@ -3,7 +3,7 @@
 This documents contains some of the basic commands that you will need to get started with Git and GitHub
 
 # Contents
-- [Odpalenie nowego repo](Odpalenie-nowego-repo)
+- [Odpalenie nowego repo](#Odpalenie-nowego-repo)
 - [Branch](#branch)
     - [Czym jest](#czym-jest-branch)
     - [Jak stworzyć nowy branch i zmergować go z mainem](#Jak-stworzyć-nowy-branch-i-zmergować-go-z-mainem)
