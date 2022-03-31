@@ -919,8 +919,8 @@ Uncompress and unarchive the resulting file in /root
 
 - Install the appropriate kernel update from http://mirrors.kernel.org/centos/6.4/updates/x86_64/Packages.
 The following conditions must also be met:
-– the updated kernel is the default kernel when the system is rebooted.
-– the original kernel remains available and bootable on the system.
+    – the updated kernel is the default kernel when the system is rebooted.
+    – the original kernel remains available and bootable on the system.
 
 # Koniec
 
