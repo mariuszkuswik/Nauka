@@ -767,7 +767,7 @@ Configi
 Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego katalogu, należy po prostu zmienić katalog (cd) na katalog montowania autofs (domyślnie /net lub /var/autofs). W ten sposób współdzielony zasób zostanie automatycznie zamontowany i udostępniony.    
 
 
-#### Automatyczne montowanie katalogu /net   
+### Automatyczne montowanie katalogu /net   
 
 1. **Otworzyć plik /etc/auto.master, a następnie znaleźć następujący wiersz:**  
 
@@ -786,12 +786,12 @@ Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego kat
 np. ```cd /net/localhost/pub```  
   
 
-### Automatyczne montowanie katalogów domowych
+## Automatyczne montowanie katalogów domowych
 
-#### Serwer 
+### Serwer 
 
-1. Na serwerze NFS (mynfs.example.com) na którym zjanduje się *katalog domowy* użytkownika *janek* należy utworzyć konto dla tego użytkownika,  
-**UUID użytkownika janek na hoscie i kliencie musi być takie samo**  
+1. Na serwerze NFS (mynfs.example.com) na którym zjanduje się *katalog domowy* użytkownika **janek** należy utworzyć konto dla tego użytkownika,  
+**UUID użytkownika *janek* na hoscie i kliencie musi być takie samo**  
 
     ```bash
     mkdir /home/shared
@@ -818,9 +818,9 @@ np. ```cd /net/localhost/pub```
     exportfs -a -r -v
     ```
 
-4. Na serwerze NFS sprawdź, czy w zaporze sieciowej zostały otwarte niezbędne porty.
+4. **Na serwerze NFS sprawdź, czy w zaporze sieciowej zostały otwarte niezbędne porty lub czy do zapory został dodany seriws nfs.**
 
-#### Klient
+### Klient
 
 5. Do pliku */etc/auto.master* dodaj wpis określający punkt montowania, w którym ma zostać zamontowany zdalny katalog NFS oraz (dowolnie wybrany) plik zawierający dane wskazujące położenie zdalnego katalogu NFS.  
 Do pliku auto.master dodaj następujący wiersz kodu:    
@@ -833,7 +833,7 @@ Do pliku auto.master dodaj następujący wiersz kodu:
 (w moim przypadku jest to /etc/auto.janek) dodaj następujący wiersz kodu:
 
     ```bash
-    janek  -rw   mynfs.example.com:/home/shared/janek
+    janek  -rw   "$nfs_server_address":/home/shared/janek
     ```
 
 7. Ponownie uruchom usługę autofs:
@@ -854,7 +854,11 @@ Do pliku auto.master dodaj następujący wiersz kodu:
     ```
 
 
-9. Zaloguj się jako użytkownik janek. Jeżeli wszystko działa prawidłowo, po zalogowaniu się i próbie uzyskania dostępu do katalogu domowego, /home/remote/janek, powinien zostać zamontowany katalog /home/shared/janek z serwera mynfs.example.com. Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego właścicielem jest użytkownik o identyfikatorze 507 (w obu systemach jest to janek). Dlatego użytkownik janek w systemie lokalnym powinien mieć możliwość dodawania, usuwania, modyfikowania i wyświetlania plików znajdujących się w tym katalogu. Po wylogowaniu się janka — w rzeczywistości gdy przestanie używać katalogu przez ustalony czas (tutaj jest to 10 minut) — katalog zostanie odmontowany.    
+9. Zaloguj się jako użytkownik janek.   
+Jeżeli wszystko działa prawidłowo, po zalogowaniu się i wejściu do katalogu domowego ```/home/remote/janek```, powinien zostać zamontowany katalog ```/home/shared/janek``` z serwera "$nfs_server_address".  
+
+
+Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego właścicielem jest użytkownik o identyfikatorze 507 (w obu systemach jest to janek). Dlatego użytkownik janek w systemie lokalnym powinien mieć możliwość dodawania, usuwania, modyfikowania i wyświetlania plików znajdujących się w tym katalogu. Po wylogowaniu się janka — w rzeczywistości gdy przestanie używać katalogu przez ustalony czas (tutaj jest to 10 minut) — katalog zostanie odmontowany.    
 
 
 # Repo
