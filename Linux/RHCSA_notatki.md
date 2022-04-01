@@ -736,38 +736,29 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 # autofs 
 [Spis treści](#spis-tre%C5%9Bci)
 
+**autofs** - montowanie systemów plików NFS na żądanie
 
-## Cloudguru
-
-
-
-
-### Koniec cloudguru
+- [Montowanie pod /net](#Automatyczne-montowanie-katalogu-/net)  
+- [Montowanie katalogów domowych](#Automatyczne-montowanie-katalogów-domowych) 
 
 
+- Configi 
+    - ```/etc/autofs.conf``` - Główny plik konfiguracyjny usługi
+    - ```/etc/auto.master``` - Główny plik mapowania    
+    - ```/etc/auto."$file_name"``` - konfiguracja dla indywidualnych systemów montowania 
 
-autofs - montowanie systemów plików NFS na żądanie
+- Pomoc 
+    - ```man 5 auto.master``` - wyjaśnia skłądnie pliku konfiguracyjnego   
+    - ```man automount``` - montuje udziały nfs dla pliku auto.master   
 
-Configi 
-
-- ```/etc/autofs.conf``` - Główny plik konfiguracyjny usługi
-- ```/etc/auto.master``` - Główny plik mapowania
-
-
-- ```/etc/auto."$file_name"``` - konfiguracja dla indywidualnych systemów montowania 
-
-
-
-
-- ```man 5 auto.master``` - wyjaśnia skłądnie pliku konfiguracyjnego   
-- ```man automount``` - montuje udziały nfs dla pliku auto.master   
-
-- ```yum install autofs``` - **instalacja** autofs   
-
-Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego katalogu, należy po prostu zmienić katalog (cd) na katalog montowania autofs (domyślnie /net lub /var/autofs). W ten sposób współdzielony zasób zostanie automatycznie zamontowany i udostępniony.    
+- Instalacja
+    - ```yum install autofs``` - **instalacja** autofs   
 
 
 ### Automatyczne montowanie katalogu /net   
+
+Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego katalogu, należy po prostu zmienić katalog (cd) na katalog montowania autofs (domyślnie /net lub /var/autofs). W ten sposób współdzielony zasób zostanie automatycznie zamontowany i udostępniony.    
+### #TODO - Dopisać jakiś przykład
 
 1. **Otworzyć plik /etc/auto.master, a następnie znaleźć następujący wiersz:**  
 
@@ -859,7 +850,7 @@ np. ```cd /net/localhost/pub```
 5. **Zaloguj się jako użytkownik janek.**   
 Jeżeli wszystko działa prawidłowo, po zalogowaniu się i wejściu do katalogu domowego ```/home/remote/janek```, powinien zostać zamontowany katalog ```/home/shared/janek``` z serwera "$nfs_server_address".  
   
-  
+
 Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego właścicielem jest użytkownik o identyfikatorze 507 (w obu systemach jest to janek). Dlatego użytkownik janek w systemie lokalnym powinien mieć możliwość dodawania, usuwania, modyfikowania i wyświetlania plików znajdujących się w tym katalogu. Po wylogowaniu się janka — w rzeczywistości gdy przestanie używać katalogu przez ustalony czas (tutaj jest to 10 minut) — katalog zostanie odmontowany.    
 
 
