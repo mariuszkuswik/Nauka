@@ -38,38 +38,38 @@
 |--|--|--|
 | [001_restore_root_password](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/001_restore_root_password.md) | [Przywracanie hasła roota](#Przywracanie-hasła-roota) | do przećwiczenia, BARDZO WAŻNE |
 | [002_setup_network_parameters](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/002_setup_network_parameters.md) |  | tak, przećwiczyć |
-| 003_change_hostname |  | razcej tak |
-| 004_enable_selinux |  | raczej tak |
-| 005_install_apache_and_give_it_permission_to_nfs_resource |  | nie, nadal do ogarnięcia z odpowiedziami |
-| 006_extend_existing_lv_add_label |  | tak #TODO, sprawdzić odpowiedzi | 
-| 007_assign_sel_context_to_the_directory | man semanage-fcontext, **jest w przykładach** | tak |
-| 008_create_users_with_specified_uid | man chage | tak, przećwiczyć ! |
-| 009_allow_other_user_to_get_access_to_home_dir | [ACL](#acl) | tak, ćwiczyć dalej |
-| 010_dir_ownership_via_group |  | tak, do zapamiętania! |
-| 011_create_logical_volume_and_add_filesystem |  | tak |
-| 012_configure_virtual_console_for_kernel |  | #TODO - nie wiem o co chodzi |
-| 013_create_swap_on_logical_volume |  | tak, przećwiczyć |
-| 014_add_entry_to_cron | [Sysstat](#sar---sysstat) | tak, przećwiczyć |
-| 015_set_default_system_level | [Runlevele](#runlevele) | tak |
-| 016_add_additional_remote_yum_repo | [Repo](#repo) | tak, PRZEĆWICZYĆ |
-| 017_create_physical_partition_and_mount |  | tak, przećwiczyć |
-| 018_update_kernel_and_make_it_default_one |  | NIE, przećwiczyć |
-| 019_create_users_with_secondary_groups |  | tak, przećwiczyć |
-| 020_create_folders_with_group_access_rights |  | tak, przećwiczyć |
-| 021_configure_ldap_authentication |  | nie, raczej nie ma na egzaminie |
-| 022_configure_autofs |  | [#autofs](#autofs) | nie |
-| 023_configure_ntp_on_the_client |  | nie |
-| 024_access_rights_for_file |  | przećwiczyć |
-| 025_create_whole_lvm_stack |  | nie |
-| 026_reduce_the_size_of_lv |  | przećwiczyć |
-| 027_create_compressed_archive |  | przećwiczyć |
-| 028_search_string_using_grep_and_redirect |  | przećwiyczć |
-| 029_make_journald_persistent |  | nie |
-| 030_setting_up_vdo |  | nie |
-| 031_finding_files |  | przećwiczyć |
-| 032_finding_files_with_given_text_in_them |  | przećwiczyć |
-| 033_managing_layered_storage |  | nie |
-| 034_containers |  | nie |
+| [003_change_hostname]( https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/003_change_hostname.md) |  | razcej tak |
+| [004_enable_selinux](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/004_enable_selinux.md) |  | raczej tak |
+| [005_install_apache_and_give_it_permission_to_nfs_resource](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/005_install_apache_and_give_it_permission_to_nfs_resource.md) |  | nie, nadal do ogarnięcia z odpowiedziami |
+| [006_extend_existing_lv_add_label](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/006_extend_existing_lv_add_label.md) |  | tak #TODO, sprawdzić odpowiedzi | 
+| [007_assign_sel_context_to_the_directory](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/007_assign_sel_context_to_the_directory.md) | man semanage-fcontext, **jest w przykładach** | tak |
+| [008_create_users_with_specified_uid](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/008_create_users_with_specified_uid.md) | man chage | tak, przećwiczyć ! |
+| [009_allow_other_user_to_get_access_to_home_dir](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/009_allow_other_user_to_get_access_to_home_dir.md) | [ACL](#acl) | tak, ćwiczyć dalej |
+| [010_dir_ownership_via_group](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/010_dir_ownership_via_group.md) |  | tak, do zapamiętania! |
+| [011_create_logical_volume_and_add_filesystem](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/011_create_logical_volume_and_add_filesystem.md) |  | tak |
+| [012_configure_virtual_console_for_kernel] |  | #TODO - nie wiem o co chodzi |
+| [013_create_swap_on_logical_volume] |  | tak, przećwiczyć |
+| [014_add_entry_to_cron] | [Sysstat](#sar---sysstat) | tak, przećwiczyć |
+| [015_set_default_system_level] | [Runlevele](#runlevele) | tak |
+| [016_add_additional_remote_yum_repo] | [Repo](#repo) | tak, PRZEĆWICZYĆ |
+| [017_create_physical_partition_and_mount] |  | tak, przećwiczyć |
+| [018_update_kernel_and_make_it_default_one] |  | NIE, przećwiczyć |
+| [019_create_users_with_secondary_groups] |  | tak, przećwiczyć |
+| [020_create_folders_with_group_access_rights] |  | tak, przećwiczyć |
+| [021_configure_ldap_authentication] |  | nie, raczej nie ma na egzaminie |
+| [022_configure_autofs] |  | [#autofs](#autofs) | nie |
+| [023_configure_ntp_on_the_client] |  | nie |
+| [024_access_rights_for_file] |  | przećwiczyć |
+| [025_create_whole_lvm_stack] |  | nie |
+| [026_reduce_the_size_of_lv] |  | przećwiczyć |
+| [027_create_compressed_archive] |  | przećwiczyć |
+| [028_search_string_using_grep_and_redirect] |  | przećwiyczć |
+| [029_make_journald_persistent] |  | nie |
+| [030_setting_up_vdo] |  | nie |
+| [031_finding_files] |  | przećwiczyć |
+| [032_finding_files_with_given_text_in_them] |  | przećwiczyć |
+| [033_managing_layered_storage] |  | nie |
+| [034_containers] |  | nie |
 
 RHCSA7: Task of the day
 Allowed time: 5 minutes.
