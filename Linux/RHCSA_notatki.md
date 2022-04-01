@@ -18,9 +18,10 @@
 1. [Sysstat](#sar---sysstat)
 1. [Repo](#repo)
 1. [Blokowanie połączenia z konkretnego serwera](#blokowanie-po%C5%82%C4%85czenia-z-konkretnego-serwera)
-1. [Progress w zadankach na CG](#cg)
 1. [autofs](#autofs)
 
+
+1. [Progress w zadankach na CG](#cg)
 1. [Daily zadanka](#daily-zadanka)
 
 
@@ -43,7 +44,7 @@
 | [005_install_apache_and_give_it_permission_to_nfs_resource](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/005_install_apache_and_give_it_permission_to_nfs_resource.md) |  | nie, nadal do ogarnięcia z odpowiedziami |
 | [006_extend_existing_lv_add_label](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/006_extend_existing_lv_add_label.md) |  | tak #TODO, sprawdzić odpowiedzi | 
 | [007_assign_sel_context_to_the_directory](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/007_assign_sel_context_to_the_directory.md) | man semanage-fcontext, **jest w przykładach** | tak |
-| [008_create_users_with_specified_uid](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/008_create_users_with_specified_uid.md) | man chage | tak, przećwiczyć ! |
+| [008_create_users_with_specified_uid](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/008_create_users_with_specified_uid.md) | [Tworzenie użytkowników](#Tworzenie-użytkowników) | tak, przećwiczyć ! |
 | [009_allow_other_user_to_get_access_to_home_dir](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/009_allow_other_user_to_get_access_to_home_dir.md) | [ACL](#acl) | tak, ćwiczyć dalej |
 | [010_dir_ownership_via_group](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/010_dir_ownership_via_group.md) |  | tak, do zapamiętania! |
 | [011_create_logical_volume_and_add_filesystem](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/011_create_logical_volume_and_add_filesystem.md) |  | tak |
@@ -67,9 +68,9 @@
 | [029_make_journald_persistent] |  | nie |
 | [030_setting_up_vdo] |  | nie |
 | [031_finding_files] |  | przećwiczyć |
-| [032_finding_files_with_given_text_in_them] |  | przećwiczyć |
-| [033_managing_layered_storage] |  | nie |
-| [034_containers] |  | nie |
+| [032_finding_files_with_given_text_in_them](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/032_finding_files_with_given_text_in_them.md) | [Wyszukiwanie plików](#Wyszukiwanie-plików)  | przećwiczyć |
+| [033_managing_layered_storage](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/033_managing_layered_storage.md) |  | nie |
+| [034_containers](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/034_containers.md) |  | nie |
 
 RHCSA7: Task of the day
 Allowed time: 5 minutes.
