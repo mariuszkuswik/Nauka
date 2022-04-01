@@ -822,27 +822,27 @@ np. ```cd /net/localhost/pub```
 
 ### Klient
 
-5. Do pliku */etc/auto.master* dodaj wpis określający punkt montowania, w którym ma zostać zamontowany zdalny katalog NFS oraz (dowolnie wybrany) plik zawierający dane wskazujące położenie zdalnego katalogu NFS.  
+1. Do pliku */etc/auto.master* dodaj wpis określający punkt montowania, w którym ma zostać zamontowany zdalny katalog NFS oraz (dowolnie wybrany) plik zawierający dane wskazujące położenie zdalnego katalogu NFS.  
 *Do pliku auto.master dodaj następujący wiersz kodu:*   
 
     ```bash
     /home/remote /etc/auto.janek
     ```
 
-6. Do wybranego w poprzednim punkcie pliku
+2. Do wybranego w poprzednim punkcie pliku
 (w moim przypadku jest to /etc/auto.janek) dodaj następujący wiersz kodu:
 
     ```bash
     janek  -rw   "$nfs_server_address":/home/shared/janek
     ```
 
-7. Ponownie uruchom usługę autofs:
+3. Ponownie uruchom usługę autofs:
     
     ```bash
     systemctl restart autofs.service
     ```
 
-8. Utwórz użytkownika o nazwie janek **o tym samym UUID co na serwerze** (tutaj jest to 507)   
+4. Utwórz użytkownika o nazwie janek **o tym samym UUID co na serwerze** (tutaj jest to 507)   
 *aby system klienta był właścicielem plików znajdujących się w katalogu domowym (na serwerze NFS) tego użytkownika.*
  
 
@@ -856,7 +856,7 @@ np. ```cd /net/localhost/pub```
     ```
 
 
-9. Zaloguj się jako użytkownik janek.   
+5. **Zaloguj się jako użytkownik janek.**   
 Jeżeli wszystko działa prawidłowo, po zalogowaniu się i wejściu do katalogu domowego ```/home/remote/janek```, powinien zostać zamontowany katalog ```/home/shared/janek``` z serwera "$nfs_server_address".  
 
 
