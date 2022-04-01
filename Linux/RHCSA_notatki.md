@@ -842,7 +842,7 @@ np. ```cd /net/localhost/pub```
     systemctl restart autofs.service
     ```
 
-8. Utwórz użytkownika o nazwie janek **o tym samym UUID co na serwerze** (tutaj jest to 507) 
+8. Utwórz użytkownika o nazwie janek **o tym samym UUID co na serwerze** (tutaj jest to 507)   
 *aby system klienta był właścicielem plików znajdujących się w katalogu domowym (na serwerze NFS) tego użytkownika.*
  
 
