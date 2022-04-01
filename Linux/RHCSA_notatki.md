@@ -345,26 +345,27 @@ Poprzednim serwerem czasu był ntp, obecnym chrony
 
 - ```chrony``` - serwer lub klient (zależy od potrzeby) kontroli czasu
 
-- ```chronyd``` - **daemon for synchronisation of the system clock**, can be controlled via local or remote instances of ```chronyc```
-- ```chronyc``` - command line program **used to monitor and control ```chronyd```** - działa na tej samej zasadzie co fdisk, **tabulator mocno pomaga** 
-    - ```help``` - wyświetla pomoc
-    - ```sources -v``` - wyświetla dostępne źródła, razem z wyjaśnieniem co znaczą wpisy w tabeli   
-    ![chronyc_sources_verbosed](Obrazy/Cloud_Guru/chronyc_sources_verbosed.png)  
-    - ```sourcestats -v``` - więcej informacji na temat dostępnych serwerów 
-    - ```serverstats``` - nie wiem ? 
-  
-- ```ntpstat``` - wspiera chronyd ? - domyślnie nie jest zainstalowane 
-
-
-##### Ważne pliki :  
+### Ważne pliki :  
 
 - ```/etc/chrony.conf``` - config  
 - ```/etc/chrony.keys``` - zawiera klucze ? 
 - ```/usr/share/doc/chrony``` - dokumentacja
 
-## Przykładowe ćwiczenie 
+---
 
-### 1. Synchronizacja czasu (klient z serwerem)
+- ```chronyd``` - **daemon for synchronisation of the system clock**, can be controlled via local or remote instances of ```chronyc```
+- ```chronyc``` - command line program **used to monitor and control ```chronyd```** - działa na tej samej zasadzie co fdisk, **tabulator mocno pomaga** 
+    - ```help``` - wyświetla pomoc
+    - ```sources -v``` - wyświetla dostępne źródła, razem z wyjaśnieniem co znaczą wpisy w tabeli  
+
+    ![chronyc_sources_verbosed](Obrazy/Cloud_Guru/chronyc_sources_verbosed.png)  
+
+    - ```serverstats``` - nie wiem ? 
+
+
+
+
+## Synchronizacja czasu (klient z serwerem)
 
 
 1. instalacja chrony 
