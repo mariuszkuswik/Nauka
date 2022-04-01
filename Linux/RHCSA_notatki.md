@@ -34,9 +34,9 @@
 
 # Chlebik
 
-| Zadanko | Link | Notatki | Czy opanowane |
-|--|--|--|--|
-| 001_restore_root_password | | [Przywracanie hasła roota](#Przywracanie-hasła-roota) | do przećwiczenia, BARDZO WAŻNE |
+| Zadanko | Notatki | Czy opanowane |
+|--|--|--|
+| 001_restore_root_password | [Przywracanie hasła roota](#Przywracanie-hasła-roota) | do przećwiczenia, BARDZO WAŻNE |
 | 002_setup_network_parameters |  | tak, przećwiczyć |
 | 003_change_hostname |  | razcej tak |
 | 004_enable_selinux |  | raczej tak |
