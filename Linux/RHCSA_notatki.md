@@ -843,8 +843,8 @@ np. ```cd /net/localhost/pub```
     ```
 
 8. Utwórz użytkownika o nazwie janek **o tym samym UUID co na serwerze** (tutaj jest to 507) 
-aby system klienta był właścicielem plików znajdujących się w katalogu domowym (na serwerze NFS) tego użytkownika. 
-Jednak otrzymasz komunikat błędu wskazujący, że katalog domowy użytkownika już istnieje (to jest zgodne z prawdą).  
+*aby system klienta był właścicielem plików znajdujących się w katalogu domowym (na serwerze NFS) tego użytkownika.*
+ 
 
     ```console
     # useradd -u 507 -c "Jan Kowalski" -d /home/remote/janek janek
