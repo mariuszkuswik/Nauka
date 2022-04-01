@@ -823,7 +823,7 @@ np. ```cd /net/localhost/pub```
 ### Klient
 
 5. Do pliku */etc/auto.master* dodaj wpis określający punkt montowania, w którym ma zostać zamontowany zdalny katalog NFS oraz (dowolnie wybrany) plik zawierający dane wskazujące położenie zdalnego katalogu NFS.  
-Do pliku auto.master dodaj następujący wiersz kodu:    
+*Do pliku auto.master dodaj następujący wiersz kodu:*   
 
     ```bash
     /home/remote /etc/auto.janek
@@ -842,7 +842,9 @@ Do pliku auto.master dodaj następujący wiersz kodu:
     systemctl restart autofs.service
     ```
 
-8. Utwórz użytkownika o nazwie janek o tym samym UUID co na serwerze (tutaj jest to 507) aby system klienta był właścicielem plików znajdujących się w katalogu domowym (na serwerze NFS) tego użytkownika. Po wydaniu zamieszczonych tutaj poleceń nastąpi utworzenie konta użytkownika janek. Jednak otrzymasz komunikat błędu wskazujący, że katalog domowy użytkownika już istnieje (to jest zgodne z prawdą).  
+8. Utwórz użytkownika o nazwie janek **o tym samym UUID co na serwerze** (tutaj jest to 507) 
+aby system klienta był właścicielem plików znajdujących się w katalogu domowym (na serwerze NFS) tego użytkownika. 
+Jednak otrzymasz komunikat błędu wskazujący, że katalog domowy użytkownika już istnieje (to jest zgodne z prawdą).  
 
     ```console
     # useradd -u 507 -c "Jan Kowalski" -d /home/remote/janek janek
