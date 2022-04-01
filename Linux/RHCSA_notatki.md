@@ -36,8 +36,8 @@
 
 | Zadanko | Notatki | Czy opanowane |
 |--|--|--|
-| [001_restore_root_password](#https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/001_restore_root_password.md) | [Przywracanie hasła roota](#Przywracanie-hasła-roota) | do przećwiczenia, BARDZO WAŻNE |
-| [002_setup_network_parameters](#https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/002_setup_network_parameters.md) |  | tak, przećwiczyć |
+| [001_restore_root_password](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/001_restore_root_password.md) | [Przywracanie hasła roota](#Przywracanie-hasła-roota) | do przećwiczenia, BARDZO WAŻNE |
+| [002_setup_network_parameters](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/002_setup_network_parameters.md) |  | tak, przećwiczyć |
 | 003_change_hostname |  | razcej tak |
 | 004_enable_selinux |  | raczej tak |
 | 005_install_apache_and_give_it_permission_to_nfs_resource |  | nie, nadal do ogarnięcia z odpowiedziami |
