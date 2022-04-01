@@ -29,6 +29,3 @@
  https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/029_make_journald_persistent.md
  https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md
  https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/031_finding_files.md
- https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/032_finding_files_with_given_text_in_them.md
- https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/033_managing_layered_storage.md
- https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/034_containers.md
