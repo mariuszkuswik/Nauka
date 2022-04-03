@@ -21,8 +21,8 @@
  https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/021_configure_ldap_authentication.md
  https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/022_configure_autofs.md
  https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/023_configure_ntp_on_the_client.md
- https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/024_access_rights_for_file.md
- https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/025_create_whole_lvm_stack.md
+ 
+ 
  https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/026_reduce_the_size_of_lv.md
  https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/027_create_compressed_archive.md
  https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/028_search_string_using_grep_and_redirect.md
