@@ -606,16 +606,17 @@ WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli wys
 ## getfacl, pobieranie nadanych ACL  
 
 - ```getfacl "$shared_directory"``` - Wyświetla ACLki dla pliku    
-    - ```getfacl ./a1```  
-        > \# file: a1  
-        \# owner: mariusz  
-        \# group: mariusz  
+    - ```console
+        getfacl ./a1
+        # file: a1  
+        # owner: mariusz  
+        # group: mariusz  
         user::---  
         user:test:rwx                   #effective:r--  
         group::rwx                      #effective:r--  
         mask::r--   
         other::---   
-
+        ```  
 
 - ```setfacl -m u:jill:r-- "$shared_directory"``` - ustawia uprawnienia 
 
