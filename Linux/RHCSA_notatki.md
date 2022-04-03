@@ -61,7 +61,7 @@
 | [022_configure_autofs] | [Autofs](#autofs) | nie, przećwiczyć |
 | [023_configure_ntp_on_the_client](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/023_configure_ntp_on_the_client.md) | [Kontrola czasu w RHEL](#Kontrola-czasu-w-RHEL) | tak, przećwiczyć |
 | [024_access_rights_for_file](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/024_access_rights_for_file.md) | [ACL](#acl) | tak, przećwiczyć - nie jest aż tak proste |
-| [025_create_whole_lvm_stack](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/025_create_whole_lvm_stack.md) |  | nie |
+| [025_create_whole_lvm_stack](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/025_create_whole_lvm_stack.md) | [LVM](#LVM) Dodać extent of VG should be 16MB do notatek | tak, przećwiczyć |
 | [026_reduce_the_size_of_lv] |  | przećwiczyć |
 | [027_create_compressed_archive] |  | przećwiczyć |
 | [028_search_string_using_grep_and_redirect] |  | przećwiyczć |
