@@ -629,7 +629,7 @@ WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli wys
     
     - ```setfacl --modify u:"$nazwa_użytkownika":--- "$nazwa_folderu"``` - polecenie **odmawia** użytkownikowi wszystkich uprawnień do folderu
         - **WAŻNE!** ```-``` zabrania dostępu, 
-            np. rw- zabrania prawa do wykonywania 
+            np. ```rw-``` zabrania prawa do wykonywania 
         
   
     - ```setfacl --remove u:"$nazwa_użytkownika"  "$nazwa_folderu"``` - setfacl usuwa uprawnienia "$nazwa_uzytkownika" dla folderu *nazwa_folderu*  
