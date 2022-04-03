@@ -607,7 +607,8 @@ WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli wys
 
 - ```getfacl "$shared_directory"``` - Wyświetla ACLki dla pliku    
     ```console
-    getfacl ./a1
+    $ getfacl ./a1
+
     # file: a1  
     # owner: mariusz  
     # group: mariusz  
