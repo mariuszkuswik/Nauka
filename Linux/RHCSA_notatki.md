@@ -628,7 +628,7 @@ WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli wys
         - ```rwx``` - to uprawnienia jakie zostają nadane w powyższym przykładzie
     
     - ```setfacl --modify u:"$nazwa_użytkownika":--- "$nazwa_folderu"``` - polecenie **odmawia** użytkownikowi wszystkich uprawnień do folderu
-        - **WAŻNE!** - ```-``` - zabrania dostępu 
+        - **WAŻNE!** ```-``` zabrania dostępu 
         
   
     - ```setfacl --remove u:"$nazwa_użytkownika"  "$nazwa_folderu"``` - setfacl usuwa uprawnienia "$nazwa_uzytkownika" dla folderu *nazwa_folderu*  
