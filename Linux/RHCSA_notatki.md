@@ -60,7 +60,7 @@
 | [021_configure_ldap_authentication] |  | nie, raczej nie ma na egzaminie |
 | [022_configure_autofs] | [Autofs](#autofs) | nie, przećwiczyć |
 | [023_configure_ntp_on_the_client](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/023_configure_ntp_on_the_client.md) | [Kontrola czasu w RHEL](#Kontrola-czasu-w-RHEL) | tak, przećwiczyć |
-| [024_access_rights_for_file] |  | przećwiczyć |
+| [024_access_rights_for_file](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/024_access_rights_for_file.md) | [ACL](#acl) | tak, przećwiczyć - nie jest aż tak proste |
 | [025_create_whole_lvm_stack] |  | nie |
 | [026_reduce_the_size_of_lv] |  | przećwiczyć |
 | [027_create_compressed_archive] |  | przećwiczyć |
@@ -622,10 +622,14 @@ WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli wys
 ## setfacl, dodawanie ACL 
 
 - ```setfacl``` - modyfikuje uprawnienia (**--modify**) lub usuwa uprawnienia ACL (**--remove**) 
-    - ```setfacl --modify u:nazwa_użytkownika:rwx "$nazwa_folderu"``` - setfacl modyfikuje uprawnienia dla folderu *nazwa_folderu*, 
+    - ```setfacl --modify u:"$nazwa_użytkownika":rwx "$nazwa_folderu"``` - setfacl modyfikuje uprawnienia dla folderu *nazwa_folderu*, 
         - ```u``` - wskazuje na nadanie uprawnień użytkownikowi 
         - ```g``` - nadanie uprawnień grupie 
         - ```rwx``` - to uprawnienia jakie zostają nadane w powyższym przykładzie
+    
+    - ```setfacl --modify u:"$nazwa_użytkownika":--- "$nazwa_folderu"``` - polecenie **odmawia** użytkownikowi wszystkich uprawnień do folderu
+        - **WAŻNE!** - ```-``` - zabrania dostępu 
+        
   
     - ```setfacl --remove u:"$nazwa_użytkownika"  "$nazwa_folderu"``` - setfacl usuwa uprawnienia "$nazwa_uzytkownika" dla folderu *nazwa_folderu*  
 
