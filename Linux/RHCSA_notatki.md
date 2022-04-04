@@ -19,6 +19,7 @@
 1. [Repo](#repo)
 1. [Blokowanie połączenia z konkretnego serwera](#blokowanie-po%C5%82%C4%85czenia-z-konkretnego-serwera)
 1. [autofs](#autofs)
+1. [Archiwizowanie](#archiwizowanie)
 
 
 1. [Progress w zadankach na CG](#cg)
@@ -62,7 +63,7 @@
 | [023_configure_ntp_on_the_client](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/023_configure_ntp_on_the_client.md) | [Kontrola czasu w RHEL](#Kontrola-czasu-w-RHEL) | tak, przećwiczyć |
 | [024_access_rights_for_file](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/024_access_rights_for_file.md) | [ACL](#acl) | tak, przećwiczyć - nie jest aż tak proste |
 | [025_create_whole_lvm_stack](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/025_create_whole_lvm_stack.md) | [LVM](#LVM) Dodać extent of VG should be 16MB do notatek | tak, przećwiczyć |
-| [026_reduce_the_size_of_lv](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/026_reduce_the_size_of_lv.md) |  | przećwiczyć |
+| [026_reduce_the_size_of_lv](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/026_reduce_the_size_of_lv.md) | [LVM](#lvm) | tak, przećwiczyć |
 | [027_create_compressed_archive](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/027_create_compressed_archive.md) |  | przećwiczyć |
 | [028_search_string_using_grep_and_redirect](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/028_search_string_using_grep_and_redirect.md) |  | przećwiyczć |
 | [029_make_journald_persistent](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/029_make_journald_persistent.md) |  | nie |
@@ -79,6 +80,7 @@
 
 - ```apropos``` wyszukuje strony w pomocy, podobnie jak *man -k*
 - ```man -k``` - wyszukuje strony w pomocy 
+- ```man -K``` - szuka we **wszystkich** plikach pomocy
 - ```info``` - wyświetla komendy z opisem  
 - ```rpm -qd``` - wyświetl pliki z dokumentacją dla danego pakietu
 - locate "$szukana_komenda" - powinno wylistować pliki z pomocą 
@@ -910,6 +912,27 @@ Order allow,deny
 Allow from 127.0.0.1 server1.example.com
 ```
 
+
+
+# Archiwizowanie 
+[Spis treści](#spis-tre%C5%9Bci)
+
+### #TODO - do uzupełnienia
+- Jak tworzyć inne typy archiwów niż gzip 
+- Jak dodać coś do istniejącego archiwum 
+
+tar 
+-c - create
+-v - verbose 
+-z - gzip
+-f - file  
+-t - wylisowanie plików archiwum 
+-x - extract 
+-u - update files that are newer 
+
+tar -cvzf "$plik_archiwum" "$folder_do_skompresowania" - tworzenie nowego gzipowego archiwum 
+tar -tvzf "$plik_archiwum" "$folder_do_skompresowania" - wyświetlenie list plików w gzipowym archiwum 
+tar -xvzf "$plik_archiwum" "$folder_do_skompresowania" - wypakowanie gzipowego archiwum
 
 
 # Daily zadanka 
