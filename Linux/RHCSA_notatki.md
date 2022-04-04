@@ -140,6 +140,17 @@ updatedb - aktualizuje bazę locate
 # Tworzenie użytkowników 
 [Spis treści](#spis-tre%C5%9Bci)
 
+useradd 
+usermod
+
+### #TODO - dopisać 
+- user z innym uuid
+- inna grupa podstawowa 
+- dodanie do innej grupy pobocznej 
+- wyłączenie logowania 
+- blokowanie konta po określonym czasie 
+- wymuszenie zmiany hasła 
+
 # NFS
 [Spis treści](#spis-tre%C5%9Bci)
 
