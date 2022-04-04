@@ -54,11 +54,11 @@
 | [015_set_default_system_level](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/015_set_default_system_level.md) | [Runlevele](#runlevele) | tak |
 | [016_add_additional_remote_yum_repo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/016_add_additional_remote_yum_repo.md) | [Repo](#repo) | tak, PRZEĆWICZYĆ |
 | [017_create_physical_partition_and_mount](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/017_create_physical_partition_and_mount.md) |  | tak, przećwiczyć |
-| [018_update_kernel_and_make_it_default_one] |  | NIE, przećwiczyć |
-| [019_create_users_with_secondary_groups] |  | tak, przećwiczyć |
-| [020_create_folders_with_group_access_rights] |  | tak, przećwiczyć |
-| [021_configure_ldap_authentication] |  | nie, raczej nie ma na egzaminie |
-| [022_configure_autofs] | [Autofs](#autofs) | nie, przećwiczyć |
+| [018_update_kernel_and_make_it_default_one](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/018_update_kernel_and_make_it_default_one.md) |  | NIE, przećwiczyć |
+| [019_create_users_with_secondary_groups](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/019_create_users_with_secondary_groups.md) |  | tak, przećwiczyć |
+| [020_create_folders_with_group_access_rights](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/020_create_folders_with_group_access_rights.md) |  | tak, przećwiczyć |
+| [021_configure_ldap_authentication](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/021_configure_ldap_authentication.md) |  | nie, raczej nie ma na egzaminie |
+| [022_configure_autofs](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/022_configure_autofs.md) | [Autofs](#autofs) | nie, przećwiczyć |
 | [023_configure_ntp_on_the_client](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/023_configure_ntp_on_the_client.md) | [Kontrola czasu w RHEL](#Kontrola-czasu-w-RHEL) | tak, przećwiczyć |
 | [024_access_rights_for_file](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/024_access_rights_for_file.md) | [ACL](#acl) | tak, przećwiczyć - nie jest aż tak proste |
 | [025_create_whole_lvm_stack](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/025_create_whole_lvm_stack.md) | [LVM](#LVM) Dodać extent of VG should be 16MB do notatek | tak, przećwiczyć |
