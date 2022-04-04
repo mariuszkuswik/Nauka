@@ -19,6 +19,7 @@
 1. [Blokowanie połączenia z konkretnego serwera](#blokowanie-po%C5%82%C4%85czenia-z-konkretnego-serwera)
 1. [autofs](#autofs)
 1. [Archiwizowanie](#archiwizowanie)
+1. [Swap](#swap)
 
 
 1. [Progress w zadankach na CG](#cg)
@@ -47,9 +48,9 @@
 | [008_create_users_with_specified_uid](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/008_create_users_with_specified_uid.md) | [Tworzenie użytkowników](#Tworzenie-użytkowników) | tak, przećwiczyć ! |
 | [009_allow_other_user_to_get_access_to_home_dir](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/009_allow_other_user_to_get_access_to_home_dir.md) | [ACL](#acl) | tak, ćwiczyć dalej |
 | [010_dir_ownership_via_group](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/010_dir_ownership_via_group.md) |  | tak, do zapamiętania! |
-| [011_create_logical_volume_and_add_filesystem](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/011_create_logical_volume_and_add_filesystem.md) |  | tak |
+| [011_create_logical_volume_and_add_filesystem](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/011_create_logical_volume_and_add_filesystem.md) | [LVM](#LVM) | tak |
 | [012_configure_virtual_console_for_kernel](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/012_configure_virtual_console_for_kernel.md) |  | #TODO - nie wiem o co chodzi |
-| [013_create_swap_on_logical_volume](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/013_create_swap_on_logical_volume.md) |  | tak, przećwiczyć |
+| [013_create_swap_on_logical_volume](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/013_create_swap_on_logical_volume.md) | [Swap](#swap) | tak, przećwiczyć |
 | [014_add_entry_to_cron](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/014_add_entry_to_cron.md) | [Sysstat](#sar---sysstat) | tak, przećwiczyć |
 | [015_set_default_system_level](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/015_set_default_system_level.md) | [Runlevele](#runlevele) | tak |
 | [016_add_additional_remote_yum_repo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/016_add_additional_remote_yum_repo.md) | [Repo](#repo) | tak, PRZEĆWICZYĆ |
@@ -958,6 +959,23 @@ tar
 tar -cvzf "$plik_archiwum" "$folder_do_skompresowania" - tworzenie nowego gzipowego archiwum 
 tar -tvzf "$plik_archiwum" "$folder_do_skompresowania" - wyświetlenie list plików w gzipowym archiwum 
 tar -xvzf "$plik_archiwum" "$folder_do_skompresowania" - wypakowanie gzipowego archiwum
+
+
+# Swap
+[Spis treści](#spis-tre%C5%9Bci)
+
+### #TODO - uzupełnić chociaż trochę
+
+swapon -a 
+swapoff -a 
+
+fstab - dodawanie swapowej partycji/pliku 
+
+mkswap - tworzenie systemu plików swapowego 
+
+fallocate - przypisanie plikowi określonej ilości zajmowanego miejsca
+
+tworzenie swapu z pliku, procedura do ogarnięcia
 
 
 # Daily zadanka 
