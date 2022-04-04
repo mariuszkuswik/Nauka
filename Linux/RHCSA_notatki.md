@@ -130,13 +130,14 @@ You are new System Administrator and from now you are going to handle the system
 
 ## find
 
-find 
+```find```
+- ```-type``` - typ wyszukiwanych plików 
+    ```-f``` - file 
+    ```-d``` - firectory
+- ```-mtime``` - File's  data  was last **modified** n*24 hours ago
+- ```-atime``` - File was last **accessed** n*24 hours ago
+- ```-ls``` - list current file in ```ls format```
 
--type 
-    -f - file 
-    -d - firectory
-- mtime - 
-- atime - File was last **accessed** n*24 hours ago
 
 ## locate 
 
