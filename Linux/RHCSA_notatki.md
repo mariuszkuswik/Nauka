@@ -480,6 +480,23 @@ lsblk
 
 ### #TODO - opisać bardziej 
 
+[Poradnik online do całości](https://pl.linuxteaching.com/article/install_and_use_stratis_to_manage_local_storage_on_rhel_8_centos_8#what_is_stratis_in_redhat)
+
+## Stratis 
+
+
+
+- Instalacja 
+```sudo dnf install stratis-cli stratisd -y```
+
+- Uruchomienie 
+```sudo systemctl enable --now stratisd.service```
+
+
+
+
+## VDO
+
 VDO będzie na egzaminie, ogarnąć co i jak !
 
 [Pytanie dotyczące VDO](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md)
