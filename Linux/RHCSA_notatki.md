@@ -20,6 +20,7 @@
 1. [autofs](#autofs)
 1. [Archiwizowanie](#archiwizowanie)
 1. [Swap](#swap)
+1. [Kontenery](#Kontenery)
 
 
 1. [Progress w zadankach na CG](#cg)
@@ -71,7 +72,7 @@
 | [031_finding_files](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/031_finding_files.md) | [Wyszukiwanie plików](#wyszukiwanie-plik%C3%B3w) | przećwiczyć |
 | [032_finding_files_with_given_text_in_them](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/032_finding_files_with_given_text_in_them.md) | [Wyszukiwanie plików](#Wyszukiwanie-plików)  | przećwiczyć |
 | [033_managing_layered_storage](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/033_managing_layered_storage.md) |  | nie |
-| [034_containers](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/034_containers.md) |  | nie |
+| [034_containers](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/034_containers.md) | [Kontenery](#Kontenery) | nie |
 
 
 # Pomoc 
@@ -992,6 +993,10 @@ fallocate - przypisanie plikowi określonej ilości zajmowanego miejsca
 
 tworzenie swapu z pliku, procedura do ogarnięcia
 
+# Kontenery
+[Spis treści](#spis-tre%C5%9Bci)
+
+### #TODO - do uzupełnienia
 
 # Daily zadanka 
 [Spis treści](#spis-tre%C5%9Bci)
