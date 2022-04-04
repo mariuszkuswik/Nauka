@@ -1,4 +1,3 @@
-# CLOUDGURU 
 
 # Spis treści
 
