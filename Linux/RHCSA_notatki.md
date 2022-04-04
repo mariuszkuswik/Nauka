@@ -48,12 +48,12 @@
 | [009_allow_other_user_to_get_access_to_home_dir](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/009_allow_other_user_to_get_access_to_home_dir.md) | [ACL](#acl) | tak, ćwiczyć dalej |
 | [010_dir_ownership_via_group](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/010_dir_ownership_via_group.md) |  | tak, do zapamiętania! |
 | [011_create_logical_volume_and_add_filesystem](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/011_create_logical_volume_and_add_filesystem.md) |  | tak |
-| [012_configure_virtual_console_for_kernel] |  | #TODO - nie wiem o co chodzi |
-| [013_create_swap_on_logical_volume] |  | tak, przećwiczyć |
-| [014_add_entry_to_cron] | [Sysstat](#sar---sysstat) | tak, przećwiczyć |
-| [015_set_default_system_level] | [Runlevele](#runlevele) | tak |
-| [016_add_additional_remote_yum_repo] | [Repo](#repo) | tak, PRZEĆWICZYĆ |
-| [017_create_physical_partition_and_mount] |  | tak, przećwiczyć |
+| [012_configure_virtual_console_for_kernel](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/012_configure_virtual_console_for_kernel.md) |  | #TODO - nie wiem o co chodzi |
+| [013_create_swap_on_logical_volume](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/013_create_swap_on_logical_volume.md) |  | tak, przećwiczyć |
+| [014_add_entry_to_cron](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/014_add_entry_to_cron.md) | [Sysstat](#sar---sysstat) | tak, przećwiczyć |
+| [015_set_default_system_level](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/015_set_default_system_level.md) | [Runlevele](#runlevele) | tak |
+| [016_add_additional_remote_yum_repo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/016_add_additional_remote_yum_repo.md) | [Repo](#repo) | tak, PRZEĆWICZYĆ |
+| [017_create_physical_partition_and_mount](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/017_create_physical_partition_and_mount.md) |  | tak, przećwiczyć |
 | [018_update_kernel_and_make_it_default_one] |  | NIE, przećwiczyć |
 | [019_create_users_with_secondary_groups] |  | tak, przećwiczyć |
 | [020_create_folders_with_group_access_rights] |  | tak, przećwiczyć |
