@@ -67,7 +67,7 @@
 | [027_create_compressed_archive](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/027_create_compressed_archive.md) | [Archiwizowanie](#archiwizowanie) | przećwiczyć |
 | [028_search_string_using_grep_and_redirect](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/028_search_string_using_grep_and_redirect.md) |  | tak |
 | [029_make_journald_persistent](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/029_make_journald_persistent.md) | [Logi](#logi) | tak, przećwiczyć |
-| [030_setting_up_vdo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md) |  | nie |
+| [030_setting_up_vdo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md) | [VDO](#vdo) | nie |
 | [031_finding_files](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/031_finding_files.md) |  | przećwiczyć |
 | [032_finding_files_with_given_text_in_them](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/032_finding_files_with_given_text_in_them.md) | [Wyszukiwanie plików](#Wyszukiwanie-plików)  | przećwiczyć |
 | [033_managing_layered_storage](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/033_managing_layered_storage.md) |  | nie |
@@ -467,12 +467,27 @@ lsblk
 [Spis treści](#spis-tre%C5%9Bci)
 
 
+### #TODO - opisać bardziej 
+
 VDO będzie na egzaminie, ogarnąć co i jak !
 
 [Pytanie dotyczące VDO](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md)
 [artykuł jak to działa](https://hobo.house/2018/09/13/using-vdo-on-centos-rhel7-for-storage-efficiency/)
 
 
+Za pomocą vdo możemy 
+
+1. Instalacja 
+
+whdnf whatprovides vdo
+
+2. Włączenie usługi VDO
+
+systemctl status vdo 
+
+3. Utworzenie vdo
+
+vdo create 
 
 
 # Logi 
