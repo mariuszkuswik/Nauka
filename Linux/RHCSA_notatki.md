@@ -480,9 +480,20 @@ lsblk
 
 ### #TODO - opisać bardziej 
 
-[Poradnik online do całości](https://pl.linuxteaching.com/article/install_and_use_stratis_to_manage_local_storage_on_rhel_8_centos_8#what_is_stratis_in_redhat)
+[Stratis how to, pisemny](https://stratis-storage.github.io/howto/)
+[Stratis filmik](https://www.youtube.com/watch?v=CJu3kmY-f5o&t=200s)
 
 ## Stratis 
+
+Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
+
+1. Zainstaluj pakiety Stratis: ...
+2. Włącz i uruchom usługę Stratisd: ...
+3. Utwórz pulę: ...
+4. Utwórz system plików w nowo utworzonej puli „Stratis_Test”: ...
+5. Utwórz punkt montowania i zamontuj system plików: ...
+6. Dodaj więcej bloków do istniejącej puli:
+
 
 
 
