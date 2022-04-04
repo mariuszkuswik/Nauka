@@ -72,10 +72,7 @@
 | [033_managing_layered_storage](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/033_managing_layered_storage.md) |  | nie |
 | [034_containers](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/034_containers.md) |  | nie |
 
-RHCSA7: Task of the day
-Allowed time: 5 minutes.
-Create a user called tom. Create a directory named /private. Use an acl to only allow access (rwx) to tom to the private directory.
-    
+
 # Pomoc 
 
 ## Wyszukiwanie pomocy
@@ -918,9 +915,12 @@ Allow from 127.0.0.1 server1.example.com
 # Daily zadanka 
 [Spis treści](#spis-tre%C5%9Bci)
 
+
+- Create a user called tom. Create a directory named /private. Use an acl to only allow access (rwx) to tom to the private directory.
+    - Allowed time: 5 minutes.
+    
 - Create an EXT4 file system mounted under /vol based on a logical volume of 100MB. Reduce the size to 60MB.
     - Allowed time: 10 minutes.
-
 
 - Find all files bigger than 100MB and write their names into the /root/results.txt file.
     - Allowed time: 8 minutes.
@@ -949,9 +949,9 @@ The following conditions must also be met:
     – the updated kernel is the default kernel when the system is rebooted.
     – the original kernel remains available and bootable on the system.
 
-- Create two new user accounts "steve" and "oliver".
-Create a group "team". Create a directory "shared".
-All files put into the "shared" directory by "steve" or "oliver" should belong to the "team" group and be only visible by them.
+- Create two new user accounts "steve" and "oliver".  
+Create a group "team". Create a directory "shared".  
+All files put into the "shared" directory by "steve" or "oliver" should belong to the "team" group and be only visible by them.  
     - Allowed time: 10 minutes.
 
 - Create two users "tom" and "engine". "tom" has the UID/GID 3000 and "engine" the UID/GID 4000. "engine" doesn't have an interactive shell.
