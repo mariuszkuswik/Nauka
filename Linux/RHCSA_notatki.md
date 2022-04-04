@@ -128,6 +128,16 @@ You are new System Administrator and from now you are going to handle the system
 
 [Spis treści](#spis-tre%C5%9Bci)
 
+## find
+
+find 
+
+-type 
+    -f - file 
+    -d - firectory
+- mtime - 
+- atime - File was last **accessed** n*24 hours ago
+
 ## locate 
 
 locate działa na podstawie bazy danych 
@@ -466,13 +476,15 @@ lsblk
 # VDO 
 [Spis treści](#spis-tre%C5%9Bci)
 
-
 ### #TODO - opisać bardziej 
 
 VDO będzie na egzaminie, ogarnąć co i jak !
 
 [Pytanie dotyczące VDO](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md)
 [artykuł jak to działa](https://hobo.house/2018/09/13/using-vdo-on-centos-rhel7-for-storage-efficiency/)
+
+
+The commands to check status and size of VDOs are: vdo and vdostats
 
 
 Za pomocą vdo możemy 
@@ -491,6 +503,8 @@ vdo create
 
 
 # Logi 
+[Spis treści](#spis-tre%C5%9Bci)
+
 ## Understanding Logging and Using Persistent Journals on RHEL 8
 
 ```grep "$nazwa_szukanej_usługi" `find /var/log -maxdepth 1 -type f` | less ``` - Dobrze jest grepować logi w /var/log, w ten sposób dowiemy się które pliki zawierają logi o nazej usłudze
