@@ -66,7 +66,7 @@
 | [025_create_whole_lvm_stack](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/025_create_whole_lvm_stack.md) | [LVM](#LVM) Dodać extent of VG should be 16MB do notatek | tak, przećwiczyć |
 | [026_reduce_the_size_of_lv](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/026_reduce_the_size_of_lv.md) | [LVM](#lvm) | tak, przećwiczyć |
 | [027_create_compressed_archive](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/027_create_compressed_archive.md) | [Archiwizowanie](#archiwizowanie) | przećwiczyć |
-| [028_search_string_using_grep_and_redirect](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/028_search_string_using_grep_and_redirect.md) |  | tak |
+| [028_search_string_using_grep_and_redirect](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/028_search_string_using_grep_and_redirect.md) | [Wyszukiwanie plików](#wyszukiwanie-plik%C3%B3w) | tak |
 | [029_make_journald_persistent](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/029_make_journald_persistent.md) | [Logi](#logi) | tak, przećwiczyć |
 | [030_setting_up_vdo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md) | [VDO](#vdo) | nie |
 | [031_finding_files](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/031_finding_files.md) | [Wyszukiwanie plików](#wyszukiwanie-plik%C3%B3w) | przećwiczyć |
@@ -142,11 +142,16 @@ You are new System Administrator and from now you are going to handle the system
 
 ## locate 
 
-locate działa na podstawie bazy danych 
+locate działa na podstawie bazy danych, domyślnie aktualizowana jest raz dziennie
+```updatedb``` - aktualizuje bazę locate
 
-locate "$file_name"
+```locate "$file_name"```
 
-updatedb - aktualizuje bazę locate
+
+## grep 
+### #TODO - może coś dopisać
+
+grep "$wyszukiwana_fraza" "$nazwa_pliku"
 
 
 # Tworzenie użytkowników 
