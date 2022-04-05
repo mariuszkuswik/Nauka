@@ -491,8 +491,11 @@ lsblk
 [Stratis filmik](https://www.youtube.com/watch?v=CJu3kmY-f5o&t=200s)
 
 
-Instalacja 
-dnf 
+- **Instalacja** 
+```console
+dnf whatprovides */stratis
+```
+
 
 Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
 
