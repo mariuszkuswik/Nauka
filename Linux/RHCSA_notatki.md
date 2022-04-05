@@ -152,8 +152,9 @@ updatedb - aktualizuje bazę locate
 # Tworzenie użytkowników 
 [Spis treści](#spis-tre%C5%9Bci)
 
-useradd 
-usermod
+useradd - Ustalanie ustawień domyślnych użytkownika
+usermod - Modyfikowanie ustawień użytkownika
+userdel - Usuwanie użytkownika
 
 ### #TODO - dopisać 
 - user z innym uuid
