@@ -476,15 +476,14 @@ lsblk
 
 2. 
 
-# VDO 
+
+# Stratis 
 [Spis treści](#spis-tre%C5%9Bci)
 
 ### #TODO - opisać bardziej 
 
 [Stratis how to, pisemny](https://stratis-storage.github.io/howto/)
 [Stratis filmik](https://www.youtube.com/watch?v=CJu3kmY-f5o&t=200s)
-
-## Stratis 
 
 Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
 
@@ -496,8 +495,6 @@ Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
 6. Dodaj więcej bloków do istniejącej puli:
 
 
-
-
 - Instalacja 
 ```sudo dnf install stratis-cli stratisd -y```
 
@@ -505,14 +502,35 @@ Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
 ```sudo systemctl enable --now stratisd.service```
 
 
+# VDO
+[Spis treści](#spis-tre%C5%9Bci)
 
-
-## VDO
+### #TODO - opisać bardziej
 
 VDO będzie na egzaminie, ogarnąć co i jak !
 
 [Pytanie dotyczące VDO](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md)
 [artykuł jak to działa](https://hobo.house/2018/09/13/using-vdo-on-centos-rhel7-for-storage-efficiency/)
+
+
+## Tworzenie VDO
+
+
+1. Utworzenie VDO 
+```
+vdo create 
+```
+
+Utworzenie filesystemu 
+```console
+# -K jest wymagane, sprawdzić czemu
+mkfs.xfs -K /dev/LINK 
+```
+
+Zamontowanie filesystemu 
+- **Opcje montowania VDO :**
+    - ```x-systemd.requires=vdo.service``` - VDO musi mieć działającą usługę ```vdo.service``` przed zamontowaniem  
+    - 
 
 
 The commands to check status and size of VDOs are: vdo and vdostats
