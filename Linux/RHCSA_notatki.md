@@ -487,14 +487,19 @@ lsblk
 
 ### #TODO - opisać bardziej 
 
-[Stratis how to, pisemny](https://stratis-storage.github.io/howto/)
-[Stratis filmik](https://www.youtube.com/watch?v=CJu3kmY-f5o&t=200s)
+[Stratis how to, pisemny](https://stratis-storage.github.io/howto/)  
+[Stratis filmik](https://www.youtube.com/watch?v=CJu3kmY-f5o&t=200s)  
 
 
-- **Instalacja** 
+1. Instalacja 
 ```console
 dnf whatprovides */stratis
+
+dnf install stratisd stratis-cli
 ```
+
+2. 
+
 
 
 Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
