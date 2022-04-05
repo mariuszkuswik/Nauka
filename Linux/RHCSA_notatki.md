@@ -485,6 +485,10 @@ lsblk
 [Stratis how to, pisemny](https://stratis-storage.github.io/howto/)
 [Stratis filmik](https://www.youtube.com/watch?v=CJu3kmY-f5o&t=200s)
 
+
+Instalacja 
+dnf 
+
 Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
 
 1. Zainstaluj pakiety Stratis: ...
@@ -511,6 +515,11 @@ VDO będzie na egzaminie, ogarnąć co i jak !
 
 [Pytanie dotyczące VDO](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md)
 [artykuł jak to działa](https://hobo.house/2018/09/13/using-vdo-on-centos-rhel7-for-storage-efficiency/)
+
+**WAŻNE!** - VDO działa jako demon!
+
+vdo create 
+
 
 
 ## Tworzenie VDO
