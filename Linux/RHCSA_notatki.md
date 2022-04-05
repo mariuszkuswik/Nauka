@@ -522,9 +522,19 @@ Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
 # VDO
 [Spis treści](#spis-tre%C5%9Bci)
 
+[Poradnik od RedHata](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/vdo-quick-start)
+
 ### #TODO - opisać bardziej
 
 VDO będzie na egzaminie, ogarnąć co i jak !
+
+## Instalacja
+
+```console
+dnf install vdo kmod-kvdo
+```
+
+
 
 Za pomocą vdo możemy 
 
