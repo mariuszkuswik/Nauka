@@ -1103,6 +1103,19 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 
 ### #TODO - do uzupełnienia
 
+podman login - logowanie do rejestru kontenerów 
+podman container - wykonywanie operacji na kontenerze
+podman search "$nazwa_obrazu" - wyszukiwanie obrazu kontenera w rejestrze 
+podman pull "$nazwa_obrazu" - pobranie obrazu z rejestru 
+podman image - zarządzanie obrazami kontenerów 
+    - ```podman image list``` - listuje dostępne obrazy 
+    - podman image rm "$nazwa_obrazu" - usuwa obraz 
+    - podman image tag "$nazwa_obrazu" "$tag" - nadaje obrazowi tag
+ 
+podman exec - wykonanie komendy na kontenerze 
+    - podman exec -it -u 0 "$nazwa_kontenera" bash - odpala interaktywną sesję 
+
+
 1. Ewentualne zalogowanie do rejestru ? - opisać 
 
 1. Wyszukanie obrazu kontenera w rejestrze i pobranie go 
