@@ -72,7 +72,7 @@
 | [031_finding_files](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/031_finding_files.md) | [Wyszukiwanie plików](#wyszukiwanie-plik%C3%B3w) | przećwiczyć |
 | [032_finding_files_with_given_text_in_them](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/032_finding_files_with_given_text_in_them.md) | [Wyszukiwanie plików](#Wyszukiwanie-plików)  | przećwiczyć |
 | [033_managing_layered_storage](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/033_managing_layered_storage.md) | [Stratis](#stratis) | nie |
-| [034_containers](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/034_containers.md) | [Kontenery](#Kontenery) | nie |
+| [034_containers](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/034_containers.md) | [Kontenery](#Kontenery) | tak trochę ogarniam, przećwiczyć |
 
 
 # Pomoc 
@@ -1101,10 +1101,25 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 # Kontenery
 [Spis treści](#spis-tre%C5%9Bci)
 
-### #TODO - do uzupełnienia
+### #TODO - do uzupełnienia, dopisać z cheatsheeta na githubie
+
+### Finding Images
+
+podman images	List all local images
+podman login registryURL -u username [-p password]	Log in to a remote registry
+podman pull registry/username/image:tag	Pull an image from a remote registry
+podman search searchString	Search local cache and remote registries for images
+podman logout	Log out of the current remote registry
+*The list of registries is defined in /etc/containers/registries.conf*
+
+### Building Images
+
+
 
 podman login - logowanie do rejestru kontenerów 
-podman container - wykonywanie operacji na kontenerze
+podman container - wykonywanie operacji na kontenerach
+    - podman container create "$nazwa_obrazu" - utworzenie kontenera z obrazu 
+
 podman search "$nazwa_obrazu" - wyszukiwanie obrazu kontenera w rejestrze 
 podman pull "$nazwa_obrazu" - pobranie obrazu z rejestru 
 podman image - zarządzanie obrazami kontenerów 
