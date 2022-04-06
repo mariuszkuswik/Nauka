@@ -534,6 +534,42 @@ VDO będzie na egzaminie, ogarnąć co i jak !
 dnf install vdo kmod-kvdo
 ```
 
+Utworzenie VDO
+
+Replace logical_size with the amount of logical storage that the VDO volume should present:
+
+
+ vdo create \
+       --name=vdo_name \
+       --device=block_device \
+       --vdoLogicalSize=logical_size \
+       [--vdoSlabSize=slab_size]
+
+Create a file system:
+
+For the XFS file system:
+# mkfs.xfs -K /dev/mapper/vdo_name
+For the ext4 file system:
+# mkfs.ext4 -E nodiscard /dev/mapper/vdo_name
+
+Mount the file system:
+# mkdir -m 1777 /mnt/vdo_name
+# mount /dev/mapper/vdo_name /mnt/vdo_name
+To configure the file system to mount automatically, use either the /etc/fstab file or a systemd mount unit:
+If you decide to use the /etc/fstab configuration file, add one of the following lines to the file:
+
+For the XFS file system:
+/dev/mapper/vdo_name /mnt/vdo_name xfs defaults,_netdev,x-systemd.device-timeout=0,x-systemd.requires=vdo.service 0 0
+For the ext4 file system:
+/dev/mapper/vdo_name /mnt/vdo_name ext4 defaults,_netdev,x-systemd.device-timeout=0,x-systemd.requires=vdo.service 0 0
+
+VDO space usage and efficiency can be monitored using the vdostats utility:
+# vdostats --human-readable
+
+Device                   1K-blocks    Used     Available    Use%    Space saving%
+/dev/mapper/node1osd1    926.5G       21.0G    905.5G       2%      73%             
+/dev/mapper/node1osd2    926.5G       28.2G    898.3G       3%      64%
+
 
 
 Za pomocą vdo możemy 
@@ -1066,6 +1102,19 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 [Spis treści](#spis-tre%C5%9Bci)
 
 ### #TODO - do uzupełnienia
+
+1. Ewentualne zalogowanie do rejestru ? - opisać 
+
+1. Wyszukanie obrazu kontenera w rejestrze i pobranie go 
+
+podman search "$nazwa_obrazu"
+
+
+
+
+## SeLinux 
+
+Każdy wolumen musi mieć odpowiednio udostępniony plik, 
 
 # Daily zadanka 
 [Spis treści](#spis-tre%C5%9Bci)
