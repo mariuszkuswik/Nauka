@@ -1142,7 +1142,9 @@ podman search "$nazwa_obrazu"
 
 ## SeLinux 
 
-Każdy wolumen musi mieć odpowiednio udostępniony plik, 
+Każdy wolumen musi mieć odpowiednio udostępniony plik - Z ODPOWIEDNIO USTAWIONYM KONTEKSTEM PLIKU
+kontekst dla folderów które mają byc udostępnione może być taki sam jak dla reszty plików 
+SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA ```ls -lZ /```
 
 # Daily zadanka 
 [Spis treści](#spis-tre%C5%9Bci)
