@@ -42,7 +42,7 @@
 | [001_restore_root_password](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/001_restore_root_password.md) | [Przywracanie hasła roota](#Przywracanie-hasła-roota) | do przećwiczenia, BARDZO WAŻNE |
 | [002_setup_network_parameters](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/002_setup_network_parameters.md) |  | tak, przećwiczyć |
 | [003_change_hostname]( https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/003_change_hostname.md) |  | razcej tak |
-| [004_enable_selinux](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/004_enable_selinux.md) |  | raczej tak |
+| [004_enable_selinux](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/004_enable_selinux.md) |[Selinux](#selinux) | tak, ćwiczyć dalej, na pewno musi być włączony na egzaminie |
 | [005_install_apache_and_give_it_permission_to_nfs_resource](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/005_install_apache_and_give_it_permission_to_nfs_resource.md) | [Selinux](#selinux) /var/log/messages | tak |
 | [006_extend_existing_lv_add_label](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/006_extend_existing_lv_add_label.md) |  | tak #TODO, sprawdzić odpowiedzi | 
 | [007_assign_sel_context_to_the_directory](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/007_assign_sel_context_to_the_directory.md) | [Selinux](#selinux) man semanage-fcontext, **jest w przykładach** | tak |
@@ -295,6 +295,8 @@ nmap -A "$remote_ip_address"
 
 ### #TODO - dodać jak rozwiązywać podstawowe błędy
 
+**Jeżeli mamy jakiś problem z selinuxem to jest duża szansa że odpowiednią komendę znajdziemy poprzez grep "$nazwa_usługi" /var/log/messages**
+
 - ```semanage boolean -l``` - **wyświetlenie opisu** wszystkich zmiennych SELinux 
 
 ## Tryby SELinux
@@ -323,8 +325,6 @@ nmap -A "$remote_ip_address"
   
 
 
-**Jeżeli mamy jakiś problem z selinuxem to jest duża szansa że odpowiednią komendę znajdziemy poprzez grep "$nazwa_usługi" /var/log/messages**
-
 ## Konteksty SELinux
 
 Dla większości komend aby sprawdzić kontekst działa parametr ```-Z```,   
@@ -337,7 +337,7 @@ np.
 
 - ```ls -laZ "$file_name"``` - wyświetlenie kontekstu pliku 
 
-**Context** is the one with **_t** suffix - *user_home_dit_t*
+**Context** is the one with **_t** suffix - *user_home_dir_t*
 
 ```console
 # ls -lZ /home
@@ -349,16 +349,11 @@ drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
 
 ```semanage``` - służy do zarządzania kontekstami 
 ```semanage fcontext``` - zarządza kontekstami plików i folderów 
-```restorecon -R``` - służy do zatwierdzenia zmian na folderach, zmiany etykiet 
-
-
+```restorecon -Rv``` - służy do zatwierdzenia zmian na folderach, zmiany etykiet 
 
 
 
 ```yum whatprovides */semanage``` - domyślnie może nie być zainstalowane  
-
-
-
 
 
 
