@@ -20,6 +20,7 @@
 1. [autofs](#autofs)
 1. [Archiwizowanie](#archiwizowanie)
 1. [Swap](#swap)
+1. [Sieci](#Sieci)
 1. [Kontenery](#Kontenery)
 
 
@@ -1092,6 +1093,17 @@ mkswap - tworzenie systemu plików swapowego
 fallocate - przypisanie plikowi określonej ilości zajmowanego miejsca
 
 tworzenie swapu z pliku, procedura do ogarnięcia
+
+# Sieci
+[Spis treści](#spis-tre%C5%9Bci)
+
+nmtui - Text User Interface for controlling NetworkManager
+nmcli - command-line tool for controlling NetworkManager
+
+ip - show / manipulate routing, network devices, interfaces and tunnels
+
+
+
 
 # Kontenery
 [Spis treści](#spis-tre%C5%9Bci)
