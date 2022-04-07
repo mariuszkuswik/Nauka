@@ -1009,7 +1009,12 @@ Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego 
 
 ### #TODO - dopisać najprościej jak się da 
 
-/etc/yum.repos.d - katalog z plikami konfiguracyjnymi dla repozytowiów 
+### Pomoc
+```man dnf.conf``` - pomoc dla opcji konfiguracyjnych repozytoriów
+
+### Config 
+```/etc/yum.repos.d``` - katalog z plikami konfiguracyjnymi dla repozytowiów 
+    - "$repo_name".repo - pliki nazywamy w konwencji nazwa_repo.repo
 
 dnf repolist - po wydaniu komendy pokazuje liste repo i błędy
 dnf repoquery - odpytuje wybrane repozytorium
@@ -1020,7 +1025,6 @@ dnf repoquery - odpytuje wybrane repozytorium
 ### #TODO - Dopisać jak załączyć link do pliku 
 [nazwa_repo]
 name="$nazwa_repo"
-# Link do repo
 baseurl="$link_do_repo"
 # Czy sprawdzać klucz gpg ? SPrawdzić 
 gpgcheck="$yes_no" 
