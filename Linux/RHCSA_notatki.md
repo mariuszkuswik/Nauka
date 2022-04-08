@@ -1158,6 +1158,15 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 [MANAGING KERNEL MODULES - RH](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/managing-kernel-modules_managing-monitoring-and-updating-the-kernel)
 
 
+### #TODO - Sprawdzić jak dokładnie działają 
+```grubby --add-kernel="$kernel-path"``` 
+```grubby --default-kernel```
+```grubby --info="$kernel-path"```
+```grubby --remove-kernel="$kernel-path"```
+
+```grubby --update-kernel=kernel-path```
+
+
 # Sieci
 [Spis treści](#spis-tre%C5%9Bci)
 
