@@ -1004,9 +1004,27 @@ Jeżeli wszystko działa prawidłowo, po zalogowaniu się i wejściu do katalogu
 
 Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego właścicielem jest użytkownik o identyfikatorze 507 (w obu systemach jest to janek). Dlatego użytkownik janek w systemie lokalnym powinien mieć możliwość dodawania, usuwania, modyfikowania i wyświetlania plików znajdujących się w tym katalogu. Po wylogowaniu się janka — w rzeczywistości gdy przestanie używać katalogu przez ustalony czas (tutaj jest to 10 minut) — katalog zostanie odmontowany.    
 
-
-# Repo
+# Dnf
 [Spis treści](#spis-tre%C5%9Bci)
+
+## Rpm 
+
+## Kernel 
+[Kernel Red Hat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/updating-kernel-with-yum_managing-monitoring-and-updating-the-kernel)
+
+1. To update the kernel, use the following:
+```
+# yum update kernel
+```
+
+2. To install a specific kernel version, use the following:
+```console
+# yum install kernel-{version}
+```
+
+
+## Repo
+
 
 ### #TODO - dopisać najprościej jak się da 
 
@@ -1122,7 +1140,7 @@ fallocate - przypisanie plikowi określonej ilości zajmowanego miejsca
 
 tworzenie swapu z pliku, procedura do ogarnięcia
 
-# Grub
+# Grub/Kernel
 [Spis treści](#spis-tre%C5%9Bci)
 
 ### Pomoc
@@ -1130,7 +1148,9 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 ```info grub``` - starsza wersja, nadal może tam coś być 
 
 
- 
+## Kernel Update 
+
+
 
 
 # Sieci
