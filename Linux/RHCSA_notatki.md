@@ -57,7 +57,7 @@
 | [015_set_default_system_level](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/015_set_default_system_level.md) | [Runlevele](#runlevele) | tak |
 | [016_add_additional_remote_yum_repo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/016_add_additional_remote_yum_repo.md) | [Dnf](#dnf) | tak, PRZEĆWICZYĆ |
 | [017_create_physical_partition_and_mount](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/017_create_physical_partition_and_mount.md) |  | tak, przećwiczyć |
-| [018_update_kernel_and_make_it_default_one](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/018_update_kernel_and_make_it_default_one.md) |  | NIE, przećwiczyć |
+| [018_update_kernel_and_make_it_default_one](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/018_update_kernel_and_make_it_default_one.md) | [Grub/Kernel](#grubkernel) | NIE, przećwiczyć |
 | [019_create_users_with_secondary_groups](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/019_create_users_with_secondary_groups.md) |  | tak, przećwiczyć |
 | [020_create_folders_with_group_access_rights](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/020_create_folders_with_group_access_rights.md) |  | tak, przećwiczyć |
 | [021_configure_ldap_authentication](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/021_configure_ldap_authentication.md) | - | **nie ma na egzaminie** |
@@ -1141,10 +1141,10 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 
 ## Grub
 
-
+```grubby``` - command line tool for configuring grub
 
 ### Config
-- ```/etc/default/grub``` - config dla większości zmian, zmiany trzeba zatwierdzać - grub2-mkconfig
+- ```/etc/default/grub``` - config dla większości zmian, zmiany trzeba zatwierdzać - **SPRAWDZIĆ JAKĄ KOMENDĄ**
     - ```info grub2``` - sekcja config zawiera informacje na temat konfiguracji
 
 
