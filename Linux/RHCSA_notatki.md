@@ -1170,8 +1170,10 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 # Sieci
 [Spis treści](#spis-tre%C5%9Bci)
 
-nmtui - Text User Interface for controlling NetworkManager
-nmcli - command-line tool for controlling NetworkManager
+- ```nmcli``` - Zarządzanie network managerem za pomocą **komend tekstowych**     
+    - ```nmcli con reload``` - Zaktualizowanie konfiguracji dla urządzeń sieciowych (ifcfg-interface), **wszelkie zmiany przy pomocy komendy ip nie są trwałe**
+- ```nmtui``` - Zarządzanie network managerem za pomocą **terminalowego GUI**  
+
 
 ip - show / manipulate routing, network devices, interfaces and tunnels
 
