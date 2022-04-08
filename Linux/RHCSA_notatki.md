@@ -15,7 +15,7 @@
 1. [ACL](#acl)
 1. [SUID, SGID, Sticky bit](#SUID,-SGID,-Sticky-bit)
 1. [Sysstat](#sar---sysstat)
-1. [Repo](#repo)
+1. [Dnf](#dnf)
 1. [Blokowanie połączenia z konkretnego serwera](#blokowanie-po%C5%82%C4%85czenia-z-konkretnego-serwera)
 1. [autofs](#autofs)
 1. [Archiwizowanie](#archiwizowanie)
@@ -55,7 +55,7 @@
 | [013_create_swap_on_logical_volume](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/013_create_swap_on_logical_volume.md) | [Swap](#swap) | tak, przećwiczyć |
 | [014_add_entry_to_cron](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/014_add_entry_to_cron.md) | [Sysstat](#sar---sysstat) | tak, przećwiczyć |
 | [015_set_default_system_level](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/015_set_default_system_level.md) | [Runlevele](#runlevele) | tak |
-| [016_add_additional_remote_yum_repo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/016_add_additional_remote_yum_repo.md) | [Repo](#repo) | tak, PRZEĆWICZYĆ |
+| [016_add_additional_remote_yum_repo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/016_add_additional_remote_yum_repo.md) | [Dnf](#dnf) | tak, PRZEĆWICZYĆ |
 | [017_create_physical_partition_and_mount](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/017_create_physical_partition_and_mount.md) |  | tak, przećwiczyć |
 | [018_update_kernel_and_make_it_default_one](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/018_update_kernel_and_make_it_default_one.md) |  | NIE, przećwiczyć |
 | [019_create_users_with_secondary_groups](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/019_create_users_with_secondary_groups.md) |  | tak, przećwiczyć |
