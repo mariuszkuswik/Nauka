@@ -1140,6 +1140,14 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 [Spis treści](#spis-tre%C5%9Bci)
 
 ## Grub
+
+
+
+### Config
+- ```/etc/default/grub``` - config dla większości zmian, zmiany trzeba zatwierdzać - grub2-mkconfig
+    - ```info grub2``` - sekcja config zawiera informacje na temat konfiguracji
+
+
 ### Pomoc
 ```info grub2``` - mocno wyjaśnione bootowanie  
 ```info grub``` - starsza wersja, nadal może tam coś być 
