@@ -541,6 +541,7 @@ Replace logical_size with the amount of logical storage that the VDO volume shou
        --vdoLogicalSize=logical_size \
        [--vdoSlabSize=slab_size]
 
+```console
 Create a file system:
 
 For the XFS file system:
@@ -565,7 +566,7 @@ VDO space usage and efficiency can be monitored using the vdostats utility:
 Device                   1K-blocks    Used     Available    Use%    Space saving%
 /dev/mapper/node1osd1    926.5G       21.0G    905.5G       2%      73%             
 /dev/mapper/node1osd2    926.5G       28.2G    898.3G       3%      64%
-
+```
 
 
 Za pomocą vdo możemy 
@@ -1023,20 +1024,20 @@ Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego 
 
 ## Dodanie nowego repozytorium
 
-1. Dodajemy plik konfiguracyjny o nazwie repozytowium 
+1. Dodajemy plik konfiguracyjny o nazwie repozytorium 
 
 ### #TODO - sprawdzić jak odpytać repo o dostępne pakiety
 ### #TODO - Dopisać jak załączyć link do pliku 
 
 ```bash
 [nazwa_repo]
-
 name="$nazwa_repo"
 
 # https://link lub file:///plik dla plików lokalnych
 baseurl="$repo_link"
 
-# Czy sprawdzać klucz gpg ? SPrawdzić 
+# Czy sprawdzać klucz gpg - 0 lub 1 
+# Klucz gpg sprawdza czy paczki w repo nie zostały podmienione
 gpgcheck="$0_1" 
 gpgkey="$gpg_path"
 ```
@@ -1120,6 +1121,17 @@ mkswap - tworzenie systemu plików swapowego
 fallocate - przypisanie plikowi określonej ilości zajmowanego miejsca
 
 tworzenie swapu z pliku, procedura do ogarnięcia
+
+# Grub
+[Spis treści](#spis-tre%C5%9Bci)
+
+### Pomoc
+```info grub2``` - mocno wyjaśnione bootowanie  
+```info grub``` - starsza wersja, nadal może tam coś być 
+
+
+ 
+
 
 # Sieci
 [Spis treści](#spis-tre%C5%9Bci)
