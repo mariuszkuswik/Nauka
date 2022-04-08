@@ -1013,24 +1013,33 @@ Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego 
 ```man dnf.conf``` - pomoc dla opcji konfiguracyjnych repozytoriów
 
 ### Config 
-```/etc/yum.repos.d``` - katalog z plikami konfiguracyjnymi dla repozytowiów 
-    - "$repo_name".repo - pliki nazywamy w konwencji nazwa_repo.repo
+- ```/etc/yum.repos.d``` - katalog z plikami konfiguracyjnymi dla repozytowiów 
+    - ```"$repo_name".repo``` - pliki nazywamy w konwencji nazwa_repo.repo
 
-dnf repolist - po wydaniu komendy pokazuje liste repo i błędy
-dnf repoquery - odpytuje wybrane repozytorium
+### Polecenia
+```dnf repolist``` - pokazuje liste repo i ewentualne błędy  
+```dnf repoquery``` - odpytuje wybrane repozytorium
+
+
+## Dodanie nowego repozytorium
 
 1. Dodajemy plik konfiguracyjny o nazwie repozytowium 
 
 ### #TODO - sprawdzić jak odpytać repo o dostępne pakiety
 ### #TODO - Dopisać jak załączyć link do pliku 
+
+```bash
 [nazwa_repo]
+
 name="$nazwa_repo"
-baseurl="$link_do_repo"
+
+# https://link lub file:///plik dla plików lokalnych
+baseurl="$repo_link"
+
 # Czy sprawdzać klucz gpg ? SPrawdzić 
-gpgcheck="$yes_no" 
-
-
-
+gpgcheck="$0_1" 
+gpgkey="$gpg_path"
+```
 
 # Grub
 [Spis treści](#spis-tre%C5%9Bci)
