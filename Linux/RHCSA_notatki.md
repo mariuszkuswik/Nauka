@@ -1009,8 +1009,10 @@ Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego 
 
 ## Rpm 
 
-## Kernel 
+## Kernel update
 [Kernel Red Hat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/updating-kernel-with-yum_managing-monitoring-and-updating-the-kernel)
+
+[Zarządzanie Kernelem](#kernel)
 
 1. To update the kernel, use the following:
 ```
@@ -1022,10 +1024,7 @@ Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego 
 # yum install kernel-{version}
 ```
 
-
 ## Repo
-
-
 ### #TODO - dopisać najprościej jak się da 
 
 ### Pomoc
@@ -1040,7 +1039,7 @@ Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego 
 ```dnf repoquery``` - odpytuje wybrane repozytorium
 
 
-## Dodanie nowego repozytorium
+### Dodanie nowego repozytorium
 
 1. Dodajemy plik konfiguracyjny o nazwie repozytorium 
 
@@ -1059,9 +1058,6 @@ baseurl="$repo_link"
 gpgcheck="$0_1" 
 gpgkey="$gpg_path"
 ```
-
-# Grub
-[Spis treści](#spis-tre%C5%9Bci)
 
 
 # Blokowanie połączenia z konkretnego serwera  
@@ -1143,14 +1139,15 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 # Grub/Kernel
 [Spis treści](#spis-tre%C5%9Bci)
 
+## Grub
 ### Pomoc
 ```info grub2``` - mocno wyjaśnione bootowanie  
 ```info grub``` - starsza wersja, nadal może tam coś być 
 
+## Kernel
+[Kernel Update](#Kernel-update)
 
-## Kernel Update 
-
-
+[MANAGING KERNEL MODULES - RH](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/managing-kernel-modules_managing-monitoring-and-updating-the-kernel)
 
 
 # Sieci
