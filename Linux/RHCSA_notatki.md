@@ -40,6 +40,7 @@
 
 | Zadanko | Notatki | Czy opanowane |
 |--|--|--|
+| Sudoers | [Sudoers](#sudoers) | trochę, przećwiczyć | 
 | [001_restore_root_password](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/001_restore_root_password.md) | [Przywracanie hasła roota](#Przywracanie-hasła-roota) | do przećwiczenia, BARDZO WAŻNE |
 | [002_setup_network_parameters](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/002_setup_network_parameters.md) |  | tak, przećwiczyć |
 | [003_change_hostname]( https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/003_change_hostname.md) |  | razcej tak |
@@ -74,7 +75,6 @@
 | [032_finding_files_with_given_text_in_them](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/032_finding_files_with_given_text_in_them.md) | [Wyszukiwanie plików](#Wyszukiwanie-plików)  | przećwiczyć |
 | [033_managing_layered_storage](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/033_managing_layered_storage.md) | [Stratis](#stratis) | tak trochę ogarniam, przećwiczyć |
 | [034_containers](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/034_containers.md) | [Kontenery](#Kontenery) | tak trochę ogarniam, przećwiczyć |
-
 
 # Pomoc 
 
@@ -124,6 +124,30 @@ You are new System Administrator and from now you are going to handle the system
 # exit
 # logout
 ```
+
+# Sudoers
+[Spis treści](#spis-tre%C5%9Bci)
+
+/etc/sudoers 
+
+ 
+Configure superuser access:  
+
+Enable the following command aliases:  
+
+- SOFTWARE
+- SERVICES
+- PROCESSES
+Add a new command alias named "MESSAGES":
+
+/bin/tail -f /var/log/messages
+Enable superuser privilages for the following local groups:
+
+dba_managers: everything
+dba_admin: Command aliases: SOFTWARE, SERVICES, PROCESSES
+dba_intern: Command alias: MESSAGES
+Configure yum Repositories on Both Servers and Install Packages/Modules
+You'll need to configure three repositories and install some software:
 
 
 # Wyszukiwanie plików 
