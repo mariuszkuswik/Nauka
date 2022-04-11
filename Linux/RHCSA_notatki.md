@@ -143,6 +143,13 @@ Ogólny
 If you do not specify any options, the user can use the command with all options.  
 
 
+### #TODO - opisać aliasy w sudoers
+
+Nadanie dla grupy ```dba_managers``` praw do wykonywania na wszystkihch maszynach **ALL** komend pod aliasem **SOFTWARE**
+%dba_managers   ALL = SOFTWARE
+
+
+CG ZADANKo 
 Configure superuser access:  
 
 Enable the following command aliases:  
