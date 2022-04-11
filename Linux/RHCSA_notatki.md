@@ -128,6 +128,8 @@ You are new System Administrator and from now you are going to handle the system
 # Sudoers
 [Spis treści](#spis-tre%C5%9Bci)
 
+[Rhel sudoers](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/managing-sudo-access_configuring-basic-system-settings)
+
 ### Config
 ```/etc/sudoers```
 
