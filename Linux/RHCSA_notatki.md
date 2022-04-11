@@ -128,8 +128,11 @@ You are new System Administrator and from now you are going to handle the system
 # Sudoers
 [Spis treści](#spis-tre%C5%9Bci)
 
-/etc/sudoers 
+### Config
+```/etc/sudoers```
 
+Ogólny 
+```username hostname=path/to/command```
  
 Configure superuser access:  
 
