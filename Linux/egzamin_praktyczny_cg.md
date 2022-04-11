@@ -28,17 +28,21 @@ Enable the following command aliases:
 - PROCESSES
 Add a new command alias named "MESSAGES":
 
-/bin/tail -f /var/log/messages
-Enable superuser privilages for the following local groups:
+/bin/tail -f /var/log/messages  
 
-dba_managers: everything
-dba_admin: Command aliases: SOFTWARE, SERVICES, PROCESSES
-dba_intern: Command alias: MESSAGES
-Configure yum Repositories on Both Servers and Install Packages/Modules
-You'll need to configure three repositories and install some software:
-
-RHEL 8 BaseOS:
-
+Enable superuser privilages for the following local groups:    
+- dba_managers: everything  
+- dba_admin: Command aliases: SOFTWARE, SERVICES, PROCESSES  
+- dba_intern: Command alias: MESSAGES   
+  
+  
+Configure yum Repositories on Both Servers and Install Packages/Modules    
+You'll need to configure three repositories and install some software:    
+  
+  
+- RHEL 8 BaseOS:  
+  
+```console
 Repository ID: [rhel-8-baseos-rhui-rpms]
 The mirrorlist is: https://rhui3.REGION.aws.ce.redhat.com/pulp/mirror/content/dist/rhel8/rhui/$releasever/$basearch/baseos/os
 The GPG key is located at: /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
@@ -47,8 +51,11 @@ sslverify=1
 sslclientkey=/etc/pki/rhui/content-rhel8.key
 sslclientcert=/etc/pki/rhui/product/content-rhel8.crt
 sslcacert=/etc/pki/rhui/cdn.redhat.com-chain.crt
-RHEL 8 AppStream:
+```
 
+- RHEL 8 AppStream:
+
+```console
 Repository ID: [rhel-8-appstream-rhui-rpms]
 The mirrorlist is: https://rhui3.REGION.aws.ce.redhat.com/pulp/mirror/content/dist/rhel8/rhui/$releasever/$basearch/appstream/os
 The GPG key is located at: /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
@@ -57,12 +64,14 @@ sslverify=1
 sslclientkey=/etc/pki/rhui/content-rhel8.key
 sslclientcert=/etc/pki/rhui/product/content-rhel8.crt
 sslcacert=/etc/pki/rhui/cdn.redhat.com-chain.crt
-EPEL:
+```
 
+- EPEL:
+```console\
 Repository ID: [epel]
 The baseurl is: https://download.fedoraproject.org/pub/epel/$releasever/Everything/$basearch
 Configure the repositories on the first server, then make an archive of the files, securely copy them to the second server, then unarchive the repository files on the second server.
-
+```
 Install software on both servers:
 
 Install the default AppStream stream/profile for container-tools
