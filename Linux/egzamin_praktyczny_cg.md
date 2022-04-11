@@ -67,15 +67,17 @@ sslcacert=/etc/pki/rhui/cdn.redhat.com-chain.crt
 ```
 
 - EPEL:
-```console\
+```console
 Repository ID: [epel]
 The baseurl is: https://download.fedoraproject.org/pub/epel/$releasever/Everything/$basearch
 Configure the repositories on the first server, then make an archive of the files, securely copy them to the second server, then unarchive the repository files on the second server.
 ```
+
+
 Install software on both servers:
 
-Install the default AppStream stream/profile for container-tools
-Install the youtube-dl package (from EPEL)
+- Install the default AppStream stream/profile for container-tools
+- Install the youtube-dl package (from EPEL)
 Check for system updates, but don't install them
 Configure IP Addresses on the Second Network Interface on the First Server
 On the first server, configure the second interface's IPv4/IPv6 addresses using nmtui.
