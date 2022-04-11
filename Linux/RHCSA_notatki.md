@@ -1159,12 +1159,12 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 
 
 ### #TODO - Sprawdzić jak dokładnie działają 
-```grubby --add-kernel="$kernel-path"``` 
-```grubby --default-kernel```
-```grubby --info="$kernel-path"```
-```grubby --remove-kernel="$kernel-path"```
-
-```grubby --update-kernel=kernel-path```
+```grubby --add-kernel="$kernel-path"```   
+```grubby --default-kernel```   
+```grubby --info="$kernel-path"```  
+```grubby --remove-kernel="$kernel-path"```  
+  
+```grubby --update-kernel=kernel-path```  
 
 
 # Sieci
