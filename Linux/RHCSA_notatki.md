@@ -1336,7 +1336,7 @@ systemctl enable --now tuned
 - ```tuned-adm``` - command line tool for switching between different tuning profiles
     - ```tuned-adm list``` - wyświetlenie wszystkich dostępnych profili 
     - ```tuned-adm active``` - wyświetlenie obecnie działających profili 
-    - ```tuned-adm profile``` "$profile_name1" "$profile_name2" - Switches  to  the given profile. If more than one profile is given, the profiles are merged
+    - ```tuned-adm profile "$profile_name1" "$profile_name2"``` - Switches  to  the given profile. If more than one profile is given, the profiles are merged
 
 
 # Daily zadanka 
