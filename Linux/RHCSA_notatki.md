@@ -1054,6 +1054,8 @@ Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego 
 [Spis treści](#spis-tre%C5%9Bci)
 
 [Introduction to Application Streams](https://www.redhat.com/en/blog/introduction-appstreams-and-modules-red-hat-enterprise-linux)
+[Różnica pomiędzy dnf module a dnf group](https://unix.stackexchange.com/questions/603905/what-is-the-difference-between-a-yum-group-and-a-yum-module-in-red-hat-enterpris)
+
 
 ### Installing Applications via Modules
 
