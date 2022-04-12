@@ -1047,8 +1047,27 @@ Jeżeli wszystko działa prawidłowo, po zalogowaniu się i wejściu do katalogu
 
 Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego właścicielem jest użytkownik o identyfikatorze 507 (w obu systemach jest to janek). Dlatego użytkownik janek w systemie lokalnym powinien mieć możliwość dodawania, usuwania, modyfikowania i wyświetlania plików znajdujących się w tym katalogu. Po wylogowaniu się janka — w rzeczywistości gdy przestanie używać katalogu przez ustalony czas (tutaj jest to 10 minut) — katalog zostanie odmontowany.    
 
-# Dnf
+
+# Instalacja/update
+
+## Dnf
 [Spis treści](#spis-tre%C5%9Bci)
+
+[Introduction to Application Streams](https://www.redhat.com/en/blog/introduction-appstreams-and-modules-red-hat-enterprise-linux)
+
+### Installing Applications via Modules
+
+1. lists all modules
+```console
+# yum module list
+```
+
+2. lists all modules for postgresql
+```console
+# yum module info postgresql 
+```
+
+
 
 ## Rpm 
 
