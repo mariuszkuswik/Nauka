@@ -1065,15 +1065,20 @@ Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego 
 [Różnica pomiędzy dnf module a dnf group](https://unix.stackexchange.com/questions/603905/what-is-the-difference-between-a-yum-group-and-a-yum-module-in-red-hat-enterpris)
 
 
+1. List module streams available to your system:
+```console
+$ yum module list
+```
 
-yum module list
+2. Display details about a module, including a description, a list of all profiles, and a list of all provided packages:
+```console
+$ yum module info module-name
+```
 
-- Wyświetlenie informacji na temat modułu 
- yum module info postgresql
-
-- Instalacja 
-yum module install postgresql
-
+3. Display the current status of a module, including enabled streams and installed profiles:
+```console
+$ yum module list module-name
+```
 
 
 
