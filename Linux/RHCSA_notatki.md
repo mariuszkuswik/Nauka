@@ -25,17 +25,14 @@
 1. [Tuned profiles](#Tuned-profiles)
 
 
-1. [Progress w zadankach na CG](#cg)
-1. [Daily zadanka](#daily-zadanka)
-
-
-- [Chlebik](#chlebik)  
-- [Cloud Guru](#cg)  
-
-[Koniec](#Koniec)
+- [Chlebik](#chlebik)    
+- [Cloud Guru](#cg)    
   
-
-
+- [Daily zadanka](#daily-zadanka)  
+   
+  
+[Koniec](#Koniec)   
+  
 
 # Chlebik
 
