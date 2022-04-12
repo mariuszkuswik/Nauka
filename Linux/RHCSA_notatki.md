@@ -1327,6 +1327,15 @@ SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA
 # Tuned profiles
 [Spis treści](#spis-tre%C5%9Bci)
 
+```TuneD``` - tuned is a dynamic adaptive system tuning ```daemon``` that tunes system settings dynamically depending on usage.
+
+```
+systemctl enable --now tuned
+```
+
+```tuned-adm``` - command line tool for switching between different tuning profiles
+
+
 
 
 # Daily zadanka 
