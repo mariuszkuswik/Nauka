@@ -1280,6 +1280,24 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 
 ### #TODO - do uzupełnienia, dopisać z cheatsheeta na githubie
 
+### Pomoc 
+```man -k podman``` - wyświetla wszystkie potrzebne komendy podmana 
+
+Budowa większości komend : 
+podman container/image/volume...
+
+
+```podman exec -it "$nazwa_kontenera" bash``` - uruchomienie interaktywnego terminala 
+
+
+podman container - operacje wykonywane na kontenerach   
+    ```podman container list --all``` - listuje wszystkie kontenery, również te nieaktywne
+
+    
+
+```-v``` - mapowanie udziału host-kontener
+```-p 80:80``` - mapowanie portu host-kontener
+
 ### Finding Images
 
 podman images	List all local images
