@@ -92,12 +92,13 @@ On the first server, configure the second interface's IPv4/IPv6 addresses using 
 
 **IP Addresses:**
 
+```console
 IPv4: 10.0.1.20/24
 IPv6: 2002:0a00:0114::/64
 Manual, not Automatic (DHCP) for both interfaces
 Only IP addresses, no other fields
 Configure only, do not activate
-
+```
 Configure Persistent Journals on Both Servers
 By default, the systemd journal logs to memory in RHEL 8, in the location /run/log/journal. While this works fine, we'd like to make our journals persistent across reboots.
 
