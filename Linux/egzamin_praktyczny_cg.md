@@ -86,9 +86,9 @@ Check for system updates, but don't install them
 
 
 ## 3. Configure IP Addresses on the Second Network Interface on the First Server
-[Spis treści](#spis-treści)
+[Spis treści](#spis-treści)  
 
-On the first server, configure the second interface's IPv4/IPv6 addresses using nmtui.
+On the first server, configure the second interface's IPv4/IPv6 addresses using ```nmtui```.
 
 **IP Addresses:**
 
@@ -99,28 +99,38 @@ Manual, not Automatic (DHCP) for both interfaces
 Only IP addresses, no other fields
 Configure only, do not activate
 ```
-Configure Persistent Journals on Both Servers
-By default, the systemd journal logs to memory in RHEL 8, in the location /run/log/journal. While this works fine, we'd like to make our journals persistent across reboots.
 
-Configure the systemd journal logs to be persistent on both servers, logging to /var/log/journal.
+## 4. Configure Persistent Journals on Both Servers  
+[Spis treści](#spis-treści)  
 
-## 4. Managing Tuned Profiles and Individual Processes
-[Spis treści](#spis-treści)
+By default, the systemd journal logs to memory in RHEL 8, in the location ```/run/log/journal```. While this works fine, we'd like to make our journals persistent across reboots.  
+Configure the systemd journal logs to be persistent on both servers, logging to ```/var/log/journal```.  
 
-On the first server:
 
-Set a merged tuned profile using the the powersave and virtual-guest profiles.
-Start one stress process and adjust the niceness value to 19.
-Adjust the niceness value of the stress process to 10.
-Kill the stress process.
-Manage Scheduled Tasks on the First Server
-Create one at task and one cron job on the first server:
+## 5. Managing Tuned Profiles and Individual Processes
+[Spis treści](#spis-treści)  
 
-The at job will create a file containing the string "The at job ran" in the file named /web/html/at.html, two minutes from the time you schedule it.
-The cron job will append to the /web/html/cron.html file every minute, echoing the date to the file.
+**On the first server:**
+
+- Set a merged tuned profile using the the powersave and virtual-guest profiles.
+- Start one stress process and adjust the niceness value to 19.
+- Adjust the niceness value of the stress process to 10.
+- Kill the stress process.
+
+
+## 6. Manage Scheduled Tasks on the First Server
+[Spis treści](#spis-treści)   
+
+Create one ```at``` task and one ```cron``` job on the first server:
+
+- The ```at``` job will create a file containing the string "The at job ran" in the file named ```/web/html/at.html```, two minutes from the time you schedule it.
+- The ```cron``` job will append to the ```/web/html/cron.html``` file every minute, echoing the ```date``` to the file.  
+  
 These files will be available via the web server on the first server after the "Troubleshoot SELinux issues" objective is completed.
 
-Configure Time Service Clients for Both Servers
+## 7. Configure Time Service Clients for Both Servers
+[Spis treści](#spis-treści)  
+
 Time sync is not working on either of our servers. We need to fix that.
 
 Configure chrony to use the following server:
