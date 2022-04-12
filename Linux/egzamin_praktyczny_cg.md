@@ -1,8 +1,8 @@
 # Spis treści 
- 1. [Create Users/Groups and Configure Superuser Access on Both Servers](#1.-Create-Users/Groups-and-Configure-Superuser-Access-on-Both-Servers)
- 2. [Configure yum Repositories on Both Servers and Install Packages/Modules](#2.-Configure-yum-Repositories-on-Both-Servers-and-Install-Packages/Modules) 
- 3. [Configure IP Addresses on the Second Network Interface on the First Server](#3.-Configure-IP-Addresses-on-the-Second-Network-Interface-on-the-First-Server)
- 4. [Managing Tuned Profiles and Individual Processes](#4.-Managing-Tuned-Profiles-and-Individual-Processes)
+ 1. [Create Users/Groups and Configure Superuser Access on Both Servers](#1-Create-Users/Groups-and-Configure-Superuser-Access-on-Both-Servers)
+ 2. [Configure yum Repositories on Both Servers and Install Packages/Modules](#2-Configure-yum-Repositories-on-Both-Servers-and-Install-Packages/Modules) 
+ 3. [Configure IP Addresses on the Second Network Interface on the First Server](#3-Configure-IP-Addresses-on-the-Second-Network-Interface-on-the-First-Server)
+ 4. [Managing Tuned Profiles and Individual Processes](#4-Managing-Tuned-Profiles-and-Individual-Processes)
 
 
 ## 1. Create Users/Groups and Configure Superuser Access on Both Servers
