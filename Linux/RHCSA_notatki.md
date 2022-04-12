@@ -1068,7 +1068,6 @@ Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego 
 ```
 
 
-
 ## Rpm 
 
 ## Kernel update
