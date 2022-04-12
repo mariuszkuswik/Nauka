@@ -103,8 +103,8 @@ Configure only, do not activate
 ## 4. Configure Persistent Journals on Both Servers  
 [Spis treści](#spis-treści)  
 
-By default, the systemd journal logs to memory in RHEL 8, in the location ```/run/log/journal```. While this works fine, we'd like to make our journals persistent across reboots.  
-Configure the systemd journal logs to be persistent on both servers, logging to ```/var/log/journal```.  
+By default, the ```systemd``` journal logs to memory in RHEL 8, in the location ```/run/log/journal```. While this works fine, we'd like to make our journals persistent across reboots.  
+Configure the ```systemd``` journal logs to be persistent on both servers, logging to ```/var/log/journal```.  
 
 
 ## 5. Managing Tuned Profiles and Individual Processes
@@ -112,10 +112,10 @@ Configure the systemd journal logs to be persistent on both servers, logging to 
 
 **On the first server:**
 
-- Set a merged tuned profile using the the powersave and virtual-guest profiles.
-- Start one stress process and adjust the niceness value to 19.
-- Adjust the niceness value of the stress process to 10.
-- Kill the stress process.
+- Set a merged ```tuned``` profile using the the ```powersave``` and ```virtual-guest``` profiles.
+- Start one ```stress``` process and adjust the ```niceness``` value to 19.
+- Adjust the ```niceness``` value of the ```stress``` process to 10.
+- Kill the ```stress``` process.
 
 
 ## 6. Manage Scheduled Tasks on the First Server
@@ -132,21 +132,28 @@ These files will be available via the web server on the first server after the "
 [Spis treści](#spis-treści)  
 
 Time sync is not working on either of our servers. We need to fix that.
-
-Configure chrony to use the following server:
-
+Configure ```chrony``` to use the following server:
+  
+```console
 server 169.254.169.123 iburst
+```
+  
 Make sure your work is persistent and check your work!
 
-Managing the System Bootloader
+## 8. Managing the System Bootloader
+[Spis treści](#spis-treści)  
+
 On server1, make the following changes:
+  
+- Increase the timeout using ```GRUB_TIMEOUT=10```
+- Add the following line: ```GRUB_TIMEOUT_STYLE=hidden```
+- Add ```quiet``` to the end of the ```GRUB_CMDLINE_LINUX ```line
+  
+Validate the changes in ```/boot/grub2/grub.cfg```. Do not reboot the server.
 
-Increase the timeout using GRUB_TIMEOUT=10
-Add the following line: GRUB_TIMEOUT_STYLE=hidden
-Add quiet to the end of the GRUB_CMDLINE_LINUX line
-Validate the changes in /boot/grub2/grub.cfg. Do not reboot the server.
+## 9. Managing Storage on RHEL 8
+[Spis treści](#spis-treści)
 
-Managing Storage on RHEL 8
 Configure Persistent Storage with LVM on Top of VDO
 On the second server:
 
