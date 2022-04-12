@@ -35,6 +35,7 @@
   
 
 # Chlebik
+[Spis treści](#spis-tre%C5%9Bci)
 
 | Zadanko | Notatki | Czy opanowane |
 |--|--|--|
@@ -75,6 +76,7 @@
 | [034_containers](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/034_containers.md) | [Kontenery](#Kontenery) | tak trochę ogarniam, przećwiczyć |
 
 # CG 
+[Spis treści](#spis-tre%C5%9Bci)
 
 | Zadanko | Notatki | Czy opanowane |
 |--|--|--|
@@ -82,6 +84,7 @@
 
 
 # Pomoc 
+[Spis treści](#spis-tre%C5%9Bci)
 
 ## Wyszukiwanie pomocy
 
@@ -107,7 +110,6 @@ Dodatkowa dokumentacja
 
 
 # Przywracanie hasła roota
-
 [Spis treści](#spis-tre%C5%9Bci)
 
 You are new System Administrator and from now you are going to handle the system and your main task is Network monitoring, Backup and Restore. But you don't know the root password. Change the root password to redhat and login in default Runlevel.
