@@ -40,6 +40,7 @@ Enable superuser privilages for the following local groups:
   
   
 ## 2. Configure yum Repositories on Both Servers and Install Packages/Modules  
+[Spis treści](#spis-treści)
 
 You'll need to configure three repositories and install some software:    
   
@@ -85,7 +86,7 @@ Check for system updates, but don't install them
 
 
 ## 3. Configure IP Addresses on the Second Network Interface on the First Server
-
+[Spis treści](#spis-treści)
 
 On the first server, configure the second interface's IPv4/IPv6 addresses using nmtui.
 
@@ -103,6 +104,8 @@ By default, the systemd journal logs to memory in RHEL 8, in the location /run/l
 Configure the systemd journal logs to be persistent on both servers, logging to /var/log/journal.
 
 ## 4. Managing Tuned Profiles and Individual Processes
+[Spis treści](#spis-treści)
+
 On the first server:
 
 Set a merged tuned profile using the the powersave and virtual-guest profiles.
