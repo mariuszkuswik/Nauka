@@ -39,7 +39,6 @@
 
 | Zadanko | Notatki | Czy opanowane |
 |--|--|--|
-| Sudoers | [Sudoers](#sudoers) | trochę, przećwiczyć | 
 | [001_restore_root_password](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/001_restore_root_password.md) | [Przywracanie hasła roota](#Przywracanie-hasła-roota) | do przećwiczenia, BARDZO WAŻNE |
 | [002_setup_network_parameters](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/002_setup_network_parameters.md) |  | tak, przećwiczyć |
 | [003_change_hostname]( https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/003_change_hostname.md) |  | razcej tak |
@@ -80,6 +79,7 @@
 
 | Zadanko | Notatki | Czy opanowane |
 |--|--|--|
+| 1. Create Users/Groups and Configure Superuser Access on Both Servers | [Sudoers](#sudoers) | trochę, przećwiczyć | 
 | 4. [Managing Tuned Profiles and Individual Processes]() | [Tuned profiles](#Tuned-profiles) | Nie |
 
 
