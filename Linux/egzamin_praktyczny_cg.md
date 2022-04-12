@@ -36,9 +36,9 @@ Enable superuser privilages for the following local groups:
 - dba_intern: Command alias: MESSAGES   
   
   
-Configure yum Repositories on Both Servers and Install Packages/Modules    
+## 2. Configure yum Repositories on Both Servers and Install Packages/Modules  
+
 You'll need to configure three repositories and install some software:    
-  
   
 - RHEL 8 BaseOS:  
   
@@ -79,22 +79,27 @@ Install software on both servers:
 - Install the default AppStream stream/profile for container-tools
 - Install the youtube-dl package (from EPEL)
 Check for system updates, but don't install them
-Configure IP Addresses on the Second Network Interface on the First Server
+
+
+## 3. Configure IP Addresses on the Second Network Interface on the First Server
+
+
 On the first server, configure the second interface's IPv4/IPv6 addresses using nmtui.
 
-IP Addresses:
+**IP Addresses:**
 
 IPv4: 10.0.1.20/24
 IPv6: 2002:0a00:0114::/64
 Manual, not Automatic (DHCP) for both interfaces
 Only IP addresses, no other fields
 Configure only, do not activate
+
 Configure Persistent Journals on Both Servers
 By default, the systemd journal logs to memory in RHEL 8, in the location /run/log/journal. While this works fine, we'd like to make our journals persistent across reboots.
 
 Configure the systemd journal logs to be persistent on both servers, logging to /var/log/journal.
 
-Managing Tuned Profiles and Individual Processes
+## 4. Managing Tuned Profiles and Individual Processes
 On the first server:
 
 Set a merged tuned profile using the the powersave and virtual-guest profiles.

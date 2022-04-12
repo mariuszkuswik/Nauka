@@ -2411,11 +2411,6 @@ find / -xdev -size +100k -print | xargs ls -ldS > /tmp/size
     - ```nmtui``` - Zarządzanie network managerem za pomocą **terminalowego GUI**  
 
 
-
-  
-
-
-
  Cokolwiek sie nie zmieni za pomoca komendy​ IP ​ jest 'nonpersistent' (cokolwiek to nie znaczy w kontekscie sieci). By tematy byly trwale trzeba uzyc komend ​ NMCLI ​ lub ​ NMTUI ​. To pierwsze to oczywiscie command line, a ​ TUI ​to tekstowe. Oczywiscie tekstowe sie latwiej uzywa. NMCLI CON SHOW ​ - pokazuje wszystkie polaczenia i ich przypisania do urzadzen (aktywne i nieaktywne). Jak sie jako ostatni parametr poda nazwe to sie dostaje dodatkowe info o konkretnym polaczeniu. NMCLI DEV STATUS ​ by zobaczyc status urzadzen (wszystkich) NMCLI DEV SHOW ​ lub urzadzenia podanego jako parametr TUTAJ JEST DODAWANIE/MODYFIKOWANIE USTAWIEN POLACZEN, ALE TO JEST GLUPIE WPISYWANIE KOMEND BEZ WYTLUMACZENIA. Zakladaja chyba, ze musi byc
 
 uzywane ​ NMTUI ​. Generalnie najwazniejsze to jest samo dodanie polaczenia: NMCLI CON ADD CON-NAME TUTAJ_JAKAS_NAZWA OPCJE (autoconnect no ifname NAZWA_INTERFEJSU) NMCLI CON UP/DOWN/DELETE NAZWA_POLACZENIA ​by wystartowac Za pomoca ​ NMTUI ​ da sie:

@@ -22,6 +22,7 @@
 1. [Swap](#swap)
 1. [Sieci](#Sieci)
 1. [Kontenery](#Kontenery)
+1. [Tuned profiles](#Tuned-profiles)
 
 
 1. [Progress w zadankach na CG](#cg)
@@ -75,6 +76,13 @@
 | [032_finding_files_with_given_text_in_them](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/032_finding_files_with_given_text_in_them.md) | [Wyszukiwanie plików](#Wyszukiwanie-plików)  | przećwiczyć |
 | [033_managing_layered_storage](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/033_managing_layered_storage.md) | [Stratis](#stratis) | tak trochę ogarniam, przećwiczyć |
 | [034_containers](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/034_containers.md) | [Kontenery](#Kontenery) | tak trochę ogarniam, przećwiczyć |
+
+# CG 
+
+| Zadanko | Notatki | Czy opanowane |
+|--|--|--|
+| 4. [Managing Tuned Profiles and Individual Processes]() | [Tuned profiles](#Tuned-profiles) | Nie |
+
 
 # Pomoc 
 
@@ -1315,6 +1323,12 @@ podman search "$nazwa_obrazu"
 Każdy wolumen musi mieć odpowiednio udostępniony plik - Z ODPOWIEDNIO USTAWIONYM KONTEKSTEM PLIKU
 kontekst dla folderów które mają byc udostępnione może być taki sam jak dla reszty plików 
 SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA ```ls -lZ /```
+
+
+# Tuned profiles
+[Spis treści](#spis-tre%C5%9Bci)
+
+
 
 # Daily zadanka 
 [Spis treści](#spis-tre%C5%9Bci)
