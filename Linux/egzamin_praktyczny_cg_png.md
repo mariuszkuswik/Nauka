@@ -1,0 +1,1 @@
+![egz](Obrazy/Cloud_Guru/egzamin_praktyczny_cg.png)
