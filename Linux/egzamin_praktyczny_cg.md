@@ -4,6 +4,7 @@
  3. [Configure IP Addresses on the Second Network Interface on the First Server](#3-configure-ip-addresses-on-the-second-network-interface-on-the-first-server)
  4. [Managing Tuned Profiles and Individual Processes](#4-managing-tuned-profiles-and-individual-processes)
 
+[egz](!egzamin_praktyczny_cg.png)
 
 ## 1. Create Users/Groups and Configure Superuser Access on Both Servers
 [Spis treści](#spis-treści)
