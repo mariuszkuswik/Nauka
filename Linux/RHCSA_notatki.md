@@ -1203,7 +1203,7 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 
 1. Edycja zmiennych dla komendy ```grub2-mkconfig```
 ```console
-$ vim /etc/default/grub
+# vim /etc/default/grub
 
 ### Przykładowa zmiana
 GRUB_TIMEOUT=15
@@ -1211,12 +1211,12 @@ GRUB_TIMEOUT=15
 
 2. Utworzenie backupu starego configu 
 ```console
-cp /boot/grub2/grub.cfg ~/grub.cfg
+# cp /boot/grub2/grub.cfg ~/grub.cfg
 ```
 
 3. Utworzenie configu na podstawie wpisu z punktu drugiego i przekierowanie powstałego skryptu do pliku konfiguracyjnego
 ```console
-grub2-mkconfig > /boot/grub2/grub.cfg
+# grub2-mkconfig > /boot/grub2/grub.cfg
 ```
 
 
