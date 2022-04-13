@@ -1236,8 +1236,15 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 [Spis treści](#spis-tre%C5%9Bci)
 
 ## Grub
-```grubby``` - command line tool for configuring grub
+- ```grubby``` - command line tool for configuring grub
+- ```grub2-mkconfig``` - generuje skrypt konfiguracyjny, możliwy do przekierowania do właściwego configu - ```/boot/grub2/grub.cfg```
+- ```grub2-script-check``` - sprawdza czy utworzony config jest poprawny
 
+
+### Pomoc
+- ```man grubby``` - wskazany plik konfiguracyjny  
+- ```info grub2``` - mocno wyjaśnione bootowanie  
+- ```info grub``` - starsza wersja, nadal może tam coś być 
 
 ### Config
 - ```/boot/grub2/grub.cfg``` -  plik konfiguracyjny dla **grub**, generowany automatycznie przez **grub2-mkconfig** na podstawie wpisów w **/etc/default/grub**
@@ -1245,13 +1252,18 @@ tworzenie swapu z pliku, procedura do ogarnięcia
     - ```grub2-mkconfig > /boot/grub2/grub.cfg``` - **ZATWIERDZENIE ZMIAN** - aktualizacja skryptu dla grub
 
 
-### Pomoc
-```info grub2``` - mocno wyjaśnione bootowanie  
-```info grub``` - starsza wersja, nadal może tam coś być 
-
 ### Zmiana zmiennych konfiguracji Grub
 
-1. Dodanie odpowiednich wartości konfiguracyjnych
+1. Edycja zmiennych dla komendy ```grub2-mkconfig```
+```console
+$ vim /etc/default/grub
+
+GRUB_TIMEOUT=15
+```
+
+2. Utworzenie 
+
+
 
 
 ## Kernel
