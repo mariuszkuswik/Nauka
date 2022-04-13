@@ -23,6 +23,7 @@
 1. [Sieci](#Sieci)
 1. [Kontenery](#Kontenery)
 1. [Tuned profiles](#Tuned-profiles)
+1. [Grub/Kernel](#grubkernel)
 
 
 - [Chlebik](#chlebik)    
@@ -1239,13 +1240,23 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 ```grubby``` - command line tool for configuring grub
 
 ### Config
-- ```/etc/default/grub``` - config dla większości zmian, zmiany trzeba zatwierdzać - **SPRAWDZIĆ JAKĄ KOMENDĄ**
+- ```/boot/grub2/grub.cfg``` -  plik konfiguracyjny dla ```grub```, generowany automatycznie przez ```grub2-mkconfig``` na podstawie wpisów w ```/etc/default/grub```
+- ```/etc/default/grub``` - config dla **KOMENDY GENERUJĄCEJ SKRYPT BOOTUJĄCY, NIE DLA GRUBA**,  
+    - ```grub2-mkconfig > /boot/grub2/grub.cfg``` - aktualizacja skryptu dla grub
+
+```grub2-mkconfig``` do pliku /boot/grub2/grub.cfg 
+    - ZATWIERDZANIE ZMIAN - grub2-mkconfig > 
     - ```info grub2``` - sekcja config zawiera informacje na temat konfiguracji
 
 
 ### Pomoc
 ```info grub2``` - mocno wyjaśnione bootowanie  
 ```info grub``` - starsza wersja, nadal może tam coś być 
+
+### Zmiana zmiennych konfiguracji Grub
+
+1. Dodanie odpowiednich wartości konfiguracyjnych
+
 
 ## Kernel
 [Kernel Update](#Kernel-update)
