@@ -224,10 +224,6 @@ userdel - Usuwanie użytkownika
 # NFS
 [Spis treści](#spis-tre%C5%9Bci)
 
-Egzamin : 
-- Mount and unmount network file systems using NFS
-
-
 ### Dokumentacja 
 
 - ```man 5 nfs``` - wyświetlenie opcji montowania dla udziałów nfs   
