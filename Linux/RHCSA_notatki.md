@@ -857,22 +857,6 @@ WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli wys
     other::r-x  
 
 
-
-# Rozwiązywanie problemów (ogólnie)
-[Spis treści](#spis-tre%C5%9Bci)
-
-## httpd
-
-1. Sprawdzenie czy usługa działa, jeżeli tak/nie to czy systemd pokazuje jakieś błędy 
-2. Pobranie strony ```curlem``` z podanego serwera
-3. sprawdzenie logów systemd - ```journalctl -u httpd``` - pobranie logów dla konkretnej usługi
-4. sprawdzenie loga audit - ```grep /var/log/audit/audit.log``` - sprawdzić co to jest konkretnie za log, jest od niego demon ```auditd```
-5. sprawdzenie logów - ```grep /var/log/messages``` 
-3. Ustawienie selinux w tryb permissive 
-4. Włączenie odpowiedniej zmiennej boolowskiej ?
-
-
-
 # sar - sysstat
 [Spis treści](#spis-tre%C5%9Bci)
 
@@ -899,13 +883,12 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 
 ### #TODO - sar do uzupełnienia, nie było możliwości pobrania na wirtualkę 
 
-
 # Runlevele 
-[Spis treści](#spis-tre%C5%9Bci)
+[Spis treści](#spis-tre%C5%9Bci)  
 
-```# systemctl set-default graphical.target``` - ustawia tryb graficzny jako działający domyślnie 
-```# systemctl set-default multi-user.target``` - ustawia tryb tekstowy jako działający domyślnie 
-```# systemctl get-default``` - wyświetla obecny defaultowy target 
+- ```# systemctl set-default graphical.target``` - ustawia tryb graficzny jako działający domyślnie 
+- ```# systemctl set-default multi-user.target``` - ustawia tryb tekstowy jako działający domyślnie 
+- ```# systemctl get-default``` - wyświetla obecny defaultowy target 
 
 # autofs 
 [Spis treści](#spis-tre%C5%9Bci)
@@ -1346,6 +1329,22 @@ systemctl enable --now tuned
     - ```tuned-adm list``` - wyświetlenie wszystkich dostępnych profili 
     - ```tuned-adm active``` - wyświetlenie obecnie działających profili 
     - ```tuned-adm profile "$profile_name1" "$profile_name2"``` - Switches  to  the given profile. If more than one profile is given, the profiles are merged
+
+
+# Rozwiązywanie problemów (ogólnie)
+[Spis treści](#spis-tre%C5%9Bci)
+
+## httpd
+
+1. Sprawdzenie czy usługa działa, jeżeli tak/nie to czy systemd pokazuje jakieś błędy 
+2. Pobranie strony ```curlem``` z podanego serwera
+3. sprawdzenie logów systemd - ```journalctl -u httpd``` - pobranie logów dla konkretnej usługi
+4. sprawdzenie loga audit - ```grep /var/log/audit/audit.log``` - sprawdzić co to jest konkretnie za log, jest od niego demon ```auditd```
+5. sprawdzenie logów - ```grep /var/log/messages``` 
+3. Ustawienie selinux w tryb permissive 
+4. Włączenie odpowiedniej zmiennej boolowskiej ?
+
+
 
 
 # Daily zadanka 
