@@ -1,6 +1,6 @@
 # Spis treści 
 
-### [Screenshot całości](egzamin_praktyczny_cg_png.md)
+### [Screenshot](egzamin_praktyczny_cg_png.md)
 
  1. [Create Users/Groups and Configure Superuser Access on Both Servers](#1-create-usersgroups-and-configure-superuser-access-on-both-servers)
  2. [Configure yum Repositories on Both Servers and Install Packages/Modules](#2-configure-yum-repositories-on-both-servers-and-install-packagesmodules) 
