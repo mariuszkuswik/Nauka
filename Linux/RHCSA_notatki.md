@@ -1236,11 +1236,10 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 [Spis treści](#spis-tre%C5%9Bci)
 
 ## Grub
-
 ```grubby``` - command line tool for configuring grub
 
 ### Config
-- ```/boot/grub2/grub.cfg``` -  plik konfiguracyjny dla ```grub```, generowany automatycznie przez ```grub2-mkconfig``` na podstawie wpisów w ```/etc/default/grub```
+- ```/boot/grub2/grub.cfg``` -  plik konfiguracyjny dla **grub**, generowany automatycznie przez **grub2-mkconfig** na podstawie wpisów w **/etc/default/grub**
 - ```/etc/default/grub``` - config dla **KOMENDY GENERUJĄCEJ SKRYPT BOOTUJĄCY, NIE DLA GRUBA**,  
     - ```grub2-mkconfig > /boot/grub2/grub.cfg``` - aktualizacja skryptu dla grub
 
