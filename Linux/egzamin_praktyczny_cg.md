@@ -7,6 +7,7 @@
  3. [Configure IP Addresses on the Second Network Interface on the First Server](#3-configure-ip-addresses-on-the-second-network-interface-on-the-first-server)
  4. [Managing Tuned Profiles and Individual Processes](#4-managing-tuned-profiles-and-individual-processes)
 
+# Managing RHEL 8 Servers
 
 ## 1. Create Users/Groups and Configure Superuser Access on Both Servers
 [Spis treści](#spis-treści)
@@ -154,11 +155,11 @@ On server1, make the following changes:
   
 Validate the changes in ```/boot/grub2/grub.cfg```. Do not reboot the server.
 
-## 9. Managing Storage on RHEL 8
+# Managing Storage on RHEL 8
 [Spis treści](#spis-treści)
 
-Configure Persistent Storage with LVM on Top of VDO
-On the second server:
+## 9. Configure Persistent Storage with LVM on Top of VDO
+**On the second server:**
 
 Create a VDO device with the first unused 5GB device.
 
