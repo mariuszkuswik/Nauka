@@ -1182,6 +1182,8 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 # Grub/Kernel
 [Spis treści](#spis-tre%C5%9Bci)
 
+[Zmiana ustawień grub](https://www.unixarena.com/2015/04/how-to-edit-the-grub-on-rhel-7.html/)
+
 ## Grub
 - ```grubby``` - command line tool for configuring grub
 - ```grub2-mkconfig``` - generuje skrypt konfiguracyjny, możliwy do przekierowania do właściwego configu - ```/boot/grub2/grub.cfg```
