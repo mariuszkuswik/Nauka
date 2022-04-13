@@ -1267,7 +1267,6 @@ podman container/image/volume...
 podman container - operacje wykonywane na kontenerach   
     ```podman container list --all``` - listuje wszystkie kontenery, również te nieaktywne
 
-    
 
 ```-v``` - mapowanie udziału host-kontener
 ```-p 80:80``` - mapowanie portu host-kontener
@@ -1282,8 +1281,6 @@ podman logout	Log out of the current remote registry
 *The list of registries is defined in /etc/containers/registries.conf*
 
 ### Building Images
-
-
 
 podman login - logowanie do rejestru kontenerów 
 podman container - wykonywanie operacji na kontenerach
@@ -1305,8 +1302,6 @@ podman exec - wykonanie komendy na kontenerze
 1. Wyszukanie obrazu kontenera w rejestrze i pobranie go 
 
 podman search "$nazwa_obrazu"
-
-
 
 
 ## SeLinux 
