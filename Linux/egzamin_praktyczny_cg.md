@@ -155,10 +155,12 @@ On server1, make the following changes:
   
 Validate the changes in ```/boot/grub2/grub.cfg```. Do not reboot the server.
 
+
 # Managing Storage on RHEL 8
-[Spis treści](#spis-treści)
 
 ## 9. Configure Persistent Storage with LVM on Top of VDO
+[Spis treści](#spis-treści)
+
 **On the second server:**
 
 Create a VDO device with the first unused 5GB device.
