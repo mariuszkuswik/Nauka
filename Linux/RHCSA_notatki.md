@@ -899,7 +899,7 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
         /export/home                    /etc/auto.home
         ```
     - ```/etc/auto."$file_name"``` - konfiguracja dla indywidualnych systemów montowania - **SPRAWDZIĆ CZY JEST PLIK** ```/etc/auto.misc``` - objaśnia przykładowo
-        - ```bash
+        ```bash
         # Użytkownik    opcje montowania
         *               -fstype=nfs,rw  172.29.188.8:/home/&
         # ```*``` - oznacza dowolnego użytkownika
