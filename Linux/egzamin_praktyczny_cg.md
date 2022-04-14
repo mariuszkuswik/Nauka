@@ -198,6 +198,7 @@ Configure the swap space ```non-destructively``` and ```persistently```.
     - Mount this persistently at ```/mnt/app_storage```
 
 ## 12. Configure autofs for Home Directories
+[Spis treści](#spis-treści) 
 
 Configure ```autofs``` on the first server to mount the user home directories on the second server at ```/export/home```.
 
@@ -210,6 +211,7 @@ Configure ```autofs``` on the first server to mount the user home directories on
 
 
 ## 13. Configure a Shared Directory for Collaboration
+[Spis treści](#spis-treści) 
 
 **On the second server:**
 
@@ -228,7 +230,8 @@ Set the following ACLs:
 
 # Managing Containers Using Podman
 
-## Create a Persistent systemd Container Using Podman
+## 14. Create a Persistent systemd Container Using Podman
+[Spis treści](#spis-treści) 
 
 **As the ```cloud_user user``` on the first server, create a persistent ```systemd``` container with the following:**
 
@@ -240,10 +243,13 @@ Set the following ACLs:
 
 # Managing Security on RHEL 8
 
-## Troubleshoot SELinux Issues
+## 15. Troubleshoot SELinux Issues
+[Spis treści](#spis-treści) 
+
 The Apache web server on the first server won't start! Investigate this issue, and correct any other SELinux issues related to ```httpd``` that you may find.
 
-## Configure the Firewall on Both Servers
+## 16. Configure the Firewall on Both Servers
+[Spis treści](#spis-treści) 
 
 Make sure the firewall is installed, enabled and started on both servers. Configure the following services/ports:
 
