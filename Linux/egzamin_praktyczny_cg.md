@@ -195,7 +195,7 @@ Configure the swap space ```non-destructively``` and ```persistently```.
 
 - Stratis pool: appteam
 - Stratis file system: appfs1
-    - Mount this persistently at /mnt/app_storage
+    - Mount this persistently at ```/mnt/app_storage```
 
 ## 12. Configure autofs for Home Directories
 
@@ -234,28 +234,28 @@ Set the following ACLs:
 
 - Image: registry.access.redhat.com/rhscl/httpd-24-rhel7
 - Port mappings: 8080 on the container to 8000 on the host
-- Persistent storage at ~/web_data, mounted at /var/www/html in the container
+- Persistent storage at ```~/web_data```, mounted at ```/var/www/html``` in the container
 - Container name: web_server
 
 
 # Managing Security on RHEL 8
 
 ## Troubleshoot SELinux Issues
-The Apache web server on the first server won't start! Investigate this issue, and correct any other SELinux issues related to httpd that you may find.
+The Apache web server on the first server won't start! Investigate this issue, and correct any other SELinux issues related to ```httpd``` that you may find.
 
-Configure the Firewall on Both Servers
+## Configure the Firewall on Both Servers
+
 Make sure the firewall is installed, enabled and started on both servers. Configure the following services/ports:
 
-Server 1:
+**Server 1:**
+- ssh
+- http
+- Port 85 (tcp)
+- Port 8000 (tcp)
 
-ssh
-http
-Port 85 (tcp)
-Port 8000 (tcp)
-Server 2:
-
-ssh
-nfs
-nfs3
-rpc-bind
-mountd
+**Server 2:**
+- ssh
+- nfs
+- nfs3
+- rpc-bind
+- mountd
