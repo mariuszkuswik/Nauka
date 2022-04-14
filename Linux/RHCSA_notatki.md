@@ -10,6 +10,7 @@
 1. [Kontrola czasu w RHEL](#Kontrola-czasu-w-RHEL)
 1. [NFS](#nfs)
 1. [LVM](#LVM)
+1. [Stratis](#stratis)
 1. [VDO](#vdo)
 1. [Logi](#acl)
 1. [ACL](#acl)
