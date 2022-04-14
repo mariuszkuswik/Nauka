@@ -132,6 +132,7 @@ Create one ```at``` task and one ```cron``` job on the first server:
   
 These files will be available via the web server on the first server after the "Troubleshoot SELinux issues" objective is completed.
 
+
 ## 7. Configure Time Service Clients for Both Servers
 [Spis treści](#spis-treści)  
 
@@ -144,10 +145,11 @@ server 169.254.169.123 iburst
   
 Make sure your work is persistent and check your work!
 
+
 ## 8. Managing the System Bootloader
 [Spis treści](#spis-treści)  
 
-On server1, make the following changes:
+**On server1, make the following changes:**
   
 - Increase the timeout using ```GRUB_TIMEOUT=10```
 - Add the following line: ```GRUB_TIMEOUT_STYLE=hidden```
@@ -171,17 +173,25 @@ Create a VDO device with the first unused 5GB device.
 Use the VDO device as an LVM physical volume. Create the following:  
 
 - Volume Group: web_vg
-Three 2G Logical Volumes with xfs file systems:
-web_storage_dev
-web_storage_qa
-web_storage_prod
-Mount these persistently at /mnt/web_storage_{dev,qa,prod}.
+    - Three 2G Logical Volumes with xfs file systems:
+        - web_storage_dev
+        - web_storage_qa
+        - web_storage_prod
+  
+Mount these persistently at /mnt/web_storage_{dev,qa,prod}.  
 
-Add Swap Space Persistently and Nondisruptive
-We need to increase the swap on the second server. We're going to use half of our first unused 2G disk for this additional swap space. Configure the swap space non-destructively and persistently.
 
-Configure Stratis Storage Persistently
-On the second server, using the second 2G disk, create the following:
+## 10. Add Swap Space Persistently and Nondisruptive
+[Spis treści](#spis-treści) 
+
+We need to increase the swap on the second server. We're going to use half of our first unused 2G disk for this additional swap space.  
+Configure the swap space ```non-destructively``` and ```persistently```.  
+
+
+## 11. Configure Stratis Storage Persistently
+[Spis treści](#spis-treści) 
+
+**On the second server, using the second 2G disk, create the following:**
 
 Stratis pool: appteam
 Stratis file system: appfs1
