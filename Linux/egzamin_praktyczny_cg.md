@@ -48,7 +48,7 @@ Enable superuser privilages for the following local groups:
 
 You'll need to configure three repositories and install some software:    
   
-- RHEL 8 BaseOS:  
+**RHEL 8 BaseOS:**
   
 ```console
 Repository ID: [rhel-8-baseos-rhui-rpms]
@@ -61,7 +61,7 @@ sslclientcert=/etc/pki/rhui/product/content-rhel8.crt
 sslcacert=/etc/pki/rhui/cdn.redhat.com-chain.crt
 ```
 
-- RHEL 8 AppStream:
+**RHEL 8 AppStream:**
 
 ```console
 Repository ID: [rhel-8-appstream-rhui-rpms]
@@ -74,19 +74,18 @@ sslclientcert=/etc/pki/rhui/product/content-rhel8.crt
 sslcacert=/etc/pki/rhui/cdn.redhat.com-chain.crt
 ```
 
-- EPEL:
-```console
-Repository ID: [epel]
-The baseurl is: https://download.fedoraproject.org/pub/epel/$releasever/Everything/$basearch
+**EPEL:**
+- Repository ID: [epel]
+- The baseurl is: https://download.fedoraproject.org/pub/epel/$releasever/Everything/$basearch  
+
 Configure the repositories on the first server, then make an archive of the files, securely copy them to the second server, then unarchive the repository files on the second server.
-```
 
 
-Install software on both servers:
+**Install software on both servers:**
 
-- Install the default AppStream stream/profile for container-tools
-- Install the youtube-dl package (from EPEL)
-Check for system updates, but don't install them
+- Install the default AppStream stream/profile for ```container-tools```
+- Install the ```youtube-dl``` package (from EPEL)
+- Check for system updates, but don't install them
 
 
 ## 3. Configure IP Addresses on the Second Network Interface on the First Server
