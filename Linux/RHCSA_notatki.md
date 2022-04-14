@@ -893,10 +893,19 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 
 
 - Configi 
-    - ```/etc/autofs.conf``` - Główny plik konfiguracyjny usługi
-    - ```/etc/auto.master``` - Główny plik mapowania    
-    - ```/etc/auto."$file_name"``` - konfiguracja dla indywidualnych systemów montowania 
-
+    - ```/etc/auto.master``` - mapa dla folderów montowania, linkujemy tu config dla poszczególnych katalogów
+        - ```bash
+        # folder do auto-montowania     konfiguracja dla autofs
+        /export/home                    /etc/auto.home
+        ```
+    - ```/etc/auto."$file_name"``` - konfiguracja dla indywidualnych systemów montowania - **SPRAWDZIĆ CZY JEST PLIK** ```/etc/auto.misc``` - objaśnia przykładowo
+        - ```bash
+        # Użytkownik    opcje montowania
+        *               -fstype=nfs,rw  172.29.188.8:/home/&
+        # ```*``` - oznacza dowolnego użytkownika
+        # 
+        ```
+    - ```/etc/autofs.conf``` - Główny plik konfiguracyjny usługi 
 - Pomoc 
     - ```man 5 auto.master``` - wyjaśnia skłądnie pliku konfiguracyjnego   
     - ```man automount``` - montuje udziały nfs dla pliku auto.master   
