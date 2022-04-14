@@ -193,40 +193,54 @@ Configure the swap space ```non-destructively``` and ```persistently```.
 
 **On the second server, using the second 2G disk, create the following:**
 
-Stratis pool: appteam
-Stratis file system: appfs1
-Mount this persistently at /mnt/app_storage
-Configure autofs for Home Directories
-Configure autofs on the first server to mount the user home directories on the second server at /export/home.
+- Stratis pool: appteam
+- Stratis file system: appfs1
+    - Mount this persistently at /mnt/app_storage
 
-On the second server, configure a NFS server with the following export:
+## 12. Configure autofs for Home Directories
+
+Configure ```autofs``` on the first server to mount the user home directories on the second server at ```/export/home```.
+
+- On the second server, configure a NFS server with the following export:
+```console
 /home	<first_server_private_IP>(rw,sync,no_root_squash)
-On the first server, configure autofs to mount the exported /home directory on the second server at /export/home. Change the home directories for our six users (manny|moe|jack|marcia|jan|cindy) to be /export/home/<user> and test.
-Configure a Shared Directory for Collaboration
-On the second server:
+```
 
-Create a directory at /home/dba_docs with:
+- On the first server, configure ```autofs``` to mount the exported ```/home``` directory on the second server at ```/export/home```. Change the home directories for our six users (manny|moe|jack|marcia|jan|cindy) to be ```/export/home/<user>``` and test.
 
-Group ownership: dba_staff
-Permissions: 770
-Set-GID set
-Sticky bit set
+
+## 13. Configure a Shared Directory for Collaboration
+
+**On the second server:**
+
+Create a directory at ```/home/dba_docs``` with:
+- Group ownership: dba_staff
+- Permissions: 770
+- Set-GID set
+- Sticky bit set
+
 Create a link in each shared user's home directory to this directory, for easy access.
 
 Set the following ACLs:
+- Read-only for ```jack``` and ```cindy```
+- Full permissions for ```marcia```
 
-Read-only for jack and cindy
-Full permissions for marcia
-Managing Containers Using Podman
-Create a Persistent systemd Container Using Podman
-As the cloud_user user on the first server, create a persistent systemd container with the following:
 
-Image: registry.access.redhat.com/rhscl/httpd-24-rhel7
-Port mappings: 8080 on the container to 8000 on the host
-Persistent storage at ~/web_data, mounted at /var/www/html in the container
-Container name: web_server
-Managing Security on RHEL 8
-Troubleshoot SELinux Issues
+# Managing Containers Using Podman
+
+## Create a Persistent systemd Container Using Podman
+
+**As the ```cloud_user user``` on the first server, create a persistent ```systemd``` container with the following:**
+
+- Image: registry.access.redhat.com/rhscl/httpd-24-rhel7
+- Port mappings: 8080 on the container to 8000 on the host
+- Persistent storage at ~/web_data, mounted at /var/www/html in the container
+- Container name: web_server
+
+
+# Managing Security on RHEL 8
+
+## Troubleshoot SELinux Issues
 The Apache web server on the first server won't start! Investigate this issue, and correct any other SELinux issues related to httpd that you may find.
 
 Configure the Firewall on Both Servers
