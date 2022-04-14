@@ -898,15 +898,20 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
         # folder do auto-montowania     konfiguracja dla autofs
         /export/home                    /etc/auto.home
         ```
+
     - ```/etc/auto."$file_name"``` - konfiguracja dla indywidualnych systemów montowania - **SPRAWDZIĆ CZY JEST PLIK** ```/etc/auto.misc``` - objaśnia przykładowo
         ```bash
-        # ```*``` - oznacza dowolnego użytkownika
-        
-        
-        # Użytkownik    opcje montowania
-        *               -fstype=nfs,rw  172.29.188.8:/home/&
+        # ```*``` - dowolny użytkownik
+        # ```&``` - dowolny folder
+
+        # Użytkownik    opcje montowania    adres serwera:folder do zamontowania
+        manny           -fstype=nfs,rw      172.29.188.8:/home/manny
+        *               -fstype=nfs,rw      172.29.188.8:/home/&
+
         ```
+
     - ```/etc/autofs.conf``` - Główny plik konfiguracyjny usługi 
+
 - Pomoc 
     - ```man 5 auto.master``` - wyjaśnia skłądnie pliku konfiguracyjnego   
     - ```man automount``` - montuje udziały nfs dla pliku auto.master   
