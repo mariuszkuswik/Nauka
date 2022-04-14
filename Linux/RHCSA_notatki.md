@@ -901,8 +901,8 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 
     - ```/etc/auto."$file_name"``` - konfiguracja dla indywidualnych systemów montowania - **SPRAWDZIĆ CZY JEST PLIK** ```/etc/auto.misc``` - objaśnia przykładowo
         ```bash
-        # ```*``` - dowolny użytkownik
-        # ```&``` - dowolny folder
+        # * - dowolny użytkownik
+        # & - dowolny folder
 
         # Użytkownik    opcje montowania    adres serwera:folder do zamontowania
         manny           -fstype=nfs,rw      172.29.188.8:/home/manny
