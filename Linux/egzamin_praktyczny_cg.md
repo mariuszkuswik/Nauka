@@ -232,7 +232,7 @@ Set the following ACLs:
 ## 14. Create a Persistent systemd Container Using Podman
 [Spis treści](#spis-treści) 
 
-**As the ```cloud_user user``` on the first server, create a persistent ```systemd``` container with the following:**
+**As the ```cloud_user``` user on the first server, create a persistent ```systemd``` container with the following:**
 
 - Image: registry.access.redhat.com/rhscl/httpd-24-rhel7
 - Port mappings: 8080 on the container to 8000 on the host
