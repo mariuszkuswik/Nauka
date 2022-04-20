@@ -1276,6 +1276,10 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 
 ### #TODO - do uzupełnienia, dopisać z cheatsheeta na githubie
 
+### SYSTEMD JAKO UŻYTKOWNIK 
+
+DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW  
+
 ### Pomoc 
 ```man -k podman``` - wyświetla wszystkie potrzebne komendy podmana 
 
