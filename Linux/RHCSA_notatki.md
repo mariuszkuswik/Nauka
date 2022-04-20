@@ -1286,8 +1286,7 @@ DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHA
 Budowa większości komend : 
 podman container/image/volume...
 
-
-```podman exec -it "$nazwa_kontenera" bash``` - uruchomienie interaktywnego terminala 
+```podman exec -u 0 -it "$nazwa_kontenera" bash``` - uruchomienie interaktywnego terminala jako **root** (```-u 0```)
 
 
 podman container - operacje wykonywane na kontenerach   
