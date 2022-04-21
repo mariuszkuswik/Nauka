@@ -1086,7 +1086,6 @@ $ yum module list module-name
 ```
 
 ## Repo
-### #TODO - dopisać najprościej jak się da 
 
 ### Pomoc
 ```man dnf.conf``` - pomoc dla opcji konfiguracyjnych repozytoriów
