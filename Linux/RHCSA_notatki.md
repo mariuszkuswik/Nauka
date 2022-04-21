@@ -1024,6 +1024,8 @@ Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego 
 ## Dnf
 [Spis treści](#spis-tre%C5%9Bci)
 
+- [Repozytoria](#repo)
+
 [Introduction to Application Streams](https://www.redhat.com/en/blog/introduction-appstreams-and-modules-red-hat-enterprise-linux)
 
 
@@ -1095,15 +1097,16 @@ $ yum module list module-name
 
 ### Polecenia
 ```dnf repolist``` - pokazuje liste repo i ewentualne błędy  
-```dnf repoquery``` - odpytuje wybrane repozytorium
+```dnf repoquery``` - wyświetla dostępne do pobrania pakiety
+
+### Pobranie lokalnie repozytorium 
+```dnf reposync --download-metadata --downloaddir "$path_to_download"``` - Pobranie lokalnie plików repozytorium
 
 
 ### Dodanie nowego repozytorium
 
 1. Dodajemy plik konfiguracyjny o nazwie repozytorium 
 
-### #TODO - sprawdzić jak odpytać repo o dostępne pakiety
-### #TODO - Dopisać jak załączyć link do pliku 
 
 ```bash
 [nazwa_repo]
