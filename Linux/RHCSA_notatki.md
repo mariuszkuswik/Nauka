@@ -26,6 +26,7 @@
 1. [Tuned profiles](#Tuned-profiles)
 1. [Grub/Kernel](#grubkernel)
 
+11. [Przed egzaminem!!!](#przed-egzaminem)
 
 - [Chlebik](#chlebik)    
 - [Cloud Guru](#cg)    
@@ -99,7 +100,8 @@
 
 ## Man
 
-- ```man man``` 
+- ```man man``` - manual do ```man```
+- ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU
 
 ## Info
 
@@ -1418,6 +1420,13 @@ All files put into the "shared" directory by "steve" or "oliver" should belong t
     - Allowed time: 5 minutes.
 
 
+# Przed egzaminem 
+[Spis treści](#spis-treści)
+
+[Przywracanie hasła roota](#przywracanie-hasła-roota)
+[man](#man)
+
+- ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU
 
 # Koniec
 
