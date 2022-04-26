@@ -894,6 +894,10 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 - [Montowanie katalogów domowych](#Automatyczne-montowanie-katalogów-domowych) 
 
 
+### Ogarnąć 
+
+```mount``` wyświetla listę katalogów mających być zamontowanymi przez autofs 
+
 - Configi 
     - ```/etc/auto.master``` - mapa dla folderów montowania, linkujemy tu config dla poszczególnych katalogów
         ```bash
@@ -1427,6 +1431,8 @@ All files put into the "shared" directory by "steve" or "oliver" should belong t
 [man](#man)
 
 - ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU
+
+[autofs](#autofs)
 
 # Koniec
 
