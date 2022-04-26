@@ -6,6 +6,22 @@
  2. [Configure yum Repositories on Both Servers and Install Packages/Modules](#2-configure-yum-repositories-on-both-servers-and-install-packagesmodules) 
  3. [Configure IP Addresses on the Second Network Interface on the First Server](#3-configure-ip-addresses-on-the-second-network-interface-on-the-first-server)
  4. [Managing Tuned Profiles and Individual Processes](#4-managing-tuned-profiles-and-individual-processes)
+5. [managing-tuned-profiles-and-individual-processes](#5-managing-tuned-profiles-and-individual-processes)
+6. [manage-scheduled-tasks-on-the-first-server ](#6-manage-scheduled-tasks-on-the-first-server)
+7. [configure-time-service-clients-for-both-servers](#7-configure-time-service-clients-for-both-servers)
+8. [managing-the-system-bootloader](#8-managing-the-system-bootloader)
+9. [configure-persistent-storage-with-lvm-on-top-of-vdo](#9-configure-persistent-storage-with-lvm-on-top-of-vdo)
+10. [add-swap-space-persistently-and-nondisruptive](#10-add-swap-space-persistently-and-nondisruptive)
+11. [configure-stratis-storage-persistently](#11-configure-stratis-storage-persistently)
+12. [configure-autofs-for-home-directories](#12-configure-autofs-for-home-directories)
+13. [configure-a-shared-directory-for-collaboration](#13-configure-a-shared-directory-for-collaboration)
+14. [create-a-persistent-systemd-container-using-podman](#14-create-a-persistent-systemd-container-using-podman)
+15. [troubleshoot-selinux-issues](#15-troubleshoot-selinux-issues)
+16. [configure-the-firewall-on-both-servers](#16-configure-the-firewall-on-both-servers)
+
+[Koniec](#koniec)
+
+
 
 # Managing RHEL 8 Servers
 
@@ -264,3 +280,6 @@ Make sure the firewall is installed, enabled and started on both servers. Config
 - nfs3
 - rpc-bind
 - mountd
+
+
+##### Koniec
