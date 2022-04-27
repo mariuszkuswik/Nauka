@@ -896,6 +896,7 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 
 ### Ogarnąć 
 
+```man 5 autofs``` - wyjaśnia w jaki sposób zamontować home directory, w manie szukać ```home```
 ```mount``` wyświetla listę katalogów mających być zamontowanymi przez autofs 
 
 - Configi 
