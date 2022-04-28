@@ -1283,11 +1283,12 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 ### Tutoriale :
 - [Youtube RH - podman systemd](https://www.youtube.com/watch?v=AGkM2jGT61Y)
 
-### #TODO - do uzupełnienia, dopisać z cheatsheeta na githubie
 
 ### SYSTEMD JAKO UŻYTKOWNIK 
 
 DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW  
+
+**podman -v "volume_hosta:volume_kontenera:Z" - z dopiskiem ```:Z``` sam ogarnie SELinuxa!**
 
 ### Pomoc 
 ```man -k podman``` - wyświetla wszystkie potrzebne komendy podmana 
