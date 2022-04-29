@@ -1450,6 +1450,8 @@ grubby –update-kernel=ALL –args="console=ttyS0"
 
 ### TODO 
 ### Dopisać coś na temat zmiany configu bootowania?
+
+ZADANIE 12 CHELBIK
 grub2-mkconfig 
 /boot - 
 
