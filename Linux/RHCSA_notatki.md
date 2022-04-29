@@ -1445,6 +1445,17 @@ DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHA
 podman generate systemd - generuje plik systemd który z nazwą service kopiujemy do ```/etc/systemd/system``` - ```man systemd.unit```
 
 
+### Narzędzie do edycji parametrów konsoli?
+grubby –update-kernel=ALL –args="console=ttyS0"
+
+### TODO 
+### Dopisać coś na temat zmiany configu bootowania?
+grub2-mkconfig 
+/boot - 
+
+OPISAĆ
+
+
 # Koniec
 
 
