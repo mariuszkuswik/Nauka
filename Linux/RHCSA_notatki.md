@@ -1430,6 +1430,9 @@ All files put into the "shared" directory by "steve" or "oliver" should belong t
 # Przed egzaminem 
 [Spis treści](#spis-treści)
 
+
+dnf-config-manager - upraszcza dodawanie repo 
+
 [Przywracanie hasła roota](#przywracanie-hasła-roota)
 [man](#man)
 
@@ -1450,6 +1453,10 @@ grubby –update-kernel=ALL –args="console=ttyS0"
 
 ### TODO 
 ### Dopisać coś na temat zmiany configu bootowania?
+
+Zadanie 18 - update kernel
+https://github.com/chlebik/rhcsa-practice-questions/blob/master/questions/018_update_kernel_and_make_it_default_one.md
+dnf update kernel - updatuje kernel
 
 ZADANIE 12 CHELBIK
 grub2-mkconfig 
