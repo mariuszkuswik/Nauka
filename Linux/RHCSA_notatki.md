@@ -1446,13 +1446,16 @@ dnf-config-manager - upraszcza dodawanie repo
 
 1. ```dnf install autofs -y``` - instalacja autofs
 2. ```systemctl enable --now autofs``` - włączenie usługi autofs
-2. ```vim /etc/auto.master``` - podlinkowanie mapy pod mount point, np. 
-    - ```/export/home   /etc/auto.home``` 
-3. ```vim /etc/auto.home```
-    -```*     -filesystem=nfs,rw      /export/home/&```
-    -```moe   -filesystem=nfs,rw      /export/home/moe```
-4. ```systemctl restart autofs```
-5. ```vim /etc/passwd ```
+
+2. ```vim /etc/auto.master``` - podlinkowanie mapy pod mount point, np.   
+- ```/export/home   /etc/auto.home```   
+
+3. ```vim /etc/auto.home```  
+-```*     -filesystem=nfs,rw      /export/home/&```  
+-```moe   -filesystem=nfs,rw      /export/home/moe```  
+
+4. ```systemctl restart autofs```  
+5. ```vim /etc/passwd ```  
     - ```moe:x:1011:1011::/export/home/moe:/bin/bash``` - edycja home folderu dla konkretnego użytkownika
 5. ```su moe``` - sprawdzenie czy działa 
 6. ```pwd```
@@ -1465,21 +1468,21 @@ na koniec egzaminu selinux musi być w trybie enforcing!
 
 ## [Kontenery](#Kontenery)  
 
-1. ```podman -v "volume_hosta:volume_kontenera:Z"``` - z dopiskiem ```:Z``` **podman sam ogarnie konteksty SELinuxa!**
-    - ```-p``` port 
-    - ```-v``` volume
-1. ```podman generate systemd >> "$plik.service"``` - generowanie pliku ```.service``` dla systemd
-2. Do sekcji [SERVICE] w ```"$plik.service"``` dodajemy ```User="$username"``` - użytkownik może uruchamiać serwis, tym samym jest dostęp do kontenerów     
-4. Wrzucamy plik ```"$plik.service"``` do ```/etc/systemd/system```
-5. ```systemctl enable --now "$plik.service"``` - uruchamiamy usługę systemd
-
-```man systemd.unit``` - opis usług systemd
+1. ```podman -v "volume_hosta:volume_kontenera:Z"``` - z dopiskiem ```:Z``` **podman sam ogarnie konteksty SELinuxa!**  
+    - ```-p``` port   
+    - ```-v``` volume  
+1. ```podman generate systemd >> "$plik.service"``` - generowanie pliku ```.service``` dla systemd  
+2. Do sekcji [SERVICE] w ```"$plik.service"``` dodajemy ```User="$username"``` - użytkownik może uruchamiać serwis, tym samym jest dostęp do kontenerów       
+4. Wrzucamy plik ```"$plik.service"``` do ```/etc/systemd/system```  
+5. ```systemctl enable --now "$plik.service"``` - uruchamiamy usługę systemd  
+  
+```man systemd.unit``` - opis usług systemd  
 
 
 ## grubby
 Zmiana kernela, usuwanie obecnych itd
 
-```grubby –update-kernel=ALL –args="console=ttyS0"``` - update kernela   
+```grubby –update-kernel=ALL –args="console=ttyS0"``` - update kernela    
 
 ## Zmiana parametrów 
 
