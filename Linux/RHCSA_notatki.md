@@ -1469,9 +1469,9 @@ na koniec egzaminu selinux musi być w trybie enforcing!
     - ```-p``` port 
     - ```-v``` volume
 1. ```podman generate systemd >> "$plik.service"``` - generowanie pliku ```.service``` dla systemd
-2. Do sekcji [SERVICE] w "$plik.service" dodajemy ```User="$username"``` - użytkownik może uruchamiać serwis, tym samym jest dostęp do kontenerów     
-4. Wrzucamy plik "$plik.service" do ```/etc/systemd/system```
-5. systemctl enable --now "$plik.service" - uruchamiamy usługę systemd
+2. Do sekcji [SERVICE] w ```"$plik.service"``` dodajemy ```User="$username"``` - użytkownik może uruchamiać serwis, tym samym jest dostęp do kontenerów     
+4. Wrzucamy plik ```"$plik.service"``` do ```/etc/systemd/system```
+5. ```systemctl enable --now "$plik.service"``` - uruchamiamy usługę systemd
 
 ```man systemd.unit``` - opis usług systemd
 
