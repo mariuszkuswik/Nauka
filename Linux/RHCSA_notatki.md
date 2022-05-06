@@ -1430,7 +1430,8 @@ All files put into the "shared" directory by "steve" or "oliver" should belong t
 # Przed egzaminem 
 [Spis treści](#spis-treści)  
   
-  
+## [repo](#Repo)
+
 dnf-config-manager - upraszcza dodawanie repo   
   
 ## [Przywracanie hasła roota](#przywracanie-hasła-roota)  
@@ -1442,6 +1443,19 @@ dnf-config-manager - upraszcza dodawanie repo
 
 
 ## [autofs](#autofs)  
+
+1. ```dnf install autofs -y``` - instalacja autofs
+2. ```systemctl enable --now autofs``` - włączenie usługi autofs
+2. ```vim /etc/auto.master``` - podlinkowanie mapy pod mount point, np. 
+    - ```/export/home   /etc/auto.home``` 
+3. ```vim /etc/auto.home```
+    -```*     -filesystem=nfs,rw      /export/home/&```
+    -```moe   -filesystem=nfs,rw      /export/home/moe```
+4. ```systemctl restart autofs```
+5. ```vim /etc/passwd ```
+    - ```moe:x:1011:1011::/export/home/moe:/bin/bash``` - edycja home folderu dla konkretnego użytkownika
+5. ```su moe``` - sprawdzenie czy działa 
+6. ```pwd```
 
 
 ## [selinux](#selinux)
