@@ -1433,22 +1433,33 @@ All files put into the "shared" directory by "steve" or "oliver" should belong t
   
 dnf-config-manager - upraszcza dodawanie repo   
   
-[Przywracanie hasła roota](#przywracanie-hasła-roota)  
-[man](#man)  
-  
-- ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU  
-  
-[autofs](#autofs)  
-  
-  
-[Kontenery](#Kontenery)  
-DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW     
-    
-**podman -v "volume_hosta:volume_kontenera:Z" - z dopiskiem ```:Z``` sam ogarnie SELinuxa!**  
-podman generate systemd - generuje plik systemd który z nazwą service kopiujemy do ```/etc/systemd/system``` - ```man systemd.unit```  
+## [Przywracanie hasła roota](#przywracanie-hasła-roota)  
 
+## [man](#man)    
+
+- ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU  
+- ```apropos -a "$zmienna1" "$zmienna2"``` - przeszukuje apropos dla dwóch argumentów   
+
+
+## [autofs](#autofs)  
   
-### Narzędzie do edycji parametrów konsoli?    
+
+
+## [Kontenery](#Kontenery)  
+
+1. ```podman -v "volume_hosta:volume_kontenera:Z"``` - z dopiskiem ```:Z``` **podman sam ogarnie konteksty SELinuxa!**
+    - ```-p``` port 
+    - ```-v``` volume
+1. ```podman generate systemd >> "$plik.service"``` - generowanie pliku ```.service``` dla systemd
+2. Do sekcji [SERVICE] w "$plik.service" dodajemy ```User="$username"``` - użytkownik może uruchamiać serwis, tym samym jest dostęp do kontenerów     
+4. Wrzucamy plik "$plik.service" do ```/etc/systemd/system```
+5. systemctl enable --now "$plik.service" - uruchamiamy usługę systemd
+
+```man systemd.unit``` - opis usług systemd
+
+
+### Narzędzie do edycji parametrów konsoli?   
+ 
 grubby –update-kernel=ALL –args="console=ttyS0"  
 
 ### TODO   
