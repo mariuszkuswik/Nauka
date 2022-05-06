@@ -1442,8 +1442,12 @@ dnf-config-manager - upraszcza dodawanie repo
 
 
 ## [autofs](#autofs)  
-  
 
+
+## [selinux](#selinux)
+
+problemy z selinuxem pojawiają się w ```/var/log/messages``` razem z rozwiązaniem
+na koniec egzaminu selinux musi być w trybie enforcing!
 
 ## [Kontenery](#Kontenery)  
 
@@ -1458,9 +1462,12 @@ dnf-config-manager - upraszcza dodawanie repo
 ```man systemd.unit``` - opis usług systemd
 
 
-### Narzędzie do edycji parametrów konsoli?   
- 
-grubby –update-kernel=ALL –args="console=ttyS0"  
+## grubby
+Zmiana kernela, usuwanie obecnych itd
+
+```grubby –update-kernel=ALL –args="console=ttyS0"``` - update kernela   
+
+## Zmiana parametrów 
 
 ### TODO   
 ### Dopisać coś na temat zmiany configu bootowania?  
