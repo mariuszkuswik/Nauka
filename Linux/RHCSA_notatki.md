@@ -1285,21 +1285,21 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 
 
 ### SYSTEMD JAKO UŻYTKOWNIK 
-
-DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW  
-
-**podman -v "volume_hosta:volume_kontenera:Z" - z dopiskiem ```:Z``` sam ogarnie SELinuxa!**
-
+  
+DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW    
+  
+**podman -v "volume_hosta:volume_kontenera:Z" - z dopiskiem ```:Z``` sam ogarnie SELinuxa!**  
+  
 ### Pomoc 
-```man -k podman``` - wyświetla wszystkie potrzebne komendy podmana 
+```man -k podman``` - wyświetla wszystkie potrzebne komendy podmana   
+  
+Budowa większości komend :   
+podman container/image/volume...  
+  
+```podman exec -u 0 -it "$nazwa_kontenera" bash``` - uruchomienie interaktywnego terminala jako **root** (```-u 0```)  
 
-Budowa większości komend : 
-podman container/image/volume...
-
-```podman exec -u 0 -it "$nazwa_kontenera" bash``` - uruchomienie interaktywnego terminala jako **root** (```-u 0```)
-
-
-podman container - operacje wykonywane na kontenerach   
+  
+podman container - operacje wykonywane na kontenerach     
     ```podman container list --all``` - listuje wszystkie kontenery, również te nieaktywne
 
 
