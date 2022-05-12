@@ -2,11 +2,10 @@
 
 ### [Screenshot](egzamin_praktyczny_cg_png.md)
 
- 1. [Create Users/Groups and Configure Superuser Access on Both Servers](#1-create-usersgroups-and-configure-superuser-access-on-both-servers)
- 2. [Configure yum Repositories on Both Servers and Install Packages/Modules](#2-configure-yum-repositories-on-both-servers-and-install-packagesmodules) 
- 3. [Configure IP Addresses on the Second Network Interface on the First Server](#3-configure-ip-addresses-on-the-second-network-interface-on-the-first-server)
- 4. [Managing Tuned Profiles and Individual Processes](#4-managing-tuned-profiles-and-individual-processes)
-5. [managing-tuned-profiles-and-individual-processes](#5-managing-tuned-profiles-and-individual-processes)
+ 1. [Create Users/Groups and Configure Superuser Access on Both Servers](#create-usersgroups-and-configure-superuser-access-on-both-servers)
+ 2. [Configure yum Repositories on Both Servers and Install Packages/Modules](#configure-yum-repositories-on-both-servers-and-install-packagesmodules) 
+ 3. [Configure IP Addresses on the Second Network Interface on the First Server](#configure-ip-addresses-on-the-second-network-interface-on-the-first-server)
+ 4. [Managing Tuned Profiles and Individual Processes](#managing-tuned-profiles-and-individual-processes)
 6. [manage-scheduled-tasks-on-the-first-server ](#6-manage-scheduled-tasks-on-the-first-server)
 7. [configure-time-service-clients-for-both-servers](#7-configure-time-service-clients-for-both-servers)
 8. [managing-the-system-bootloader](#8-managing-the-system-bootloader)
@@ -25,7 +24,7 @@
 
 # Managing RHEL 8 Servers
 
-## 1. Create Users/Groups and Configure Superuser Access on Both Servers
+## Create Users/Groups and Configure Superuser Access on Both Servers
 [Spis treści](#spis-treści)
 
 We're going to lay the groundwork here and use these local accounts for all the subsequent tasks. You can write a script to do this, or do it by hand, from the data in the input file for the script. The file contents are:  
@@ -59,7 +58,7 @@ Enable superuser privilages for the following local groups:
 - dba_intern: Command alias: MESSAGES   
   
   
-## 2. Configure yum Repositories on Both Servers and Install Packages/Modules  
+## Configure yum Repositories on Both Servers and Install Packages/Modules  
 [Spis treści](#spis-treści)
 
 You'll need to configure three repositories and install some software:    
@@ -104,7 +103,7 @@ Configure the repositories on the first server, then make an archive of the file
 - Check for system updates, but don't install them
 
 
-## 3. Configure IP Addresses on the Second Network Interface on the First Server
+## Configure IP Addresses on the Second Network Interface on the First Server
 [Spis treści](#spis-treści)  
 
 On the first server, configure the second interface's IPv4/IPv6 addresses using ```nmtui```.
@@ -126,7 +125,7 @@ By default, the ```systemd``` journal logs to memory in RHEL 8, in the location 
 Configure the ```systemd``` journal logs to be persistent on both servers, logging to ```/var/log/journal```.  
 
 
-## 5. Managing Tuned Profiles and Individual Processes
+## Managing Tuned Profiles and Individual Processes
 [Spis treści](#spis-treści)  
 
 **On the first server:**
