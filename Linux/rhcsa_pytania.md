@@ -810,24 +810,24 @@ This test exam requires the following setup:
 - A cleanly installed RHEL 8 virtual machine with the name server3.
 - Unless specifically mentioned, all tasks described next should be performed on the virtual machine.
 
-	- [ ] Bring down the virtual machine you have pre-installed and, in the KVM software, add an additional 5GiB hard disk to the virtual machine.
+	- [x] Bring down the virtual machine you have pre-installed and, in the KVM software, add an additional 5GiB hard disk to the virtual machine.
 	
 	- [ ] A repository is available at http://rhatcert.com/repo. Configure your server3 to use this repository and disable usage of any other repositories.
 	
-	- [ ] Create four users: bill, bob, betty, and belinda. Set their passwords to expire after 120 days and make sure they get a home directory in /home/users. (This means that, for instance, bill has /home/users/bill as his home directory.)
+	- [x] Create four users: bill, bob, betty, and belinda. Set their passwords to expire after 120 days and make sure they get a home directory in /home/users. (This means that, for instance, bill has /home/users/bill as his home directory.)
 	
-	- [ ] Create two groups: consultants and trainers. Make bill and bob members of the group consultants without overwriting any of their current group memberships. Make belinda and betty members of the group trainers without changing any of their current group memberships.
+	- [x] Create two groups: consultants and trainers. Make bill and bob members of the group consultants without overwriting any of their current group memberships. Make belinda and betty members of the group trainers without changing any of their current group memberships.
 	
-	- [ ] Create a shared group environment that meets the following requirements:  
+	- [x] Create a shared group environment that meets the following requirements:  
 		- [x] The group consultants has full read/write access to the directory /groups/consultants.
 		- [x] The group trainers has full read/write access to the directory /groups/consultants.
 		- [x] bill is head of the consultants department and should be able to remove files that have been created by any user in /groups/consultants. Any other members of the group consultants should have no rights to remove files they haven't created themselves.
-		- [ ] betty is head of the trainers department and should be able to remove files that have been created by any user in /groups/trainers. Any other members of the group trainers should have no rights to remove files they haven't created themselves.
+		- [x] betty is head of the trainers department and should be able to remove files that have been created by any user in /groups/trainers. Any other members of the group trainers should have no rights to remove files they haven't created themselves.
 		- [x] All new files created in /groups/trainers should automatically get group-owned by the group trainers.
 		- [x] All new files created in /groups/consultants should automatically get group-owned by the group consultants.
 		- [x] Members of the group consultants should be able to read files in /groups/trainers.
 	
-	- [ ] Create an LVM logical volume with the name lvfiles. This volume should have a size of 1GiB, and it should be allocated from a volume group with the name vgfiles. Format this volume with the ext4 file system and mount it persistently on the directory /files.
+	- [x] Create an LVM logical volume with the name lvfiles. This volume should have a size of 1GiB, and it should be allocated from a volume group with the name vgfiles. Format this volume with the ext4 file system and mount it persistently on the directory /files.
 	
 	- [ ] Enable the performance profile that optimizes your server for best throughput.
 	
