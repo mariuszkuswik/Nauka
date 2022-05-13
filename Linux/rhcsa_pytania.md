@@ -796,7 +796,7 @@ Part 2 (on Node2 Server) Task 1 [Controlling the Boot Process] Interrupt the boo
 https://learning.oreilly.com/learning-paths/red-hat-certified/8204091500000000003/9780136552512-/ch01.xhtml
 
 
-# vander
+# Vander
 
 # RHCSA Practice Exam 1
 [Spis treści](#spis-treści)
@@ -945,6 +945,8 @@ passwd root
 ## Exam A - odpowiedzi
 [Spis treści](#spis-treści)
 
+
+
 ## Exam B - odpowiedzi
 [Spis treści](#spis-treści)
 
@@ -961,6 +963,25 @@ passwd root
 
 ## vander Exam 1 - odpowiedzi
 [Spis treści](#spis-treści)
+
+3. 
+- and make sure they get a home directory in /home/users. (This means that, for instance, bill has /home/users/bill as his home directory.)
+```vim /etc/defaults/useradd 
+HOME=/home/users
+```
+
+- Create four users: bill, bob, betty, and belinda. 
+```
+useradd "$username"
+```
+
+- Set their passwords to expire after 120 days 
+```
+# Ustawienie czasu ważności hasła, wygaśnie za 120 dni
+sudo chage -M 120 "$username
+```
+
+
 
 
 ## vander Exam 2 - odpowiedzi
