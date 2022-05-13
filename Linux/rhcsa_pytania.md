@@ -925,18 +925,29 @@ Create a virtual machine with the name server4. Make sure it meets the following
 # Oreilly - odpowiedzi
 [Spis treści](#spis-treści)
 
-# Exam A - odpowiedzi
+#### Moje odpowiedzi
+1. Create user student with password password, and user root with password password.
+```
+useradd student 
+useradd root
+
+passwd stundent 
+passwd root
+```
+6. 
+```setfacl -m g:operations:r-x /groups/livingopensource```
+
+## Exam A - odpowiedzi
 [Spis treści](#spis-treści)
 
-# Exam B - odpowiedzi
+## Exam B - odpowiedzi
 [Spis treści](#spis-treści)
 
-# Exam C - odpowiedzi
+## Exam C - odpowiedzi
 [Spis treści](#spis-treści)
 
-# Exam D - odpowiedzi
+## Exam D - odpowiedzi
 [Spis treści](#spis-treści)
-
 
 
 
