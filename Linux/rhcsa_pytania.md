@@ -7,10 +7,12 @@
     - [Oreilly Practice Exam C](#RHCSA-Practice-Exam-C)  
     - [Oreilly Practice Exam D](#RHCSA-Practice-Exam-D)  
 2. [Examptopics](#Examptopics)   
-3. [RHCSA Sander 1](#RHCSA-Practice-Exam-1)
-4. [RHCSA Sander 2](#RHCSA-Practice-Exam-2)
+3. [vander](#vander)
+	- [RHCSA vander 1](#RHCSA-Practice-Exam-1)
+	- [RHCSA vander 2](#RHCSA-Practice-Exam-2)
 
 ---
+
 [Odpowiedzi](#odpowiedzi)
 
 1. [Oreilly odpowiedzi](#Oreilly---odpowiedzi)
@@ -18,9 +20,9 @@
 	2. [Exam B](#Exam-B---odpowiedzi)  
 	3. [Exam C](#Exam-C---odpowiedzi)  
 	4. [Exam D](#Exam-D---odpowiedzi)  
-2. [Sander odpowiedzi](#sander---odpowiedzi)
-	1. [RHCSA Sander 1](#Sander-Exam-1---odpowiedzi)
-	2. [RHCSA Sander 2](#Sander-Exam-2---odpowiedzi)
+2. [vander odpowiedzi](#vander---odpowiedzi)
+	1. [RHCSA vander 1](#vander-Exam-1---odpowiedzi)
+	2. [RHCSA vander 2](#vander-Exam-2---odpowiedzi)
 ---
 
 # Oreilly
@@ -793,6 +795,9 @@ Part 2 (on Node2 Server) Task 1 [Controlling the Boot Process] Interrupt the boo
 
 https://learning.oreilly.com/learning-paths/red-hat-certified/8204091500000000003/9780136552512-/ch01.xhtml
 
+
+# vander
+
 # RHCSA Practice Exam 1
 [Spis treści](#spis-treści)
 
@@ -917,9 +922,9 @@ Create a virtual machine with the name server4. Make sure it meets the following
 	2. [Exam B](#Exam-B---odpowiedzi)  
 	3. [Exam C](#Exam-C---odpowiedzi)  
 	4. [Exam D](#Exam-D---odpowiedzi)  
-2. [Sander odpowiedzi](#sander---odpowiedzi)
-	1. [RHCSA Sander 1](#Sander-Exam-1---odpowiedzi)
-	2. [RHCSA Sander 2](#Sander-Exam-2---odpowiedzi)
+2. [vander odpowiedzi](#vander---odpowiedzi)
+	1. [RHCSA vander 1](#vander-Exam-1---odpowiedzi)
+	2. [RHCSA vander 2](#vander-Exam-2---odpowiedzi)
 
 
 # Oreilly - odpowiedzi
@@ -951,14 +956,14 @@ passwd root
 
 
 
-# Sander - odpowiedzi
+# vander - odpowiedzi
 [Spis treści](#spis-treści)
 
-## Sander Exam 1 - odpowiedzi
+## vander Exam 1 - odpowiedzi
 [Spis treści](#spis-treści)
 
 
-## Sander Exam 2 - odpowiedzi
+## vander Exam 2 - odpowiedzi
 [Spis treści](#spis-treści)
 
 
