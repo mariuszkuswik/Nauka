@@ -819,13 +819,13 @@ This test exam requires the following setup:
 	- Create two groups: consultants and trainers. Make bill and bob members of the group consultants without overwriting any of their current group memberships. Make belinda and betty members of the group trainers without changing any of their current group memberships.
 	
 	- Create a shared group environment that meets the following requirements:
-		- The group consultants has full read/write access to the directory /groups/consultants.
-		- The group trainers has full read/write access to the directory /groups/consultants.
-		- bill is head of the consultants department and should be able to remove files that have been created by any user in /groups/consultants. Any other members of the group consultants should have no rights to remove files they haven't created themselves.
-		- betty is head of the trainers department and should be able to remove files that have been created by any user in /groups/trainers. Any other members of the group trainers should have no rights to remove files they haven't created themselves.
-		- All new files created in /groups/trainers should automatically get group-owned by the group trainers.
-		- All new files created in /groups/consultants should automatically get group-owned by the group consultants.
-		- Members of the group consultants should be able to read files in /groups/trainers.
+		- [ ] The group consultants has full read/write access to the directory /groups/consultants.
+		- [ ] The group trainers has full read/write access to the directory /groups/consultants.
+		- [ ] bill is head of the consultants department and should be able to remove files that have been created by any user in /groups/consultants. Any other members of the group consultants should have no rights to remove files they haven't created themselves.
+		- [ ] betty is head of the trainers department and should be able to remove files that have been created by any user in /groups/trainers. Any other members of the group trainers should have no rights to remove files they haven't created themselves.
+		- [ ] All new files created in /groups/trainers should automatically get group-owned by the group trainers.
+		- [ ] All new files created in /groups/consultants should automatically get group-owned by the group consultants.
+		- [ ] Members of the group consultants should be able to read files in /groups/trainers.
 	
 	- Create an LVM logical volume with the name lvfiles. This volume should have a size of 1GiB, and it should be allocated from a volume group with the name vgfiles. Format this volume with the ext4 file system and mount it persistently on the directory /files.
 	
