@@ -812,8 +812,7 @@ This test exam requires the following setup:
 
 	- [x] Bring down the virtual machine you have pre-installed and, in the KVM software, add an additional 5GiB hard disk to the virtual machine.
 	
-	- <input type="checkbox" value="test"> 
-	A repository is available at http://rhatcert.com/repo. Configure your server3 to use this repository and disable usage of any other repositories.
+	- [ ] A repository is available at http://rhatcert.com/repo. Configure your server3 to use this repository and disable usage of any other repositories.
 	
 	- [x] Create four users: bill, bob, betty, and belinda. Set their passwords to expire after 120 days and make sure they get a home directory in /home/users. (This means that, for instance, bill has /home/users/bill as his home directory.)
 	
