@@ -966,18 +966,18 @@ passwd root
 
 3. Dodawanie użytkowników
 
-- and make sure they get a home directory in /home/users. (This means that, for instance, bill has /home/users/bill as his home directory.)
+- and make sure they get a home directory in ```/home/users```. (This means that, for instance, bill has ```/home/users/bill``` as his home directory.)
 ```
 vim /etc/defaults/useradd 
 HOME=/home/users
 ```
 
-- Create four users: bill, bob, betty, and belinda. 
+- Create four users: ```bill, bob, betty, and belinda```. 
 ```
 useradd "$username"
 ```
 
-- Set their passwords to expire after 120 days 
+- Set their **passwords to expire** after ```120 days``` 
 ```
 # Ustawienie czasu ważności hasła, wygaśnie za 120 dni
 sudo chage -M 120 "$username
