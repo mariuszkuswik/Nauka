@@ -10,10 +10,12 @@
 3. [RHCSA Sander 1](#RHCSA-Practice-Exam-1)
 4. [RHCSA Sander 2](#RHCSA-Practice-Exam-2)
 
-- [Ćwiczenia praktyczne - odpowiedzi](#Ćwiczenia-praktyczne---odpowiedzi)
-
+---
+[Odpowiedzi](#odpowiedzi)
+---
 
 # Oreilly
+[Spis treści](#spis-treści)
 
 **Here are some tips to ensure your exam starts with a clean environment:**  
     - You do not need any external servers or resources.  
@@ -23,6 +25,7 @@
     - You should be able to complete each exam within two hours.  
 
 ## RHCSA Practice Exam A
+[Spis treści](#spis-treści)
 
 [Oreilly Practice Exam A](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780137341641/exama.xhtml#exama)
 
@@ -70,6 +73,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 
 ## RHCSA Practice Exam B
+[Spis treści](#spis-treści)
 
 [Oreilly Practice Exam B](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780137341641/examb.xhtml#examb)
 
@@ -110,6 +114,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 
 ## RHCSA Practice Exam C
+[Spis treści](#spis-treści)
 
 [Oreilly Practice Exam C](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780137341641/examc.xhtml#examc)
 
@@ -157,6 +162,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 
 ## RHCSA Practice Exam D
+[Spis treści](#spis-treści)
 
 [# RHCSA Practice Exam D](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780137341641/examd.xhtml#examd)
 
@@ -200,6 +206,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 
 # Examptopics
+[Spis treści](#spis-treści)
 
 Configure your Host Name, IP Address, Gateway and DNS. 
 Host name: station.domain40.example.com 
@@ -778,6 +785,7 @@ Part 2 (on Node2 Server) Task 1 [Controlling the Boot Process] Interrupt the boo
 https://learning.oreilly.com/learning-paths/red-hat-certified/8204091500000000003/9780136552512-/ch01.xhtml
 
 # RHCSA Practice Exam 1
+[Spis treści](#spis-treści)
 
 [Oreily Vander 1](https://learning.oreilly.com/learning-paths/red-hat-certified/8204091500000000003/9780136552512-/ch01.xhtml)
 
@@ -832,6 +840,7 @@ This test exam requires the following setup:
 
 
 # RHCSA Practice Exam 2
+[Spis treści](#spis-treści)
 
 [Oreily Vander 2](https://learning.oreilly.com/learning-paths/red-hat-certified/8204091500000000003/9780136552512-/ch02.xhtml)
 
@@ -891,7 +900,30 @@ Create a virtual machine with the name server4. Make sure it meets the following
 
 
 
-# Ćwiczenia praktyczne - odpowiedzi
+# Odpowiedzi
+[Spis treści](#spis-treści)
+
+1. [Oreilly](#Oreilly)
+
+
+# Exam-A---odpowiedzi
+- [Exam A](#Exam-A---odpowiedzi)  
+
+
+- [Exam B](#Exam-B---odpowiedzi)  
+- [Exam C](#Exam-C---odpowiedzi)  
+- [Exam D](#Exam-D---odpowiedzi)  
+
+
+# Sander Exam 1 - odpowiedzi
+3. [RHCSA Sander 1](#Sander-Exam-1---odpowiedzi)
+
+
+# Sander Exam 2 - odpowiedzi
+3. [RHCSA Sander 1](#Sander-Exam-2---odpowiedzi)
+
+
+
 
 
 ## Restart hasła roota

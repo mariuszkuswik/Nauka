@@ -1466,17 +1466,19 @@ All files put into the "shared" directory by "steve" or "oliver" should belong t
     - ustawienie wielkości extent dla LVM 
     - założenie LVM na podstawie np. 32 extents 
 - Użytkownicy 
-    - zablokowanie shella
+    - zablokowanie logowania do shella
 - Kontenery 
     - rsyslog - ma logować dla jakiegoś systemu, jak to sprawdzić 
     - musiałem stawiać kontenery jako root, sprawdzić dlaczego 
     - pobieranie kontenerów ze zdalnego repozytorium 
 - VDO
     - założenie filesystemu z miejscem logicznym
+    - pamiętać o włączeniu usługi!
+- Przypisanie IP do serwerów, zmiana hostname
 - Repo 
     - dodanie repo, appstream i baseos, nie ma żadnego innego przykładowego 
 - autofs
-    - home foldery
+    - home foldery, automatyczne mapowanie
 - SELinux 
     - jest błąd z serwerem httpd, nadanie kontekstu do folderu tak żeby serwer mógł odczytać pliki
     - zdiagnozowanie problemu z SELinux przez /var/log/messages
