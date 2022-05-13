@@ -964,9 +964,11 @@ passwd root
 ## vander Exam 1 - odpowiedzi
 [Spis treści](#spis-treści)
 
-3. 
+3. Dodawanie użytkowników
+
 - and make sure they get a home directory in /home/users. (This means that, for instance, bill has /home/users/bill as his home directory.)
-```vim /etc/defaults/useradd 
+```
+vim /etc/defaults/useradd 
 HOME=/home/users
 ```
 
