@@ -212,18 +212,19 @@ grep "$wyszukiwana_fraza" "$nazwa_pliku"
 # Tworzenie użytkowników 
 [Spis treści](#spis-tre%C5%9Bci)
 
-useradd - Ustalanie ustawień domyślnych użytkownika
-usermod - Modyfikowanie ustawień użytkownika
-userdel - Usuwanie użytkownika
+```/etc/defaults/useradd``` 
+```/etc/login.defs```
 
-### #TODO - dopisać 
+```useradd``` - Dodanie użytkownika
+```usermod``` - Modyfikowanie ustawień użytkownika
+```userdel``` - Usuwanie użytkownika
+ 
 - user z innym uuid
-
-useradd -u "$uid"
+```useradd -u "$uid"```
 
 - inna grupa podstawowa 
 - dodanie do innej grupy pobocznej 
-useradd -aG "$group_name" - samo użycie opcji ```G``` bez ```a``` powoduje zastępienie obecnych grup użytkownika tą jedną którą przypisujemy
+```useradd -aG "$group_name"``` - samo użycie opcji ```G``` bez ```a``` powoduje zastępienie obecnych grup użytkownika tą jedną którą przypisujemy
 
 - wyłączenie logowania 
 ```
@@ -233,7 +234,13 @@ vim /etc/passwd
 ```
 
 - blokowanie konta po określonym czasie 
+```chage``` 
+
 - wymuszenie zmiany hasła 
+```chage```
+
+# TODO - dopisać
+- ustawienie domyślnych ustawień nowo dodawanych użytkowników, tj. wygasanie hasła, katalogi domowe itd.
 
 # NFS
 [Spis treści](#spis-tre%C5%9Bci)
