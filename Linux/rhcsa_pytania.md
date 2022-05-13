@@ -853,51 +853,51 @@ This test exam requires the following setup:
 
 Welcome to the second practice exam for the Red Hat Certified System Administrator (RHCSA) Complete Video Course, Third Edition. This exam should take you two hours.  
 Create a virtual machine with the name server4. Make sure it meets the following requirements:  
-- A 20GiB hard disk is available.
+- [ ] A 20GiB hard disk is available.
 
-- The ```root``` password is set to "**password**".
+- [ ] The ```root``` password is set to "**password**".
 
-- The user ```student``` is created, with the password "**password**".
+- [ ] The user ```student``` is created, with the password "**password**".
 
-- Use custom partitioning to create a 1GiB ```/boot``` partition and a 12GiB ```/``` partition.
+- [ ] Use custom partitioning to create a 1GiB ```/boot``` partition and a 12GiB ```/``` partition.
 	
-	- Configure your installation disk as the default repository. Make sure to disable all other repositories.
+	- [ ] Configure your installation disk as the default repository. Make sure to disable all other repositories.
 	
-	- Configure your system to clean up ```/tmp``` files every hour.
+	- [ ] Configure your system to clean up ```/tmp``` files every hour.
 	
-	- Add two 10GiB hard disks to your virtual machine. Configure one Stratis volume with the name myvol on top of these hard drives and make sure the volume is mounted persistently and automatically while booting.
+	- [ ] Add two 10GiB hard disks to your virtual machine. Configure one Stratis volume with the name myvol on top of these hard drives and make sure the volume is mounted persistently and automatically while booting.
 	
-	- Write a shell script that meets the following requirements:
-		- It should evaluate the first argument provided.
-		- When no argument is provided, it should prompt the user for input.
-		- The script should evaluate whether the argument provided exists as a file or a directory, or doesn't exist at all.
-		- If the argument is a file, the script should give a long listing of the filename.
-		- If the argument is a directory, the script should give a long listing of the directory properties.
-		- If the argument provided doesn't exist as a file or directory, the script should prompt with "Argument doesn't exist," where the text argument needs to be replaced with the actual argument. Also, in this case, this script should stop immediately with exit code 6.
+	- [ ] Write a shell script that meets the following requirements:
+		- [ ] It should evaluate the first argument provided.
+		- [ ] When no argument is provided, it should prompt the user for input.
+		- [ ] The script should evaluate whether the argument provided exists as a file or a directory, or doesn't exist at all.
+		- [ ] If the argument is a file, the script should give a long listing of the filename.
+		- [ ] If the argument is a directory, the script should give a long listing of the directory properties.
+		- [ ] If the argument provided doesn't exist as a file or directory, the script should prompt with "Argument doesn't exist," where the text argument needs to be replaced with the actual argument. Also, in this case, this script should stop immediately with exit code 6.
 	
-	- Find all files that have the SUID permission set and write the result to the file /tmp/suid.txt.
+	- [ ] Find all files that have the SUID permission set and write the result to the file /tmp/suid.txt.
 	
-	- Create the user ```lisa```. Ensure that she needs to reset her password every 30 days. Ensure that she is able to manage passwords for all users, but not the user root.
+	- [ ] Create the user ```lisa```. Ensure that she needs to reset her password every 30 days. Ensure that she is able to manage passwords for all users, but not the user root.
 	
-	- Ensure that user ```lisa``` has permissions to modify all files in the ```/etc``` directory, without changing user or group ownership.
+	- [ ] Ensure that user ```lisa``` has permissions to modify all files in the ```/etc``` directory, without changing user or group ownership.
 	
-	- On the primary hard disk, use all the remaining disk space for an LVM volume group. In this volume group, create a 2GiB logical volume to be used as swap space.
+	- [ ] On the primary hard disk, use all the remaining disk space for an LVM volume group. In this volume group, create a 2GiB logical volume to be used as swap space.
 	
-	- On your primary network interface, configure a secondary IP address of ```10.0.0.10/24```.
+	- [ ] On your primary network interface, configure a secondary IP address of ```10.0.0.10/24```.
 	
-	- Practice the procedure to reset a root password, assuming you don't know the current root password.
+	- [ ] Practice the procedure to reset a root password, assuming you don't know the current root password.
 	
-	- Secure the SSH service, such that only user ```lisa``` is allowed to log in.
+	- [ ] Secure the SSH service, such that only user ```lisa``` is allowed to log in.
 	
-	- Make sure that after a system restart, the system by default boots a graphical environment. (Even if it is doing this already by default, type the command again so that it is in your Bash history.)
+	- [ ] Make sure that after a system restart, the system by default boots a graphical environment. (Even if it is doing this already by default, type the command again so that it is in your Bash history.)
 	
-	- Configure Bash history such that the last 2500 commands used are written to the history file.
+	- [ ] Configure Bash history such that the last 2500 commands used are written to the history file.
 	
-	- Install the vsftpd service. Ensure that it is started automatically after a reboot, and configure it such that anonymous users are able to upload files.
+	- [ ] Install the vsftpd service. Ensure that it is started automatically after a reboot, and configure it such that anonymous users are able to upload files.
 	
-	- Configure your system to use PHP version 7.1 as the default version.
+	- [ ] Configure your system to use PHP version 7.1 as the default version.
 	
-	- Add a new disk to your virtual machine. On this disk, create a VDO volume with a virtual size of 1TiB.
+	- [ ] Add a new disk to your virtual machine. On this disk, create a VDO volume with a virtual size of 1TiB.
 
 
 
