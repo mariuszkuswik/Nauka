@@ -818,7 +818,7 @@ This test exam requires the following setup:
 	
 	- Create two groups: consultants and trainers. Make bill and bob members of the group consultants without overwriting any of their current group memberships. Make belinda and betty members of the group trainers without changing any of their current group memberships.
 	
-	- Create a shared group environment that meets the following requirements:  
+	- [] Create a shared group environment that meets the following requirements:  
 		- [ ] The group consultants has full read/write access to the directory /groups/consultants.
 		- [ ] The group trainers has full read/write access to the directory /groups/consultants.
 		- [ ] bill is head of the consultants department and should be able to remove files that have been created by any user in /groups/consultants. Any other members of the group consultants should have no rights to remove files they haven't created themselves.
