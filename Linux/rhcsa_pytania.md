@@ -829,11 +829,11 @@ This test exam requires the following setup:
 	
 	- [x] Create an LVM logical volume with the name lvfiles. This volume should have a size of 1GiB, and it should be allocated from a volume group with the name vgfiles. Format this volume with the ext4 file system and mount it persistently on the directory /files.
 	
-	- [-] Enable the performance profile that optimizes your server for best throughput.
+	- [x] Enable the performance profile that optimizes your server for best throughput.
 	
-	- [-] Create a scheduled job that will send the message "hello" to the system-logging mechanism at the top of each hour.
+	- [x] Create a scheduled job that will send the message "hello" to the system-logging mechanism at the top of each hour.
 	
-	- [-] Make the systemd journal persistent.
+	- [x] Make the systemd journal persistent.
 
 
 
