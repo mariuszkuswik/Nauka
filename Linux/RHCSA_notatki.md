@@ -218,9 +218,20 @@ userdel - Usuwanie użytkownika
 
 ### #TODO - dopisać 
 - user z innym uuid
+
+useradd -u "$uid"
+
 - inna grupa podstawowa 
 - dodanie do innej grupy pobocznej 
+useradd -aG "$group_name" - samo użycie opcji ```G``` bez ```a``` powoduje zastępienie obecnych grup użytkownika tą jedną którą przypisujemy
+
 - wyłączenie logowania 
+```
+vim /etc/passwd 
+# dodanie jako shell 
+/sbin/nologin
+```
+
 - blokowanie konta po określonym czasie 
 - wymuszenie zmiany hasła 
 
