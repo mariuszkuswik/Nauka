@@ -812,7 +812,7 @@ This test exam requires the following setup:
 
 	- [x] Bring down the virtual machine you have pre-installed and, in the KVM software, add an additional 5GiB hard disk to the virtual machine.
 	
-	- [ ] A repository is available at http://rhatcert.com/repo. Configure your server3 to use this repository and disable usage of any other repositories.
+	- <input type="checkbox"> A repository is available at http://rhatcert.com/repo. Configure your server3 to use this repository and disable usage of any other repositories.
 	
 	- [x] Create four users: bill, bob, betty, and belinda. Set their passwords to expire after 120 days and make sure they get a home directory in /home/users. (This means that, for instance, bill has /home/users/bill as his home directory.)
 	
@@ -829,11 +829,11 @@ This test exam requires the following setup:
 	
 	- [x] Create an LVM logical volume with the name lvfiles. This volume should have a size of 1GiB, and it should be allocated from a volume group with the name vgfiles. Format this volume with the ext4 file system and mount it persistently on the directory /files.
 	
-	- [ ] Enable the performance profile that optimizes your server for best throughput.
+	- [-] Enable the performance profile that optimizes your server for best throughput.
 	
-	- [ ] Create a scheduled job that will send the message "hello" to the system-logging mechanism at the top of each hour.
+	- [-] Create a scheduled job that will send the message "hello" to the system-logging mechanism at the top of each hour.
 	
-	- [ ] Make the systemd journal persistent.
+	- [-] Make the systemd journal persistent.
 
 
 
