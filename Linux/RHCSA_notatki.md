@@ -1454,6 +1454,34 @@ All files put into the "shared" directory by "steve" or "oliver" should belong t
 
 [autofs](#autofs)
 
+
+
+# Po egzaminie
+
+- RESTART HASŁA ROOT
+- LVM 
+    - rozszerzanie wolumenu bez uszkodzenia pierwotnego filesystemu
+    - dodawanie SWAPu jako nowy lvm
+    - założenie całości LVM
+    - ustawienie wielkości extent dla LVM 
+    - założenie LVM na podstawie np. 32 extents 
+- Użytkownicy 
+    - zablokowanie shella
+- Kontenery 
+    - rsyslog - ma logować dla jakiegoś systemu, jak to sprawdzić 
+    - musiałem stawiać kontenery jako root, sprawdzić dlaczego 
+    - pobieranie kontenerów ze zdalnego repozytorium 
+- VDO
+    - założenie filesystemu z miejscem logicznym
+- Repo 
+    - dodanie repo, appstream i baseos, nie ma żadnego innego przykładowego 
+- autofs
+    - home foldery
+- SELinux 
+    - jest błąd z serwerem httpd, nadanie kontekstu do folderu tak żeby serwer mógł odczytać pliki
+    - zdiagnozowanie problemu z SELinux przez /var/log/messages
+
+
 # Koniec
 
 
