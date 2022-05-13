@@ -103,7 +103,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 4. Set default values for new users. Ensure that an empty file with the name NEWFILE is copied to the home directory of each new user that is created.
 
-5. Create users laura and linda and make them members of the group livingopensource as a secondary group membership. Also, create users lisa and lori and make them members of the group operations as a secondary group.
+5. Create users laura and linda and make them members of the group livingopensource as a secondary group membership. Also, create users ```lisa``` and lori and make them members of the group operations as a secondary group.
 
 6. Create shared group directories /groups/livingopensource and /groups/operations and make sure these groups meet the following requirements:
     - Members of the group livingopensource have full access to their directory.
@@ -855,45 +855,39 @@ Welcome to the second practice exam for the Red Hat Certified System Administrat
 Create a virtual machine with the name server4. Make sure it meets the following requirements:  
 - A 20GiB hard disk is available.
 
-- The root password is set to "password".
+- The ```root``` password is set to "**password**".
 
-- The user "student" is created, with the password "password".
+- The user ```student``` is created, with the password "**password**".
 
-- Use custom partitioning to create a 1GiB /boot partition and a 12GiB / partition.
+- Use custom partitioning to create a 1GiB ```/boot``` partition and a 12GiB ```/``` partition.
 	
 	- Configure your installation disk as the default repository. Make sure to disable all other repositories.
 	
-	- Configure your system to clean up /tmp files every hour.
+	- Configure your system to clean up ```/tmp``` files every hour.
 	
 	- Add two 10GiB hard disks to your virtual machine. Configure one Stratis volume with the name myvol on top of these hard drives and make sure the volume is mounted persistently and automatically while booting.
 	
 	- Write a shell script that meets the following requirements:
-	
-	- It should evaluate the first argument provided.
-	
-	- When no argument is provided, it should prompt the user for input.
-	
-	- The script should evaluate whether the argument provided exists as a file or a directory, or doesn't exist at all.
-	
-	- If the argument is a file, the script should give a long listing of the filename.
-	
-	- If the argument is a directory, the script should give a long listing of the directory properties.
-	
-	- If the argument provided doesn't exist as a file or directory, the script should prompt with "Argument doesn't exist," where the text argument needs to be replaced with the actual argument. Also, in this case, this script should stop immediately with exit code 6.
+		- It should evaluate the first argument provided.
+		- When no argument is provided, it should prompt the user for input.
+		- The script should evaluate whether the argument provided exists as a file or a directory, or doesn't exist at all.
+		- If the argument is a file, the script should give a long listing of the filename.
+		- If the argument is a directory, the script should give a long listing of the directory properties.
+		- If the argument provided doesn't exist as a file or directory, the script should prompt with "Argument doesn't exist," where the text argument needs to be replaced with the actual argument. Also, in this case, this script should stop immediately with exit code 6.
 	
 	- Find all files that have the SUID permission set and write the result to the file /tmp/suid.txt.
 	
-	- Create the user lisa. Ensure that she needs to reset her password every 30 days. Ensure that she is able to manage passwords for all users, but not the user root.
+	- Create the user ```lisa```. Ensure that she needs to reset her password every 30 days. Ensure that she is able to manage passwords for all users, but not the user root.
 	
-	- Ensure that user lisa has permissions to modify all files in the /etc directory, without changing user or group ownership.
+	- Ensure that user ```lisa``` has permissions to modify all files in the ```/etc``` directory, without changing user or group ownership.
 	
 	- On the primary hard disk, use all the remaining disk space for an LVM volume group. In this volume group, create a 2GiB logical volume to be used as swap space.
 	
-	- On your primary network interface, configure a secondary IP address of 10.0.0.10/24.
+	- On your primary network interface, configure a secondary IP address of ```10.0.0.10/24```.
 	
 	- Practice the procedure to reset a root password, assuming you don't know the current root password.
 	
-	- Secure the SSH service, such that only user lisa is allowed to log in.
+	- Secure the SSH service, such that only user ```lisa``` is allowed to log in.
 	
 	- Make sure that after a system restart, the system by default boots a graphical environment. (Even if it is doing this already by default, type the command again so that it is in your Bash history.)
 	
