@@ -12,6 +12,15 @@
 
 ---
 [Odpowiedzi](#odpowiedzi)
+
+1. [Oreilly odpowiedzi](#Oreilly---odpowiedzi)
+	1. [Exam A](#Exam-A---odpowiedzi)  
+	2. [Exam B](#Exam-B---odpowiedzi)  
+	3. [Exam C](#Exam-C---odpowiedzi)  
+	4. [Exam D](#Exam-D---odpowiedzi)  
+2. [Sander odpowiedzi](#sander---odpowiedzi)
+	1. [RHCSA Sander 1](#Sander-Exam-1---odpowiedzi)
+	2. [RHCSA Sander 2](#Sander-Exam-2---odpowiedzi)
 ---
 
 # Oreilly
@@ -903,25 +912,43 @@ Create a virtual machine with the name server4. Make sure it meets the following
 # Odpowiedzi
 [Spis treści](#spis-treści)
 
-1. [Oreilly](#Oreilly)
+1. [Oreilly odpowiedzi](#Oreilly---odpowiedzi)
+	1. [Exam A](#Exam-A---odpowiedzi)  
+	2. [Exam B](#Exam-B---odpowiedzi)  
+	3. [Exam C](#Exam-C---odpowiedzi)  
+	4. [Exam D](#Exam-D---odpowiedzi)  
+2. [Sander odpowiedzi](#sander---odpowiedzi)
+	1. [RHCSA Sander 1](#Sander-Exam-1---odpowiedzi)
+	2. [RHCSA Sander 2](#Sander-Exam-2---odpowiedzi)
 
 
-# Exam-A---odpowiedzi
-- [Exam A](#Exam-A---odpowiedzi)  
+# Oreilly - odpowiedzi
+[Spis treści](#spis-treści)
+
+# Exam A - odpowiedzi
+[Spis treści](#spis-treści)
+
+# Exam B - odpowiedzi
+[Spis treści](#spis-treści)
+
+# Exam C - odpowiedzi
+[Spis treści](#spis-treści)
+
+# Exam D - odpowiedzi
+[Spis treści](#spis-treści)
 
 
-- [Exam B](#Exam-B---odpowiedzi)  
-- [Exam C](#Exam-C---odpowiedzi)  
-- [Exam D](#Exam-D---odpowiedzi)  
 
 
-# Sander Exam 1 - odpowiedzi
-3. [RHCSA Sander 1](#Sander-Exam-1---odpowiedzi)
+# Sander - odpowiedzi
+[Spis treści](#spis-treści)
+
+## Sander Exam 1 - odpowiedzi
+[Spis treści](#spis-treści)
 
 
-# Sander Exam 2 - odpowiedzi
-3. [RHCSA Sander 1](#Sander-Exam-2---odpowiedzi)
-
+## Sander Exam 2 - odpowiedzi
+[Spis treści](#spis-treści)
 
 
 
