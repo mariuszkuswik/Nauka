@@ -1459,21 +1459,10 @@ All files put into the "shared" directory by "steve" or "oliver" should belong t
 
 # Po egzaminie
 
-## Randomowe notatki na świeżo
-RHCSA
-- kontenery, nie dzialalo mi, nie chcial odpalic sie system, precwiczyc logowanie 
-	- musialem odpalac kontenery jako root
-- vdo
-	- przecwiczyc stawianie
-- lvm 
-	- ustawienie extent volume
-	- rozszerzanie istniejacych lvm z filesystemami ext3, ext4, xfs 
-
-
 ## Opracowane pytania
 - RESTART HASŁA ROOT
 - LVM 
-    - rozszerzanie wolumenu bez uszkodzenia pierwotnego filesystemu
+    - rozszerzanie wolumenu bez uszkodzenia pierwotnego filesystemu ext3, ext4, xfs 
     - dodawanie SWAPu jako nowy lvm
     - założenie całości LVM
     - ustawienie wielkości extent dla LVM 
