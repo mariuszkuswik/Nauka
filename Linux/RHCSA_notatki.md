@@ -1450,6 +1450,7 @@ All files put into the "shared" directory by "steve" or "oliver" should belong t
 dnf-config-manager - upraszcza dodawanie repo 
 
 [Przywracanie hasła roota](#przywracanie-hasła-roota)
+
 [man](#man)
 
 - ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU
@@ -1458,34 +1459,20 @@ dnf-config-manager - upraszcza dodawanie repo
 [autofs](#autofs)
 
 
-
-
-
 [Kontenery](#Kontenery)
 
 DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW  
 
-
-
 **podman -v "volume_hosta:volume_kontenera:Z" - z dopiskiem ```:Z``` sam ogarnie SELinuxa!**
-
 podman generate systemd - generuje plik systemd który z nazwą service kopiujemy do ```/etc/systemd/system``` - ```man systemd.unit```
-
-
-
 
 
 ### Narzędzie do edycji parametrów konsoli?
 
 grubby –update-kernel=ALL –args="console=ttyS0"
 
-
-
 ### TODO 
-
 ### Dopisać coś na temat zmiany configu bootowania?
-
-
 
 Zadanie 18 - update kernel
 
@@ -1494,19 +1481,12 @@ https://github.com/chlebik/rhcsa-practice-questions/blob/master/questions/018_up
 dnf update kernel - updatuje kernel
 
 
-
 ZADANIE 12 CHELBIK
-
 grub2-mkconfig 
 
 /boot - 
 
-
-
 OPISAĆ
-
-
-
 
 
 # Po egzaminie
