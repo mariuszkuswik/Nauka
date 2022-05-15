@@ -1451,6 +1451,10 @@ dnf-config-manager - upraszcza dodawanie repo
 
 [Przywracanie hasła roota](#przywracanie-hasła-roota)
 
+[Skrypty]
+
+```man sh``` - lista zmiennych specjalnych
+
 [repo]
 
 dnf repolist - listuje repo i sprawdza je
