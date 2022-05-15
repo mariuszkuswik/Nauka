@@ -861,10 +861,12 @@ Create a virtual machine with the name server4. Make sure it meets the following
 - [x] The user ```student``` is created, with the password "**password**".
 	
 	- [ ] Configure your installation disk as the default repository. Make sure to disable all other repositories.
+		- Appstream - http://mirror.centos.org/centos/8-stream/AppStream/x86_64/os/
+		- BaseOS - http://ftp.man.poznan.pl/linux/centos/8-stream/BaseOS/x86_64/os/
 	
-	- [ ] Configure your system to clean up ```/tmp``` files every hour.
+	- [x] Configure your system to clean up ```/tmp``` files every hour.
 	
-	- [ ] Add two 10GiB hard disks to your virtual machine. Configure one Stratis volume with the name myvol on top of these hard drives and make sure the volume is mounted persistently and automatically while booting.
+	- [x] Add two 10GiB hard disks to your virtual machine. Configure one Stratis volume with the name myvol on top of these hard drives and make sure the volume is mounted persistently and automatically while booting.
 	
 	- [ ] Write a shell script that meets the following requirements:
 		- [ ] It should evaluate the first argument provided.

@@ -1451,9 +1451,28 @@ dnf-config-manager - upraszcza dodawanie repo
 
 [Przywracanie hasła roota](#przywracanie-hasła-roota)
 
+[repo]
+
+dnf repolist - listuje repo i sprawdza je
+
+[$name]
+name=$name
+baseurl=file:/// lub http://
+gpgcheck=no
+sslverify=no
+
+
+yum --exclude=packgeName1\* --exclude=packgeName2\* update
+
+
+
 [man](#man)
 
 - ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU
+
+cron
+
+- ```cronnext -c``` pokazuje datę wszystkich następnych cronjobów 
 
 
 [autofs](#autofs)
