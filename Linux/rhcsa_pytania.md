@@ -878,17 +878,17 @@ Create a virtual machine with the name server4. Make sure it meets the following
 	
 	- [x] Find all files that have the SUID permission set and write the result to the file /tmp/suid.txt.
 	
-	- [ ] Create the user ```lisa```. Ensure that she needs to reset her password every 30 days. Ensure that she is able to manage passwords for all users, but not the user root.
+	- [x] Create the user ```lisa```. Ensure that she needs to reset her password every 30 days. Ensure that she is able to manage passwords for all users, but not the user root.
 	
-	- [ ] Ensure that user ```lisa``` has permissions to modify all files in the ```/etc``` directory, without changing user or group ownership.
+	- [x] Ensure that user ```lisa``` has permissions to modify all files in the ```/etc``` directory, without changing user or group ownership.
 	
-	- [ ] On the primary hard disk, use all the remaining disk space for an LVM volume group. In this volume group, create a 2GiB logical volume to be used as swap space.
+	- [x] On the primary hard disk, use all the remaining disk space for an LVM volume group. In this volume group, create a 2GiB logical volume to be used as swap space.
 	
-	- [ ] On your primary network interface, configure a secondary IP address of ```10.0.0.10/24```.
+	- [x] On your primary network interface, configure a secondary IP address of ```10.0.0.10/24```.
 	
 	- [ ] Practice the procedure to reset a root password, assuming you don't know the current root password.
 	
-	- [ ] Secure the SSH service, such that only user ```lisa``` is allowed to log in.
+	- [x] Secure the SSH service, such that only user ```lisa``` is allowed to log in.
 	
 	- [ ] Make sure that after a system restart, the system by default boots a graphical environment. (Even if it is doing this already by default, type the command again so that it is in your Bash history.)
 	
