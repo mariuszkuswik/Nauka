@@ -814,6 +814,7 @@ This test exam requires the following setup:
 	
 	- [ ] A repository is available at http://rhatcert.com/repo. Configure your server3 to use this repository and disable usage of any other repositories.
 	
+	
 	- [x] Create four users: bill, bob, betty, and belinda. Set their passwords to expire after 120 days and make sure they get a home directory in /home/users. (This means that, for instance, bill has /home/users/bill as his home directory.)
 	
 	- [x] Create two groups: consultants and trainers. Make bill and bob members of the group consultants without overwriting any of their current group memberships. Make belinda and betty members of the group trainers without changing any of their current group memberships.
@@ -894,11 +895,11 @@ Create a virtual machine with the name server4. Make sure it meets the following
 	
 	- [x] Configure Bash history such that the last 2500 commands used are written to the history file.
 	
-	- [ ] Install the vsftpd service. Ensure that it is started automatically after a reboot, and configure it such that anonymous users are able to upload files.
+	- [x] Install the vsftpd service. Ensure that it is started automatically after a reboot, and configure it such that anonymous users are able to upload files.
 	
 	- [ ] Configure your system to use PHP version 7.1 as the default version.
 	
-	- [ ] Add a new disk to your virtual machine. On this disk, create a VDO volume with a virtual size of 1TiB.
+	- [-] Add a new disk to your virtual machine. On this disk, create a VDO volume with a virtual size of 1TiB.
 
 
 
