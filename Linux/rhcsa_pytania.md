@@ -890,9 +890,9 @@ Create a virtual machine with the name server4. Make sure it meets the following
 	
 	- [x] Secure the SSH service, such that only user ```lisa``` is allowed to log in.
 	
-	- [ ] Make sure that after a system restart, the system by default boots a graphical environment. (Even if it is doing this already by default, type the command again so that it is in your Bash history.)
+	- [-] Make sure that after a system restart, the system by default boots a graphical environment. (Even if it is doing this already by default, type the command again so that it is in your Bash history.)
 	
-	- [ ] Configure Bash history such that the last 2500 commands used are written to the history file.
+	- [x] Configure Bash history such that the last 2500 commands used are written to the history file.
 	
 	- [ ] Install the vsftpd service. Ensure that it is started automatically after a reboot, and configure it such that anonymous users are able to upload files.
 	
