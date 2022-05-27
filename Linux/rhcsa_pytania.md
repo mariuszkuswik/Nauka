@@ -64,21 +64,21 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
     - [x] Others have no access to the group directories.
     - [x] Members of the group *operations* have read access to the directory ```/groups/livingopensource```.
 
-- [ ] Create a 2-GiB volume group, using 8-MiB physical extents. In this volume group, create a 500-MiB logical volume with the name mydata, and mount it persistently on the directory ```/mydata```.
+- [x] Create a 2-GiB volume group, using 8-MiB physical extents. In this volume group, create a 500-MiB logical volume with the name mydata, and mount it persistently on the directory ```/mydata```.
 
 - [-] Find all files that are owned by user **edwin** and copy them to the directory ```/rootedwinfiles```.
 
 - [-/+ zrobione, powtórzyć] Schedule a task that runs the command ```touch /etc/motd``` every day from Monday through Friday at 2 a.m.
 
-- [ ] Add a new 10-GiB virtual disk to your virtual machine. On this disk, add a **VDO** volume with a size of 20 GiB and mount it persistently.
+- [x] Add a new 10-GiB virtual disk to your virtual machine. On this disk, add a **VDO** volume with a size of 20 GiB and mount it persistently.
 
 - [ ] Create user **bob** and set this user’s shell so that only this user can change the password.
 
-- [ ] Install the ```vsftpd``` service and ensure that it is started automatically at reboot.
+- [x] Install the ```vsftpd``` service and ensure that it is started automatically at reboot.
 
-- [ ] Create a **container** that runs the rsyslog service. This container should be configured to write log files persistently to the directory ```/var/log/logcontainer/``` on the host operating system. Run this container with the same user account that the rsyslog service normally uses.
+- [x] Create a **container** that runs the rsyslog service. This container should be configured to write log files persistently to the directory ```/var/log/logcontainer/``` on the host operating system. Run this container with the same user account that the rsyslog service normally uses.
 
-- [ ] Configure this container such that it is automatically started on system boot as a system user service.
+- [x] Configure this container such that it is automatically started on system boot as a system user service.
 
 
 
@@ -95,31 +95,31 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 - Server with GUI installation pattern
 
 
-1. Create user **student** with password **password**, and user root with password **password**.
+- [ ] Create user **student** with password **password**, and user root with password **password**.
 
-2. Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
+- [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
-3. Create a 1-GB XFS partition on ```/dev/sdb```. Mount it persistently on the directory ```/mydata```, using the label mylabel.
+- [ ] Create a 1-GB XFS partition on ```/dev/sdb```. Mount it persistently on the directory ```/mydata```, using the label mylabel.
 
 - [x] Set default values for new users. Ensure that an empty file with the name ```NEWFILE``` is copied to the home directory of each new user that is created.
 
-5. Create users laura and linda and make them members of the group livingopensource as a secondary group membership. Also, create users **lisa** and lori and make them members of the group operations as a secondary group.
+- [ ] Create users laura and linda and make them members of the group livingopensource as a secondary group membership. Also, create users **lisa** and lori and make them members of the group operations as a secondary group.
 
-6. Create shared group directories ```/groups/livingopensource``` and ```/groups/operations``` and make sure these groups meet the following requirements:
-    - Members of the group **livingopensource** have full access to their directory.
-    - Members of the group **operations** have full access to their directory.
-    - Users should be allowed to delete only their own files.
-    - Others should have no access to any of the directories.
+- [ ] Create shared group directories ```/groups/livingopensource``` and ```/groups/operations``` and make sure these groups meet the following requirements:
+    - [ ] Members of the group **livingopensource** have full access to their directory.
+    - [ ] Members of the group **operations** have full access to their directory.
+    - [ ] Users should be allowed to delete only their own files.
+    - [ ] Others should have no access to any of the directories.
 
-7. Create a 2-GiB swap partition and mount it persistently.
+- [ ] Create a 2-GiB swap partition and mount it persistently.
 
-8. Resize the LVM logical volume that contains the root file system and add 1 GiB.
+- [ ] Resize the LVM logical volume that contains the root file system and add 1 GiB.
 
 - [-] Set your server to use the recommended tuned profile.
 
 - [x] Create user vicky with the custom **UID 2008**.
 
-11. Configure your server to synchronize time with myserver.example.com. (Note that this server does not have to exist.)
+- [ ] Configure your server to synchronize time with myserver.example.com. (Note that this server does not have to exist.)
 
 - [x] Install a web server and ensure that it is started automatically.
 
@@ -137,36 +137,36 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 
 
-1. Create user **student** with password **password**, and user root with password **password**.
+- [ ] Create user **student** with password **password**, and user root with password **password**.
 
-2. Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
+- [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
-3. Reboot your server. Assume that you don’t know the root password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
+- [ ] Reboot your server. Assume that you don’t know the root password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
 
-4. Set default values for new users. Make sure that any new user password has a length of at least six characters and must be used for at least three days before it can be reset.
+- [ ] Set default values for new users. Make sure that any new user password has a length of at least six characters and must be used for at least three days before it can be reset.
 
-5. Create users **edwin** and **santos** and make them members of the group sales as a secondary group membership. Also, create users serene and alex and make them members of the group account as a secondary group.
+- [ ] Create users **edwin** and **santos** and make them members of the group sales as a secondary group membership. Also, create users serene and alex and make them members of the group account as a secondary group.
 
-6. Create shared group directories ```/groups/sales``` and ```/groups/account```, and make sure these groups meet the following requirements:
-    - Members of the group sales have full access to their directory.
-    - Members of the group account have full access to their directory.
-    - Users have permissions to delete only their own files, but alex is the general manager, so user alex has access to delete all users’ files.
+- [ ] Create shared group directories ```/groups/sales``` and ```/groups/account```, and make sure these groups meet the following requirements:
+    - [ ] Members of the group sales have full access to their directory.
+    - [ ] Members of the group account have full access to their directory.
+    - [ ] Users have permissions to delete only their own files, but alex is the general manager, so user alex has access to delete all users’ files.
 
-7. **Create a 4-GiB volume group**, using a physical extent size of 2 MiB. In this volume group, create a 1-GiB logical volume with the **name myfiles** and mount it persistently on ```/myfiles```.
+- [ ] **Create a 4-GiB volume group**, using a physical extent size of 2 MiB. In this volume group, create a 1-GiB logical volume with the **name myfiles** and mount it persistently on ```/myfiles```.
 
-8. Create a group sysadmins. Make users **edwin** and **santos** members of this group and ensure that all members of this group can run all administrative commands using sudo.
+- [ ] Create a group sysadmins. Make users **edwin** and **santos** members of this group and ensure that all members of this group can run all administrative commands using sudo.
 
-9. Optimize your server with the appropriate profile that optimizes throughput.
+- [ ] Optimize your server with the appropriate profile that optimizes throughput.
 
-10. Add a new disk to your virtual machine with a size of 10 GiB. On this disk, create a **VDO** volume with a size of 50 GiB and mount it persistently.
+- [ ] Add a new disk to your virtual machine with a size of 10 GiB. On this disk, create a **VDO** volume with a size of 50 GiB and mount it persistently.
 
-11. Configure your server to synchronize time with serverabc.example.com, where serverabc is an alias to ```myserver.example.com```. Note that this server does not have to exist to accomplish this exercise.
+- [ ] Configure your server to synchronize time with serverabc.example.com, where serverabc is an alias to ```myserver.example.com```. Note that this server does not have to exist to accomplish this exercise.
 
-12. Configure a web server to use the nondefault document root ```/webfiles```. In this directory, create a file index.html that has the contents hello world and then test that it works.
+- [ ] Configure a web server to use the nondefault document root ```/webfiles```. In this directory, create a file index.html that has the contents hello world and then test that it works.
 
-13. Configure your system to automatically start a mariadb container. This container should expose its services at port 3306 and use the directory ```/var/mariadb-container``` on the host for persistent storage of files it writes to the ```/var``` directory.
+- [ ] Configure your system to automatically start a mariadb container. This container should expose its services at port 3306 and use the directory ```/var/mariadb-container``` on the host for persistent storage of files it writes to the ```/var``` directory.
 
-14. Configure your system such that the container created in step 14 is automatically started as a Systemd user container.
+- [ ] Configure your system such that the container created in step 14 is automatically started as a Systemd user container.
 
 
 
@@ -185,33 +185,33 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 - Server with GUI installation pattern
 
 
-1. Create user **student** with password **password**, and user root with password **password**.
+- [ ] Create user **student** with password **password**, and user root with password **password**.
 
-2. Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
+- [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
-3. Create a 500-MiB partition on your second hard disk, and format it with the Ext4 file system. Mount it persistently on the directory **/mydata**, using the label **mydata**.
+- [ ] Create a 500-MiB partition on your second hard disk, and format it with the Ext4 file system. Mount it persistently on the directory **/mydata**, using the label **mydata**.
 
-4. Set default values for new users. A user should get a warning three days before expiration of the current password. Also, new passwords should have a maximum lifetime of 120 days.
+- [ ] Set default values for new users. A user should get a warning three days before expiration of the current password. Also, new passwords should have a maximum lifetime of 120 days.
 
-5. Create users **edwin** and **santos** and make them members of the group livingopensource as a secondary group membership. Also, create users serene and alex and make them members of the group operations as a secondary group.
+- [ ] Create users **edwin** and **santos** and make them members of the group livingopensource as a secondary group membership. Also, create users serene and alex and make them members of the group operations as a secondary group.
 
-6. Create shared group directories ```/groups/livingopensource``` and ```/groups/operations```, and make sure the groups meet the following requirements:
-    - Members of the group livingopensource have full access to their directory.
-    - Members of the group operations have full access to their directory.
-    - Others has no access to any of the directories.
-    - Alex is general manager, so user alex has read access to all files in both directories and has permissions to delete all files that are created in both directories.
+- [ ] Create shared group directories ```/groups/livingopensource``` and ```/groups/operations```, and make sure the groups meet the following requirements:
+    - [ ] Members of the group livingopensource have full access to their directory.
+    - [ ] Members of the group operations have full access to their directory.
+    - [ ] Others has no access to any of the directories.
+    - [ ] Alex is general manager, so user alex has read access to all files in both directories and has permissions to delete all files that are created in both directories.
 
-7. Create a 1-GiB swap partition and mount it persistently.
+- [ ] Create a 1-GiB swap partition and mount it persistently.
 
-8. Find all files that have the SUID permission set, and write the result to the file ```/root/suidfiles```.
+- [ ] Find all files that have the SUID permission set, and write the result to the file ```/root/suidfiles```.
 
-9. Create a 1-GiB LVM volume group. In this volume group, create a 512-MiB swap volume and mount it persistently.
+- [ ] Create a 1-GiB LVM volume group. In this volume group, create a 512-MiB swap volume and mount it persistently.
 
-10. Add a 10-GiB disk to your virtual machine. On this disk, create a Stratis pool and volume. Use the name stratisvol for the volume, and mount it persistently on the directory ```/stratis```.
+- [ ] Add a 10-GiB disk to your virtual machine. On this disk, create a Stratis pool and volume. Use the name stratisvol for the volume, and mount it persistently on the directory ```/stratis```.
 
-11. Install a web server and configure it to listen on port 8080.
+- [ ] Install a web server and configure it to listen on port 8080.
 
-12. Create a configuration that allows user edwin to run all administrative commands using sudo.
+- [ ] Create a configuration that allows user edwin to run all administrative commands using sudo.
 
 
 
@@ -224,25 +224,19 @@ Host name: station.domain40.example.com
 /etc/sysconfig/network 
 hostname=abc.com hostname abc.com IP Address:172.24.40.40/24 - Gateway172.24.40.1 - DNS:172.24.40.1 -
 
-Create a catalog under /home named admins. Its respective group is requested to be the admin group. The group users could read and write, while other users are not allowed to access it. The files created by users from the same group should also be the admin group.
+- [ ] Create a catalog under /home named admins. Its respective group is requested to be the admin group. The group users could read and write, while other users are not allowed to access it. The files created by users from the same group should also be the admin group.
 
-Configure a task: plan to run echo hello command at 14:23 every day.
+- [ ] Configure a task: plan to run echo hello command at 14:23 every day.
 
+- [ ] Find the files owned by harry, and copy it to catalog: /opt/dir
 
-Find the files owned by harry, and copy it to catalog: /opt/dir
+- [ ] Find the rows that contain abcde from file /etc/testfile, and write it to the file/tmp/testfile, and the sequence is requested as the same as /etc/testfile.
 
+- [ ] Install a FTP server, and request to anonymous download from /var/ftp/pub catalog. (it needs you to configure yum direct to the already existing file server.)
 
-Find the rows that contain abcde from file /etc/testfile, and write it to the file/tmp/testfile, and the sequence is requested as the same as /etc/testfile.
+- [ ] Configure a HTTP server, which can be accessed through http://station.domain40.example.com. Please download the released page from http://ip/dir/example.html.
 
-
-Install a FTP server, and request to anonymous download from /var/ftp/pub catalog. (it needs you to configure yum direct to the already existing file server.)
-
-
-Configure a HTTP server, which can be accessed through http://station.domain40.example.com. Please download the released page from http://ip/dir/example.html.
-
-
-Configure autofs to make sure after login successfully, it has the home directory autofs, which is shared as /rhome/ldapuser40 at the ip: 172.24.40.10. and it also requires that, other ldap users can use the home directory normally.
-
+- [ ] Configure autofs to make sure after login successfully, it has the home directory autofs, which is shared as /rhome/ldapuser40 at the ip: 172.24.40.10. and it also requires that, other ldap users can use the home directory normally.
 
 - Configure the system synchronous as 172.24.40.10.
 ```bash
@@ -253,7 +247,6 @@ server 192.168.25.3
 sudo timedatectl set-ntp true
 sudo systemctl enable --now chronyd
 ```
-
 
 - Create a volume group, and set 16M as a extends. And divided a volume group containing 50 extends on volume group lv, make it as ext4 file system, and mounted automatically under /mnt/data.
 ```bash
