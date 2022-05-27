@@ -47,15 +47,15 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 - Server with GUI installation pattern
 
 
-- [ ] Create user **student** with password **password**, and user root with password **password**.
+- [x] Create user **student** with password **password**, and user root with password **password**.
 
-- [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
+- [x] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
 - [ ] Reboot your server. Assume that you don’t know the root password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
 
 - [ ] Set default values for new users. Set the default password validity to 90 days, and set the first UID that is used for new users to 2000.
 
-- [ ] Create users **edwin** and **santos** and make them members of the group livingopensource as a secondary group membership. Also, create users serene and alex and make them members of the group operations as a secondary group.
+- [ ] Create users **edwin** and **santos** and make them members of the group *livingopensource* as a secondary group membership. Also, create users **serene** and **alex** and make them members of the group *operations* as a secondary group.
 
 - [ ] Create shared group directories **/groups/livingopensource** and **/groups/operations**, and make sure the groups meet the following requirements:
     - Members of the group livingopensource have full access to their directory.
@@ -101,7 +101,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 3. Create a 1-GB XFS partition on /dev/sdb. Mount it persistently on the directory **/mydata**, using the label mylabel.
 
-4. Set default values for new users. Ensure that an empty file with the name NEWFILE is copied to the home directory of each new user that is created.
+- [x] Set default values for new users. Ensure that an empty file with the name NEWFILE is copied to the home directory of each new user that is created.
 
 5. Create users laura and linda and make them members of the group livingopensource as a secondary group membership. Also, create users ```lisa``` and lori and make them members of the group operations as a secondary group.
 
@@ -115,13 +115,13 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 8. Resize the LVM logical volume that contains the root file system and add 1 GiB.
 
-9. Set your server to use the recommended tuned profile.
+- [-] Set your server to use the recommended tuned profile.
 
-10. Create user vicky with the custom UID 2008.
+- [x] Create user vicky with the custom UID 2008.
 
 11. Configure your server to synchronize time with myserver.example.com. (Note that this server does not have to exist.)
 
-12. Install a web server and ensure that it is started automatically.
+- [x] Install a web server and ensure that it is started automatically.
 
 
 ## RHCSA Practice Exam C
@@ -813,7 +813,7 @@ This test exam requires the following setup:
 	- [x] Bring down the virtual machine you have pre-installed and, in the KVM software, add an additional 5GiB hard disk to the virtual machine.
 	
 	- [ ] A repository is available at http://rhatcert.com/repo. Configure your server3 to use this repository and disable usage of any other repositories.
-	
+
 	
 	- [x] Create four users: bill, bob, betty, and belinda. Set their passwords to expire after 120 days and make sure they get a home directory in /home/users. (This means that, for instance, bill has /home/users/bill as his home directory.)
 	
