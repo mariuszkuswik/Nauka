@@ -141,7 +141,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 - [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
-- [ ] Reboot your server. Assume that you don’t know the root password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
+- [x] Reboot your server. Assume that you don’t know the root password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
 
 - [ ] Set default values for new users. Make sure that any new user password has a length of at least six characters and must be used for at least three days before it can be reset.
 
@@ -231,10 +231,6 @@ hostname=abc.com hostname abc.com IP Address:172.24.40.40/24 - Gateway172.24.40.
 - [ ] Find the files owned by harry, and copy it to catalog: /opt/dir
 
 - [ ] Find the rows that contain abcde from file /etc/testfile, and write it to the file/tmp/testfile, and the sequence is requested as the same as /etc/testfile.
-
-- [ ] Install a FTP server, and request to anonymous download from /var/ftp/pub catalog. (it needs you to configure yum direct to the already existing file server.)
-
-- [ ] Configure a HTTP server, which can be accessed through http://station.domain40.example.com. Please download the released page from http://ip/dir/example.html.
 
 - [ ] Configure autofs to make sure after login successfully, it has the home directory autofs, which is shared as /rhome/ldapuser40 at the ip: 172.24.40.10. and it also requires that, other ldap users can use the home directory normally.
 
