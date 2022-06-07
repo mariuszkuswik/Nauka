@@ -1,6 +1,9 @@
  
 # Spis treści
 
+1. [Grupowanie](#grupowanie)
+
+
 - [Koniec](#Koniec)
 
 
@@ -9,7 +12,7 @@
 
 Pliki konfiguracyjne ini - zawierają informacje na temat maszyn na których chcemy stosowac komendy/ustawienia?
 
-#### Składnia 
+#### Pliki ini 
 
 - Przykładowy plik ini
 
@@ -24,5 +27,13 @@ host11
 host22
 host33
 ```
+
+Istnieją dwie grupy specjalne 
+- ```all``` - wszystkie hosty
+- ```ungrouped``` - hosty po za jakąkolwiek grupą
+
+
+
+
 
 ### Koniec
