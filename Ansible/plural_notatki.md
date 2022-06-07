@@ -5,12 +5,12 @@
 - [Koniec](#Koniec)
 
 
-# Grupowanie 
+# Pliki ini  
 [Spis treści](#spis-treści)
 
 Pliki konfiguracyjne ini - zawierają informacje na temat maszyn na których chcemy stosowac komendy/ustawienia?
 
-## Pliki ini 
+## Grupowanie 
 
 - Przykładowy plik ini
 - Hostami mogą być **pełne nazwy domenowe**, **nazwy hostów** lub **adresy ip** 
