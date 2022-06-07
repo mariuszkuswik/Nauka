@@ -2,8 +2,6 @@
 # Spis treści
 
 1. [Grupowanie](#grupowanie)
-
-
 - [Koniec](#Koniec)
 
 
@@ -15,12 +13,13 @@ Pliki konfiguracyjne ini - zawierają informacje na temat maszyn na których chc
 #### Pliki ini 
 
 - Przykładowy plik ini
+- Hostami mogą być **pełne nazwy domenowe**, **nazwy hostów** lub **adresy ip** 
 
 ```ini
 [nazwa grupy]
 host1
-host2
-host3
+web.server.com
+192.168.1.10
 
 [nazwa drugiej grupy]
 host11
@@ -28,10 +27,12 @@ host22
 host33
 ```
 
-Istnieją dwie grupy specjalne 
-- ```all``` - wszystkie hosty
-- ```ungrouped``` - hosty po za jakąkolwiek grupą
-
+### Grupy 
+- Grupy specjalne 
+    - ```all``` - wszystkie hosty
+    - ```ungrouped``` - hosty po za jakąkolwiek grupą
+- Nazwy moga zawierać podłóg **_** ale nie myślniki **-**
+- Nazwy grup nie powinny być takie same jak nazwy hostów 
 
 
 
