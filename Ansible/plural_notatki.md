@@ -10,11 +10,12 @@
 
 Pliki konfiguracyjne ini - zawierają informacje na temat maszyn na których chcemy stosowac komendy/ustawienia?
 
-## Grupowanie 
+## Grupy 
 
-- Przykładowy plik ini
+- Grupy definjuje się w kwadratowych nawiasach
 - Hostami mogą być **pełne nazwy domenowe**, **nazwy hostów** lub **adresy ip** 
 
+- plik ini
 ```ini
 [canada]
 host1
@@ -27,7 +28,6 @@ host22
 host33
 ```
 
-### Grupy 
 - Grupy specjalne 
     - ```all``` - wszystkie hosty
     - ```ungrouped``` - hosty po za jakąkolwiek grupą
