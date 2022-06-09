@@ -137,15 +137,15 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 
 
-- [ ] Create user **student** with password **password**, and user root with password **password**.
+- [x] Create user **student** with password **password**, and user root with password **password**.
 
 - [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
-- [x] Reboot your server. Assume that you don’t know the root password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
+- [ ] Reboot your server. Assume that you don’t know the root password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
 
 - [ ] Set default values for new users. Make sure that any new user password has a length of at least six characters and must be used for at least three days before it can be reset.
 
-- [ ] Create users **edwin** and **santos** and make them members of the group sales as a secondary group membership. Also, create users serene and alex and make them members of the group account as a secondary group.
+- [ ] Create users **edwin** and **santos** and make them members of the group ```sales``` as a secondary group membership. Also, create users **serene** and **alex** and make them members of the group ```account``` as a secondary group.
 
 - [ ] Create shared group directories ```/groups/sales``` and ```/groups/account```, and make sure these groups meet the following requirements:
     - [ ] Members of the group sales have full access to their directory.
