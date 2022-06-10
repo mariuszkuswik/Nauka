@@ -145,12 +145,12 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 - [ ] Set default values for new users. Make sure that any new user password has a length of at least six characters and must be used for at least three days before it can be reset.
 
-- [ ] Create users **edwin** and **santos** and make them members of the group ```sales``` as a secondary group membership. Also, create users **serene** and **alex** and make them members of the group ```account``` as a secondary group.
+- [x] Create users **edwin** and **santos** and make them members of the group ```sales``` as a secondary group membership. Also, create users **serene** and **alex** and make them members of the group ```account``` as a secondary group.
 
-- [ ] Create shared group directories ```/groups/sales``` and ```/groups/account```, and make sure these groups meet the following requirements:
-    - [ ] Members of the group sales have full access to their directory.
-    - [ ] Members of the group account have full access to their directory.
-    - [ ] Users have permissions to delete only their own files, but alex is the general manager, so user alex has access to delete all users’ files.
+- [x] Create shared group directories ```/groups/sales``` and ```/groups/account```, and make sure these groups meet the following requirements:
+    - [x] Members of the group ```sales``` have full access to their directory.
+    - [x] Members of the group ```account``` have full access to their directory.
+    - [x] Users have permissions to delete only their own files, but **alex** is the general manager, so user **alex** has access to delete all users’ files.
 
 - [ ] **Create a 4-GiB volume group**, using a physical extent size of 2 MiB. In this volume group, create a 1-GiB logical volume with the **name myfiles** and mount it persistently on ```/myfiles```.
 
