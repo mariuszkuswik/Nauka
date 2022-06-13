@@ -152,13 +152,13 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
     - [x] Members of the group ```account``` have full access to their directory.
     - [x] Users have permissions to delete only their own files, but **alex** is the general manager, so user **alex** has access to delete all users’ files.
 
-- [ ] **Create a 4-GiB volume group**, using a physical extent size of 2 MiB. In this volume group, create a 1-GiB logical volume with the **name myfiles** and mount it persistently on ```/myfiles```.
+- [x] **Create a 4-GiB volume group**, using a physical extent size of 2 MiB. In this volume group, create a 1-GiB logical volume with the name **myfiles** and mount it persistently on ```/myfiles```.
 
-- [ ] Create a group sysadmins. Make users **edwin** and **santos** members of this group and ensure that all members of this group can run all administrative commands using sudo.
+- [x] Create a group ```sysadmins```. Make users **edwin** and **santos** members of this group and ensure that all members of this group can run all administrative commands using sudo.
 
-- [ ] Optimize your server with the appropriate profile that optimizes throughput.
+- [x] Optimize your server with the appropriate profile that optimizes throughput.
 
-- [ ] Add a new disk to your virtual machine with a size of 10 GiB. On this disk, create a **VDO** volume with a size of 50 GiB and mount it persistently.
+- [x] Add a new disk to your virtual machine with a size of 10 GiB and name **vdo_name**. On this disk, create a **VDO** volume with a size of 50 GiB and mount it persistently.
 
 - [ ] Configure your server to synchronize time with serverabc.example.com, where serverabc is an alias to ```myserver.example.com```. Note that this server does not have to exist to accomplish this exercise.
 
