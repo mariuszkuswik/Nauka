@@ -164,9 +164,9 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 - [ ] Configure a web server to use the nondefault document root ```/webfiles```. In this directory, create a file index.html that has the contents hello world and then test that it works.
 
-- [ ] Configure your system to automatically start a mariadb container for non-root user **mariadb**. This container should expose its services at port 3306 and use the directory ```/var/mariadb-container``` on the host for persistent storage of files it writes to the ```/var``` directory.
+- [x] Configure your system to automatically start a mariadb container for non-root user **mariadb**. This container should expose its services at port 3306 and use the directory ```/var/mariadb-container``` on the host for persistent storage of files it writes to the ```/var``` directory.
 
-- [ ] Configure your system such that the container created in step 14 is automatically started as a Systemd user container.
+- [x] Configure your system such that the container created in step 14 is automatically started as a Systemd user container.
 
 
 

@@ -59,4 +59,19 @@ W powyższym przykładzie ```canada``` i ```usa``` są podrupami dla ```north_am
 
 
 
+
+# Ansible config 
+
+```/etc/ansible/hosts``` - domyślny plik dla wskazania hostów 
+```/etc/ansible/ansible.cfg``` - config dla ansible
+
+```ansible --version``` - wyświetla który config jest obecnie używany 
+
+```ANSIBLE_CONFIG``` - zmienna śrowowiskowa do której można przypisać nowy config
+```export ANSIBLE_CONFIG=/ansible/ansible.cfg```
+
+
+
+
+
 ### Koniec
