@@ -5,7 +5,18 @@
 
   tasks: 
 
-    - name: Tworzenie uzytkownika 
+    - name: User - tworzenie 
       user: 
         name: webserveruser
         state: present
+    
+    - name: Grupa - tworzenie 
+      group: 
+        name: webservergroup
+        state: present
+    
+
+    
+    # - name: Instalacja uslugi httpd
+
+    # - name: Wlaczenie httpd
