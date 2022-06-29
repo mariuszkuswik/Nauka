@@ -1,0 +1,38 @@
+---
+- name: Konfiguracja webservera
+  hosts: webservers_group
+  become: true
+
+  vars_files: 
+    - vars/webservers_vars.yml
+
+  tasks:   
+
+    # USER 
+    - name: User - tworzenie
+      user: 
+        name: webserveruser
+        create_home: true
+        home: /home/example_home/webserveruser
+        groups: 
+          wheel
+        append: yes
+        state: present
+    
+    - name: Grupa - tworzenie 
+      group: 
+        name: webservergroup
+        state: present
+    
+    # USLUGI 
+    - name: httpd - instalacja 
+      package: 
+        name: httpd
+        state: present
+    
+    - name: httpd - wlaczenie uslugi
+      service: 
+        name: httpd
+        state: started
+        enabled: yes
+    
