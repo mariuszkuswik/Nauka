@@ -16,7 +16,5 @@
         state: present
     
 
-    
-    # - name: Instalacja uslugi httpd
-
-    # - name: Wlaczenie httpd
+    # - name: httpd - instalacja uslugi
+    # - name: httpd - wlaczenie uslugi
