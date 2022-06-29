@@ -1,0 +1,11 @@
+---
+- name: Konfiguracja webservera
+  hosts: webservers
+  become: true
+
+  tasks: 
+
+    - name: Tworzenie uzytkownika 
+      user: 
+        name: webserveruser
+        state: present
