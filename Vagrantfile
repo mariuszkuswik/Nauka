@@ -7,11 +7,15 @@
 # The most common configuration options are documented and commented below.
 # For a complete reference, please see the online documentation at
 # https://docs.vagrantup.com.
-WEB_HOST_PORT = 8080
+WEB_HOST_PORT = 80
+
+SCRIPTS_DIR = "./scripts"
 
 SSH_HOST_DIR = "./ssh_host"
 ANS_HOST_DIR = "./ansible_host"
 WEB_HOST_DIR = "./web_data_host"
+
+
 
 Vagrant.configure("2") do |config|
 
@@ -31,6 +35,7 @@ Vagrant.configure("2") do |config|
     
     ### DIR SYNC ###
     ansiblemachine.vm.synced_folder ANS_HOST_DIR, "/ansible_host"
+    ansiblemachine.vm.synced_folder SCRIPTS_DIR, "/scripts"
     
     ### VIRTUALBOX ANSIBLEMACHINE ###
     ansiblemachine.vm.provider "virtualbox" do |ansiblemachine|
@@ -73,7 +78,7 @@ Vagrant.configure("2") do |config|
     webserver.vm.network "private_network", ip: "192.168.1.51"
 
     ### DIR SYNC ###
-    webserver.vm.synced_folder WEB_HOST_DIR, "/web_data_host"
+    webserver.vm.synced_folder WEB_HOST_DIR, "/etc/www/html"
   
     ### VIRTUALBOX WEBSERVER ###
     webserver.vm.provider "virtualbox" do |webserver|
