@@ -1,11 +1,10 @@
 ---
 - name: Konfiguracja webservera
+  ignore_errors: true
   vars_files: 
     - vars/webserver_vars.yml
   
   hosts: '{{ server_name }}_group'
-  become: true
-  ignore_errors: true
 
   tasks:   
 

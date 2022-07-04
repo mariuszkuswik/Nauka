@@ -5,10 +5,12 @@ server_name: reposerver
 do_undo: present
 
 # Uzytkownicy i grupy
-user_to_add: webserveruser
-user_groups: wheel, webservergroup
+user_to_add: reposerver
+user_groups: wheel, reposervergroup
 
 # Konfiguracja serwera 
-service_name: httpd
-service_port: 80
-service_port_protocol: tcp
+service_name: nfs
+service_dnf_name: nfs-utils
+service_firewall_name: nfs
+# service_port: 80
+# service_port_protocol: tcp

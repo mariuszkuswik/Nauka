@@ -1,1 +1,1 @@
-{"virtualbox":{"/ansible_host":{"guestpath":"/ansible_host","hostpath":"D:/Dane/Git/Projekt_chmura/vagrant_docker_web/ansible_host","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/ansible_host":{"run":"always","guestpath":"/ansible_host","hostpath":"D:/Dane/Git/Projekt_chmura/vagrant_docker_web/ansible_host","disabled":false,"__vagrantfile":true},"/scripts":{"guestpath":"/scripts","hostpath":"D:/Dane/Git/Projekt_chmura/vagrant_docker_web/scripts","disabled":false,"__vagrantfile":true}}}

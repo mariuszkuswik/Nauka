@@ -1,0 +1,1 @@
+{"virtualbox":{"/scripts":{"guestpath":"/scripts","hostpath":"D:/Dane/Git/Projekt_chmura/vagrant_docker_web/scripts","disabled":false,"__vagrantfile":true},"/repos/BaseOS":{"guestpath":"/repos/BaseOS","hostpath":"D:/Dane/Git/Projekt_chmura/vagrant_docker_web/repos/BaseOS","disabled":false,"__vagrantfile":true}}}
