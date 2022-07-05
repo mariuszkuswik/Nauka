@@ -6,6 +6,8 @@
   
   hosts: '{{ server_name }}_group'
 
+# CONFIG HTTPD DO ZMIANY, SAMA ZMIANA PLIKU INDEX NIE WYSTARCZA
+
   tasks:   
 
     # GRUPY
@@ -25,22 +27,35 @@
         append: yes
         state: '{{ do_undo }}'
     
-    # USLUGI 
+    # SERVICE
     - name: '{{service_name}} - instalacja'
       package: 
-        name: '{{service_name}}'
+        name: '{{ item }}'
         state: '{{ do_undo }}'
-    
-    - name: '{{service_name}} - wlaczenie uslugi'
+      loop:
+        - '{{service_name}}'
+        - firewalld
+  
+    - name: '{{service_name}} i firewalld - wlaczenie uslugi'
       service: 
-        name: '{{service_name}}'
+        name: "{{ item }}"
         state: started
         enabled: yes
+      loop: 
+        - '{{service_name}}'
+        - firewalld
 
+    # FIREWALLD
     - name: 'Firewalld - odblokowanie portu {{ service_port }} dla {{ service_name }}'
       ansible.posix.firewalld:
         state: enabled
         permanent: yes
         immediate: yes
         port: '{{ service_port }}/{{ service_port_protocol }}'
-        
+
+    # PODMIANA PLIKU INDEX
+    - name: 'Podmiana pliku index.html'
+      copy: 
+        src: /web_data_host/index.html
+        dest: /etc/www/html/index.html
+

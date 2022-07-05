@@ -1,5 +1,6 @@
 ---
 - name: Konfiguracja serwera ansible
+  
   vars_files: 
     - vars/reposerver_vars.yml
   
@@ -26,24 +27,43 @@
         append: yes
         state: '{{ do_undo }}'
     
-    # INSTALACJA DNF
+    # INSTALACJA
     - name: '{{service_dnf_name}} - instalacja'
       package: 
         name: '{{service_dnf_name}}'
         state: '{{ do_undo }}'
+
+    # REPOs - wylaczenie domyslnych 
+    - name: Wylaczenie repo 
+      shell: sed -i "s/enabled=1/enabled=0/g" /etc/yum.repos.d/*
+         
+    # KOPIOWANIE 
+    - name: Kopia pliku exports dla nfs + plikow .repo
+      copy: src={{ item.src }} dest={{ item.dest }}
+      with_items:
+        - { src: '/repos/exports', dest: '/etc/exports' }
+        - { src: '/repos/BaseOS/baseos.repo', dest: '/etc/yum.repos.d/baseos.repo' }
+        - { src: '/repos/AppStream/appstream.repo', dest: '/etc/yum.repos.d/appstream.repo' }
     
-    # SERVICE
-    - name: '{{service_name}} - wlaczenie uslugi'
+    # SERVICE - start 
+    - name: '{{service_name}} i firewalld - wlaczenie uslugi'
       service: 
-        name: '{{service_name}}'
+        name: "{{ item }}"
         state: started
         enabled: yes
+      loop: 
+        - '{{service_name}}'
+        - firewalld
 
-    # FIREWALLD
+    # FIREWALLD - odblokowanie uslugi
     - name: 'Firewalld - odblokowanie {{ service_firewall_name }}'
       ansible.posix.firewalld:
         state: enabled
         permanent: yes
         immediate: yes
         service: '{{ service_firewall_name }}'
-        
+
+    # SHELL - eksport udzialow  
+    - name: Eksport udzialow z repo
+      shell: /usr/sbin/exportfs -a
+

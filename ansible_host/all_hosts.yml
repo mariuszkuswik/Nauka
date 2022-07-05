@@ -1,0 +1,69 @@
+---
+- name: Konfiguracja ogolna dla wszystkich hostow
+  # ignore_errors: true
+  vars: 
+    do_undo: present
+  
+  hosts: 'all'
+
+  tasks: 
+
+    ### GRUPY ###
+    - name: Grupa - tworzenie 
+      group: 
+        name: 'test_group'
+        state: '{{ do_undo }}'
+
+    ### UZYTKOWNICY ### 
+    - name: User - tworzenie wymienionych 
+      user: 
+        name: '{{ item.name }}'
+        create_home: true
+        home: '/home/example_home/{{ item.name }}'
+        groups: 
+          '{{ item.groups }}'
+        append: yes
+        state: '{{ do_undo }}'
+      loop:
+          - { name: 'mariusz', groups: 'wheel, test_group' }
+          - { name: 'test_user', groups: 'test_group' }
+
+    ### UPDATE ###
+    - name: Update
+      shell: echo "Update trwa"
+
+    ### INSTALACJA ###
+    - name: 'nfs i firewalld - instalacja'
+      package: 
+        name: '{{ item }}'
+        state: '{{ do_undo }}'
+      loop:
+        - nfs-utils
+        - firewalld
+    
+    ### SERVICE ###
+    - name: nfs i firewalld - wlaczenie uslugi 
+      shell: echo "Wlaczenie nfs i firewallld"
+
+    #### REPO ###
+    - name: REPO - tworzenie folderu do podmapowania
+      file:
+        path: /mnt/'{{ item }}'
+        state: directory
+      loop:
+        - BaseOS
+        - AppStream
+    
+    - name: Dodanie wpisow z repozytoriami w fstabie
+      shell: cat /mnt/'{{ item }}'/'{{ item }}'.fstab >> /etc/fstab
+      loop: 
+        - BaseOS
+        - AppStream
+
+    - name: Kopia plikow .repo do /etc/yum.repos.d
+      copy: 
+        src: /mnt/'{{ item }}'/'{{ item }}'.repo
+        dest: /etc/yum.repos.d/'{{ item }}'.repo
+      loop: 
+        - BaseOS
+        - AppStream

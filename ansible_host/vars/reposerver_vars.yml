@@ -9,7 +9,7 @@ user_to_add: reposerver
 user_groups: wheel, reposervergroup
 
 # Konfiguracja serwera 
-service_name: nfs
+service_name: nfs-server.service
 service_dnf_name: nfs-utils
 service_firewall_name: nfs
 # service_port: 80

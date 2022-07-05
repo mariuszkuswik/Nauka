@@ -1,3 +1,4 @@
 #!/bin/bash 
 
-cp /
+cp /repos/exports /etc/exports
+cp 

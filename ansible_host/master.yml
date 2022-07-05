@@ -1,4 +1,4 @@
 ---
-- import_playbook: webserver.yml
+- import_playbook: all_hosts.yml
 - import_playbook: ansible.yml
-  
+- import_playbook: webserver.yml
