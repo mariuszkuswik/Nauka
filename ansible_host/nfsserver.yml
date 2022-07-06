@@ -1,0 +1,58 @@
+---
+- name: Konfiguracja nfsserver
+  become: true
+  ignore_errors: true
+  
+  vars: 
+    server_name: nfsserver
+    do_undo: present
+    # ansible_python_interpreter: /usr/bin/python3
+    share_name: share
+
+  hosts: '{{ server_name }}_group'
+
+  tasks: 
+    # UPDATE 
+      
+    # INSTALACJA
+    - name: nfs-utils - instalacja
+      package: 
+        name: 
+          - nfs-utils
+          - firewalld
+        state: '{{ do_undo }}'
+    
+    # SERVICE - start nfs, enabled  
+    - name:  nfs-server.service i firewalld - wlaczenie uslugi'
+      service: 
+        name: '{{ item }}'
+        state: started
+        enabled: yes  
+      loop:
+        - nfs-server.service
+        - firewalld    
+ 
+    # FIREWALLD - odblokowanie uslugi
+    - name: 'Firewalld - odblokowanie nfs'
+      ansible.posix.firewalld:
+        state: enabled
+        permanent: yes
+        immediate: yes
+        service: 'nfs'
+
+    # MKDIR SHARE
+    - name:
+      file:
+        path: /'{{ share_name }}'
+        state: directory
+
+    # KOPIOWANIE pliku exports 
+    - name: EXPORTS - Kopia pliku dla nfs
+      copy: 
+        src: '/scripts/exports'
+        dest: '/etc/exports'
+
+    # exportfs 
+    - name:  EXPORTFS - wszystkie udzialy 
+      shell: /usr/sbin/exportfs -a
+        

@@ -1,6 +1,7 @@
 ---
 - name: Konfiguracja webservera
   ignore_errors: true
+  become: true
   vars_files: 
     - vars/webserver_vars.yml
   

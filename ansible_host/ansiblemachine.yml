@@ -1,0 +1,34 @@
+---
+- name: Konfiguracja serwera ansible
+  
+  vars: 
+    server_name: ansiblemachine
+    # Wprowadzanie lub cofanie zmian
+    do_undo: present
+
+    user_to_add: ansiblemachine
+  
+  hosts: '{{ server_name }}_group'
+  become: true
+  ignore_errors: true
+
+  tasks:   
+
+    # GRUPY
+    - name: Grupa - tworzenie 
+      group: 
+        name: '{{ server_name }}group'
+        state: '{{ do_undo }}'
+
+    # UZYTKOWNIK 
+    - name: User - tworzenie
+      user: 
+        name: '{{ user_to_add }}'
+        create_home: true
+        home: '/home/example_home/{{ user_to_add }}'
+        groups: 
+          - wheel
+          - '{{ server_name }}group'
+        append: yes
+        state: '{{ do_undo }}'
+         

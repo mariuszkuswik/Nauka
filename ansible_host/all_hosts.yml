@@ -1,8 +1,12 @@
 ---
 - name: Konfiguracja ogolna dla wszystkich hostow
-  # ignore_errors: true
+  ignore_errors: true
+  become: true
   vars: 
     do_undo: present
+    share_name: share
+    # ansible_python_interpreter: /usr/bin/python3
+    
   
   hosts: 'all'
 
@@ -30,40 +34,51 @@
 
     ### UPDATE ###
     - name: Update
-      shell: echo "Update trwa"
+      dnf: 
+        update_only: yes
 
     ### INSTALACJA ###
-    - name: 'nfs i firewalld - instalacja'
+    - name: SERVICE - nfs i firewalld - instalacja 
       package: 
-        name: '{{ item }}'
-        state: '{{ do_undo }}'
-      loop:
-        - nfs-utils
-        - firewalld
+        name:
+          - nfs-utils
+          - firewalld
+        state: '{{ do_undo }}'       
     
     ### SERVICE ###
-    - name: nfs i firewalld - wlaczenie uslugi 
-      shell: echo "Wlaczenie nfs i firewallld"
+    - name: SERVICE - nfs-client i firewalld - wlaczenie 
+      service:
+        name: '{{ item }}'
+        state: started
+        enabled: yes
+      loop: 
+        - nfs-client.target
+        - firewalld
 
-    #### REPO ###
-    - name: REPO - tworzenie folderu do podmapowania
+    #### SHARE ###
+    - name: SHARE - tworzenie folderu do podmapowania
       file:
-        path: /mnt/'{{ item }}'
+        path: /mnt/{{ share_name }}
         state: directory
-      loop:
-        - BaseOS
-        - AppStream
-    
-    - name: Dodanie wpisow z repozytoriami w fstabie
-      shell: cat /mnt/'{{ item }}'/'{{ item }}'.fstab >> /etc/fstab
-      loop: 
-        - BaseOS
-        - AppStream
 
-    - name: Kopia plikow .repo do /etc/yum.repos.d
-      copy: 
-        src: /mnt/'{{ item }}'/'{{ item }}'.repo
-        dest: /etc/yum.repos.d/'{{ item }}'.repo
-      loop: 
-        - BaseOS
-        - AppStream
+    - name: SHARE - mapowanie udzialow nfs 
+      mount: 
+        path: /mnt/{{ share_name }}
+        src: 192.168.1.50:/{{ share_name }}
+        state: mounted
+        fstype: nfs4
+        opts: _netdev,rw,nofail
+    
+# DODAC CUSTOMOWE REPO DLA KAZDEGO SERWERA
+   #  - name: SHARE - Kopia plikow .SHARE do /etc/yum.SHAREs.d
+   #    copy: 
+   #      src: /mnt/'{{ item }}'/'{{ item }}'.SHARE
+   #      dest: /etc/yum.SHAREs.d/'{{ item }}'.SHARE
+   #    loop: 
+   #      - BaseOS
+   #      - AppStream
+
+
+    # REPO- wylaczenie domyslnych 
+    # - name: REPO - Wylaczenie domyslnych repozytoriow 
+    #   shell: sed -i "s/enabled=1/enabled=0/g" /etc/yum.repos.d/*

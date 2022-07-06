@@ -1,0 +1,51 @@
+---
+- name: Konfiguracja Dockerserver
+  
+  vars: 
+    server_name: dockerserver
+  
+  hosts: dockerserver_group
+  become: true
+  ignore_errors: true
+  
+  tasks: 
+    ### REPO docker ###
+    - name: REPO - kopia pliku .repo dla dockera
+      copy: 
+        src: /repos/docker-ce.repo
+        dest: /etc/yum.repos.d/docker-ce.repo
+
+    ### INSTALACJA dockera
+    - name: INSTALACJA dockera
+      package: 
+        name: 
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - docker-compose-plugin
+        state: present
+
+    ### SERVICE
+    - name: SERVICE - docker, start + enable
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    ### PIP 
+    - name: PIP - pobranie modulu dla dockera
+      pip: 
+        name: docker
+
+    # ### Docker - pobranie obrazu
+        
+    ### Docker - utworzenie kontenera
+    - name: Docker - pobranie obrazu i utworzenie kontenera 
+      docker_container: 
+        image: httpd
+        pull: yes
+        name: httpd_ansible_cont
+        volumes: 
+          - /docker_data_host:/usr/local/apache2/htdocs
+        published_ports: 8080:80
+        

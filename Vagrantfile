@@ -11,12 +11,14 @@ WEB_HOST_PORT = 80
 
 SCRIPTS_DIR = "./scripts"
 
+REP_DIR = "./repos"
 REP_BASEOS_DIR = "./repos/BaseOS"
 REP_APPSTREAM_DIR = "./repos/AppStream"
 
 SSH_HOST_DIR = "./ssh_host"
 ANS_HOST_DIR = "./ansible_host"
 WEB_HOST_DIR = "./web_data_host"
+DOCKER_HOST_DIR = "./docker_data_host"
 
 ANS_CONF = "./ansible_host/ansible.cfg"
 
@@ -33,7 +35,8 @@ Vagrant.configure("2") do |config|
     webserver.vm.network "private_network", ip: "192.168.1.51"
 
     ### DIR SYNC ###
-    webserver.vm.synced_folder WEB_HOST_DIR, "/etc/www/html"
+    webserver.vm.synced_folder REP_DIR, "/repos"
+    webserver.vm.synced_folder WEB_HOST_DIR, "/web_data_host"
     webserver.vm.synced_folder SCRIPTS_DIR, "/scripts"
 
     ### VIRTUALBOX WEBSERVER ###
@@ -87,7 +90,8 @@ Vagrant.configure("2") do |config|
     
     ### DIR SYNC ###
     dockerserver.vm.synced_folder SCRIPTS_DIR, "/scripts"
-    dockerserver.vm.synced_folder REP_BASEOS_DIR, "/repos/BaseOS"
+    dockerserver.vm.synced_folder REP_DIR, "/repos"
+    dockerserver.vm.synced_folder DOCKER_HOST_DIR, "/docker_data_host"
     
 
     ### VIRTUALBOX dockerserver ###
@@ -104,6 +108,12 @@ Vagrant.configure("2") do |config|
     ### SHELL ###
     # DNS
     dockerserver.vm.provision "shell", inline: "nmcli con mod 'System eth2' ipv4.dns 8.8.8.8"
+
+    ## SSH ##
+    dockerserver.vm.provision "shell", inline: <<-SHELL
+      sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
+      systemctl restart sshd
+    SHELL
 
   # Koniec DOCKERSERVER
   end
@@ -122,9 +132,10 @@ config.vm.define "ansiblemachine" do |ansiblemachine|
   ### DIR SYNC ###
   ansiblemachine.vm.synced_folder ANS_HOST_DIR, "/ansible_host"
   ansiblemachine.vm.synced_folder SCRIPTS_DIR, "/scripts"
+  ansiblemachine.vm.synced_folder REP_DIR, "/repos"
   # REPOS
-  ansiblemachine.vm.synced_folder REP_BASEOS_DIR, "./repos/BaseOS" 
-  ansiblemachine.vm.synced_folder REP_APPSTREAM_DIR, "./repos/AppStream"
+  ansiblemachine.vm.synced_folder REP_BASEOS_DIR, "/repos/BaseOS" 
+  ansiblemachine.vm.synced_folder REP_APPSTREAM_DIR, "/repos/AppStream"
 
   ### VIRTUALBOX ANSIBLEMACHINE ###
   ansiblemachine.vm.provider "virtualbox" do |ansiblemachine|
