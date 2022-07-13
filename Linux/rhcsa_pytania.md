@@ -60,9 +60,9 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 - [ ] Create shared group directories ```/groups/livingopensource``` and ```/groups/operations```, and make sure the groups meet the following requirements:
     - [x] Members of the group *livingopensource* have full access to their directory.
     - [x] Members of the group *operations* have full access to their directory.
-    - [-] New files that are created in the group directory are group owned by the group owner of the parent directory.
-    - [-] Others have no access to the group directories.
-    - [ ] Members of the group *operations* have read access to the directory ```/groups/livingopensource```.
+    - [x] New files that are created in the group directory are group owned by the group owner of the parent directory.
+    - [x] Others have no access to the group directories.
+    - [x] Members of the group *operations* have read access to the directory ```/groups/livingopensource```.
 
 - [ ] Create a 2-GiB volume group, using 8-MiB physical extents. In this volume group, create a 500-MiB logical volume with the name mydata, and mount it persistently on the directory ```/mydata```.
 
