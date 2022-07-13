@@ -47,38 +47,38 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 - Server with GUI installation pattern
 
 
-- [x] Create user **student** with password ```password```, and user **root** with password ```password```.
+- [ ] Create user **student** with password ```password```, and user **root** with password ```password```.
 
-- [x] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
+- [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
 - [ ] Reboot your server. Assume that you don’t know the **root** password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
 
 - [ ] Set default values for new users. Set the default password validity to 90 days, and set the first UID that is used for new users to 2000.
 
-- [x] Create users **edwin** and **santos** and make them members of the group *livingopensource* as a secondary group membership. Also, create users **serene** and **alex** and make them members of the group *operations* as a secondary group.
+- [ ] Create users **edwin** and **santos** and make them members of the group *livingopensource* as a secondary group membership. Also, create users **serene** and **alex** and make them members of the group *operations* as a secondary group.
 
-- [x] Create shared group directories ```/groups/livingopensource``` and ```/groups/operations```, and make sure the groups meet the following requirements:
-    - [x] Members of the group *livingopensource* have full access to their directory.
-    - [x] Members of the group *operations* have full access to their directory.
-    - [x] New files that are created in the group directory are group owned by the group owner of the parent directory.
-    - [x] Others have no access to the group directories.
-    - [x] Members of the group *operations* have read access to the directory ```/groups/livingopensource```.
+- [ ] Create shared group directories ```/groups/livingopensource``` and ```/groups/operations```, and make sure the groups meet the following requirements:
+    - [ ] Members of the group *livingopensource* have full access to their directory.
+    - [ ] Members of the group *operations* have full access to their directory.
+    - [ ] New files that are created in the group directory are group owned by the group owner of the parent directory.
+    - [ ] Others have no access to the group directories.
+    - [ ] Members of the group *operations* have read access to the directory ```/groups/livingopensource```.
 
-- [x] Create a 2-GiB volume group, using 8-MiB physical extents. In this volume group, create a 500-MiB logical volume with the name mydata, and mount it persistently on the directory ```/mydata```.
+- [ ] Create a 2-GiB volume group, using 8-MiB physical extents. In this volume group, create a 500-MiB logical volume with the name mydata, and mount it persistently on the directory ```/mydata```.
 
-- [-] Find all files that are owned by user **edwin** and copy them to the directory ```/rootedwinfiles```.
+- [ ] Find all files that are owned by user **edwin** and copy them to the directory ```/rootedwinfiles```.
 
-- [-/+ zrobione, powtórzyć] Schedule a task that runs the command ```touch /etc/motd``` every day from Monday through Friday at 2 a.m.
+- [ ] Schedule a task that runs the command ```touch /etc/motd``` every day from Monday through Friday at 2 a.m.
 
-- [x] Add a new 10-GiB virtual disk to your virtual machine. On this disk, add a **VDO** volume with a size of 20 GiB and mount it persistently.
+- [ ] Add a new 10-GiB virtual disk to your virtual machine. On this disk, add a **VDO** volume with a size of 20 GiB and mount it persistently.
 
 - [ ] Create user **bob** and set this user’s shell so that only this user can change the password.
 
-- [x] Install the ```vsftpd``` service and ensure that it is started automatically at reboot.
+- [ ] Install the ```vsftpd``` service and ensure that it is started automatically at reboot.
 
-- [-] Create a **container** that runs the rsyslog service. This container should be configured to write log files persistently to the directory ```/var/log/logcontainer/``` on the host operating system. Run this container with the same user account that the rsyslog service normally uses.
+- [ ] Create a **container** that runs the rsyslog service. This container should be configured to write log files persistently to the directory ```/var/log/logcontainer/``` on the host operating system. Run this container with the same user account that the rsyslog service normally uses.
 
-- [-] Configure this container such that it is automatically started on system boot as a system user service.
+- [ ] Configure this container such that it is automatically started on system boot as a system user service.
 
 
 
@@ -99,11 +99,11 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 - [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
-- [ ] Create a 1-GB XFS partition on ```/dev/sdb```. Mount it persistently on the directory ```/mydata```, using the label mylabel.
+- [x] Create a 1-GB XFS partition on ```/dev/sdb```. Mount it persistently on the directory ```/mydata```, using the label **mylabel**.
 
-- [x] Set default values for new users. Ensure that an empty file with the name ```NEWFILE``` is copied to the home directory of each new user that is created.
+- [ ] Set default values for new users. Ensure that an empty file with the name ```NEWFILE``` is copied to the home directory of each new user that is created.
 
-- [ ] Create users laura and linda and make them members of the group livingopensource as a secondary group membership. Also, create users **lisa** and lori and make them members of the group operations as a secondary group.
+- [x] Create users **laura** and **linda** and make them members of the group **livingopensource** as a secondary group membership. Also, create users **lisa** and **lori** and make them members of the group **operations** as a secondary group.
 
 - [ ] Create shared group directories ```/groups/livingopensource``` and ```/groups/operations``` and make sure these groups meet the following requirements:
     - [ ] Members of the group **livingopensource** have full access to their directory.
@@ -111,17 +111,17 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
     - [ ] Users should be allowed to delete only their own files.
     - [ ] Others should have no access to any of the directories.
 
-- [ ] Create a 2-GiB swap partition and mount it persistently.
+- [-] Create a 2-GiB swap partition and mount it persistently.
 
 - [ ] Resize the LVM logical volume that contains the root file system and add 1 GiB.
 
-- [-] Set your server to use the recommended tuned profile.
+- [ ] Set your server to use the recommended tuned profile.
 
-- [x] Create user vicky with the custom **UID 2008**.
+- [ ] Create user vicky with the custom **UID 2008**.
 
 - [ ] Configure your server to synchronize time with myserver.example.com. (Note that this server does not have to exist.)
 
-- [x] Install a web server and ensure that it is started automatically.
+- [ ] Install a web server and ensure that it is started automatically.
 
 
 ## RHCSA Practice Exam C
@@ -137,7 +137,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 
 
-- [x] Create user **student** with password **password**, and user root with password **password**.
+- [ ] Create user **student** with password **password**, and user root with password **password**.
 
 - [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
@@ -145,28 +145,28 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 - [ ] Set default values for new users. Make sure that any new user password has a length of at least six characters and must be used for at least three days before it can be reset.
 
-- [x] Create users **edwin** and **santos** and make them members of the group ```sales``` as a secondary group membership. Also, create users **serene** and **alex** and make them members of the group ```account``` as a secondary group.
+- [ ] Create users **edwin** and **santos** and make them members of the group ```sales``` as a secondary group membership. Also, create users **serene** and **alex** and make them members of the group ```account``` as a secondary group.
 
-- [x] Create shared group directories ```/groups/sales``` and ```/groups/account```, and make sure these groups meet the following requirements:
-    - [x] Members of the group ```sales``` have full access to their directory.
-    - [x] Members of the group ```account``` have full access to their directory.
-    - [x] Users have permissions to delete only their own files, but **alex** is the general manager, so user **alex** has access to delete all users’ files.
+- [ ] Create shared group directories ```/groups/sales``` and ```/groups/account```, and make sure these groups meet the following requirements:
+    - [ ] Members of the group ```sales``` have full access to their directory.
+    - [ ] Members of the group ```account``` have full access to their directory.
+    - [ ] Users have permissions to delete only their own files, but **alex** is the general manager, so user **alex** has access to delete all users’ files.
 
-- [x] **Create a 4-GiB volume group**, using a physical extent size of 2 MiB. In this volume group, create a 1-GiB logical volume with the name **myfiles** and mount it persistently on ```/myfiles```.
+- [ ] **Create a 4-GiB volume group**, using a physical extent size of 2 MiB. In this volume group, create a 1-GiB logical volume with the name **myfiles** and mount it persistently on ```/myfiles```.
 
-- [x] Create a group ```sysadmins```. Make users **edwin** and **santos** members of this group and ensure that all members of this group can run all administrative commands using sudo.
+- [ ] Create a group ```sysadmins```. Make users **edwin** and **santos** members of this group and ensure that all members of this group can run all administrative commands using sudo.
 
-- [x] Optimize your server with the appropriate profile that optimizes throughput.
+- [ ] Optimize your server with the appropriate profile that optimizes throughput.
 
-- [x] Add a new disk to your virtual machine with a size of 10 GiB and name **vdo_name**. On this disk, create a **VDO** volume with a size of 50 GiB and mount it persistently.
+- [ ] Add a new disk to your virtual machine with a size of 10 GiB and name **vdo_name**. On this disk, create a **VDO** volume with a size of 50 GiB and mount it persistently.
 
 - [ ] Configure your server to synchronize time with serverabc.example.com, where serverabc is an alias to ```myserver.example.com```. Note that this server does not have to exist to accomplish this exercise.
 
 - [ ] Configure a web server to use the nondefault document root ```/webfiles```. In this directory, create a file index.html that has the contents hello world and then test that it works.
 
-- [x] Configure your system to automatically start a mariadb container for non-root user **mariadb**. This container should expose its services at port 3306 and use the directory ```/var/mariadb-container``` on the host for persistent storage of files it writes to the ```/var``` directory.
+- [ ] Configure your system to automatically start a mariadb container for non-root user **mariadb**. This container should expose its services at port 3306 and use the directory ```/var/mariadb-container``` on the host for persistent storage of files it writes to the ```/var``` directory.
 
-- [x] Configure your system such that the container created in step 14 is automatically started as a Systemd user container.
+- [ ] Configure your system such that the container created in step 14 is automatically started as a Systemd user container.
 
 
 
