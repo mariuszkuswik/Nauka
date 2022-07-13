@@ -111,7 +111,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
     - [ ] Users should be allowed to delete only their own files.
     - [ ] Others should have no access to any of the directories.
 
-- [-] Create a 2-GiB swap partition and mount it persistently.
+- [ ] Create a 2-GiB swap partition and mount it persistently.
 
 - [ ] Resize the LVM logical volume that contains the root file system and add 1 GiB.
 
@@ -158,15 +158,15 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 - [ ] Optimize your server with the appropriate profile that optimizes throughput.
 
-- [ ] Add a new disk to your virtual machine with a size of 10 GiB and name **vdo_name**. On this disk, create a **VDO** volume with a size of 50 GiB and mount it persistently.
+- [x] Add a new disk to your virtual machine with a size of 10 GiB and name **vdo_name**. On this disk, create a **VDO** volume with a size of 50 GiB and mount it persistently.
 
 - [ ] Configure your server to synchronize time with serverabc.example.com, where serverabc is an alias to ```myserver.example.com```. Note that this server does not have to exist to accomplish this exercise.
 
 - [ ] Configure a web server to use the nondefault document root ```/webfiles```. In this directory, create a file index.html that has the contents hello world and then test that it works.
 
-- [ ] Configure your system to automatically start a mariadb container for non-root user **mariadb**. This container should expose its services at port 3306 and use the directory ```/var/mariadb-container``` on the host for persistent storage of files it writes to the ```/var``` directory.
+- [x] Configure your system to automatically start a mariadb container for non-root user **mariadb**. This container should expose its services at port 3306 and use the directory ```/var/mariadb-container``` on the host for persistent storage of files it writes to the ```/var``` directory.
 
-- [ ] Configure your system such that the container created in step 14 is automatically started as a Systemd user container.
+- [x] Configure your system such that the container created in step 14 is automatically started as a Systemd user container.
 
 
 
