@@ -1,14 +1,16 @@
 ---
 - name: Konfiguracja webservera
+  hosts: webserver_group
+  vars: 
+    server_name: webserver
+    do_undo: present
+    service_name: httpd
+    service_port: 80
+    service_port_protocol: tcp
+
   ignore_errors: true
   become: true
-  vars_files: 
-    - vars/webserver_vars.yml
   
-  hosts: '{{ server_name }}_group'
-
-# CONFIG HTTPD DO ZMIANY, SAMA ZMIANA PLIKU INDEX NIE WYSTARCZA
-
   tasks:   
 
     # GRUPY
@@ -20,31 +22,36 @@
     # UZYTKOWNIK 
     - name: User - tworzenie
       user: 
-        name: '{{ user_to_add }}'
+        name: '{{ server_name }}'
         create_home: true
-        home: '/home/example_home/{{ user_to_add }}'
-        groups: 
-          '{{ user_groups }}'
+        home: '/home/example_home/{{ server_name }}'
+        groups:
+          wheel,{{ server_name }}group
         append: yes
         state: '{{ do_undo }}'
-    
+
     # SERVICE
     - name: '{{service_name}} - instalacja'
       package: 
-        name: '{{ item }}'
+        name: '{{service_name}}'
         state: '{{ do_undo }}'
-      loop:
-        - '{{service_name}}'
-        - firewalld
-  
+
+    # PODMIANA PLIKU INDEX
+    - name: 'Podmiana pliku index.html'
+      copy: 
+        remote_src: yes 
+        src: /web_data_host/index.html
+        dest: /var/www/html/index.html
+
     - name: '{{service_name}} i firewalld - wlaczenie uslugi'
       service: 
         name: "{{ item }}"
-        state: started
+        state: restarted
         enabled: yes
       loop: 
         - '{{service_name}}'
         - firewalld
+
 
     # FIREWALLD
     - name: 'Firewalld - odblokowanie portu {{ service_port }} dla {{ service_name }}'
@@ -53,10 +60,4 @@
         permanent: yes
         immediate: yes
         port: '{{ service_port }}/{{ service_port_protocol }}'
-
-    # PODMIANA PLIKU INDEX
-    - name: 'Podmiana pliku index.html'
-      copy: 
-        src: /web_data_host/index.html
-        dest: /etc/www/html/index.html
 

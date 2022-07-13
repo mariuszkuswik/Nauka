@@ -12,6 +12,7 @@
     ### REPO docker ###
     - name: REPO - kopia pliku .repo dla dockera
       copy: 
+        remote_src: yes
         src: /repos/docker-ce.repo
         dest: /etc/yum.repos.d/docker-ce.repo
 
@@ -38,7 +39,11 @@
         name: docker
 
     # ### Docker - pobranie obrazu
-        
+    
+    # Docker - dodanie DNSa do sieciowki 
+    - name: Docker - dodanie DNSa
+      shell: "nmcli con mod 'docker0' ipv4.dns 8.8.8.8"
+
     ### Docker - utworzenie kontenera
     - name: Docker - pobranie obrazu i utworzenie kontenera 
       docker_container: 
@@ -48,4 +53,12 @@
         volumes: 
           - /docker_data_host:/usr/local/apache2/htdocs
         published_ports: 8080:80
+
+    # FIREWALLD
+    - name: 'Firewalld - odblokowanie portu {{ service_port }} dla {{ service_name }}'
+      ansible.posix.firewalld:
+        state: enabled
+        permanent: yes
+        immediate: yes
+        port: 8080/tcp
         

@@ -12,8 +12,6 @@
   hosts: '{{ server_name }}_group'
 
   tasks: 
-    # UPDATE 
-      
     # INSTALACJA
     - name: nfs-utils - instalacja
       package: 
@@ -22,7 +20,7 @@
           - firewalld
         state: '{{ do_undo }}'
     
-    # SERVICE - start nfs, enabled  
+    # SERVICE - start nfs, enable 
     - name:  nfs-server.service i firewalld - wlaczenie uslugi'
       service: 
         name: '{{ item }}'
@@ -41,16 +39,19 @@
         service: 'nfs'
 
     # MKDIR SHARE
-    - name:
+    - name: MKDIR - Utworzenie folderu {{ share_name }}
       file:
-        path: /'{{ share_name }}'
+        owner: vagrant
+        group: vagrant
+        path: /{{ share_name }}
         state: directory
 
     # KOPIOWANIE pliku exports 
     - name: EXPORTS - Kopia pliku dla nfs
       copy: 
-        src: '/scripts/exports'
-        dest: '/etc/exports'
+        remote_src: yes
+        src: /scripts/exports
+        dest: /etc/exports
 
     # exportfs 
     - name:  EXPORTFS - wszystkie udzialy 

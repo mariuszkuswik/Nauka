@@ -6,11 +6,18 @@
     do_undo: present
     share_name: share
     # ansible_python_interpreter: /usr/bin/python3
-    
-  
+
   hosts: 'all'
 
   tasks: 
+
+    ### SSH
+    - name: SSH - wylaczenie autentykacji przy pomocy hasla
+      shell: sed -i "s/PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/sshd_config && systemctl restart sshd
+
+    ### FSTAB
+    - name: FSTAB - dopisanie opcji auto
+      shell: sed "s/defaults,/defaults,auto,/g" /etc/fstab
 
     ### GRUPY ###
     - name: Grupa - tworzenie 
@@ -29,13 +36,29 @@
         append: yes
         state: '{{ do_undo }}'
       loop:
-          - { name: 'mariusz', groups: 'wheel, test_group' }
+          - { name: 'user_user', groups: 'wheel, test_group' }
           - { name: 'test_user', groups: 'test_group' }
+
+    # REPO- wylaczenie domyslnych 
+    - name: REPO - Wylaczenie domyslnych repozytoriow AppStream i BaseOS
+      shell: sed -i "s/enabled=1/enabled=0/g" /etc/yum.repos.d/*AppStream* && sed -i "s/enabled=1/enabled=0/g" /etc/yum.repos.d/*BaseOS*
+
+    ### REPO lokalne - kopia 
+    - name: REPO - Kopia plikow .repo do /etc/yum.repos.d
+      copy: 
+        src: /repos/{{ item }}/{{ item }}.repo
+        dest: /etc/yum.repos.d/{{ item }}.repo
+      loop: 
+        - BaseOS
+        - AppStream
 
     ### UPDATE ###
     - name: Update
       dnf: 
-        update_only: yes
+        name: "*"
+        state: "latest"
+        nobest: yes
+        skip_broken: yes
 
     ### INSTALACJA ###
     - name: SERVICE - nfs i firewalld - instalacja 
@@ -56,12 +79,14 @@
         - firewalld
 
     #### SHARE ###
-    - name: SHARE - tworzenie folderu do podmapowania
+    - name: SHARE - tworzenie folderu do mapowania
       file:
+        owner: vagrant
+        group: vagrant
         path: /mnt/{{ share_name }}
         state: directory
 
-    - name: SHARE - mapowanie udzialow nfs 
+    - name: SHARE - mapowanie udzialu nfs 
       mount: 
         path: /mnt/{{ share_name }}
         src: 192.168.1.50:/{{ share_name }}
@@ -69,16 +94,4 @@
         fstype: nfs4
         opts: _netdev,rw,nofail
     
-# DODAC CUSTOMOWE REPO DLA KAZDEGO SERWERA
-   #  - name: SHARE - Kopia plikow .SHARE do /etc/yum.SHAREs.d
-   #    copy: 
-   #      src: /mnt/'{{ item }}'/'{{ item }}'.SHARE
-   #      dest: /etc/yum.SHAREs.d/'{{ item }}'.SHARE
-   #    loop: 
-   #      - BaseOS
-   #      - AppStream
 
-
-    # REPO- wylaczenie domyslnych 
-    # - name: REPO - Wylaczenie domyslnych repozytoriow 
-    #   shell: sed -i "s/enabled=1/enabled=0/g" /etc/yum.repos.d/*

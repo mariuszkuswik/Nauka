@@ -1,14 +1,3 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
-
-# Every Vagrant development environment requires a box. You can search for
-# boxes at https://vagrantcloud.com/search.
-  
-# The most common configuration options are documented and commented below.
-# For a complete reference, please see the online documentation at
-# https://docs.vagrantup.com.
-WEB_HOST_PORT = 80
-
 SCRIPTS_DIR = "./scripts"
 
 REP_DIR = "./repos"
@@ -35,9 +24,14 @@ Vagrant.configure("2") do |config|
     webserver.vm.network "private_network", ip: "192.168.1.51"
 
     ### DIR SYNC ###
-    webserver.vm.synced_folder REP_DIR, "/repos"
     webserver.vm.synced_folder WEB_HOST_DIR, "/web_data_host"
     webserver.vm.synced_folder SCRIPTS_DIR, "/scripts"
+
+    # REPO
+    webserver.vm.synced_folder REP_DIR, "/repos"
+    webserver.vm.synced_folder REP_APPSTREAM_DIR, "/repos/AppStream"
+    webserver.vm.synced_folder REP_BASEOS_DIR, "/repos/BaseOS"
+    webserver.vm.synced_folder DOCKER_HOST_DIR, "/docker_data_host"
 
     ### VIRTUALBOX WEBSERVER ###
     webserver.vm.provider "virtualbox" do |webserver|
@@ -53,12 +47,10 @@ Vagrant.configure("2") do |config|
     ### SHELL ###  
     # DNS
     webserver.vm.provision "shell", inline: "nmcli con mod 'System eth2' ipv4.dns 8.8.8.8"
+    webserver.vm.provision "shell", inline: "nmcli con mod 'System eth1' ipv4.dns 8.8.8.8"
     
     webserver.vm.provision "shell", inline: <<-SHELL
-      echo " "
       dnf install sshpass -y
-      # dnf update -y
-      # dnf install httpd -y
     SHELL
 
     ## SSH ## 
@@ -68,17 +60,8 @@ Vagrant.configure("2") do |config|
       systemctl restart sshd
     SHELL
 
-    # Wykonanie skryptu przez ssh  
-    # webserver.vm.provision "shell", inline: "chmod 500 /scripts/ssh_key_add.sh && mkdir /root/.ssh"
-    # Dodanie ansiblemachine do known_hosts
-    # webserver.vm.provision "shell", inline: "ssh-keyscan 192.168.0.50 >> /root/.ssh/known_hosts"
-    # Wykonanie skryptu na ansiblemachine
-    # webserver.vm.provision "shell", inline: "sshpass -p 'vagrant' ssh vagrant@192.168.0.50 'bash -s' < /scripts/ssh_key_add.sh"
-    
-
   end
 
-  # Maszyna ma dzialac z usluga docker i na niej cos hostowac
   #### DOCKERSERVER ####
   config.vm.define "dockerserver" do |dockerserver|
     dockerserver.vm.box = "generic/rocky8"
@@ -90,13 +73,15 @@ Vagrant.configure("2") do |config|
     
     ### DIR SYNC ###
     dockerserver.vm.synced_folder SCRIPTS_DIR, "/scripts"
-    dockerserver.vm.synced_folder REP_DIR, "/repos"
     dockerserver.vm.synced_folder DOCKER_HOST_DIR, "/docker_data_host"
     
-
+    # REPO 
+    dockerserver.vm.synced_folder REP_DIR, "/repos"
+    dockerserver.vm.synced_folder REP_BASEOS_DIR, "/repos/BaseOS" 
+    dockerserver.vm.synced_folder REP_APPSTREAM_DIR, "/repos/AppStream" 
+    
     ### VIRTUALBOX dockerserver ###
     dockerserver.vm.provider "virtualbox" do |dockerserver|
-      # GUI virtualboxa nie bedzie sie pojawiac?
       dockerserver.gui = false
       # Nazwa w virtualbox
       dockerserver.name = "dockerserver"
@@ -108,6 +93,7 @@ Vagrant.configure("2") do |config|
     ### SHELL ###
     # DNS
     dockerserver.vm.provision "shell", inline: "nmcli con mod 'System eth2' ipv4.dns 8.8.8.8"
+    dockerserver.vm.provision "shell", inline: "nmcli con mod 'System eth1' ipv4.dns 8.8.8.8"
 
     ## SSH ##
     dockerserver.vm.provision "shell", inline: <<-SHELL
@@ -125,7 +111,6 @@ config.vm.define "ansiblemachine" do |ansiblemachine|
   ansiblemachine.vm.hostname = "ansiblemachine"
 
   ### SIEC ###
-  # Siec zewnetzna potrzebna dla instalacji ansible
   ansiblemachine.vm.network "public_network", bridge: "Realtek PCIe GBE Family Controller", ip: "192.168.0.50"
   ansiblemachine.vm.network "private_network", ip: "192.168.1.50"
   
@@ -139,10 +124,7 @@ config.vm.define "ansiblemachine" do |ansiblemachine|
 
   ### VIRTUALBOX ANSIBLEMACHINE ###
   ansiblemachine.vm.provider "virtualbox" do |ansiblemachine|
-    # DO ZROBIENIA - sprawdzic czy na pewno
-    # GUI virtualboxa nie bedzie sie pojawiac?
     ansiblemachine.gui = false
-    # Nazwa w virtualbox
     ansiblemachine.name = "ansiblemachine"
     ansiblemachine.memory = "2048"
     ansiblemachine.cpus = 2       
@@ -150,14 +132,14 @@ config.vm.define "ansiblemachine" do |ansiblemachine|
 
   ### SHELL ### 
   ansiblemachine.vm.provision "shell", inline: "nmcli con mod 'System eth2' ipv4.dns 8.8.8.8"
+  ansiblemachine.vm.provision "shell", inline: "nmcli con mod 'System eth1' ipv4.dns 8.8.8.8"
   
   ## Zmienne sredowiskowe
   # Zmiana configu dla ansible, config przypisuje plik hosts
   ansiblemachine.vm.provision "shell", inline: "echo 'export ANSIBLE_CONFIG=/ansible_host/ansible.cfg' >> /etc/bashrc && source /etc/bashrc"
 
-  ## Update
+  ## sshpass - instalacja
     ansiblemachine.vm.provision "shell", inline: <<-SHELL
-    # dnf update -y
     dnf install ansible sshpass -y
   SHELL
 
