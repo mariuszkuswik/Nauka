@@ -68,7 +68,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 8. [-] Find all files that are owned by user **edwin** and copy them to the directory ```/rootedwinfiles```.
 
-9. [ ] Schedule a task that runs the command ```touch /etc/motd``` every day from Monday through Friday at 2 a.m.
+9. [x] Schedule a task that runs the command ```touch /etc/motd``` every day from Monday through Friday at 2 a.m.
 
 10. [x] Add a new 10-GiB virtual disk to your virtual machine. On this disk, add a **VDO** volume with a size of 20 GiB and mount it persistently.
 
@@ -906,7 +906,11 @@ Create a virtual machine with the name server4. Make sure it meets the following
 # Oreilly - odpowiedzi
 [Spis treści](#spis-treści)
 
-#### Moje odpowiedzi
+## Exam A - odpowiedzi
+[Spis treści](#spis-treści)
+
+### Moje odpowiedzi
+
 1. Create user student with password password, and user root with password password.
 ```
 useradd student 
@@ -915,19 +919,15 @@ useradd root
 passwd stundent 
 passwd root
 ```
+2. 
+3. 
 6. 
 ```setfacl -m g:operations:r-x /groups/livingopensource```
 
-## Exam A - odpowiedzi
-[Spis treści](#spis-treści)
-
-1. 
-2. 
-3. 
-
 9. Schedule a task that runs the command ```touch /etc/motd``` every day from Monday through Friday at 2 a.m.  
+
 ```bash
-vim /etc/crontab 
+vim /etc/crontab
 
 # time	user	command
 # minute hour day(month) month day(week)
@@ -937,6 +937,12 @@ vim /etc/crontab
 cronnext -c 
 ```  
 
+11. Install the ```vsftpd``` service and ensure that it is started automatically at reboot.
+
+```bash
+dnf install vsftpd -y
+systemctl enable --now vsftpd
+```
 
 
 ## Exam B - odpowiedzi
