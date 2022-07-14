@@ -109,7 +109,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
     - [ ] Users should be allowed to delete only their own files.
     - [ ] Others should have no access to any of the directories.
 
-7. [ ] Create a 2-GiB swap partition and mount it persistently.
+7. [x] Create a 2-GiB swap partition and mount it persistently.
 
 8. [x] Resize the LVM logical volume that contains the root file system and add 1 GiB.
 
@@ -921,6 +921,13 @@ passwd root
 ```
 2. 
 3. 
+4. Set default values for new users. Ensure that an empty file with the name ```NEWFILE``` is copied to the home directory of each new user that is created.
+```bash
+touch /etc/skel/NEWFILE
+```
+
+5. 
+
 6. Create shared group directories ```/groups/livingopensource``` and ```/groups/operations```, and make sure the groups meet the following requirements:
     - Members of the group *livingopensource* have full access to their directory.
 		```bash
