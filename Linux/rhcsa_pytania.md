@@ -51,9 +51,9 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 2. [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
-- [ ] Reboot your server. Assume that you don’t know the **root** password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
+3. [ ] Reboot your server. Assume that you don’t know the **root** password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
 
-- [ ] Set default values for new users. Set the default password validity to 90 days, and set the first UID that is used for new users to 2000.
+4. [ ] Set default values for new users. Set the default password validity to 90 days, and set the first UID that is used for new users to 2000.
 
 - [x] Create users **edwin** and **santos** and make them members of the group *livingopensource* as a secondary group membership. Also, create users **serene** and **alex** and make them members of the group *operations* as a secondary group.
 
