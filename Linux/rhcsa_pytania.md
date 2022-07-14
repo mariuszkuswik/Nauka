@@ -997,7 +997,12 @@ vi /etc/fstab
 lvresize -L +1G /dev/mapper/rhel-root
 ```
 
-9. 
+9. Set your server to use the recommended tuned profile.
+```bash
+tuned-adm recommend
+
+tuned-adm profile "$profile"
+```
 
 10. Create user **vicky** with the custom **UID 2008**.
 ```bash
