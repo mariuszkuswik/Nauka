@@ -99,7 +99,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 3. [x] Create a 1-GB XFS partition on ```/dev/sdb```. Mount it persistently on the directory ```/mydata```, using the label **mylabel**.
 
-4. [ ] Set default values for new users. Ensure that an empty file with the name ```NEWFILE``` is copied to the home directory of each new user that is created.
+4. [x] Set default values for new users. Ensure that an empty file with the name ```NEWFILE``` is copied to the home directory of each new user that is created.
 
 5. [x] Create users **laura** and **linda** and make them members of the group **livingopensource** as a secondary group membership. Also, create users **lisa** and **lori** and make them members of the group **operations** as a secondary group.
 
@@ -117,7 +117,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 10. [x] Create user **vicky** with the custom **UID 2008**.
 
-11. [ ] Configure your server to synchronize time with myserver.example.com. (Note that this server does not have to exist.)
+11. [-] Configure your server to synchronize time with myserver.example.com. (Note that this server does not have to exist.)
 
 12. [x] Install a web server and ensure that it is started automatically.
 
@@ -135,11 +135,11 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 
 
-- [ ] Create user **student** with password **password**, and user root with password **password**.
+1. [ ] Create user **student** with password **password**, and user root with password **password**.
 
-- [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
+2. [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
-- [ ] Reboot your server. Assume that you don’t know the root password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
+3. [ ] Reboot your server. Assume that you don’t know the root password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
 
 - [ ] Set default values for new users. Make sure that any new user password has a length of at least six characters and must be used for at least three days before it can be reset.
 
@@ -1027,6 +1027,25 @@ systemctl enable --now httpd
 
 ## Exam C - odpowiedzi
 [Spis treści](#spis-treści)
+
+1. 
+2. 
+3. Reboot your server. Assume that you don’t know the root password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
+```bash
+# Sprawdzenie gdzie jest zamontowana partycja root 
+mount 
+
+# Prawie na pewno jest to /sysroot
+mount -o remount,rw 
+
+chroot /sysroot
+
+passwd root
+
+# SELINUX - Labelki maja byc zalozone na nowo
+touch /.autorelabel
+```
+
 
 ## Exam D - odpowiedzi
 [Spis treści](#spis-treści)
