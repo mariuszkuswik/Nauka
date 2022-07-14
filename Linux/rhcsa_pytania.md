@@ -70,9 +70,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 - [ ] Schedule a task that runs the command ```touch /etc/motd``` every day from Monday through Friday at 2 a.m.
 
-- [ ] Add a new 10-GiB virtual disk to your virtual machine. On this disk, add a **VDO** volume with a size of 20 GiB and mount it persistently.
-
-- [ ] Create user **bob** and set this user’s shell so that only this user can change the password.
+- [x] Add a new 10-GiB virtual disk to your virtual machine. On this disk, add a **VDO** volume with a size of 20 GiB and mount it persistently.
 
 - [x] Install the ```vsftpd``` service and ensure that it is started automatically at reboot.
 
