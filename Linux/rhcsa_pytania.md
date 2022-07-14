@@ -931,7 +931,7 @@ vim /etc/crontab
 
 # time	user	command
 # minute hour day(month) month day(week)
-  0	14 * * 1-5	root	touch /etc/motd
+0 14 * * 1-5	root	touch /etc/motd
 
 # Sprawdzenie czy polecenie bedzie wykonane o wlasciwej porze 
 cronnext -c 
