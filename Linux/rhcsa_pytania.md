@@ -93,33 +93,33 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 - Server with GUI installation pattern
 
 
-- [ ] Create user **student** with password **password**, and user root with password **password**.
+1. [ ] Create user **student** with password **password**, and user root with password **password**.
 
-- [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
+2. [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
-- [x] Create a 1-GB XFS partition on ```/dev/sdb```. Mount it persistently on the directory ```/mydata```, using the label **mylabel**.
+3. [x] Create a 1-GB XFS partition on ```/dev/sdb```. Mount it persistently on the directory ```/mydata```, using the label **mylabel**.
 
-- [ ] Set default values for new users. Ensure that an empty file with the name ```NEWFILE``` is copied to the home directory of each new user that is created.
+4. [ ] Set default values for new users. Ensure that an empty file with the name ```NEWFILE``` is copied to the home directory of each new user that is created.
 
-- [x] Create users **laura** and **linda** and make them members of the group **livingopensource** as a secondary group membership. Also, create users **lisa** and **lori** and make them members of the group **operations** as a secondary group.
+5. [x] Create users **laura** and **linda** and make them members of the group **livingopensource** as a secondary group membership. Also, create users **lisa** and **lori** and make them members of the group **operations** as a secondary group.
 
-- [ ] Create shared group directories ```/groups/livingopensource``` and ```/groups/operations``` and make sure these groups meet the following requirements:
+6. [ ] Create shared group directories ```/groups/livingopensource``` and ```/groups/operations``` and make sure these groups meet the following requirements:
     - [ ] Members of the group **livingopensource** have full access to their directory.
     - [ ] Members of the group **operations** have full access to their directory.
     - [ ] Users should be allowed to delete only their own files.
     - [ ] Others should have no access to any of the directories.
 
-- [ ] Create a 2-GiB swap partition and mount it persistently.
+7. [ ] Create a 2-GiB swap partition and mount it persistently.
 
-- [ ] Resize the LVM logical volume that contains the root file system and add 1 GiB.
+8. [ ] Resize the LVM logical volume that contains the root file system and add 1 GiB.
 
-- [ ] Set your server to use the recommended tuned profile.
+9. [ ] Set your server to use the recommended tuned profile.
 
-- [ ] Create user vicky with the custom **UID 2008**.
+10. [ ] Create user vicky with the custom **UID 2008**.
 
-- [ ] Configure your server to synchronize time with myserver.example.com. (Note that this server does not have to exist.)
+11. [ ] Configure your server to synchronize time with myserver.example.com. (Note that this server does not have to exist.)
 
-- [ ] Install a web server and ensure that it is started automatically.
+12. [ ] Install a web server and ensure that it is started automatically.
 
 
 ## RHCSA Practice Exam C
@@ -967,6 +967,34 @@ systemctl enable --now vsftpd
 
 ## Exam B - odpowiedzi
 [Spis treści](#spis-treści)
+
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. Create a 2-GiB swap partition and mount it persistently.
+```bash
+# Sprawdzenie poczatkowego swapu 
+free -h 
+
+# Tworzenie dwogigowej partycji sdb1 
+parted /dev/sdb
+
+mkswap /dev/sdb1s
+
+swapon -a 
+
+lsblk -f /dev/sdb1 >> /etc/fstab
+
+vi /etc/fstab 
+>> UUID swap swap defaults,nofail 0 0
+```
+8. 
+9. 
+10. 
+11. 
 
 ## Exam C - odpowiedzi
 [Spis treści](#spis-treści)
