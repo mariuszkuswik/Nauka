@@ -995,9 +995,6 @@ vi /etc/fstab
 8. Resize the LVM logical volume that contains the root file system and add 1 GiB.
 ```bash
 lvresize -L +1G /dev/mapper/rhel-root
-
-
-
 ```
 
 9. 
