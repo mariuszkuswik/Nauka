@@ -111,11 +111,11 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 7. [ ] Create a 2-GiB swap partition and mount it persistently.
 
-8. [ ] Resize the LVM logical volume that contains the root file system and add 1 GiB.
+8. [x] Resize the LVM logical volume that contains the root file system and add 1 GiB.
 
 9. [ ] Set your server to use the recommended tuned profile.
 
-10. [ ] Create user vicky with the custom **UID 2008**.
+10. [x] Create user **vicky** with the custom **UID 2008**.
 
 11. [ ] Configure your server to synchronize time with myserver.example.com. (Note that this server does not have to exist.)
 
@@ -998,7 +998,12 @@ lvresize -L +1G /dev/mapper/rhel-root
 ```
 
 9. 
-10. 
+
+10. Create user **vicky** with the custom **UID 2008**.
+```bash
+useradd -u 2008 vicky
+```
+
 11. 
 
 ## Exam C - odpowiedzi
