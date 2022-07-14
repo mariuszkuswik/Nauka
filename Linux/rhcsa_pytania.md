@@ -921,6 +921,13 @@ passwd root
 ## Exam A - odpowiedzi
 [Spis treści](#spis-treści)
 
+1. 
+2. 
+3. 
+
+9. Schedule a task that runs the command ```touch /etc/motd``` every day from Monday through Friday at 2 a.m.
+```0 14 * * 1-5	root	touch /etc/motd```
+
 
 
 ## Exam B - odpowiedzi
