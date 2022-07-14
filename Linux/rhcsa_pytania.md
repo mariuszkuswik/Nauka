@@ -923,9 +923,21 @@ passwd root
 3. 
 6. Create shared group directories ```/groups/livingopensource``` and ```/groups/operations```, and make sure the groups meet the following requirements:
     - Members of the group *livingopensource* have full access to their directory.
+		```bash
+		
+		```
     - Members of the group *operations* have full access to their directory.
+		```bash
+		
+		```
     - New files that are created in the group directory are group owned by the group owner of the parent directory.
+		```bash
+		
+		```
     - Others have no access to the group directories.
+		```bash
+		
+		```
     - Members of the group *operations* have read access to the directory ```/groups/livingopensource```.
 		```bash
 		setfacl -m g:operations:r-x /groups/livingopensource
