@@ -113,13 +113,13 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 8. [x] Resize the LVM logical volume that contains the root file system and add 1 GiB.
 
-9. [ ] Set your server to use the recommended tuned profile.
+9. [x] Set your server to use the recommended tuned profile.
 
 10. [x] Create user **vicky** with the custom **UID 2008**.
 
 11. [ ] Configure your server to synchronize time with myserver.example.com. (Note that this server does not have to exist.)
 
-12. [ ] Install a web server and ensure that it is started automatically.
+12. [x] Install a web server and ensure that it is started automatically.
 
 
 ## RHCSA Practice Exam C
@@ -1010,6 +1010,13 @@ useradd -u 2008 vicky
 ```
 
 11. 
+
+12. Install a web server and ensure that it is started automatically.
+```bash
+dnf install httpd -y
+systemctl enable --now httpd
+```
+
 
 ## Exam C - odpowiedzi
 [Spis treści](#spis-treści)
