@@ -926,7 +926,16 @@ passwd root
 3. 
 
 9. Schedule a task that runs the command ```touch /etc/motd``` every day from Monday through Friday at 2 a.m.  
-```0 14 * * 1-5	root	touch /etc/motd```  
+```bash
+vim /etc/crontab 
+
+# time	user	command
+# minute hour day(month) month day(week)
+  0	14 * * 1-5	root	touch /etc/motd
+
+# Sprawdzenie czy polecenie bedzie wykonane o wlasciwej porze 
+cronnext -c 
+```  
 
 
 
