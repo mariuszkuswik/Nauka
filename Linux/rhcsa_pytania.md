@@ -920,7 +920,21 @@ passwd stundent
 passwd root
 ```
 2. 
-3. 
+3. Reboot your server. Assume that you don’t know the root password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
+```bash
+# Sprawdzenie gdzie jest zamontowana partycja root 
+mount 
+
+# Prawie na pewno jest to /sysroot
+mount -o remount,rw 
+
+chroot /sysroot
+
+passwd root
+
+# SELINUX - Labelki maja byc zalozone na nowo
+touch /.autorelabel
+```
 4. Set default values for new users. Ensure that an empty file with the name ```NEWFILE``` is copied to the home directory of each new user that is created.
 ```bash
 touch /etc/skel/NEWFILE
@@ -977,7 +991,22 @@ systemctl enable --now vsftpd
 
 1. 
 2. 
-3. 
+3. Reboot your server. Assume that you don’t know the root password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
+```bash
+# Sprawdzenie gdzie jest zamontowana partycja root 
+mount 
+
+# Prawie na pewno jest to /sysroot
+mount -o remount,rw 
+
+chroot /sysroot
+
+passwd root
+
+# SELINUX - Labelki maja byc zalozone na nowo
+touch /.autorelabel
+```
+
 4. 
 5. 
 6. 
