@@ -47,9 +47,9 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 - Server with GUI installation pattern
 
 
-- [ ] Create user **student** with password ```password```, and user **root** with password ```password```.
+- 1. [ ] Create user **student** with password ```password```, and user **root** with password ```password```.
 
-- [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
+- 2. [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
 - [ ] Reboot your server. Assume that you don’t know the **root** password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
 
