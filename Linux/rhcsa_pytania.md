@@ -991,7 +991,15 @@ lsblk -f /dev/sdb1 >> /etc/fstab
 vi /etc/fstab 
 >> UUID swap swap defaults,nofail 0 0
 ```
-8. 
+
+8. Resize the LVM logical volume that contains the root file system and add 1 GiB.
+```bash
+lvresize -L +1G /dev/mapper/rhel-root
+
+
+
+```
+
 9. 
 10. 
 11. 
