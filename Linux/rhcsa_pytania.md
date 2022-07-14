@@ -921,8 +921,16 @@ passwd root
 ```
 2. 
 3. 
-6. 
-```setfacl -m g:operations:r-x /groups/livingopensource```
+6. Create shared group directories ```/groups/livingopensource``` and ```/groups/operations```, and make sure the groups meet the following requirements:
+    - Members of the group *livingopensource* have full access to their directory.
+    - Members of the group *operations* have full access to their directory.
+    - New files that are created in the group directory are group owned by the group owner of the parent directory.
+    - Others have no access to the group directories.
+    - Members of the group *operations* have read access to the directory ```/groups/livingopensource```.
+		- ```bash
+		setfacl -m g:operations:r-x /groups/livingopensource
+		```
+
 
 9. Schedule a task that runs the command ```touch /etc/motd``` every day from Monday through Friday at 2 a.m.  
 
