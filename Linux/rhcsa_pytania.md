@@ -927,7 +927,7 @@ passwd root
     - New files that are created in the group directory are group owned by the group owner of the parent directory.
     - Others have no access to the group directories.
     - Members of the group *operations* have read access to the directory ```/groups/livingopensource```.
-		- ```bash
+		```bash
 		setfacl -m g:operations:r-x /groups/livingopensource
 		```
 
