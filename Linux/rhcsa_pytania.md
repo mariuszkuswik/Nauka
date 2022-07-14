@@ -66,7 +66,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 - [ ] Create a 2-GiB volume group, using 8-MiB physical extents. In this volume group, create a 500-MiB logical volume with the name mydata, and mount it persistently on the directory ```/mydata```.
 
-- [ ] Find all files that are owned by user **edwin** and copy them to the directory ```/rootedwinfiles```.
+- [-] Find all files that are owned by user **edwin** and copy them to the directory ```/rootedwinfiles```.
 
 - [ ] Schedule a task that runs the command ```touch /etc/motd``` every day from Monday through Friday at 2 a.m.
 
@@ -74,7 +74,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 - [ ] Create user **bob** and set this user’s shell so that only this user can change the password.
 
-- [ ] Install the ```vsftpd``` service and ensure that it is started automatically at reboot.
+- [x] Install the ```vsftpd``` service and ensure that it is started automatically at reboot.
 
 - [ ] Create a **container** that runs the rsyslog service. This container should be configured to write log files persistently to the directory ```/var/log/logcontainer/``` on the host operating system. Run this container with the same user account that the rsyslog service normally uses.
 
