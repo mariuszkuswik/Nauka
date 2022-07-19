@@ -1,6 +1,0 @@
-[BaseOS]
-name="BaseOS"
-baseurl=https://download.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/
-gpgcheck=no
-sslverify=no
-enabled=1
