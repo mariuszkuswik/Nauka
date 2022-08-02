@@ -1,5 +1,3 @@
-
-asd
 # Spis treści
 
 1. [Pomoc](#pomoc)
