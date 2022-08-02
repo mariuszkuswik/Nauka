@@ -1047,20 +1047,19 @@ Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego 
 
 ## Dnf
 [Spis treści](#spis-tre%C5%9Bci)
-
 - [Repozytoria](#repo)
 - [Dodanie nowego repozytorium](#dodanie-nowego-repozytorium)
 
-[Introduction to Application Streams](https://www.redhat.com/en/blog/introduction-appstreams-and-modules-red-hat-enterprise-linux)
-
-
-[CHAPTER 1. USING APPSTREAM](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/using-appstream_using-appstream)
-[CHAPTER 2. INTRODUCTION TO MODULES]
-
-
+#### Linki pomocnicze 
+- [Introduction to Application Streams](https://www.redhat.com/en/blog/introduction-appstreams-and-modules-red-hat-enterprise-linux)
+  
+- [RedHat - Chapter 1. Using AppStream](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/using-appstream_using-appstream)
+- [RedHat - CHAPTER 2. INTRODUCTION TO MODULES]
+  
+  
 [](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/finding-rhel-8-content_using-appstream)
-
-[Różnica pomiędzy dnf module a dnf group](https://unix.stackexchange.com/questions/603905/what-is-the-difference-between-a-yum-group-and-a-yum-module-in-red-hat-enterpris)
+  
+- [Różnica pomiędzy dnf module a dnf group](https://unix.stackexchange.com/questions/603905/what-is-the-difference-between-a-yum-group-and-a-yum-module-in-red-hat-enterpris)
 
 
 1. List module streams available to your system:
