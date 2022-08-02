@@ -1049,6 +1049,7 @@ Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego 
 [Spis treści](#spis-tre%C5%9Bci)
 
 - [Repozytoria](#repo)
+- [Dodanie nowego repozytorium](#dodanie-nowego-repozytorium)
 
 [Introduction to Application Streams](https://www.redhat.com/en/blog/introduction-appstreams-and-modules-red-hat-enterprise-linux)
 
@@ -1140,8 +1141,10 @@ baseurl="$repo_link"
 
 # Czy sprawdzać klucz gpg - 0 lub 1 
 # Klucz gpg sprawdza czy paczki w repo nie zostały podmienione
-gpgcheck="$0_1" 
+gpgcheck="no" 
 gpgkey="$gpg_path"
+sslverify=no
+sslke
 ```
 
 
