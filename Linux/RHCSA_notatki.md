@@ -1101,12 +1101,12 @@ $ yum module list module-name
 
 [Zarządzanie Kernelem](#kernel)
 
-1. To update the kernel, use the following:
+1. Kernel Update 
 ```
 # yum update kernel
 ```
 
-2. To install a specific kernel version, use the following:
+2. Installation of a specific kernel version:
 ```console
 # yum install kernel-{version}
 ```
@@ -1540,6 +1540,37 @@ OPISAĆ
 - SELinux 
     - jest błąd z serwerem httpd, nadanie kontekstu do folderu tak żeby serwer mógł odczytać pliki
     - zdiagnozowanie problemu z SELinux przez /var/log/messages
+
+
+
+
+
+
+
+https://askubuntu.com/questions/1148620/rc-local-to-be-executed-at-boot
+. You can find a rc.local in there that has a remark about it running /etc/rc.local if present. That is the one you probably are expected to create.
+
+In /etc/rc.local you can put scripts to be executed at a run-level.
+
+Example file with 1 line added:
+
+$ more /etc/rc.local
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+[ -x /sbin/initctl ] && initctl emit --no-wait google-rc-local-has-run || true
+
+exit 0
 
 
 # Koniec
