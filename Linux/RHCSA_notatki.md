@@ -1050,16 +1050,18 @@ Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego 
 - [Repozytoria](#repo)
 - [Dodanie nowego repozytorium](#dodanie-nowego-repozytorium)
   
-#### Linki pomocnicze 
-- [Introduction to Application Streams](https://www.redhat.com/en/blog/introduction-appstreams-and-modules-red-hat-enterprise-linux)
-    
+### Linki pomocnicze 
+Red Hat
 - [RedHat - Chapter 1. Using AppStream](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/using-appstream_using-appstream)
 - [RedHat - Chapter 2. Introduction to modules](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/introduction-to-modules_using-appstream)
 - [RedHat - Chapter 3. Finding RHEL 8 content](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/finding-rhel-8-content_using-appstream)
-   
+
+Random 
+- [Introduction to Application Streams](https://www.redhat.com/en/blog/introduction-appstreams-and-modules-red-hat-enterprise-linux)   
 - [Różnica pomiędzy dnf module a dnf group](https://unix.stackexchange.com/questions/603905/what-is-the-difference-between-a-yum-group-and-a-yum-module-in-red-hat-enterpris)
   
-  
+## Modules
+
 1. List module streams available to your system:
 ```console
 $ yum module list
@@ -1074,8 +1076,6 @@ $ yum module info module-name
 ```console
 $ yum module list module-name
 ```
-
-
 
 ### Installing Applications via Modules
 
