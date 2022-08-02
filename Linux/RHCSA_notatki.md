@@ -15,7 +15,11 @@
 1. [ACL](#acl)
 1. [SUID, SGID, Sticky bit](#SUID,-SGID,-Sticky-bit)
 1. [Sysstat](#sar---sysstat)
-1. [Dnf](#dnf)
+1. [Instalacja/Update](#instalacjaupdate)
+    - [Dnf](#dnf)
+    - [Modules](#modules)
+    - [Repo](#repo)
+        - [Dodanie nowego repo](#dodanie-nowego-repozytorium)
 1. [Blokowanie połączenia z konkretnego serwera](#blokowanie-po%C5%82%C4%85czenia-z-konkretnego-serwera)
 1. [autofs](#autofs)
 1. [Archiwizowanie](#archiwizowanie)
@@ -1045,22 +1049,28 @@ Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego 
 
 # Instalacja/update
 
-## Dnf
 [Spis treści](#spis-tre%C5%9Bci)
+- [Dnf](#dnf)
 - [Repozytoria](#repo)
 - [Dodanie nowego repozytorium](#dodanie-nowego-repozytorium)
-  
+
 ### Linki pomocnicze 
 Red Hat
 - [RedHat - Chapter 1. Using AppStream](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/using-appstream_using-appstream)
 - [RedHat - Chapter 2. Introduction to modules](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/introduction-to-modules_using-appstream)
 - [RedHat - Chapter 3. Finding RHEL 8 content](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/finding-rhel-8-content_using-appstream)
 
+- [Kernel Red Hat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/updating-kernel-with-yum_managing-monitoring-and-updating-the-kernel)
+
 Random 
 - [Introduction to Application Streams](https://www.redhat.com/en/blog/introduction-appstreams-and-modules-red-hat-enterprise-linux)   
 - [Różnica pomiędzy dnf module a dnf group](https://unix.stackexchange.com/questions/603905/what-is-the-difference-between-a-yum-group-and-a-yum-module-in-red-hat-enterpris)
-  
-## Modules
+
+
+## Dnf
+
+
+### Modules
 
 1. List module streams available to your system:
 ```console
@@ -1092,10 +1102,9 @@ $ yum module list module-name
 
 ## Rpm 
 
-## Kernel update
-[Kernel Red Hat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/updating-kernel-with-yum_managing-monitoring-and-updating-the-kernel)
-
-[Zarządzanie Kernelem](#kernel)
+### Kernel update 
+[Red Hat - Kernel update](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/updating-kernel-with-yum_managing-monitoring-and-updating-the-kernel)  
+[Lokalnie - Zarządzanie Kernelem](#kernel)  
 
 1. Kernel Update 
 ```
