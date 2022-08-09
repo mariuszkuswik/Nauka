@@ -12,13 +12,14 @@
 ### Czym się zajmuję w pracy 
 - Reagowanie na alerty NetAppa, zazwyczaj volume full, broken disk,
 - Monitoring SolarWindsa, dodawanie nowych maszyn 
+- Szyfrowanie udziałów 
+	- Skrypt wyciągający wolumeny do szyfrowania, były kryteria na podstawie których były szyfrowane, wyciąganie przez zdalne ssh, sprawdzić SOP 
 - Zglaszanie uszkodzonych dyskow 
-- Automatyczne wyciaganie grup przypisanych do konkretnego udzialu
+- Automatyczne wyciaganie grup przypisanych do konkretnego udzialow
 - Edycja maszyn w VM ware 
 - Windows Patching - konsola Ivanti 
 - Decomisioning maszyn 
-- Szyfrowanie udziałów 
-	- Skrypt wyciągający wolumeny do szyfrowania, były kryteria na podstawie których były szyfrowane, wyciąganie przez zdalne ssh, sprawdzić SOP 
+
 
 ### Doświadczenie zawodowe 
 
@@ -26,7 +27,6 @@
 - Mailparser  
 - Slack, powiadomienia na podstawie dbus-monitor 
 - Wyciaganie zgloszen zle przypisanych 
-
 
 
 ### Co pisałem w pythonie 
@@ -37,7 +37,6 @@
 - Wolny RAM, jezeli nie to sprawdza czy na serwerze działa serwis SQLa 
 - sprawdzenie czy dysk C jest faktycznie zajety, jezeli tak to sprawdza konta uzytkownikow w AD
 - Automatyczne wyciaganie alertow ktore sa przypisane do zlej grupy 
-
 
 
 ### Moje osobiste projekty 
