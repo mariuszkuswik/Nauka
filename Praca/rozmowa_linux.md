@@ -21,14 +21,14 @@
 - [LVM - jak dziala, cos tam, procedura](#Lvm)
 - [Git](#git)
 - [Sieci](#sieci)
-- Wyświetl tablicę routingu i opowiedz o niej
-- Jak działa routing 
-- Jakich bibliotek python używałem 
-	- Selenium - webdriver, klikanie w przegladarce
-	- BeautifulSoup - parsowanie htmla
-	- Pandas - ekstraktowanie csv
-- Czym jest SWAP, ile go potrzeba
-- Różnica między hard a soft linkiem
+	- Wyświetl tablicę routingu i opowiedz o niej
+	- Jak działa routing 
+	- Jakich bibliotek python używałem 
+		- Selenium - webdriver, klikanie w przegladarce
+		- BeautifulSoup - parsowanie htmla
+		- Pandas - ekstraktowanie csv
+	- Czym jest SWAP, ile go potrzeba
+	- Różnica między hard a soft linkiem
 - [Pomoc](#pomoc)
 
 
