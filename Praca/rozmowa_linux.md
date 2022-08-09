@@ -30,11 +30,9 @@
 	- Pandas - ekstraktowanie csv
 - Czym jest SWAP, ile go potrzeba
 - Różnica między hard a soft linkiem
+- [Pomoc](#pomoc)
 
-	
-- Dokumentacja/pomoc w linuxie
-	- man 
-	- /usr/share/doc
+
 
 
 
@@ -42,36 +40,39 @@
 
 
 # Opisy
-- ## NFS - jak skonfigurowac 
-	1. Pobranie nfs-utils?
-	1. Uruchomienie uslugi nfs-server.service
-	1. Dodanie wpisu do /etc/exports
-	1. Otwarcire portu na firewall - sprawdzic jaki port
-- ## Samba - jak skonfigurowac 
-	1. Pobranie smb?
-	1. Uruchomienie uslugi 
-	1. Dodanie udzialu do /etc/smb/smbd.conf?
-		- sprawdzic jak ma wygladac config
-	1. Odblokowanie portu na firewall
-	1. Restart uslugi
-- ## Logi
-	- ### Gdzie znalezc logi
-		- ```/var/log``` - folder z logami
-		- ```/var/log/messages``` - główny plik z logami
-	- ### Logrotate
-		- [Log rotate opisany](https://www.tecmint.com/install-logrotate-to-manage-log-rotation-in-linux/)
-		- [Plural - lab z logami](https://app.pluralsight.com/labs/play/65c22f76-5118-44a8-a8de-871e2061488a/task/1)
-		- [Plural - logi wyjasnione by Andrew Mallet ](https://app.pluralsight.com/course-player?clipId=0cc96a45-0ee8-4ff2-93ae-06247c6c3bfc)
-		- Gdzie przechowywane sa logi
-- ## Git 
-	- #### Branch - jak dodac nowy
-		- Dodac do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
-	- Jak sprawdzic kto i kiedy dodał jakiś commit  
-- ## LVM 
-	- ### Jak dodać LVM - procedura
-- ## Bash 
-	- Co zwraca funkcja - Sama z siebie zwraca 0/1, jeżeli chcemy zwrócić coś konkretnego to używamy return
-- ## Sieci
+## NFS - jak skonfigurowac 
+1. Pobranie nfs-utils?
+1. Uruchomienie uslugi nfs-server.service
+1. Dodanie wpisu do /etc/exports
+1. Otwarcire portu na firewall - sprawdzic jaki port
+## Samba - jak skonfigurowac 
+1. Pobranie smb?
+1. Uruchomienie uslugi 
+1. Dodanie udzialu do /etc/smb/smbd.conf?
+	- sprawdzic jak ma wygladac config
+1. Odblokowanie portu na firewall
+1. Restart uslugi
+
+## Logi
+### Gdzie znalezc logi
+- ```/var/log``` - folder z logami  
+	- ```/var/log/messages``` - główny plik z logami  
+  
+### Logrotate
+- [Log rotate opisany](https://www.tecmint.com/install-logrotate-to-manage-log-rotation-in-linux/)
+- [Plural - lab z logami](https://app.pluralsight.com/labs/play/65c22f76-5118-44a8-a8de-871e2061488a/task/1)
+- [Plural - logi wyjasnione by Andrew Mallet ](https://app.pluralsight.com/course-player?clipId=0cc96a45-0ee8-4ff2-93ae-06247c6c3bfc)
+- Gdzie przechowywane sa logi
+
+## Git 
+### Branch - jak dodac nowy
+- Dodac do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
+- Jak sprawdzic kto i kiedy dodał jakiś commit  
+## LVM 
+- ### Jak dodać LVM - procedura
+## Bash 
+- Co zwraca funkcja - Sama z siebie zwraca 0/1, jeżeli chcemy zwrócić coś konkretnego to używamy return
+## Sieci
 	### Firewall
 	- firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
 	- Jak działa firewall 
@@ -80,6 +81,12 @@
 	- różnice 
 	- czym są 
 
+
+## Pomoc 
+	
+- Dokumentacja/pomoc w linuxie
+	- man 
+	- /usr/share/doc
 
 # Czego się uczyc
 - KVM 
