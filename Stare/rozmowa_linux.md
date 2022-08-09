@@ -63,7 +63,7 @@ uid=1000(chris) gid=1000(chris) groups=1005(sales), 7(lpgroup)</code>
 	</li>
 	<li>
 		<details> <summary>	- Gdzie znajduje się plik z użytkownikami w systemie </summary>
-			Tekst
+			/etc/passwd
 		</details>
 	</li>
 	<li>
@@ -83,7 +83,7 @@ uid=1000(chris) gid=1000(chris) groups=1005(sales), 7(lpgroup)</code>
 	</li>
 	<li>
 		<details> <summary>	- Jak sprawdzić czy filesystem działa poprawnie, jak go naprawić </summary>
-			Tekst
+			fsck."$filesystem"
 		</details>
 	</li>
 	<li>
