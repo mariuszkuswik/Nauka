@@ -1,9 +1,9 @@
 # Spis treści 
 
 - [Atos - Linux z pythonem](#atos---linux-z-pythonem)
-	- [Pytania ktore byly](#pytania-ktore-były-ostatnio)
-	- [Potencjalne pytania](#potencjalne-pytania)
-- [Co opisac](#co-opisac)
+	- [O mnie](#o-mnie)
+	- [Tematy pytan](#tematy-pytan)
+	- [Randomowe pytania](#randomowe-pytania)
 - [Czego się uczyc](#czego-się-uczyc)
 - [Pytania do uzupełnienia](#pytania-do-uzupełnienia)
 - [Pytania na rozmowe](#pytania-na-rozmowę)
