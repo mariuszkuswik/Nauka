@@ -1,10 +1,21 @@
 # Spis treści 
 
-
+- [Atos](#Atos)
+	- [Pytania ktore](#pytania-ktore-były-ostatnio)
+	- [Potencjalne pytania](#potencjalne-pytania)
 - [Co opisać](#co-opisać)
 - [Czego się uczyć](#czego-się-uczyć)
 - [Pytania do uzupełnienia](#pytania-do-uzupełnienia)
 - [Pytania na rozmowe](#pytania-na-rozmowę)
+
+
+
+# Atos - Linux z pythonem
+
+## Pytania ktore były ostatnio 
+
+## Potencjalne pytania  
+
 
 
 # Co opisać 
