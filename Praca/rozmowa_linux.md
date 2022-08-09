@@ -3,8 +3,8 @@
 - [Atos](#Atos)
 	- [Pytania ktore](#pytania-ktore-były-ostatnio)
 	- [Potencjalne pytania](#potencjalne-pytania)
-- [Co opisać](#co-opisać)
-- [Czego się uczyć](#czego-się-uczyć)
+- [Co opisac](#co-opisac)
+- [Czego się uczyc](#czego-się-uczyc)
 - [Pytania do uzupełnienia](#pytania-do-uzupełnienia)
 - [Pytania na rozmowe](#pytania-na-rozmowę)
 
@@ -13,24 +13,26 @@
 # Atos - Linux z pythonem
 
 ## Pytania ktore były ostatnio 
+- [Jak skonfigurowac NFS](#jak-skonfigurowac-nfs)
+- [Jak skonfigurowac Sambę](#jak-skonfigurowac-sambe)
 
 ## Potencjalne pytania  
 
 
 
-# Co opisać 
-- Jak skonfigurować NFS
-- Jak skonfigurować Sambę
+# Co opisac 
+- #### Jak skonfigurowac NFS
+- #### Jak skonfigurowac Sambe
 - Ansible 
 - Puppet
 - Docker
 - Git 
-	- Jak stworzyć nowy branch w git od podstaw
-		- Dodać do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
-	- Jak sprawdzić kto i kiedy dodał jakiś commit  
+	- Jak stworzyc nowy branch w git od podstaw
+		- Dodac do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
+	- Jak sprawdzic kto i kiedy dodał jakiś commit  
 - Gdzie przechowywane sa logi
 
-# Czego się uczyć
+# Czego się uczyc
 - KVM 
 
 
@@ -61,7 +63,7 @@
 		</details>
 	</li>
 	<li>
-		<details> <summary>	- Jak dodać regułę do firewalla</summary>
+		<details> <summary>	- Jak dodac regułę do firewalla</summary>
 			Tekst
 		</details>
 	</li>
@@ -71,12 +73,12 @@
 		</details>
 	</li>
 	<li>
-		<details> <summary>	- Jak dodać użytkownika - adduser i useradd - jak działa useradd</summary>
+		<details> <summary>	- Jak dodac użytkownika - adduser i useradd - jak działa useradd</summary>
 			Tekst
 		</details>
 	</li>
 	<li>
-		<details> <summary>	- Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlić strony hostowanej przez nią, jak zdiagnozowac problem </summary>
+		<details> <summary>	- Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlic strony hostowanej przez nią, jak zdiagnozowac problem </summary>
 			Tekst
 		</details>
 	</li>
@@ -86,7 +88,7 @@
 		</details>
 	</li>
 	<li>
-		<details> <summary>	- Jak sprawdzić czy filesystem działa poprawnie, jak go naprawić </summary>
+		<details> <summary>	- Jak sprawdzic czy filesystem działa poprawnie, jak go naprawic </summary>
 			fsck."$filesystem"
 		</details>
 	</li>
@@ -111,7 +113,7 @@
 		</details>
 	</li>
 	<li>
-		<details> <summary>	- Jak działają LVMy, czym są, jak je wyświetlić, jak rozszerzyć, czym jest volume group </summary>
+		<details> <summary>	- Jak działają LVMy, czym są, jak je wyświetlic, jak rozszerzyc, czym jest volume group </summary>
 			lvm 
 			lslvm - wyświela lvm
 			rozszerzenie lvm :
@@ -120,17 +122,17 @@
 		</details>
 	</li>
 	<li>
-		<details> <summary>	- Jak konfiguruje się firewalla, jak dodać nową regułę</summary>
+		<details> <summary>	- Jak konfiguruje się firewalla, jak dodac nową regułę</summary>
 			Tekst
 		</details>
 	</li>
 	<li>
-		<details> <summary>	- Jak skonfigurować NFS </summary>
+		<details> <summary>	- Jak skonfigurowac NFS </summary>
 			Tekst
 		</details>
 	</li>
 	<li>
-		<details> <summary>	- Jak skonfigurować SAMBe</summary>
+		<details> <summary>	- Jak skonfigurowac SAMBe</summary>
 			Tekst
 		</details>
 	</li>
@@ -175,7 +177,7 @@
 		</details>
 	</li>
 	<li>
-		<details> <summary>	- Jak ustawić statyczne ip dla maszyny</summary>
+		<details> <summary>	- Jak ustawic statyczne ip dla maszyny</summary>
 				Tekst
 		</details>
 	</li>
@@ -188,7 +190,7 @@
 <ol>
 	<li>
 		<details> <summary class="sieci">Czym jest brama domyślna </summary>
-			- W sieci TCP/IP domyślna brama (sieciowa) (ang. default gateway) oznacza router, do którego komputery sieci lokalnej mają wysyłać pakiety o ile nie powinny być one kierowane w sieć lokalną lub do innych, znanych im routerów.
+			- W sieci TCP/IP domyślna brama (sieciowa) (ang. default gateway) oznacza router, do którego komputery sieci lokalnej mają wysyłac pakiety o ile nie powinny byc one kierowane w siec lokalną lub do innych, znanych im routerów.
 		</details> 
 	</li>
 	<li>
@@ -198,28 +200,28 @@
 		</details>  
 	</li>
 	<li>
-		<details> <summary class="sieci">Jak wyświetlić tablicę routingu </summary>
+		<details> <summary class="sieci">Jak wyświetlic tablicę routingu </summary>
 			- <code>ip route</code>   
 		</details>  
 	</li>
 	<li>
-		<details> <summary class="linux sieci">Jak sprawdzić porty otwarte na lokalnej maszynie </summary>
+		<details> <summary class="linux sieci">Jak sprawdzic porty otwarte na lokalnej maszynie </summary>
 			- <code>netstat</code>  </br>
 			- <code>netstat -a</code> - wyświetla wszystkie porty  </br>
 			- <code>netstat -l</code> - wyświetla nasłuchujące porty   </br>
 		</details>  
 	</li>
 	<li>
-		<details> <summary class="linux sieci">Jak przeskanować porty zdalnej maszyny </summary>
+		<details> <summary class="linux sieci">Jak przeskanowac porty zdalnej maszyny </summary>
 			- <code>nmap</code>
 		</details>  
 	</li>
 	<li>
-		<details> <summary class="linux sieci">Jak wyświetlić karty sieciowe </summary>
+		<details> <summary class="linux sieci">Jak wyświetlic karty sieciowe </summary>
 			- <code>ip a</code>
 	</li>
 	<li>
-		<details> <summary class="linux bash">Jak zwrócić wartość funkcji </summary>
+		<details> <summary class="linux bash">Jak zwrócic wartośc funkcji </summary>
 			- <code> return </code>
 		</details>
 	</li>
@@ -244,12 +246,12 @@
 	</li>
 	<li>
 		<details> <summary>- Co zwraca funkcja ? </summary>
-			- Sama z siebie zwraca <b>exitcode</b>, domyslnie wartosc 0/1, żeby zwrócić coś więcej używamy <code>return</code>
+			- Sama z siebie zwraca <b>exitcode</b>, domyslnie wartosc 0/1, żeby zwrócic coś więcej używamy <code>return</code>
 		</details>
 	</li>
 	<li>
 		<details> <summary>- Czym jest <b>VLAN</b></summary>
-			- technologia sieciowa, która pozwala w ramach jednej fizycznej sieci lokalnej tworzyć wiele sieci logicznych (sieci wirtualnych)
+			- technologia sieciowa, która pozwala w ramach jednej fizycznej sieci lokalnej tworzyc wiele sieci logicznych (sieci wirtualnych)
 		</details>
 	</li>
 	<li>
@@ -264,23 +266,23 @@
 		</details>
 	</li>
 	<li>
-		<details> <summary>- Czym jest <b>export</b> a czym <b>env</b>, jak działają zmienne środowiskowe, jak je wypisać</summary>
+		<details> <summary>- Czym jest <b>export</b> a czym <b>env</b>, jak działają zmienne środowiskowe, jak je wypisac</summary>
 			- <code>env</code> - wypisuje zmienne środowiskowe   </br> 
 			- <code>export</code> - tworzy zmienną środowiskową   </br>	
 		</details> 
 	</li>
 	<li>
-		<details> <summary>- Jak sprawdzić biblioteki których nam brakuje </summary>
+		<details> <summary>- Jak sprawdzic biblioteki których nam brakuje </summary>
 			- <code>ldd "sciezka docelowa komendy"</code>
 		</details> 
 	</li>
 	<li>
 		<details> <summary>- Czym jest <b>SWAP</b>, ile go potrzebujemy </summary>
-			- Pamięć ulotna dostępna na dysku którą system może wykorzystywać, jej użycie jest zależne od stopnia swapiness, minimalna wielkość powinna być równa ilości RAM, ze względu na możliwość hibernacji 
+			- Pamięc ulotna dostępna na dysku którą system może wykorzystywac, jej użycie jest zależne od stopnia swapiness, minimalna wielkośc powinna byc równa ilości RAM, ze względu na możliwośc hibernacji 
 		</details> 
 	</li>
 	<li>
-		<details> <summary>- Jak sprawdzić gdzie jest zainstalowany dany program </summary>
+		<details> <summary>- Jak sprawdzic gdzie jest zainstalowany dany program </summary>
 			- <code>whereis</code>
 		</details>
 	</li>
@@ -301,14 +303,14 @@
 	</li>
 	<li>
 		<details> <summary>- Czym jest <b>sticky bit</b> ? </summary>
-			- Na koniec komendy jak zmienić lub ustawić te specjalne bity. Do tego słuzy nam komenda chmod.  
+			- Na koniec komendy jak zmienic lub ustawic te specjalne bity. Do tego słuzy nam komenda chmod.  
 				<code>chmod o+s <nazwa pliku></code>  </br>
 				<code>chmod g+s <nazwa katalogu></code>  </br>
 				<code>chmod u+s <nazwa pliku></code>  </br>
 		</details>
 	</li>
 	<li>
-		<details> <summary>- Jak brzmią domyślne ustawienia uprawnień, jak je zmienić </summary>
+		<details> <summary>- Jak brzmią domyślne ustawienia uprawnień, jak je zmienic </summary>
 			- <code>umask</code> - sprawdzic jak zmienic 
 		</details>
 	</li>
