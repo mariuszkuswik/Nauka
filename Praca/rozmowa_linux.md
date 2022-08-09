@@ -20,7 +20,8 @@
 	- [Logrotate](#logrotate)
 - [LVM - jak dziala, cos tam, procedura](#Lvm)
 - [Git](#git)
-- Czym różni się TCP od UDP 
+- [Sieci](#sieci)
+	-  
 - Wyświetl tablicę routingu i opowiedz o niej
 - Jak działa routing 
 - Jakich bibliotek python używałem 
@@ -72,9 +73,12 @@
 	- Co zwraca funkcja - Sama z siebie zwraca 0/1, jeżeli chcemy zwrócić coś konkretnego to używamy return
 - ## Sieci
 	### Firewall
-		- firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
-		- Jak działa firewall 
-		- Nauczyc sie iptables i znalezc do niego jakies pytania
+	- firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
+	- Jak działa firewall 
+	- Nauczyc sie iptables i znalezc do niego jakies pytania
+	### TCP i UDP
+	- różnice 
+	- czym są 
 
 
 # Czego się uczyc
