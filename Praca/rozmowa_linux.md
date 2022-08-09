@@ -67,6 +67,11 @@
 ### Branch - jak dodac nowy
 - Dodac do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
 - Jak sprawdzic kto i kiedy dodał jakiś commit  
+- git log - co robi 
+- git checkout - przechodzi do nowego branchu?
+- git branch 
+- git merge - opisać 
+
 ## LVM 
 - ### Jak dodać LVM - procedura
 ## Bash 
@@ -117,11 +122,15 @@
 		- opisać ocpje useradd
 	- domyślne opcje dla useradd znajdują się w pliku /etc/defaults/useradd?
 		- dopisać jeszcze jeden plik w którym można zmieniać ustawienia domyślne
-- Jaki jest proces bootowania systemu </summary>
+- Jaki jest proces bootowania systemu
 	- Tekst
-- Jak sprawdzic czy filesystem działa poprawnie, jak go naprawic </summary>
+- Jak sprawdzic czy filesystem działa poprawnie, jak go naprawic
 	- fsck."$filesystem"
-	
+- Sticky bit, uid i gid? kurde bity
+	- opisać
+- Dlaczego przypisujemy zmienne sredowiskowe 
+	- Żeby być do nich dostęp z każdego shella?
+
 
 # Czego się uczyc
 - KVM 
@@ -189,17 +198,7 @@
 		</details>
 	</li>
 	<li>
-		<details> <summary>	- Ogolnie sprawdzic jakie uprawnienia uniemozliwia usuniecie pliku </summary>
-				Tekst
-		</details>
-	</li>
-	<li>
 		<details> <summary>	- Czym jest konteneryzacja </summary>
-				Tekst
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Dlaczego przypisujemy zmienne sredowiskowe </summary>
 				Tekst
 		</details>
 	</li>
