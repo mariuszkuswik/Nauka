@@ -1,7 +1,7 @@
 # Spis treści 
 
 - [Atos](#Atos)
-	- [Pytania ktore](#pytania-ktore-były-ostatnio)
+	- [Pytania ktore byly](#pytania-ktore-były-ostatnio)
 	- [Potencjalne pytania](#potencjalne-pytania)
 - [Co opisac](#co-opisac)
 - [Czego się uczyc](#czego-się-uczyc)
@@ -15,29 +15,34 @@
 ## Pytania ktore były ostatnio 
 - [Jak skonfigurowac NFS](#jak-skonfigurowac-nfs)
 - [Jak skonfigurowac Sambę](#jak-skonfigurowac-sambe)
+- [Logi](#logi)
+	- [Gdzie znalezc logi](#gdzie-znalezc-logi)
+	- [Logrotate](#logrotate)
 
 ## Potencjalne pytania  
+- [Git](#git)
 
 
 
 # Co opisac 
 - #### Jak skonfigurowac NFS
 - #### Jak skonfigurowac Sambe
+- #### Git 
+	- #### Branch - jak dodac nowy
+		- Dodac do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
+	- Jak sprawdzic kto i kiedy dodał jakiś commit  
+- #### Logi
+	- #### Gdzie znalezc logi
+	- #### Logrotate
+- Gdzie przechowywane sa logi
 - Ansible 
 - Puppet
 - Docker
-- Git 
-	- Jak stworzyc nowy branch w git od podstaw
-		- Dodac do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
-	- Jak sprawdzic kto i kiedy dodał jakiś commit  
-- Gdzie przechowywane sa logi
+
+
 
 # Czego się uczyc
 - KVM 
-
-
-
-
 - firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
 - Jak działa firewall 
 - Nauczyc sie iptables i znalezc do niego jakies pytania
