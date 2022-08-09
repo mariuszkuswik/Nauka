@@ -12,22 +12,43 @@
 
 # Atos - Linux z pythonem
 
-## Pytania ktore były ostatnio 
-- [Jak skonfigurowac NFS](#jak-skonfigurowac-nfs)
-- [Jak skonfigurowac Sambę](#jak-skonfigurowac-sambe)
+## Pytania
+- [NFS - jak skonfigurowac](#nfs---jak-skonfigurowac)
+- [Samba - jak skonfigurowac](#samba---jak-skonfigurowac)
 - [Logi](#logi)
 	- [Gdzie znalezc logi](#gdzie-znalezc-logi)
 	- [Logrotate](#logrotate)
 - [LVM - jak dziala, cos tam, procedura](#Lvm)
+- [Git](#git)
+- Czym różni się TCP od UDP 
+- Wyświetl tablicę routingu i opowiedz o niej
+- Jak działa routing 
+- Jakich bibliotek python używałem 
+	- Selenium - webdriver, klikanie w przegladarce
+	- BeautifulSoup - parsowanie htmla
+	- Pandas - ekstraktowanie csv
+- Czym jest SWAP, ile go potrzeba
+- Różnica między hard a soft linkiem
+- Co zwraca funkcja ?
+	- Sama z siebie zwraca 0/1, jeżeli chcemy zwrócić coś konkretnego to używamy return
+
 
 ## Potencjalne pytania  
-- [Git](#git)
-
 
 
 # Co opisac 
-- #### Jak skonfigurowac NFS
-- #### Jak skonfigurowac Sambe
+- #### NFS - jak skonfigurowac 
+	1. Pobranie nfs-utils?
+	1. Uruchomienie uslugi nfs-server.service
+	1. Dodanie wpisu do /etc/exports
+	1. Otwarcire portu na firewall - sprawdzic jaki port
+- #### Samba - jak skonfigurowac 
+	1. Pobranie smb?
+	1. Uruchomienie uslugi 
+	1. Dodanie udzialu do /etc/smb/smbd.conf?
+		- sprawdzic jak ma wygladac config
+	1. Odblokowanie portu na firewall
+	1. Restart uslugi
 - #### Logi
 	- #### Gdzie znalezc logi
 	- #### Logrotate
@@ -47,12 +68,18 @@
 
 # Czego się uczyc
 - KVM 
-
 - Automatyczne narzędzia do rotowania logów
 - Ansible 
 - Puppet
 - Docker
 	
+
+# Pytania na rozmowe 
+
+### NFS 
+#### jak skonfigurowac 
+
+
 
 # Pytania do uzupełnienia 
 <ol>
