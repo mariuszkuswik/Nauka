@@ -12,7 +12,7 @@
 
 # Atos - Linux z pythonem
 
-## Pytania
+## Spis treści
 - [NFS - jak skonfigurowac](#nfs---jak-skonfigurowac)
 - [Samba - jak skonfigurowac](#samba---jak-skonfigurowac)
 - [Logi](#logi)
@@ -21,37 +21,12 @@
 - [LVM - jak dziala, cos tam, procedura](#Lvm)
 - [Git](#git)
 - [Sieci](#sieci)
-	- Wyświetl tablicę routingu i opowiedz o niej
-	- Jak działa routing 
-	- Jakich bibliotek python używałem 
-		- Selenium - webdriver, klikanie w przegladarce
-		- BeautifulSoup - parsowanie htmla
-		- Pandas - ekstraktowanie csv
-	- Czym jest SWAP, ile go potrzeba
-	- Różnica między hard a soft linkiem
 - [Pomoc](#pomoc)
 
 
 
 
-
-## Potencjalne pytania  
-
-
-# Opisy
-## NFS - jak skonfigurowac 
-1. Pobranie nfs-utils?
-1. Uruchomienie uslugi nfs-server.service
-1. Dodanie wpisu do /etc/exports
-1. Otwarcire portu na firewall - sprawdzic jaki port
-## Samba - jak skonfigurowac 
-1. Pobranie smb?
-1. Uruchomienie uslugi 
-1. Dodanie udzialu do /etc/smb/smbd.conf?
-	- sprawdzic jak ma wygladac config
-1. Odblokowanie portu na firewall
-1. Restart uslugi
-
+# Tematy
 ## Logi
 ### Gdzie znalezc logi
 - ```/var/log``` - folder z logami  
@@ -63,6 +38,22 @@
 - [Plural - logi wyjasnione by Andrew Mallet ](https://app.pluralsight.com/course-player?clipId=0cc96a45-0ee8-4ff2-93ae-06247c6c3bfc)
 - Gdzie przechowywane sa logi
 
+## NFS - jak skonfigurowac 
+1. Pobranie nfs-utils?
+1. Uruchomienie uslugi nfs-server.service
+1. Dodanie wpisu do /etc/exports
+1. Otwarcire portu na firewall - sprawdzic jaki port
+
+
+## Samba - jak skonfigurowac 
+1. Pobranie smb?
+1. Uruchomienie uslugi 
+1. Dodanie udzialu do /etc/smb/smbd.conf?
+	- sprawdzic jak ma wygladac config
+1. Odblokowanie portu na firewall
+1. Restart uslugi
+
+
 ## Git 
 ### Branch - jak dodac nowy
 - Dodac do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
@@ -72,6 +63,11 @@
 ## Bash 
 - Co zwraca funkcja - Sama z siebie zwraca 0/1, jeżeli chcemy zwrócić coś konkretnego to używamy return
 ## Sieci
+- Selenium - webdriver, klikanie w przegladarce
+- BeautifulSoup - parsowanie htmla
+- Pandas - ekstraktowanie csv
+
+
 ### Firewall
 - Jak dodać regułę do firewalla
 - firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
@@ -83,8 +79,8 @@
 - różnice pomiędzy TCP i UDP 
 
 ### Routing
-- czym jest, opisać
-- wyświetlenie tablicy routingu, opisać jak zadziała
+- czym jest routing, jak działa, opisać
+- Wyświetl tablicę routingu i opowiedz o niej, opisać jak zadziała
 
 ## Pomoc 
 - Dokumentacja/pomoc w linuxie
@@ -92,7 +88,12 @@
 	- /usr/share/doc
 
 ## Randomowe pytania
-
+- Czym jest SWAP, ile go potrzeba
+	- SWAP to SWAP
+- Różnica między hard a soft linkiem
+	- odpowiedzieć na pytanie
+	- ```ln -s``` - tworzenie soft linka?
+	- hard link jest tworzony domyślnie?
 - Print information about users who are currently logged in
 	- who 
 - Wymień znane Ci filesystemy, czym się charakteryzują/różnią
