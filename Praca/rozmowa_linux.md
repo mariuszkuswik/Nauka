@@ -24,7 +24,18 @@
 - [Pomoc](#pomoc)
 
 
-# Tematy
+# O mnie 
+
+## Python
+- Co napisalem 
+	- Selenium, pobieranie cos tam z solarwinds
+- Jakich biblioek uzywalem
+	- Selenium - webdriver, klikanie w przegladarce
+	- BeautifulSoup - parsowanie htmla
+	- Pandas - ekstraktowanie csv
+
+
+# Tematy pytan
 ## Logi
 ### Gdzie znalezc logi
 - ```/var/log``` - folder z logami  
@@ -61,9 +72,9 @@
 ## Bash 
 - Co zwraca funkcja - Sama z siebie zwraca 0/1, jeżeli chcemy zwrócić coś konkretnego to używamy return
 ## Sieci
-- Selenium - webdriver, klikanie w przegladarce
-- BeautifulSoup - parsowanie htmla
-- Pandas - ekstraktowanie csv
+
+- Czym jest VLAN 
+	- Vlan pozwala w ramach jednej fizycznej sieci lokalnej tworzyc wiele sieci logicznych (sieci wirtualnych)
 
 
 ### Firewall
@@ -106,7 +117,11 @@
 		- opisać ocpje useradd
 	- domyślne opcje dla useradd znajdują się w pliku /etc/defaults/useradd?
 		- dopisać jeszcze jeden plik w którym można zmieniać ustawienia domyślne
-
+- Jaki jest proces bootowania systemu </summary>
+	- Tekst
+- Jak sprawdzic czy filesystem działa poprawnie, jak go naprawic </summary>
+	- fsck."$filesystem"
+	
 
 # Czego się uczyc
 - KVM 
@@ -127,11 +142,6 @@
 	<li>
 		<details> <summary>	- Exitcode z instrukcji Bash, wypisac czym jest</summary>
 			Tekst
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Jak sprawdzic czy filesystem działa poprawnie, jak go naprawic </summary>
-			fsck."$filesystem"
 		</details>
 	</li>
 	<li>
@@ -161,26 +171,6 @@
 			rozszerzenie lvm :
 				- rozszerzenie partycji lvm w wirtualizatorze
 				- <code>partprobe</code> - sprawdza 
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Jak konfiguruje się firewalla, jak dodac nową regułę</summary>
-			Tekst
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Jak skonfigurowac NFS </summary>
-			Tekst
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Jak skonfigurowac SAMBe</summary>
-			Tekst
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Jaki jest proces bootowania systemu </summary>
-			Tekst
 		</details>
 	</li>
 	<li>
