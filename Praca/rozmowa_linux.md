@@ -1,41 +1,34 @@
 # Spis treści 
 
-<ol>
-	<li>
-		<a href="https://github.com/mariuszkuswik/Nauka/blob/main/rozmowa_linux.md#czego-si%C4%99-nauczy%C4%87-i-co-zrobi%C4%87">Czego się nauczyć i co zrobić </a>
-	</li>
-	<li>
-		<a href="https://github.com/mariuszkuswik/Nauka/blob/main/rozmowa_linux.md#pytania-do-uzupe%C5%82nienia">Pytania do uzupełnienia </a>
-	</li>
-	<li>
-		<a href="https://github.com/mariuszkuswik/Nauka/blob/main/rozmowa_linux.md#pytania-na-rozmow%C4%99">Pytania na rozmowę </a>
-	</li>
-</ol>
+
+- [Co opisać](#co-opisać)
+- [Czego się uczyć](#czego-się-uczyć)
+- [Pytania do uzupełnienia](#pytania-do-uzupełnienia)
+- [Pytania na rozmowe](#pytania-na-rozmowę)
 
 
-# Czego się nauczyć i co zrobić 
+# Co opisać 
 - Jak skonfigurować NFS
 - Jak skonfigurować Sambę
+- Ansible 
 - Puppet
 - Docker
-- Nauczyć się KVM 
-- Ogarnac notatki z telefonu 
-- Jak stworzyć nowy branch w git od podstaw
-	- Dodać do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
-- Jak sprawdzić kto i kiedy dodał jakiś commit  
-	- Dodać do instrukcji Git
+- Git 
+	- Jak stworzyć nowy branch w git od podstaw
+		- Dodać do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
+	- Jak sprawdzić kto i kiedy dodał jakiś commit  
 - Gdzie przechowywane sa logi
+
+# Czego się uczyć
+- KVM 
+
+
+
+
 - firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
 - Jak działa firewall 
 - Nauczyc sie iptables i znalezc do niego jakies pytania
 - Automatyczne narzędzia do rotowania logów
-
-# Biblia 
-- Polecenie id 
-	- Więcej informacji o tożsamości użytkownika
-		<code> $ id
-uid=1000(chris) gid=1000(chris) groups=1005(sales), 7(lpgroup)</code>
-	1005 jest id grupy sales, 7 jest id lpgroup
 
 	
 
@@ -98,7 +91,7 @@ uid=1000(chris) gid=1000(chris) groups=1005(sales), 7(lpgroup)</code>
 	</li>
 	<li>
 		<details> <summary>	- Gdzie przechowywane są pliki konfiguracyjne</summary>
-			Tekst
+			/etc
 		</details>
 	</li>
 	<li>
@@ -108,7 +101,11 @@ uid=1000(chris) gid=1000(chris) groups=1005(sales), 7(lpgroup)</code>
 	</li>
 	<li>
 		<details> <summary>	- Jak działają LVMy, czym są, jak je wyświetlić, jak rozszerzyć, czym jest volume group </summary>
-			Tekst
+			lvm 
+			lslvm - wyświela lvm
+			rozszerzenie lvm :
+				- rozszerzenie partycji lvm w wirtualizatorze
+				- <code>partprobe</code> - sprawdza 
 		</details>
 	</li>
 	<li>
@@ -326,8 +323,11 @@ uid=1000(chris) gid=1000(chris) groups=1005(sales), 7(lpgroup)</code>
 </ol>
 
   
+
+
+
   
-[Go top](https://github.com/mariuszkuswik/Nauka/blob/main/rozmowa_linux.md#spis-tre%C5%9Bci)
+[Go top](#spis-treści)
 
 
 
