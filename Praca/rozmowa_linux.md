@@ -24,8 +24,6 @@
 - [Pomoc](#pomoc)
 
 
-
-
 # Tematy
 ## Logi
 ### Gdzie znalezc logi
