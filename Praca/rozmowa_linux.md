@@ -18,6 +18,7 @@
 - [Logi](#logi)
 	- [Gdzie znalezc logi](#gdzie-znalezc-logi)
 	- [Logrotate](#logrotate)
+- [LVM - jak dziala, cos tam, procedura](#Lvm)
 
 ## Potencjalne pytania  
 - [Git](#git)
