@@ -73,20 +73,37 @@
 ## Bash 
 - Co zwraca funkcja - Sama z siebie zwraca 0/1, jeżeli chcemy zwrócić coś konkretnego to używamy return
 ## Sieci
-	### Firewall
-	- firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
-	- Jak działa firewall 
-	- Nauczyc sie iptables i znalezc do niego jakies pytania
-	### TCP i UDP
-	- różnice 
-	- czym są 
+### Firewall
+- firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
+- Jak działa firewall 
+- Nauczyc sie iptables i znalezc do niego jakies pytania
 
+### TCP i UDP
+- czym są TCP i UDP, opisać mniej więcej
+- różnice pomiędzy TCP i UDP 
+
+### Routing
+- czym jest, opisać
+- wyświetlenie tablicy routingu, opisać jak zadziała
 
 ## Pomoc 
-	
 - Dokumentacja/pomoc w linuxie
 	- man 
 	- /usr/share/doc
+
+## Randomowe pytania
+
+- Print information about users who are currently logged in
+	- who 
+- Wymień znane Ci filesystemy, czym się charakteryzują/różnią
+	- btrfs
+	- nfs?
+	- ext3,4
+	- xfs
+- Jak 
+
+
+
 
 # Czego się uczyc
 - KVM 
@@ -96,30 +113,9 @@
 - Docker
 	
 
-# Pytania na rozmowe 
-
-### NFS 
-#### jak skonfigurowac 
-
-
 
 # Pytania do uzupełnienia 
 <ol>
-	<li>
-		<details> <summary>	- Automatyczne narzędzia do rotowania logów </summary>
-			Tekst
-		</details>
-	</li>
-	<li>
-		<details> <summary>Print information about users who are currently logged in</summary>
-			<code>who</code>
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Czym różnią się filesystemy między sobą, np xfs i ext4</summary>
-			Tekst
-		</details>
-	</li>
 	<li>
 		<details> <summary>	- Jak dodac regułę do firewalla</summary>
 			Tekst
