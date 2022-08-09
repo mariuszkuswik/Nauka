@@ -74,6 +74,7 @@
 - Co zwraca funkcja - Sama z siebie zwraca 0/1, jeżeli chcemy zwrócić coś konkretnego to używamy return
 ## Sieci
 ### Firewall
+- Jak dodać regułę do firewalla
 - firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
 - Jak działa firewall 
 - Nauczyc sie iptables i znalezc do niego jakies pytania
@@ -100,9 +101,13 @@
 	- nfs?
 	- ext3,4
 	- xfs
-- Jak 
-
-
+- Gdzie znajduje się plik z użytkownikami w systemie
+	- /etc/passwd
+- Jak dodać użytkownika 
+	- adduser i useradd
+		- opisać ocpje useradd
+	- domyślne opcje dla useradd znajdują się w pliku /etc/defaults/useradd?
+		- dopisać jeszcze jeden plik w którym można zmieniać ustawienia domyślne
 
 
 # Czego się uczyc
@@ -116,21 +121,6 @@
 
 # Pytania do uzupełnienia 
 <ol>
-	<li>
-		<details> <summary>	- Jak dodac regułę do firewalla</summary>
-			Tekst
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Gdzie znajduje się plik z użytkownikami w systemie </summary>
-			/etc/passwd
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Jak dodac użytkownika - adduser i useradd - jak działa useradd</summary>
-			Tekst
-		</details>
-	</li>
 	<li>
 		<details> <summary>	- Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlic strony hostowanej przez nią, jak zdiagnozowac problem </summary>
 			Tekst
