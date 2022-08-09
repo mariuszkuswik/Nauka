@@ -21,7 +21,6 @@
 - [LVM - jak dziala, cos tam, procedura](#Lvm)
 - [Git](#git)
 - [Sieci](#sieci)
-	-  
 - Wyświetl tablicę routingu i opowiedz o niej
 - Jak działa routing 
 - Jakich bibliotek python używałem 
