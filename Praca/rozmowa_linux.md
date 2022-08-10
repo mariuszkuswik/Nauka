@@ -46,7 +46,7 @@
 - `last` - ostatnie logowania, komenda bardziej szczegółowa, wyświetla adresy ip ze zdalnych logowań i rebooty
 	- **last reboot** - wyświetla same rebooty
 	- **last "$username"** - wyświetla same logowania użytkownika
-- lastlog - ostatnie logowania, komenda dosyć ogólna
+- `lastlog` - ostatnie logowania, komenda dosyć ogólna
  
 #### Pliki
 - ```/var/log``` - folder z logami  
@@ -119,6 +119,16 @@
 	- /usr/share/doc
 
 ## Randomowe pytania
+- Wymień znane Ci filesystemy, czym się charakteryzują/różnią
+	- btrfs
+	- nfs?
+	- ext3,4
+	- xfs
+- Jak sprawdzic czy filesystem działa poprawnie, jak go naprawic
+	- fsck."$filesystem"
+
+
+
 - Czym jest SWAP, ile go potrzeba
 	- SWAP to SWAP
 - Różnica między hard a soft linkiem
@@ -127,11 +137,6 @@
 	- hard link jest tworzony domyślnie?
 - Print information about users who are currently logged in
 	- who 
-- Wymień znane Ci filesystemy, czym się charakteryzują/różnią
-	- btrfs
-	- nfs?
-	- ext3,4
-	- xfs
 - Gdzie znajduje się plik z użytkownikami w systemie
 	- /etc/passwd
 - Jak dodać użytkownika 
@@ -141,8 +146,7 @@
 		- dopisać jeszcze jeden plik w którym można zmieniać ustawienia domyślne
 - Jaki jest proces bootowania systemu
 	- Tekst
-- Jak sprawdzic czy filesystem działa poprawnie, jak go naprawic
-	- fsck."$filesystem"
+
 - Sticky bit, uid i gid? kurde bity
 	- opisać
 - Dlaczego przypisujemy zmienne sredowiskowe 
