@@ -40,11 +40,11 @@
 ## Logi
 ### Gdzie znalezc logi
 #### Komendy do pobierania logów
-- ```journalctl``` - Odpytuje dziennik **systemd** 
-- ```last``` - ostatnie logowania, komenda bardziej szczegółowa, wyświetla adresy ip ze zdalnych logowań i rebooty
-	- ```last reboot``` - wyświetla same rebooty
-	- ```last "$username"``` - wyświetla same logowania użytkownika
-- ```lastlog``` - ostatnie logowania, komenda dosyć ogólna
+- **journalctl** - Odpytuje dziennik **systemd** 
+- **last** - ostatnie logowania, komenda bardziej szczegółowa, wyświetla adresy ip ze zdalnych logowań i rebooty
+	- last reboot - wyświetla same rebooty
+	- last "$username" - wyświetla same logowania użytkownika
+- lastlog - ostatnie logowania, komenda dosyć ogólna
  
 #### Zgłaszanie logów 
 - ```rsyslogd``` - służy do zgłaszania logów 
@@ -386,17 +386,4 @@
 
   
 [Go top](#spis-treści)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
