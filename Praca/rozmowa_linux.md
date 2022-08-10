@@ -38,22 +38,25 @@
 
 # Tematy pytan
 ## Logi
+- [Logi RHEL](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-viewing_and_managing_log_files)
+
 ### Gdzie znalezc logi
-#### Komendy do pobierania logów
+#### Komendy
 - `journalctl` - Odpytuje dziennik **systemd** 
 - `last` - ostatnie logowania, komenda bardziej szczegółowa, wyświetla adresy ip ze zdalnych logowań i rebooty
 	- **last reboot** - wyświetla same rebooty
 	- **last "$username"** - wyświetla same logowania użytkownika
 - lastlog - ostatnie logowania, komenda dosyć ogólna
  
-#### Zgłaszanie logów 
-- ```rsyslogd``` - służy do zgłaszania logów 
-
-#### Pliki z logami
+#### Pliki
 - ```/var/log``` - folder z logami  
-	- ```/var/log/messages``` - główny plik z logami  
-	- ```/var/log/secure``` - plik ?
-	- ```/var/log/boot``` - log z bootowania
+	- **/var/log/messages** - główny plik z logami  
+	- **/var/log/secure** - plik ?
+	- **/var/log/boot** - log z bootowania
+
+#### Service 
+- ```rsyslogd``` - służy do zgłaszania logów 
+	- **/etc/rsyslog.conf** - domyślny plik konfiguracyjny dla rsyslog 
 
 #### Logrotate
 - [Log rotate opisany](https://www.tecmint.com/install-logrotate-to-manage-log-rotation-in-linux/)
@@ -386,4 +389,3 @@
 
   
 [Go top](#spis-treści)
-
