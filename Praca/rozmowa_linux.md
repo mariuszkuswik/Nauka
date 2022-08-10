@@ -1,3 +1,4 @@
+
 # Spis treści 
 
 - [Atos - Linux z pythonem](#atos---linux-z-pythonem)
@@ -38,10 +39,23 @@
 # Tematy pytan
 ## Logi
 ### Gdzie znalezc logi
+#### Komendy do pobierania logów
+- ```journalctl``` - Odpytuje dziennik **systemd** 
+- ```last``` - ostatnie logowania, komenda bardziej szczegółowa, wyświetla adresy ip ze zdalnych logowań i rebooty
+	- ```last reboot``` - wyświetla same rebooty
+	- ```last "$username"``` - wyświetla same logowania użytkownika
+- ```lastlog``` - ostatnie logowania, komenda dosyć ogólna
+ 
+#### Zgłaszanie logów 
+- ```rsyslogd``` - służy do zgłaszania logów 
+
+#### Pliki z logami
 - ```/var/log``` - folder z logami  
 	- ```/var/log/messages``` - główny plik z logami  
-  
-### Logrotate
+	- ```/var/log/secure``` - plik ?
+	- ```/var/log/boot``` - log z bootowania
+
+#### Logrotate
 - [Log rotate opisany](https://www.tecmint.com/install-logrotate-to-manage-log-rotation-in-linux/)
 - [Plural - lab z logami](https://app.pluralsight.com/labs/play/65c22f76-5118-44a8-a8de-871e2061488a/task/1)
 - [Plural - logi wyjasnione by Andrew Mallet ](https://app.pluralsight.com/course-player?clipId=0cc96a45-0ee8-4ff2-93ae-06247c6c3bfc)
