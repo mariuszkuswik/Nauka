@@ -103,8 +103,7 @@ print(new_store_order_list) # ['Orange', 'Apple', 'Broccoli', 'Mango']
 # Jezeli nie mamy na liscie elementu ktory chcemy usunac dostaniemy ValueError
 new_store_order_list.remove("Onions")
 ```
->Output:
-['Celery', 'Orange Juice', 'Orange', 'Flatbread']  
+>['Celery', 'Orange Juice', 'Orange', 'Flatbread']  
 ['Celery', 'Orange Juice', 'Orange']  
 ['Orange', 'Apple', 'Mango', 'Broccoli', 'Mango']  
 ['Orange', 'Apple', 'Broccoli', 'Mango']  
