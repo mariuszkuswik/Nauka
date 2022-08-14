@@ -1,10 +1,14 @@
+# Linki ważne
+- ### [Aktualny link do Codecademy](https://www.codecademy.com/courses/learn-python-3/lessons/create-python-list/exercises/modifying-list-elements)
+
+- ### [Ostatnie miejsce notatek](https://www.codecademy.com/courses/learn-python-3/lessons/create-python-list/exercises/modifying-2-d-lists)
+
+
+
 # Spis treści 
 
-### [Aktualny link do Codecademy](https://www.codecademy.com/courses/learn-python-3/lessons/create-python-list/exercises/modifying-list-elements)
-
-
 1. [Listy](#listy)
-
+1. [Testowy linkk](#Testowy)
 
 # Listy 
 [Spis treści](#spis-treści)
