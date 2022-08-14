@@ -1,25 +1,22 @@
+# Spis treści
+- [Czego sie uczyc](#czego-się-uczyc)
 
-# Spis treści 
+	## Pytania - kategorie
+	- [NFS - jak skonfigurowac](#nfs---jak-skonfigurowac)
+	- [Samba - jak skonfigurowac](#samba---jak-skonfigurowac)
+	- [Logi](#logi)
+		- [Gdzie znalezc logi](#gdzie-znalezc-logi)
+		- [Logrotate](#logrotate)
+	- [LVM - jak dziala, cos tam, procedura](#Lvm)
+	- [Git](#git)
+	- [Sieci](#sieci)
+	- [Pomoc](#pomoc)
 
-- [Atos - Linux z pythonem](#atos---linux-z-pythonem)
-	- [O mnie](#o-mnie)
-	- [Tematy pytan](#tematy-pytan)
-	- [Randomowe pytania](#randomowe-pytania)
-- [Czego się uczyc](#czego-się-uczyc)
+- [Tematy pytan](#tematy-pytan)
+- [Randomowe pytania](#randomowe-pytania)
+
 - [Pytania do uzupełnienia](#pytania-do-uzupełnienia)
-- [Pytania na rozmowe](#pytania-na-rozmowę)
 
-
-## Spis treści
-- [NFS - jak skonfigurowac](#nfs---jak-skonfigurowac)
-- [Samba - jak skonfigurowac](#samba---jak-skonfigurowac)
-- [Logi](#logi)
-	- [Gdzie znalezc logi](#gdzie-znalezc-logi)
-	- [Logrotate](#logrotate)
-- [LVM - jak dziala, cos tam, procedura](#Lvm)
-- [Git](#git)
-- [Sieci](#sieci)
-- [Pomoc](#pomoc)
 
 # Czego się uczyc
 - KVM 
@@ -68,11 +65,11 @@ EURO LINUX
 		- `$$` - numer procesu używanego przez komende   
 		- `!$` - ostatni użyty argument  
 		- `$0` - nazwa programu  
-		- `$1` - argumenty, zaczynaja sie od jednego, nie musi byc to jeden  </br>
-		- `$#` - liczba argumentow  </br>
-		- `$*` - wszystkie argumenty jako string  </br>
-		- `$@` - argumenty w postaci tablicy  </br>
-[Instrukcja z mojego githuba](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#zmienne-specjalne)
+		- `$1` - argumenty, zaczynaja sie od jednego, nie musi byc to jeden  
+		- `$#` - liczba argumentow  
+		- `$*` - wszystkie argumenty jako string  
+		- `$@` - argumenty w postaci tablicy  
+[Opis z notatek RHCSA](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#zmienne-specjalne)
 
 
 ## Logi
