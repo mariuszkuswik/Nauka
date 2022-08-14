@@ -18,6 +18,15 @@
 1. [Listy - modyfikowanie elementów](#Listy---modyfikowanie-elementów)
 1. [Listy - Usuwanie elementów](#Listy---Usuwanie-elementów)
 
+# Wstęp
+```python
+# Example syntax for methods
+list.method(input)
+ 
+# Example syntax for a built-in function 
+builtinfuncion(input)
+```
+
 
 ## Listy - rozszerzanie
 ### Dodawanie pojedynczego elementu
