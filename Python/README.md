@@ -86,8 +86,34 @@ print(garden_waitlist)
 
 ## Listy -  Usuwanie elementów
 
+```python
+order_list=["Celery", "Orange Juice", "Orange", "Flatbread"]
+print (order_list)
 
+order_list.remove("Flatbread")
+print (order_list)
 
+new_store_order_list=["Orange", "Apple", "Mango", "Broccoli", "Mango"]
+print(new_store_order_list)
+
+# Jezeli istnieja dwie wartosci to metoda remove usunie tylko piwersza!
+new_store_order_list.remove("Mango")
+print(new_store_order_list) # ['Orange', 'Apple', 'Broccoli', 'Mango']
+
+# Jezeli nie mamy na liscie elementu ktory chcemy usunac dostaniemy ValueError
+new_store_order_list.remove("Onions")
+```
+>Output:
+['Celery', 'Orange Juice', 'Orange', 'Flatbread']  
+['Celery', 'Orange Juice', 'Orange']  
+['Orange', 'Apple', 'Mango', 'Broccoli', 'Mango']  
+['Orange', 'Apple', 'Broccoli', 'Mango']  
+> 
+> Traceback (most recent call last):  
+  File "script.py", line 16, in <module>  
+    new_store_order_list.remove("Onions")  
+ValueError: list.remove(x): x not in list  
+  
 
 
 [Spis treści - top](#spis-treści)
