@@ -1130,4 +1130,21 @@ sudo chage -M 120 "$username
 
 ## Nadanie kontekstu do pliku SELinux
 
+
+
+# Sander filmiki 
+
+## Sieci 
+
+- Set the server to a fixed IP address that matches your current network configuration
+- Set a second IP address, 10.0.0.10/24 on the same network interface
+- Reboot and verify your network is still working with the new settings
+
+
+# Sander filmiki - odpowiedzi 
+
+## Sieci 
+
+
+
 [# Spis treści](#Spis-treści)
