@@ -160,7 +160,24 @@ incoming_class[-3][-3]="Ken"
 print (incoming_class)
 ```
 
+## Listy - metoda insert
 
+#### The Python list method .insert() allows us to add an element to a specific index in a list.
+
+The **.insert()** method takes in two inputs:
+- The index you want to insert into.
+- The element you want to insert at the specified index.
+
+
+#### Here is how we would use the .insert() method to insert "Vikor" :
+```python
+store_line = ["Karla", "Maxium", "Martim", "Isabella"]
+
+store_line.insert(2, "Vikor")
+print(store_line) # ['Karla', 'Maxium', 'Vikor', 'Martim', 'Isabella']
+```
+
+> ['Karla', 'Maxium', 'Vikor', 'Martim', 'Isabella']
 
 
 
