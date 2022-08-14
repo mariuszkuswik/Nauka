@@ -179,7 +179,7 @@ print(store_line) # ['Karla', 'Maxium', 'Vikor', 'Martim', 'Isabella']
 
 > ['Karla', 'Maxium', 'Vikor', 'Martim', 'Isabella']
 
-## Listy - .pop
+## Listy - .pop()
 
 
 
