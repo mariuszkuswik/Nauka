@@ -20,7 +20,7 @@
 
 # Czego się uczyc
 - KVM 
-- Automatyczne narzędzia do rotowania logów
+- logrotate - Automatyczne narzędzia do rotowania logów
 - Ansible 
 - Puppet
 - Docker
