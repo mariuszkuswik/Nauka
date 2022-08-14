@@ -1,5 +1,5 @@
 # Linki ważne
-- [Aktualny link do Codecademy](https://www.codecademy.com/courses/learn-python-3/lessons/create-python-list/exercises/review)
+- [Aktualny link do Codecademy](https://www.codecademy.com/courses/learn-python-3/lessons/use-python-list/exercises/removing-by-index-pop)
 
 - [Ostatnie miejsce notatek](https://www.codecademy.com/courses/learn-python-3/lessons/create-python-list/exercises/modifying-2-d-lists)
 
@@ -160,7 +160,7 @@ incoming_class[-3][-3]="Ken"
 print (incoming_class)
 ```
 
-## Listy - metoda insert
+## Listy - .insert() 
 
 #### The Python list method .insert() allows us to add an element to a specific index in a list.
 
@@ -179,6 +179,7 @@ print(store_line) # ['Karla', 'Maxium', 'Vikor', 'Martim', 'Isabella']
 
 > ['Karla', 'Maxium', 'Vikor', 'Martim', 'Isabella']
 
+## Listy - .pop
 
 
 
