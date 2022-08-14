@@ -50,7 +50,7 @@ print (broken_prices)
 ## Listy - indeksy
 
 ### Indeksy pozytywne
-**Indeksy liczone są od 0!**
+- **Indeksy liczone są od 0!**
 ```python
 employees = ["Michael", "Dwight", "Jim", "Pam", "Ryan", "Andy", "Robert"]
 
@@ -62,7 +62,7 @@ print(employees[6])
 > Robert
 
 ### Indeksy negatywne 
-Indeksy ujemne sprawdzają listę od tyłu
+- Indeksy negatywne sprawdzają listę od tyłu
 ```python
 shopping_list = ["eggs", "butter", "milk", "cucumbers", "juice", "cereal"]
 
@@ -85,6 +85,7 @@ print(garden_waitlist)
 
 
 ## Listy -  Usuwanie elementów
+- Jezeli nie mamy na liscie elementu ktory chcemy usunac dostaniemy **ValueError**
 
 ```python
 order_list=["Celery", "Orange Juice", "Orange", "Flatbread"]
@@ -113,6 +114,38 @@ new_store_order_list.remove("Onions")
     new_store_order_list.remove("Onions")  
 ValueError: list.remove(x): x not in list  
   
+
+## Listy - dwuwymiarowe 
+- Lists that contains other lists  
+
+```python
+class_name_test=[["Jenny", 90], ["Alexus", 85.5], ["Sam", 83], ["Ellie", 101.5]]
+
+print (class_name_test) # [['Jenny', 90], ['Alexus', 85.5], ['Sam', 83], ['Ellie', 101.5]]
+
+### WAZNE!
+# Wyswietlenie drugiej listy i jej pierwszego elementu
+sams_score=class_name_test[2][1]
+print (sams_score) # 83
+
+### WAZNE!
+# Uzycie negatywnych indeksow do wyswietlenia
+ellies_score=class_name_test[-1][-1]
+print (ellies_score) # 101.5
+```
+
+>[['Jenny', 90], ['Alexus', 85.5], ['Sam', 83], ['Ellie', 101.5]]  
+83  
+101.5  
+
+
+
+
+
+
+
+
+
 
 
 [Spis treści - top](#spis-treści)
