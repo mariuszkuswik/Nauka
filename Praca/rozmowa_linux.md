@@ -10,9 +10,6 @@
 - [Pytania na rozmowe](#pytania-na-rozmowę)
 
 
-
-# Atos - Linux z pythonem
-
 ## Spis treści
 - [NFS - jak skonfigurowac](#nfs---jak-skonfigurowac)
 - [Samba - jak skonfigurowac](#samba---jak-skonfigurowac)
@@ -24,19 +21,60 @@
 - [Sieci](#sieci)
 - [Pomoc](#pomoc)
 
+# Czego się uczyc
+- KVM 
+- Automatyczne narzędzia do rotowania logów
+- Ansible 
+- Puppet
+- Docker
+	
 
-# O mnie 
+### #TODO - odpowiedziec na reszte pytan
 
-## Python
-- Co napisalem 
-	- Selenium, pobieranie cos tam z solarwinds
-- Jakich biblioek uzywalem
-	- Selenium - webdriver, klikanie w przegladarce
-	- BeautifulSoup - parsowanie htmla
-	- Pandas - ekstraktowanie csv
+ATOS
+- Jak wyświetlić porty selinux 
+- Jak sprawdzić która sieciówka jest obecnie używana
+- Czym jest daemon
+- Daemon działa w kernelspace czy userspace? - kernelspace
+- Do czego służy systemd ? - nie wystarczy start i restart usług, można też montować dyski itd. 
+
+EURO LINUX
+- co robi lsof, kiedy go używamy - usuwanie plików, folderów, jakiekolwiek zmiany?
+- czym jest sticky bit - nie wystarczy tylko zabranianie usunięcia folderu, robi więcej
+- jak dziala nmcli 
+- usr - co znaczy skrot (nie kurde user tylko unix system resource)
+- Jak działają dwie ostatnie kolumny w fstabie
+- Jakie są zmienne środowiskowe w linuxie 
+- Co zwraca $@ i ogólnie zmienne specjalne?
+- Jak zwrócić trzeci argument podany do skryptu? - $3 - w bashu liczymy od 1 a nie 0
+- Uczyć się Jenkinsa
+- Jak podglądać logi na bierząco? - tail -f ???
+- Jak wyświetlić liczbę twardych doswiązań do plików ? - `ls -l`
+- Czym jest system operacyjny?
+- Jak ustawić tryb permissive tymczasowo i na stałe 
+- rpm -ql - jak wyświetlić jaki pakiet zainstalował dany plik?
+- Jak wyświetlić informacje na temat partycji ? = wyświetlić informacje w /proc - sprawdzić gdzie konkretnie 
+- Jak wyświetlić wszystkie usługi działające w systemd - nie samo systemctl, sprawdzić
+- Jak dodać użytkownika do wielu grup jednym poleceniem - usermod -aG grupa,grupa username?
+- Jak wyświetlić konteksty SELinux? - ogolnie selinux 
+
 
 
 # Tematy pytan
+
+## Bash
+- Wypisac zmienne specjalne z instrukcji bash 			
+	- wynik ostatniej komendy ( najczesciej 0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )  
+		- `$$` - numer procesu używanego przez komende   
+		- `!$` - ostatni użyty argument  
+		- `$0` - nazwa programu  
+		- `$1` - argumenty, zaczynaja sie od jednego, nie musi byc to jeden  </br>
+		- `$#` - liczba argumentow  </br>
+		- `$*` - wszystkie argumenty jako string  </br>
+		- `$@` - argumenty w postaci tablicy  </br>
+[Instrukcja z mojego githuba](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#zmienne-specjalne)
+
+
 ## Logi
 - [Logi RHEL](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-viewing_and_managing_log_files)
 
@@ -151,13 +189,7 @@
 	- Żeby być do nich dostęp z każdego shella?
 
 
-# Czego się uczyc
-- KVM 
-- Automatyczne narzędzia do rotowania logów
-- Ansible 
-- Puppet
-- Docker
-	
+
 
 
 # Pytania do uzupełnienia 
@@ -276,19 +308,6 @@
 		</details>
 	</li>
 	<li>
-		<details> <summary>- Wypisac zmienne specjalne z instrukcji bash </summary>				
-				<code>$?</code> - wynik ostatniej komendy ( najczesciej 0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )   </br>
-				<code>$$</code> - numer procesu używanego przez komende   </br>
-				<code>!$</code> - ostatni użyty argument  </br>
-				<code>$0</code> - nazwa programu  </br>
-				<code>$1</code> - argumenty, zaczynaja sie od jednego, nie musi byc to jeden  </br>
-				<code>$#</code> - liczba argumentow  </br>
-				<code>$*</code> - wszystkie argumenty jako string  </br>
-				<code>$@</code> - argumenty w postaci tablicy  </br>
-				<a href="https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#zmienne-specjalne">Instrukcja z mojego githuba</a>
-		</details>
-	</li>
-	<li>
 		<details> <summary>Do czego służy kropka w skryptach bashowych, jak działa source pliku </summary>
 			- Zmienne ze skryptu zaciaganego rowniez zastana zaciagniete  </br>
 			- Zaciagany/sourcowany skrypt zostanie wykonany ( sprawdzic czy na pewno )  </br>
@@ -386,6 +405,9 @@
 </ol>
 
   
+
+
+
 
 
 

@@ -1,7 +1,14 @@
 # Moje doświadczenie
 
 
-### Czego się uczyć 
+## #TODO
+- Dlaczego chcę zmienić pracę ?
+	- Dopracować to xD
+- 
+- Dodać informację do CV poziomie języka angielskiego 
+
+
+## Czego się uczyć 
 - ***iptables !!!***
 - Docker
 - Git
@@ -9,7 +16,8 @@
 - Apache/Tomcat 
 
 
-### Czym się zajmuję w pracy 
+## Doświadczenie zawodowe 
+
 - Reagowanie na alerty NetAppa, zazwyczaj volume full, broken disk,
 - Monitoring SolarWindsa, dodawanie nowych maszyn 
 - Szyfrowanie udziałów 
@@ -20,28 +28,30 @@
 - Windows Patching - konsola Ivanti 
 - Decomisioning maszyn 
 
+### Python - co pisałem 
+- Selenium i Beutiful Soup - skrypt z Solarwindsem
+- Co napisalem 
+	- Selenium, pobieranie cos tam z solarwinds
+- Jakich biblioek uzywalem
+	- Selenium - webdriver, klikanie w przegladarce
+	- BeautifulSoup - parsowanie htmla
+	- Pandas - ekstraktowanie csv
 
-### Doświadczenie zawodowe 
-
-### Co pisałem w bashu 
+### Bash - co pisałem
 - Mailparser  
 - Slack, powiadomienia na podstawie dbus-monitor 
 - Wyciaganie zgloszen zle przypisanych 
 
-
-### Co pisałem w pythonie 
-- Selenium i Beutiful Soup 
-
-
-### Co pisałem w powerhsellu 
+### Powershell - co pisałem 
 - Wolny RAM, jezeli nie to sprawdza czy na serwerze działa serwis SQLa 
 - sprawdzenie czy dysk C jest faktycznie zajety, jezeli tak to sprawdza konta uzytkownikow w AD
 - Automatyczne wyciaganie alertow ktore sa przypisane do zlej grupy 
 
 
 ### Moje osobiste projekty 
+- Ansible i Vagrant
 - Chia 
-- automatyzacja plotowania w tmuxie
-- Podłączone dyski SMB i NFS
+	- Podłączone dyski SMB i NFS 
+	- automatyzacja plotowania w tmuxie
 - serwer minecrafta 
 
