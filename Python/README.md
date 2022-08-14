@@ -12,7 +12,7 @@
 1. [Listy - rozszerzanie](#Listy---rozszerzanie)
 1. [Listy - indeksy](#Listy---indeksy)
 1. [Listy - modyfikowanie elementów](#Listy---modyfikowanie-elementów)
-
+1. [Listy - Usuwanie elementów](#Listy---Usuwanie-elementów)
 
 
 ## Listy - rozszerzanie
@@ -47,7 +47,6 @@ print (broken_prices)
 > [5, 3, 4, 5, 4, 4]
 
 
-
 ## Listy - indeksy
 
 ### Indeksy pozytywne
@@ -74,14 +73,21 @@ print (index5_element,last_element)
 ```
 >cereal cereal
 
+
 ## Listy - modyfikowanie elementów
+```python
+garden_waitlist=["Jiho", "Adam", "Sonny", "Alisha"]
+garden_waitlist[1]="Calla"
+garden_waitlist[-1]="Alex"
+print(garden_waitlist)
+```
+>['Jiho', 'Calla', 'Sonny', 'Alex']
 
 
-### Usuwanie elementów z listy   
-`lista=["Lis","Pies"]`  
-lista.remove[1]   
+## Listy -  Usuwanie elementów
 
 
 
 
-[Spis treści](#spis-treści)
+
+[Spis treści - top](#spis-treści)
