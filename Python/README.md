@@ -16,7 +16,6 @@
 
 
 ## Listy - rozszerzanie
-
 ### Dodawanie pojedynczego elementu
 ```python
 orders = ["daisies", "periwinkle"]
@@ -32,7 +31,6 @@ print (orders)
 ```
 
 ### Dodawanie list
-
 ```python
 orders = ["daisy", "buttercup", "snapdragon", "gardenia", "lily"]
 new_orders=["lilac","iris"]
