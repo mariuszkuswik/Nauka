@@ -181,6 +181,32 @@ print(store_line) # ['Karla', 'Maxium', 'Vikor', 'Martim', 'Isabella']
 
 ## Listy - .pop()
 
+- metoda **.pop()** bez parametru wyrzuca ostatni element z listy
+- po podaniu parametru wyrzuca konkretny
+- wyrzucony element można przypisać zmiennej
+
+```python
+data_science_topics = ["Machine Learning", "SQL", "Pandas", "Algorithms", "Statistics", "Python 3"]
+print(data_science_topics)   
+
+# Wyrzucenie ostatniego elementu listy
+data_science_topics.pop()
+print(data_science_topics)    # ['Machine Learning', 'SQL', 'Pandas', 'Algorithms', 'Statistics']
+
+# Wyrzucenie drugiego od konca elementu listy
+data_science_topics.pop(-2)
+print(data_science_topics)    # ['Machine Learning', 'SQL', 'Pandas', 'Statistics']
+
+# Wyrzucenie trzeciego elementu listy
+data_science_topics.pop(2)
+print(data_science_topics)    # ['Machine Learning', 'SQL', 'Statistics']
+```
+
+>['Machine Learning', 'SQL', 'Pandas', 'Algorithms', 'Statistics', 'Python 3']
+['Machine Learning', 'SQL', 'Pandas', 'Algorithms', 'Statistics']
+['Machine Learning', 'SQL', 'Pandas', 'Statistics']
+['Machine Learning', 'SQL', 'Statistics']
+
 
 
 
