@@ -1,6 +1,6 @@
 # Linki ważne
 [Wstęp do programowania w C# pdf](http://c-sharp.ue.katowice.pl/ksiazka/c_sharp_wer2_0.pdf)  
-Aktualna strona : 86
+Aktualna strona : 87
 
 # Spis treści 
 - [Koniec](#koniec)
