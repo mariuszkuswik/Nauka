@@ -1,7 +1,10 @@
 # Spis treści
+[Koniec](#koniec)
 - [Czego sie uczyc](#czego-się-uczyc)
 
 	## Pytania - kategorie
+	- [Linux](#linux)
+	- [Bash](#bash)
 	- [NFS - jak skonfigurowac](#nfs---jak-skonfigurowac)
 	- [Samba - jak skonfigurowac](#samba---jak-skonfigurowac)
 	- [Logi](#logi)
@@ -87,7 +90,32 @@ EURO LINUX
 
 - Jak sprawdzic gdzie jest zainstalowany dany program
 	- whereis
+
+- Wymień znane Ci filesystemy, czym się charakteryzują/różnią
+	- btrfs
+	- ext2,3,4
+	- xfs
+	- bfs
 	
+- Czym jest **export** a czym **env**, jak działają zmienne środowiskowe, jak je wypisac
+	- env - wypisuje zmienne środowiskowe
+	- export - tworzy zmienną środowiskową
+
+- Przykładowe shelle
+	- bash
+	- zsh
+	- fish
+
+- Jak brzmią domyślne ustawienia uprawnień, jak je zmienic
+	- **umask** - sprawdzic jak zmienic - trzeba to zmieniać w bashrc?
+
+- Sprawdź czy maszyna na której jesteś jest maszyną wirtualną
+	- lscpu, wyświetla to czy maszyna jest wirtualizowana
+
+- Grep po wszystkich katalogach w psozukiwaniu stringa wewnątrz pliku
+	- ```grep -R "string" sciezka docelowa ?```
+
+
 ## Bash
 - Wypisac zmienne specjalne z instrukcji bash 			
 	- wynik ostatniej komendy ( najczesciej 0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )  
@@ -111,10 +139,6 @@ EURO LINUX
 
 - Co zwraca funkcja ?
 	- Sama z siebie zwraca **exitcode**, domyslnie wartosc 0/1, żeby zwrócic coś więcej używamy **return**
-
-
-
-
 
 
 
@@ -227,11 +251,7 @@ EURO LINUX
 	- /usr/share/doc
 
 ## Randomowe pytania
-- Wymień znane Ci filesystemy, czym się charakteryzują/różnią
-	- btrfs
-	- ext2,3,4
-	- xfs
-	- bfs
+
 
 - Jak sprawdzic czy filesystem działa poprawnie, jak go naprawic
 	- fsck."$filesystem"
@@ -254,8 +274,12 @@ EURO LINUX
 		- dopisać jeszcze jeden plik w którym można zmieniać ustawienia domyślne
 - Jaki jest proces bootowania systemu
 	- Tekst
-- Sticky bit, uid i gid? kurde bity
-	- opisać
+- Czym jest **sticky bit** i ogólnie kurde bity, sprawdzić nazwy - Na koniec komendy jak zmienic lub ustawic te specjalne bity. 
+	- Do tego słuzy nam komenda chmod.  
+		- chmod o+s "$nazwa pliku"
+		- chmod g+s "$nazwa katalogu"
+		- chmod u+s "$nazwa pliku"
+
 - Dlaczego przypisujemy zmienne sredowiskowe 
 	- Żeby być do nich dostęp z każdego shella?
 - Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlic strony hostowanej przez nią, jak zdiagnozowac problem 
@@ -281,58 +305,13 @@ EURO LINUX
 - Jak dzialaja klamrowe nawiasy w bashu
 	- Tekst
 - Jak ustawic statyczne ip dla maszyny
-	- Tekst
-
-# Pytania do uzupełnienia 
-
-
-
-# Pytania na rozmowę 
-
-<!-- Lista z ogarniętymi pytaniami  -->
-<ol>
-	<li>
-		<details> <summary>- Czym jest **export** a czym **env**, jak działają zmienne środowiskowe, jak je wypisac</summary>
-			- <code>env</code> - wypisuje zmienne środowiskowe   </br> 
-			- <code>export</code> - tworzy zmienną środowiskową   </br>	
-		</details> 
-	</li>
-	<li>
-		<details> <summary>- Grep po wszystkich katalogach w psozukiwaniu stringa wewnątrz pliku </summary>
-			- <code>grep -R "string" sciezka docelowa ?</code>
-	</li>
-	<li>
-		<details> <summary>- Sprawdź czy maszyna na której jesteś jest maszyną wirtualną </summary>
-			- lscpu, wyświetla to czy maszyna jest wirtualizowana 
-	</li>
-	<li>
-		<details> <summary>- Przykładowe shelle </summary>
-			- <code>bash</code>  </br>
-			- <code>zsh</code>  </br>
-			- <code>fish</code>  </br>
-		</details>
-	</li>
-	<li>
-		<details> <summary>- Czym jest **sticky bit** ? </summary>
-			- Na koniec komendy jak zmienic lub ustawic te specjalne bity. Do tego słuzy nam komenda chmod.  
-				<code>chmod o+s <nazwa pliku></code>  </br>
-				<code>chmod g+s <nazwa katalogu></code>  </br>
-				<code>chmod u+s <nazwa pliku></code>  </br>
-		</details>
-	</li>
-	<li>
-		<details> <summary>- Jak brzmią domyślne ustawienia uprawnień, jak je zmienic </summary>
-			- <code>umask</code> - sprawdzic jak zmienic 
-		</details>
-	</li>
-</ol>
+	- Opisac nmcli
 
   
-
-
-
-
+##### Koniec
 
 
   
 [Go top](#spis-treści)
+
+
