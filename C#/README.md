@@ -2,14 +2,16 @@
 [Wstęp do programowania w C# pdf](http://c-sharp.ue.katowice.pl/ksiazka/c_sharp_wer2_0.pdf)
 
 # Spis treści 
-1. 
+1. [Pętle](#pętle)
 
 # Wstęp
 
 # Pętle
+[Go top](#spis-treści)
 
 ## Pętla for
 
+- Ogólna budowa
 ```C#
 for ([inicjalizacja]; [wyrażenie logiczne]; [iteracja])
 {
@@ -17,11 +19,39 @@ for ([inicjalizacja]; [wyrażenie logiczne]; [iteracja])
 }
 ```
 
+- Przykład 
+
+```C#
+static void Main(string[] args)
+{
+    for (int i = 1; i < 10; i++)
+    {
+        Console.WriteLine(i);
+    }
+    Console.ReadKey();
+}
+```
+
+
 ## Pętle while i do while
+- Ogólna budowa
 ```C#
 while (wyrażenie logiczne)
 {
     // ciało pętli (instrukcje)
+}
+```
+- Przykład 
+```C#
+static void Main(string[] args)
+{
+    int i = 0;
+    while (i < 10)
+    {
+        Console.WriteLine(i);
+        i++;
+    }
+    Console.ReadKey();
 }
 ```
 
