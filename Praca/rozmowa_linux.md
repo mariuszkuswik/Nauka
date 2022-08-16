@@ -74,6 +74,19 @@ EURO LINUX
 	- USER
 	- PATH
 	- NAME
+
+- Czym jest **GRUB**, jak przebiega proces bootowania systemu
+	- boot manager,  który ładuje jądro Linuksa, jest to pierwsze oprogramowanie uruchamiane przy starcie systemu.  
+	[Czym jest grub + bootowanie](https://qa-stack.pl/ubuntu/347203/what-exactly-is-grub)
+
+- Jak sprawdzic biblioteki których nam brakuje
+	- ldd "sciezka docelowa komendy"
+
+- Czym jest **SWAP**, ile go potrzebujemy
+	- Pamięc ulotna dostępna na dysku którą system może wykorzystywac, jej użycie jest zależne od stopnia swapiness, minimalna wielkośc powinna byc równa ilości RAM, ze względu na możliwośc hibernacji
+
+- Jak sprawdzic gdzie jest zainstalowany dany program
+	- whereis
 	
 ## Bash
 - Wypisac zmienne specjalne z instrukcji bash 			
@@ -92,6 +105,19 @@ EURO LINUX
 - **shebang** - czym jest?
 	-  daje kontrole nad tym w jakim shellu zostanie wykonany skrypt, jezeli nie zostanie uzyty to skrypt wykona sie w obecnie uzywanym shellu 
 	
+- Do czego służy kropka w skryptach bashowych, jak działa source pliku
+	- Zmienne ze skryptu zaciaganego rowniez zastana zaciagniete
+	- Zaciagany/sourcowany skrypt zostanie wykonany ( sprawdzic czy na pewno )
+
+- Co zwraca funkcja ?
+	- Sama z siebie zwraca **exitcode**, domyslnie wartosc 0/1, żeby zwrócic coś więcej używamy **return**
+
+
+
+
+
+
+
 
 ## Logi
 - [Logi RHEL](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-viewing_and_managing_log_files)
@@ -158,6 +184,7 @@ EURO LINUX
 
 - Czym jest VLAN 
 	- Vlan pozwala w ramach jednej fizycznej sieci lokalnej tworzyc wiele sieci logicznych (sieci wirtualnych)
+	- technologia sieciowa, która pozwala w ramach jednej fizycznej sieci lokalnej tworzyc wiele sieci logicznych (sieci wirtualnych)
 
 - Czym jest brama domyślna
 	- W sieci TCP/IP domyślna brama (sieciowa) (ang. default gateway) oznacza router, do którego komputery sieci lokalnej mają wysyłac pakiety o ile nie powinny byc one kierowane w siec lokalną lub do innych, znanych im routerów.
@@ -202,21 +229,24 @@ EURO LINUX
 ## Randomowe pytania
 - Wymień znane Ci filesystemy, czym się charakteryzują/różnią
 	- btrfs
-	- nfs?
-	- ext3,4
+	- ext2,3,4
 	- xfs
+	- bfs
+
 - Jak sprawdzic czy filesystem działa poprawnie, jak go naprawic
 	- fsck."$filesystem"
-- Czym jest SWAP, ile go potrzeba
-	- SWAP to SWAP
+
 - Czym są linki, różnica między hard a soft linkiem
 	- odpowiedzieć na pytanie
 	- ```ln -s``` - tworzenie soft linka?
 	- hard link jest tworzony domyślnie?
+
 - Print information about users who are currently logged in
 	- who 
+
 - Gdzie znajduje się plik z użytkownikami w systemie
 	- /etc/passwd
+
 - Jak dodać użytkownika 
 	- adduser i useradd
 		- opisać ocpje useradd
@@ -262,47 +292,10 @@ EURO LINUX
 <!-- Lista z ogarniętymi pytaniami  -->
 <ol>
 	<li>
-		<details> <summary>Do czego służy kropka w skryptach bashowych, jak działa source pliku </summary>
-			- Zmienne ze skryptu zaciaganego rowniez zastana zaciagniete  </br>
-			- Zaciagany/sourcowany skrypt zostanie wykonany ( sprawdzic czy na pewno )  </br>
-		</details>
-	</li>
-	<li>
-		<details> <summary>- Co zwraca funkcja ? </summary>
-			- Sama z siebie zwraca **exitcode**, domyslnie wartosc 0/1, żeby zwrócic coś więcej używamy <code>return</code>
-		</details>
-	</li>
-	<li>
-		<details> <summary>- Czym jest **VLAN**</summary>
-			- technologia sieciowa, która pozwala w ramach jednej fizycznej sieci lokalnej tworzyc wiele sieci logicznych (sieci wirtualnych)
-		</details>
-	</li>
-	<li>
-		<details> <summary>- Czym jest **GRUB**, jak przebiega proces bootowania systemu </summary>
-			- boot manager,  który ładuje jądro Linuksa, jest to pierwsze oprogramowanie uruchamiane przy starcie systemu.  </br>
-			[Czym jest grub + bootowanie](https://qa-stack.pl/ubuntu/347203/what-exactly-is-grub)
-		</details>
-	</li>
-	<li>
 		<details> <summary>- Czym jest **export** a czym **env**, jak działają zmienne środowiskowe, jak je wypisac</summary>
 			- <code>env</code> - wypisuje zmienne środowiskowe   </br> 
 			- <code>export</code> - tworzy zmienną środowiskową   </br>	
 		</details> 
-	</li>
-	<li>
-		<details> <summary>- Jak sprawdzic biblioteki których nam brakuje </summary>
-			- <code>ldd "sciezka docelowa komendy"</code>
-		</details> 
-	</li>
-	<li>
-		<details> <summary>- Czym jest **SWAP**, ile go potrzebujemy </summary>
-			- Pamięc ulotna dostępna na dysku którą system może wykorzystywac, jej użycie jest zależne od stopnia swapiness, minimalna wielkośc powinna byc równa ilości RAM, ze względu na możliwośc hibernacji 
-		</details> 
-	</li>
-	<li>
-		<details> <summary>- Jak sprawdzic gdzie jest zainstalowany dany program </summary>
-			- <code>whereis</code>
-		</details>
 	</li>
 	<li>
 		<details> <summary>- Grep po wszystkich katalogach w psozukiwaniu stringa wewnątrz pliku </summary>
@@ -332,17 +325,6 @@ EURO LINUX
 			- <code>umask</code> - sprawdzic jak zmienic 
 		</details>
 	</li>
-	<li>
-		<details> <summary>- Jakie znam **filesystemy** na linuxie, czym się charakteryzują</summary>
-			- <code>ext2</code>  </br>
-			- <code>ext3</code>  </br>
-			- <code>ext4</code>  </br>
-			- <code>xfs</code>  </br>
-			- <code>btrfs</code>  </br>
-			- <code>bfs</code>  </br>
-		</details>
-	</li>
-	<li>
 </ol>
 
   
