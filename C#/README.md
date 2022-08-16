@@ -3,6 +3,10 @@
 
 # Spis treści 
 1. [Pętle](#pętle)
+    - [Pętla for](#pętla-for)
+    - [Pętle while i do while](#pętle-while-i-do-while)
+
+
 
 # Wstęp
 
