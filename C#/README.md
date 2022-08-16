@@ -1,6 +1,6 @@
 # Linki ważne
 [Wstęp do programowania w C# pdf](http://c-sharp.ue.katowice.pl/ksiazka/c_sharp_wer2_0.pdf)  
-Aktualna strona : 80
+Aktualna strona : 86
 
 # Spis treści 
 - [Koniec](#koniec)
@@ -16,6 +16,8 @@ Jeżeli instrukcja (np. dla if lub pętli) nie jest umieszczona w klamrach to wy
 
 # Pętle
 [Go top](#spis-treści)
+
+[Skrócony opis wszystkich pętli](http://c-sharp.ue.katowice.pl/ksiazka/c_sharp_wer2_0.pdf#page=203&zoom=100,90,94)
 
 ## Pętla for
 
@@ -100,7 +102,7 @@ n
 ---
 
 ### Do while
-- Wykona się minimum raz, później dopóki warunek jest spełniony
+- Ciało pętli jest wykonywane dopóki wyrażenie logiczne ma wartość true. Wyrażenie logiczne sprawdzane jest po pierwszym przebiegu pętli **(czyli pętla wykona się przynajmniej raz)**.
 
 #### Ogólna budowa
 ```C#
@@ -152,12 +154,38 @@ static void Main(string[] args)
 
 
 ### Continue 
+- polecenie continue powoduje przerwanie
+jedynie bieżącego przebiegu pętli (a nie działania całej pętli jak w przypadku break).
+
+#### Przykład 3.26.
+```C#
+static void Main(string[] args)
+{
+    for (int i = 1; i <= 6; i++)
+    {
+        if (i == 4)
+        continue; // pomiń dalsze instrukcje i wznów pętle
+        Console.WriteLine(i);
+    }
+    Console.ReadKey();
+}
+```
+
+## Foreach 
+
+Pętla foreach jest przeznaczona dla kolekcji (np. tablicy). Ma tyle przebiegów, ile
+jest elementów w kolekcji. Przy użyciu tej pętli nie można zmieniać elementów
+kolekcji (są dostępne tylko „do odczytu”). 
+
+#### Przykład (wypisanie na ekranie imion Ala, Ola, Ela, jedno pod drugim)
+
+```C#
+string[] imiona = { "Ala" , "Ola" , "Ela" };
+foreach (string x in imiona)
+    Console.WriteLine(x);
+```
 
 
-
-
-
-#### Przykład
 
 
 ##### Koniec
