@@ -1,15 +1,19 @@
 ﻿
+double posiadaneJanek=0, dlugJanek=80, zarobekJanek=50;
+double posiadaneKarol=0, dlugKarol=80, zarobekKarol=40;
 
-Console.WriteLine("Podaj pierwsza liczbe z przedzialu");
-int userNumber1=int.Parse(Console.ReadLine());
-Console.WriteLine("Podaj druga liczbe z przedzialu");
-int userNumber2=int.Parse(Console.ReadLine());
+int liczbaDni=0;
 
-
-while (userNumber1<=userNumber2)
+do
 {
-    if (userNumber1 % 2 == 0)
-    Console.WriteLine(userNumber1);
+    Console.WriteLine("Janek posiada {0}", posiadaneJanek);
+    Console.WriteLine("Karol posiada {0}", posiadaneKarol);
 
-    userNumber1++;
+    posiadaneJanek+=zarobekJanek*0.2;
+    posiadaneKarol+=zarobekKarol*0.2;
+
+    liczbaDni++; 
 }
+while(posiadaneJanek<=dlugJanek || posiadaneKarol<=dlugKarol);
+
+Console.WriteLine(liczbaDni);

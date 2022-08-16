@@ -41,7 +41,6 @@ EURO LINUX
 - jak dziala nmcli 
 - usr - co znaczy skrot (nie kurde user tylko unix system resource)
 - Jak działają dwie ostatnie kolumny w fstabie
-- Jakie są zmienne środowiskowe w linuxie 
 - Co zwraca $@ i ogólnie zmienne specjalne?
 - Jak zwrócić trzeci argument podany do skryptu? - $3 - w bashu liczymy od 1 a nie 0
 - Uczyć się Jenkinsa
@@ -59,6 +58,23 @@ EURO LINUX
 
 # Tematy pytan
 
+## Linux 
+- Jakie znam **katalogi linuxowe**, za co odpowiadają
+	- **/boot** - pliki niezbędne do uruchomienia systemu (kernel, initrd, pliki bootloadera - w przypadku GRUB)  
+	- **/etc** - pliki konfiguracyjne, ustawienia systemowe  
+	- **/home** - pliki określające ustawienia każdego użytkownika + ich pliki  
+	- **/proc** - wirtualny katalog, zawierający dane o aktualnie uruchomionych procesach  
+	- **/tmp** - pliki tymczasowe
+
+- Jakie są zmienne środowiskowe w linuxie 
+	- EDITOR
+	- SHELL
+	- PWD
+	- HOME
+	- USER
+	- PATH
+	- NAME
+	
 ## Bash
 - Wypisac zmienne specjalne z instrukcji bash 			
 	- wynik ostatniej komendy ( najczesciej 0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )  
@@ -71,6 +87,11 @@ EURO LINUX
 		- `$@` - argumenty w postaci tablicy  
 [Opis z notatek RHCSA](https://github.com/mariuszkuswik/Nauka/blob/main/Linux/Linux.md#zmienne-specjalne)
 
+- Exitcode z instrukcji Bash, wypisac czym jest
+	- Tekst
+- **shebang** - czym jest?
+	-  daje kontrole nad tym w jakim shellu zostanie wykonany skrypt, jezeli nie zostanie uzyty to skrypt wykona sie w obecnie uzywanym shellu 
+	
 
 ## Logi
 - [Logi RHEL](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-viewing_and_managing_log_files)
@@ -125,11 +146,37 @@ EURO LINUX
 ## LVM 
 - ### Jak dodać LVM - procedura
 ## Bash 
-- Co zwraca funkcja - Sama z siebie zwraca 0/1, jeżeli chcemy zwrócić coś konkretnego to używamy return
+- Co zwraca funkcja 
+	- Sama z siebie zwraca 0/1, jeżeli chcemy zwrócić coś konkretnego to używamy return
+
+- Jak zwrócic wartośc funkcji
+	- return
+
+
+
 ## Sieci
 
 - Czym jest VLAN 
 	- Vlan pozwala w ramach jednej fizycznej sieci lokalnej tworzyc wiele sieci logicznych (sieci wirtualnych)
+
+- Czym jest brama domyślna
+	- W sieci TCP/IP domyślna brama (sieciowa) (ang. default gateway) oznacza router, do którego komputery sieci lokalnej mają wysyłac pakiety o ile nie powinny byc one kierowane w siec lokalną lub do innych, znanych im routerów.
+
+- Czym rozni sie **TCP od UDP**
+	- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. ... UDP to również protokół w warstwie transportowej, ale nie wymaga handshake'a ani potwierdzenia o otrzymaniu danych.   
+			[Podstawy sieci + opis TCP i UDP](https://newsblog.pl/czym-one-sa-roznica-miedzy-protokolem-tcp-i-udp/) 
+
+- Jak sprawdzic porty otwarte na lokalnej maszynie 
+	- **netstat**
+		- **netstat -a** - wyświetla wszystkie porty
+		- **netstat -l** - wyświetla nasłuchujące porty
+
+- Jak przeskanowac porty zdalnej maszyny
+	- nmap
+
+- Jak wyświetlic karty sieciowe
+	- ip a
+
 
 
 ### Firewall
@@ -145,6 +192,7 @@ EURO LINUX
 ### Routing
 - czym jest routing, jak działa, opisać
 - Wyświetl tablicę routingu i opowiedz o niej, opisać jak zadziała
+	- ip route
 
 ## Pomoc 
 - Dokumentacja/pomoc w linuxie
@@ -159,12 +207,9 @@ EURO LINUX
 	- xfs
 - Jak sprawdzic czy filesystem działa poprawnie, jak go naprawic
 	- fsck."$filesystem"
-
-
-
 - Czym jest SWAP, ile go potrzeba
 	- SWAP to SWAP
-- Różnica między hard a soft linkiem
+- Czym są linki, różnica między hard a soft linkiem
 	- odpowiedzieć na pytanie
 	- ```ln -s``` - tworzenie soft linka?
 	- hard link jest tworzony domyślnie?
@@ -179,131 +224,43 @@ EURO LINUX
 		- dopisać jeszcze jeden plik w którym można zmieniać ustawienia domyślne
 - Jaki jest proces bootowania systemu
 	- Tekst
-
 - Sticky bit, uid i gid? kurde bity
 	- opisać
 - Dlaczego przypisujemy zmienne sredowiskowe 
 	- Żeby być do nich dostęp z każdego shella?
-
-
-
-
+- Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlic strony hostowanej przez nią, jak zdiagnozowac problem 
+	- Tekst
+- Gdzie przechowywane są pliki konfiguracyjne
+	- /etc
+- Jakie znam rodzaje RAIDa, na czym polegają
+	- Tekst
+- Jak działają LVMy, czym są, jak je wyświetlic, jak rozszerzyc, czym jest volume group
+	- lvm 
+		- lslvm - wyświela lvm
+		- rozszerzenie lvm :
+			- rozszerzenie partycji lvm w wirtualizatorze
+			- partprobe - sprawdza
+- Czym jest Kernel
+	- Tekst
+- Serwer jest zajeżdżany, w jaki sposób zdiagnozuję problem
+	- Tekst
+- Czym jest wirtualizacja
+	- Tekst
+- Czym jest konteneryzacja
+	- Tekst
+- Jak dzialaja klamrowe nawiasy w bashu
+	- Tekst
+- Jak ustawic statyczne ip dla maszyny
+	- Tekst
 
 # Pytania do uzupełnienia 
-<ol>
-	<li>
-		<details> <summary>	- Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlic strony hostowanej przez nią, jak zdiagnozowac problem </summary>
-			Tekst
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Exitcode z instrukcji Bash, wypisac czym jest</summary>
-			Tekst
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Czym są linki w linuxie, podaj różnice, kiedy ich używamy </summary>
-			Tekst
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Jak działa routing</summary>
-			Tekst
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Gdzie przechowywane są pliki konfiguracyjne</summary>
-			/etc
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Jakie znam rodzaje RAIDa, na czym polegają</summary>
-			Tekst
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Jak działają LVMy, czym są, jak je wyświetlic, jak rozszerzyc, czym jest volume group </summary>
-			lvm 
-			lslvm - wyświela lvm
-			rozszerzenie lvm :
-				- rozszerzenie partycji lvm w wirtualizatorze
-				- <code>partprobe</code> - sprawdza 
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Czym jest Kernel </summary>
-				Tekst	
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Serwer jest zajeżdżany, w jaki sposób zdiagnozuję problem </summary>
-				Tekst
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Czym jest wirtualizacja  </summary>
-				Tekst
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Czym jest konteneryzacja </summary>
-				Tekst
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Jak dzialaja klamrowe nawiasy w bashu </summary>
-				Tekst
-		</details>
-	</li>
-	<li>
-		<details> <summary>	- Jak ustawic statyczne ip dla maszyny</summary>
-				Tekst
-		</details>
-	</li>
-</ol>
+
 
 
 # Pytania na rozmowę 
 
 <!-- Lista z ogarniętymi pytaniami  -->
 <ol>
-	<li>
-		<details> <summary class="sieci">Czym jest brama domyślna </summary>
-			- W sieci TCP/IP domyślna brama (sieciowa) (ang. default gateway) oznacza router, do którego komputery sieci lokalnej mają wysyłac pakiety o ile nie powinny byc one kierowane w siec lokalną lub do innych, znanych im routerów.
-		</details> 
-	</li>
-	<li>
-		<details> <summary class="sieci">Czym rozni sie <b>TCP od UDP</b></summary>
-			- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. ... UDP to również protokół w warstwie transportowej, ale nie wymaga handshake'a ani potwierdzenia o otrzymaniu danych. 
-			<a href="https://newsblog.pl/czym-one-sa-roznica-miedzy-protokolem-tcp-i-udp/">Podstawy sieci + opis TCP i UDP</a>
-		</details>  
-	</li>
-	<li>
-		<details> <summary class="sieci">Jak wyświetlic tablicę routingu </summary>
-			- <code>ip route</code>   
-		</details>  
-	</li>
-	<li>
-		<details> <summary class="linux sieci">Jak sprawdzic porty otwarte na lokalnej maszynie </summary>
-			- <code>netstat</code>  </br>
-			- <code>netstat -a</code> - wyświetla wszystkie porty  </br>
-			- <code>netstat -l</code> - wyświetla nasłuchujące porty   </br>
-		</details>  
-	</li>
-	<li>
-		<details> <summary class="linux sieci">Jak przeskanowac porty zdalnej maszyny </summary>
-			- <code>nmap</code>
-		</details>  
-	</li>
-	<li>
-		<details> <summary class="linux sieci">Jak wyświetlic karty sieciowe </summary>
-			- <code>ip a</code>
-	</li>
-	<li>
-		<details> <summary class="linux bash">Jak zwrócic wartośc funkcji </summary>
-			- <code> return </code>
-		</details>
-	</li>
 	<li>
 		<details> <summary>Do czego służy kropka w skryptach bashowych, jak działa source pliku </summary>
 			- Zmienne ze skryptu zaciaganego rowniez zastana zaciagniete  </br>
@@ -312,27 +269,22 @@ EURO LINUX
 	</li>
 	<li>
 		<details> <summary>- Co zwraca funkcja ? </summary>
-			- Sama z siebie zwraca <b>exitcode</b>, domyslnie wartosc 0/1, żeby zwrócic coś więcej używamy <code>return</code>
+			- Sama z siebie zwraca **exitcode**, domyslnie wartosc 0/1, żeby zwrócic coś więcej używamy <code>return</code>
 		</details>
 	</li>
 	<li>
-		<details> <summary>- Czym jest <b>VLAN</b></summary>
+		<details> <summary>- Czym jest **VLAN**</summary>
 			- technologia sieciowa, która pozwala w ramach jednej fizycznej sieci lokalnej tworzyc wiele sieci logicznych (sieci wirtualnych)
 		</details>
 	</li>
 	<li>
-		<details> <summary>- Czym jest <b>GRUB</b>, jak przebiega proces bootowania systemu </summary>
+		<details> <summary>- Czym jest **GRUB**, jak przebiega proces bootowania systemu </summary>
 			- boot manager,  który ładuje jądro Linuksa, jest to pierwsze oprogramowanie uruchamiane przy starcie systemu.  </br>
 			[Czym jest grub + bootowanie](https://qa-stack.pl/ubuntu/347203/what-exactly-is-grub)
 		</details>
 	</li>
 	<li>
-		<details> <summary>- <b>shebang</b> - czym jest</summary>
-			-  daje kontrole nad tym w jakim shellu zostanie wykonany skrypt, jezeli nie zostanie uzyty to skrypt wykona sie w obecnie uzywanym shellu 
-		</details>
-	</li>
-	<li>
-		<details> <summary>- Czym jest <b>export</b> a czym <b>env</b>, jak działają zmienne środowiskowe, jak je wypisac</summary>
+		<details> <summary>- Czym jest **export** a czym **env**, jak działają zmienne środowiskowe, jak je wypisac</summary>
 			- <code>env</code> - wypisuje zmienne środowiskowe   </br> 
 			- <code>export</code> - tworzy zmienną środowiskową   </br>	
 		</details> 
@@ -343,7 +295,7 @@ EURO LINUX
 		</details> 
 	</li>
 	<li>
-		<details> <summary>- Czym jest <b>SWAP</b>, ile go potrzebujemy </summary>
+		<details> <summary>- Czym jest **SWAP**, ile go potrzebujemy </summary>
 			- Pamięc ulotna dostępna na dysku którą system może wykorzystywac, jej użycie jest zależne od stopnia swapiness, minimalna wielkośc powinna byc równa ilości RAM, ze względu na możliwośc hibernacji 
 		</details> 
 	</li>
@@ -368,7 +320,7 @@ EURO LINUX
 		</details>
 	</li>
 	<li>
-		<details> <summary>- Czym jest <b>sticky bit</b> ? </summary>
+		<details> <summary>- Czym jest **sticky bit** ? </summary>
 			- Na koniec komendy jak zmienic lub ustawic te specjalne bity. Do tego słuzy nam komenda chmod.  
 				<code>chmod o+s <nazwa pliku></code>  </br>
 				<code>chmod g+s <nazwa katalogu></code>  </br>
@@ -381,7 +333,7 @@ EURO LINUX
 		</details>
 	</li>
 	<li>
-		<details> <summary>- Jakie znam <b>filesystemy</b> na linuxie, czym się charakteryzują</summary>
+		<details> <summary>- Jakie znam **filesystemy** na linuxie, czym się charakteryzują</summary>
 			- <code>ext2</code>  </br>
 			- <code>ext3</code>  </br>
 			- <code>ext4</code>  </br>
@@ -391,14 +343,6 @@ EURO LINUX
 		</details>
 	</li>
 	<li>
-		<details> <summary>- Jakie znam <b>katalogi linuxowe</b>, za co odpowiadają</summary>
-			- /boot - pliki niezbędne do uruchomienia systemu (kernel, initrd, pliki bootloadera - w przypadku GRUB)  </br>
-			- /etc - pliki konfiguracyjne, ustawienia systemowe  </br>
-			- /home - pliki określające ustawienia każdego użytkownika + ich pliki  </br>
-			- /proc - wirtualny katalog, zawierający dane o aktualnie uruchomionych procesach  </br>
-			- /tmp - pliki tymczasowe
-		</details>
-	</li>
 </ol>
 
   
