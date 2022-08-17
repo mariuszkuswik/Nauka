@@ -40,8 +40,6 @@ ATOS
 
 EURO LINUX
 - co robi lsof, kiedy go używamy - usuwanie plików, folderów, jakiekolwiek zmiany?
-- czym jest sticky bit - nie wystarczy tylko zabranianie usunięcia folderu, robi więcej
-- jak dziala nmcli 
 - usr - co znaczy skrot (nie kurde user tylko unix system resource)
 - Jak działają dwie ostatnie kolumny w fstabie
 - Co zwraca $@ i ogólnie zmienne specjalne?
@@ -62,6 +60,21 @@ EURO LINUX
 # Tematy pytan
 
 ## Linux 
+
+### System
+
+- Gdzie przechowywane są pliki konfiguracyjne
+	- /etc
+
+- Jaki jest proces bootowania systemu
+	- Tekst
+
+- Czym jest **sticky bit** i ogólnie kurde bity, sprawdzić nazwy - Na koniec komendy jak zmienic lub ustawic te specjalne bity. - nie wystarczy tylko zabranianie usunięcia folderu, robi więcej
+	- Do tego słuzy nam komenda chmod.  
+		- chmod o+s "$nazwa pliku"
+		- chmod g+s "$nazwa katalogu"
+		- chmod u+s "$nazwa pliku"
+
 - Jakie znam **katalogi linuxowe**, za co odpowiadają
 	- **/boot** - pliki niezbędne do uruchomienia systemu (kernel, initrd, pliki bootloadera - w przypadku GRUB)  
 	- **/etc** - pliki konfiguracyjne, ustawienia systemowe  
@@ -91,16 +104,6 @@ EURO LINUX
 - Jak sprawdzic gdzie jest zainstalowany dany program
 	- whereis
 
-- Wymień znane Ci filesystemy, czym się charakteryzują/różnią
-	- btrfs
-	- ext2,3,4
-	- xfs
-	- bfs
-	
-- Czym jest **export** a czym **env**, jak działają zmienne środowiskowe, jak je wypisac
-	- env - wypisuje zmienne środowiskowe
-	- export - tworzy zmienną środowiskową
-
 - Przykładowe shelle
 	- bash
 	- zsh
@@ -115,6 +118,42 @@ EURO LINUX
 - Grep po wszystkich katalogach w psozukiwaniu stringa wewnątrz pliku
 	- ```grep -R "string" sciezka docelowa ?```
 
+- Czym są linki, różnica między hard a soft linkiem
+	- odpowiedzieć na pytanie
+	- ```ln -s``` - tworzenie soft linka?
+	- hard link jest tworzony domyślnie?
+
+- Print information about users who are currently logged in
+	- who 
+
+- Gdzie znajduje się plik z użytkownikami w systemie
+	- /etc/passwd
+
+- Jak dodać użytkownika 
+	- adduser i useradd
+		- opisać ocpje useradd
+	- domyślne opcje dla useradd znajdują się w pliku /etc/defaults/useradd?
+		- dopisać jeszcze jeden plik w którym można zmieniać ustawienia domyślne
+
+- Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlic strony hostowanej przez nią, jak zdiagnozowac problem 
+	- Tekst
+
+### Storage 
+- Jak działają LVMy, czym są, jak je wyświetlic, jak rozszerzyc, czym jest volume group
+	- lvm 
+		- lslvm - wyświela lvm
+		- rozszerzenie lvm :
+			- rozszerzenie partycji lvm w wirtualizatorze
+			- partprobe - sprawdza zmiany w tablicy partycji?
+
+- Jak sprawdzic czy filesystem działa poprawnie, jak go naprawic
+	- fsck."$filesystem"
+
+- Wymień znane Ci filesystemy, czym się charakteryzują/różnią
+	- btrfs
+	- ext2,3,4
+	- xfs
+	- bfs
 
 ## Bash
 - Wypisac zmienne specjalne z instrukcji bash 			
@@ -140,7 +179,12 @@ EURO LINUX
 - Co zwraca funkcja ?
 	- Sama z siebie zwraca **exitcode**, domyslnie wartosc 0/1, żeby zwrócic coś więcej używamy **return**
 
+- Czym jest **export** a czym **env**, jak działają zmienne środowiskowe, jak je wypisac
+	- env - wypisuje zmienne środowiskowe
+	- export - tworzy zmienną środowiskową
 
+- Dlaczego przypisujemy zmienne sredowiskowe 
+	- Żeby być do nich dostęp z każdego shella?
 
 
 ## Logi
@@ -202,8 +246,6 @@ EURO LINUX
 - Jak zwrócic wartośc funkcji
 	- return
 
-
-
 ## Sieci
 
 - Czym jest VLAN 
@@ -228,7 +270,8 @@ EURO LINUX
 - Jak wyświetlic karty sieciowe
 	- ip a
 
-
+- Jak ustawic statyczne ip dla maszyny
+	- Opisac nmcli - jak dziala nmcli 
 
 ### Firewall
 - Jak dodać regułę do firewalla
@@ -252,48 +295,8 @@ EURO LINUX
 
 ## Randomowe pytania
 
-
-- Jak sprawdzic czy filesystem działa poprawnie, jak go naprawic
-	- fsck."$filesystem"
-
-- Czym są linki, różnica między hard a soft linkiem
-	- odpowiedzieć na pytanie
-	- ```ln -s``` - tworzenie soft linka?
-	- hard link jest tworzony domyślnie?
-
-- Print information about users who are currently logged in
-	- who 
-
-- Gdzie znajduje się plik z użytkownikami w systemie
-	- /etc/passwd
-
-- Jak dodać użytkownika 
-	- adduser i useradd
-		- opisać ocpje useradd
-	- domyślne opcje dla useradd znajdują się w pliku /etc/defaults/useradd?
-		- dopisać jeszcze jeden plik w którym można zmieniać ustawienia domyślne
-- Jaki jest proces bootowania systemu
-	- Tekst
-- Czym jest **sticky bit** i ogólnie kurde bity, sprawdzić nazwy - Na koniec komendy jak zmienic lub ustawic te specjalne bity. 
-	- Do tego słuzy nam komenda chmod.  
-		- chmod o+s "$nazwa pliku"
-		- chmod g+s "$nazwa katalogu"
-		- chmod u+s "$nazwa pliku"
-
-- Dlaczego przypisujemy zmienne sredowiskowe 
-	- Żeby być do nich dostęp z każdego shella?
-- Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlic strony hostowanej przez nią, jak zdiagnozowac problem 
-	- Tekst
-- Gdzie przechowywane są pliki konfiguracyjne
-	- /etc
 - Jakie znam rodzaje RAIDa, na czym polegają
 	- Tekst
-- Jak działają LVMy, czym są, jak je wyświetlic, jak rozszerzyc, czym jest volume group
-	- lvm 
-		- lslvm - wyświela lvm
-		- rozszerzenie lvm :
-			- rozszerzenie partycji lvm w wirtualizatorze
-			- partprobe - sprawdza
 - Czym jest Kernel
 	- Tekst
 - Serwer jest zajeżdżany, w jaki sposób zdiagnozuję problem
@@ -304,8 +307,7 @@ EURO LINUX
 	- Tekst
 - Jak dzialaja klamrowe nawiasy w bashu
 	- Tekst
-- Jak ustawic statyczne ip dla maszyny
-	- Opisac nmcli
+
 
   
 ##### Koniec
