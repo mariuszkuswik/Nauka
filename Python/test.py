@@ -6,4 +6,4 @@ print (len(toppings))
 toppings.sort()
 print (toppings)
 
- 
+
