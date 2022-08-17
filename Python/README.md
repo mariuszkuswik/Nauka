@@ -8,7 +8,7 @@
 # Spis treści 
 
 1. [Listy](#listy)
-1. [Testowy linkk](#Testowy)
+1. [Petle](#petle)
 
 # Listy 
 [Spis treści](#spis-treści)
@@ -257,9 +257,12 @@ print(list(zero_to_seven))
 ### #TODO - opisać chociaż coś
 
 
-# Pętle
+# Petle
 
-## For
+[Spis tresci](#spis-treści)
+1. [For](#for)
+
+## Petle - For
 #### Jak działa
 ```python
 for <temporary variable> in <collection>:
