@@ -4,19 +4,17 @@
 
 	## Pytania - kategorie
 	- [Linux](#linux)
-	- [Bash](#bash)
-	- [NFS - jak skonfigurowac](#nfs---jak-skonfigurowac)
-	- [Samba - jak skonfigurowac](#samba---jak-skonfigurowac)
-	- [Logi](#logi)
-		- [Gdzie znalezc logi](#gdzie-znalezc-logi)
-		- [Logrotate](#logrotate)
-	- [LVM - jak dziala, cos tam, procedura](#Lvm)
+		- [Bash](#bash)
+		- [NFS - jak skonfigurowac](#nfs---jak-skonfigurowac)
+		- [Samba - jak skonfigurowac](#samba---jak-skonfigurowac)
+		- [Logi](#logi)
+			- [Gdzie znalezc logi](#gdzie-znalezc-logi)
+			- [Logrotate](#logrotate)
+		- [LVM - jak dziala, cos tam, procedura](#Lvm)
+		- [Pomoc](#pomoc)
 	- [Git](#git)
 	- [Sieci](#sieci)
-	- [Pomoc](#pomoc)
-
-- [Tematy pytan](#tematy-pytan)
-- [Randomowe pytania](#randomowe-pytania)
+	- [Randomowe pytania](#randomowe-pytania)
 
 - [Pytania do uzupełnienia](#pytania-do-uzupełnienia)
 
@@ -69,7 +67,7 @@ EURO LINUX
 - Czym jest brama domyślna
 	- W sieci TCP/IP domyślna brama (sieciowa) (ang. default gateway) oznacza router, do którego komputery sieci lokalnej mają wysyłac pakiety o ile nie powinny byc one kierowane w siec lokalną lub do innych, znanych im routerów.
 
-- Czym rozni sie **TCP od UDP**
+- Czym rozni sie **TCP od UDP** - czym są TCP i UDP, opisać mniej więcej
 	- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. ... UDP to również protokół w warstwie transportowej, ale nie wymaga handshake'a ani potwierdzenia o otrzymaniu danych.   
 			[Podstawy sieci + opis TCP i UDP](https://newsblog.pl/czym-one-sa-roznica-miedzy-protokolem-tcp-i-udp/) 
 
@@ -319,10 +317,6 @@ EURO LINUX
 - firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
 - Jak działa firewall 
 - Nauczyc sie iptables i znalezc do niego jakies pytania
-
-### TCP i UDP
-- czym są TCP i UDP, opisać mniej więcej
-- różnice pomiędzy TCP i UDP 
 
 ## Pomoc 
 - Dokumentacja/pomoc w linuxie
