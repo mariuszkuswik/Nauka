@@ -73,6 +73,10 @@ EURO LINUX
 	- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. ... UDP to również protokół w warstwie transportowej, ale nie wymaga handshake'a ani potwierdzenia o otrzymaniu danych.   
 			[Podstawy sieci + opis TCP i UDP](https://newsblog.pl/czym-one-sa-roznica-miedzy-protokolem-tcp-i-udp/) 
 
+- Routing - czym jest routing, jak działa, opisać
+	- Tekst
+
+
 
 # Randomowe pytania
 
@@ -89,7 +93,7 @@ EURO LINUX
 
 - Czym jest Kernel
 	- Tekst
-	
+
 - Serwer jest zajeżdżany, w jaki sposób zdiagnozuję problem
 	- Tekst
 
@@ -177,6 +181,7 @@ EURO LINUX
 	- test
 
 ## Storage 
+
 - Jak działają LVMy, czym są, jak je wyświetlic, jak rozszerzyc, czym jest volume group
 	- lvm 
 		- lslvm - wyświela lvm
@@ -192,6 +197,18 @@ EURO LINUX
 	- ext2,3,4
 	- xfs
 	- bfs
+
+### Procedury
+
+#### LVM 
+- Jak dodać LVM - procedura
+
+#### Stratis
+- Jak dodać, jak działa
+
+#### VDO 
+- Jak dodać, jak działa
+
 
 ## Bash
 - Wypisac zmienne specjalne z instrukcji bash 			
@@ -226,6 +243,13 @@ EURO LINUX
 
 - Jak dzialaja klamrowe nawiasy w bashu
 	- Tekst
+
+- Co zwraca funkcja 
+	- Sama z siebie zwraca 0/1, jeżeli chcemy zwrócić coś konkretnego to używamy return
+
+- Jak zwrócic wartośc funkcji
+	- return
+
 
 ## Logi
 - [Logi RHEL](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-viewing_and_managing_log_files)
@@ -268,17 +292,6 @@ EURO LINUX
 1. Restart uslugi
 
 
-
-
-## LVM 
-- ### Jak dodać LVM - procedura
-## Bash 
-- Co zwraca funkcja 
-	- Sama z siebie zwraca 0/1, jeżeli chcemy zwrócić coś konkretnego to używamy return
-
-- Jak zwrócic wartośc funkcji
-	- return
-
 ## Sieci Linux
 
 - Jak sprawdzić która sieciówka jest obecnie używana
@@ -298,6 +311,9 @@ EURO LINUX
 - Jak ustawic statyczne ip dla maszyny
 	- Opisac nmcli - jak dziala nmcli 
 
+- Wyświetl tablicę routingu i opowiedz o niej, opisać jak zadziała
+	- ip route
+
 ### Firewall
 - Jak dodać regułę do firewalla
 - firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
@@ -308,20 +324,10 @@ EURO LINUX
 - czym są TCP i UDP, opisać mniej więcej
 - różnice pomiędzy TCP i UDP 
 
-### Routing
-- czym jest routing, jak działa, opisać
-- Wyświetl tablicę routingu i opowiedz o niej, opisać jak zadziała
-	- ip route
-
 ## Pomoc 
 - Dokumentacja/pomoc w linuxie
 	- man 
 	- /usr/share/doc
-
-
-
-
-
 
 # Git 
 ### Branch - jak dodac nowy
