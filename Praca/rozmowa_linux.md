@@ -20,6 +20,7 @@
 
 
 # Czego się uczyc
+- Jenkins
 - Ansible
 - Docker
 - logrotate - Automatyczne narzędzia do rotowania logów
@@ -29,22 +30,10 @@
 
 ### #TODO - odpowiedziec na reszte pytan
 
-ATOS
-
-
-
-
-- Czym jest daemon
-- Daemon działa w kernelspace czy userspace? - kernelspace
-- Do czego służy systemd ? - nie wystarczy start i restart usług, można też montować dyski itd. 
 
 EURO LINUX
 - co robi lsof, kiedy go używamy - usuwanie plików, folderów, jakiekolwiek zmiany?
-- usr - co znaczy skrot (nie kurde user tylko unix system resource)
-- Jak działają dwie ostatnie kolumny w fstabie
-- Co zwraca $@ i ogólnie zmienne specjalne?
-- Jak zwrócić trzeci argument podany do skryptu? - $3 - w bashu liczymy od 1 a nie 0
-- Uczyć się Jenkinsa
+
 - Jak podglądać logi na bierząco? - tail -f ???
 - Jak wyświetlić liczbę twardych doswiązań do plików ? - `ls -l`
 - Czym jest system operacyjny?
@@ -53,9 +42,6 @@ EURO LINUX
 - Jak wyświetlić informacje na temat partycji ? = wyświetlić informacje w /proc - sprawdzić gdzie konkretnie 
 - Jak wyświetlić wszystkie usługi działające w systemd - nie samo systemctl, sprawdzić
 - Jak dodać użytkownika do wielu grup jednym poleceniem - usermod -aG grupa,grupa username?
-
-
-
 
 
 
@@ -88,6 +74,18 @@ EURO LINUX
 # Linux 
 
 ## System
+
+- Do czego służy systemd ? 
+	- nie wystarczy start i restart usług, można też montować dyski itd. 
+
+- Daemon działa w kernelspace czy userspace? 
+	- kernelspace
+
+- Czym jest daemon
+	- Test
+
+- usr - co znaczy skrot 
+	- (nie kurde user tylko unix system resource)
 
 - Czym jest Kernel
 	- Tekst
@@ -180,6 +178,9 @@ EURO LINUX
 
 ## Storage 
 
+- Jak wygląda składnia fstab, jak działają dwie ostatnie kolumny
+	- Teskt
+
 - Jak działają LVMy, czym są, jak je wyświetlic, jak rozszerzyc, czym jest volume group
 	- lvm 
 		- lslvm - wyświela lvm
@@ -209,6 +210,10 @@ EURO LINUX
 
 
 ## Bash
+
+- Jak zwrócić trzeci argument podany do skryptu? 
+	- $3 - w bashu liczymy od 1 a nie 0
+
 - Wypisac zmienne specjalne z instrukcji bash 			
 	- wynik ostatniej komendy ( najczesciej 0/2 - 0 to komenda wykonana prawidlowo, wszystko inne to blad, nie musi byc to 2, liczba moze byc nawet ujemna )  
 		- `$$` - numer procesu używanego przez komende   
