@@ -252,6 +252,37 @@ zero_to_seven=range(8)
 print(list(zero_to_seven))
 ```
 
+## Tupples 
+
+### #TODO - opisać chociaż coś
+
+
+# Pętle
+
+## For
+#### Jak działa
+```python
+for <temporary variable> in <collection>:
+  <action>
+```
+1. A for keyword indicates the start of a for loop.
+2. A <temporary variable> that is used to represent the value of the element in the collection the loop is currently on.
+3. An in keyword separates the temporary variable from the collection used for iteration.
+4. A <collection> to loop over. In our examples, we will be using a list.
+5. An <action> to do anything on each iteration of the loop.
+
+
+#### Przykład 
+```python
+ingredients = ["milk", "sugar", "vanilla extract", "dough", "chocolate"]
+ 
+for ingredient in ingredients:
+  print(ingredient)
+```
+
+
+
+
 
 
 [Spis treści - top](#spis-treści)
