@@ -32,8 +32,10 @@
 ### #TODO - odpowiedziec na reszte pytan
 
 ATOS
-- Jak wyświetlić porty selinux 
-- Jak sprawdzić która sieciówka jest obecnie używana
+
+
+
+
 - Czym jest daemon
 - Daemon działa w kernelspace czy userspace? - kernelspace
 - Do czego służy systemd ? - nie wystarczy start i restart usług, można też montować dyski itd. 
@@ -53,13 +55,26 @@ EURO LINUX
 - Jak wyświetlić informacje na temat partycji ? = wyświetlić informacje w /proc - sprawdzić gdzie konkretnie 
 - Jak wyświetlić wszystkie usługi działające w systemd - nie samo systemctl, sprawdzić
 - Jak dodać użytkownika do wielu grup jednym poleceniem - usermod -aG grupa,grupa username?
-- Jak wyświetlić konteksty SELinux? - ogolnie selinux 
 
 
 
-# Tematy pytan
 
-## Randomowe pytania
+
+
+# Sieci
+- Czym jest VLAN 
+	- Vlan pozwala w ramach jednej fizycznej sieci lokalnej tworzyc wiele sieci logicznych (sieci wirtualnych)
+	- technologia sieciowa, która pozwala w ramach jednej fizycznej sieci lokalnej tworzyc wiele sieci logicznych (sieci wirtualnych)
+
+- Czym jest brama domyślna
+	- W sieci TCP/IP domyślna brama (sieciowa) (ang. default gateway) oznacza router, do którego komputery sieci lokalnej mają wysyłac pakiety o ile nie powinny byc one kierowane w siec lokalną lub do innych, znanych im routerów.
+
+- Czym rozni sie **TCP od UDP**
+	- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. ... UDP to również protokół w warstwie transportowej, ale nie wymaga handshake'a ani potwierdzenia o otrzymaniu danych.   
+			[Podstawy sieci + opis TCP i UDP](https://newsblog.pl/czym-one-sa-roznica-miedzy-protokolem-tcp-i-udp/) 
+
+
+# Randomowe pytania
 
 - Jakie znam rodzaje RAIDa, na czym polegają
 	- Tekst
@@ -68,9 +83,15 @@ EURO LINUX
 - Czym jest konteneryzacja
 	- Tekst
 
-## Linux 
+# Linux 
 
-### System
+## System
+
+- Czym jest Kernel
+	- Tekst
+	
+- Serwer jest zajeżdżany, w jaki sposób zdiagnozuję problem
+	- Tekst
 
 - Gdzie przechowywane są pliki konfiguracyjne
 	- /etc
@@ -147,7 +168,15 @@ EURO LINUX
 - Na serwerze zdalnym mam aplikację apache ale nie jestem w stanie wyświetlic strony hostowanej przez nią, jak zdiagnozowac problem 
 	- Tekst
 
-### Storage 
+## Selinux 
+- Jak wyświetlić porty selinux 
+	- test 
+- Jak wyświetlić konteksty SELinux? - ogolnie selinux 
+	- ls -lZ ?
+- czym jest selinux
+	- test
+
+## Storage 
 - Jak działają LVMy, czym są, jak je wyświetlic, jak rozszerzyc, czym jest volume group
 	- lvm 
 		- lslvm - wyświela lvm
@@ -239,14 +268,7 @@ EURO LINUX
 1. Restart uslugi
 
 
-## Git 
-### Branch - jak dodac nowy
-- Dodac do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
-- Jak sprawdzic kto i kiedy dodał jakiś commit  
-- git log - co robi 
-- git checkout - przechodzi do nowego branchu?
-- git branch 
-- git merge - opisać 
+
 
 ## LVM 
 - ### Jak dodać LVM - procedura
@@ -257,18 +279,10 @@ EURO LINUX
 - Jak zwrócic wartośc funkcji
 	- return
 
-## Sieci
+## Sieci Linux
 
-- Czym jest VLAN 
-	- Vlan pozwala w ramach jednej fizycznej sieci lokalnej tworzyc wiele sieci logicznych (sieci wirtualnych)
-	- technologia sieciowa, która pozwala w ramach jednej fizycznej sieci lokalnej tworzyc wiele sieci logicznych (sieci wirtualnych)
-
-- Czym jest brama domyślna
-	- W sieci TCP/IP domyślna brama (sieciowa) (ang. default gateway) oznacza router, do którego komputery sieci lokalnej mają wysyłac pakiety o ile nie powinny byc one kierowane w siec lokalną lub do innych, znanych im routerów.
-
-- Czym rozni sie **TCP od UDP**
-	- Działanie TCP oferuje coś w rodzaju potwierdzenia zwrotnego, że połączenie zostało nawiązane oraz wysyła dane w sesji pomiędzy dwoma węzłami. ... UDP to również protokół w warstwie transportowej, ale nie wymaga handshake'a ani potwierdzenia o otrzymaniu danych.   
-			[Podstawy sieci + opis TCP i UDP](https://newsblog.pl/czym-one-sa-roznica-miedzy-protokolem-tcp-i-udp/) 
+- Jak sprawdzić która sieciówka jest obecnie używana
+	- ip a - status up? - upewnić się jak jest dokładnie
 
 - Jak sprawdzic porty otwarte na lokalnej maszynie 
 	- **netstat**
@@ -307,12 +321,16 @@ EURO LINUX
 
 
 
-- Czym jest Kernel
-	- Tekst
-- Serwer jest zajeżdżany, w jaki sposób zdiagnozuję problem
-	- Tekst
 
 
+# Git 
+### Branch - jak dodac nowy
+- Dodac do instrukcji Git https://www.atlassian.com/git/tutorials/using-branches/git-checkout
+- Jak sprawdzic kto i kiedy dodał jakiś commit  
+- git log - co robi 
+- git checkout - przechodzi do nowego branchu?
+- git branch 
+- git merge - opisać 
 
 
   
