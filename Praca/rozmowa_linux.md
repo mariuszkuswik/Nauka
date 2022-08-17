@@ -185,7 +185,9 @@ EURO LINUX
 
 - Dlaczego przypisujemy zmienne sredowiskowe 
 	- Żeby być do nich dostęp z każdego shella?
-
+	
+- Jak dzialaja klamrowe nawiasy w bashu
+	- Tekst
 
 ## Logi
 - [Logi RHEL](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-viewing_and_managing_log_files)
@@ -297,16 +299,18 @@ EURO LINUX
 
 - Jakie znam rodzaje RAIDa, na czym polegają
 	- Tekst
-- Czym jest Kernel
-	- Tekst
-- Serwer jest zajeżdżany, w jaki sposób zdiagnozuję problem
-	- Tekst
 - Czym jest wirtualizacja
 	- Tekst
 - Czym jest konteneryzacja
 	- Tekst
-- Jak dzialaja klamrowe nawiasy w bashu
+
+
+- Czym jest Kernel
 	- Tekst
+- Serwer jest zajeżdżany, w jaki sposób zdiagnozuję problem
+	- Tekst
+
+
 
 
   
