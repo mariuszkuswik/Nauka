@@ -182,17 +182,18 @@
 	- Tekst
 
 ## Selinux 
+- czym jest selinux
+	- test
+
 - Jak wyświetlić porty selinux 
 	- test 
 
 - Jak wyświetlić konteksty SELinux? - ogolnie selinux 
-	- ls -lZ ?
-
-- czym jest selinux
-	- test
+	- ls -lZ "$file"
 
 - Selinux - Jak ustawić tryb permissive tymczasowo i na stałe 
-	- tekst
+	- setenforcing 0 - tymczasowy tryb permissive
+	- /etc/selinux? - config ??? 
 
 ## Storage 
 
