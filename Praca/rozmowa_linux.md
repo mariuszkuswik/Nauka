@@ -252,6 +252,7 @@
 
 - Exitcode z instrukcji Bash, wypisac czym jest
 	- Tekst
+	
 - **shebang** - czym jest?
 	-  daje kontrole nad tym w jakim shellu zostanie wykonany skrypt, jezeli nie zostanie uzyty to skrypt wykona sie w obecnie uzywanym shellu 
 	
