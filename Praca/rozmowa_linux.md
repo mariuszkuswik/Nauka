@@ -22,11 +22,11 @@
 
 
 # Czego się uczyc
-- KVM 
-- logrotate - Automatyczne narzędzia do rotowania logów
-- Ansible 
-- Puppet
+- Ansible
 - Docker
+- logrotate - Automatyczne narzędzia do rotowania logów
+- Puppet
+- KVM 
 	
 
 ### #TODO - odpowiedziec na reszte pytan
@@ -58,6 +58,15 @@ EURO LINUX
 
 
 # Tematy pytan
+
+## Randomowe pytania
+
+- Jakie znam rodzaje RAIDa, na czym polegają
+	- Tekst
+- Czym jest wirtualizacja
+	- Tekst
+- Czym jest konteneryzacja
+	- Tekst
 
 ## Linux 
 
@@ -185,7 +194,7 @@ EURO LINUX
 
 - Dlaczego przypisujemy zmienne sredowiskowe 
 	- Żeby być do nich dostęp z każdego shella?
-	
+
 - Jak dzialaja klamrowe nawiasy w bashu
 	- Tekst
 
@@ -295,14 +304,7 @@ EURO LINUX
 	- man 
 	- /usr/share/doc
 
-## Randomowe pytania
 
-- Jakie znam rodzaje RAIDa, na czym polegają
-	- Tekst
-- Czym jest wirtualizacja
-	- Tekst
-- Czym jest konteneryzacja
-	- Tekst
 
 
 - Czym jest Kernel
