@@ -28,21 +28,9 @@
 - KVM 
 	
 
-### #TODO - odpowiedziec na reszte pytan
-
-
-EURO LINUX
-- co robi lsof, kiedy go używamy - usuwanie plików, folderów, jakiekolwiek zmiany?
-
-- Jak podglądać logi na bierząco? - tail -f ???
-- Jak wyświetlić liczbę twardych doswiązań do plików ? - `ls -l`
-- Czym jest system operacyjny?
-- Jak ustawić tryb permissive tymczasowo i na stałe 
-- rpm -ql - jak wyświetlić jaki pakiet zainstalował dany plik?
-- Jak wyświetlić informacje na temat partycji ? = wyświetlić informacje w /proc - sprawdzić gdzie konkretnie 
-- Jak wyświetlić wszystkie usługi działające w systemd - nie samo systemctl, sprawdzić
-- Jak dodać użytkownika do wielu grup jednym poleceniem - usermod -aG grupa,grupa username?
-
+### #TODO 
+- Skrypt do spisu tresci
+- Odpowiedziec na reszte pytan
 
 
 # Sieci
@@ -60,20 +48,42 @@ EURO LINUX
 - Routing - czym jest routing, jak działa, opisać
 	- Tekst
 
-
-
 # Randomowe pytania
 
 - Jakie znam rodzaje RAIDa, na czym polegają
 	- Tekst
+
 - Czym jest wirtualizacja
 	- Tekst
+
 - Czym jest konteneryzacja
 	- Tekst
 
-# Linux 
+- Czym jest system operacyjny?
+	- Tekst
 
+- Dlaczego uczę się Linuxa a nie innego systemu?
+	- Tekst
+
+# Linux 
 ## System
+- co robi lsof, kiedy go używamy 
+	- usuwanie plików, folderów, jakiekolwiek zmiany?
+
+- Jak wyświetlić liczbę twardych doswiązań do plików ? 
+	- `ls -l` ???
+
+- jak wyświetlić jaki pakiet zainstalował dany plik?
+	- rpm -ql ???
+
+- Jak podglądać logi na bierząco? 
+	- tail -f ???
+
+- Jak wyświetlić wszystkie usługi działające w systemd 
+	- nie samo systemctl, sprawdzić
+
+- Jak dodać użytkownika do wielu grup jednym poleceniem 
+	- usermod -aG grupa,grupa username?
 
 - Do czego służy systemd ? 
 	- nie wystarczy start i restart usług, można też montować dyski itd. 
@@ -171,12 +181,23 @@ EURO LINUX
 ## Selinux 
 - Jak wyświetlić porty selinux 
 	- test 
+
 - Jak wyświetlić konteksty SELinux? - ogolnie selinux 
 	- ls -lZ ?
+
 - czym jest selinux
 	- test
 
+- Selinux - Jak ustawić tryb permissive tymczasowo i na stałe 
+	- tekst
+
 ## Storage 
+
+- Jak wyświetlić informacje na temat partycji ? 
+	- wyświetlić informacje w /proc - sprawdzić gdzie konkretnie 
+	- lsblk
+	- blkid
+	- sprawdzić czy jest jeszcze coś 
 
 - Jak wygląda składnia fstab, jak działają dwie ostatnie kolumny
 	- Teskt
@@ -317,7 +338,7 @@ EURO LINUX
 - Wyświetl tablicę routingu i opowiedz o niej, opisać jak zadziała
 	- ip route
 
-### Firewall
+## Firewall
 - Jak dodać regułę do firewalla
 - firewall-cmd jest frontendowym klientem, pod spodem jest obecnie nftables, wcześniej było to iptables 
 - Jak działa firewall 
@@ -340,7 +361,6 @@ EURO LINUX
 
   
 ##### Koniec
-
 
   
 [Go top](#spis-treści)
