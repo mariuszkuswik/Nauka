@@ -51,7 +51,10 @@
 # Randomowe pytania
 
 - Jakie znam rodzaje RAIDa, na czym polegają
-	- Tekst
+	- RAID 0
+	- RAID 1 
+	- RAID 5
+	- RAID 10 
 
 - Czym jest wirtualizacja
 	- Tekst
@@ -92,10 +95,10 @@
 	- kernelspace
 
 - Czym jest daemon
-	- Test
+	- program that runs continuously as a background, daemon is usually an unattended process that is initiated at startup. Typical daemons are print spoolers and scheduler that starts up another process at a designated time.
 
-- usr - co znaczy skrot 
-	- (nie kurde user tylko unix system resource)
+- /usr - co znaczy skrot, co zawiera folder
+	- **User System Resources** - contains manually-installed programs, files their documentation, libraries etc...
 
 - Czym jest Kernel
 	- Tekst
