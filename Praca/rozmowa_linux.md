@@ -193,7 +193,7 @@
 
 - Selinux - Jak ustawić tryb permissive tymczasowo i na stałe 
 	- setenforcing 0 - tymczasowy tryb permissive
-	- /etc/selinux? - config ??? 
+	- **/etc/selinux/config** 
 
 ## Storage 
 
