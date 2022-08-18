@@ -1,5 +1,7 @@
 # Spis treści
 
+[Oreily link](https://learning.oreilly.com/videos/red-hat-certified/9780135656495/9780135656495-RCSA_02_10_08/)
+
 1. [Pomoc](#pomoc)
 1. [Przywracanie hasła roota](#Przywracanie-hasła-roota)
 1. [Selinux](#selinux)
