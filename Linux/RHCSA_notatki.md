@@ -640,8 +640,8 @@ Device                   1K-blocks    Used     Available    Use%    Space saving
 
 Za pomocą vdo możemy 
 
-[Pytanie dotyczące VDO](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md)
-[artykuł jak to działa](https://hobo.house/2018/09/13/using-vdo-on-centos-rhel7-for-storage-efficiency/)
+[Pytanie dotyczące VDO](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md)  
+[artykuł jak to działa](https://hobo.house/2018/09/13/using-vdo-on-centos-rhel7-for-storage-efficiency/)  
 
 **WAŻNE!** - VDO działa jako demon!
 
@@ -650,13 +650,14 @@ vdo create
 ## Tworzenie VDO
 
 1. Instalacja 
-
+```
 dnf whatprovides vdo
+```
 
 2. Włączenie usługi VDO
-
+```
 systemctl status vdo 
-
+```
 
 1. Utworzenie VDO 
 ```
