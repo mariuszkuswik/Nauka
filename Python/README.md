@@ -1,5 +1,5 @@
 # Linki ważne
-- [Aktualny link do Codecademy](https://www.codecademy.com/courses/learn-python-3/projects/python-lens-slice)
+- [Aktualny link do Codecademy](https://www.codecademy.com/courses/learn-python-3/projects/python-carlys-clippers)
 
 - [Ostatnie miejsce notatek](https://www.codecademy.com/courses/learn-python-3/lessons/create-python-list/exercises/modifying-2-d-lists)
 
