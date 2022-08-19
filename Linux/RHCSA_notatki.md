@@ -692,6 +692,8 @@ Zamontowanie filesystemu
 
 
 # Logi 
+
+- [RH - How to configure your system to preserve system logs after a reboot](https://www.redhat.com/sysadmin/store-linux-system-journals)
 [Spis treści](#spis-tre%C5%9Bci)
 
 ## Understanding Logging and Using Persistent Journals on RHEL 8
