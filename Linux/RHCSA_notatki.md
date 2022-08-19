@@ -1,7 +1,8 @@
-# Spis treści
-
+# Linki 
 - [Oreily link](https://learning.oreilly.com/videos/red-hat-certified/9780135656495/9780135656495-RCSA_02_10_08/)
 - [Red hat - sysadmin](https://www.redhat.com/sysadmin/)
+
+# Spis treści
 
 1. [Pomoc](#pomoc)
 1. [Przywracanie hasła roota](#Przywracanie-hasła-roota)
