@@ -366,7 +366,7 @@ nmap -A "$remote_ip_address"
 
 # SELinux
 
-- ```yum whatprovides */semanage``` - domyślnie może nie być zainstalowane  
+- ```yum whatprovides */semanage``` - domyślnie narzędzia SELinux mogą nie być zainstalowane  
 
 [Spis treści](#spis-tre%C5%9Bci)
 - [Testowy link spisu tresci](#nic)
