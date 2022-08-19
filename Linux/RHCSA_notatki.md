@@ -148,10 +148,10 @@ You are new System Administrator and from now you are going to handle the system
 
 # Sudoers
 [Spis treści](#spis-tre%C5%9Bci)
-
-[Rhel sudoers](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/managing-sudo-access_configuring-basic-system-settings)
-
-### Config
+### Linki
+- [Rhel sudoers](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/managing-sudo-access_configuring-basic-system-settings)
+---
+## Config
 ```/etc/sudoers```
 
 Ogólny 
@@ -195,7 +195,6 @@ You'll need to configure three repositories and install some software:
 [Spis treści](#spis-tre%C5%9Bci)
 
 ## find
-
 ```find```
 - ```-type``` - typ wyszukiwanych plików 
     ```-f``` - file 
@@ -206,7 +205,6 @@ You'll need to configure three repositories and install some software:
 
 
 ## locate 
-
 locate działa na podstawie bazy danych, domyślnie aktualizowana jest raz dziennie
 ```updatedb``` - aktualizuje bazę locate
 
@@ -216,46 +214,51 @@ locate działa na podstawie bazy danych, domyślnie aktualizowana jest raz dzien
 ## grep 
 ### #TODO - może coś dopisać
 
-grep "$wyszukiwana_fraza" "$nazwa_pliku"
+```grep "$wyszukiwana_fraza" "$nazwa_pliku"```
 
 
 # Tworzenie użytkowników 
 [Spis treści](#spis-tre%C5%9Bci)
 
-```/etc/defaults/useradd``` 
-```/etc/login.defs```
+### Configi
+- ```/etc/defaults/useradd``` 
+- ```/etc/login.defs```
 
-```useradd``` - Dodanie użytkownika
-```usermod``` - Modyfikowanie ustawień użytkownika
-```userdel``` - Usuwanie użytkownika
- 
-- user z innym uuid
-```useradd -u "$uid"```
+# TODO - dopisać
+- ustawienie domyślnych ustawień nowo dodawanych użytkowników, tj. wygasanie hasła, katalogi domowe itd.
+
+### Podstawowe komendy
+- ```useradd``` - Dodanie użytkownika
+- ```usermod``` - Modyfikowanie ustawień użytkownika
+- ```userdel``` - Usuwanie użytkownika
+   
+---
+
+- ```useradd -u "$uid"``` - user z innym uuid
+
 
 - inna grupa podstawowa 
 - dodanie do innej grupy pobocznej 
 ```useradd -aG "$group_name"``` - samo użycie opcji ```G``` bez ```a``` powoduje zastępienie obecnych grup użytkownika tą jedną którą przypisujemy
 
-- wyłączenie logowania 
+#### Wyłączenie logowania 
 ```
 vim /etc/passwd 
 # dodanie jako shell 
 /sbin/nologin
 ```
 
-- blokowanie konta po określonym czasie 
-```chage``` 
+- ```chage``` - blokowanie konta po określonym czasie 
+- ```chage``` - wymuszenie zmiany hasła 
 
-- wymuszenie zmiany hasła 
-```chage```
-
-# TODO - dopisać
-- ustawienie domyślnych ustawień nowo dodawanych użytkowników, tj. wygasanie hasła, katalogi domowe itd.
 
 # NFS
-- [RH - https://www.redhat.com/sysadmin/configure-nfs-linux](https://www.redhat.com/sysadmin/configure-nfs-linux)
-
 [Spis treści](#spis-tre%C5%9Bci)
+
+### Linki
+- [RH - https://www.redhat.com/sysadmin/configure-nfs-linux](https://www.redhat.com/sysadmin/configure-nfs-linux)
+---
+
 
 ### Dokumentacja 
 
@@ -292,19 +295,19 @@ zamiana wielkości LVM
 
 
 # Firewall 
-[Spis treści](#spis-tre%C5%9Bci)
-
-[Red Hat - Firewalld article](https://www.redhat.com/sysadmin/firewalld-linux-firewall)
-
+- [Spis treści](#spis-tre%C5%9Bci)
+### Linki
+- [Red Hat - Firewalld article](https://www.redhat.com/sysadmin/firewalld-linux-firewall)
+---
 - W RHEL8 firewall jest zarzadzany przez firewalld, pod spodem jest nftables  
 zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
 
-- Pliki konfiguracyjne : 
-	- ```/usr/lib/firewalld``` - katalog z domyslna konfiguracja
-	- ```/etc/firewalld``` - katalog z obecnie dzialajacym configiem 
+### Configi 
+- ```/usr/lib/firewalld``` - katalog z domyslna konfiguracja
+- ```/etc/firewalld``` - katalog z obecnie dzialajacym configiem 
 
-
-- firewall-cmd - odpowiada za konfigurację zapory   
+### Komendy
+- ```firewall-cmd``` - odpowiada za konfigurację zapory   
     
     - Zarządzanie firewallem :  
         - ```--state``` - wyswietla czy firewall dziala
@@ -319,6 +322,7 @@ zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
 **ZAWSZE TRZEBA PAMIĘTAĆ O OPCJI ```--permanent```**,  
 w przeciwnym wypadku zmiany nie będą stałe   
 
+---
 Otwarcie portu 80 tcp
 
 ```console
