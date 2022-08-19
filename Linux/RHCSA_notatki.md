@@ -249,6 +249,8 @@ vim /etc/passwd
 - ustawienie domyślnych ustawień nowo dodawanych użytkowników, tj. wygasanie hasła, katalogi domowe itd.
 
 # NFS
+- [RH - https://www.redhat.com/sysadmin/configure-nfs-linux](https://www.redhat.com/sysadmin/configure-nfs-linux)
+
 [Spis treści](#spis-tre%C5%9Bci)
 
 ### Dokumentacja 
