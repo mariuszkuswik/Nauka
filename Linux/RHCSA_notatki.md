@@ -152,9 +152,7 @@ You are new System Administrator and from now you are going to handle the system
 - [Rhel sudoers](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/managing-sudo-access_configuring-basic-system-settings)
 ---
 ## Config
-```/etc/sudoers```
-
-Ogólny 
+- ```/etc/sudoers``` - ogólny 
 
 ```username hostname=path/to/command```
  
@@ -195,26 +193,25 @@ You'll need to configure three repositories and install some software:
 [Spis treści](#spis-tre%C5%9Bci)
 
 ## find
-```find```
-- ```-type``` - typ wyszukiwanych plików 
-    ```-f``` - file 
-    ```-d``` - firectory
-- ```-mtime``` - File's  data  was last **modified** n*24 hours ago
-- ```-atime``` - File was last **accessed** n*24 hours ago
-- ```-ls``` - list current file in ```ls format```
+- ```find```
+    - ```-type``` - typ wyszukiwanych plików 
+        ```-f``` - file 
+        ```-d``` - firectory
+    - ```-mtime``` - File's  data  was last **modified** n*24 hours ago
+    - ```-atime``` - File was last **accessed** n*24 hours ago
+    - ```-ls``` - list current file in ```ls format```
 
 
 ## locate 
-locate działa na podstawie bazy danych, domyślnie aktualizowana jest raz dziennie
-```updatedb``` - aktualizuje bazę locate
-
-```locate "$file_name"```
+locate działa na podstawie bazy danych, domyślnie aktualizowana jest raz dziennie  
+- ```updatedb``` - aktualizuje bazę locate
+- ```locate "$file_name"``` - wyszukuje plik na podstawie indeksowanej bazy danych
 
 
 ## grep 
 ### #TODO - może coś dopisać
 
-```grep "$wyszukiwana_fraza" "$nazwa_pliku"```
+- ```grep "$wyszukiwana_fraza" "$nazwa_pliku"```
 
 
 # Tworzenie użytkowników 
