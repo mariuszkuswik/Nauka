@@ -287,6 +287,8 @@ zamiana wielkości LVM
 # Firewall 
 [Spis treści](#spis-tre%C5%9Bci)
 
+[Red Hat - Firewalld article](https://www.redhat.com/sysadmin/firewalld-linux-firewall)
+
 - W RHEL8 firewall jest zarzadzany przez firewalld, pod spodem jest nftables  
 zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
 
@@ -362,6 +364,7 @@ nmap -A "$remote_ip_address"
 # SELinux
 [Spis treści](#spis-tre%C5%9Bci)
 
+[Red Hat - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
 
 ### #TODO - dodać jak rozwiązywać podstawowe błędy
 
