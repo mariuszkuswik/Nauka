@@ -36,7 +36,7 @@
 -  [Przed egzaminem!!!](#przed-egzaminem)
 -  [Po egzaminie](#po-egzaminie) - Pytania z egzaminu
 ---
-
+## Zadania 
 - [Chlebik](#chlebik)    
 - [Cloud Guru](#cg)    
   
