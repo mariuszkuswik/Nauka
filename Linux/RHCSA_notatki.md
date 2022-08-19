@@ -1,6 +1,7 @@
 # Spis treści
 
-[Oreily link](https://learning.oreilly.com/videos/red-hat-certified/9780135656495/9780135656495-RCSA_02_10_08/)
+- [Oreily link](https://learning.oreilly.com/videos/red-hat-certified/9780135656495/9780135656495-RCSA_02_10_08/)
+- [Red hat - sysadmin](https://www.redhat.com/sysadmin/)
 
 1. [Pomoc](#pomoc)
 1. [Przywracanie hasła roota](#Przywracanie-hasła-roota)
@@ -693,7 +694,10 @@ Zamontowanie filesystemu
 
 # Logi 
 
+
 - [RH - How to configure your system to preserve system logs after a reboot](https://www.redhat.com/sysadmin/store-linux-system-journals)
+- [RH - Chapter 23. Viewing and Managing Log Files](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-viewing_and_managing_log_files)
+
 [Spis treści](#spis-tre%C5%9Bci)
 
 ## Understanding Logging and Using Persistent Journals on RHEL 8
@@ -1394,6 +1398,8 @@ podman search "$nazwa_obrazu"
 
 
 ## SeLinux 
+
+- [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
 
 Każdy wolumen musi mieć odpowiednio udostępniony plik - Z ODPOWIEDNIO USTAWIONYM KONTEKSTEM PLIKU
 kontekst dla folderów które mają byc udostępnione może być taki sam jak dla reszty plików 

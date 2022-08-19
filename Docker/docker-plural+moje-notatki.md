@@ -1,5 +1,6 @@
 # Plural 
 
+[RH - Podman Compose or Docker Compose: Which should you use in Podman?](https://www.redhat.com/sysadmin/podman-compose-docker-compose)
 
 ## Docker and Kubernetes: The Big Picture 
 
