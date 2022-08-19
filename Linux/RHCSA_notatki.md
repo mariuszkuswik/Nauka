@@ -445,7 +445,8 @@ drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
 [Spis treści](#spis-tre%C5%9Bci)
 
 
-[Cloud_guru - lekcja](https://learn.acloud.guru/course/red-hat-certified-system-administrator-ex200-exam-prep/learn/60dc10ad-0973-4bb6-8a0b-9d987f2c25f3/071c69c6-90ba-4885-9f32-15949b43286f/watch)
+- [RH - How to configure chrony as an NTP client or server in Linux](https://www.redhat.com/sysadmin/chrony-time-services-linux)
+- [Cloud_guru - lekcja](https://learn.acloud.guru/course/red-hat-certified-system-administrator-ex200-exam-prep/learn/60dc10ad-0973-4bb6-8a0b-9d987f2c25f3/071c69c6-90ba-4885-9f32-15949b43286f/watch)
 
 
 Poprzednim serwerem czasu był ntp, obecnym chrony
@@ -1065,6 +1066,7 @@ Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego 
 
 
 # Instalacja/update
+[RH - How to install software packages on RHEL](https://www.redhat.com/sysadmin/install-software-packages-rhel)
 
 [Spis treści](#spis-tre%C5%9Bci)
 - [Dnf](#dnf)
@@ -1252,6 +1254,9 @@ fallocate - przypisanie plikowi określonej ilości zajmowanego miejsca
 tworzenie swapu z pliku, procedura do ogarnięcia
 
 # Grub/Kernel
+
+- [RH - How to change boot options on Linux](https://www.redhat.com/sysadmin/linux-change-boot-options-grub)
+
 [Spis treści](#spis-tre%C5%9Bci)
 
 [Zmiana ustawień grub](https://www.unixarena.com/2015/04/how-to-edit-the-grub-on-rhel-7.html/)

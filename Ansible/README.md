@@ -1,6 +1,8 @@
  
 # Spis treści
 
+[RH - How to use YAML nesting, lists, and comments in Ansible playbooks](https://www.redhat.com/sysadmin/yaml-nesting-lists-comments-ansible)
+
 1. [Grupowanie](#grupowanie)
 - [Koniec](#Koniec)
 
