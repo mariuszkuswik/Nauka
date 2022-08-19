@@ -363,9 +363,19 @@ nmap -A "$remote_ip_address"
 
 # SELinux
 [Spis treści](#spis-tre%C5%9Bci)
+- [Testowy link spisu tresci](#nic)
+- [Testowy link spisu tresci](#nic)
+- [Testowy link spisu tresci](#nic)
 
+### Linki
 - [Red Hat - How to troubleshoot SELinux policy violations](https://www.redhat.com/sysadmin/diagnose-selinux-violations)  
 - [Red Hat - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)  
+
+--- 
+### Pomocne komendy
+- ```ausearch``` - command parses audit daemon logs. You can view the man page for all of the details, but the -c 'httpd' argument will search for any event with that httpd name.
+
+- ```audit2allow``` - command generates an SELinux policy based on logs returned by ausearch. This tells you that the first command parses the audit logs for anything with an event based on httpd and then generates an SELinux policy to allow it.
 
 ### #TODO - dodać jak rozwiązywać podstawowe błędy
 
