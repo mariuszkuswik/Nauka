@@ -365,6 +365,9 @@ nmap -A "$remote_ip_address"
 
 
 # SELinux
+
+- ```yum whatprovides */semanage``` - domyślnie może nie być zainstalowane  
+
 [Spis treści](#spis-tre%C5%9Bci)
 - [Testowy link spisu tresci](#nic)
 - [Testowy link spisu tresci](#nic)
@@ -387,7 +390,6 @@ nmap -A "$remote_ip_address"
 - ```semanage boolean -l``` - **wyświetlenie opisu** wszystkich zmiennych SELinux 
 
 ## Tryby SELinux
-
 ### Sprawdzanie trybu selinux 
 - ```sestatus``` - szczegółowe informacje
 - ```getenforce``` - dostajemy tylko tryb w jakim selinux działa obecnie 
@@ -440,7 +442,7 @@ drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
 
 
 
-```yum whatprovides */semanage``` - domyślnie może nie być zainstalowane  
+
 
 
 
