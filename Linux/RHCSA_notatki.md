@@ -32,7 +32,10 @@
 1. [Tuned profiles](#Tuned-profiles)
 1. [Grub/Kernel](#grubkernel)
 
-11. [Przed egzaminem!!!](#przed-egzaminem)
+---
+-  [Przed egzaminem!!!](#przed-egzaminem)
+-  [Po egzaminie](#po-egzaminie) - Pytania z egzaminu
+---
 
 - [Chlebik](#chlebik)    
 - [Cloud Guru](#cg)    
