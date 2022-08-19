@@ -364,7 +364,8 @@ nmap -A "$remote_ip_address"
 # SELinux
 [Spis treści](#spis-tre%C5%9Bci)
 
-[Red Hat - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
+- [Red Hat - How to troubleshoot SELinux policy violations](https://www.redhat.com/sysadmin/diagnose-selinux-violations)  
+- [Red Hat - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)  
 
 ### #TODO - dodać jak rozwiązywać podstawowe błędy
 
