@@ -13,6 +13,7 @@ do
     posiadaneKarol+=zarobekKarol*0.2;
 
     liczbaDni++; 
+    .
 }
 while(posiadaneJanek<=dlugJanek || posiadaneKarol<=dlugKarol);
 
