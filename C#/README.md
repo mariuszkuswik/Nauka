@@ -1,7 +1,7 @@
 # Linki ważne
 - [Wstęp do programowania w C# pdf](http://c-sharp.ue.katowice.pl/ksiazka/c_sharp_wer2_0.pdf)  
 Aktualna strona : 87
-- [Link Codecademy](https://www.codecademy.com/courses/learn-c-sharp/lessons/csharp-conditional-statements/exercises/ternary-operators)
+- [Link Codecademy](https://www.codecademy.com/courses/learn-c-sharp/projects/csharp-password-checker)
 
 # Spis treści 
 - [Koniec](#koniec)
