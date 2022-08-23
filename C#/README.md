@@ -1,7 +1,7 @@
 # Linki ważne
 - [Wstęp do programowania w C# pdf](http://c-sharp.ue.katowice.pl/ksiazka/c_sharp_wer2_0.pdf)  
 Aktualna strona : 87
-- [Link Codecademy](https://www.codecademy.com/courses/learn-c-sharp/lessons/csharp-method-calls-and-input/exercises/method-overloading)
+- [Link Codecademy](https://www.codecademy.com/courses/learn-c-sharp/lessons/csharp-method-output/exercises/using-out)
 
 # Spis treści 
 - [Koniec](#koniec)
