@@ -1,5 +1,5 @@
 # Linki ważne
-- [Aktualny link do Codecademy](https://www.codecademy.com/courses/learn-python-3/lessons/string-methods/exercises/introduction-ii)
+- [Aktualny link do Codecademy](https://www.codecademy.com/courses/learn-python-3/lessons/string-methods/exercises/splitting-strings-iii)
 
 - [Ostatnie miejsce notatek](https://www.codecademy.com/courses/learn-python-3/lessons/create-python-list/exercises/modifying-2-d-lists)
 
