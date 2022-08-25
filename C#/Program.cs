@@ -1,19 +1,12 @@
-﻿
-double posiadaneJanek=0, dlugJanek=80, zarobekJanek=50;
-double posiadaneKarol=0, dlugKarol=80, zarobekKarol=40;
+﻿int minLength=8;
+bool uppercase=true;
+bool lowercase=true;
+int digits=10;
+bool specialChars=true;
 
-int liczbaDni=0;
+int score=0;
+      
+Console.WriteLine("Podaj bezpieczne haslo");
+string password=Console.ReadLine();
 
-do
-{
-    Console.WriteLine("Janek posiada {0}", posiadaneJanek);
-    Console.WriteLine("Karol posiada {0}", posiadaneKarol);
-
-    posiadaneJanek+=zarobekJanek*0.2;
-    posiadaneKarol+=zarobekKarol*0.2;
-
-    liczbaDni++; 
-}
-while(posiadaneJanek<=dlugJanek || posiadaneKarol<=dlugKarol);
-
-Console.WriteLine(liczbaDni);
+// if ()

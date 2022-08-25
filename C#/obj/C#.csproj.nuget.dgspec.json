@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Dane\\Skrypty\\Git\\Nauka\\C#\\C#.csproj": {}
+    "D:\\Dane\\Git\\Nauka_git\\C#\\C#.csproj": {}
   },
   "projects": {
-    "C:\\Dane\\Skrypty\\Git\\Nauka\\C#\\C#.csproj": {
+    "D:\\Dane\\Git\\Nauka_git\\C#\\C#.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dane\\Skrypty\\Git\\Nauka\\C#\\C#.csproj",
+        "projectUniqueName": "D:\\Dane\\Git\\Nauka_git\\C#\\C#.csproj",
         "projectName": "C#",
-        "projectPath": "C:\\Dane\\Skrypty\\Git\\Nauka\\C#\\C#.csproj",
-        "packagesPath": "C:\\Users\\makuswik\\.nuget\\packages\\",
-        "outputPath": "C:\\Dane\\Skrypty\\Git\\Nauka\\C#\\obj\\",
+        "projectPath": "D:\\Dane\\Git\\Nauka_git\\C#\\C#.csproj",
+        "packagesPath": "C:\\Users\\Mariusz\\.nuget\\packages\\",
+        "outputPath": "D:\\Dane\\Git\\Nauka_git\\C#\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\makuswik\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Mariusz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
