@@ -888,6 +888,10 @@ Create a virtual machine with the name server4. Make sure it meets the following
 	
 	- [-] Add a new disk to your virtual machine. On this disk, create a VDO volume with a virtual size of 1TiB.
 
+# RHCSA Practice Exam 3
+
+Testasdasd
+
 
 
 # Odpowiedzi

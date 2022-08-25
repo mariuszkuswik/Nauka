@@ -1,6 +1,7 @@
 # Linki ważne
-[Wstęp do programowania w C# pdf](http://c-sharp.ue.katowice.pl/ksiazka/c_sharp_wer2_0.pdf)  
+- [Wstęp do programowania w C# pdf](http://c-sharp.ue.katowice.pl/ksiazka/c_sharp_wer2_0.pdf)  
 Aktualna strona : 87
+- [Link Codecademy](https://www.codecademy.com/courses/learn-c-sharp/lessons/csharp-method-output/exercises/using-out)
 
 # Spis treści 
 - [Koniec](#koniec)
@@ -184,6 +185,10 @@ string[] imiona = { "Ala" , "Ola" , "Ela" };
 foreach (string x in imiona)
     Console.WriteLine(x);
 ```
+
+
+# Metody 
+You might hear methods also called functions — for now, the difference isn’t important to us.
 
 
 

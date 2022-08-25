@@ -7,4 +7,8 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = C_
+<<<<<<< HEAD
 build_property.ProjectDir = D:\Dane\Git\Nauka_git\C#\
+=======
+build_property.ProjectDir = C:\Dane\Skrypty\Git\Nauka\C#\
+>>>>>>> 8673ea0ab1e35fb7722d567c80a6879653ca3cdf
