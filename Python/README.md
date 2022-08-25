@@ -1,5 +1,5 @@
 # Linki ważne
-- [Aktualny link do Codecademy](https://www.codecademy.com/courses/learn-python-3/projects/physics-class)
+- [Aktualny link do Codecademy](https://www.codecademy.com/courses/learn-python-3/lessons/string-methods/exercises/splitting-strings-iii)
 
 - [Ostatnie miejsce notatek](https://www.codecademy.com/courses/learn-python-3/lessons/create-python-list/exercises/modifying-2-d-lists)
 
@@ -9,6 +9,7 @@
 
 1. [Listy](#listy)
 1. [Petle](#petle)
+1. [Stringi](#stringi)
 
 # Listy 
 [Spis treści](#spis-treści)
@@ -284,7 +285,17 @@ for ingredient in ingredients:
 ```
 
 
+# Stringi
 
+Review
+
+- A string is a list of characters.
+- A character can be selected from a string using its index string_name[index]. These indices start at 0.
+- A ‘slice’ can be selected from a string. These can be between two indices or can be open-ended, selecting all of the string from a point.
+- Strings can be concatenated to make larger strings.
+- len() can be used to determine the number of characters in a string.
+- Strings can be iterated through using for loops.
+- Iterating through strings opens up a huge potential for applications, especially when combined with conditional statements.
 
 
 
