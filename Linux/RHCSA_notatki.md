@@ -40,9 +40,8 @@
 ## Zadania 
 - [Chlebik](#chlebik)    
 - [Cloud Guru](#cg)    
-  
 - [Daily zadanka](#daily-zadanka)  
-   
+- [RH - Laby](https://developers.redhat.com/products/rhel/getting-started?success=true&tcWhenSigned=January+1%2C+1970&tcWhenEnds=January+1%2C+1970&tcEndsIn=0&tcDuration=365&tcDownloadFileName=rhel-baseos-9.0-x86_64-dvd.iso&tcRedirect=5000&tcSrcLink=https%3A%2F%2Fdevelopers.redhat.com%2Fcontent-gateway%2Fcontent%2Forigin%2Ffiles%2Fsha256%2Fc6%2Fc6942e3ed65947ed48c30589d9c1a752e96c5b94ee8de1923331449fee162cc1%2Frhel-baseos-9.0-x86_64-dvd.iso&p=Product%3A+Red+Hat+Enterprise+Linux&pv=9.0&tcDownloadURL=https%3A%2F%2Faccess.cdn.redhat.com%2Fcontent%2Forigin%2Ffiles%2Fsha256%2Fc6%2Fc6942e3ed65947ed48c30589d9c1a752e96c5b94ee8de1923331449fee162cc1%2Frhel-baseos-9.0-x86_64-dvd.iso%3F_auth_%3D1661592915_c8d934fc3e26bd94a6f6f3fcfab8dbd0)
   
 [Koniec](#Koniec)   
   
@@ -1081,15 +1080,17 @@ Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego 
 
 
 # Instalacja/update
-[RH - How to install software packages on RHEL](https://www.redhat.com/sysadmin/install-software-packages-rhel)
+- [Spis treści](#spis-tre%C5%9Bci)
 
-[Spis treści](#spis-tre%C5%9Bci)
+### Lokalny spis
 - [Dnf](#dnf)
 - [Repozytoria](#repo)
 - [Dodanie nowego repozytorium](#dodanie-nowego-repozytorium)
 
-### Linki pomocnicze 
+### Linki 
 Red Hat
+- [RH LAB - Installing Software using Package Managers](https://developers.redhat.com/learn/installing-software-using-package-managers?intcmp=7013a0000026UTXAA2)
+- [RH Sysadmin - How to install software packages on RHEL](https://www.redhat.com/sysadmin/install-software-packages-rhel)
 - [RedHat - Chapter 1. Using AppStream](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/using-appstream_using-appstream)
 - [RedHat - Chapter 2. Introduction to modules](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/introduction-to-modules_using-appstream)
 - [RedHat - Chapter 3. Finding RHEL 8 content](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/finding-rhel-8-content_using-appstream)
@@ -1099,6 +1100,7 @@ Red Hat
     - Commands for listing content  
   
 - [Kernel Red Hat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/updating-kernel-with-yum_managing-monitoring-and-updating-the-kernel)
+
 
 Random 
 - [Introduction to Application Streams](https://www.redhat.com/en/blog/introduction-appstreams-and-modules-red-hat-enterprise-linux)   
