@@ -1108,6 +1108,26 @@ Random
 
 
 ## Dnf
+### Podstawowe operacje
+- dnf install "$package"
+- dnf list ```updates``` - wyświetla listę dostępnych updatów
+    - "$package" - wyświetla paczkę 
+- dnf update "$package" - updatuje tylko wskazaną paczkę 
+- dnf remove "$package" - usuwa wskazaną paczkę 
+  
+- dnf history - wyświetla listę operacji  
+
+> ID| Command                  | Date and time    | Action(s)| Altered    
+> ------------------------------------------------------------------    
+> 12 | -y remove httpd         | 2021-12-22 01:12 | Removed  |   10  
+> 11 | -y update bash          | 2021-12-22 01:12 | Upgrade  |    1  
+> 10 | -y install wireshark    | 2021-12-22 01:07 | Install  |   98  
+>  9 | install -y httpd        | 2021-12-22 01:04 | Install  |   10  <  
+ 8 |                         | 2021-12-22 01:02 | I, U     |   81 >  
+ 7 | install -y git          | 2021-09-03 15:10 | Install  |   48  
+
+- dnf -y history rollback 11 - cofa operacje o ID 11
+You can use other relative offsets, such as ```last-3```
 
 
 ### Modules
