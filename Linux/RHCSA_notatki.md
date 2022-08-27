@@ -41,7 +41,7 @@
 - [Chlebik](#chlebik)    
 - [Cloud Guru](#cg)    
 - [Daily zadanka](#daily-zadanka)  
-- [RH - Laby](https://developers.redhat.com/products/rhel/getting-started?success=true&tcWhenSigned=January+1%2C+1970&tcWhenEnds=January+1%2C+1970&tcEndsIn=0&tcDuration=365&tcDownloadFileName=rhel-baseos-9.0-x86_64-dvd.iso&tcRedirect=5000&tcSrcLink=https%3A%2F%2Fdevelopers.redhat.com%2Fcontent-gateway%2Fcontent%2Forigin%2Ffiles%2Fsha256%2Fc6%2Fc6942e3ed65947ed48c30589d9c1a752e96c5b94ee8de1923331449fee162cc1%2Frhel-baseos-9.0-x86_64-dvd.iso&p=Product%3A+Red+Hat+Enterprise+Linux&pv=9.0&tcDownloadURL=https%3A%2F%2Faccess.cdn.redhat.com%2Fcontent%2Forigin%2Ffiles%2Fsha256%2Fc6%2Fc6942e3ed65947ed48c30589d9c1a752e96c5b94ee8de1923331449fee162cc1%2Frhel-baseos-9.0-x86_64-dvd.iso%3F_auth_%3D1661592915_c8d934fc3e26bd94a6f6f3fcfab8dbd0)
+- [RH - Laby](https://lab.redhat.com/)
   
 [Koniec](#Koniec)   
   
