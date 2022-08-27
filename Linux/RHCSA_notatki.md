@@ -1347,63 +1347,66 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 # Kontenery
 [Spis treści](#spis-tre%C5%9Bci)
 
-### Tutoriale :
+### Tutoriale
 - [Youtube RH - podman systemd](https://www.youtube.com/watch?v=AGkM2jGT61Y)
 
+### Przydatne  
 
-### SYSTEMD JAKO UŻYTKOWNIK 
+-  **SYSTEMD JAKO UŻYTKOWNIK**
   
 DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW    
   
 **podman -v "volume_hosta:volume_kontenera:Z" - z dopiskiem ```:Z``` sam ogarnie SELinuxa!**  
-  
-### Pomoc 
-```man -k podman``` - wyświetla wszystkie potrzebne komendy podmana   
-  
-Budowa większości komend :   
-podman container/image/volume...  
-  
+
+- Uruchomienie terminala jako root  
 ```podman exec -u 0 -it "$nazwa_kontenera" bash``` - uruchomienie interaktywnego terminala jako **root** (```-u 0```)  
 
   
-podman container - operacje wykonywane na kontenerach     
-    ```podman container list --all``` - listuje wszystkie kontenery, również te nieaktywne
+### Pomoc 
+- ```man -k podman``` - wyświetla wszystkie potrzebne komendy podmana   
+  
+### Budowa komend    
+- ```podman container/image/volume...```  
 
-
-```-v``` - mapowanie udziału host-kontener
-```-p 80:80``` - mapowanie portu host-kontener
+### Operacje na kontenerach
+- ```podman container``` - operacje wykonywane na kontenerach     
+    - ```podman container list --all``` - listuje wszystkie kontenery, również te nieaktywne
+    - ```-v``` - mapowanie udziału host-kontener
+    - ```-p 80:80``` - mapowanie portu host-kontener
 
 ### Finding Images
 
-podman images	List all local images
-podman login registryURL -u username [-p password]	Log in to a remote registry
-podman pull registry/username/image:tag	Pull an image from a remote registry
-podman search searchString	Search local cache and remote registries for images
-podman logout	Log out of the current remote registry
-*The list of registries is defined in /etc/containers/registries.conf*
+- ```podman images``` - List all local images
+- ```podman login "$registryURL" -u username [-p password]``` - Log in to a remote registry
+- ```podman pull registry/username/image:tag``` - Pull an image from a remote registry
+- ```podman search "$searchString"``` - Search local cache and remote registries for images
+
+
+### Rejestr kontenerów 
+
+- **The list of registries is defined in /etc/containers/registries.conf**
+- ```podman logout```- Log out of the current remote registry
 
 ### Building Images
 
-podman login - logowanie do rejestru kontenerów 
-podman container - wykonywanie operacji na kontenerach
-    - podman container create "$nazwa_obrazu" - utworzenie kontenera z obrazu 
+- ```podman login``` - logowanie do rejestru kontenerów 
+- ```podman container ```- wykonywanie operacji na kontenerach
+    - ```podman container create "$nazwa_obrazu"``` - utworzenie kontenera z obrazu 
 
-podman search "$nazwa_obrazu" - wyszukiwanie obrazu kontenera w rejestrze 
-podman pull "$nazwa_obrazu" - pobranie obrazu z rejestru 
-podman image - zarządzanie obrazami kontenerów 
+- ```podman search "$nazwa_obrazu"``` - wyszukiwanie obrazu kontenera w rejestrze 
+- ```podman pull "$nazwa_obrazu"``` - pobranie obrazu z rejestru 
+- ```podman image``` - zarządzanie obrazami kontenerów 
     - ```podman image list``` - listuje dostępne obrazy 
-    - podman image rm "$nazwa_obrazu" - usuwa obraz 
-    - podman image tag "$nazwa_obrazu" "$tag" - nadaje obrazowi tag
+    - ```podman image rm "$nazwa_obrazu"``` - usuwa obraz 
+    - ```podman image tag "$nazwa_obrazu" "$tag"``` - nadaje obrazowi tag
  
-podman exec - wykonanie komendy na kontenerze 
-    - podman exec -it -u 0 "$nazwa_kontenera" bash - odpala interaktywną sesję 
-
-
+- ```podman exec``` - wykonanie komendy na kontenerze 
+    - ```podman exec -it -u 0 "$nazwa_kontenera" bash``` - odpala interaktywną sesję jako root  (```-u 0``` oznacza użytkownika o uid 0 czyli roota)  
+  
+  
 1. Ewentualne zalogowanie do rejestru ? - opisać 
-
 1. Wyszukanie obrazu kontenera w rejestrze i pobranie go 
-
-podman search "$nazwa_obrazu"
+```podman search "$nazwa_obrazu"```
 
 
 ## SeLinux 
