@@ -25,7 +25,7 @@
     - [Repo](#repo)
         - [Dodanie nowego repo](#dodanie-nowego-repozytorium)
 1. [Blokowanie połączenia z konkretnego serwera](#blokowanie-po%C5%82%C4%85czenia-z-konkretnego-serwera)
-1. [autofs](#autofs)
+1. [Autofs](#autofs)
 1. [Archiwizowanie](#archiwizowanie)
 1. [Swap](#swap)
 1. [Sieci](#Sieci)
@@ -955,6 +955,7 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 
 **autofs** - montowanie systemów plików NFS na żądanie
 
+- [RH - autofs](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/nfs-autofs)
 - [Montowanie pod /net](#Automatyczne-montowanie-katalogu-/net)  
 - [Montowanie katalogów domowych](#Automatyczne-montowanie-katalogów-domowych) 
 
