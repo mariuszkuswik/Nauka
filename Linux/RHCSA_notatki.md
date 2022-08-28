@@ -96,14 +96,13 @@
 | 3. [Configure IP Addresses on the Second Network Interface on the First Server](#configure-ip-addresses-on-the-second-network-interface-on-the-first-server) | test | test |
 | 4. [Managing Tuned Profiles and Individual Processes](#managing-tuned-profiles-and-individual-processes) | test | test | 
 | 6. [manage-scheduled-tasks-on-the-first-server ](#6-manage-scheduled-tasks-on-the-first-server) | test | test | 
-| 7. [configure-time-service-clients-for-both-servers] | test | test | (#7-configure-time-service-clients-for-both-servers)
+| 7. [configure-time-service-clients-for-both-servers](#7-configure-time-service-clients-for-both-servers) | test | test | 
 | 8. [managing-the-system-bootloader](#8-managing-the-system-bootloader) | test | test | 
 | 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | test | test | 
 | 10. [add-swap-space-persistently-and-nondisruptive](#10-add-swap-space-persistently-and-nondisruptive) | test | test | 
 | 11. [configure-stratis-storage-persistently](#11-configure-stratis-storage-persistently) | test | test | 
 | 12. [configure-autofs-for-home-directories](#12-configure-autofs-for-home-directories) | test | test | 
-
-| 13. [configure-a-shared-directory-for-collaboration| ](#13-configure-a-shared-directory-for-collaboration) | test | test | 
+| 13. [configure-a-shared-directory-for-collaboration ](#13-configure-a-shared-directory-for-collaboration) | test | test | 
 | 14. [create-a-persistent-systemd-container-using-podman](#14-create-a-persistent-systemd-container-using-podman) | test | test | 
 | 15. [troubleshoot-selinux-issues](#15-troubleshoot-selinux-issues) | test | test | 
 | 16. [configure-the-firewall-on-both-servers](#16-configure-the-firewall-on-both-servers) | test | test | 
