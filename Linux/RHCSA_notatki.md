@@ -95,6 +95,8 @@
  2. [Configure yum Repositories on Both Servers and Install Packages/Modules](#configure-yum-repositories-on-both-servers-and-install-packagesmodules) | test | test |
  3. [Configure IP Addresses on the Second Network Interface on the First Server](#configure-ip-addresses-on-the-second-network-interface-on-the-first-server) | test | test |
  4. [Managing Tuned Profiles and Individual Processes](#managing-tuned-profiles-and-individual-processes) | test | test | 
+  
+  
 6. [manage-scheduled-tasks-on-the-first-server ](#6-manage-scheduled-tasks-on-the-first-server)
 7. [configure-time-service-clients-for-both-servers](#7-configure-time-service-clients-for-both-servers)
 8. [managing-the-system-bootloader](#8-managing-the-system-bootloader)
