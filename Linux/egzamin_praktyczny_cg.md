@@ -5,6 +5,7 @@
  1. [Create Users/Groups and Configure Superuser Access on Both Servers](#create-usersgroups-and-configure-superuser-access-on-both-servers)
  2. [Configure yum Repositories on Both Servers and Install Packages/Modules](#configure-yum-repositories-on-both-servers-and-install-packagesmodules) 
  3. [Configure IP Addresses on the Second Network Interface on the First Server](#configure-ip-addresses-on-the-second-network-interface-on-the-first-server)
+ 3. [Configure Persistent Journals on Both Servers](#Configure-Persistent-Journals-on-Both-Servers)
  4. [Managing Tuned Profiles and Individual Processes](#managing-tuned-profiles-and-individual-processes)
 6. [manage-scheduled-tasks-on-the-first-server ](#6-manage-scheduled-tasks-on-the-first-server)
 7. [configure-time-service-clients-for-both-servers](#7-configure-time-service-clients-for-both-servers)
@@ -118,7 +119,7 @@ Only IP addresses, no other fields
 Configure only, do not activate
 ```
 
-## 4. Configure Persistent Journals on Both Servers  
+## Configure Persistent Journals on Both Servers  
 [Spis treści](#spis-treści)  
 
 By default, the ```systemd``` journal logs to memory in RHEL 8, in the location ```/run/log/journal```. While this works fine, we'd like to make our journals persistent across reboots.  
