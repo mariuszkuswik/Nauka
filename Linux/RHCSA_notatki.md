@@ -91,9 +91,21 @@
 
 | Zadanko | Notatki | Czy opanowane |
 |--|--|--|
-| 1. Create Users/Groups and Configure Superuser Access on Both Servers | [Sudoers](#sudoers) | trochę, przećwiczyć | 
-| 4. [Managing Tuned Profiles and Individual Processes]() | [Tuned profiles](#Tuned-profiles) | Nie |
-
+ 1. [Create Users/Groups and Configure Superuser Access on Both Servers](#create-usersgroups-and-configure-superuser-access-on-both-servers) | test |  test| 
+ 2. [Configure yum Repositories on Both Servers and Install Packages/Modules](#configure-yum-repositories-on-both-servers-and-install-packagesmodules) | test | test 
+ 3. [Configure IP Addresses on the Second Network Interface on the First Server](#configure-ip-addresses-on-the-second-network-interface-on-the-first-server) | test | test
+ 4. [Managing Tuned Profiles and Individual Processes](#managing-tuned-profiles-and-individual-processes)
+6. [manage-scheduled-tasks-on-the-first-server ](#6-manage-scheduled-tasks-on-the-first-server)
+7. [configure-time-service-clients-for-both-servers](#7-configure-time-service-clients-for-both-servers)
+8. [managing-the-system-bootloader](#8-managing-the-system-bootloader)
+9. [configure-persistent-storage-with-lvm-on-top-of-vdo](#9-configure-persistent-storage-with-lvm-on-top-of-vdo)
+10. [add-swap-space-persistently-and-nondisruptive](#10-add-swap-space-persistently-and-nondisruptive)
+11. [configure-stratis-storage-persistently](#11-configure-stratis-storage-persistently)
+12. [configure-autofs-for-home-directories](#12-configure-autofs-for-home-directories)
+13. [configure-a-shared-directory-for-collaboration](#13-configure-a-shared-directory-for-collaboration)
+14. [create-a-persistent-systemd-container-using-podman](#14-create-a-persistent-systemd-container-using-podman)
+15. [troubleshoot-selinux-issues](#15-troubleshoot-selinux-issues)
+16. [configure-the-firewall-on-both-servers](#16-configure-the-firewall-on-both-servers)
 
 # Pomoc 
 [Spis treści](#spis-tre%C5%9Bci)
