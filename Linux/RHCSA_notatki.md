@@ -91,7 +91,9 @@
 
 | Zadanko | Notatki | Czy opanowane |
 |--|--|--|
- 1. [Create Users/Groups and Configure Superuser Access on Both Servers](#create-usersgroups-and-configure-superuser-access-on-both-servers) | test |  test | 
+ 1. [Create Users/Groups and Configure Superuser Access on Both Servers](#create-usersgroups-and-configure-superuser-access-on-both-servers) | test | test |
+
+   
  2. [Configure yum Repositories on Both Servers and Install Packages/Modules](#configure-yum-repositories-on-both-servers-and-install-packagesmodules) | test | test |
  3. [Configure IP Addresses on the Second Network Interface on the First Server](#configure-ip-addresses-on-the-second-network-interface-on-the-first-server) | test | test |
  4. [Managing Tuned Profiles and Individual Processes](#managing-tuned-profiles-and-individual-processes) | test | test | 
