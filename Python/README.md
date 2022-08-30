@@ -1,6 +1,5 @@
 # Linki ważne
-- [Aktualny link do Codecademy](https://www.codecademy.com/courses/learn-python-3/projects/thread-shed)
-
+- [Aktualny link do Codecademy](https://www.codecademy.com/courses/learn-python-3/lessons/modules-python/exercises/modules-python-files-and-scope)
 - [Ostatnie miejsce notatek](https://www.codecademy.com/courses/learn-python-3/lessons/create-python-list/exercises/modifying-2-d-lists)
 
 
