@@ -86,8 +86,10 @@ https://careerkarma.com/blog/git-fatal-could-not-read-from-remote-repository/
 ### #TODO sprawdzic jak ladniej opisac to dodanie wszystkich plikow  
 2. Dodanie wzystkich plikow : ```git add -A``` 
 3. ```git push -m "Opis commita"``` 
-4. ````git remote set-url origin git@github.com:mariuszkuswik/nazwa_repo.git````
-5. ```git remote add origin https://github.com/mariuszkuswik/nazwa_repo.git```
+4. ```git remote -v``` - Wyświetla obecne, jezeli nie ma to:
+	- ```git remote add origin git@github.com:mariuszkuswik/nazwa_repo.git```
+5. ````git remote set-url origin git@github.com:mariuszkuswik/nazwa_repo.git````
+
 ### #TODO Do sprawdzenia czym jest origin, poprawic opis 
 6. master to nazwa brancha : ```git push origin master```
 
