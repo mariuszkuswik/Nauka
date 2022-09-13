@@ -12,9 +12,10 @@
 1. [Firewall](#firewall)
 1. [Kontrola czasu w RHEL](#Kontrola-czasu-w-RHEL)
 1. [NFS](#nfs)
-1. [LVM](#LVM)
-1. [Stratis](#stratis)
-1. [VDO](#vdo)
+1. [Storage](#storage)
+    - [LVM](#LVM)
+    - [Stratis](#stratis)
+    - [VDO](#vdo)
 1. [Logi](#acl)
 1. [ACL](#acl)
 1. [SUID, SGID, Sticky bit](#SUID,-SGID,-Sticky-bit)
@@ -462,7 +463,7 @@ drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
 
 
 
-# Kontrola czasu w RHEL
+## Kontrola czasu w RHEL
 [Spis treści](#spis-tre%C5%9Bci)
 
 
@@ -566,11 +567,12 @@ server 169.254.169.123 iburst
 
 
 
+# Storage 
 
-# LVM 
-[Spis treści](#spis-tre%C5%9Bci)
+## LVM 
+- [Spis treści](#spis-tre%C5%9Bci)
 
-## Ćwiczenie : 
+### Ćwiczenie : 
 Create a new physical volume with volume group in the name of datacontainer, the extent of VG should be 16MB. Also create new logical volume with name datacopy with the size of 50 extents and filesystem vfat mounted under /datasource.
 
 
@@ -583,13 +585,13 @@ lsblk
 2. 
 
 
-# Stratis 
-[Spis treści](#spis-tre%C5%9Bci)
+## Stratis 
+- [Spis treści](#spis-tre%C5%9Bci)
 
 ### #TODO - opisać bardziej 
 
-[Stratis how to, pisemny](https://stratis-storage.github.io/howto/)  
-[Stratis filmik](https://www.youtube.com/watch?v=CJu3kmY-f5o&t=200s)  
+- [Stratis how to, pisemny](https://stratis-storage.github.io/howto/)  
+- [Stratis filmik](https://www.youtube.com/watch?v=CJu3kmY-f5o&t=200s)  
 
 
 1. Instalacja 
@@ -620,16 +622,15 @@ Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
 ```sudo systemctl enable --now stratisd.service```
 
 
-# VDO
-[Spis treści](#spis-tre%C5%9Bci)
-
-[Poradnik od RedHata](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/vdo-quick-start)
+## VDO
+- [Spis treści](#spis-tre%C5%9Bci)
+- [Poradnik od RedHata](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/vdo-quick-start)
 
 ### #TODO - opisać bardziej
 
 VDO będzie na egzaminie, ogarnąć co i jak !
 
-## Instalacja
+### Instalacja
 
 ```console
 dnf install vdo kmod-kvdo
@@ -683,7 +684,7 @@ Za pomocą vdo możemy
 
 vdo create 
 
-## Tworzenie VDO
+### Tworzenie VDO
 
 1. Instalacja 
 ```
@@ -712,7 +713,7 @@ Zamontowanie filesystemu
     - 
 
 
-# Logi 
+## Logi 
 
 
 - [RH - How to configure your system to preserve system logs after a reboot](https://www.redhat.com/sysadmin/store-linux-system-journals)
