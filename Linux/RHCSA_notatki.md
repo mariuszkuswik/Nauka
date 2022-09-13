@@ -14,6 +14,7 @@
 1. [Kontrola czasu w RHEL](#Kontrola-czasu-w-RHEL)
 1. [NFS](#nfs)
 1. [Storage](#storage)
+    - [Montowanie](#Montowanie)
     - [LVM](#LVM)
     - [Stratis](#stratis)
     - [VDO](#vdo)
@@ -570,6 +571,16 @@ server 169.254.169.123 iburst
 
 
 # Storage 
+## Montowanie
+- [Spis treści](#spis-tre%C5%9Bci)
+- [RH - Mounting file systems](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_file_systems/assembly_mounting-file-systems_managing-file-systems)
+---
+
+- ```findmnt``` - alternatywa dla mount?  
+    - findmnt --types xfs - listuje tylko filesystemy xfs
+
+
+
 
 ## LVM 
 - [Spis treści](#spis-tre%C5%9Bci)
