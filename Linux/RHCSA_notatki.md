@@ -18,8 +18,9 @@
     - [Stratis](#stratis)
     - [VDO](#vdo)
 1. [Logi](#acl)
-1. [ACL](#acl)
-1. [SUID, SGID, Sticky bit](#SUID,-SGID,-Sticky-bit)
+1. [Uprawnienia](#uprawnienia)
+    - [SUID, SGID, Sticky bit](#SUID,-SGID,-Sticky-bit)
+    - [ACL](#acl)
 1. [Sysstat](#sar---sysstat)
 1. [Instalacja/Update](#instalacjaupdate)
     - [Dnf](#dnf)
@@ -764,8 +765,12 @@ Zmieniamy zmienną ```Storage```
 
 
 
+# Uprawnienia
+- [Spis treści](#spis-tre%C5%9Bci)
 
-# SUID, SGID, Sticky bit
+
+## SUID, SGID, Sticky bit
+- [Spis treści](#spis-tre%C5%9Bci)
 
 http://miro.borodziuk.eu/index.php/2017/03/13/uprawnienia-specjalne/
 
@@ -776,8 +781,8 @@ http://miro.borodziuk.eu/index.php/2017/03/13/uprawnienia-specjalne/
 | Sticky bit | 1 lub o+t | 	klejący bit |
 
 
-## Bit SUID
-[Spis treści](#spis-tre%C5%9Bci)
+### Bit SUID
+- [Spis treści](#spis-tre%C5%9Bci)
 
 **Bit SUID** - gdy zostaje ustawiony dla katalogu *(4 lub u+s)*, wówczas **proces będzie miał prawa użytkownika który jest właścicielem pliku wykonywalnego, a nie użytkownika który ten plik uruchamia.**  
 O tym, że *SUID* jest przypisany świadczy *litera s* w miejscu execute dla użytkownika   
@@ -792,8 +797,8 @@ Jeśli bit SUID jest ustawiony, po uruchomieniu polecenia efektywny UID staje si
 
 Dodać coś o tym kto może usuwać pliki
 
-## Bit SGID
-[Spis treści](#spis-tre%C5%9Bci)
+### Bit SGID
+- [Spis treści](#spis-tre%C5%9Bci)
 
 **Tworzenie katalogów współdzielonych przez grupy**
 
@@ -821,8 +826,8 @@ O tym, że *SGID* jest przypisany świadczy *litera s* w miejscu execute dla gru
 
 
 
-## Bit sticky
-[Spis treści](#spis-tre%C5%9Bci)
+### Bit sticky
+- [Spis treści](#spis-tre%C5%9Bci)
 
 **Bit sticky** - gdy zostaje ustawiony dla katalogu *(1 lub u+s)*, wówczas **tylko użytkownik root lub właściciel katalogu może go usunąć.**
 O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dla others*
@@ -847,8 +852,8 @@ O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dl
 
 
 
-# ACL 
-[Spis treści](#spis-tre%C5%9Bci)
+## ACL 
+- [Spis treści](#spis-tre%C5%9Bci)
 
 WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli występuje to **oznacza, że dla pliku są ustawione uprawnienia ACL**   
 ```drwxrw----+ 2 mariusz mariusz 56 Mar 22 19:03 aclki/```     
@@ -859,7 +864,7 @@ WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli wys
     - ```acl``` **obsługa acl powinna być domyślnie dostępna w systemie plików**, jeżeli nie to dodać w fstab jeżeli domyślnie nie jest włączone w systemie plików 
 
 
-## getfacl, pobieranie nadanych ACL  
+### getfacl, pobieranie nadanych ACL  
 
 - ```getfacl "$shared_directory"``` - Wyświetla ACLki dla pliku    
     ```console
@@ -877,7 +882,7 @@ WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli wys
 
 - ```setfacl -m u:jill:r-- "$shared_directory"``` - ustawia uprawnienia 
 
-## setfacl, dodawanie ACL 
+### setfacl, dodawanie ACL 
 
 - ```setfacl``` - modyfikuje uprawnienia (**--modify**) lub usuwa uprawnienia ACL (**--remove**) 
     - ```setfacl --modify u:"$nazwa_użytkownika":rwx "$nazwa_folderu"``` - setfacl modyfikuje uprawnienia dla folderu *nazwa_folderu*, 
@@ -919,8 +924,11 @@ WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli wys
     other::r-x  
 
 
-# sar - sysstat
-[Spis treści](#spis-tre%C5%9Bci)
+
+
+
+## sar - sysstat
+- [Spis treści](#spis-tre%C5%9Bci)
 
 **sprawdzanie zasobów systemowych**
 
