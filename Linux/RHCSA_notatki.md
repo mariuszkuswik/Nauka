@@ -1,5 +1,6 @@
 # Linki 
 - [Oreily link](https://learning.oreilly.com/videos/red-hat-certified/9780135656495/9780135656495-RCSA_02_10_08/)
+- [Cloud Guru link](https://learn.acloud.guru/course/red-hat-certified-system-administrator-ex200-exam-prep/learn/4a50133e-bbdb-43b8-b939-5f648997ec6d/9a5ffcb1-8849-4fe1-a2ae-3ed99bfc32ba/watch)
 - [Red hat - sysadmin](https://www.redhat.com/sysadmin/)
 
 # Spis treści
