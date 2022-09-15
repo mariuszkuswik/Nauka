@@ -586,9 +586,16 @@ server 169.254.169.123 iburst
 
 #### Comparison of tools used with ext4 and XFS
 
-Task | ext4 | XFS
---|--|--
-test | test | test | 
+| Task | ext4 | XFS |
+|------|------|-----|
+| Create a file system | mkfs.ext4 | mkfs.xfs | 
+File system check | e2fsck | xfs_repair
+Resize a file system | resize2fs | xfs_growfs
+Save an image of a file system | e2image | xfs_metadump and xfs_mdrestore
+Label or tune a file system | tune2fs | xfs_admin
+Back up a file system | dump and restore | xfsdump and xfsrestore
+Quota management | quota | xfs_quota
+File mapping | filefrag | xfs_bmap
 
 
 
