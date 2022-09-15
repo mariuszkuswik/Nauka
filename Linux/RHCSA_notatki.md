@@ -15,6 +15,7 @@
 1. [NFS](#nfs)
 1. [Storage](#storage)
     - [Montowanie](#Montowanie)
+    - [Filesystemy](#Filesystemy)
     - [LVM](#LVM)
     - [Stratis](#stratis)
     - [VDO](#vdo)
@@ -576,10 +577,25 @@ server 169.254.169.123 iburst
 - [RH - Mounting file systems](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_file_systems/assembly_mounting-file-systems_managing-file-systems)
 ---
 
-- ```findmnt``` - alternatywa dla mount?  
+- ```findmnt``` - wyświetla zamontowane filesystemy 
     - findmnt --types xfs - listuje tylko filesystemy xfs
 
 
+## Filesystemy
+- [Spis treści](#spis-tre%C5%9Bci)
+
+#### Comparison of tools used with ext4 and XFS
+
+Task | ext4 | XFS
+--|--|--
+test | test | test | 
+
+
+
+### xfs 
+- [RH - Getting started with XFS](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_file_systems/assembly_getting-started-with-xfs_managing-file-systems)
+
+### ext4
 
 
 ## LVM 
