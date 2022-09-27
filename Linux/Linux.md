@@ -578,28 +578,28 @@ $MIASTO jest skróconym zapisem ${MIASTO}
 
 
 ### Przykłady przypisania zmiennych w powłoce bash 
-Konstrukcja Znaczenie
-${zmienna:-wartość} Jeżeli zmienna nie jest ustawiona bądź jest pusta, wówczas zostanie używa wartość.
-${zmienna#wzorzec} Usunięcie krótszego dopasowania wzorca z początku wartości zmiennej.
-${zmienna##wzorzec} Usunięcie dłuższego dopasowania wzorca z początku wartości zmiennej.
-${zmienna%wzorzec} Usunięcie krótszego dopasowania wzorca z końca wartości zmiennej.
-${zmienna%%wzorzec} Usunięcie dłuższego dopasowania wzorca z końca wartości zmiennej.
+Konstrukcja         | Znaczenie  
+|--|--|
+${zmienna:-wartość} | Jeżeli zmienna nie jest ustawiona bądź jest pusta, wówczas zostanie używa wartość.  
+${zmienna#wzorzec}  | Usunięcie krótszego dopasowania wzorca z początku wartości zmiennej.  
+${zmienna##wzorzec} | Usunięcie dłuższego dopasowania wzorca z początku wartości zmiennej.  
+${zmienna%wzorzec}  | Usunięcie krótszego dopasowania wzorca z końca wartości zmiennej.  
+${zmienna%%wzorzec} | Usunięcie dłuższego dopasowania wzorca z końca wartości zmiennej.  
 
 
-**Przykłady użycia przypisać z tabeli powyżej** 
-
-> $ THIS="Przykład"
-> $ THIS=${THIS:-"Nieustawiona"}
-> $ THAT=${THAT:-"Nieustawiona"}
-> $ echo $THIS
-> Przykład
-> $ echo $THAT
-> Nieustawiona
+**Przykłady użycia przypisać z tabeli powyżej**   
+  
+> $ THIS="Przykład"  
+> $ THIS=${THIS:-"Nieustawiona"}  
+> $ THAT=${THAT:-"Nieustawiona"}  
+> $ echo $THIS  
+> Przykład  
+> $ echo $THAT  
+> Nieustawiona  
 
 
 W poniższym przykładzie zmienna MOJANAZWAPLIKU otrzymuje wartość /home/janek/
-mojplik.txt. Następnie zmiennej PLIK zostaje przypisana wartość mojplik.txt, natomiast
-zmiennej KATALOG wartość /home/janek. W zmiennej NAZWA nazwa pliku zostaje skrócona
+mojplik.txt. Następnie zmiennej PLIK zostaje przypisana wartość mojplik.txt, natomiast zmiennej KATALOG wartość /home/janek. W zmiennej NAZWA nazwa pliku zostaje skrócona
 do mojplik, a zmienna ROZSZERZENIE przechowuje wartość txt. (W celu wypróbowania
 przedstawionych tutaj przykładów należy je po prostu wpisać w powłoce, podobnie jak
 w przypadku poprzedniego przykładu. Następnie wartości zmiennych można wyświetlić
