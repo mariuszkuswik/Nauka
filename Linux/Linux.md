@@ -607,7 +607,7 @@ za pomocą polecenia echo). Wpisz kod przedstawiony po lewej stronie; informacje
 zamieszczone po prawej stronie wyjaśniają sposób działania poszczególnych poleceń.
 MOJANAZWAPLIKU="/home/janek/mojplik.txt" # Zdefiniowanie wartości zmiennej
 
-> MOJANAZWAPLIKU  
+> MOJANAZWAPLIKU    
 > PLIK=${MOJANAZWAPLIKU##*/} # PLIK otrzymuje wartość "mojplik.txt"  
 > KATALOG=${MOJANAZWAPLIKU%/*} # KATALOG otrzymuje wartość "/home/janek"  
 > NAZWA=${PLIK%.*} # NAZWA otrzymuje wartość "mojplik"  
@@ -777,9 +777,9 @@ Przykłady użycia polecenia ```journalctl``` :
 journalctl
 journalctl --list-boots | head
 ```
-> -2 93bdb6164... Sat 2020-01-04 21:07:28 EST—Sat 2020-01-04 21:19:37 EST
-> -1 7336cb823... Sun 2020-01-05 10:38:27 EST—Mon 2020-01-06 09:29:09 EST
-> 0 eaebac25f... Sat 2020-01-18 14:11:41 EST—Sat 2020-01-18 16:03:37 EST
+> -2 93bdb6164... Sat 2020-01-04 21:07:28 EST—Sat 2020-01-04 21:19:37 EST  
+> -1 7336cb823... Sun 2020-01-05 10:38:27 EST—Mon 2020-01-06 09:29:09 EST  
+> 0 eaebac25f... Sat 2020-01-18 14:11:41 EST—Sat 2020-01-18 16:03:37 EST  
 
 ```bash
 journalctl -b 488e152a3e2b4f6bb86be366c55264e7
@@ -807,8 +807,8 @@ journalctl -k
 
 ### rsyslogd 
 
-**rsyslogd** - odpowiadaa za zbieranie komunikatów oraz kierowanie ich do plików dzienników zdarzeń lub zdalnych hostów rejestrowania danych. 
-Zapisuje informacje w pliku **/etc/rsyslog.conf**. 
+**rsyslogd** - odpowiadaa za zbieranie komunikatów oraz kierowanie ich do plików dzienników zdarzeń lub zdalnych hostów rejestrowania danych.  
+Zapisuje informacje w pliku **/etc/rsyslog.conf**.   
 Komunikaty są zazwyczaj kierowane do plików dzienników zdarzeń, które zwykle znajdują się w katalogu /var/log, choć w celu zapewnienia bezpieczeństwa nie zawsze tak jest, 
 
 Przykłady najczęściej spotykanych plików : 
@@ -985,12 +985,12 @@ Repozytoria oprogramowania mogą być włączane przez umieszczanie w katalogu /
 
 Przykład dla pliku ```/etc/yum.repos.d/myrepo.repo```
 
-> [myrepo]  # Nazwa repozytorium  
-name=Moje repozytorium  # Prosty opis  
-baseurl=http://myrepo.example.com/pub/myrepo    # Położenie repo, lokalne zaczynają się od ( file:/// )   
-enabled=1   # Opcja wskazuje czy dane repozytorium jest aktywne  
-gpgcheck=1  # Sprawdzenie klucza, spradza czy repozytorium nie zostało zmienione  
-gpgkey=file:///etc/pki/rpm-gpg/MYOWNKEY # klucz  
+> [myrepo]  # Nazwa repozytorium    
+name=Moje repozytorium  # Prosty opis    
+baseurl=http://myrepo.example.com/pub/myrepo    # Położenie repo, lokalne zaczynają się od ( file:/// )     
+enabled=1   # Opcja wskazuje czy dane repozytorium jest aktywne    
+gpgcheck=1  # Sprawdzenie klucza, spradza czy repozytorium nie zostało zmienione    
+gpgkey=file:///etc/pki/rpm-gpg/MYOWNKEY # klucz    
 
 
 3. Pobieranie z repozytorium YUM pakietów RPM i metadanych
