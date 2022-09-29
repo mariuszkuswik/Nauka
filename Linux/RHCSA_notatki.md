@@ -12,6 +12,7 @@
 1. [Tworzenie użytkowników](#Tworzenie-użytkowników)
 1. [Firewall](#firewall)
 1. [Kontrola czasu w RHEL](#Kontrola-czasu-w-RHEL)
+1. [Managing schedulded tasks](#Managing-schedulded-tasks)
 1. [NFS](#nfs)
 1. [Storage](#storage)
     - [Montowanie](#Montowanie)
@@ -495,6 +496,33 @@ Poprzednim serwerem czasu był ntp, obecnym chrony
     ![chronyc_sources_verbosed](Obrazy/Cloud_Guru/chronyc_sources_verbosed.png)  
 
     - ```serverstats``` - nie wiem ? 
+
+
+## Managing schedulded tasks
+- [Spis treści](#spis-treści)
+
+
+### cron
+
+- ```dnf list --installed cronie``` - sprawdzenie czy cron jest zainstalowany
+- ```systemctl status crond.service``` - sprawdzenie czy działą uzługa cron
+- ```cronnext -c``` pokazuje datę wszystkich następnych cronjobów 
+
+
+#### Budowa pliku ```/etc/crontab``` 
+
+```
+Example of job definition:  
+.---------------- minute (0 - 59)  
+|  .------------- hour (0 - 23)  
+|  |  .---------- day of month (1 - 31)  
+|  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...  
+|  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat  
+|  |  |  |  |  
+*  *  *  *  * user-name  command to be executed  
+```
+
+### at
 
 
 
