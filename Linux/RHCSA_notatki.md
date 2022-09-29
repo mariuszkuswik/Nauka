@@ -504,9 +504,9 @@ Poprzednim serwerem czasu był ntp, obecnym chrony
 
 ### cron
 
-- ```dnf list --installed cronie``` - sprawdzenie czy cron jest zainstalowany
-- ```systemctl status crond.service``` - sprawdzenie czy działą uzługa cron
-- ```cronnext -c``` pokazuje datę wszystkich następnych cronjobów 
+- ```dnf list --installed cronie``` - sprawdzenie czy **cron** jest zainstalowany
+- ```systemctl status crond.service``` - sprawdzenie czy działa uzługa **cron**
+- ```cronnext -c``` pokazuje datę wszystkich następnych **cronjobów** 
 
 
 #### Budowa pliku ```/etc/crontab``` 
@@ -523,7 +523,8 @@ Example of job definition:
 ```
 
 ### at
-
+- ```dnf list --installed at``` - sprawdzenie czy **at** jest zainstalowany
+- ```systemctl status atd.service``` - sprawdzenie czy działa uzługa **at**
 
 
 
