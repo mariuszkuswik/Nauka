@@ -525,6 +525,15 @@ Example of job definition:
 ### at
 - ```dnf list --installed at``` - sprawdzenie czy **at** jest zainstalowany
 - ```systemctl status atd.service``` - sprawdzenie czy działa uzługa **at**
+- ```atq``` - kolejka at
+---
+- Można wywoływać komendę o konkretnej godzine lub po jakimś czasie, np. at 20:00 lub at +7 days 
+
+```
+sudo at 20:00 
+>at command to execute
+*ctrl+d*
+```
 
 
 
