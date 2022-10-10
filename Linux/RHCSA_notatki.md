@@ -1488,7 +1488,11 @@ DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK 
   
 ## Pomoc 
 - ```man -k podman``` - wyświetla wszystkie potrzebne komendy podmana   
-  
+
+## Instalacja
+### #TODO
+- ```dnf module list container-tools```??? - dopisać instalacje
+
 ### Operacje na kontenerach
 - ```podman container``` - operacje wykonywane na kontenerach     
     - ```podman container list --all``` - listuje wszystkie kontenery, również te nieaktywne
@@ -1508,7 +1512,6 @@ DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK 
 
 
 ### Building Containers?
-
 - ```podman login``` - logowanie do rejestru kontenerów 
 - ```podman container ```- wykonywanie operacji na kontenerach
     - ```podman container create "$nazwa_obrazu"``` - utworzenie kontenera z obrazu 
