@@ -537,6 +537,7 @@ sudo at 20:00
 
 
 
+
 ## Synchronizacja czasu (klient z serwerem)
 
 
