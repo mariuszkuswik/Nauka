@@ -1472,24 +1472,22 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 - [RH - lab kontenery](https://developers.redhat.com/learn/lessons/deploying-containers-podman?intcmp=7013a0000026UTXAA2)
 - [Youtube RH - podman systemd](https://www.youtube.com/watch?v=AGkM2jGT61Y)
 
-### Przydatne  
+## Przydatne  
 
 -  **SYSTEMD JAKO UŻYTKOWNIK**
   
-DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW    
+DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW    
   
 **podman -v "volume_hosta:volume_kontenera:Z" - z dopiskiem ```:Z``` sam ogarnie SELinuxa!**  
 
 - Uruchomienie terminala jako root  
 ```podman exec -u 0 -it "$nazwa_kontenera" bash``` - uruchomienie interaktywnego terminala jako **root** (```-u 0```)  
 
+- ```podman container/image/volume...``` - ogólna budowa komend 
   
-### Pomoc 
+## Pomoc 
 - ```man -k podman``` - wyświetla wszystkie potrzebne komendy podmana   
   
-### Budowa komend    
-- ```podman container/image/volume...```  
-
 ### Operacje na kontenerach
 - ```podman container``` - operacje wykonywane na kontenerach     
     - ```podman container list --all``` - listuje wszystkie kontenery, również te nieaktywne
@@ -1526,7 +1524,9 @@ DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHA
 - ```podman exec``` - wykonanie komendy na kontenerze 
     - ```podman exec -it -u 0 "$nazwa_kontenera" bash``` - odpala interaktywną sesję jako root  (```-u 0``` oznacza użytkownika o uid 0 czyli roota)  
   
-  
+### Inspecting images - skopeo
+- ```skopeo``` - used to inspect, copy, delete and sign container images
+
 
 
 ## SeLinux 
