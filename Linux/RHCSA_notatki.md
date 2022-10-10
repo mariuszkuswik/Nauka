@@ -1499,11 +1499,11 @@ DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHA
 ### Finding Images
 - **The list of registries is defined in /etc/containers/registries.conf**
 - ```podman login "$registryURL" -u username [-p password]``` - Log in to a remote registry
-- ```podman logout```- Log out of the current remote registry
-  
-- ```podman images``` - List all local images
+- ```podman logout```- Log out of the current remote registry  
+<br/>
+- ```podman images``` - List all local images  
 - ```podman search "$searchString"``` - Search local cache and remote registries for images
-  
+<br/> 
 - ```podman pull registry/username/image:tag``` - Pull an image from a remote registry
 
 
