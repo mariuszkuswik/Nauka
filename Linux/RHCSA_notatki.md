@@ -1501,9 +1501,11 @@ DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHA
 - ```podman login "$registryURL" -u username [-p password]``` - Log in to a remote registry
 - ```podman logout```- Log out of the current remote registry  
 <br/>
+
 - ```podman images``` - List all local images  
 - ```podman search "$searchString"``` - Search local cache and remote registries for images
 <br/> 
+
 - ```podman pull registry/username/image:tag``` - Pull an image from a remote registry
 
 
