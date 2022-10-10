@@ -1471,6 +1471,7 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 ### Tutoriale
 - [RH - lab kontenery](https://developers.redhat.com/learn/lessons/deploying-containers-podman?intcmp=7013a0000026UTXAA2)
 - [Youtube RH - podman systemd](https://www.youtube.com/watch?v=AGkM2jGT61Y)
+- [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
 
 ## Przydatne  
 
