@@ -1506,7 +1506,7 @@ DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK 
     - ```podman pull registry/username/image:tag``` - Pull an image from a remote registry
 
 
-### Building Images
+### Building Containers?
 
 - ```podman login``` - logowanie do rejestru kontenerów 
 - ```podman container ```- wykonywanie operacji na kontenerach
@@ -1527,14 +1527,14 @@ DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK 
 ### Inspecting images - skopeo
 - ```skopeo``` - used to inspect, copy, delete and sign container images
 
+### Building new container images - buildah - nie jest to poruszane przez RHCSA 
+- ```buildah``` - used to create new containers
 
-
-## SeLinux 
-
+### Kontenery - SeLinux 
 - [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
 
-Każdy wolumen musi mieć odpowiednio udostępniony plik - Z ODPOWIEDNIO USTAWIONYM KONTEKSTEM PLIKU
-kontekst dla folderów które mają byc udostępnione może być taki sam jak dla reszty plików 
+**Każdy wolumen musi mieć odpowiednio udostępniony plik - Z ODPOWIEDNIO USTAWIONYM KONTEKSTEM PLIKU**
+- kontekst dla folderów które mają byc udostępnione może być taki sam jak dla reszty plików 
 SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA ```ls -lZ /```
 
 
