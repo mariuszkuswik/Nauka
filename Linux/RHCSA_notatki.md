@@ -405,9 +405,12 @@ nmap -A "$remote_ip_address"
 
 - ```audit2allow``` - command generates an SELinux policy based on logs returned by ausearch. This tells you that the first command parses the audit logs for anything with an event based on httpd and then generates an SELinux policy to allow it.
 
-### #TODO - dodać jak rozwiązywać podstawowe błędy
-
-**Jeżeli mamy jakiś problem z selinuxem to jest duża szansa że odpowiednią komendę znajdziemy poprzez grep "$nazwa_usługi" /var/log/messages**
+### TODO 
+#### - dodać jak rozwiązywać podstawowe błędy 
+#### - jak ausearch -c "httpd" | audit2allow, trzeba dodać opcje raw  
+  
+  
+**Jeżeli mamy jakiś problem z selinuxem to jest duża szansa że odpowiednią komendę znajdziemy poprzez ```grep "$nazwa_usługi" /var/log/messages```**
 
 - ```semanage boolean -l``` - **wyświetlenie opisu** wszystkich zmiennych SELinux 
 
