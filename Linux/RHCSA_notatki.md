@@ -1486,6 +1486,8 @@ DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHA
 ### Budowa komend    
 - ```podman container/image/volume...```  
 
+### 
+
 ### Operacje na kontenerach
 - ```podman container``` - operacje wykonywane na kontenerach     
     - ```podman container list --all``` - listuje wszystkie kontenery, również te nieaktywne
