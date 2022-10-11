@@ -1493,7 +1493,6 @@ DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK 
 ### #TODO
 - ```dnf module list container-tools```??? - dopisać instalacje
 
-### 
 
 ### Operacje na kontenerach
 - ```podman container``` - operacje wykonywane na kontenerach     
