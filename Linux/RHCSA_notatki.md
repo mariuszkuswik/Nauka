@@ -405,9 +405,12 @@ nmap -A "$remote_ip_address"
 
 - ```audit2allow``` - command generates an SELinux policy based on logs returned by ausearch. This tells you that the first command parses the audit logs for anything with an event based on httpd and then generates an SELinux policy to allow it.
 
-### #TODO - dodać jak rozwiązywać podstawowe błędy
-
-**Jeżeli mamy jakiś problem z selinuxem to jest duża szansa że odpowiednią komendę znajdziemy poprzez grep "$nazwa_usługi" /var/log/messages**
+### TODO 
+#### - dodać jak rozwiązywać podstawowe błędy 
+#### - jak ausearch -c "httpd" | audit2allow, trzeba dodać opcje raw  
+  
+  
+**Jeżeli mamy jakiś problem z selinuxem to jest duża szansa że odpowiednią komendę znajdziemy poprzez ```grep "$nazwa_usługi" /var/log/messages```**
 
 - ```semanage boolean -l``` - **wyświetlenie opisu** wszystkich zmiennych SELinux 
 
@@ -534,6 +537,7 @@ sudo at 20:00
 >at command to execute
 *ctrl+d*
 ```
+
 
 
 
@@ -1467,24 +1471,27 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 ### Tutoriale
 - [RH - lab kontenery](https://developers.redhat.com/learn/lessons/deploying-containers-podman?intcmp=7013a0000026UTXAA2)
 - [Youtube RH - podman systemd](https://www.youtube.com/watch?v=AGkM2jGT61Y)
+- [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
 
-### Przydatne  
+## Przydatne  
 
 -  **SYSTEMD JAKO UŻYTKOWNIK**
   
-DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW    
+DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW    
   
 **podman -v "volume_hosta:volume_kontenera:Z" - z dopiskiem ```:Z``` sam ogarnie SELinuxa!**  
 
 - Uruchomienie terminala jako root  
 ```podman exec -u 0 -it "$nazwa_kontenera" bash``` - uruchomienie interaktywnego terminala jako **root** (```-u 0```)  
 
+- ```podman container/image/volume...``` - ogólna budowa komend 
   
-### Pomoc 
+## Pomoc 
 - ```man -k podman``` - wyświetla wszystkie potrzebne komendy podmana   
-  
-### Budowa komend    
-- ```podman container/image/volume...```  
+
+## Instalacja
+### #TODO
+- ```dnf module list container-tools```??? - dopisać instalacje
 
 ### 
 
@@ -1495,23 +1502,22 @@ DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHA
     - ```-p 80:80``` - mapowanie portu host-kontener
 
 ### Finding Images
+- Rejestr 
+    - **The list of registries is defined in /etc/containers/registries.conf**
+    - ```podman login "$registryURL" -u username [-p password]``` - Log in to a remote registry
+    - ```podman logout```- Log out of the current remote registry  
+- Wyszukiwanie obrazu  
+    - ```podman images``` - List all local images  
+    - ```podman search "$searchString"``` - Search local cache and remote registries for images
+- Pobranie obrazu 
+    - ```podman pull registry/username/image:tag``` - Pull an image from a remote registry
 
-- ```podman images``` - List all local images
-- ```podman login "$registryURL" -u username [-p password]``` - Log in to a remote registry
-- ```podman pull registry/username/image:tag``` - Pull an image from a remote registry
-- ```podman search "$searchString"``` - Search local cache and remote registries for images
 
-
-### Rejestr kontenerów 
-
-- **The list of registries is defined in /etc/containers/registries.conf**
-- ```podman logout```- Log out of the current remote registry
-
-### Building Images
-
+### Building Containers?
 - ```podman login``` - logowanie do rejestru kontenerów 
 - ```podman container ```- wykonywanie operacji na kontenerach
     - ```podman container create "$nazwa_obrazu"``` - utworzenie kontenera z obrazu 
+<br/>
 
 - ```podman search "$nazwa_obrazu"``` - wyszukiwanie obrazu kontenera w rejestrze 
 - ```podman pull "$nazwa_obrazu"``` - pobranie obrazu z rejestru 
@@ -1519,22 +1525,22 @@ DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHA
     - ```podman image list``` - listuje dostępne obrazy 
     - ```podman image rm "$nazwa_obrazu"``` - usuwa obraz 
     - ```podman image tag "$nazwa_obrazu" "$tag"``` - nadaje obrazowi tag
- 
+<br/>
+
 - ```podman exec``` - wykonanie komendy na kontenerze 
     - ```podman exec -it -u 0 "$nazwa_kontenera" bash``` - odpala interaktywną sesję jako root  (```-u 0``` oznacza użytkownika o uid 0 czyli roota)  
   
-  
-1. Ewentualne zalogowanie do rejestru ? - opisać 
-1. Wyszukanie obrazu kontenera w rejestrze i pobranie go 
-```podman search "$nazwa_obrazu"```
+### Inspecting images - skopeo
+- ```skopeo``` - used to inspect, copy, delete and sign container images
 
+### Building new container images - buildah - nie jest to poruszane przez RHCSA 
+- ```buildah``` - used to create new containers
 
-## SeLinux 
-
+### Kontenery - SeLinux 
 - [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
 
-Każdy wolumen musi mieć odpowiednio udostępniony plik - Z ODPOWIEDNIO USTAWIONYM KONTEKSTEM PLIKU
-kontekst dla folderów które mają byc udostępnione może być taki sam jak dla reszty plików 
+**Każdy wolumen musi mieć odpowiednio udostępniony plik - Z ODPOWIEDNIO USTAWIONYM KONTEKSTEM PLIKU**
+- kontekst dla folderów które mają byc udostępnione może być taki sam jak dla reszty plików 
 SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA ```ls -lZ /```
 
 
