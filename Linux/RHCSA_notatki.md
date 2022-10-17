@@ -1518,11 +1518,14 @@ DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK 
         - ```podman container list --all``` - listuje wszystkie kontenery, również te nieaktywne
         - ```-v``` - mapowanie udziału host-kontener
         - ```-p 80:80``` - mapowanie portu host-kontener
+        <br/>
 - Uruchamianie 
     - ```podman run -d —name``` - Launch a new container to use as a model to generate the systemd unit files
+    <br/>
 - Stan
     - ```podman stop|start <container>```
     - ```podman rm <container>``` - Get rid of the container you created before you try to start your systemd container
+    <br/>
 - Systemd
     - ```podman generate systemd``` - Generate systemd unit file from your container. Must delete the container as systemd will create a new one.
 
@@ -1538,10 +1541,7 @@ DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK 
 
 
 ### Operacje na kontenerach
-- Tworzenie kontenera
-    - ```podman container ```- wykonywanie operacji na kontenerach
-        
-<br/>
+
 
 - ```podman exec``` - wykonanie komendy na kontenerze 
     - ```podman exec -it -u 0 "$nazwa_kontenera" bash``` - odpala interaktywną sesję jako root  (```-u 0``` oznacza użytkownika o uid 0 czyli roota)  
