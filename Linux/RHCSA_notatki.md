@@ -1528,12 +1528,12 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 -  **SYSTEMD JAKO UŻYTKOWNIK**
     - DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW    
 
-- ```loginctl enable-linger``` - 
-- loginctl disable-linger
-- loginctl show-user <username>
-- systemctl --user daemon-reload 
-- systemctl --user start|stop|enable UNIT
-- Unit files: ~/.config/systemd/user/
+- ```loginctl enable-linger``` - Włącza trwałość non-root kontenerów
+- ```loginctl disable-linger``` - Wyłącza trwałość non-root kontenerów
+- ```loginctl show-user <username>``` - Pokazuje konfirgurację użytkownika, dobre do sprawdzenia czy linger jest włączony dla danego użytkownika 
+- ```systemctl --user daemon-reload``` - Update konfiguracji systemd po dodaniu plików konfiguracyjnych
+- ```systemctl --user start|stop|enable UNIT``` - Zarządzanie usługami systemd użytkownika
+- Unit files: ```~/.config/systemd/user/``` - Ścieżka w której zwyczajowo trzymane są pliki **.service** użytkownika
 
 
 ### Kontenery - SeLinux 
