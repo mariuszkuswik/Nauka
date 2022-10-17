@@ -1514,6 +1514,7 @@ DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK 
 ### Operacje na kontenerach
 - Tworzenie kontenera
     - ```podman container``` - operacje wykonywane na kontenerach     
+        - ```podman container create "$nazwa_obrazu"``` - utworzenie kontenera z obrazu 
         - ```podman container list --all``` - listuje wszystkie kontenery, również te nieaktywne
         - ```-v``` - mapowanie udziału host-kontener
         - ```-p 80:80``` - mapowanie portu host-kontener
@@ -1527,7 +1528,7 @@ DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK 
 
 
 ### Rootless Containers 
-- loginctl enable-linger 
+- ```loginctl enable-linger``` - 
 - loginctl disable-linger
 - loginctl show-user <username>
 - systemctl --user daemon-reload 
@@ -1539,7 +1540,7 @@ DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK 
 ### Operacje na kontenerach
 - Tworzenie kontenera
     - ```podman container ```- wykonywanie operacji na kontenerach
-        - ```podman container create "$nazwa_obrazu"``` - utworzenie kontenera z obrazu 
+        
 <br/>
 
 - ```podman exec``` - wykonanie komendy na kontenerze 
