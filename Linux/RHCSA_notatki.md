@@ -1488,6 +1488,7 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 ### #TODO
 - ```dnf module list container-tools```??? - dopisać instalacje
 
+## Komendy, stawianie uslugi
 ### Obrazy kontenerów
 - **Rejestr** 
     - **The list of registries is defined in /etc/containers/registries.conf**
@@ -1513,6 +1514,9 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
         - ```-p 80:80``` - mapowanie portu host-kontener
 - **Uruchamianie**
     - ```podman run -d —name``` - Launch a new container to use as a model to generate the systemd unit files
+- **Operacje**
+    - ```podman exec``` - wykonanie komendy na kontenerze 
+        - ```podman exec -it -u 0 "$nazwa_kontenera" bash``` - odpala interaktywną sesję jako root  (```-u 0``` oznacza użytkownika o uid 0 czyli roota)  
 - **Stan**
     - ```podman stop|start <container>```
     - ```podman rm <container>``` - Get rid of the container you created before you try to start your systemd container
@@ -1532,22 +1536,17 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 - Unit files: ~/.config/systemd/user/
 
 
-### Operacje na kontenerach
-- ```podman exec``` - wykonanie komendy na kontenerze 
-    - ```podman exec -it -u 0 "$nazwa_kontenera" bash``` - odpala interaktywną sesję jako root  (```-u 0``` oznacza użytkownika o uid 0 czyli roota)  
-  
-### Inspecting images - skopeo
-- ```skopeo``` - used to inspect, copy, delete and sign container images
-
-### Building new container images - buildah - nie jest to poruszane przez RHCSA 
-- ```buildah``` - used to create new containers
-
 ### Kontenery - SeLinux 
 - [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
 
 **Każdy wolumen musi mieć odpowiednio udostępniony plik - Z ODPOWIEDNIO USTAWIONYM KONTEKSTEM PLIKU**
 - kontekst dla folderów które mają byc udostępnione może być taki sam jak dla reszty plików 
 SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA ```ls -lZ /```
+
+
+## Obraz
+### Inspecting images - skopeo
+- ```skopeo``` - used to inspect, copy, delete and sign container images
 
 
 # Tuned profiles
