@@ -1473,8 +1473,8 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 - [Youtube RH - podman systemd](https://www.youtube.com/watch?v=AGkM2jGT61Y)
 - [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
 
-## Przydatne  
 
+## Przydatne  
 -  **SYSTEMD JAKO UŻYTKOWNIK**
   
 DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW    
@@ -1486,7 +1486,6 @@ DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK 
 
 - ```podman container/image/volume...``` - ogólna budowa komend 
   
-
   
 ## Pomoc 
 - ```man -k podman``` - wyświetla wszystkie potrzebne komendy podmana   
@@ -1495,37 +1494,52 @@ DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK 
 ### #TODO
 - ```dnf module list container-tools```??? - dopisać instalacje
 
-
-### Operacje na kontenerach
-- ```podman container``` - operacje wykonywane na kontenerach     
-    - ```podman container list --all``` - listuje wszystkie kontenery, również te nieaktywne
-    - ```-v``` - mapowanie udziału host-kontener
-    - ```-p 80:80``` - mapowanie portu host-kontener
-
-### Finding Images
+### Obrazy kontenerów
 - Rejestr 
     - **The list of registries is defined in /etc/containers/registries.conf**
-    - ```podman login "$registryURL" -u username [-p password]``` - Log in to a remote registry
+    - ```podman login "$registryURL" -u username [-p password]``` - logowanie do rejestru kontenerów 
     - ```podman logout```- Log out of the current remote registry  
 - Wyszukiwanie obrazu  
     - ```podman images``` - List all local images  
-    - ```podman search "$searchString"``` - Search local cache and remote registries for images
+    - ```podman search "$nazwa_obrazu"``` - wyszukiwanie obrazu kontenera w rejestrze 
 - Pobranie obrazu 
-    - ```podman pull registry/username/image:tag``` - Pull an image from a remote registry
+    - ```podman pull "$nazwa_obrazu"``` - pobranie obrazu z rejestru 
+- Zarządzanie obrazami
+    - ```podman image``` - zarządzanie obrazami kontenerów 
+        - ```podman image list``` - listuje dostępne obrazy 
+        - ```podman image rm "$nazwa_obrazu"``` - usuwa obraz 
+        - ```podman image tag "$nazwa_obrazu" "$tag"``` - nadaje obrazowi tag
 
 
-### Building Containers?
-- ```podman login``` - logowanie do rejestru kontenerów 
-- ```podman container ```- wykonywanie operacji na kontenerach
-    - ```podman container create "$nazwa_obrazu"``` - utworzenie kontenera z obrazu 
-<br/>
+### Operacje na kontenerach
+- Tworzenie kontenera
+    - ```podman container``` - operacje wykonywane na kontenerach     
+        - ```podman container list --all``` - listuje wszystkie kontenery, również te nieaktywne
+        - ```-v``` - mapowanie udziału host-kontener
+        - ```-p 80:80``` - mapowanie portu host-kontener
+- Uruchamianie 
+    - ```podman run -d —name``` - Launch a new container to use as a model to generate the systemd unit files
+- Stan
+    - ```podman stop|start <container>```
+    - ```podman rm <container>``` - Get rid of the container you created before you try to start your systemd container
+- Systemd
+    - ```podman generate systemd``` - Generate systemd unit file from your container. Must delete the container as systemd will create a new one.
 
-- ```podman search "$nazwa_obrazu"``` - wyszukiwanie obrazu kontenera w rejestrze 
-- ```podman pull "$nazwa_obrazu"``` - pobranie obrazu z rejestru 
-- ```podman image``` - zarządzanie obrazami kontenerów 
-    - ```podman image list``` - listuje dostępne obrazy 
-    - ```podman image rm "$nazwa_obrazu"``` - usuwa obraz 
-    - ```podman image tag "$nazwa_obrazu" "$tag"``` - nadaje obrazowi tag
+
+### Rootless Containers 
+- loginctl enable-linger 
+- loginctl disable-linger
+- loginctl show-user <username>
+- systemctl --user daemon-reload 
+- systemctl --user start|stop|enable UNIT
+- Unit files: ~/.config/systemd/user/
+
+
+
+### Operacje na kontenerach
+- Tworzenie kontenera
+    - ```podman container ```- wykonywanie operacji na kontenerach
+        - ```podman container create "$nazwa_obrazu"``` - utworzenie kontenera z obrazu 
 <br/>
 
 - ```podman exec``` - wykonanie komendy na kontenerze 
@@ -1548,7 +1562,7 @@ SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA
 # Tuned profiles
 [Spis treści](#spis-tre%C5%9Bci)
 
-```TuneD``` - tuned is a dynamic adaptive system tuning ```daemon``` that tunes system settings dynamically depending on usage.
+**TuneD** - tuned is a dynamic adaptive system tuning ```daemon``` that tunes system settings dynamically depending on usage.
 
 ```
 systemctl enable --now tuned
