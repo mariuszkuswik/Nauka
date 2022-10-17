@@ -1544,7 +1544,7 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA ```ls -lZ /```
 
 
-## Obraz
+## Obrazy kontenerów
 ### Inspecting images - skopeo
 - ```skopeo``` - used to inspect, copy, delete and sign container images
 
