@@ -1522,11 +1522,11 @@ DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK 
 - Uruchamianie 
     - ```podman run -d —name``` - Launch a new container to use as a model to generate the systemd unit files
     <br/>
-- Stan
+- **Stan**
     - ```podman stop|start <container>```
     - ```podman rm <container>``` - Get rid of the container you created before you try to start your systemd container
-    <br/>
-- Systemd
+
+- **Systemd**
     - ```podman generate systemd``` - Generate systemd unit file from your container. Must delete the container as systemd will create a new one.
 
 
