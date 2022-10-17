@@ -76,19 +76,18 @@ This documents contains some of the basic commands that you will need to get sta
 3. Dodaj klucz
 ```ssh-add ~/.ssh/github```
 
+- [error-permission-denied-publickey](https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey)
+- [git-fatal-could-not-read-from-remote-repository](https://careerkarma.com/blog/git-fatal-could-not-read-from-remote-repository/)
 
-https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey
-
-
-https://careerkarma.com/blog/git-fatal-could-not-read-from-remote-repository/
-
-1.  ```git init```
+1.  ```git init``` - zainicjowanie nowego repo lokalnie
 ### #TODO sprawdzic jak ladniej opisac to dodanie wszystkich plikow  
-2. Dodanie wzystkich plikow : ```git add -A``` 
-3. ```git push -m "Opis commita"``` 
+2. ```git add -A``` - Dodanie wzystkich plikow  
+3. ```git commit -m "Pierwszy commit"``` - Pierwszy commit
 4. ```git remote -v``` - Wyświetla obecne, jezeli nie ma to:
 	- ```git remote add origin git@github.com:mariuszkuswik/nazwa_repo.git```
 5. ````git remote set-url origin git@github.com:mariuszkuswik/nazwa_repo.git````
+3. ```git push -m "Opis commita"``` 
+
 
 ### #TODO Do sprawdzenia czym jest origin, poprawic opis 
 6. master to nazwa brancha : ```git push origin master```
@@ -96,9 +95,7 @@ https://careerkarma.com/blog/git-fatal-could-not-read-from-remote-repository/
 
 
 #  Branch
-
 ## Czym jest Branch 
-
 
 ### #TODO - Dodać informację o komendach podstwowych takich jak 
 - git branch 
@@ -107,20 +104,16 @@ https://careerkarma.com/blog/git-fatal-could-not-read-from-remote-repository/
 
 [Tworzenie nowego brancha na przykładzie](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 
-
 ## Jak stworzyć nowy branch i zmergować go z mainem 
 
 1. Tworzenie nowego brancha, przejście do niego 
-
 ```git checkout -b nazwa_brancha```
 > Switched to a new branch "nowy_branch" 
 
 2. zmiana brancha bez tworzenia nowego
-
 ```git checkout nazwa_brancha``` 
 
 2. Wyświetlenie wszystkich branchy 
-
 ```git branch ```
 
 > github_edycja_branchy
@@ -130,23 +123,17 @@ https://careerkarma.com/blog/git-fatal-could-not-read-from-remote-repository/
 
 4. Edycja plików w obecnym (nowym) branchu 
 
-
 5. Zmiana brancha na ten z którym chcemy połączyć wprowadzone zmiany 
-
 ```git checkout main```
 
-
 6. Połączenie zmian wprowadzonych w nowym branchu z mainem 
-
 ```git merge nazwa_brancha```
 > Komenda łączy obecnego brancha z nazwa_brancha 
 
 ```git merge master nazwa_brancha```
 > Komenda łączy branch master z branch nazwa_brancha
 
-
 7. Usunięcie brancha który już nie jest potrzebny 
-
 ```git branch -d nazwa_brancha"```
 
 ## Create a new branch with git and manage branches
