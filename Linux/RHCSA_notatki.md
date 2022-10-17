@@ -1475,17 +1475,11 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 
 
 ## Przydatne  
--  **SYSTEMD JAKO UŻYTKOWNIK**
-  
-DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW    
-  
 **podman -v "volume_hosta:volume_kontenera:Z" - z dopiskiem ```:Z``` sam ogarnie SELinuxa!**  
 
 - Uruchomienie terminala jako root  
 ```podman exec -u 0 -it "$nazwa_kontenera" bash``` - uruchomienie interaktywnego terminala jako **root** (```-u 0```)  
-
 - ```podman container/image/volume...``` - ogólna budowa komend 
-  
   
 ## Pomoc 
 - ```man -k podman``` - wyświetla wszystkie potrzebne komendy podmana   
@@ -1495,21 +1489,20 @@ DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK 
 - ```dnf module list container-tools```??? - dopisać instalacje
 
 ### Obrazy kontenerów
-- Rejestr 
+- **Rejestr** 
     - **The list of registries is defined in /etc/containers/registries.conf**
     - ```podman login "$registryURL" -u username [-p password]``` - logowanie do rejestru kontenerów 
     - ```podman logout```- Log out of the current remote registry  
-- Wyszukiwanie obrazu  
+- **Wyszukiwanie obrazu**  
     - ```podman images``` - List all local images  
     - ```podman search "$nazwa_obrazu"``` - wyszukiwanie obrazu kontenera w rejestrze 
-- Pobranie obrazu 
+- **Pobranie obrazu** 
     - ```podman pull "$nazwa_obrazu"``` - pobranie obrazu z rejestru 
-- Zarządzanie obrazami
+- **Zarządzanie obrazami**
     - ```podman image``` - zarządzanie obrazami kontenerów 
         - ```podman image list``` - listuje dostępne obrazy 
         - ```podman image rm "$nazwa_obrazu"``` - usuwa obraz 
         - ```podman image tag "$nazwa_obrazu" "$tag"``` - nadaje obrazowi tag
-
 
 ### Operacje na kontenerach
 - **Tworzenie kontenera**
@@ -1527,7 +1520,10 @@ DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK 
     - ```podman generate systemd``` - Generate systemd unit file from your container. Must delete the container as systemd will create a new one.
 
 
-### Rootless Containers 
+### Rootless containers as a service  
+-  **SYSTEMD JAKO UŻYTKOWNIK**
+    - DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW    
+
 - ```loginctl enable-linger``` - 
 - loginctl disable-linger
 - loginctl show-user <username>
@@ -1536,10 +1532,7 @@ DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK 
 - Unit files: ~/.config/systemd/user/
 
 
-
 ### Operacje na kontenerach
-
-
 - ```podman exec``` - wykonanie komendy na kontenerze 
     - ```podman exec -it -u 0 "$nazwa_kontenera" bash``` - odpala interaktywną sesję jako root  (```-u 0``` oznacza użytkownika o uid 0 czyli roota)  
   
