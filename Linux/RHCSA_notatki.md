@@ -1512,20 +1512,17 @@ DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK 
 
 
 ### Operacje na kontenerach
-- Tworzenie kontenera
+- **Tworzenie kontenera**
     - ```podman container``` - operacje wykonywane na kontenerach     
         - ```podman container create "$nazwa_obrazu"``` - utworzenie kontenera z obrazu 
         - ```podman container list --all``` - listuje wszystkie kontenery, również te nieaktywne
         - ```-v``` - mapowanie udziału host-kontener
         - ```-p 80:80``` - mapowanie portu host-kontener
-        <br/>
-- Uruchamianie 
+- **Uruchamianie**
     - ```podman run -d —name``` - Launch a new container to use as a model to generate the systemd unit files
-    <br/>
 - **Stan**
     - ```podman stop|start <container>```
     - ```podman rm <container>``` - Get rid of the container you created before you try to start your systemd container
-
 - **Systemd**
     - ```podman generate systemd``` - Generate systemd unit file from your container. Must delete the container as systemd will create a new one.
 
