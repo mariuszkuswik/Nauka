@@ -1549,6 +1549,9 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 - kontekst dla folderów które mają byc udostępnione może być taki sam jak dla reszty plików 
 SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA ```ls -lZ /```
 
+- podman container create --volume "volume/volume:Z" - automatyczny kontekst dla volumenu? - ogarnąć całą komendę
+
+
 
 ## Obrazy kontenerów
 ### Inspecting images - skopeo
