@@ -1472,6 +1472,7 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 - [RH - lab kontenery](https://developers.redhat.com/learn/lessons/deploying-containers-podman?intcmp=7013a0000026UTXAA2)
 - [Youtube RH - podman systemd](https://www.youtube.com/watch?v=AGkM2jGT61Y)
 - [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
+- [Rootless container service](https://www.linuxtechi.com/run-containers-systemd-service-podman/)
 
 
 ## Przydatne  
@@ -1485,8 +1486,7 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 - ```man -k podman``` - wyświetla wszystkie potrzebne komendy podmana   
 
 ## Instalacja
-### #TODO
-- ```dnf module list container-tools```??? - dopisać instalacje
+- ```dnf module install -y container-tools``` - instaluje podmana i container-tools
 
 ## Komendy, stawianie uslugi
 ### Obrazy kontenerów
@@ -1520,20 +1520,30 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 - **Stan**
     - ```podman stop|start <container>```
     - ```podman rm <container>``` - Get rid of the container you created before you try to start your systemd container
-- **Systemd**
-    - ```podman generate systemd``` - Generate systemd unit file from your container. Must delete the container as systemd will create a new one.
+
 
 
 ### Rootless containers as a service  
+- [Rootless container service](https://www.linuxtechi.com/run-containers-systemd-service-podman/)
+
 -  **SYSTEMD JAKO UŻYTKOWNIK**
-    - DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW    
 
 - ```loginctl enable-linger``` - Włącza trwałość non-root kontenerów
 - ```loginctl disable-linger``` - Wyłącza trwałość non-root kontenerów
 - ```loginctl show-user <username>``` - Pokazuje konfirgurację użytkownika, dobre do sprawdzenia czy linger jest włączony dla danego użytkownika 
+
+    - DO SEKCJI ```[SERVICE]``` DODAJEMY ```USER="$user"```, DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW    
+
+
 - ```systemctl --user daemon-reload``` - Update konfiguracji systemd po dodaniu plików konfiguracyjnych
 - ```systemctl --user start|stop|enable UNIT``` - Zarządzanie usługami systemd użytkownika
-- Unit files: ```~/.config/systemd/user/``` - Ścieżka w której zwyczajowo trzymane są pliki **.service** użytkownika
+
+- ```~/.config/systemd/user/``` - Ścieżka w której zwyczajowo trzymane są pliki **.service** użytkownika
+    - ```mkdir -p ~/.config/systemd/user```
+
+- ```podman generate systemd``` - Generate systemd unit file from your container. Must delete the container as systemd will create a new one.
+    ```podman generate systemd --name myubi > ~/.config/systemd/user/container-myubi.service``` 
+
 
 
 ### Kontenery - SeLinux 
