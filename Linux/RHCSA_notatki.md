@@ -387,22 +387,17 @@ nmap -A "$remote_ip_address"
 
 
 # SELinux
-
-- ```yum whatprovides */semanage``` - domyślnie narzędzia SELinux mogą nie być zainstalowane  
-
-[Spis treści](#spis-tre%C5%9Bci)
-- [Testowy link spisu tresci](#nic)
-- [Testowy link spisu tresci](#nic)
-- [Testowy link spisu tresci](#nic)
+- [Spis treści](#spis-tre%C5%9Bci)
 
 ### Linki
 - [RH - How to troubleshoot SELinux policy violations](https://www.redhat.com/sysadmin/diagnose-selinux-violations)  
 - [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)  
 
---- 
+### Instalacja
+- ```yum whatprovides */semanage``` - domyślnie narzędzia SELinux mogą nie być zainstalowane  
+
 ### Pomocne komendy
 - ```ausearch``` - command parses audit daemon logs. You can view the man page for all of the details, but the -c 'httpd' argument will search for any event with that httpd name.
-
 - ```audit2allow``` - command generates an SELinux policy based on logs returned by ausearch. This tells you that the first command parses the audit logs for anything with an event based on httpd and then generates an SELinux policy to allow it.
 
 ### TODO 
@@ -467,14 +462,8 @@ drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
 
 
 
-
-
-
-
 ## Kontrola czasu w RHEL
-[Spis treści](#spis-tre%C5%9Bci)
-
-
+- [Spis treści](#spis-tre%C5%9Bci)
 - [RH - How to configure chrony as an NTP client or server in Linux](https://www.redhat.com/sysadmin/chrony-time-services-linux)
 - [Cloud_guru - lekcja](https://learn.acloud.guru/course/red-hat-certified-system-administrator-ex200-exam-prep/learn/60dc10ad-0973-4bb6-8a0b-9d987f2c25f3/071c69c6-90ba-4885-9f32-15949b43286f/watch)
 
@@ -484,7 +473,6 @@ Poprzednim serwerem czasu był ntp, obecnym chrony
 - ```chrony``` - serwer lub klient (zależy od potrzeby) kontroli czasu
 
 ### Ważne pliki :  
-
 - ```/etc/chrony.conf``` - config  
 - ```/etc/chrony.keys``` - zawiera klucze ? 
 - ```/usr/share/doc/chrony``` - dokumentacja
