@@ -1313,45 +1313,6 @@ sslke
 ```
 
 
-# Blokowanie połączenia z konkretnego serwera  
-
-I just added the following to the drop zone and it worked without any issue:
-
-firewall-cmd --zone=drop --add-source=x.x.x.x/xx
-
-replace x.x.x.x with the IP and you can add the subnet under /xx
-
-reguły dla danej strefy, do drop dodajemy źródłą które chcemy blokować 
-```
-firewall-cmd --zone=drop --list-all
-```
-
-you could also use /etc/hosts.allow
-/etc/hosts.deny
-
-
-## ftp
-
-```console
-# vi /etc/sysconfig/iptables-config
-IPTABLES_MODULES=”nf_conntrack_ftp nf_nat_ftp”
-# iptables -I INPUT -m state –state NEW -m tcp -p tcp –dport 20 -j ACCEPT
-# iptables -I INPUT -m state –state NEW -m tcp -p tcp –dport 21 -j ACCEPT
-# service iptables save
-# service iptables restart
-# vi /etc/hosts.deny
-vsftpd: .hackers.net: DENY
-```
-### httpd
-
-```console
-# vi /etc/httpd/conf/httpd.conf
-Order allow,deny
-Allow from 127.0.0.1 server1.example.com
-```
-
-
-
 # Archiwizowanie 
 [Spis treści](#spis-tre%C5%9Bci)
 
@@ -1703,6 +1664,47 @@ grub2-mkconfig
 /boot - 
 
 OPISAĆ
+
+
+# Blokowanie połączenia z konkretnego serwera  
+
+I just added the following to the drop zone and it worked without any issue:
+
+firewall-cmd --zone=drop --add-source=x.x.x.x/xx
+
+replace x.x.x.x with the IP and you can add the subnet under /xx
+
+reguły dla danej strefy, do drop dodajemy źródłą które chcemy blokować 
+```
+firewall-cmd --zone=drop --list-all
+```
+
+you could also use /etc/hosts.allow
+/etc/hosts.deny
+
+
+## ftp
+
+```console
+# vi /etc/sysconfig/iptables-config
+IPTABLES_MODULES=”nf_conntrack_ftp nf_nat_ftp”
+# iptables -I INPUT -m state –state NEW -m tcp -p tcp –dport 20 -j ACCEPT
+# iptables -I INPUT -m state –state NEW -m tcp -p tcp –dport 21 -j ACCEPT
+# service iptables save
+# service iptables restart
+# vi /etc/hosts.deny
+vsftpd: .hackers.net: DENY
+```
+### httpd
+
+```console
+# vi /etc/httpd/conf/httpd.conf
+Order allow,deny
+Allow from 127.0.0.1 server1.example.com
+```
+
+
+
 
 
 # Po egzaminie
