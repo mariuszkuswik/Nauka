@@ -455,12 +455,9 @@ drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
 ```
 
 ### Przypisanie kontekstu SELinux
-
 - ```semanage``` - służy do zarządzania kontekstami   
 - ```semanage fcontext``` - zarządza kontekstami plików i folderów   
 - ```restorecon -Rv``` - służy do zatwierdzenia zmian na folderach, zmiany   etykiet   
-
-
 
 ## Kontrola czasu w RHEL
 - [Spis treści](#spis-tre%C5%9Bci)
