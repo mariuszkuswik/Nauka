@@ -1589,42 +1589,40 @@ All files put into the "shared" directory by "steve" or "oliver" should belong t
 dnf-config-manager - upraszcza dodawanie repo 
 
 
+### Ogolne 
+
+- [Przywracanie hasła roota](#przywracanie-hasła-roota)
+- [man](#man)
+    - ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU
+
+### Storage
 - [Sprawdzene poprawnosci fstab](https://sleeplessbeastie.eu/2019/01/21/how-to-verify-fstab-file/)
     - ```findmnt --verify``` - komenda sprawdzajaca poprawnosc fstab
-- [Przywracanie hasła roota](#przywracanie-hasła-roota)
 
-[Skrypty]
+### Skrypty
+- ```man sh``` - lista zmiennych specjalnych
 
-```man sh``` - lista zmiennych specjalnych
+### Repo
+- ```dnf repolist``` - listuje repo i sprawdza je
 
-[repo]
-
-dnf repolist - listuje repo i sprawdza je
-
+```
 [$name]
 name=$name
 baseurl=file:/// lub http://
 gpgcheck=no
 sslverify=no
+```
 
+```yum --exclude=packgeName1\* --exclude=packgeName2\* update```
 
-yum --exclude=packgeName1\* --exclude=packgeName2\* update
+### Autofs
+- [autofs](#autofs)
 
-
-
-[man](#man)
-
-- ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU
-
-cron
-
+### Ustawianie taskow w czasie?
 - ```cronnext -c``` pokazuje datę wszystkich następnych cronjobów 
 
-
-[autofs](#autofs)
-
-
-[Kontenery](#Kontenery)
+### Kontenery
+- [Kontenery](#Kontenery)
 
 DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW  
 
@@ -1690,8 +1688,6 @@ vsftpd: .hackers.net: DENY
 Order allow,deny
 Allow from 127.0.0.1 server1.example.com
 ```
-
-
 
 
 
