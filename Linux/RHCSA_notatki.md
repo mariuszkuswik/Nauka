@@ -1588,7 +1588,10 @@ All files put into the "shared" directory by "steve" or "oliver" should belong t
 [Spis treści](#spis-treści)
 dnf-config-manager - upraszcza dodawanie repo 
 
-[Przywracanie hasła roota](#przywracanie-hasła-roota)
+
+- [Sprawdzene poprawnosci fstab](https://sleeplessbeastie.eu/2019/01/21/how-to-verify-fstab-file/)
+    - ```findmnt --verify``` - komenda sprawdzajaca poprawnosc fstab
+- [Przywracanie hasła roota](#przywracanie-hasła-roota)
 
 [Skrypty]
 
