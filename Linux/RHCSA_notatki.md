@@ -1348,7 +1348,6 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 - ```grub2-mkconfig``` - generuje skrypt konfiguracyjny, możliwy do przekierowania do właściwego configu - ```/boot/grub2/grub.cfg```
 - ```grub2-script-check``` - sprawdza czy utworzony config jest poprawny
 
-
 ### Pomoc
 - ```man grubby``` - wskazany plik konfiguracyjny  
 - ```info grub2``` - mocno wyjaśnione bootowanie  
@@ -1361,7 +1360,6 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 
 
 ### Zmiana zmiennych konfiguracji Grub
-
 1. Edycja zmiennych dla komendy ```grub2-mkconfig```
 ```console
 # vim /etc/default/grub
@@ -1381,12 +1379,8 @@ GRUB_TIMEOUT=15
 ```
 
 
-
-
 ## Kernel
-[Kernel Update](#Kernel-update)
-
-[MANAGING KERNEL MODULES - RH](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/managing-kernel-modules_managing-monitoring-and-updating-the-kernel)
+- [Kernel Update](#Kernel-update)
 
 
 ### #TODO - Sprawdzić jak dokładnie działają 
@@ -1396,6 +1390,11 @@ GRUB_TIMEOUT=15
 ```grubby --remove-kernel="$kernel-path"```  
   
 ```grubby --update-kernel=kernel-path```  
+
+## Managing kernel modules
+- [RH - Managing kernel modules](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/managing-kernel-modules_managing-monitoring-and-updating-the-kernel)
+
+
 
 
 # Sieci
@@ -1433,6 +1432,7 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 
 ## Instalacja
 - ```dnf module install -y container-tools``` - instaluje podmana i container-tools
+- ```systemctl enable podman --now``` 
 
 ## Komendy, stawianie uslugi
 ### Obrazy kontenerów
@@ -1505,7 +1505,7 @@ SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA
 
 
 # Tuned profiles
-[Spis treści](#spis-tre%C5%9Bci)
+- [Spis treści](#spis-tre%C5%9Bci)
 
 **TuneD** - tuned is a dynamic adaptive system tuning ```daemon``` that tunes system settings dynamically depending on usage.
 
@@ -1590,7 +1590,6 @@ dnf-config-manager - upraszcza dodawanie repo
 
 
 ### Ogolne 
-
 - [Przywracanie hasła roota](#przywracanie-hasła-roota)
 - [man](#man)
     - ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU

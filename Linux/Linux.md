@@ -93,7 +93,6 @@ file:///usr/share/doc/selinux-policy-doc/html/index.html.
 /usr/share/doc - zawiera więcej instrukcji systemowych, ```pinfo``` pozwala przeglądać je po linkach
 
 ## man  
-
 - ```mandb``` - update bazy danych mana
 
 - ```man man``` - pomoc odnośnie mana   
@@ -104,7 +103,6 @@ file:///usr/share/doc/selinux-policy-doc/html/index.html.
 
 
 ## info
-
 ```info -a``` - wyświetla wszystkie manuale i pozwala wybrać 
 ### #TODO - dodać opis
 
