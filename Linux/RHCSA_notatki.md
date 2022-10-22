@@ -1416,6 +1416,8 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
 [Spis treści](#spis-tre%C5%9Bci)
 
 ### Tutoriale
+- [RSYSLOG - aktualny forum](https://learn.redhat.com/t5/Platform-Linux/How-to-install-the-containerized-version-of-rhel8-rsyslog/td-p/20887)
+    - [RSYSLOG2](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/building_running_and_managing_containers/index#assembly_running-special-container-images_building-running-and-managing-containers)
 - [RH - lab kontenery](https://developers.redhat.com/learn/lessons/deploying-containers-podman?intcmp=7013a0000026UTXAA2)
 - [Youtube RH - podman systemd](https://www.youtube.com/watch?v=AGkM2jGT61Y)
 - [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
