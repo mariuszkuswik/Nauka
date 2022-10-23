@@ -1247,7 +1247,6 @@ $ yum module list module-name
 
 
 ## Rpm 
-
 ### Kernel update 
 - [RH - Kernel update](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/updating-kernel-with-yum_managing-monitoring-and-updating-the-kernel)  
 - [Lokalnie - Zarządzanie Kernelem](#kernel)  
@@ -1301,49 +1300,58 @@ sslke
 
 
 # Archiwizowanie 
-[Spis treści](#spis-tre%C5%9Bci)
+- [Spis treści](#spis-tre%C5%9Bci)
 
 ### #TODO - do uzupełnienia
 - Jak tworzyć inne typy archiwów niż gzip 
 - Jak dodać coś do istniejącego archiwum 
 
-tar 
--c - create
--v - verbose 
--z - gzip
--f - file  
--t - wylisowanie plików archiwum 
--x - extract 
--u - update files that are newer 
+### Tar
+- tar
+    - ```c``` - create
+    - ```v``` - verbose 
+    - ```z``` - gzip
+    - ```f``` - file  
+    - ```t``` - wylisowanie plików archiwum 
+    - ```x``` - extract 
+    - ```u``` - update files that are newer 
 
-tar -cvzf "$plik_archiwum" "$folder_do_skompresowania" - tworzenie nowego gzipowego archiwum 
-tar -tvzf "$plik_archiwum" "$folder_do_skompresowania" - wyświetlenie list plików w gzipowym archiwum 
-tar -xvzf "$plik_archiwum" "$folder_do_skompresowania" - wypakowanie gzipowego archiwum
+### Przyklady
+- ```tar -cvzf "$plik_archiwum" "$folder_do_skompresowania"``` - tworzenie nowego gzipowego archiwum 
+- ```tar -tvzf "$plik_archiwum" "$folder_do_skompresowania"``` - wyświetlenie list plików w gzipowym archiwum 
+- ```tar -xvzf "$plik_archiwum" "$folder_do_skompresowania"``` - wypakowanie gzipowego archiwum
 
+### gzip
+
+### bzip
+
+### TODO - cos jeszcze?
 
 # Swap
-[Spis treści](#spis-tre%C5%9Bci)
+- [Spis treści](#spis-tre%C5%9Bci)
 
 ### #TODO - uzupełnić chociaż trochę
 
-swapon -a 
-swapoff -a 
+### Wlaczenie/Wylaczenie swapu  
+- ```swapon -a``` - wlaczenie calego swapu z fstab? 
+- ```swapoff -a``` - wylaczenie calego swapu z fstab? 
 
-fstab - dodawanie swapowej partycji/pliku 
+### Utworzenie partycji swapowej
+- ```mkswap``` - tworzenie systemu plików swapowego 
+- ```fstab``` - dodawanie swapowej partycji/pliku 
+    - ```"$UUID"/PATH   SWAP    SWAP    defaults    0 0```
 
-mkswap - tworzenie systemu plików swapowego 
-
+### Utworzenie pliku swapowego
 fallocate - przypisanie plikowi określonej ilości zajmowanego miejsca
-
+### TODO
 tworzenie swapu z pliku, procedura do ogarnięcia
 
 # Grub/Kernel
+- [Spis treści](#spis-tre%C5%9Bci)
 
+### Linki 
 - [RH - How to change boot options on Linux](https://www.redhat.com/sysadmin/linux-change-boot-options-grub)
-
-[Spis treści](#spis-tre%C5%9Bci)
-
-[Zmiana ustawień grub](https://www.unixarena.com/2015/04/how-to-edit-the-grub-on-rhel-7.html/)
+- [Zmiana ustawień grub](https://www.unixarena.com/2015/04/how-to-edit-the-grub-on-rhel-7.html/)
 
 ## Grub
 - ```grubby``` - command line tool for configuring grub
@@ -1380,7 +1388,6 @@ GRUB_TIMEOUT=15
 # grub2-mkconfig > /boot/grub2/grub.cfg
 ```
 
-
 ## Kernel
 - [Kernel Update](#Kernel-update)
 
@@ -1398,19 +1405,19 @@ GRUB_TIMEOUT=15
 
 
 
-
 # Sieci
 [Spis treści](#spis-tre%C5%9Bci)
 
+### **Zmiana** ustawien sieciowych
 - ```nmcli``` - Zarządzanie network managerem za pomocą **komend tekstowych**     
     - ```nmcli con reload``` - Zaktualizowanie konfiguracji dla urządzeń sieciowych (ifcfg-interface), **wszelkie zmiany przy pomocy komendy ip nie są trwałe**
 - ```nmtui``` - Zarządzanie network managerem za pomocą **terminalowego GUI**  
+---
 
-
-ip - show / manipulate routing, network devices, interfaces and tunnels
-
-
-
+### **Wyswietlenie** ustawien sieciowych
+- ```ip``` - show / manipulate routing, network devices, interfaces and tunnels
+    - ```ip route show```
+    - ```ip address show```
 
 # Kontenery
 [Spis treści](#spis-tre%C5%9Bci)
