@@ -166,19 +166,19 @@ You are new System Administrator and from now you are going to handle the system
 ```
 
 # Sudoers
-[Spis treści](#spis-tre%C5%9Bci)
+- [Spis treści](#spis-tre%C5%9Bci)
+
 ### Linki
 - [Rhel sudoers](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/managing-sudo-access_configuring-basic-system-settings)
----
+
 ## Config
 - ```/etc/sudoers``` - ogólny 
 
-```username hostname=path/to/command```
- 
-- username is the name of the user or group, for example, ```user1``` or ```%group1```.
-- hostname is the name of the host on which the rule applies.
-- path/to/command is the complete absolute path to the command. You can also limit the user to only performing a command with specific options and arguments by adding those options after the command path.   
-If you do not specify any options, the user can use the command with all options.  
+- ```username hostname=path/to/command```
+    - username is the name of the user or group, for example, ```user1``` or ```%group1```.
+    - hostname is the name of the host on which the rule applies.
+    - path/to/command is the complete absolute path to the command. You can also limit the user to only performing a command with specific options and arguments by adding those options after the command path.   
+    If you do not specify any options, the user can use the command with all options.  
 
 
 ### #TODO - opisać aliasy w sudoers
