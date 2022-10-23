@@ -1479,7 +1479,8 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
     - ```loginctl enable-linger``` - Włącza trwałość non-root kontenerów
     - ```loginctl disable-linger``` - Wyłącza trwałość non-root kontenerów
     - ```loginctl show-user <username>``` - Pokazuje konfirgurację użytkownika, dobre do sprawdzenia czy linger jest włączony dla danego użytkownika 
-- **Systemd - Dodanie configu**
+- **Podman - systemd**
+    - podman generate systemd - wygenerowanie configu? dla sysmtemd 
     - ```~/.config/systemd/user/``` - Ścieżka w której zwyczajowo trzymane są pliki **.service** użytkownika
         - ```mkdir -p ~/.config/systemd/user```
     - ```podman generate systemd``` - Generate systemd unit file from your container. Must delete the container as systemd will create a new one.
@@ -1490,6 +1491,13 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
     - ```systemctl --user start|stop|enable UNIT``` - Zarządzanie usługami systemd użytkownika
         - ```systemctl --user enable --now container-myubi.service``` - Uruchomienie usługi kontenera przy starcie systemu
 
+### Rootless container procedura
+1. loginctl enable-linger "$user" ?
+2. loginctl show-user "$user" - sprawdzenie czy linger jest wlaczony dla uzytkownika?
+2. podman generate systemd
+    - Pliki uslug systemd uzytkownika ```~/.config/systemd/user```
+3. systemctl --user daemon-reload - przeladowane plikow systemd dla uzytkownikow standardowych
+5. systemctl --user enable|start|stop "$UNIT" - obsluga uslug systemd dla uzytkownikow 
 
 
 ### Kontenery - SeLinux 
