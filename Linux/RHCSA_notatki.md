@@ -231,47 +231,45 @@ locate działa na podstawie bazy danych, domyślnie aktualizowana jest raz dzien
 - ```grep "$wyszukiwana_fraza" "$nazwa_pliku"```
 
 
-# Tworzenie użytkowników 
+# Uzytkownicy
 [Spis treści](#spis-tre%C5%9Bci)
 
+
+## Tworzenie nowych 
 ### Configi
 - ```/etc/defaults/useradd``` 
 - ```/etc/login.defs```
 
 # TODO - dopisać
 - ustawienie domyślnych ustawień nowo dodawanych użytkowników, tj. wygasanie hasła, katalogi domowe itd.
+- 
 
 ### Podstawowe komendy
 - ```useradd``` - Dodanie użytkownika
+    - ```useradd -u "$uid"``` - user z innym uuid
 - ```usermod``` - Modyfikowanie ustawień użytkownika
+    - ```usermod -aG "$group_name"``` - samo użycie opcji ```G``` bez ```a``` **powoduje zastępienie obecnych grup użytkownika tą jedną którą przypisujemy**
 - ```userdel``` - Usuwanie użytkownika
    
----
 
-- ```useradd -u "$uid"``` - user z innym uuid
+## Edytowanie obecnych
+### Wygasanie hasla/Blokowanie konta 
+- ```chage``` - blokowanie konta po określonym czasie 
+- ```chage``` - wymuszenie zmiany hasła 
 
-
-- inna grupa podstawowa 
-- dodanie do innej grupy pobocznej 
-```useradd -aG "$group_name"``` - samo użycie opcji ```G``` bez ```a``` powoduje zastępienie obecnych grup użytkownika tą jedną którą przypisujemy
-
-#### Wyłączenie logowania 
+### Wyłączenie logowania 
 ```
 vim /etc/passwd 
 # dodanie jako shell 
 /sbin/nologin
 ```
 
-- ```chage``` - blokowanie konta po określonym czasie 
-- ```chage``` - wymuszenie zmiany hasła 
-
-
 # NFS
 [Spis treści](#spis-tre%C5%9Bci)
 
 ### Linki
+- [Spis tresci](#spis-treści)
 - [RH - https://www.redhat.com/sysadmin/configure-nfs-linux](https://www.redhat.com/sysadmin/configure-nfs-linux)
----
 
 
 ### Dokumentacja 
@@ -1540,7 +1538,6 @@ systemctl enable --now tuned
 [Spis treści](#spis-tre%C5%9Bci)
 
 ## httpd
-
 1. Sprawdzenie czy usługa działa, jeżeli tak/nie to czy systemd pokazuje jakieś błędy 
 2. Pobranie strony ```curlem``` z podanego serwera
 3. sprawdzenie logów systemd - ```journalctl -u httpd``` - pobranie logów dla konkretnej usługi
@@ -1551,10 +1548,8 @@ systemctl enable --now tuned
 
 
 
-
 # Daily zadanka 
 [Spis treści](#spis-tre%C5%9Bci)
-
 
 - Create a user called tom. Create a directory named /private. Use an acl to only allow access (rwx) to tom to the private directory.
     - Allowed time: 5 minutes.
@@ -1634,7 +1629,7 @@ sslverify=no
 - [autofs](#autofs)
 
 ### Ustawianie taskow w czasie?
-- ```cronnext -c``` pokazuje datę wszystkich następnych cronjobów 
+- ```cronnext -c``` - pokazuje datę wszystkich następnych cronjobów 
 
 ### Kontenery
 - [Kontenery](#Kontenery)
