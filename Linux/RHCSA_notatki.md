@@ -331,10 +331,9 @@ zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
         - ```--add-service "$service_name"``` - Udostępnienie możliwości komunikacji z usługą (lista dostępna pod tabulatorem)
 
 
-**ZAWSZE TRZEBA PAMIĘTAĆ O OPCJI ```--permanent```**,  
-w przeciwnym wypadku zmiany nie będą stałe   
+**ZAWSZE TRZEBA PAMIĘTAĆ O OPCJI ```--permanent```**, w przeciwnym wypadku zmiany nie będą stałe   
 
----
+### Przyklad
 Otwarcie portu 80 tcp
 
 ```console
@@ -412,7 +411,6 @@ nmap -A "$remote_ip_address"
 - ```sestatus``` - szczegółowe informacje
 - ```getenforce``` - dostajemy tylko tryb w jakim selinux działa obecnie 
 
-    
 ### Zmiana trybu SELinux
 - Tymczasowa zmiana 
     - ```setenforce``` - umożliwia tymczasową zmianę trybu - PO REBOOCIE STOSOWANY JEST TRYB Z CONFIGA    
@@ -443,8 +441,7 @@ np.
 ### Sprawdzenie kontekstu pliku 
 
 - ```ls -laZ "$file_name"``` - wyświetlenie kontekstu pliku 
-
-**Context** is the one with **_t** suffix - *user_home_dir_t*
+    - **Context** is the one with **_t** suffix - *user_home_dir_t*
 
 ```console
 # ls -lZ /home
@@ -484,48 +481,7 @@ Poprzednim serwerem czasu był ntp, obecnym chrony
     - ```serverstats``` - nie wiem ? 
 
 
-## Managing schedulded tasks
-- [Spis treści](#spis-treści)
-
-
-### cron
-
-- ```dnf list --installed cronie``` - sprawdzenie czy **cron** jest zainstalowany
-- ```systemctl status crond.service``` - sprawdzenie czy działa uzługa **cron**
-- ```cronnext -c``` pokazuje datę wszystkich następnych **cronjobów** 
-
-
-#### Budowa pliku ```/etc/crontab``` 
-
-```
-Example of job definition:  
-.---------------- minute (0 - 59)  
-|  .------------- hour (0 - 23)  
-|  |  .---------- day of month (1 - 31)  
-|  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...  
-|  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat  
-|  |  |  |  |  
-*  *  *  *  * user-name  command to be executed  
-```
-
-### at
-- ```dnf list --installed at``` - sprawdzenie czy **at** jest zainstalowany
-- ```systemctl status atd.service``` - sprawdzenie czy działa uzługa **at**
-- ```atq``` - kolejka at
----
-- Można wywoływać komendę o konkretnej godzine lub po jakimś czasie, np. at 20:00 lub at +7 days 
-
-```
-sudo at 20:00 
->at command to execute
-*ctrl+d*
-```
-
-
-
-
 ## Synchronizacja czasu (klient z serwerem)
-
 
 1. instalacja chrony 
 
@@ -592,9 +548,41 @@ server 169.254.169.123 iburst
           RTC in local TZ: no
 ```
 
+# Managing schedulded tasks
+- [Spis treści](#spis-treści)
 
 
+## cron
+- ```dnf list --installed cronie``` - sprawdzenie czy **cron** jest zainstalowany
+- ```systemctl status crond.service``` - sprawdzenie czy działa uzługa **cron**
+- ```cronnext -c``` pokazuje datę wszystkich następnych **cronjobów** 
 
+
+### Budowa pliku ```/etc/crontab``` 
+
+```
+Example of job definition:  
+.---------------- minute (0 - 59)  
+|  .------------- hour (0 - 23)  
+|  |  .---------- day of month (1 - 31)  
+|  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...  
+|  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat  
+|  |  |  |  |  
+*  *  *  *  * user-name  command to be executed  
+```
+
+## at
+- ```dnf list --installed at``` - sprawdzenie czy **at** jest zainstalowany
+- ```systemctl status atd.service``` - sprawdzenie czy działa uzługa **at**
+- ```atq``` - kolejka at
+---
+- Można wywoływać komendę o konkretnej godzine lub po jakimś czasie, np. at 20:00 lub at +7 days 
+
+```
+sudo at 20:00 
+>at command to execute
+*ctrl+d*
+```
 
 # Storage 
 ## Montowanie
@@ -609,7 +597,7 @@ server 169.254.169.123 iburst
 ## Filesystemy
 - [Spis treści](#spis-tre%C5%9Bci)
 
-#### Comparison of tools used with ext4 and XFS
+### Comparison of tools used with ext4 and XFS
 
 | Task | ext4 | XFS |
 |------|------|-----|
@@ -688,8 +676,8 @@ Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
 - [Poradnik od RedHata](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/vdo-quick-start)
 
 ### #TODO - opisać bardziej
+- VDO będzie na egzaminie, ogarnąć co i jak !
 
-VDO będzie na egzaminie, ogarnąć co i jak !
 
 ### Instalacja
 
@@ -697,16 +685,16 @@ VDO będzie na egzaminie, ogarnąć co i jak !
 dnf install vdo kmod-kvdo
 ```
 
-Utworzenie VDO
+#### Cwiczenie - Utworzenie VDO
 
 Replace logical_size with the amount of logical storage that the VDO volume should present:
 
 
- vdo create \
-       --name=vdo_name \
-       --device=block_device \
-       --vdoLogicalSize=logical_size \
-       [--vdoSlabSize=slab_size]
+- vdo create \
+    - --name=vdo_name \
+    - --device=block_device \
+    - --vdoLogicalSize=logical_size \
+    - [--vdoSlabSize=slab_size]
 
 ```console
 Create a file system:
@@ -741,9 +729,9 @@ Za pomocą vdo możemy
 [Pytanie dotyczące VDO](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md)  
 [artykuł jak to działa](https://hobo.house/2018/09/13/using-vdo-on-centos-rhel7-for-storage-efficiency/)  
 
-**WAŻNE!** - VDO działa jako demon!
+- **WAŻNE!** - VDO działa jako demon!
 
-vdo create 
+```vdo create ```
 
 ### Tworzenie VDO
 
@@ -776,16 +764,14 @@ Zamontowanie filesystemu
 
 ## Logi 
 
-
+- [Spis treści](#spis-tre%C5%9Bci)
 - [RH - How to configure your system to preserve system logs after a reboot](https://www.redhat.com/sysadmin/store-linux-system-journals)
 - [RH - Chapter 23. Viewing and Managing Log Files](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-viewing_and_managing_log_files)
 
-[Spis treści](#spis-tre%C5%9Bci)
 
 ## Understanding Logging and Using Persistent Journals on RHEL 8
 
 ```grep "$nazwa_szukanej_usługi" `find /var/log -maxdepth 1 -type f` | less ``` - Dobrze jest grepować logi w /var/log, w ten sposób dowiemy się które pliki zawierają logi o nazej usłudze
-
 
 - ```journalctl``` - dziennik zdarzeń dla **systemd**, standardowo resetowany przy reboocie
     - ```journalctl -k``` - Wyświetla komunikaty tylko **na temat jądra**   `
@@ -822,11 +808,8 @@ Zmieniamy zmienną ```Storage```
 #RateLimitBurst=10000
 ```
 
-
-
 # Uprawnienia
 - [Spis treści](#spis-tre%C5%9Bci)
-
 
 ## SUID, SGID, Sticky bit
 - [Spis treści](#spis-tre%C5%9Bci)
