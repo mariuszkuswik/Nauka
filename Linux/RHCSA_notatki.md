@@ -4,9 +4,7 @@
 - [Red hat - sysadmin](https://www.redhat.com/sysadmin/)
 
 
-
 # Spis treści
-
 1. [Pomoc](#pomoc)
 1. [Przywracanie hasła roota](#Przywracanie-hasła-roota)
 1. [Selinux](#selinux)
@@ -55,7 +53,7 @@
   
 
 # Chlebik
-[Spis treści](#spis-tre%C5%9Bci)
+- [Spis treści](#spis-tre%C5%9Bci)
 
 | Zadanko | Notatki | Czy opanowane |
 |--|--|--|
@@ -95,7 +93,7 @@
 | [034_containers](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/034_containers.md) | [Kontenery](#Kontenery) | tak trochę ogarniam, przećwiczyć |
 
 # CG 
-[Spis treści](#spis-tre%C5%9Bci)
+- [Spis treści](#spis-tre%C5%9Bci)
 
 | Zadanko | Notatki | Czy opanowane |
 |--|--|--|
@@ -1604,9 +1602,7 @@ All files put into the "shared" directory by "steve" or "oliver" should belong t
 
 
 # Przed egzaminem 
-[Spis treści](#spis-treści)
-dnf-config-manager - upraszcza dodawanie repo 
-
+- [Spis treści](#spis-treści)
 
 ### Ogolne 
 - [Przywracanie hasła roota](#przywracanie-hasła-roota)
@@ -1621,6 +1617,7 @@ dnf-config-manager - upraszcza dodawanie repo
 - ```man sh``` - lista zmiennych specjalnych
 
 ### Repo
+- ```dnf-config-manager``` - upraszcza dodawanie repo 
 - ```dnf repolist``` - listuje repo i sprawdza je
 
 ```
@@ -1649,8 +1646,7 @@ podman generate systemd - generuje plik systemd który z nazwą service kopiujem
 
 
 ### Narzędzie do edycji parametrów konsoli?
-
-grubby –update-kernel=ALL –args="console=ttyS0"
+- ```grubby –update-kernel=ALL –args="console=ttyS0"```
 
 ### TODO 
 ### Dopisać coś na temat zmiany configu bootowania?
@@ -1688,7 +1684,6 @@ you could also use /etc/hosts.allow
 
 
 ## ftp
-
 ```console
 # vi /etc/sysconfig/iptables-config
 IPTABLES_MODULES=”nf_conntrack_ftp nf_nat_ftp”
@@ -1699,8 +1694,8 @@ IPTABLES_MODULES=”nf_conntrack_ftp nf_nat_ftp”
 # vi /etc/hosts.deny
 vsftpd: .hackers.net: DENY
 ```
-### httpd
 
+### httpd
 ```console
 # vi /etc/httpd/conf/httpd.conf
 Order allow,deny
@@ -1742,8 +1737,6 @@ Allow from 127.0.0.1 server1.example.com
 
 
 
-
-
 https://askubuntu.com/questions/1148620/rc-local-to-be-executed-at-boot
 . You can find a rc.local in there that has a remark about it running /etc/rc.local if present. That is the one you probably are expected to create.
 
@@ -1752,6 +1745,7 @@ In /etc/rc.local you can put scripts to be executed at a run-level.
 Example file with 1 line added:
 
 $ more /etc/rc.local
+
 #!/bin/sh -e
 #
 # rc.local
@@ -1772,6 +1766,5 @@ exit 0
 
 # Koniec
 
-
-[Spis treści](#spis-tre%C5%9Bci)
+- [Spis treści](#spis-tre%C5%9Bci)
 
