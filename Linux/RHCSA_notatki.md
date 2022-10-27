@@ -1477,20 +1477,30 @@ GRUB_TIMEOUT=15
     - ```systemctl --user start|stop|enable UNIT``` - Zarządzanie usługami systemd użytkownika
         - ```systemctl --user enable --now container-myubi.service``` - Uruchomienie usługi kontenera przy starcie systemu
 
-### Rootless container procedura
+### Rootless container - procedura
 #### CG - Zalozenia
 - serrice: httpd
 - user: cloud_user
 - shared folder: ~/web_data:/var/www/html
 - port: 8000:8080
 
-1. ```mkdir -p /home/cloud_user/.config/systemd/user```
-2. ```podman run -d --name web_server -p 8000:8080 -v "~/web_data:/var/www/html:Z" "$container_image"```
+1. ```mkdir -p /home/cloud_user/.config/systemd/user``` - katalog dla zwyklego usera
+2. ```podman run -d --name web_server -p 8000:8080 -v "~/web_data:/var/www/html:Z" "$container_image"``` tworzenie kontenera w trybie detach 
 3. ```podman ps -a``` - wyswietlenie kontenerow ktore dzialaja
 4. ```curl 127.0.0.1:8000``` / ```curl http://127.0.0.1:8000/text.txt```
-5. 
-
-
+5. ```podman generate systemd --name web_server --files --new``` - ### TODO - sprawdzic opcje
+6. cp plik do katalogu
+6. podman stop web_server 
+7. podman rm web_server 
+8. podman ps -a - potwierdzenie, ze zostal usuniety 
+9. loginctl enable-linger cloud_user
+10. loginctl show-user cloud_user | grep linger 
+11. systemctl --user daemon-reload
+12. systemctl --user enable --now container-web_server.service
+13. systemctl --user status container-web_server.service
+14. ```curl http://127.0.0.1:8000/text.txt```
+15. systemctl reboot now - reboot dla potiwerdzenia 
+14. ```curl http://127.0.0.1:8000/text.txt``` - potiwerdzenie po reboocie 
 
 
 1. loginctl enable-linger "$user" ?
