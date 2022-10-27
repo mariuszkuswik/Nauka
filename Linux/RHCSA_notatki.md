@@ -1478,6 +1478,21 @@ GRUB_TIMEOUT=15
         - ```systemctl --user enable --now container-myubi.service``` - Uruchomienie usługi kontenera przy starcie systemu
 
 ### Rootless container procedura
+#### CG - Zalozenia
+- serrice: httpd
+- user: cloud_user
+- shared folder: ~/web_data:/var/www/html
+- port: 8000:8080
+
+1. ```mkdir -p /home/cloud_user/.config/systemd/user```
+2. ```podman run -d --name web_server -p 8000:8080 -v "~/web_data:/var/www/html:Z" "$container_image"```
+3. ```podman ps -a``` - wyswietlenie kontenerow ktore dzialaja
+4. ```curl 127.0.0.1:8000``` / ```curl http://127.0.0.1:8000/text.txt```
+5. 
+
+
+
+
 1. loginctl enable-linger "$user" ?
 2. loginctl show-user "$user" - sprawdzenie czy linger jest wlaczony dla uzytkownika?
 2. podman generate systemd
