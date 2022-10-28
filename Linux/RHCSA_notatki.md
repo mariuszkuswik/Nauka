@@ -1420,6 +1420,7 @@ GRUB_TIMEOUT=15
   
 ## Pomoc 
 - ```man -k podman``` - wyświetla wszystkie potrzebne komendy podmana   
+- ```man podman-generate-systemd``` - pomaga w instalacji dla zwyklego uzytkownika, dobrze grepowac "home"
 
 ## Instalacja
 - ```dnf module install -y container-tools``` - instaluje podmana i container-tools
