@@ -636,22 +636,29 @@ lsblk
 
 ## Stratis 
 - [Spis treści](#spis-tre%C5%9Bci)
-
+---
 ### #TODO - opisać bardziej 
-
-- [Stratis how to, pisemny](https://stratis-storage.github.io/howto/)  
+- [Stratis - ogolna strona + how_to](https://stratis-storage.github.io/howto/)  
 - [Stratis filmik](https://www.youtube.com/watch?v=CJu3kmY-f5o&t=200s)  
 
+1.  Instalacja 
+```sudo dnf install stratis-cli stratisd -y```
 
-1. Instalacja 
 ```console
 dnf whatprovides */stratis
-
 dnf install stratisd stratis-cli
 ```
 
-2. 
+2.  Uruchomienie uslugi 
+```sudo systemctl enable --now stratisd.service```
 
+### Z czego sklada sie Stratis
+- Stratis Block device 
+    - Stratic może leżeć na dowolnym urządzeniu blokowym, tj. partycja, LVM czy RAID
+- Stratis Pool
+    - Jej wielkość to suma powierzchni na block devices 
+    - Każda poola ma katalog /stratis/"$pool_name" który prowadzi do filesystemu Stratis
+    - 
 
 
 Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
@@ -663,12 +670,6 @@ Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
 5. Utwórz punkt montowania i zamontuj system plików: ...
 6. Dodaj więcej bloków do istniejącej puli:
 
-
-- Instalacja 
-```sudo dnf install stratis-cli stratisd -y```
-
-- Uruchomienie 
-```sudo systemctl enable --now stratisd.service```
 
 
 ## VDO
@@ -1402,6 +1403,7 @@ GRUB_TIMEOUT=15
 [Spis treści](#spis-tre%C5%9Bci)
 
 ### Tutoriale
+- [RH - podman rootless container procedura](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/building_running_and_managing_containers/assembly_porting-containers-to-systemd-using-podman_building-running-and-managing-containers#proc_enabling-systemd-services_assembly_porting-containers-to-systemd-using-podman)
 - [RSYSLOG - aktualny forum](https://learn.redhat.com/t5/Platform-Linux/How-to-install-the-containerized-version-of-rhel8-rsyslog/td-p/20887)
     - [RSYSLOG2](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/building_running_and_managing_containers/index#assembly_running-special-container-images_building-running-and-managing-containers)
 - [RH - lab kontenery](https://developers.redhat.com/learn/lessons/deploying-containers-podman?intcmp=7013a0000026UTXAA2)
@@ -1419,6 +1421,7 @@ GRUB_TIMEOUT=15
   
 ## Pomoc 
 - ```man -k podman``` - wyświetla wszystkie potrzebne komendy podmana   
+- ```man podman-generate-systemd``` - pomaga w instalacji dla zwyklego uzytkownika, dobrze grepowac "home"
 
 ## Instalacja
 - ```dnf module install -y container-tools``` - instaluje podmana i container-tools
@@ -1477,7 +1480,33 @@ GRUB_TIMEOUT=15
     - ```systemctl --user start|stop|enable UNIT``` - Zarządzanie usługami systemd użytkownika
         - ```systemctl --user enable --now container-myubi.service``` - Uruchomienie usługi kontenera przy starcie systemu
 
-### Rootless container procedura
+### Rootless container - procedura
+- [RH - podman rootless container procedura](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/building_running_and_managing_containers/assembly_porting-containers-to-systemd-using-podman_building-running-and-managing-containers#proc_enabling-systemd-services_assembly_porting-containers-to-systemd-using-podman)
+#### CG - Zalozenia
+- serrice: httpd
+- user: cloud_user
+- shared folder: ~/web_data:/var/www/html
+- port: 8000:8080
+
+1. ```mkdir -p /home/cloud_user/.config/systemd/user``` - katalog dla zwyklego usera
+2. ```podman run -d --name web_server -p 8000:8080 -v "~/web_data:/var/www/html:Z" "$container_image"``` tworzenie kontenera w trybie detach 
+3. ```podman ps -a``` - wyswietlenie kontenerow ktore dzialaja
+4. ```curl 127.0.0.1:8000``` / ```curl http://127.0.0.1:8000/text.txt```
+5. ```podman generate systemd --name web_server --files --new``` - ### TODO - sprawdzic opcje
+6. cp plik do katalogu
+6. podman stop web_server 
+7. podman rm web_server 
+8. podman ps -a - potwierdzenie, ze zostal usuniety 
+9. loginctl enable-linger cloud_user
+10. loginctl show-user cloud_user | grep linger 
+11. systemctl --user daemon-reload
+12. systemctl --user enable --now container-web_server.service
+13. systemctl --user status container-web_server.service
+14. ```curl http://127.0.0.1:8000/text.txt```
+15. systemctl reboot now - reboot dla potiwerdzenia 
+14. ```curl http://127.0.0.1:8000/text.txt``` - potiwerdzenie po reboocie 
+
+
 1. loginctl enable-linger "$user" ?
 2. loginctl show-user "$user" - sprawdzenie czy linger jest wlaczony dla uzytkownika?
 2. podman generate systemd
