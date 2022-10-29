@@ -653,12 +653,26 @@ dnf install stratisd stratis-cli
 ```sudo systemctl enable --now stratisd.service```
 
 ### Z czego sklada sie Stratis
-- Stratis Block device 
+- Stratis Block device - Linux block devices
     - Stratic może leżeć na dowolnym urządzeniu blokowym, tj. partycja, LVM czy RAID
-- Stratis Pool
+    - Disk (HDD/SSD/NVMe)
+    - Partition
+    - LVM logical volume
+    - LUKS
+    - MD RAID
+- Stratis Pool - One or more block devices
     - Jej wielkość to suma powierzchni na block devices 
     - Każda poola ma katalog /stratis/"$pool_name" który prowadzi do filesystemu Stratis
-    - 
+    - Size is the sum of the block devices in the pool
+    - Each pool has a /stratis/<poolname> directory with links to Stratis file systems
+    - Pool can contain one or more file systems
+- Stratis File System
+    - No fixed size
+    - Thinly provisioned
+    - Supports snapshots
+    - Formatted with xfs, managed via Stratis.
+    - Do not try to manage Stratis file systems with xfs tools!
+
 
 
 Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
