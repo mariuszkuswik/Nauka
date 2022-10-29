@@ -998,9 +998,9 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 # Runlevele 
 [Spis treści](#spis-tre%C5%9Bci)  
 
-- ```# systemctl set-default graphical.target``` - ustawia tryb graficzny jako działający domyślnie 
-- ```# systemctl set-default multi-user.target``` - ustawia tryb tekstowy jako działający domyślnie 
-- ```# systemctl get-default``` - wyświetla obecny defaultowy target 
+- ```systemctl set-default graphical.target``` - ustawia tryb graficzny jako działający domyślnie 
+- ```systemctl set-default multi-user.target``` - ustawia tryb tekstowy jako działający domyślnie 
+- ```systemctl get-default``` - wyświetla obecny defaultowy target 
 
 # autofs 
 [Spis treści](#spis-tre%C5%9Bci)
