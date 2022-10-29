@@ -636,22 +636,29 @@ lsblk
 
 ## Stratis 
 - [Spis treści](#spis-tre%C5%9Bci)
-
+---
 ### #TODO - opisać bardziej 
-
-- [Stratis how to, pisemny](https://stratis-storage.github.io/howto/)  
+- [Stratis - ogolna strona + how_to](https://stratis-storage.github.io/howto/)  
 - [Stratis filmik](https://www.youtube.com/watch?v=CJu3kmY-f5o&t=200s)  
 
+1.  Instalacja 
+```sudo dnf install stratis-cli stratisd -y```
 
-1. Instalacja 
 ```console
 dnf whatprovides */stratis
-
 dnf install stratisd stratis-cli
 ```
 
-2. 
+2.  Uruchomienie uslugi 
+```sudo systemctl enable --now stratisd.service```
 
+### Z czego sklada sie Stratis
+- Stratis Block device 
+    - Stratic może leżeć na dowolnym urządzeniu blokowym, tj. partycja, LVM czy RAID
+- Stratis Pool
+    - Jej wielkość to suma powierzchni na block devices 
+    - Każda poola ma katalog /stratis/"$pool_name" który prowadzi do filesystemu Stratis
+    - 
 
 
 Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
@@ -663,12 +670,6 @@ Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
 5. Utwórz punkt montowania i zamontuj system plików: ...
 6. Dodaj więcej bloków do istniejącej puli:
 
-
-- Instalacja 
-```sudo dnf install stratis-cli stratisd -y```
-
-- Uruchomienie 
-```sudo systemctl enable --now stratisd.service```
 
 
 ## VDO
