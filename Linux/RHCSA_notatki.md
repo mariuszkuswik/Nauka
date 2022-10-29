@@ -677,10 +677,63 @@ dnf install stratisd stratis-cli
 
 Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
 
-1. Zainstaluj pakiety Stratis: ...
-2. Włącz i uruchom usługę Stratisd: ...
-3. Utwórz pulę: ...
-4. Utwórz system plików w nowo utworzonej puli „Stratis_Test”: ...
+1. Zainstaluj pakiety Stratis:
+```
+dnf install stratisd stratis-cli
+```
+2. Włącz i uruchom usługę Stratisd:
+```
+systemctl start stratisd
+systemctl enable stratisd
+```
+3. Zlokalizuj urządzenia na których chcesz stawiać pulę
+```
+lsblk
+```
+3. Utwórz pulę: 
+- A pool with one block device.
+```
+# stratis pool create "$stratis_pool_name" /dev/sdb
+
+# stratis pool list
+Name             Total Physical Size  Total Physical Used
+"$stratis_pool_name"                  1 TiB               52 MiB
+```
+
+- A pool with 2 block devices (no redundancy).
+```
+# stratis pool create tale_of_2_disks /dev/sdd /dev/sdf
+
+# stratis pool list
+Name               Total Physical Size  Total Physical Used
+"$stratis_pool_name"                    1 TiB               52 MiB
+tale_of_2_disks                 16 GiB               56 MiB
+```
+
+4. Utwórz system plików w nowo utworzonej puli „Stratis_Test”: 
+```
+# stratis filesystem create "$stratis_pool_name" fs_howto
+
+# stratis filesystem list
+Pool Name      Name      Used     Created            Device
+"$stratis_pool_name"  fs_howto  546 MiB  Nov 09 2018 11:08  /dev/stratis/"$stratis_pool_name"/fs_howto
+```
+
+5. To create another file system, just repeat the same command with a different file system name. The file system names are required to be unique in a pool.
+```
+# stratis filesystem create stratis_howto my_precious
+
+# stratis filesystem list
+Pool Name      Name         Used     Created            Device
+stratis_howto  fs_howto     546 MiB  Nov 09 2018 11:08  /dev/stratis/stratis_howto/fs_howto
+stratis_howto  my_precious  546 MiB  Nov 09 2018 11:09  /dev/stratis/stratis_howto/my_precious
+```
+
+6. Mount the file system
+Dodanie UUID ```/dev/stratis/"$pool_name"/"$filesystem_name"```
+
+
+
 5. Utwórz punkt montowania i zamontuj system plików: ...
 6. Dodaj więcej bloków do istniejącej puli:
 
