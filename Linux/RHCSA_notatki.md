@@ -617,6 +617,12 @@ File mapping | filefrag | xfs_bmap
 
 ### ext4
 
+- ```e2fsck``` - srawdzenie filesystemu 
+- ```resize2fs``` - zmiana wielkości filesystemu
+
+#### Rozszerzanie filesystemu
+- ```resize2fs /dev/vdb2``` - filesystem zajmie cala dostepna powierzchnie partycji 
+
 
 ## LVM 
 - [Spis treści](#spis-tre%C5%9Bci)
