@@ -1708,7 +1708,8 @@ All files put into the "shared" directory by "steve" or "oliver" should belong t
 ### Storage
 - [Sprawdzene poprawnosci fstab](https://sleeplessbeastie.eu/2019/01/21/how-to-verify-fstab-file/)
     - ```findmnt --verify``` - komenda sprawdzajaca poprawnosc fstab
-
+- Pamiętać o dodawaniu ```nofail``` do filesystemów w fstabie!
+ 
 ### Skrypty
 - ```man sh``` - lista zmiennych specjalnych
 
