@@ -644,7 +644,6 @@ File mapping | filefrag | xfs_bmap
 ## LVM 
 - [Spis treści](#spis-tre%C5%9Bci)
 
-
 - ```/dev/mapper/"$group_name"-"$lv_name"``` - ścieżka do utworzonego lvm
 
 ### Opisy skrócone
@@ -656,6 +655,13 @@ File mapping | filefrag | xfs_bmap
 - ```pvdisplay``` - physical volume 
 - ```vgdisplay``` - volume group
 - ```lvdisplay``` - lvm 
+
+- ```pvcreate```
+- ```vgcreate```
+- ```lvcreate``` 
+    - ```-l``` - **liczba extent** z której chcemy utworzyć lvm (wielkość extent jest ustawiony przy volume grupie)
+
+
 
 ### Ćwiczenie : 
 Create a new physical volume with volume group in the name of datacontainer, the extent of VG should be 16MB. Also create new logical volume with name datacopy with the size of 50 extents and filesystem vfat mounted under /datasource.
