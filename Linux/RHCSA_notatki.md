@@ -146,7 +146,7 @@ You are new System Administrator and from now you are going to handle the system
 ### In RHEL8
 - reboot the system
 - press "e" letter
-- Add "rd.break" at the end of de line thet begening with "Linux" in grub menu
+- Add "rd.break" or "init=/bin/bash" at the end of de line thet begening with "Linux" in grub menu
 - ctrl + x
 
 # mount -o remount,rw /sysroot
