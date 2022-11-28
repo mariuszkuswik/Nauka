@@ -58,9 +58,9 @@
 | Zadanko | Notatki | Czy opanowane |
 |--|--|--|
 | [001_restore_root_password](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/001_restore_root_password.md) | [Przywracanie hasła roota](#Przywracanie-hasła-roota) | |
-| [002_setup_network_parameters](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/002_setup_network_parameters.md) |  | |
-| [003_change_hostname]( https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/003_change_hostname.md) |  |  |
-| [004_enable_selinux](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/004_enable_selinux.md) |[Selinux](#selinux) |  |
+| [002_setup_network_parameters](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/002_setup_network_parameters.md) | [Sieci](#sieci) | |
+| [003_change_hostname]( https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/003_change_hostname.md) | [Hostname](#hostname) | + |
+| [004_enable_selinux](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/004_enable_selinux.md) |[Selinux](#selinux) | + |
 | [005_install_apache_and_give_it_permission_to_nfs_resource](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/005_install_apache_and_give_it_permission_to_nfs_resource.md) | [Selinux](#selinux) - /var/log/messages |  |
 | [006_extend_existing_lv_add_label](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/006_extend_existing_lv_add_label.md) | [LVM](#lvm) | | 
 | [007_assign_sel_context_to_the_directory](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/007_assign_sel_context_to_the_directory.md) | [Selinux](#selinux) - man semanage-fcontext, **jest w przykładach** |  |
@@ -81,7 +81,7 @@
 | [022_configure_autofs](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/022_configure_autofs.md) | [Autofs](#autofs) |  |
 | [023_configure_ntp_on_the_client](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/023_configure_ntp_on_the_client.md) | [Kontrola czasu w RHEL](#Kontrola-czasu-w-RHEL) |  |
 | [024_access_rights_for_file](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/024_access_rights_for_file.md) | [ACL](#acl) | |
-| [025_create_whole_lvm_stack](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/025_create_whole_lvm_stack.md) | [LVM](#LVM) Dodać extent of VG should be 16MB do notatek | obecnie |
+| [025_create_whole_lvm_stack](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/025_create_whole_lvm_stack.md) | [LVM](#LVM) Dodać extent of VG should be 16MB do notatek | + |
 | [026_reduce_the_size_of_lv](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/026_reduce_the_size_of_lv.md) | [LVM](#lvm) |  |
 | [027_create_compressed_archive](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/027_create_compressed_archive.md) | [Archiwizowanie](#archiwizowanie) |  |
 | [028_search_string_using_grep_and_redirect](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/028_search_string_using_grep_and_redirect.md) | [Wyszukiwanie plików](#wyszukiwanie-plik%C3%B3w) | |
@@ -117,7 +117,6 @@
 [Spis treści](#spis-tre%C5%9Bci)
 
 ## Wyszukiwanie pomocy
-
 - ```apropos``` wyszukuje strony w pomocy, podobnie jak *man -k*
 - ```man -k``` - wyszukuje strony w pomocy 
 - ```man -K``` - szuka we **wszystkich** plikach pomocy
@@ -126,7 +125,6 @@
 - locate "$szukana_komenda" - powinno wylistować pliki z pomocą 
 
 ## Man
-
 - ```man man``` - manual do ```man```
 - ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU
 
@@ -136,12 +134,11 @@
 
 
 ## /usr/share/doc
-
 Dodatkowa dokumentacja 
 
 
 # Przywracanie hasła roota
-[Spis treści](#spis-tre%C5%9Bci)
+- [Spis treści](#spis-tre%C5%9Bci)
 
 You are new System Administrator and from now you are going to handle the system and your main task is Network monitoring, Backup and Restore. But you don't know the root password. Change the root password to redhat and login in default Runlevel.
 
@@ -149,7 +146,7 @@ You are new System Administrator and from now you are going to handle the system
 ### In RHEL8
 - reboot the system
 - press "e" letter
-- Add "rd.break" at the end of de line thet begening with "Linux" in grub menu
+- Add "rd.break" or "init=/bin/bash" at the end of de line thet begening with "Linux" in grub menu
 - ctrl + x
 
 # mount -o remount,rw /sysroot
@@ -163,11 +160,22 @@ You are new System Administrator and from now you are going to handle the system
 # logout
 ```
 
+# Hostname
+- ```hostnamectl``` - wyświetla aktualny hostname + informacje na temat systemu
+    - ```set-hostname``` - zmienia hostname na podany
+  
+- ```nmtui``` i ```nmcli``` również pozwalają na zmianę hostname 
+
+### WAŻNE!
+- zmiana w /etc/hostname jest niezalecana!
+
 # Sudoers
 - [Spis treści](#spis-tre%C5%9Bci)
 
 ### Linki
 - [Rhel sudoers](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/managing-sudo-access_configuring-basic-system-settings)
+
+### TODO - Dopisać coś
 
 ## Config
 - ```/etc/sudoers``` - ogólny 
@@ -177,7 +185,6 @@ You are new System Administrator and from now you are going to handle the system
     - hostname is the name of the host on which the rule applies.
     - path/to/command is the complete absolute path to the command. You can also limit the user to only performing a command with specific options and arguments by adding those options after the command path.   
     If you do not specify any options, the user can use the command with all options.  
-
 
 ### #TODO - opisać aliasy w sudoers
 
@@ -206,8 +213,7 @@ You'll need to configure three repositories and install some software:
 
 
 # Wyszukiwanie plików 
-
-[Spis treści](#spis-tre%C5%9Bci)
+- [Spis treści](#spis-tre%C5%9Bci)
 
 ## find
 - ```find```
@@ -224,16 +230,13 @@ locate działa na podstawie bazy danych, domyślnie aktualizowana jest raz dzien
 - ```updatedb``` - aktualizuje bazę locate
 - ```locate "$file_name"``` - wyszukuje plik na podstawie indeksowanej bazy danych
 
-
 ## grep 
 ### #TODO - może coś dopisać
-
 - ```grep "$wyszukiwana_fraza" "$nazwa_pliku"```
 
 
 # Uzytkownicy
 [Spis treści](#spis-tre%C5%9Bci)
-
 
 ## Tworzenie nowych 
 ### Configi
@@ -590,6 +593,7 @@ sudo at 20:00
 - [RH - Mounting file systems](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_file_systems/assembly_mounting-file-systems_managing-file-systems)
 ---
 
+### WAŻNE!
 - ```findmnt``` - wyświetla zamontowane filesystemy 
     - findmnt --types xfs - listuje tylko filesystemy xfs
 
@@ -643,17 +647,39 @@ File mapping | filefrag | xfs_bmap
 ## LVM 
 - [Spis treści](#spis-tre%C5%9Bci)
 
+- ```/dev/mapper/"$group_name"-"$lv_name"``` - ścieżka do utworzonego lvm
+
+### Opisy skrócone
+- ```pvs``` - physical volume 
+- ```vgs``` - volume group
+- ```lvs``` - lvm 
+
+### Opisy długie
+- ```pvdisplay``` - physical volume 
+- ```vgdisplay``` - volume group
+- ```lvdisplay``` - lvm 
+
+- ```pvcreate```
+- ```vgcreate```
+- ```lvcreate``` 
+    - ```-l``` - **liczba extent** z której chcemy utworzyć lvm (wielkość extent jest ustawiony przy volume grupie)
+
+
+
 ### Ćwiczenie : 
 Create a new physical volume with volume group in the name of datacontainer, the extent of VG should be 16MB. Also create new logical volume with name datacopy with the size of 50 extents and filesystem vfat mounted under /datasource.
 
 
 1. Before any kind of operations on partitions it is good to know what we actually have in the system.
-
-```console
+```
 lsblk
 ```
 
-2. 
+2. Backup fstab file
+```
+cp /etc/fstab ~/fstab
+```
+
 
 
 ## Stratis 
