@@ -58,7 +58,7 @@
 | Zadanko | Notatki | Czy opanowane |
 |--|--|--|
 | [001_restore_root_password](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/001_restore_root_password.md) | [Przywracanie hasła roota](#Przywracanie-hasła-roota) | |
-| [002_setup_network_parameters](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/002_setup_network_parameters.md) | [Sieci](#sieci) | |
+| [002_setup_network_parameters](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/002_setup_network_parameters.md) | [Sieci](#sieci) | + |
 | [003_change_hostname]( https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/003_change_hostname.md) | [Hostname](#hostname) | + |
 | [004_enable_selinux](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/004_enable_selinux.md) |[Selinux](#selinux) | + |
 | [005_install_apache_and_give_it_permission_to_nfs_resource](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/005_install_apache_and_give_it_permission_to_nfs_resource.md) | [Selinux](#selinux) - /var/log/messages |  |
@@ -1730,6 +1730,7 @@ All files put into the "shared" directory by "steve" or "oliver" should belong t
 - [Przywracanie hasła roota](#przywracanie-hasła-roota)
 - [man](#man)
     - ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU
+- ```bc``` - basic calculator 
 
 ### Storage
 - [Sprawdzene poprawnosci fstab](https://sleeplessbeastie.eu/2019/01/21/how-to-verify-fstab-file/)
@@ -1793,20 +1794,18 @@ OPISAĆ
 
 I just added the following to the drop zone and it worked without any issue:
 
-firewall-cmd --zone=drop --add-source=x.x.x.x/xx
+```firewall-cmd --zone=drop --add-source=x.x.x.x/xx```
 
 replace x.x.x.x with the IP and you can add the subnet under /xx
 
 reguły dla danej strefy, do drop dodajemy źródłą które chcemy blokować 
-```
-firewall-cmd --zone=drop --list-all
-```
+```firewall-cmd --zone=drop --list-all```
 
 you could also use /etc/hosts.allow
 /etc/hosts.deny
 
 
-## ftp
+# ftp
 ```console
 # vi /etc/sysconfig/iptables-config
 IPTABLES_MODULES=”nf_conntrack_ftp nf_nat_ftp”
@@ -1818,7 +1817,7 @@ IPTABLES_MODULES=”nf_conntrack_ftp nf_nat_ftp”
 vsftpd: .hackers.net: DENY
 ```
 
-### httpd
+# httpd
 ```console
 # vi /etc/httpd/conf/httpd.conf
 Order allow,deny
@@ -1841,7 +1840,7 @@ Allow from 127.0.0.1 server1.example.com
     - zablokowanie logowania do shella
 - Kontenery 
     - rsyslog - ma logować dla jakiegoś systemu, jak to sprawdzić 
-    - musiałem stawiać kontenery jako root, sprawdzić dlaczego 
+    - kontener musi być postawiony jako zwykły user
     - pobieranie kontenerów ze zdalnego repozytorium 
 - VDO
     - założenie filesystemu z miejscem logicznym
