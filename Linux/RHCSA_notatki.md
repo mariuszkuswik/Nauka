@@ -1023,7 +1023,6 @@ WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli wys
 
 
 ### getfacl, pobieranie nadanych ACL  
-
 - ```getfacl "$shared_directory"``` - Wyświetla ACLki dla pliku    
     ```console
     $ getfacl ./a1
@@ -1041,7 +1040,6 @@ WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli wys
 - ```setfacl -m u:jill:r-- "$shared_directory"``` - ustawia uprawnienia 
 
 ### setfacl, dodawanie ACL 
-
 - ```setfacl``` - modyfikuje uprawnienia (**--modify**) lub usuwa uprawnienia ACL (**--remove**) 
     - ```setfacl --modify u:"$nazwa_użytkownika":rwx "$nazwa_folderu"``` - setfacl modyfikuje uprawnienia dla folderu *nazwa_folderu*, 
         - ```u``` - wskazuje na nadanie uprawnień użytkownikowi 
