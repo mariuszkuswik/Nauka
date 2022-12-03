@@ -62,7 +62,7 @@
 | [003_change_hostname]( https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/003_change_hostname.md) | [Hostname](#hostname) | + |
 | [004_enable_selinux](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/004_enable_selinux.md) |[Selinux](#selinux) | + |
 | [005_install_apache_and_give_it_permission_to_nfs_resource](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/005_install_apache_and_give_it_permission_to_nfs_resource.md) | [Selinux](#selinux) - /var/log/messages |  |
-| [006_extend_existing_lv_add_label](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/006_extend_existing_lv_add_label.md) | [LVM](#lvm) | | 
+| [006_extend_existing_lv_add_label](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/006_extend_existing_lv_add_label.md) | [LVM](#lvm) | + | 
 | [007_assign_sel_context_to_the_directory](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/007_assign_sel_context_to_the_directory.md) | [Selinux](#selinux) - man semanage-fcontext, **jest w przykładach** | + |
 | [008_create_users_with_specified_uid](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/008_create_users_with_specified_uid.md) | [Tworzenie użytkowników](#Tworzenie-użytkowników) |  |
 | [009_allow_other_user_to_get_access_to_home_dir](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/009_allow_other_user_to_get_access_to_home_dir.md) | [ACL](#acl) | |
