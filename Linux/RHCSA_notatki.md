@@ -80,7 +80,7 @@
 | [021_configure_ldap_authentication](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/021_configure_ldap_authentication.md) | - | **nie ma na egzaminie** |
 | [022_configure_autofs](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/022_configure_autofs.md) | [Autofs](#autofs) |  |
 | [023_configure_ntp_on_the_client](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/023_configure_ntp_on_the_client.md) | [Kontrola czasu w RHEL](#Kontrola-czasu-w-RHEL) |  |
-| [024_access_rights_for_file](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/024_access_rights_for_file.md) | [ACL](#acl) | |
+| [024_access_rights_for_file](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/024_access_rights_for_file.md) | [ACL](#acl) | + |
 | [025_create_whole_lvm_stack](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/025_create_whole_lvm_stack.md) | [LVM](#LVM) Dodać extent of VG should be 16MB do notatek | + |
 | [026_reduce_the_size_of_lv](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/026_reduce_the_size_of_lv.md) | [LVM](#lvm) |  |
 | [027_create_compressed_archive](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/027_create_compressed_archive.md) | [Archiwizowanie](#archiwizowanie) | + |
