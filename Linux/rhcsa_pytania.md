@@ -1111,6 +1111,12 @@ sudo chage -M 120 "$username
 ```
 
 # Open AI
+
+### Tekst do GPT
+Could you generate practice (not test) sample questions for RHCSA that I can resolve on my local machine?
+Please be specific about it, f.e "Create vdo volume from 5GiB patition" or "Create user assigned to testgrup with specific uid"
+You could ask me to use selinux,vdo or any other linux service.
+
 ## 1. 
 Create a new logical volume named "lvol1" with a size of 1GB in the volume group "vg01".
 
