@@ -1110,7 +1110,49 @@ useradd "$username"
 sudo chage -M 120 "$username
 ```
 
+# Open AI
+## 1. 
+Create a new logical volume named "lvol1" with a size of 1GB in the volume group "vg01".
 
+Modify the file permissions of the file "/etc/fstab" so that only the owner has read and write permissions, and others have only read permission.
+
+Set up a cron job to run the command "dnf update" every day at 10:00 AM.
+
+Configure SELinux to allow the Apache web server to access files in the directory "/var/www/html/".
+
+Create a new user named "user1" with a user ID (UID) of 1001 and a primary group ID (GID) of 1001, and assign them to the group "testgroup".
+
+Install and configure the Virtual Data Optimizer (VDO) on a device with a partition of 5GB.
+
+Set up a network interface with a static IP address of 192.168.0.10, a netmask of 255.255.255.0, and a default gateway of 192.168.0.1.
+
+Create a bash script that accepts a file name as an argument and displays the number of lines, words, and characters in the file.
+
+Use the "find" command to locate all files in the "/usr/local" directory that were modified within the last 24 hours, and have the owner set to "root".
+
+Configure a network bridge named "br0" that connects the Ethernet interface "eth0" to the WiFi interface "wlan0".
+
+## 2. 
+
+Create a new file system on the device "/dev/sdb1" and mount it at the mount point "/mnt/data".
+
+Configure the firewall to allow incoming SSH connections, but block all other incoming traffic.
+
+Use the "yum" command to install the package "nano" and all of its dependencies.
+
+Create a new user named "user2" with a user ID (UID) of 1002, a primary group ID (GID) of 1002, and a home directory of "/home/user2".
+
+Use the "systemctl" command to start the "httpd" service and enable it to start automatically on boot.
+
+Set up a network interface with a static IP address of 192.168.1.10, a netmask of 255.255.255.0, and a default gateway of 192.168.1.1.
+
+Use the "chmod" command to change the permissions of the directory "/var/www/html" so that the owner has read, write, and execute permissions, and others have only execute permission.
+
+Create a bash script that accepts a directory name as an argument and displays a list of all subdirectories and their sizes, sorted by size in descending order.
+
+Use the "rpm" command to query the package database for information about the package "httpd".
+
+Configure a network bridge named "br1" that connects the Ethernet interface "eth1" to the WiFi interface "wlan1".
 
 
 ## vander Exam 2 - odpowiedzi
