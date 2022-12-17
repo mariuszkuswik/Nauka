@@ -73,7 +73,7 @@
 | [014_add_entry_to_cron](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/014_add_entry_to_cron.md) | [Sysstat](#sar---sysstat) |  |
 | [015_set_default_system_level](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/015_set_default_system_level.md) | [Runlevele](#runlevele) | + |
 | [016_add_additional_remote_yum_repo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/016_add_additional_remote_yum_repo.md) | [Dnf](#dnf) | + |
-| [017_create_physical_partition_and_mount](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/017_create_physical_partition_and_mount.md) |  |  |
+| [017_create_physical_partition_and_mount](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/017_create_physical_partition_and_mount.md) |  | + |
 | [018_update_kernel_and_make_it_default_one](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/018_update_kernel_and_make_it_default_one.md) | [Grub/Kernel](#grubkernel) |  |
 | [019_create_users_with_secondary_groups](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/019_create_users_with_secondary_groups.md) | [Tworzenie użytkowników](#Tworzenie-użytkowników) |  |
 | [020_create_folders_with_group_access_rights](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/020_create_folders_with_group_access_rights.md) | [SUID, SGID, Sticky bit](#SUID,-SGID,-Sticky-bit) | + |
