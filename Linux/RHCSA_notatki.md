@@ -90,7 +90,7 @@
 | [031_finding_files](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/031_finding_files.md) | [Wyszukiwanie plików](#wyszukiwanie-plik%C3%B3w) | + |
 | [032_finding_files_with_given_text_in_them](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/032_finding_files_with_given_text_in_them.md) | [Wyszukiwanie plików](#Wyszukiwanie-plików)  | + |
 | [033_managing_layered_storage](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/033_managing_layered_storage.md) | [Stratis](#stratis) |   |
-| [034_containers](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/034_containers.md) | [Kontenery](#Kontenery) |   |
+| [034_containers](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/034_containers.md) | [Kontenery](#Kontenery) | + |
 
 # CG 
 - [Spis treści](#spis-tre%C5%9Bci)
