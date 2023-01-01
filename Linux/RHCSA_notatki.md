@@ -95,9 +95,9 @@
 # CG 
 - [Spis treści](#spis-tre%C5%9Bci)
 
-| Zadanko | Notatki | Czy opanowane |
+| Zadanko | Notatki | Czy wykonane |
 |--|--|--|
-| 1. [Create Users/Groups and Configure Superuser Access on Both Servers](egzamin_praktyczny_cg.md/#create-usersgroups-and-configure-superuser-access-on-both-servers) | test | test |   
+| 1. [Create Users/Groups and Configure Superuser Access on Both Servers](egzamin_praktyczny_cg.md/#create-usersgroups-and-configure-superuser-access-on-both-servers) | test | Dodani uzytkownicy + grupy, dalej do ogarniecia szybka automatuzacja |   
 | 2. [Configure yum Repositories on Both Servers and Install Packages/Modules](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules) | test | test |
 | 3. [Configure IP Addresses on the Second Network Interface on the First Server](egzamin_praktyczny_cg.md/#configure-ip-addresses-on-the-second-network-interface-on-the-first-server) | test | test |
 | 4. [Managing Tuned Profiles and Individual Processes](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules#managing-tuned-profiles-and-individual-processes) | test | test | 
