@@ -9,7 +9,6 @@
 1. [Przywracanie hasła roota](#Przywracanie-hasła-roota)
 1. [Selinux](#selinux)
 1. [Wyszukiwanie plików](#Wyszukiwanie-plików) 
-1. [Tworzenie użytkowników](#Tworzenie-użytkowników)
 1. [Firewall](#firewall)
 1. [Kontrola czasu w RHEL](#Kontrola-czasu-w-RHEL)
 1. [Managing schedulded tasks](#Managing-schedulded-tasks)
@@ -97,7 +96,7 @@
 
 | Zadanko | Notatki | Czy wykonane |
 |--|--|--|
-| 1. [Create Users/Groups and Configure Superuser Access on Both Servers](egzamin_praktyczny_cg.md/#create-usersgroups-and-configure-superuser-access-on-both-servers) | test | Dodani uzytkownicy + grupy, dalej do ogarniecia szybka automatuzacja |   
+| 1. [Create Users/Groups and Configure Superuser Access on Both Servers](egzamin_praktyczny_cg.md/#create-usersgroups-and-configure-superuser-access-on-both-servers) | [Użytkownicy](#użytkownicy), [Grupy użytkowników](#grupy-użytkowników) | Dodani uzytkownicy + grupy, dalej do ogarniecia szybka automatuzacja |   
 | 2. [Configure yum Repositories on Both Servers and Install Packages/Modules](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules) | test | test |
 | 3. [Configure IP Addresses on the Second Network Interface on the First Server](egzamin_praktyczny_cg.md/#configure-ip-addresses-on-the-second-network-interface-on-the-first-server) | test | test |
 | 4. [Managing Tuned Profiles and Individual Processes](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules#managing-tuned-profiles-and-individual-processes) | test | test | 
@@ -169,6 +168,15 @@ You are new System Administrator and from now you are going to handle the system
 ### WAŻNE!
 - zmiana w /etc/hostname jest niezalecana!
 
+
+# Użytkownicy 
+- Szybkie tworzenie
+
+
+# Grupy użytkowników
+-  Szybkie tworzenie  
+`for group in gropup1 group2 group3 ; do groupadd "$group" ; done`
+
 # Sudoers
 - [Spis treści](#spis-tre%C5%9Bci)
 
@@ -192,25 +200,18 @@ Nadanie dla grupy ```dba_managers``` praw do wykonywania na wszystkihch maszynac
 %dba_managers   ALL = SOFTWARE
 
 
-CG ZADANKo 
-Configure superuser access:  
-
-Enable the following command aliases:  
-
-- SOFTWARE
-- SERVICES
-- PROCESSES
-Add a new command alias named "MESSAGES":
-
-/bin/tail -f /var/log/messages
-Enable superuser privilages for the following local groups:
-
-dba_managers: everything
-dba_admin: Command aliases: SOFTWARE, SERVICES, PROCESSES
-dba_intern: Command alias: MESSAGES
-Configure yum Repositories on Both Servers and Install Packages/Modules
-You'll need to configure three repositories and install some software:
-
+## CG ZADANKO   
+- Configure superuser access:  
+- Enable the following command aliases:  
+    - SOFTWARE
+    - SERVICES
+    - PROCESSES
+- Add a new command alias named "MESSAGES":
+    - `/bin/tail -f /var/log/messages`
+- Enable superuser privilages for the following local groups:
+    - dba_managers: everything
+    - dba_admin: Command aliases: SOFTWARE, SERVICES, PROCESSES
+    - dba_intern: Command alias: MESSAGES
 
 # Wyszukiwanie plików 
 - [Spis treści](#spis-tre%C5%9Bci)
