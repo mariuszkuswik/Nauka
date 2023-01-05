@@ -51,8 +51,7 @@ Enable the following command aliases:
 - PROCESSES
   
 Add a new command alias named "MESSAGES":
-
-/bin/tail -f /var/log/messages  
+- /bin/tail -f /var/log/messages  
 
 Enable superuser privilages for the following local groups:    
 - dba_managers: everything  
