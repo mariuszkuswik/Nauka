@@ -49,6 +49,7 @@ Enable the following command aliases:
 - SOFTWARE
 - SERVICES
 - PROCESSES
+  
 Add a new command alias named "MESSAGES":
 
 /bin/tail -f /var/log/messages  
