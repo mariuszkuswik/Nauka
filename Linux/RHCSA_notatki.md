@@ -102,7 +102,7 @@
 | 4. [Managing Tuned Profiles and Individual Processes](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules#managing-tuned-profiles-and-individual-processes) | test | + | 
 | 6. [manage-scheduled-tasks-on-the-first-server ](#6-manage-scheduled-tasks-on-the-first-server) | test | test | 
 | 7. [configure-time-service-clients-for-both-servers](#7-configure-time-service-clients-for-both-servers) | test | test | 
-| 8. [managing-the-system-bootloader](#8-managing-the-system-bootloader) | test | test | 
+| 8. [managing-the-system-bootloader](#8-managing-the-system-bootloader) | test | + | 
 | 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | test | test | 
 | 10. [add-swap-space-persistently-and-nondisruptive](#10-add-swap-space-persistently-and-nondisruptive) | test | test | 
 | 11. [configure-stratis-storage-persistently](#11-configure-stratis-storage-persistently) | test | test | 
