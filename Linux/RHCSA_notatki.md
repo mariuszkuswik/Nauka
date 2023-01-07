@@ -100,17 +100,17 @@
 | 2. [Configure yum Repositories on Both Servers and Install Packages/Modules](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules) | test | + |
 | 3. [Configure IP Addresses on the Second Network Interface on the First Server](egzamin_praktyczny_cg.md/#configure-ip-addresses-on-the-second-network-interface-on-the-first-server) | test | + |
 | 4. [Managing Tuned Profiles and Individual Processes](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules#managing-tuned-profiles-and-individual-processes) | test | + | 
-| 6. [manage-scheduled-tasks-on-the-first-server ](#6-manage-scheduled-tasks-on-the-first-server) | test | test | 
-| 7. [configure-time-service-clients-for-both-servers](#7-configure-time-service-clients-for-both-servers) | test | + | 
-| 8. [managing-the-system-bootloader](#8-managing-the-system-bootloader) | test | + | 
-| 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | [Tutorial RH, moze problem z jadrem?](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/deduplicating_and_compressing_logical_volumes_on_rhel/creating-a-deduplicated-and-compressed-logical-volume_deduplicating-and-compressing-logical-volumes-on-rhel#creating-an-lvm-vdo-volume_creating-a-deduplicated-and-compressed-logical-volume) | -, problem z jadrem? Ogarnac jeszcze raz, wazne | 
-| 10. [add-swap-space-persistently-and-nondisruptive](#10-add-swap-space-persistently-and-nondisruptive) | test | test | 
-| 11. [configure-stratis-storage-persistently](#11-configure-stratis-storage-persistently) | test | test | 
-| 12. [configure-autofs-for-home-directories](#12-configure-autofs-for-home-directories) | test | test | 
-| 13. [configure-a-shared-directory-for-collaboration ](#13-configure-a-shared-directory-for-collaboration) | test | test | 
-| 14. [create-a-persistent-systemd-container-using-podman](#14-create-a-persistent-systemd-container-using-podman) | test | test | 
-| 15. [troubleshoot-selinux-issues](#15-troubleshoot-selinux-issues) | test | test | 
-| 16. [configure-the-firewall-on-both-servers](#16-configure-the-firewall-on-both-servers) | test | test | 
+| 6. [manage-scheduled-tasks-on-the-first-server ](egzamin_praktyczny_cg.md/#6-manage-scheduled-tasks-on-the-first-server) | test | test | 
+| 7. [configure-time-service-clients-for-both-servers](egzamin_praktyczny_cg.md/#7-configure-time-service-clients-for-both-servers) | test | + | 
+| 8. [managing-the-system-bootloader](egzamin_praktyczny_cg.md/#8-managing-the-system-bootloader) | test | + | 
+| 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](egzamin_praktyczny_cg.md/#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | [Tutorial RH, moze problem z jadrem?](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/deduplicating_and_compressing_logical_volumes_on_rhel/creating-a-deduplicated-and-compressed-logical-volume_deduplicating-and-compressing-logical-volumes-on-rhel#creating-an-lvm-vdo-volume_creating-a-deduplicated-and-compressed-logical-volume) | -, problem z jadrem? Ogarnac jeszcze raz, wazne | 
+| 10. [add-swap-space-persistently-and-nondisruptive](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules)| test | test | 
+| 11. [configure-stratis-storage-persistently](egzamin_praktyczny_cg.md/#11-configure-stratis-storage-persistently) | test | test | 
+| 12. [configure-autofs-for-home-directories](egzamin_praktyczny_cg.md/#12-configure-autofs-for-home-directories) | test | test | 
+| 13. [configure-a-shared-directory-for-collaboration ](egzamin_praktyczny_cg.md/#13-configure-a-shared-directory-for-collaboration) | test | test | 
+| 14. [create-a-persistent-systemd-container-using-podman](egzamin_praktyczny_cg.md/#14-create-a-persistent-systemd-container-using-podman) | test | test | 
+| 15. [troubleshoot-selinux-issues](egzamin_praktyczny_cg.md/#15-troubleshoot-selinux-issues) | test | test | 
+| 16. [configure-the-firewall-on-both-servers](egzamin_praktyczny_cg.md/#16-configure-the-firewall-on-both-servers) | test | test | 
 
 # Pomoc 
 [Spis treści](#spis-tre%C5%9Bci)
