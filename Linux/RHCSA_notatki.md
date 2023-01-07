@@ -101,7 +101,7 @@
 | 3. [Configure IP Addresses on the Second Network Interface on the First Server](egzamin_praktyczny_cg.md/#configure-ip-addresses-on-the-second-network-interface-on-the-first-server) | test | + |
 | 4. [Managing Tuned Profiles and Individual Processes](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules#managing-tuned-profiles-and-individual-processes) | test | + | 
 | 6. [manage-scheduled-tasks-on-the-first-server ](#6-manage-scheduled-tasks-on-the-first-server) | test | test | 
-| 7. [configure-time-service-clients-for-both-servers](#7-configure-time-service-clients-for-both-servers) | test | test | 
+| 7. [configure-time-service-clients-for-both-servers](#7-configure-time-service-clients-for-both-servers) | test | + | 
 | 8. [managing-the-system-bootloader](#8-managing-the-system-bootloader) | test | + | 
 | 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | test | test | 
 | 10. [add-swap-space-persistently-and-nondisruptive](#10-add-swap-space-persistently-and-nondisruptive) | test | test | 
