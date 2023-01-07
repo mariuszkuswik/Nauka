@@ -103,7 +103,7 @@
 | 6. [manage-scheduled-tasks-on-the-first-server ](#6-manage-scheduled-tasks-on-the-first-server) | test | test | 
 | 7. [configure-time-service-clients-for-both-servers](#7-configure-time-service-clients-for-both-servers) | test | + | 
 | 8. [managing-the-system-bootloader](#8-managing-the-system-bootloader) | test | + | 
-| 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | test | test | 
+| 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | [Tutorial RH, moze problem z jadrem?](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/deduplicating_and_compressing_logical_volumes_on_rhel/creating-a-deduplicated-and-compressed-logical-volume_deduplicating-and-compressing-logical-volumes-on-rhel#creating-an-lvm-vdo-volume_creating-a-deduplicated-and-compressed-logical-volume) | -, problem z jadrem? Ogarnac jeszcze raz, wazne | 
 | 10. [add-swap-space-persistently-and-nondisruptive](#10-add-swap-space-persistently-and-nondisruptive) | test | test | 
 | 11. [configure-stratis-storage-persistently](#11-configure-stratis-storage-persistently) | test | test | 
 | 12. [configure-autofs-for-home-directories](#12-configure-autofs-for-home-directories) | test | test | 
