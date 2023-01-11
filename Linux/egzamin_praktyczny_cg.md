@@ -281,5 +281,163 @@ Make sure the firewall is installed, enabled and started on both servers. Config
 - rpc-bind
 - mountd
 
+  
+---
+# Odpowiedzi ponizej   
+  
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
 
-##### Koniec
+# Odpowiedzi  
+
+1. 
+
+### Moja odpowiedz
+13. 
+```bash
+### Directory
+# Create a directory at /home/dba_docs with:
+mkdir /home/dba_docs
+# Group ownership: dba_staff
+chgrp dba_docs /home/dba_docs
+# Permissions: 770
+chmod -R 770 /home/dba_docs 
+# Set-GID set
+chmod g+s /home/dba_docs
+# Sticky bit set
+chmod o+s /home/dba_docs
+
+### SYMLINK dla wszystkich 
+# Create a link in each shared user's home directory to this directory, for easy access.
+find /home -maxdepth 1 -mindepth 1 -type d | xargs -I{} ln -s /home/dba_docs/ {}/dba_docs
+
+### Set the following ACLs
+# Wyswietlenie obecnych ACLek
+getfacl
+# Read-only for jack
+setfacl -m u:jack:r-- /home/dba_docs
+# Read-only for cindy
+setfacl -m u:cindy:r-- /home/dba_docs
+# Full permissions for marcia
+setfacl -m u:marcia:r-- /home/dba_docs
+```
+  
+  
+##### Koniec 
