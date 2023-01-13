@@ -250,8 +250,8 @@ Set the following ACLs:
 
 **As the ```cloud_user``` user on the first server, create a persistent ```systemd``` container with the following:**
 
-- Image: registry.access.redhat.com/rhscl/httpd-24-rhel7
-- Port mappings: 8080 on the container to 8000 on the host
+- Image: ```registry.access.redhat.com/rhscl/httpd-24-rhel7```
+- Port mappings: ```8080``` on the container to ```8000``` on the host
 - Persistent storage at ```~/web_data```, mounted at ```/var/www/html``` in the container
 - Container name: web_server
 
@@ -409,8 +409,7 @@ Make sure the firewall is installed, enabled and started on both servers. Config
 
 1. 
 
-### Moja odpowiedz
-13. 
+13. Moja odpowiedz - configure-a-shared-directory-for-collaboration
 ```bash
 ### Directory
 # Create a directory at /home/dba_docs with:
