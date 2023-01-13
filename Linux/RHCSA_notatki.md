@@ -1734,6 +1734,9 @@ All files put into the "shared" directory by "steve" or "oliver" should belong t
 - ```bc``` - basic calculator 
 
 #### Bash auto-completion 
+
+- [Bash completion ubuntu](https://askubuntu.com/questions/545540/terminal-autocomplete-doesnt-work-properly)
+
 ```
 dnf search bash 
 dnf install bash-completion 
