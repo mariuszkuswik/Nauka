@@ -1156,27 +1156,6 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 
 - Instalacja
     - ```yum install autofs``` - **instalacja** autofs   
-
-
-### Automatyczne montowanie katalogu /net   
-Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego katalogu, należy po prostu zmienić katalog (cd) na katalog montowania autofs (domyślnie /net lub /var/autofs). W ten sposób współdzielony zasób zostanie automatycznie zamontowany i udostępniony.    
-### #TODO - Dopisać jakiś przykład
-
-1. **Otworzyć plik /etc/auto.master, a następnie znaleźć następujący wiersz:**  
-
-    ```/net -hosts```
-
-    Wiersz ten powoduje, że katalog /net będzie funkcjonował jako punkt montowania dla współdzielonych katalogów NFS, do których chcesz uzyskać dostęp w sieci. *(Jeżeli na początku wiersza znajduje się znak komentarza, wówczas trzeba go usunąć)*.  
-
-2. **Uruchomienie usługi autofs**  
-
-    ```systemctl enable --now autofs``` 
-   
-   
-3. Po przeprowadzeniu powyższej procedury, jeżeli mamy dostęp do jakiegoś udziału udostępnionego NFS to będzie on dostępny pod :     
-**/net/hostname/sharename**   
-  
-np. ```cd /net/localhost/pub```  
   
 
 ## Automatyczne montowanie katalogów domowych
@@ -1211,6 +1190,7 @@ showmount -e
 ### Klient 
 
 ---
+
 
 ### Serwer 
 
@@ -1285,6 +1265,29 @@ Jeżeli wszystko działa prawidłowo, po zalogowaniu się i wejściu do katalogu
 
 Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego właścicielem jest użytkownik o identyfikatorze 507 (w obu systemach jest to janek). Dlatego użytkownik janek w systemie lokalnym powinien mieć możliwość dodawania, usuwania, modyfikowania i wyświetlania plików znajdujących się w tym katalogu. Po wylogowaniu się janka — w rzeczywistości gdy przestanie używać katalogu przez ustalony czas (tutaj jest to 10 minut) — katalog zostanie odmontowany.    
 
+
+
+---
+
+### Automatyczne montowanie katalogu /net   
+Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego katalogu, należy po prostu zmienić katalog (cd) na katalog montowania autofs (domyślnie /net lub /var/autofs). W ten sposób współdzielony zasób zostanie automatycznie zamontowany i udostępniony.    
+### #TODO - Dopisać jakiś przykład
+
+1. **Otworzyć plik /etc/auto.master, a następnie znaleźć następujący wiersz:**  
+
+    ```/net -hosts```
+
+    Wiersz ten powoduje, że katalog /net będzie funkcjonował jako punkt montowania dla współdzielonych katalogów NFS, do których chcesz uzyskać dostęp w sieci. *(Jeżeli na początku wiersza znajduje się znak komentarza, wówczas trzeba go usunąć)*.  
+
+2. **Uruchomienie usługi autofs**  
+
+    ```systemctl enable --now autofs``` 
+   
+   
+3. Po przeprowadzeniu powyższej procedury, jeżeli mamy dostęp do jakiegoś udziału udostępnionego NFS to będzie on dostępny pod :     
+**/net/hostname/sharename**   
+  
+np. ```cd /net/localhost/pub```  
 
 # Instalacja/update
 - [Spis treści](#spis-tre%C5%9Bci)
