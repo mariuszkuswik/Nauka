@@ -1126,9 +1126,7 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 - [Montowanie pod /net](#Automatyczne-montowanie-katalogu-/net)  
 - [Montowanie katalogów domowych](#Automatyczne-montowanie-katalogów-domowych) 
 
-
-### Ogarnąć 
-
+## WAŻNE! 
 ```man 5 autofs``` - wyjaśnia w jaki sposób zamontować home directory, w manie szukać ```home```
 ```mount``` wyświetla listę katalogów mających być zamontowanymi przez autofs 
 
@@ -1161,7 +1159,6 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 
 
 ### Automatyczne montowanie katalogu /net   
-
 Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego katalogu, należy po prostu zmienić katalog (cd) na katalog montowania autofs (domyślnie /net lub /var/autofs). W ten sposób współdzielony zasób zostanie automatycznie zamontowany i udostępniony.    
 ### #TODO - Dopisać jakiś przykład
 
@@ -1183,6 +1180,37 @@ np. ```cd /net/localhost/pub```
   
 
 ## Automatyczne montowanie katalogów domowych
+
+### Serwer
+1. Wyeksportowanie katalogu /home
+1.1 Edycja /etc/exports
+
+```
+# Wyeksportowanie dla wszystkich sieci
+/home   *(rw,insecure)
+
+# Wyeksportowanie dla podsieci 192.168.0.* 
+/home   192.168.0.*(rw,insecure)
+```
+1.2 Eksport katalogu z configu 
+
+```
+exportfs -avr 
+```
+
+1.2.3 Sprawdzenie czy jest dobrze wyeksportowany 
+
+```
+# Komenda pokazuje liste katalogow eksporowtanych przez serwer  
+showmount -e
+```
+
+1.2.4 
+
+
+### Klient 
+
+---
 
 ### Serwer 
 
@@ -1217,7 +1245,6 @@ np. ```cd /net/localhost/pub```
 4. **Na serwerze NFS sprawdź, czy w zaporze sieciowej zostały otwarte niezbędne porty lub czy do zapory został dodany seriws nfs.**
 
 ### Klient
-
 1. Do pliku */etc/auto.master* dodaj wpis określający punkt montowania, w którym ma zostać zamontowany zdalny katalog NFS oraz (dowolnie wybrany) plik zawierający dane wskazujące położenie zdalnego katalogu NFS.  
 *Do pliku auto.master dodaj następujący wiersz kodu:*   
 
