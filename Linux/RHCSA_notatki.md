@@ -397,8 +397,10 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
     ```
     ausearch -c "httpd" --raw | audit2allow -M my-httpd
     ```
-
-
+- Wyszukiwanie problemów + zezwolenie
+    ```
+    audit2allow -a -M "$nazwa_reguly"
+    ```
 
 ### TODO 
 #### - dodać jak rozwiązywać podstawowe błędy 
