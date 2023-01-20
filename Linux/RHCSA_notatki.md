@@ -1,228 +1,228 @@
-# Linki 
-- [Oreily link](https://learning.oreilly.com/videos/red-hat-certified/9780135656495/9780135656495-RCSA_02_10_08/)
-- [Cloud Guru link](https://learn.acloud.guru/course/red-hat-certified-system-administrator-ex200-exam-prep/learn/4a50133e-bbdb-43b8-b939-5f648997ec6d/9a5ffcb1-8849-4fe1-a2ae-3ed99bfc32ba/watch)
-- [Red hat - sysadmin](https://www.redhat.com/sysadmin/)
+# linki 
+- [oreily link](https://learning.oreilly.com/videos/red-hat-certified/9780135656495/9780135656495-rcsa_02_10_08/)
+- [cloud guru link](https://learn.acloud.guru/course/red-hat-certified-system-administrator-ex200-exam-prep/learn/4a50133e-bbdb-43b8-b939-5f648997ec6d/9a5ffcb1-8849-4fe1-a2ae-3ed99bfc32ba/watch)
+- [red hat - sysadmin](https://www.redhat.com/sysadmin/)
 
 
-# Spis treści
-1. [Pomoc](#pomoc)
-1. [Przywracanie hasła roota](#Przywracanie-hasła-roota)
-1. [Selinux](#selinux)
-1. [Wyszukiwanie plików](#Wyszukiwanie-plików) 
-1. [Firewall](#firewall)
-1. [Kontrola czasu w RHEL](#Kontrola-czasu-w-RHEL)
-1. [Managing schedulded tasks](#Managing-schedulded-tasks)
-1. [NFS](#nfs)
-1. [Storage](#storage)
-    - [Montowanie](#Montowanie)
-    - [Filesystemy](#Filesystemy)
-    - [LVM](#LVM)
-    - [Stratis](#stratis)
-    - [VDO](#vdo)
-1. [Logi](#acl)
-1. [Uprawnienia](#uprawnienia)
-    - [SUID, SGID, Sticky bit](#SUID,-SGID,-Sticky-bit)
-    - [ACL](#acl)
-1. [Sysstat](#sar---sysstat)
-1. [Instalacja/Update](#instalacjaupdate)
-    - [Dnf](#dnf)
-    - [Modules](#modules)
-    - [Repo](#repo)
-        - [Dodanie nowego repo](#dodanie-nowego-repozytorium)
-1. [Blokowanie połączenia z konkretnego serwera](#blokowanie-po%C5%82%C4%85czenia-z-konkretnego-serwera)
-1. [Autofs](#autofs)
-1. [Archiwizowanie](#archiwizowanie)
-1. [Swap](#swap)
-1. [Sieci](#Sieci)
-1. [Kontenery](#Kontenery)
-1. [Tuned profiles](#Tuned-profiles)
-1. [Grub/Kernel](#grubkernel)
+# spis treści
+1. [pomoc](#pomoc)
+1. [przywracanie hasła roota](#przywracanie-hasła-roota)
+1. [selinux](#selinux)
+1. [wyszukiwanie plików](#wyszukiwanie-plików) 
+1. [firewall](#firewall)
+1. [kontrola czasu w rhel](#kontrola-czasu-w-rhel)
+1. [managing schedulded tasks](#managing-schedulded-tasks)
+1. [nfs](#nfs)
+1. [storage](#storage)
+    - [montowanie](#montowanie)
+    - [filesystemy](#filesystemy)
+    - [lvm](#lvm)
+    - [stratis](#stratis)
+    - [vdo](#vdo)
+1. [logi](#acl)
+1. [uprawnienia](#uprawnienia)
+    - [suid, sgid, sticky bit](#suid,-sgid,-sticky-bit)
+    - [acl](#acl)
+1. [sysstat](#sar---sysstat)
+1. [instalacja/update](#instalacjaupdate)
+    - [dnf](#dnf)
+    - [modules](#modules)
+    - [repo](#repo)
+        - [dodanie nowego repo](#dodanie-nowego-repozytorium)
+1. [blokowanie połączenia z konkretnego serwera](#blokowanie-po%c5%82%c4%85czenia-z-konkretnego-serwera)
+1. [autofs](#autofs)
+1. [archiwizowanie](#archiwizowanie)
+1. [swap](#swap)
+1. [sieci](#sieci)
+1. [kontenery](#kontenery)
+1. [tuned profiles](#tuned-profiles)
+1. [grub/kernel](#grubkernel)
 
 ---
--  [Przed egzaminem!!!](#przed-egzaminem)
--  [Po egzaminie](#po-egzaminie) - Pytania z egzaminu
+-  [przed egzaminem!!!](#przed-egzaminem)
+-  [po egzaminie](#po-egzaminie) - pytania z egzaminu
 ---
-## Zadania 
-- [Chlebik](#chlebik)    
-- [Cloud Guru](#cg)    
-- [Daily zadanka](#daily-zadanka)  
-- [RH - Laby](https://lab.redhat.com/)
+## zadania 
+- [chlebik](#chlebik)    
+- [cloud guru](#cg)    
+- [daily zadanka](#daily-zadanka)  
+- [rh - laby](https://lab.redhat.com/)
   
-[Koniec](#Koniec)   
+[koniec](#koniec)   
   
 
-# Chlebik
-- [Spis treści](#spis-tre%C5%9Bci)
+# chlebik
+- [spis treści](#spis-tre%c5%9bci)
 
-| Zadanko | Notatki | Czy opanowane |
+| zadanko | notatki | czy opanowane |
 |--|--|--|
-| [001_restore_root_password](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/001_restore_root_password.md) | [Przywracanie hasła roota](#Przywracanie-hasła-roota) | + |
-| [002_setup_network_parameters](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/002_setup_network_parameters.md) | [Sieci](#sieci) | + |
-| [003_change_hostname]( https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/003_change_hostname.md) | [Hostname](#hostname) | + |
-| [004_enable_selinux](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/004_enable_selinux.md) |[Selinux](#selinux) | + |
-| [005_install_apache_and_give_it_permission_to_nfs_resource](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/005_install_apache_and_give_it_permission_to_nfs_resource.md) | [Selinux](#selinux) |  |
-| [006_extend_existing_lv_add_label](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/006_extend_existing_lv_add_label.md) | [LVM](#lvm) | + | 
-| [007_assign_sel_context_to_the_directory](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/007_assign_sel_context_to_the_directory.md) | [Selinux](#selinux) - man semanage-fcontext, **jest w przykładach** | + |
-| [008_create_users_with_specified_uid](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/008_create_users_with_specified_uid.md) | [Tworzenie użytkowników](#Tworzenie-użytkowników) | + |
-| [009_allow_other_user_to_get_access_to_home_dir](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/009_allow_other_user_to_get_access_to_home_dir.md) | [ACL](#acl) | + |
+| [001_restore_root_password](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/001_restore_root_password.md) | [przywracanie hasła roota](#przywracanie-hasła-roota) | + |
+| [002_setup_network_parameters](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/002_setup_network_parameters.md) | [sieci](#sieci) | + |
+| [003_change_hostname]( https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/003_change_hostname.md) | [hostname](#hostname) | + |
+| [004_enable_selinux](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/004_enable_selinux.md) |[selinux](#selinux) | + |
+| [005_install_apache_and_give_it_permission_to_nfs_resource](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/005_install_apache_and_give_it_permission_to_nfs_resource.md) | [selinux](#selinux) |  |
+| [006_extend_existing_lv_add_label](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/006_extend_existing_lv_add_label.md) | [lvm](#lvm) | + | 
+| [007_assign_sel_context_to_the_directory](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/007_assign_sel_context_to_the_directory.md) | [selinux](#selinux) - man semanage-fcontext, **jest w przykładach** | + |
+| [008_create_users_with_specified_uid](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/008_create_users_with_specified_uid.md) | [tworzenie użytkowników](#tworzenie-użytkowników) | + |
+| [009_allow_other_user_to_get_access_to_home_dir](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/009_allow_other_user_to_get_access_to_home_dir.md) | [acl](#acl) | + |
 | [010_dir_ownership_via_group](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/010_dir_ownership_via_group.md) |  | + |
-| [011_create_logical_volume_and_add_filesystem](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/011_create_logical_volume_and_add_filesystem.md) | [LVM](#LVM) | + |
-| [012_configure_virtual_console_for_kernel](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/012_configure_virtual_console_for_kernel.md) |  | #TODO - nie wiem o co chodzi |
-| [013_create_swap_on_logical_volume](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/013_create_swap_on_logical_volume.md) | [Swap](#swap) | + |
-| [014_add_entry_to_cron](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/014_add_entry_to_cron.md) | [Sysstat](#sar---sysstat) | + |
-| [015_set_default_system_level](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/015_set_default_system_level.md) | [Runlevele](#runlevele) | + |
-| [016_add_additional_remote_yum_repo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/016_add_additional_remote_yum_repo.md) | [Dnf](#dnf) | + |
+| [011_create_logical_volume_and_add_filesystem](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/011_create_logical_volume_and_add_filesystem.md) | [lvm](#lvm) | + |
+| [012_configure_virtual_console_for_kernel](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/012_configure_virtual_console_for_kernel.md) |  | #todo - nie wiem o co chodzi |
+| [013_create_swap_on_logical_volume](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/013_create_swap_on_logical_volume.md) | [swap](#swap) | + |
+| [014_add_entry_to_cron](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/014_add_entry_to_cron.md) | [sysstat](#sar---sysstat) | + |
+| [015_set_default_system_level](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/015_set_default_system_level.md) | [runlevele](#runlevele) | + |
+| [016_add_additional_remote_yum_repo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/016_add_additional_remote_yum_repo.md) | [dnf](#dnf) | + |
 | [017_create_physical_partition_and_mount](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/017_create_physical_partition_and_mount.md) |  | + |
-| [018_update_kernel_and_make_it_default_one](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/018_update_kernel_and_make_it_default_one.md) | [Grub/Kernel](#grubkernel) |  |
-| [019_create_users_with_secondary_groups](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/019_create_users_with_secondary_groups.md) | [Tworzenie użytkowników](#Tworzenie-użytkowników) | + |
-| [020_create_folders_with_group_access_rights](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/020_create_folders_with_group_access_rights.md) | [SUID, SGID, Sticky bit](#SUID,-SGID,-Sticky-bit) | + |
+| [018_update_kernel_and_make_it_default_one](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/018_update_kernel_and_make_it_default_one.md) | [grub/kernel](#grubkernel) |  |
+| [019_create_users_with_secondary_groups](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/019_create_users_with_secondary_groups.md) | [tworzenie użytkowników](#tworzenie-użytkowników) | + |
+| [020_create_folders_with_group_access_rights](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/020_create_folders_with_group_access_rights.md) | [suid, sgid, sticky bit](#suid,-sgid,-sticky-bit) | + |
 | [021_configure_ldap_authentication](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/021_configure_ldap_authentication.md) | - | **nie ma na egzaminie** |
-| [022_configure_autofs](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/022_configure_autofs.md) | [Autofs](#autofs) | + |
-| [023_configure_ntp_on_the_client](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/023_configure_ntp_on_the_client.md) | [Kontrola czasu w RHEL](#Kontrola-czasu-w-RHEL) | + |
-| [024_access_rights_for_file](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/024_access_rights_for_file.md) | [ACL](#acl) | + |
-| [025_create_whole_lvm_stack](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/025_create_whole_lvm_stack.md) | [LVM](#LVM) Dodać extent of VG should be 16MB do notatek | + |
-| [026_reduce_the_size_of_lv](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/026_reduce_the_size_of_lv.md) | [LVM](#lvm) | + |
-| [027_create_compressed_archive](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/027_create_compressed_archive.md) | [Archiwizowanie](#archiwizowanie) | + |
-| [028_search_string_using_grep_and_redirect](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/028_search_string_using_grep_and_redirect.md) | [Wyszukiwanie plików](#wyszukiwanie-plik%C3%B3w) | + |
-| [029_make_journald_persistent](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/029_make_journald_persistent.md) | [Logi](#logi) | + |
-| [030_setting_up_vdo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md) | [VDO](#vdo) | + - poćwiczyć, zmienić notatki, obecnie jest to na LVM |
-| [031_finding_files](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/031_finding_files.md) | [Wyszukiwanie plików](#wyszukiwanie-plik%C3%B3w) | + |
-| [032_finding_files_with_given_text_in_them](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/032_finding_files_with_given_text_in_them.md) | [Wyszukiwanie plików](#Wyszukiwanie-plików)  | + |
-| [033_managing_layered_storage](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/033_managing_layered_storage.md) | [Stratis](#stratis) |   |
-| [034_containers](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/034_containers.md) | [Kontenery](#Kontenery) | + |
+| [022_configure_autofs](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/022_configure_autofs.md) | [autofs](#autofs) | + |
+| [023_configure_ntp_on_the_client](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/023_configure_ntp_on_the_client.md) | [kontrola czasu w rhel](#kontrola-czasu-w-rhel) | + |
+| [024_access_rights_for_file](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/024_access_rights_for_file.md) | [acl](#acl) | + |
+| [025_create_whole_lvm_stack](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/025_create_whole_lvm_stack.md) | [lvm](#lvm) dodać extent of vg should be 16mb do notatek | + |
+| [026_reduce_the_size_of_lv](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/026_reduce_the_size_of_lv.md) | [lvm](#lvm) | + |
+| [027_create_compressed_archive](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/027_create_compressed_archive.md) | [archiwizowanie](#archiwizowanie) | + |
+| [028_search_string_using_grep_and_redirect](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/028_search_string_using_grep_and_redirect.md) | [wyszukiwanie plików](#wyszukiwanie-plik%c3%b3w) | + |
+| [029_make_journald_persistent](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/029_make_journald_persistent.md) | [logi](#logi) | + |
+| [030_setting_up_vdo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md) | [vdo](#vdo) | + - poćwiczyć, zmienić notatki, obecnie jest to na lvm |
+| [031_finding_files](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/031_finding_files.md) | [wyszukiwanie plików](#wyszukiwanie-plik%c3%b3w) | + |
+| [032_finding_files_with_given_text_in_them](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/032_finding_files_with_given_text_in_them.md) | [wyszukiwanie plików](#wyszukiwanie-plików)  | + |
+| [033_managing_layered_storage](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/033_managing_layered_storage.md) | [stratis](#stratis) |   |
+| [034_containers](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/034_containers.md) | [kontenery](#kontenery) | + |
 
-# CG 
-- [Spis treści](#spis-tre%C5%9Bci)
+# cg 
+- [spis treści](#spis-tre%c5%9bci)
 
-| Zadanko | Notatki | Czy wykonane |
+| zadanko | notatki | czy wykonane |
 |--|--|--|
-| 1. [Create Users/Groups and Configure Superuser Access on Both Servers](egzamin_praktyczny_cg.md/#create-usersgroups-and-configure-superuser-access-on-both-servers) | [Użytkownicy](#użytkownicy), [Grupy użytkowników](#grupy-użytkowników) | +, dalej do ogarniecia szybka automatuzacja |   
-| 2. [Configure yum Repositories on Both Servers and Install Packages/Modules](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules) | test | + |
-| 3. [Configure IP Addresses on the Second Network Interface on the First Server](egzamin_praktyczny_cg.md/#configure-ip-addresses-on-the-second-network-interface-on-the-first-server) | test | + |
-| 4. [Managing Tuned Profiles and Individual Processes](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules#managing-tuned-profiles-and-individual-processes) | test | + | 
+| 1. [create users/groups and configure superuser access on both servers](egzamin_praktyczny_cg.md/#create-usersgroups-and-configure-superuser-access-on-both-servers) | [użytkownicy](#użytkownicy), [grupy użytkowników](#grupy-użytkowników) | +, dalej do ogarniecia szybka automatuzacja |   
+| 2. [configure yum repositories on both servers and install packages/modules](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules) | test | + |
+| 3. [configure ip addresses on the second network interface on the first server](egzamin_praktyczny_cg.md/#configure-ip-addresses-on-the-second-network-interface-on-the-first-server) | test | + |
+| 4. [managing tuned profiles and individual processes](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules#managing-tuned-profiles-and-individual-processes) | test | + | 
 | 6. [manage-scheduled-tasks-on-the-first-server ](egzamin_praktyczny_cg.md/#6-manage-scheduled-tasks-on-the-first-server) | test | test | 
 | 7. [configure-time-service-clients-for-both-servers](egzamin_praktyczny_cg.md/#7-configure-time-service-clients-for-both-servers) | test | + | 
 | 8. [managing-the-system-bootloader](egzamin_praktyczny_cg.md/#8-managing-the-system-bootloader) | test | + | 
-| 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](egzamin_praktyczny_cg.md/#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | [Tutorial RH, moze problem z jadrem?](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/deduplicating_and_compressing_logical_volumes_on_rhel/creating-a-deduplicated-and-compressed-logical-volume_deduplicating-and-compressing-logical-volumes-on-rhel#creating-an-lvm-vdo-volume_creating-a-deduplicated-and-compressed-logical-volume) | -, problem z jadrem? Ogarnac jeszcze raz, wazne | 
+| 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](egzamin_praktyczny_cg.md/#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | [tutorial rh, moze problem z jadrem?](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/deduplicating_and_compressing_logical_volumes_on_rhel/creating-a-deduplicated-and-compressed-logical-volume_deduplicating-and-compressing-logical-volumes-on-rhel#creating-an-lvm-vdo-volume_creating-a-deduplicated-and-compressed-logical-volume) | -, problem z jadrem? ogarnac jeszcze raz, wazne | 
 | 10. [add-swap-space-persistently-and-nondisruptive](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules)| test | + | 
 | 11. [configure-stratis-storage-persistently](egzamin_praktyczny_cg.md/#11-configure-stratis-storage-persistently) | test | + | 
 | 12. [configure-autofs-for-home-directories](egzamin_praktyczny_cg.md/#12-configure-autofs-for-home-directories) | test | + | 
 | 13. [configure-a-shared-directory-for-collaboration ](egzamin_praktyczny_cg.md/#13-configure-a-shared-directory-for-collaboration) | test | + | 
 | 14. [create-a-persistent-systemd-container-using-podman](egzamin_praktyczny_cg.md/#14-create-a-persistent-systemd-container-using-podman) | test | + | 
-| 15. [troubleshoot-selinux-issues](egzamin_praktyczny_cg.md/#15-troubleshoot-selinux-issues) | test | test | 
+| 15. [troubleshoot-selinux-issues](egzamin_praktyczny_cg.md/#15-troubleshoot-selinux-issues) | [selinux](#selinux) - man semanage-fcontext, **jest w przykładach** | test | 
 | 16. [configure-the-firewall-on-both-servers](egzamin_praktyczny_cg.md/#16-configure-the-firewall-on-both-servers) | test | test | 
 
-# Pomoc 
-[Spis treści](#spis-tre%C5%9Bci)
+# pomoc 
+[spis treści](#spis-tre%c5%9bci)
 
-## Wyszukiwanie pomocy
+## wyszukiwanie pomocy
 - ```apropos``` wyszukuje strony w pomocy, podobnie jak *man -k*
 - ```man -k``` - wyszukuje strony w pomocy 
-- ```man -K``` - szuka we **wszystkich** plikach pomocy
+- ```man -k``` - szuka we **wszystkich** plikach pomocy
 - ```info``` - wyświetla komendy z opisem  
 - ```rpm -qd``` - wyświetl pliki z dokumentacją dla danego pakietu
 - locate "$szukana_komenda" - powinno wylistować pliki z pomocą 
 
-## Man
+## man
 - ```man man``` - manual do ```man```
-- ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU
+- ```mandb``` - odświeża bazę danych man, odpalać na początku egzaminu
 
-## Info
+## info
 
-```info``` - **Samo wykonanie polecenia info wyświetla przydatne komendy z opisami**
+```info``` - **samo wykonanie polecenia info wyświetla przydatne komendy z opisami**
 
 
 ## /usr/share/doc
-Dodatkowa dokumentacja 
+dodatkowa dokumentacja 
 
 
-# Przywracanie hasła roota
-- [Spis treści](#spis-tre%C5%9Bci)
+# przywracanie hasła roota
+- [spis treści](#spis-tre%c5%9bci)
 
-You are new System Administrator and from now you are going to handle the system and your main task is Network monitoring, Backup and Restore. But you don't know the root password. Change the root password to redhat and login in default Runlevel.
+you are new system administrator and from now you are going to handle the system and your main task is network monitoring, backup and restore. but you don't know the root password. change the root password to redhat and login in default runlevel.
 
 ```console
-### In RHEL8
+### in rhel8
 - reboot the system
 - press "e" letter
-- Add "rd.break" or "init=/bin/bash" at the end of de line thet begening with "Linux" in grub menu
+- add "rd.break" or "init=/bin/bash" at the end of de line thet begening with "linux" in grub menu
 - ctrl + x
 
 # mount -o remount,rw /sysroot
 # chroot /sysroot
 # passwd
 
-### SELinux jest rozjechany więc musi ustalić etykiety od nowa ? 
-### Inaczej nikt nie będzie mógł zalogować się do systemu
+### selinux jest rozjechany więc musi ustalić etykiety od nowa ? 
+### inaczej nikt nie będzie mógł zalogować się do systemu
 #  touch /.autorelabel
 # exit
 # logout
 ```
 
-# Hostname
+# hostname
 - ```hostnamectl``` - wyświetla aktualny hostname + informacje na temat systemu
     - ```set-hostname``` - zmienia hostname na podany
   
 - ```nmtui``` i ```nmcli``` również pozwalają na zmianę hostname 
 
-### WAŻNE!
+### ważne!
 - zmiana w /etc/hostname jest niezalecana!
 
 
-# Użytkownicy 
-- Szybkie tworzenie
+# użytkownicy 
+- szybkie tworzenie
 
 
-# Grupy użytkowników
--  Szybkie tworzenie  
+# grupy użytkowników
+-  szybkie tworzenie  
 `for group in gropup1 group2 group3 ; do groupadd "$group" ; done`
 
-# Sudoers
-- [Spis treści](#spis-tre%C5%9Bci)
+# sudoers
+- [spis treści](#spis-tre%c5%9bci)
 
-### Linki
-- [Rhel sudoers](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/managing-sudo-access_configuring-basic-system-settings)
+### linki
+- [rhel sudoers](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/managing-sudo-access_configuring-basic-system-settings)
 
-### TODO - Dopisać coś
+### todo - dopisać coś
 
-## Config
+## config
 - ```/etc/sudoers``` - ogólny 
 
 - ```username hostname=path/to/command```
     - username is the name of the user or group, for example, ```user1``` or ```%group1```.
     - hostname is the name of the host on which the rule applies.
-    - path/to/command is the complete absolute path to the command. You can also limit the user to only performing a command with specific options and arguments by adding those options after the command path.   
-    If you do not specify any options, the user can use the command with all options.  
+    - path/to/command is the complete absolute path to the command. you can also limit the user to only performing a command with specific options and arguments by adding those options after the command path.   
+    if you do not specify any options, the user can use the command with all options.  
 
-### #TODO - opisać aliasy w sudoers
+### #todo - opisać aliasy w sudoers
 
-Nadanie dla grupy ```dba_managers``` praw do wykonywania na wszystkihch maszynach **ALL** komend pod aliasem **SOFTWARE**
-%dba_managers   ALL = SOFTWARE
+nadanie dla grupy ```dba_managers``` praw do wykonywania na wszystkihch maszynach **all** komend pod aliasem **software**
+%dba_managers   all = software
 
 
-## CG ZADANKO   
-- Configure superuser access:  
-- Enable the following command aliases:  
-    - SOFTWARE
-    - SERVICES
-    - PROCESSES
-- Add a new command alias named "MESSAGES":
+## cg zadanko   
+- configure superuser access:  
+- enable the following command aliases:  
+    - software
+    - services
+    - processes
+- add a new command alias named "messages":
     - `/bin/tail -f /var/log/messages`
-- Enable superuser privilages for the following local groups:
+- enable superuser privilages for the following local groups:
     - dba_managers: everything
-    - dba_admin: Command aliases: SOFTWARE, SERVICES, PROCESSES
-    - dba_intern: Command alias: MESSAGES
+    - dba_admin: command aliases: software, services, processes
+    - dba_intern: command alias: messages
 
-# Wyszukiwanie plików 
-- [Spis treści](#spis-tre%C5%9Bci)
+# wyszukiwanie plików 
+- [spis treści](#spis-tre%c5%9bci)
 
 ## find
 - ```find```
     - ```-type``` - typ wyszukiwanych plików 
         ```-f``` - file 
         ```-d``` - firectory
-    - ```-mtime``` - File's  data  was last **modified** n*24 hours ago
-    - ```-atime``` - File was last **accessed** n*24 hours ago
+    - ```-mtime``` - file's  data  was last **modified** n*24 hours ago
+    - ```-atime``` - file was last **accessed** n*24 hours ago
     - ```-ls``` - list current file in ```ls format```
 
 
@@ -232,113 +232,113 @@ locate działa na podstawie bazy danych, domyślnie aktualizowana jest raz dzien
 - ```locate "$file_name"``` - wyszukuje plik na podstawie indeksowanej bazy danych
 
 ## grep 
-### #TODO - może coś dopisać
+### #todo - może coś dopisać
 - ```grep "$wyszukiwana_fraza" "$nazwa_pliku"```
 
 
-# Uzytkownicy
-[Spis treści](#spis-tre%C5%9Bci)
+# uzytkownicy
+[spis treści](#spis-tre%c5%9bci)
 
-## Tworzenie nowych 
-### Configi
+## tworzenie nowych 
+### configi
 - ```/etc/defaults/useradd``` 
 - ```/etc/login.defs```
 
-# TODO - dopisać
+# todo - dopisać
 - ustawienie domyślnych ustawień nowo dodawanych użytkowników, tj. wygasanie hasła, katalogi domowe itd.
 - 
 
-### Podstawowe komendy
-- ```useradd``` - Dodanie użytkownika
+### podstawowe komendy
+- ```useradd``` - dodanie użytkownika
     - ```useradd -u "$uid"``` - user z innym uuid
-- ```usermod``` - Modyfikowanie ustawień użytkownika
-    - ```usermod -aG "$group_name"``` - samo użycie opcji ```G``` bez ```a``` **powoduje zastępienie obecnych grup użytkownika tą jedną którą przypisujemy**
-- ```userdel``` - Usuwanie użytkownika
+- ```usermod``` - modyfikowanie ustawień użytkownika
+    - ```usermod -ag "$group_name"``` - samo użycie opcji ```g``` bez ```a``` **powoduje zastępienie obecnych grup użytkownika tą jedną którą przypisujemy**
+- ```userdel``` - usuwanie użytkownika
    
 
-## Edytowanie obecnych
-### Wygasanie hasla/Blokowanie konta 
+## edytowanie obecnych
+### wygasanie hasla/blokowanie konta 
 - ```chage``` - blokowanie konta po określonym czasie 
 - ```chage``` - wymuszenie zmiany hasła 
 
-### Wyłączenie logowania 
+### wyłączenie logowania 
 ```
 vim /etc/passwd 
 # dodanie jako shell 
 /sbin/nologin
 ```
 
-# NFS
-[Spis treści](#spis-tre%C5%9Bci)
+# nfs
+[spis treści](#spis-tre%c5%9bci)
 
-### Linki
-- [Spis tresci](#spis-treści)
-- [RH - https://www.redhat.com/sysadmin/configure-nfs-linux](https://www.redhat.com/sysadmin/configure-nfs-linux)
+### linki
+- [spis tresci](#spis-treści)
+- [rh - https://www.redhat.com/sysadmin/configure-nfs-linux](https://www.redhat.com/sysadmin/configure-nfs-linux)
 
 
-### Dokumentacja 
+### dokumentacja 
 
 - ```man 5 nfs``` - wyświetlenie opcji montowania dla udziałów nfs   
 - ```rpm -qd nfs-utils | less``` - wyświetlenie plików z dokumentacją
 
 - ```man mount.nfs``` - opcje montowania udziału nfs   
 
-### #TODO - sprawdzić dokładniej jak to opisać 
+### #todo - sprawdzić dokładniej jak to opisać 
 - ```nfsmount.conf``` -   
   
-- ```man showmount``` - informacje o użyciu polecenia showmount do wyświetlenia katalogów współdzielonych, które są udostępniane przez serwery NFS  
+- ```man showmount``` - informacje o użyciu polecenia showmount do wyświetlenia katalogów współdzielonych, które są udostępniane przez serwery nfs  
 
 
 ```bash
-# Ogólne infomracje na temat pakietu nfs
+# ogólne infomracje na temat pakietu nfs
 rpm -qi nfs-utils
-# Configi
+# configi
 rpm -qc nfs-utils
-# Wylistowanie plików w pakiecie nfs-utils
+# wylistowanie plików w pakiecie nfs-utils
 rpm -ql nfs-utils | grep bin
 ```   
 
 
-Udział udostępniony, wpis w fstabie dodany, 
-sprawdzić firewalla i SELinux na serwerze, potem spróbować zamontować udział i nadać kontekst dla procesu httpd
+udział udostępniony, wpis w fstabie dodany, 
+sprawdzić firewalla i selinux na serwerze, potem spróbować zamontować udział i nadać kontekst dla procesu httpd
 
-Dodać do configu httpd wpis z udostepnionym katalogiem
-Przeladowac serwis httpd
+dodać do configu httpd wpis z udostepnionym katalogiem
+przeladowac serwis httpd
 spradzic bledy /var/log/messages
 
-Utworzenie filesystemu na nowym lvmie, zmiana wielkości tego filesystemu, 
-zamiana wielkości LVM 
+utworzenie filesystemu na nowym lvmie, zmiana wielkości tego filesystemu, 
+zamiana wielkości lvm 
 
 
-# Firewall 
-- [Spis treści](#spis-tre%C5%9Bci)
-### Linki
-- [RH - Firewalld article](https://www.redhat.com/sysadmin/firewalld-linux-firewall)
+# firewall 
+- [spis treści](#spis-tre%c5%9bci)
+### linki
+- [rh - firewalld article](https://www.redhat.com/sysadmin/firewalld-linux-firewall)
 ---
-- W RHEL8 firewall jest zarzadzany przez firewalld, pod spodem jest nftables  
+- w rhel8 firewall jest zarzadzany przez firewalld, pod spodem jest nftables  
 zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
 
-### Configi 
+### configi 
 - ```/usr/lib/firewalld``` - katalog z domyslna konfiguracja
 - ```/etc/firewalld``` - katalog z obecnie dzialajacym configiem 
 
-### Komendy
+### komendy
 - ```firewall-cmd``` - odpowiada za konfigurację zapory   
     
-    - Zarządzanie firewallem :  
+    - zarządzanie firewallem :  
         - ```--state``` - wyswietla czy firewall dziala
         - ```--reload``` - zatwierdzenie wprowadzonych zmian
         - ```--list-all --permanent``` wypisuje reguły które są zapisane w configu - będą działać po ***reboocie systemu***
         
-    - Otwieranie portów/usług :  
-        - ```--add-port "$port_number"/[tcp | udp ]``` - Otwarcie portu dla tcp lub udp
-        - ```--add-service "$service_name"``` - Udostępnienie możliwości komunikacji z usługą (lista dostępna pod tabulatorem)
+    - otwieranie portów/usług :  
+        - ```--add-port "$port_number"/[tcp | udp ]``` - otwarcie portu dla tcp lub udp
+        - ```--add-service "$service_name"``` - udostępnienie możliwości komunikacji z usługą (lista dostępna pod tabulatorem)
 
 
-**ZAWSZE TRZEBA PAMIĘTAĆ O OPCJI ```--permanent```**, w przeciwnym wypadku zmiany nie będą stałe   
+**zawsze trzeba pamiętać o opcji ```--permanent```**, w przeciwnym wypadku zmiany nie będą stałe   
 
-### Przyklad
-Otwarcie portu 80 tcp
+### przyklad
+otwarcie portu 80 tcp
 
 ```console
 # firewall-cmd --add-port=80/tcp --permanent
@@ -374,18 +374,6 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
 - ```curl "$remote_ip"``` - pozwala sprawdzić czy działa serwis http      
 
 
-## Ćwiczenie 
-
-### Otwarcie konkretnego portu na maszynie 
-
-1. Klient - Przeskanowanie serwera na którym działa usługa, sprawdzenie czy ma jakieś otwarte porty
-
-```console
-nmap -A "$remote_ip_address"
-```
-
-2. SerNa serwerze 
-
 
 # SELinux
 - [Spis treści](#spis-tre%C5%9Bci)
@@ -400,6 +388,17 @@ nmap -A "$remote_ip_address"
 ### Pomocne komendy
 - ```ausearch``` - command parses audit daemon logs. You can view the man page for all of the details, but the -c 'httpd' argument will search for any event with that httpd name.
 - ```audit2allow``` - command generates an SELinux policy based on logs returned by ausearch. This tells you that the first command parses the audit logs for anything with an event based on httpd and then generates an SELinux policy to allow it.
+- ```getenforce``` - Pokazuje **w jakim trybie** działa SELinux 
+- ```sestatus``` - Pokazuje **szczegółowe informacje** na temat SELinux
+
+
+#### audit2allow - 
+- Wyszukiwanie problemów z SELinux + zezwolenie 
+    ```
+    ausearch -c "httpd" --raw | audit2allow -M my-httpd
+    ```
+
+
 
 ### TODO 
 #### - dodać jak rozwiązywać podstawowe błędy 
@@ -1332,7 +1331,7 @@ Random
 > ------------------------------------------------------------------    
 > 12 | -y remove httpd         | 2021-12-22 01:12 | Removed  |   10  
 > 11 | -y update bash          | 2021-12-22 01:12 | Upgrade  |    1  
-> 10 | -y install wireshark    | 2021-12-22 01:07 | Install  |   98  
+> 10 | -y install wireshark    | 2021-12-22 01:07 | install  |   98  
 >  9 | install -y httpd        | 2021-12-22 01:04 | Install  |   10  <  
  8 |                         | 2021-12-22 01:02 | I, U     |   81 >  
  7 | install -y git          | 2021-09-03 15:10 | Install  |   48  
@@ -1374,7 +1373,7 @@ $ yum module list module-name
 ## Rpm 
 ### Kernel update 
 - [RH - Kernel update](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/updating-kernel-with-yum_managing-monitoring-and-updating-the-kernel)  
-- [Lokalnie - Zarządzanie Kernelem](#kernel)  
+- [Lokalnie - Zarządzanie kernelem](#kernel)  
 
 1. Kernel Update 
 ```
@@ -1441,7 +1440,7 @@ sslke
     - ```x``` - extract 
     - ```u``` - update files that are newer 
 
-### Przyklady
+### przyklady
 - ```tar -cvzf "$plik_archiwum" "$folder_do_skompresowania"``` - tworzenie nowego gzipowego archiwum 
 - ```tar -tvzf "$plik_archiwum" "$folder_do_skompresowania"``` - wyświetlenie list plików w gzipowym archiwum 
 - ```tar -xvzf "$plik_archiwum" "$folder_do_skompresowania"``` - wypakowanie gzipowego archiwum
@@ -1450,7 +1449,7 @@ sslke
 
 ### bzip
 
-### TODO - cos jeszcze?
+### todo - cos jeszcze?
 
 # Swap
 - [Spis treści](#spis-tre%C5%9Bci)
@@ -1475,7 +1474,7 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 - [Spis treści](#spis-tre%C5%9Bci)
 
 ### Linki 
-- [RH - How to change boot options on Linux](https://www.redhat.com/sysadmin/linux-change-boot-options-grub)
+- [rh - how to change boot options on linux](https://www.redhat.com/sysadmin/linux-change-boot-options-grub)
 - [Zmiana ustawień grub](https://www.unixarena.com/2015/04/how-to-edit-the-grub-on-rhel-7.html/)
 
 ## Grub
@@ -1551,7 +1550,7 @@ GRUB_TIMEOUT=15
 
 ### Tutoriale
 - [RH - podman rootless container procedura](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/building_running_and_managing_containers/assembly_porting-containers-to-systemd-using-podman_building-running-and-managing-containers#proc_enabling-systemd-services_assembly_porting-containers-to-systemd-using-podman)
-- [RSYSLOG - aktualny forum](https://learn.redhat.com/t5/Platform-Linux/How-to-install-the-containerized-version-of-rhel8-rsyslog/td-p/20887)
+- [RSYSLOG - aktualny forum](https://learn.redhat.com/t5/platform-Linux/How-to-install-the-containerized-version-of-rhel8-rsyslog/td-p/20887)
     - [RSYSLOG2](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/building_running_and_managing_containers/index#assembly_running-special-container-images_building-running-and-managing-containers)
 - [RH - lab kontenery](https://developers.redhat.com/learn/lessons/deploying-containers-podman?intcmp=7013a0000026UTXAA2)
 - [Youtube RH - podman systemd](https://www.youtube.com/watch?v=AGkM2jGT61Y)

@@ -1161,6 +1161,24 @@ Use the "rpm" command to query the package database for information about the pa
 Configure a network bridge named "br1" that connects the Ethernet interface "eth1" to the WiFi interface "wlan1".
 
 
+# Random 
+
+## 1. 
+
+## Ćwiczenie 
+
+### Otwarcie konkretnego portu na maszynie 
+
+1. Klient - Przeskanowanie serwera na którym działa usługa, sprawdzenie czy ma jakieś otwarte porty
+
+```console
+nmap -A "$remote_ip_address"
+```
+
+2. SerNa serwerze 
+
+
+
 ## vander Exam 2 - odpowiedzi
 [Spis treści](#spis-treści)
 
