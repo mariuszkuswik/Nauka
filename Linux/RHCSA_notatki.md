@@ -112,10 +112,10 @@
 | 15. [troubleshoot-selinux-issues](egzamin_praktyczny_cg.md/#15-troubleshoot-selinux-issues) | [selinux](#selinux) - man semanage-fcontext, **jest w przykładach** | + | 
 | 16. [configure-the-firewall-on-both-servers](egzamin_praktyczny_cg.md/#16-configure-the-firewall-on-both-servers) | test | test | 
 
-# pomoc 
+# Pomoc 
 [spis treści](#spis-tre%c5%9bci)
 
-## wyszukiwanie pomocy
+## Wyszukiwanie pomocy
 - ```apropos``` wyszukuje strony w pomocy, podobnie jak *man -k*
 - ```man -k``` - wyszukuje strony w pomocy 
 - ```man -k``` - szuka we **wszystkich** plikach pomocy
@@ -135,8 +135,7 @@
 ## /usr/share/doc
 dodatkowa dokumentacja 
 
-
-# przywracanie hasła roota
+# Przywracanie hasła roota
 - [spis treści](#spis-tre%c5%9bci)
 
 you are new system administrator and from now you are going to handle the system and your main task is network monitoring, backup and restore. but you don't know the root password. change the root password to redhat and login in default runlevel.
@@ -169,11 +168,11 @@ you are new system administrator and from now you are going to handle the system
 - zmiana w /etc/hostname jest niezalecana!
 
 
-# użytkownicy 
-- szybkie tworzenie
+# Użytkownicy 
+- szybkie tworzenie userów 
 
 
-# grupy użytkowników
+# Grupy użytkowników
 -  szybkie tworzenie  
 `for group in gropup1 group2 group3 ; do groupadd "$group" ; done`
 
@@ -200,19 +199,6 @@ nadanie dla grupy ```dba_managers``` praw do wykonywania na wszystkihch maszynac
 %dba_managers   all = software
 
 
-## cg zadanko   
-- configure superuser access:  
-- enable the following command aliases:  
-    - software
-    - services
-    - processes
-- add a new command alias named "messages":
-    - `/bin/tail -f /var/log/messages`
-- enable superuser privilages for the following local groups:
-    - dba_managers: everything
-    - dba_admin: command aliases: software, services, processes
-    - dba_intern: command alias: messages
-
 # wyszukiwanie plików 
 - [spis treści](#spis-tre%c5%9bci)
 
@@ -231,22 +217,17 @@ locate działa na podstawie bazy danych, domyślnie aktualizowana jest raz dzien
 - ```updatedb``` - aktualizuje bazę locate
 - ```locate "$file_name"``` - wyszukuje plik na podstawie indeksowanej bazy danych
 
-## grep 
-### #todo - może coś dopisać
-- ```grep "$wyszukiwana_fraza" "$nazwa_pliku"```
-
-
 # uzytkownicy
 [spis treści](#spis-tre%c5%9bci)
 
-## tworzenie nowych 
+## Tworzenie nowych 
 ### configi
 - ```/etc/defaults/useradd``` 
 - ```/etc/login.defs```
 
-# todo - dopisać
+# ToDo - dopisać
 - ustawienie domyślnych ustawień nowo dodawanych użytkowników, tj. wygasanie hasła, katalogi domowe itd.
-- 
+ 
 
 ### podstawowe komendy
 - ```useradd``` - dodanie użytkownika
@@ -256,7 +237,7 @@ locate działa na podstawie bazy danych, domyślnie aktualizowana jest raz dzien
 - ```userdel``` - usuwanie użytkownika
    
 
-## edytowanie obecnych
+## Edycja użytkowników
 ### wygasanie hasla/blokowanie konta 
 - ```chage``` - blokowanie konta po określonym czasie 
 - ```chage``` - wymuszenie zmiany hasła 
@@ -267,48 +248,6 @@ vim /etc/passwd
 # dodanie jako shell 
 /sbin/nologin
 ```
-
-# nfs
-[spis treści](#spis-tre%c5%9bci)
-
-### linki
-- [spis tresci](#spis-treści)
-- [rh - https://www.redhat.com/sysadmin/configure-nfs-linux](https://www.redhat.com/sysadmin/configure-nfs-linux)
-
-
-### dokumentacja 
-
-- ```man 5 nfs``` - wyświetlenie opcji montowania dla udziałów nfs   
-- ```rpm -qd nfs-utils | less``` - wyświetlenie plików z dokumentacją
-
-- ```man mount.nfs``` - opcje montowania udziału nfs   
-
-### #todo - sprawdzić dokładniej jak to opisać 
-- ```nfsmount.conf``` -   
-  
-- ```man showmount``` - informacje o użyciu polecenia showmount do wyświetlenia katalogów współdzielonych, które są udostępniane przez serwery nfs  
-
-
-```bash
-# ogólne infomracje na temat pakietu nfs
-rpm -qi nfs-utils
-# configi
-rpm -qc nfs-utils
-# wylistowanie plików w pakiecie nfs-utils
-rpm -ql nfs-utils | grep bin
-```   
-
-
-udział udostępniony, wpis w fstabie dodany, 
-sprawdzić firewalla i selinux na serwerze, potem spróbować zamontować udział i nadać kontekst dla procesu httpd
-
-dodać do configu httpd wpis z udostepnionym katalogiem
-przeladowac serwis httpd
-spradzic bledy /var/log/messages
-
-utworzenie filesystemu na nowym lvmie, zmiana wielkości tego filesystemu, 
-zamiana wielkości lvm 
-
 
 # firewall 
 - [spis treści](#spis-tre%c5%9bci)
@@ -337,42 +276,39 @@ zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
 
 **zawsze trzeba pamiętać o opcji ```--permanent```**, w przeciwnym wypadku zmiany nie będą stałe   
 
-### przyklad
-otwarcie portu 80 tcp
+### Przyklady
+- Otwarcie portu 80 tcp
+    ```console
+    firewall-cmd --add-port=80/tcp --permanent
+    ```
 
-```console
-# firewall-cmd --add-port=80/tcp --permanent
-```
+- Dodanie serwisu mysql do firewalla
+    ```console
+    firewall-cmd --add-service=http --permanent
+    ```
 
-Dodanie serwisu mysql do firewalla
+- Wylistowanie ustawiń **PERMANENTNYCH** dla firewalla
+    ```console
+    firewall-cmd --list-all --permanent
+    ```
 
-```console
-# firewall-cmd --add-service=http --permanent
-```
+- Przeładowanie configu firewalla 
+    ```console
+    firewall-cmd --reload 
+    ```
 
+- **Sprawdzenie czy port 90 jest otwarty** - telnet powinien wyrzucić błąd po czasie jeżeli działa 
+    ```console
+    telnet 172.20.183.251 90
+    ```  
 
-Wylistowanie ustawiń **PERMANENTNYCH** dla firewalla
-
-```console
-# firewall-cmd --list-all --permanent
-```
-
-Przeładowanie configu firewalla 
-
-```console
-# firewall-cmd --reload 
-```
-
-Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie jeżeli działa 
-
-```console
-# telnet 172.20.183.251 90
-```  
-  
+    np. 
+    ```
+    telnet "$remote_ip" "$remote_port"
+ 
+ ---  
 - ```nmap -A``` - skanuje porty zdalnej maszyny, wyświetla wszystkie informacje      
-- ```telnet "$remote_ip" "$remote_port"``` - pozwala sprawdzić czy port jest otwarty   
 - ```curl "$remote_ip"``` - pozwala sprawdzić czy działa serwis http      
-
 
 
 # SELinux
@@ -392,7 +328,7 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
 - ```sestatus``` - Pokazuje **szczegółowe informacje** na temat SELinux
 
 
-#### audit2allow - 
+#### audit2allow  
 - Wyszukiwanie problemów z SELinux + zezwolenie 
     ```
     ausearch -c "httpd" --raw | audit2allow -M my-httpd
@@ -402,11 +338,6 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
     audit2allow -a -M "$nazwa_reguly"
     ```
 
-### TODO 
-#### - dodać jak rozwiązywać podstawowe błędy 
-#### - jak ausearch -c "httpd" | audit2allow, trzeba dodać opcje raw  
-  
-  
 **Jeżeli mamy jakiś problem z selinuxem to jest duża szansa że odpowiednią komendę znajdziemy poprzez ```grep "$nazwa_usługi" /var/log/messages```**
 
 - ```semanage boolean -l``` - **wyświetlenie opisu** wszystkich zmiennych SELinux 
@@ -429,14 +360,7 @@ Sprawdzenie czy port 90 jest otwarty, telnet powinien wyrzucić błąd po czasie
 - Zmiana podczas bootowania systemu ( parametry przy odpalaniu systemu)  
     - Dopisanie/zmiana parametru ```enforcing``` np. ```enforcing=0``` w linijce ```linux``` (parametry jądra)  - zmiana parametru selinux przy bootowaniu na   permissive     
   
-![selinux_boot_permissive](Obrazy/Cloud_Guru/selinux_boot_permissive.png)
-
-![selinux_parametry_bootowanie](Obrazy/Cloud_Guru/selinux_parametry_bootowanie.png)  
-  
-
-
 ## Konteksty SELinux
-
 Dla większości komend aby sprawdzić kontekst działa parametr ```-Z```,   
 np. 
 - ```ls -laZ``` - sprawdzenie kontekstu plików 
@@ -444,7 +368,6 @@ np.
 
 
 ### Sprawdzenie kontekstu pliku 
-
 - ```ls -laZ "$file_name"``` - wyświetlenie kontekstu pliku 
     - **Context** is the one with **_t** suffix - *user_home_dir_t*
 
