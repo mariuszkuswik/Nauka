@@ -10,6 +10,7 @@
 3. [vander](#vander)
 	- [RHCSA vander 1](#RHCSA-Practice-Exam-1)
 	- [RHCSA vander 2](#RHCSA-Practice-Exam-2)
+4. [Daily zadanka](#daily-zadanka)
 
 ---
 
@@ -888,9 +889,55 @@ Create a virtual machine with the name server4. Make sure it meets the following
 	
 	- [-] Add a new disk to your virtual machine. On this disk, create a VDO volume with a virtual size of 1TiB.
 
-# RHCSA Practice Exam 3
 
-Testasdasd
+# Daily zadanka 
+[Spis treści](#spis-tre%C5%9Bci)
+
+- Create a user called tom. Create a directory named /private. Use an acl to only allow access (rwx) to tom to the private directory.
+    - Allowed time: 5 minutes.
+    
+- Create an EXT4 file system mounted under /vol based on a logical volume of 100MB. Reduce the size to 60MB.
+    - Allowed time: 10 minutes.
+
+- Find all files bigger than 100MB and write their names into the /root/results.txt file.
+    - Allowed time: 8 minutes.
+
+- Create a XFS file system of 100MB. Mount it under /mnt. Then, increase its size by 50MB
+    - Allowed time: 10 minutes.
+
+- Find all files bigger than 100MB and write their names into the /root/results.txt file.
+    - Allowed time: 8 minutes.
+
+- Archive and compress the content of the /opt directory (create files if none exists).
+Uncompress and unarchive the resulting file in /root
+    - Allowed time: 10 minutes.
+
+- Add 100MB of swap space to the machine using a new logical volume.
+    - Allowed time: 5 minutes.
+
+- Set up time services pointing to default time servers.
+    - Allowed time: 5 minutes.
+
+- Create a new user account called "bob" with password "redhat" and set expiration in one week.
+    - Allowed time: 5 minutes.
+
+- Install the appropriate kernel update from http://mirrors.kernel.org/centos/6.4/updates/x86_64/Packages.
+The following conditions must also be met:
+    – the updated kernel is the default kernel when the system is rebooted.
+    – the original kernel remains available and bootable on the system.
+
+- Create two new user accounts "steve" and "oliver".  
+Create a group "team". Create a directory "shared".  
+All files put into the "shared" directory by "steve" or "oliver" should belong to the "team" group and be only visible by them.  
+    - Allowed time: 10 minutes.
+
+- Create two users "tom" and "engine". "tom" has the UID/GID 3000 and "engine" the UID/GID 4000. "engine" doesn't have an interactive shell.
+    - Allowed time: 5 minutes.
+
+- Add 100MB of swap space to the machine using a new logical volume.
+    - Allowed time: 5 minutes.
+
+
 
 
 

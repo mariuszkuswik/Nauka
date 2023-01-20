@@ -1655,7 +1655,7 @@ GRUB_TIMEOUT=15
 14. ```curl http://127.0.0.1:8000/text.txt``` - potiwerdzenie po reboocie 
 
 
-1. loginctl enable-linger "$user" ?
+1. loginctl enable-linger "$user" 
 2. loginctl show-user "$user" - sprawdzenie czy linger jest wlaczony dla uzytkownika?
 2. podman generate systemd
     - Pliki uslug systemd uzytkownika ```~/.config/systemd/user```
@@ -1671,7 +1671,6 @@ GRUB_TIMEOUT=15
 SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA ```ls -lZ /```
 
 - podman container create --volume "volume/volume:Z" - automatyczny kontekst dla volumenu? - ogarnąć całą komendę
-
 
 
 ## Obrazy kontenerów
@@ -1707,55 +1706,6 @@ systemctl enable --now tuned
 4. Włączenie odpowiedniej zmiennej boolowskiej ?
 
 
-
-# Daily zadanka 
-[Spis treści](#spis-tre%C5%9Bci)
-
-- Create a user called tom. Create a directory named /private. Use an acl to only allow access (rwx) to tom to the private directory.
-    - Allowed time: 5 minutes.
-    
-- Create an EXT4 file system mounted under /vol based on a logical volume of 100MB. Reduce the size to 60MB.
-    - Allowed time: 10 minutes.
-
-- Find all files bigger than 100MB and write their names into the /root/results.txt file.
-    - Allowed time: 8 minutes.
-
-- Create a XFS file system of 100MB. Mount it under /mnt. Then, increase its size by 50MB
-    - Allowed time: 10 minutes.
-
-- Find all files bigger than 100MB and write their names into the /root/results.txt file.
-    - Allowed time: 8 minutes.
-
-- Archive and compress the content of the /opt directory (create files if none exists).
-Uncompress and unarchive the resulting file in /root
-    - Allowed time: 10 minutes.
-
-- Add 100MB of swap space to the machine using a new logical volume.
-    - Allowed time: 5 minutes.
-
-- Set up time services pointing to default time servers.
-    - Allowed time: 5 minutes.
-
-- Create a new user account called "bob" with password "redhat" and set expiration in one week.
-    - Allowed time: 5 minutes.
-
-- Install the appropriate kernel update from http://mirrors.kernel.org/centos/6.4/updates/x86_64/Packages.
-The following conditions must also be met:
-    – the updated kernel is the default kernel when the system is rebooted.
-    – the original kernel remains available and bootable on the system.
-
-- Create two new user accounts "steve" and "oliver".  
-Create a group "team". Create a directory "shared".  
-All files put into the "shared" directory by "steve" or "oliver" should belong to the "team" group and be only visible by them.  
-    - Allowed time: 10 minutes.
-
-- Create two users "tom" and "engine". "tom" has the UID/GID 3000 and "engine" the UID/GID 4000. "engine" doesn't have an interactive shell.
-    - Allowed time: 5 minutes.
-
-- Add 100MB of swap space to the machine using a new logical volume.
-    - Allowed time: 5 minutes.
-
-
 # Przed egzaminem 
 - [Spis treści](#spis-treści)
 
@@ -1765,8 +1715,7 @@ All files put into the "shared" directory by "steve" or "oliver" should belong t
     - ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU
 - ```bc``` - basic calculator 
 
-#### Bash auto-completion 
-
+### Bash auto-completion 
 - [Bash completion ubuntu](https://askubuntu.com/questions/545540/terminal-autocomplete-doesnt-work-properly)
 
 ```
@@ -1784,6 +1733,10 @@ cd /usr/share/bash-completion
  
 ### Skrypty
 - ```man sh``` - lista zmiennych specjalnych
+
+### Selinux
+- [Selinux](#selinux)
+### TODO - Dodać coś o audit2allow i takie tam
 
 ### Repo
 - ```dnf-config-manager``` - upraszcza dodawanie repo 
@@ -1850,29 +1803,7 @@ you could also use /etc/hosts.allow
 /etc/hosts.deny
 
 
-# ftp
-```console
-# vi /etc/sysconfig/iptables-config
-IPTABLES_MODULES=”nf_conntrack_ftp nf_nat_ftp”
-# iptables -I INPUT -m state –state NEW -m tcp -p tcp –dport 20 -j ACCEPT
-# iptables -I INPUT -m state –state NEW -m tcp -p tcp –dport 21 -j ACCEPT
-# service iptables save
-# service iptables restart
-# vi /etc/hosts.deny
-vsftpd: .hackers.net: DENY
-```
-
-# httpd
-```console
-# vi /etc/httpd/conf/httpd.conf
-Order allow,deny
-Allow from 127.0.0.1 server1.example.com
-```
-
-
-
 # Po egzaminie
-
 ## Opracowane pytania
 - RESTART HASŁA ROOT
 - LVM 
@@ -1889,7 +1820,7 @@ Allow from 127.0.0.1 server1.example.com
     - pobieranie kontenerów ze zdalnego repozytorium 
 - VDO
     - założenie filesystemu z miejscem logicznym
-    - pamiętać o włączeniu usługi!
+    - pamiętać o włączeniu usługi i nofail w fstab!
 - Przypisanie IP do serwerów, zmiana hostname
 - Repo 
     - dodanie repo, appstream i baseos, nie ma żadnego innego przykładowego 
