@@ -138,25 +138,31 @@ dodatkowa dokumentacja
 # Przywracanie hasła roota
 - [spis treści](#spis-tre%c5%9bci)
 
-1. *Reboot*
-2. *W Grubie* - nacisnąć ```e```
-3. Na końcu linii zaczynającej się od ```linux``` dodać ```init=/bin/bash``` lub ```rd.break```
-4. Naciskamy ```ctrl+x```
-5. mount -o remount,rw /sysroot
-    - *Katalog z filesystemem można sprawdzić poleceniem ```mount```*
-6. chroot /sysroot
-7. passwd
-8. touch ```/.autorelabel```
-    - **WAŻNE!** - bez utworzenia ```/.autorelabel``` SELinux się rozsypie
-9. exit
-10. reboot now 
+you are new system administrator and from now you are going to handle the system and your main task is network monitoring, backup and restore. but you don't know the root password. change the root password to redhat and login in default runlevel.
 
+```console
+### in rhel8
+- reboot the system
+- press "e" letter
+- add "rd.break" or "init=/bin/bash" at the end of de line thet begening with "linux" in grub menu
+- ctrl + x
+
+# mount -o remount,rw /sysroot
+# chroot /sysroot
+# passwd
+
+### selinux jest rozjechany więc musi ustalić etykiety od nowa ? 
+### inaczej nikt nie będzie mógł zalogować się do systemu
+#  touch /.autorelabel
+# exit
+# logout
+```
 
 # hostname
-- ```nmtui``` i ```nmcli``` - pozwalają na zmianę hostname i ip
 - ```hostnamectl``` - wyświetla aktualny hostname + informacje na temat systemu
     - ```set-hostname``` - zmienia hostname na podany
   
+- ```nmtui``` i ```nmcli``` również pozwalają na zmianę hostname 
 
 ### ważne!
 - zmiana w /etc/hostname jest niezalecana!
@@ -219,7 +225,6 @@ locate działa na podstawie bazy danych, domyślnie aktualizowana jest raz dzien
 - ```/etc/defaults/useradd``` 
 - ```/etc/login.defs```
 
-
 # ToDo - dopisać
 - ustawienie domyślnych ustawień nowo dodawanych użytkowników, tj. wygasanie hasła, katalogi domowe itd.
  
@@ -248,6 +253,9 @@ vim /etc/passwd
 - [spis treści](#spis-tre%c5%9bci)
 ### linki
 - [rh - firewalld article](https://www.redhat.com/sysadmin/firewalld-linux-firewall)
+---
+- w rhel8 firewall jest zarzadzany przez firewalld, pod spodem jest nftables  
+zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
 
 ### configi 
 - ```/usr/lib/firewalld``` - katalog z domyslna konfiguracja
@@ -265,11 +273,10 @@ vim /etc/passwd
         - ```--add-port "$port_number"/[tcp | udp ]``` - otwarcie portu dla tcp lub udp
         - ```--add-service "$service_name"``` - udostępnienie możliwości komunikacji z usługą (lista dostępna pod tabulatorem)
 
-#### **WAŻNE!**
-**zawsze trzeba pamiętać o opcji ```--permanent```**, w przeciwnym wypadku zmiany nie będą stałe   
-oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zastosowane
 
-### Przyklady użycia
+**zawsze trzeba pamiętać o opcji ```--permanent```**, w przeciwnym wypadku zmiany nie będą stałe   
+
+### Przyklady
 - Otwarcie portu 80 tcp
     ```console
     firewall-cmd --add-port=80/tcp --permanent
