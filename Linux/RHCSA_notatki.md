@@ -222,7 +222,7 @@ oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zast
     np. 
     ```
     telnet "$remote_ip" "$remote_port"
- 
+    ```
  ---  
 - ```nmap -A``` - skanuje porty zdalnej maszyny, wyświetla wszystkie informacje      
 - ```curl "$remote_ip"``` - pozwala sprawdzić czy działa serwis http      
