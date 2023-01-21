@@ -635,7 +635,7 @@ dnf install stratisd stratis-cli
 
 ### Z czego sklada sie Stratis
 - Stratis Block device - Linux block devices
-    - Stratic może leżeć na dowolnym urządzeniu blokowym, tj. partycja, LVM czy RAID
+    - Stratis może leżeć na dowolnym urządzeniu blokowym, tj. partycja, LVM czy RAID
     - Disk (HDD/SSD/NVMe)
     - Partition
     - LVM logical volume
@@ -666,10 +666,6 @@ dnf install stratisd stratis-cli
 ```
 systemctl start stratisd
 systemctl enable stratisd
-```
-3. Zlokalizuj urządzenia na których chcesz stawiać pulę
-```
-lsblk
 ```
 3. Utwórz pulę: 
 - A pool with one block device.
@@ -714,14 +710,12 @@ stratis_howto  my_precious  546 MiB  Nov 09 2018 11:09  /dev/stratis/stratis_how
 Dodanie UUID ```/dev/stratis/"$pool_name"/"$filesystem_name"```
 
 
-
 5. Utwórz punkt montowania i zamontuj system plików: ...
 6. Dodaj więcej bloków do istniejącej puli:
 
 
 
 ## Logi 
-
 - [Spis treści](#spis-tre%C5%9Bci)
 - [RH - How to configure your system to preserve system logs after a reboot](https://www.redhat.com/sysadmin/store-linux-system-journals)
 - [RH - Chapter 23. Viewing and Managing Log Files](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-viewing_and_managing_log_files)
