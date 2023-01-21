@@ -17,8 +17,8 @@
     - [montowanie](#montowanie)
     - [filesystemy](#filesystemy)
     - [lvm](#lvm)
+        - [vdo](#vdo)
     - [stratis](#stratis)
-    - [vdo](#vdo)
 1. [logi](#acl)
 1. [uprawnienia](#uprawnienia)
     - [suid, sgid, sticky bit](#suid,-sgid,-sticky-bit)
@@ -604,9 +604,7 @@ File mapping | filefrag | xfs_bmap
 dnf install vdo kmod-kvdo
 ```
 
-- [artykuł jak to działa](https://hobo.house/2018/09/13/using-vdo-on-centos-rhel7-for-storage-efficiency/)  
-
-- **WAŻNE!** - VDO działa jako demon!
+- [STARY artykuł jak to działa](https://hobo.house/2018/09/13/using-vdo-on-centos-rhel7-for-storage-efficiency/)  
 
 
 ### Tworzenie VDO
