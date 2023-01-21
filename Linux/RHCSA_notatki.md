@@ -50,19 +50,17 @@
 - ```man -k``` - szuka we **wszystkich** plikach pomocy
 - ```info``` - wyświetla komendy z opisem  
 - ```rpm -qd``` - wyświetl pliki z dokumentacją dla danego pakietu
-- locate "$szukana_komenda" - powinno wylistować pliki z pomocą 
+- ```locate "$szukana_komenda"``` - powinno wylistować pliki z pomocą 
 
 ## man
 - ```man man``` - manual do ```man```
 - ```mandb``` - odświeża bazę danych man, odpalać na początku egzaminu
 
 ## info
-
-```info``` - **samo wykonanie polecenia info wyświetla przydatne komendy z opisami**
-
+- ```info``` - **samo wykonanie polecenia info wyświetla przydatne komendy z opisami**
 
 ## /usr/share/doc
-dodatkowa dokumentacja 
+- dodatkowa dokumentacja 
 
 # Przywracanie hasła roota
 - [spis treści](#spis-tre%c5%9bci)
