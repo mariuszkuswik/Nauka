@@ -110,7 +110,7 @@
 | 13. [configure-a-shared-directory-for-collaboration ](egzamin_praktyczny_cg.md/#13-configure-a-shared-directory-for-collaboration) | test | + | 
 | 14. [create-a-persistent-systemd-container-using-podman](egzamin_praktyczny_cg.md/#14-create-a-persistent-systemd-container-using-podman) | [kontenery](#kontenery) | + | 
 | 15. [troubleshoot-selinux-issues](egzamin_praktyczny_cg.md/#15-troubleshoot-selinux-issues) | [selinux](#selinux) - man semanage-fcontext, **jest w przykładach** | + | 
-| 16. [configure-the-firewall-on-both-servers](egzamin_praktyczny_cg.md/#16-configure-the-firewall-on-both-servers) | test | test | 
+| 16. [configure-the-firewall-on-both-servers](egzamin_praktyczny_cg.md/#16-configure-the-firewall-on-both-servers) | test | + | 
 
 # Pomoc 
 [spis treści](#spis-tre%c5%9bci)
@@ -589,22 +589,32 @@ File mapping | filefrag | xfs_bmap
 - ```lvcreate``` 
     - ```-l``` - **liczba extent** z której chcemy utworzyć lvm (wielkość extent jest ustawiony przy volume grupie)
 
+### VDO
+- [Spis treści](#spis-tre%C5%9Bci)
+- [Poradnik od RedHata](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/vdo-quick-start)
 
 
-### Ćwiczenie : 
-Create a new physical volume with volume group in the name of datacontainer, the extent of VG should be 16MB. Also create new logical volume with name datacopy with the size of 50 extents and filesystem vfat mounted under /datasource.
+- [Utworzenie VDO na bazie LVM](https://access.redhat.com/solutions/6809311)
 
+### SPRAWDZIC WLASCIWIE WSZYSTKO, pozmienialo sie od czasu kiedy jest na lvm
 
-1. Before any kind of operations on partitions it is good to know what we actually have in the system.
+### Instalacja
+
+```console
+dnf install vdo kmod-kvdo
 ```
-lsblk
-```
 
-2. Backup fstab file
-```
-cp /etc/fstab ~/fstab
-```
+- [artykuł jak to działa](https://hobo.house/2018/09/13/using-vdo-on-centos-rhel7-for-storage-efficiency/)  
 
+- **WAŻNE!** - VDO działa jako demon!
+
+
+### Tworzenie VDO
+#### TODO - Opisac 
+
+Zamontowanie filesystemu 
+- **Opcje montowania VDO :**
+    - ```x-systemd.requires=vdo.service``` - VDO musi mieć działającą usługę ```vdo.service``` przed zamontowaniem  
 
 
 ## Stratis 
@@ -710,97 +720,6 @@ Dodanie UUID ```/dev/stratis/"$pool_name"/"$filesystem_name"```
 5. Utwórz punkt montowania i zamontuj system plików: ...
 6. Dodaj więcej bloków do istniejącej puli:
 
-
-
-## VDO
-- [Spis treści](#spis-tre%C5%9Bci)
-- [Poradnik od RedHata](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/vdo-quick-start)
-
-### #TODO - opisać bardziej
-- VDO będzie na egzaminie, ogarnąć co i jak !
-
-
-### Instalacja
-
-```console
-dnf install vdo kmod-kvdo
-```
-
-#### Cwiczenie - Utworzenie VDO
-
-Replace logical_size with the amount of logical storage that the VDO volume should present:
-
-
-- vdo create \
-    - --name=vdo_name \
-    - --device=block_device \
-    - --vdoLogicalSize=logical_size \
-    - [--vdoSlabSize=slab_size]
-
-```console
-Create a file system:
-
-For the XFS file system:
-# mkfs.xfs -K /dev/mapper/vdo_name
-For the ext4 file system:
-# mkfs.ext4 -E nodiscard /dev/mapper/vdo_name
-
-Mount the file system:
-# mkdir -m 1777 /mnt/vdo_name
-# mount /dev/mapper/vdo_name /mnt/vdo_name
-To configure the file system to mount automatically, use either the /etc/fstab file or a systemd mount unit:
-If you decide to use the /etc/fstab configuration file, add one of the following lines to the file:
-
-For the XFS file system:
-/dev/mapper/vdo_name /mnt/vdo_name xfs defaults,_netdev,x-systemd.device-timeout=0,x-systemd.requires=vdo.service 0 0
-For the ext4 file system:
-/dev/mapper/vdo_name /mnt/vdo_name ext4 defaults,_netdev,x-systemd.device-timeout=0,x-systemd.requires=vdo.service 0 0
-
-VDO space usage and efficiency can be monitored using the vdostats utility:
-# vdostats --human-readable
-
-Device                   1K-blocks    Used     Available    Use%    Space saving%
-/dev/mapper/node1osd1    926.5G       21.0G    905.5G       2%      73%             
-/dev/mapper/node1osd2    926.5G       28.2G    898.3G       3%      64%
-```
-
-
-Za pomocą vdo możemy 
-
-[Pytanie dotyczące VDO](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md)  
-[artykuł jak to działa](https://hobo.house/2018/09/13/using-vdo-on-centos-rhel7-for-storage-efficiency/)  
-
-- **WAŻNE!** - VDO działa jako demon!
-
-```vdo create ```
-
-### Tworzenie VDO
-
-1. Instalacja 
-```
-dnf whatprovides vdo
-```
-
-2. Włączenie usługi VDO
-```
-systemctl status vdo 
-```
-
-1. Utworzenie VDO 
-```
-vdo create 
-```
-
-Utworzenie filesystemu 
-```console
-# -K jest wymagane, sprawdzić czemu
-mkfs.xfs -K /dev/LINK 
-```
-
-Zamontowanie filesystemu 
-- **Opcje montowania VDO :**
-    - ```x-systemd.requires=vdo.service``` - VDO musi mieć działającą usługę ```vdo.service``` przed zamontowaniem  
-    - 
 
 
 ## Logi 

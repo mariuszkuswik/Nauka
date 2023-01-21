@@ -178,6 +178,9 @@ Validate the changes in ```/boot/grub2/grub.cfg```. Do not reboot the server.
 ## 9. Configure Persistent Storage with LVM on Top of VDO
 [Spis treści](#spis-treści)
 
+### TODO - VDO jest teraz czescia lvm 
+- [Jak dodac VDO na lvm](https://access.redhat.com/solutions/6809311)
+
 **On the second server:**
 
 Create a VDO device with the first unused 5GB device.  
