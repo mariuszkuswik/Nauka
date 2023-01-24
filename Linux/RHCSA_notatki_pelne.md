@@ -103,7 +103,7 @@
 | 6. [manage-scheduled-tasks-on-the-first-server ](egzamin_praktyczny_cg.md/#6-manage-scheduled-tasks-on-the-first-server) | test | test | 
 | 7. [configure-time-service-clients-for-both-servers](egzamin_praktyczny_cg.md/#7-configure-time-service-clients-for-both-servers) | test | + | 
 | 8. [managing-the-system-bootloader](egzamin_praktyczny_cg.md/#8-managing-the-system-bootloader) | test | + | 
-| 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](egzamin_praktyczny_cg.md/#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | [tutorial rh, moze problem z jadrem?](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/deduplicating_and_compressing_logical_volumes_on_rhel/creating-a-deduplicated-and-compressed-logical-volume_deduplicating-and-compressing-logical-volumes-on-rhel#creating-an-lvm-vdo-volume_creating-a-deduplicated-and-compressed-logical-volume) | -, problem z jadrem? ogarnac jeszcze raz, wazne | 
+| 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](egzamin_praktyczny_cg.md/#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | [tutorial rh, moze problem z jadrem?](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/deduplicating_and_compressing_logical_volumes_on_rhel/creating-a-deduplicated-and-compressed-logical-volume_deduplicating-and-compressing-logical-volumes-on-rhel#creating-an-lvm-vdo-volume_creating-a-deduplicated-and-compressed-logical-volume) | +, jakos zostalo zrobione, ogarniac dalej, WAZNE | 
 | 10. [add-swap-space-persistently-and-nondisruptive](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules)| test | + | 
 | 11. [configure-stratis-storage-persistently](egzamin_praktyczny_cg.md/#11-configure-stratis-storage-persistently) | test | + | 
 | 12. [configure-autofs-for-home-directories](egzamin_praktyczny_cg.md/#12-configure-autofs-for-home-directories) | test | + | 
@@ -111,6 +111,8 @@
 | 14. [create-a-persistent-systemd-container-using-podman](egzamin_praktyczny_cg.md/#14-create-a-persistent-systemd-container-using-podman) | [kontenery](#kontenery) | + | 
 | 15. [troubleshoot-selinux-issues](egzamin_praktyczny_cg.md/#15-troubleshoot-selinux-issues) | [selinux](#selinux) - man semanage-fcontext, **jest w przykładach** | + | 
 | 16. [configure-the-firewall-on-both-servers](egzamin_praktyczny_cg.md/#16-configure-the-firewall-on-both-servers) | test | + | 
+
+  
 
 # Pomoc 
 [spis treści](#spis-tre%c5%9bci)

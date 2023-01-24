@@ -50,7 +50,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 1. [ ] Create user **student** with password ```password```, and user **root** with password ```password```.
 
-2. [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
+2. [x] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
 3. [ ] Reboot your server. Assume that you don’t know the **root** password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
 
@@ -67,11 +67,11 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 7. [ ] Create a 2-GiB volume group, using 8-MiB physical extents. In this volume group, create a 500-MiB logical volume with the name mydata, and mount it persistently on the directory ```/mydata```.
 
-8. [-] Find all files that are owned by user **edwin** and copy them to the directory ```/rootedwinfiles```.
+8. [ ] Find all files that are owned by user **edwin** and copy them to the directory ```/rootedwinfiles```.
 
-9. [x] Schedule a task that runs the command ```touch /etc/motd``` every day from Monday through Friday at 2 a.m.
+9. [ ] Schedule a task that runs the command ```touch /etc/motd``` every day from Monday through Friday at 2 a.m.
 
-10. [x] Add a new 10-GiB virtual disk to your virtual machine. On this disk, add a **VDO** volume with a size of 20 GiB and mount it persistently.
+10. [ ] Add a new 10-GiB virtual disk to your virtual machine. On this disk, add a **VDO** volume with a size of 20 GiB and mount it persistently.
 
 11. [x] Install the ```vsftpd``` service and ensure that it is started automatically at reboot.
 
@@ -1167,17 +1167,17 @@ You could ask me to use selinux,vdo or any other linux service.
 ## 1. 
 Create a new logical volume named "lvol1" with a size of 1GB in the volume group "vg01".
 
-Modify the file permissions of the file "/etc/fstab" so that only the owner has read and write permissions, and others have only read permission.
+[-] Modify the file permissions of the file "/etc/fstab" so that only the owner has read and write permissions, and others have only read permission.
 
-Set up a cron job to run the command "dnf update" every day at 10:00 AM.
+[x] Set up a cron job to run the command "dnf update" every day at 10:00 AM.
 
-Configure SELinux to allow the Apache web server to access files in the directory "/var/www/html/".
+[] Configure SELinux to allow the Apache web server to access files in the directory "/var/www/html/".
 
-Create a new user named "user1" with a user ID (UID) of 1001 and a primary group ID (GID) of 1001, and assign them to the group "testgroup".
+[-] Create a new user named "user1" with a user ID (UID) of 1001 and a primary group ID (GID) of 1001, and assign them to the group "testgroup".
 
-Install and configure the Virtual Data Optimizer (VDO) on a device with a partition of 5GB.
+[] Install and configure the Virtual Data Optimizer (VDO) on a device with a partition of 5GB.
 
-Set up a network interface with a static IP address of 192.168.0.10, a netmask of 255.255.255.0, and a default gateway of 192.168.0.1.
+[-] Set up a network interface with a static IP address of 192.168.0.10, a netmask of 255.255.255.0, and a default gateway of 192.168.0.1.
 
 Create a bash script that accepts a file name as an argument and displays the number of lines, words, and characters in the file.
 
@@ -1187,24 +1187,23 @@ Configure a network bridge named "br0" that connects the Ethernet interface "eth
 
 ## 2. 
 
-Create a new file system on the device "/dev/sdb1" and mount it at the mount point "/mnt/data".
+[] Configure the firewall to allow incoming SSH connections, but block all other incoming traffic.
 
-Configure the firewall to allow incoming SSH connections, but block all other incoming traffic.
+[x] Use the "systemctl" command to start the "httpd" service and enable it to start automatically on boot.
 
-Use the "yum" command to install the package "nano" and all of its dependencies.
+[-] Set up a network interface with a static IP address of 192.168.1.10, a netmask of 255.255.255.0, and a default gateway of 192.168.1.1.
 
-Create a new user named "user2" with a user ID (UID) of 1002, a primary group ID (GID) of 1002, and a home directory of "/home/user2".
+[] Create a bash script that accepts a directory name as an argument and displays a list of all subdirectories and their sizes, sorted by size in descending order.
 
-Use the "systemctl" command to start the "httpd" service and enable it to start automatically on boot.
+[x] Use the "rpm" command to query the package database for information about the package "httpd".
 
-Set up a network interface with a static IP address of 192.168.1.10, a netmask of 255.255.255.0, and a default gateway of 192.168.1.1.
-
-Use the "chmod" command to change the permissions of the directory "/var/www/html" so that the owner has read, write, and execute permissions, and others have only execute permission.
-
-Create a bash script that accepts a directory name as an argument and displays a list of all subdirectories and their sizes, sorted by size in descending order.
-
-Use the "rpm" command to query the package database for information about the package "httpd".
-
+W manie mozna znalezc opcje na wyszukanie  
+```
+man rpm 
+```
+```
+rpm -qi "$package_name"
+```
 Configure a network bridge named "br1" that connects the Ethernet interface "eth1" to the WiFi interface "wlan1".
 
 
