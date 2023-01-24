@@ -157,7 +157,6 @@ Configure ```chrony``` to use the following server:
 ```console
 server 169.254.169.123 iburst
 ```
-  
 Make sure your work is persistent and check your work!
 
 
@@ -184,12 +183,10 @@ Validate the changes in ```/boot/grub2/grub.cfg```. Do not reboot the server.
 **On the second server:**
 
 Create a VDO device with the first unused 5GB device.  
-  
 - Name: web_storage
 - Logical Size: 10GB
   
 Use the VDO device as an LVM physical volume. Create the following:  
-
 - Volume Group: web_vg
     - Three 2G Logical Volumes with xfs file systems:
         - web_storage_dev

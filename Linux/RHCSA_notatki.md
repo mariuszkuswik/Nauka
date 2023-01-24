@@ -47,7 +47,7 @@
 ## Wyszukiwanie pomocy
 - ```apropos``` wyszukuje strony w pomocy, podobnie jak *man -k*
 - ```man -k``` - wyszukuje strony w pomocy 
-- ```man -k``` - szuka we **wszystkich** plikach pomocy
+- ```man -K``` - szuka **slow kluczowych** we wszystkich plikach pomocy
 - ```info``` - wyświetla komendy z opisem  
 - ```rpm -qd``` - wyświetl pliki z dokumentacją dla danego pakietu
 - ```locate "$szukana_komenda"``` - powinno wylistować pliki z pomocą 
@@ -83,7 +83,7 @@
 - ```hostnamectl``` - wyświetla aktualny hostname + informacje na temat systemu
     - ```set-hostname``` - zmienia hostname na podany
   
-### ważne!
+### Ważne!
 - zmiana w /etc/hostname jest niezalecana!
 
 
@@ -91,7 +91,7 @@
 - szybkie tworzenie userów 
 
 # Grupy użytkowników
--  szybkie tworzenie  
+-  szybkie tworzenie grup 
 `for group in gropup1 group2 group3 ; do groupadd "$group" ; done`
 
 # sudoers
