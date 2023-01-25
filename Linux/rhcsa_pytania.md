@@ -67,9 +67,9 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 7. [ ] Create a 2-GiB volume group, using 8-MiB physical extents. In this volume group, create a 500-MiB logical volume with the name mydata, and mount it persistently on the directory ```/mydata```.
 
-8. [ ] Find all files that are owned by user **edwin** and copy them to the directory ```/rootedwinfiles```.
+8. [*] Find all files that are owned by user **edwin** and copy them to the directory ```/rootedwinfiles```.
 
-9. [ ] Schedule a task that runs the command ```touch /etc/motd``` every day from Monday through Friday at 2 a.m.
+9. [x] Schedule a task that runs the command ```touch /etc/motd``` every day from Monday through Friday at 2 a.m.
 
 10. [ ] Add a new 10-GiB virtual disk to your virtual machine. On this disk, add a **VDO** volume with a size of 20 GiB and mount it persistently.
 
