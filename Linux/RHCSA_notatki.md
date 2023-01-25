@@ -90,6 +90,13 @@
 # Użytkownicy 
 - szybkie tworzenie userów 
 
+
+Ustawienia domyślne nowych kont użytkowników 
+- ```/etc/defaults/useradd``` 
+
+Ustawienia domyślne haseł
+- ```/etc/security/pwquality.conf``` 
+
 # Grupy użytkowników
 -  szybkie tworzenie grup 
 `for group in gropup1 group2 group3 ; do groupadd "$group" ; done`
