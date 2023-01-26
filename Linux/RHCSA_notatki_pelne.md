@@ -527,8 +527,11 @@ sudo at 20:00
 ## Filesystemy
 - [Spis treści](#spis-tre%C5%9Bci)
 
-### Comparison of tools used with ext4 and XFS
 
+### SZYBKIE NOTATKI 
+```lvresize -r``` - zmienia wielkość lvm i filesystemu!
+
+### Comparison of tools used with ext4 and XFS
 | Task | ext4 | XFS |
 |------|------|-----|
 | Create a file system | mkfs.ext4 | mkfs.xfs | 
