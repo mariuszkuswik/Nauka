@@ -1237,8 +1237,8 @@ nmap -A "$remote_ip_address"
 
 1. [x] RESTART HASŁA ROOT
 2. [] LVM
-	- [] rozszerzanie wolumenu bez uszkodzenia pierwotnego filesystemu ext3, ext4, xfs
-	- []dodawanie SWAPu jako nowy lvm
+	- [x] rozszerzanie wolumenu bez uszkodzenia pierwotnego filesystemu ext3, ext4, xfs
+	- [ ] dodawanie SWAPu jako nowy lvm
 	- []założenie całości LVM
 	- []ustawienie wielkości extent dla LVM
 	- []założenie LVM na podstawie np. 32 extents
