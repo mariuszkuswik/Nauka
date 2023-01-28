@@ -1239,18 +1239,18 @@ nmap -A "$remote_ip_address"
 2. [ ] LVM
 	- [x] rozszerzanie wolumenu bez uszkodzenia pierwotnego filesystemu ext3, ext4, xfs
 	- [ ] dodawanie SWAPu jako nowy lvm
-	- [ ]założenie całości LVM
-	- [ ]ustawienie wielkości extent dla LVM
-	- [ ]założenie LVM na podstawie np. 32 extents
-3. [ ]Użytkownicy
-	- [ ]Dodanie nowych użytkowników z konkretnymi UUID i grupami?
-	- [ ]zablokowanie logowania do shella
+	- [ ] założenie całości LVM
+	- [ ] ustawienie wielkości extent dla LVM
+	- [ ] założenie LVM na podstawie np. 32 extents
+3. [ ] Użytkownicy
+	- [ ] Dodanie nowych użytkowników z konkretnymi UUID i grupami?
+	- [ ] zablokowanie logowania do shella
 4. [ ] Kontenery
-	- [ ]rsyslog - ma logować dla jakiegoś systemu, jak to sprawdzić
-	- [ ]kontener musi być postawiony jako zwykły user
-	- [ ]pobieranie kontenerów ze zdalnego repozytorium
+	- [ ] rsyslog - ma logować dla jakiegoś systemu, jak to sprawdzić
+	- [ ] kontener musi być postawiony jako zwykły user
+	- [ ] pobieranie kontenerów ze zdalnego repozytorium
 5. [ ] VDO
-	- [ ]założenie filesystemu z miejscem logicznym
+	- [ ] założenie filesystemu z miejscem logicznym
 		- pamiętać o włączeniu usługi i nofail w fstab!
 6. [ ] Przypisanie IP do serwerów, zmiana hostname
 7. [ ] Repo
