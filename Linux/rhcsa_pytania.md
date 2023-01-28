@@ -94,9 +94,9 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 - Server with GUI installation pattern
 
 
-1. [ ] Create user **student** with password **password**, and user root with password **password**.
+1. [x] Create user **student** with password **password**, and user root with password **password**.
 
-2. [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
+2. [x] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
 3. [x] Create a 1-GB XFS partition on ```/dev/sdb```. Mount it persistently on the directory ```/mydata```, using the label **mylabel**.
 
@@ -136,9 +136,9 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 
 
-1. [ ] Create user **student** with password **password**, and user root with password **password**.
+1. [x] Create user **student** with password **password**, and user root with password **password**.
 
-2. [ ] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
+2. [x] Configure your system to automatically loop-mount the ISO of the installation disk on the directory **/repo**. Configure your system to remove this loop-mounted ISO as the only repository that is used for installation. Do not register your system with subscription-manager, and remove all reference to external repositories that may already exist.
 
 3. [ ] Reboot your server. Assume that you don’t know the root password, and use the appropriate mode to enter a root shell that doesn’t require a password. Set the root password to mypassword.
 
@@ -1229,6 +1229,38 @@ nmap -A "$remote_ip_address"
 [Spis treści](#spis-treści)
 
 
+
+
+# Po egzaminie
+- Pytania które mogłem dostać na egzaminie
+
+
+1. [x] RESTART HASŁA ROOT
+2. [] LVM
+	- [] rozszerzanie wolumenu bez uszkodzenia pierwotnego filesystemu ext3, ext4, xfs
+	- []dodawanie SWAPu jako nowy lvm
+	- []założenie całości LVM
+	- []ustawienie wielkości extent dla LVM
+	- []założenie LVM na podstawie np. 32 extents
+3. []Użytkownicy
+	- []Dodanie nowych użytkowników z konkretnymi UUID i grupami?
+	- []zablokowanie logowania do shella
+4. [] Kontenery
+	- []rsyslog - ma logować dla jakiegoś systemu, jak to sprawdzić
+	- []kontener musi być postawiony jako zwykły user
+	- []pobieranie kontenerów ze zdalnego repozytorium
+5. [] VDO
+	- []założenie filesystemu z miejscem logicznym
+		- pamiętać o włączeniu usługi i nofail w fstab!
+6. [] Przypisanie IP do serwerów, zmiana hostname
+7. [] Repo
+	- [] dodanie repo, appstream i baseos, nie ma żadnego innego przykładowego
+	- [] pamietac o gpgcheck=no i sslverify=no
+8. [] autofs
+	- [] home foldery, automatyczne mapowanie
+9. [] SELinux
+	- [] jest błąd z serwerem httpd, nadanie kontekstu do folderu tak żeby serwer mógł odczytać pliki
+	- [] zdiagnozowanie problemu z SELinux przez /var/log/messages
 
 
 ## Restart hasła roota
