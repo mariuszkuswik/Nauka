@@ -56,17 +56,17 @@
 
 | zadanko | notatki | czy opanowane |
 |--|--|--|
-| [001_restore_root_password](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/001_restore_root_password.md) | [przywracanie hasła roota](#przywracanie-hasła-roota) | + |
+| [001_restore_root_password](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/001_restore_root_password.md) | [przywracanie hasła roota](#przywracanie-hasła-roota) | ++ |
 | [002_setup_network_parameters](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/002_setup_network_parameters.md) | [sieci](#sieci) | + |
 | [003_change_hostname]( https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/003_change_hostname.md) | [hostname](#hostname) | + |
 | [004_enable_selinux](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/004_enable_selinux.md) |[selinux](#selinux) | + |
 | [005_install_apache_and_give_it_permission_to_nfs_resource](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/005_install_apache_and_give_it_permission_to_nfs_resource.md) | [selinux](#selinux) |  |
-| [006_extend_existing_lv_add_label](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/006_extend_existing_lv_add_label.md) | [lvm](#lvm) | + | 
+| [006_extend_existing_lv_add_label](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/006_extend_existing_lv_add_label.md) | [lvm](#lvm) | ++ | 
 | [007_assign_sel_context_to_the_directory](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/007_assign_sel_context_to_the_directory.md) | [selinux](#selinux) - man semanage-fcontext, **jest w przykładach** | + |
 | [008_create_users_with_specified_uid](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/008_create_users_with_specified_uid.md) | [tworzenie użytkowników](#tworzenie-użytkowników) | + |
 | [009_allow_other_user_to_get_access_to_home_dir](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/009_allow_other_user_to_get_access_to_home_dir.md) | [acl](#acl) | + |
 | [010_dir_ownership_via_group](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/010_dir_ownership_via_group.md) |  | + |
-| [011_create_logical_volume_and_add_filesystem](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/011_create_logical_volume_and_add_filesystem.md) | [lvm](#lvm) | + |
+| [011_create_logical_volume_and_add_filesystem](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/011_create_logical_volume_and_add_filesystem.md) | [lvm](#lvm) | ++ |
 | [012_configure_virtual_console_for_kernel](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/012_configure_virtual_console_for_kernel.md) |  | #todo - nie wiem o co chodzi |
 | [013_create_swap_on_logical_volume](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/013_create_swap_on_logical_volume.md) | [swap](#swap) | + |
 | [014_add_entry_to_cron](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/014_add_entry_to_cron.md) | [sysstat](#sar---sysstat) | + |
