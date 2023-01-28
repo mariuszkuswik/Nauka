@@ -1171,11 +1171,11 @@ Create a new logical volume named "lvol1" with a size of 1GB in the volume group
 
 [x] Set up a cron job to run the command "dnf update" every day at 10:00 AM.
 
-[] Configure SELinux to allow the Apache web server to access files in the directory "/var/www/html/".
+[ ] Configure SELinux to allow the Apache web server to access files in the directory "/var/www/html/".
 
 [-] Create a new user named "user1" with a user ID (UID) of 1001 and a primary group ID (GID) of 1001, and assign them to the group "testgroup".
 
-[] Install and configure the Virtual Data Optimizer (VDO) on a device with a partition of 5GB.
+[ ] Install and configure the Virtual Data Optimizer (VDO) on a device with a partition of 5GB.
 
 [-] Set up a network interface with a static IP address of 192.168.0.10, a netmask of 255.255.255.0, and a default gateway of 192.168.0.1.
 
@@ -1187,13 +1187,13 @@ Configure a network bridge named "br0" that connects the Ethernet interface "eth
 
 ## 2. 
 
-[] Configure the firewall to allow incoming SSH connections, but block all other incoming traffic.
+[ ] Configure the firewall to allow incoming SSH connections, but block all other incoming traffic.
 
 [x] Use the "systemctl" command to start the "httpd" service and enable it to start automatically on boot.
 
 [-] Set up a network interface with a static IP address of 192.168.1.10, a netmask of 255.255.255.0, and a default gateway of 192.168.1.1.
 
-[] Create a bash script that accepts a directory name as an argument and displays a list of all subdirectories and their sizes, sorted by size in descending order.
+[ ] Create a bash script that accepts a directory name as an argument and displays a list of all subdirectories and their sizes, sorted by size in descending order.
 
 [x] Use the "rpm" command to query the package database for information about the package "httpd".
 
@@ -1236,31 +1236,31 @@ nmap -A "$remote_ip_address"
 
 
 1. [x] RESTART HASŁA ROOT
-2. [] LVM
+2. [ ] LVM
 	- [x] rozszerzanie wolumenu bez uszkodzenia pierwotnego filesystemu ext3, ext4, xfs
 	- [ ] dodawanie SWAPu jako nowy lvm
-	- []założenie całości LVM
-	- []ustawienie wielkości extent dla LVM
-	- []założenie LVM na podstawie np. 32 extents
-3. []Użytkownicy
-	- []Dodanie nowych użytkowników z konkretnymi UUID i grupami?
-	- []zablokowanie logowania do shella
-4. [] Kontenery
-	- []rsyslog - ma logować dla jakiegoś systemu, jak to sprawdzić
-	- []kontener musi być postawiony jako zwykły user
-	- []pobieranie kontenerów ze zdalnego repozytorium
-5. [] VDO
-	- []założenie filesystemu z miejscem logicznym
+	- [ ]założenie całości LVM
+	- [ ]ustawienie wielkości extent dla LVM
+	- [ ]założenie LVM na podstawie np. 32 extents
+3. [ ]Użytkownicy
+	- [ ]Dodanie nowych użytkowników z konkretnymi UUID i grupami?
+	- [ ]zablokowanie logowania do shella
+4. [ ] Kontenery
+	- [ ]rsyslog - ma logować dla jakiegoś systemu, jak to sprawdzić
+	- [ ]kontener musi być postawiony jako zwykły user
+	- [ ]pobieranie kontenerów ze zdalnego repozytorium
+5. [ ] VDO
+	- [ ]założenie filesystemu z miejscem logicznym
 		- pamiętać o włączeniu usługi i nofail w fstab!
-6. [] Przypisanie IP do serwerów, zmiana hostname
-7. [] Repo
-	- [] dodanie repo, appstream i baseos, nie ma żadnego innego przykładowego
-	- [] pamietac o gpgcheck=no i sslverify=no
-8. [] autofs
-	- [] home foldery, automatyczne mapowanie
-9. [] SELinux
-	- [] jest błąd z serwerem httpd, nadanie kontekstu do folderu tak żeby serwer mógł odczytać pliki
-	- [] zdiagnozowanie problemu z SELinux przez /var/log/messages
+6. [ ] Przypisanie IP do serwerów, zmiana hostname
+7. [ ] Repo
+	- [ ] dodanie repo, appstream i baseos, nie ma żadnego innego przykładowego
+	- [ ] pamietac o gpgcheck=no i sslverify=no
+8. [ ] autofs
+	- [ ] home foldery, automatyczne mapowanie
+9. [ ] SELinux
+	- [ ] jest błąd z serwerem httpd, nadanie kontekstu do folderu tak żeby serwer mógł odczytać pliki
+	- [ ] zdiagnozowanie problemu z SELinux przez /var/log/messages
 
 
 ## Restart hasła roota
