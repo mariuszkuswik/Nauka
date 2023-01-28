@@ -114,6 +114,8 @@
 
   
 
+# [RED HAT podman registries - do ogarnięcia !](https://www.redhat.com/sysadmin/manage-container-registries)
+
 # Pomoc 
 [spis treści](#spis-tre%c5%9bci)
 
