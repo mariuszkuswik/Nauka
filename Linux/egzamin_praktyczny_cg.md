@@ -157,7 +157,6 @@ Configure ```chrony``` to use the following server:
 ```console
 server 169.254.169.123 iburst
 ```
-  
 Make sure your work is persistent and check your work!
 
 
@@ -178,15 +177,16 @@ Validate the changes in ```/boot/grub2/grub.cfg```. Do not reboot the server.
 ## 9. Configure Persistent Storage with LVM on Top of VDO
 [Spis treści](#spis-treści)
 
+### TODO - VDO jest teraz czescia lvm 
+- [Jak dodac VDO na lvm](https://access.redhat.com/solutions/6809311)
+
 **On the second server:**
 
 Create a VDO device with the first unused 5GB device.  
-  
 - Name: web_storage
 - Logical Size: 10GB
   
 Use the VDO device as an LVM physical volume. Create the following:  
-
 - Volume Group: web_vg
     - Three 2G Logical Volumes with xfs file systems:
         - web_storage_dev
@@ -250,8 +250,8 @@ Set the following ACLs:
 
 **As the ```cloud_user``` user on the first server, create a persistent ```systemd``` container with the following:**
 
-- Image: registry.access.redhat.com/rhscl/httpd-24-rhel7
-- Port mappings: 8080 on the container to 8000 on the host
+- Image: ```registry.access.redhat.com/rhscl/httpd-24-rhel7```
+- Port mappings: ```8080``` on the container to ```8000``` on the host
 - Persistent storage at ```~/web_data```, mounted at ```/var/www/html``` in the container
 - Container name: web_server
 
@@ -281,5 +281,162 @@ Make sure the firewall is installed, enabled and started on both servers. Config
 - rpc-bind
 - mountd
 
+  
+---
+# Odpowiedzi ponizej   
+  
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
 
-##### Koniec
+# Odpowiedzi  
+
+1. 
+
+13. Moja odpowiedz - configure-a-shared-directory-for-collaboration
+```bash
+### Directory
+# Create a directory at /home/dba_docs with:
+mkdir /home/dba_docs
+# Group ownership: dba_staff
+chgrp dba_docs /home/dba_docs
+# Permissions: 770
+chmod -R 770 /home/dba_docs 
+# Set-GID set
+chmod g+s /home/dba_docs
+# Sticky bit set
+chmod o+s /home/dba_docs
+
+### SYMLINK dla wszystkich 
+# Create a link in each shared user's home directory to this directory, for easy access.
+find /home -maxdepth 1 -mindepth 1 -type d | xargs -I{} ln -s /home/dba_docs/ {}/dba_docs
+
+### Set the following ACLs
+# Wyswietlenie obecnych ACLek
+getfacl
+# Read-only for jack
+setfacl -m u:jack:r-- /home/dba_docs
+# Read-only for cindy
+setfacl -m u:cindy:r-- /home/dba_docs
+# Full permissions for marcia
+setfacl -m u:marcia:r-- /home/dba_docs
+```
+  
+  
+##### Koniec 
