@@ -1239,7 +1239,7 @@ nmap -A "$remote_ip_address"
 2. [ ] LVM
 	- [x] rozszerzanie wolumenu bez uszkodzenia pierwotnego filesystemu ext3, ext4, xfs
 	- [ ] dodawanie SWAPu jako nowy lvm
-	- [ ] założenie całości LVM
+	- [x] założenie całości LVM
 	- [ ] ustawienie wielkości extent dla LVM
 	- [ ] założenie LVM na podstawie np. 32 extents
 3. [ ] Użytkownicy
