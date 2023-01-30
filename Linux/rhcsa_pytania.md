@@ -76,6 +76,10 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 11. [x] Install the ```vsftpd``` service and ensure that it is started automatically at reboot.
 
 12. [ ] Create a **container** that runs the rsyslog service. This container should be configured to write log files persistently to the directory ```/var/log/logcontainer/``` on the host operating system. Run this container with the same user account that the rsyslog service normally uses.
+- Kontener utworzony, ma podmapowany katalog, 
+	- Utworzyć serwis któy będzie działał jako non-root
+	- Sprawdzić z GPT czy tak ma być
+	- Dodać do szybkich i długich notatek
 
 13. [ ] Configure this container such that it is automatically started on system boot as a system user service.
 
