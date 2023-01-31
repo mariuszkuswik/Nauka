@@ -1477,17 +1477,13 @@ GRUB_TIMEOUT=15
 - port: 8000:8080
 
 1. ```mkdir -p /home/cloud_user/.config/systemd/user``` - katalog dla zwyklego usera
-2. ```podman run -d --name web_server -p 8000:8080 -v "~/web_data:/var/www/html:Z" "$container_image"``` tworzenie kontenera w trybie detach 
-3. ```podman ps -a``` - wyswietlenie kontenerow ktore dzialaja
-4. ```curl 127.0.0.1:8000``` / ```curl http://127.0.0.1:8000/text.txt```
-5. ```podman generate systemd --name web_server --files --new``` - ### TODO - sprawdzic opcje
-6. cp plik do katalogu
-6. podman stop web_server 
-7. podman rm web_server 
-8. podman ps -a - potwierdzenie, ze zostal usuniety 
-9. loginctl enable-linger cloud_user
-10. loginctl show-user cloud_user | grep linger 
-11. systemctl --user daemon-reload
+2. ```podman create --name web_server -p 8000:8080 -v "~/web_data:/var/www/html:Z" "$container_image"``` tworzenie kontenera  
+3. ```podman ls -a``` - wyświetlenie wszystkich kontenerów
+4. ```curl 127.0.0.1:8000```  - sprawdzenie czy strona jest wyświetlana
+5. ```podman generate systemd web_server >> ~/container.service ``` - Wygenerowanie serwisu systemd 
+9. ```loginctl enable-linger "$user"``` - włączenie lingera dla użytkownika - **konieczne do włączenia usługi po reboocie**
+10. ```loginctl show-user "$user" | grep linger``` - potwierdzenie włączenia lingera
+11. ```systemctl --user daemon-reload``` - odświeżenie plików systemd dla userów
 12. systemctl --user enable --now container-web_server.service
 13. systemctl --user status container-web_server.service
 14. ```curl http://127.0.0.1:8000/text.txt```
@@ -1507,10 +1503,10 @@ GRUB_TIMEOUT=15
 - [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
 
 **Każdy wolumen musi mieć odpowiednio udostępniony plik - Z ODPOWIEDNIO USTAWIONYM KONTEKSTEM PLIKU**
+- ```podman container create --volume "$host_volume/$container_volume:Z"``` - automatyczny kontekst dla volumenu
 - kontekst dla folderów które mają byc udostępnione może być taki sam jak dla reszty plików 
 SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA ```ls -lZ /```
 
-- podman container create --volume "volume/volume:Z" - automatyczny kontekst dla volumenu? - ogarnąć całą komendę
 
 
 ## Obrazy kontenerów
