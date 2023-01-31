@@ -108,6 +108,24 @@ Replace <username>, <groupname>, and <timezone> with the appropriate values for 
 This will create a Podman container named rsyslog-container that runs the rsyslog service and writes log files persistently to the directory /var/log/logcontainer/ on the host operating system.
 
 
+### DO SPRAWDZENIA OPCJA Z SIECIA
+The error message "cannot assign requested address" typically indicates that there is a problem with the network configuration of the container. In this case, the rsyslog service inside the container is unable to bind to a network address.
+
+To resolve this issue, you can try the following steps:
+
+Check the network configuration of the container:
+Copy code
+podman inspect rsyslog-container
+Make sure that the rsyslog service inside the container is configured to listen on the correct network interface and address. The configuration file is usually located at /etc/rsyslog.conf.
+
+If the network configuration of the container is correct, you may need to add the --net=host option to the podman run command to use the host's network stack:
+
+javascript
+Copy code
+podman run -d --name rsyslog-container -v /var/log/logcontainer:/var/log/rsyslog -e TZ=<timezone> --net=host --user <username> rsyslog/rsyslog
+This should resolve the issue and allow the rsyslog service inside the container to bind to a network address and write logs as expected.
+
+
 
 ## RHCSA Practice Exam B
 [Spis treści](#spis-treści)

@@ -1470,6 +1470,13 @@ GRUB_TIMEOUT=15
 
 ### Rootless container - procedura
 - [RH - podman rootless container procedura](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/building_running_and_managing_containers/assembly_porting-containers-to-systemd-using-podman_building-running-and-managing-containers#proc_enabling-systemd-services_assembly_porting-containers-to-systemd-using-podman)
+
+
+ssh usernam@hostname - ssh jest konieczne dla dzialania podmana jako non root   
+~/.config/systemd/user - katalog z uslugami systemd  
+loginctl enable-linger "$user" - wlaczenie lingera  
+  
+---
 #### CG - Zalozenia
 - serrice: httpd
 - user: cloud_user
@@ -1481,14 +1488,15 @@ GRUB_TIMEOUT=15
 3. ```podman ls -a``` - wyświetlenie wszystkich kontenerów
 4. ```curl 127.0.0.1:8000```  - sprawdzenie czy strona jest wyświetlana
 5. ```podman generate systemd web_server >> ~/container.service ``` - Wygenerowanie serwisu systemd 
+cp ~/container.service ~/.config/systed/user - WAŻNY KATALOG - 
 9. ```loginctl enable-linger "$user"``` - włączenie lingera dla użytkownika - **konieczne do włączenia usługi po reboocie**
 10. ```loginctl show-user "$user" | grep linger``` - potwierdzenie włączenia lingera
 11. ```systemctl --user daemon-reload``` - odświeżenie plików systemd dla userów
-12. systemctl --user enable --now container-web_server.service
-13. systemctl --user status container-web_server.service
-14. ```curl http://127.0.0.1:8000/text.txt```
-15. systemctl reboot now - reboot dla potiwerdzenia 
-14. ```curl http://127.0.0.1:8000/text.txt``` - potiwerdzenie po reboocie 
+12. ```systemctl --user enable --now container-web_server.service``` - włączenie kontenera po reboocie 
+13. ```systemctl --user status container-web_server.service``` - sprawdzenie statusu uslugi 
+14. ```curl http://127.0.0.1:8000``` - potwiedzenie dzialania uslugi na porcie 8000
+15. ```systemctl reboot now``` - reboot dla potwierdzenia 
+14. ```curl http://127.0.0.1:8000``` - potiwerdzenie po reboocie 
 
 
 1. loginctl enable-linger "$user" 
@@ -1498,6 +1506,16 @@ GRUB_TIMEOUT=15
 3. systemctl --user daemon-reload - przeladowane plikow systemd dla uzytkownikow standardowych
 5. systemctl --user enable|start|stop "$UNIT" - obsluga uslug systemd dla uzytkownikow 
 
+
+---
+
+#### Sander - rsyslog container 
+##### Zalozenia 
+
+
+
+
+---
 
 ### Kontenery - SeLinux 
 - [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
