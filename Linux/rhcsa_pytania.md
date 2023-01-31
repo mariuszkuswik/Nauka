@@ -75,7 +75,7 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 11. [x] Install the ```vsftpd``` service and ensure that it is started automatically at reboot.
 
-12. [ ] Create a **container** that runs the rsyslog service. This container should be configured to write log files persistently to the directory ```/var/log/logcontainer/``` on the host operating system. Run this container with the same user account that the rsyslog service normally uses.
+12. [x] Create a **container** that runs the rsyslog service. This container should be configured to write log files persistently to the directory ```/var/log/logcontainer/``` on the host operating system. Run this container with the same user account that the rsyslog service normally uses.
 - Kontener utworzony, ma podmapowany katalog, 
 	- Utworzyć serwis któy będzie działał jako non-root
 	- Sprawdzić z GPT czy tak ma być
@@ -83,6 +83,29 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 
 13. [ ] Configure this container such that it is automatically started on system boot as a system user service.
 
+
+
+Here's how you can create a Podman container that runs the rsyslog service and writes log files persistently to the directory /var/log/logcontainer/ on the host operating system.
+
+Pull the rsyslog image from a registry, for example:
+bash
+Copy code
+podman pull rsyslog/rsyslog
+Create a directory on the host operating system to store the log files:
+bash
+Copy code
+sudo mkdir /var/log/logcontainer
+Change the ownership of the directory to the user account that the rsyslog service normally uses:
+ruby
+Copy code
+sudo chown <username>:<groupname> /var/log/logcontainer
+Run the rsyslog container, mounting the host directory to the container directory and setting the appropriate environment variables:
+javascript
+Copy code
+podman run -d --name rsyslog-container -v /var/log/logcontainer:/var/log/rsyslog -e TZ=<timezone> --user <username> rsyslog/rsyslog
+Replace <username>, <groupname>, and <timezone> with the appropriate values for your system.
+
+This will create a Podman container named rsyslog-container that runs the rsyslog service and writes log files persistently to the directory /var/log/logcontainer/ on the host operating system.
 
 
 
