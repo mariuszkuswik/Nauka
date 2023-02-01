@@ -106,7 +106,7 @@
 | 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](egzamin_praktyczny_cg.md/#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | [tutorial rh](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/deduplicating_and_compressing_logical_volumes_on_rhel/creating-a-deduplicated-and-compressed-logical-volume_deduplicating-and-compressing-logical-volumes-on-rhel#creating-an-lvm-vdo-volume_creating-a-deduplicated-and-compressed-logical-volume) | +, jakos zostalo zrobione, ogarniac dalej, WAZNE | 
 | 10. [add-swap-space-persistently-and-nondisruptive](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules)| test | + | 
 | 11. [configure-stratis-storage-persistently](egzamin_praktyczny_cg.md/#11-configure-stratis-storage-persistently) | test | + | 
-| 12. [configure-autofs-for-home-directories](egzamin_praktyczny_cg.md/#12-configure-autofs-for-home-directories) | test | + | 
+| 12. [configure-autofs-for-home-directories](egzamin_praktyczny_cg.md/#12-configure-autofs-for-home-directories) | test | ++| 
 | 13. [configure-a-shared-directory-for-collaboration ](egzamin_praktyczny_cg.md/#13-configure-a-shared-directory-for-collaboration) | test | + | 
 | 14. [create-a-persistent-systemd-container-using-podman](egzamin_praktyczny_cg.md/#14-create-a-persistent-systemd-container-using-podman) | [kontenery](#kontenery) | + | 
 | 15. [troubleshoot-selinux-issues](egzamin_praktyczny_cg.md/#15-troubleshoot-selinux-issues) | [selinux](#selinux) - man semanage-fcontext, **jest w przykładach** | + | 
