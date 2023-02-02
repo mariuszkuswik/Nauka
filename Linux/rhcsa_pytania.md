@@ -88,21 +88,22 @@ Install a RHEL 8 or CentOS 8 virtual machine that meets the following requiremen
 Here's how you can create a Podman container that runs the rsyslog service and writes log files persistently to the directory /var/log/logcontainer/ on the host operating system.
 
 Pull the rsyslog image from a registry, for example:
-bash
-Copy code
+```
 podman pull rsyslog/rsyslog
+```
+
 Create a directory on the host operating system to store the log files:
-bash
-Copy code
+```
 sudo mkdir /var/log/logcontainer
+```
 Change the ownership of the directory to the user account that the rsyslog service normally uses:
-ruby
-Copy code
+```
 sudo chown <username>:<groupname> /var/log/logcontainer
+```
 Run the rsyslog container, mounting the host directory to the container directory and setting the appropriate environment variables:
-javascript
-Copy code
+```
 podman run -d --name rsyslog-container -v /var/log/logcontainer:/var/log/rsyslog -e TZ=<timezone> --user <username> rsyslog/rsyslog
+```
 Replace <username>, <groupname>, and <timezone> with the appropriate values for your system.
 
 This will create a Podman container named rsyslog-container that runs the rsyslog service and writes log files persistently to the directory /var/log/logcontainer/ on the host operating system.
@@ -124,6 +125,24 @@ javascript
 Copy code
 podman run -d --name rsyslog-container -v /var/log/logcontainer:/var/log/rsyslog -e TZ=<timezone> --net=host --user <username> rsyslog/rsyslog
 This should resolve the issue and allow the rsyslog service inside the container to bind to a network address and write logs as expected.
+
+
+# Here are the steps to install a new kernel for a Red Hat Enterprise Linux (RHEL) server from an existing repository:
+Update the system's package list:
+sql
+Copy code
+sudo yum update
+Install the desired kernel package using yum:
+Copy code
+sudo yum install kernel
+Update the boot loader configuration to set the new kernel as the default when the system boots:
+c
+Copy code
+sudo grub2-set-default 0
+Reboot the system to use the new kernel:
+Copy code
+sudo reboot
+By following these steps, you will have installed a new kernel from an existing repository and set it as the default when the system boots. The previous kernel will still be available in the boot loader and can be selected during boot-up.
 
 
 
