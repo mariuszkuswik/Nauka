@@ -129,19 +129,21 @@ This should resolve the issue and allow the rsyslog service inside the container
 
 # Here are the steps to install a new kernel for a Red Hat Enterprise Linux (RHEL) server from an existing repository:
 Update the system's package list:
-sql
-Copy code
+```
 sudo yum update
+```
 Install the desired kernel package using yum:
-Copy code
+```
 sudo yum install kernel
+```
 Update the boot loader configuration to set the new kernel as the default when the system boots:
-c
-Copy code
+```
 sudo grub2-set-default 0
+```
 Reboot the system to use the new kernel:
-Copy code
+```
 sudo reboot
+```
 By following these steps, you will have installed a new kernel from an existing repository and set it as the default when the system boots. The previous kernel will still be available in the boot loader and can be selected during boot-up.
 
 
