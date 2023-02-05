@@ -51,6 +51,11 @@
 [koniec](#koniec)   
   
 
+# TODO 
+- Bash auto uzupelnianie - jak instalowac i wlaczac!
+- [RED HAT podman registries - do ogarnięcia !](https://www.redhat.com/sysadmin/manage-container-registries)
+
+
 # chlebik
 - [spis treści](#spis-tre%c5%9bci)
 
@@ -113,11 +118,6 @@
 | 16. [configure-the-firewall-on-both-servers](egzamin_praktyczny_cg.md/#16-configure-the-firewall-on-both-servers) | test | + | 
 
   
-# TODO - 
-- Bash auto uzupelnianie - jak instalowac i wlaczac!
-- [RED HAT podman registries - do ogarnięcia !](https://www.redhat.com/sysadmin/manage-container-registries)
-
-
 
 # Pomoc 
 [spis treści](#spis-tre%c5%9bci)
