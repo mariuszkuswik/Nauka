@@ -67,7 +67,7 @@
 | [004_enable_selinux](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/004_enable_selinux.md) |[selinux](#selinux) | tak, ++ |
 | [005_install_apache_and_give_it_permission_to_nfs_resource](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/005_install_apache_and_give_it_permission_to_nfs_resource.md) | [selinux](#selinux) | PRZECWICZYC, PROBLEM, mozliwe ze problemem jest kernel, sprawdzic |
 | [006_extend_existing_lv_add_label](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/006_extend_existing_lv_add_label.md) | [lvm](#lvm) | ++ | 
-| [007_assign_sel_context_to_the_directory](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/007_assign_sel_context_to_the_directory.md) | [selinux](#selinux) - man semanage-fcontext, **jest w przykładach** | + |
+| [007_assign_sel_context_to_the_directory](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/007_assign_sel_context_to_the_directory.md) | [selinux](#selinux) - man semanage-fcontext, **jest w przykładach** | tak, ++ |
 | [008_create_users_with_specified_uid](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/008_create_users_with_specified_uid.md) | [tworzenie użytkowników](#tworzenie-użytkowników) | + |
 | [009_allow_other_user_to_get_access_to_home_dir](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/009_allow_other_user_to_get_access_to_home_dir.md) | [acl](#acl) | + |
 | [010_dir_ownership_via_group](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/010_dir_ownership_via_group.md) |  | ++ |
