@@ -83,7 +83,7 @@
 | [020_create_folders_with_group_access_rights](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/020_create_folders_with_group_access_rights.md) | [suid, sgid, sticky bit](#suid,-sgid,-sticky-bit) | tak, ++ |
 | [021_configure_ldap_authentication](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/021_configure_ldap_authentication.md) | - | **nie ma na egzaminie** |
 | [022_configure_autofs](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/022_configure_autofs.md) | [autofs](#autofs) | ++ |
-| [023_configure_ntp_on_the_client](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/023_configure_ntp_on_the_client.md) | [kontrola czasu w rhel](#kontrola-czasu-w-rhel) | ++ |
+| [023_configure_ntp_on_the_client](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/023_configure_ntp_on_the_client.md) | [kontrola czasu w rhel](#kontrola-czasu-w-rhel) | powtorzyc, +++ |
 | [024_access_rights_for_file](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/024_access_rights_for_file.md) | [acl](#acl) | tak, ++ |
 | [025_create_whole_lvm_stack](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/025_create_whole_lvm_stack.md) | [lvm](#lvm) dodać extent of vg should be 16mb do notatek | + |
 | [026_reduce_the_size_of_lv](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/026_reduce_the_size_of_lv.md) | [lvm](#lvm) | + |
@@ -419,61 +419,50 @@ Poprzednim serwerem czasu był ntp, obecnym chrony
 ## Synchronizacja czasu (klient z serwerem)
 
 1. instalacja chrony 
-
 ```console
-# dnf install chrony -y
+dnf install chrony -y
 ```
 
 2.  Sprawdzenie statusu chronyd i ewentualne odpalenie 
-
 ```console
-# systemctl status chronyd
-# systemctl enable --now chronyd
+systemctl status chronyd
+systemctl enable --now chronyd
 ```
 
-3. Dodanie docelowego serwera w configu ```/etc/chrony.conf```
-There is a list of servers being used to get time from. The lines start with server. In order to use only one of the servers (the one that is provided in question) You should comment all others and just put new line there:
-server classroom.example.com iburst
-    
+3. Dodanie docelowego serwera w configu ```/etc/chrony.conf```  
+Serwer zaczyna się od frazy **server**, poola od frazy **pool**,   
+jeżeli chcemy używac tylko jednego (tego podanego w zadaniu to resztę należy zakomentować)   
+* **iburst** powoduje szybszą synchronizację
 ```console
-# vim ```/etc/chrony.conf```
+vim ```/etc/chrony.conf```
 
 ### server "$sever_address" [option] - składnia opisana w man ```chrony.conf```
-server 169.254.169.123 iburst
+server classroom.example.com iburst
 ```
 
 4. Restart usługi chronyd
-
 ```console
-# systemctl restart chronyd
+systemctl restart chronyd
 ```
 
 
-5. Sprawdzenie czy serwer został zsynchronizowany **(bez wymuszenia synchronizacja może zająć trochę czasu)**
-
+5. Wymuszenie synchronizacji 
 ```console
-# chronyc sources -v
-```
-
-6. Wymuszenie synchronizacji 
-
-```console
-# chronyc makestep
+chronyc makestep
 
 200 OK
 ```
 
-6. Display parameters about the system’s clock performance
-
+6. ```chronyc sources``` - sprawdzenie czy serwer został zsynchronizowany **(bez wymuszenia synchronizacja może zająć trochę czasu)**
 ```console
-# chronyc tracking 
+# Sources pokazuje listę serwerów z których korzysta obecnie chrony
+chronyc sources -v
 ```
 
-7. Sprawdzenie czy zegar jest zsynchronizowany 
-
+7. ```timedatectl``` - sprawdzenie czy zegar jest zsynchronizowany 
+* timedatectl pokazuje status synchronized: yes lub no 
 ```console
-# timedatectl
-
+timedatectl
                Local time: Wed 2022-03-09 12:28:58 EST
            Universal time: Wed 2022-03-09 17:28:58 UTC
                  RTC time: Wed 2022-03-09 17:28:58
@@ -481,6 +470,11 @@ server 169.254.169.123 iburst
 --> System clock synchronized: yes <--
               NTP service: active
           RTC in local TZ: no
+```
+
+8. Display parameters about the system’s clock performance
+```console
+chronyc tracking 
 ```
 
 # Managing schedulded tasks
