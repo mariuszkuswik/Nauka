@@ -86,7 +86,7 @@
 | [023_configure_ntp_on_the_client](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/023_configure_ntp_on_the_client.md) |[Synchronizacja czasu chrony](#synchronizacja-czasu-klient-z-serwerem) | nie, +++ |
 | [024_access_rights_for_file](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/024_access_rights_for_file.md) | [acl](#acl) | tak, ++ |
 | [025_create_whole_lvm_stack](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/025_create_whole_lvm_stack.md) | [lvm](#lvm) dodać extent of vg should be 16mb do notatek | tak, ++ |
-| [026_reduce_the_size_of_lv](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/026_reduce_the_size_of_lv.md) | [lvm](#lvm) | tak, ++ |
+| [026_reduce_the_size_of_lv](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/026_reduce_the_size_of_lv.md) | [LVM - Dodawanie i zmniejszanie](#zadanie---rozszerzanie-i-zmniejszanie-filesystemu-na-lvm) | tak, ++ |
 | [027_create_compressed_archive](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/027_create_compressed_archive.md) | [archiwizowanie](#archiwizowanie) | tak, ++ |
 | [028_search_string_using_grep_and_redirect](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/028_search_string_using_grep_and_redirect.md) | [wyszukiwanie plików](#wyszukiwanie-plik%c3%b3w) | + |
 | [029_make_journald_persistent](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/029_make_journald_persistent.md) | [logi](#logi) | + |
@@ -575,6 +575,8 @@ File mapping | filefrag | xfs_bmap
 # LVM 
 - [Spis treści](#spis-tre%C5%9Bci)
 
+### TODO - Dodać ogólnie jak tworzyć
+
 \* **WAŻNE**
 - ```/dev/mapper/"$group_name"-"$lv_name"``` - ścieżka do utworzonego lvm
 
@@ -597,11 +599,11 @@ File mapping | filefrag | xfs_bmap
     - -r - rozszerza filesystem razem z lvm
 
 --- 
-## Zadanie - Rozszerzanie i zmniejszanie fileyestemu na lvm 
+## Zadanie - Rozszerzanie i zmniejszanie filesystemu na lvm 
 \* **WAŻNE** - ```-r``` - rozszerza lub zmniejsza filesystem razem z lvm 
 - ```lvresize -r -L -200M datacontainer/ext4-lvm``` - Zmniejszenie **lvm wraz z filesystemem** o 200M 
 
-### VDO
+## VDO
 - [Spis treści](#spis-tre%C5%9Bci)
 - [Poradnik od RedHata](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/vdo-quick-start)
 
@@ -610,16 +612,15 @@ File mapping | filefrag | xfs_bmap
 
 ### SPRAWDZIC WLASCIWIE WSZYSTKO, pozmienialo sie od czasu kiedy jest na lvm
 
-### Instalacja
-
+### Instalacja vdo
 ```console
 dnf install vdo kmod-kvdo
 ```
-
 - [STARY artykuł jak to działa](https://hobo.house/2018/09/13/using-vdo-on-centos-rhel7-for-storage-efficiency/)  
 
+---
 
-### Tworzenie VDO
+## Zadanie - Tworzenie VDO
 #### TODO - Opisac 
 
 Zamontowanie filesystemu 
