@@ -572,9 +572,10 @@ File mapping | filefrag | xfs_bmap
 
 ### TODO - Dodac kopiowanie filesystemu/jakis backup
 
-## LVM 
+# LVM 
 - [Spis treści](#spis-tre%C5%9Bci)
 
+\* **WAŻNE**
 - ```/dev/mapper/"$group_name"-"$lv_name"``` - ścieżka do utworzonego lvm
 
 ### Opisy skrócone
@@ -591,6 +592,14 @@ File mapping | filefrag | xfs_bmap
 - ```vgcreate```
 - ```lvcreate``` 
     - ```-l``` - **liczba extent** z której chcemy utworzyć lvm (wielkość extent jest ustawiony przy volume grupie)
+    - ```-L``` - **wielkość którą podajemy** ręcznie 
+- lvresize 
+    - -r - rozszerza filesystem razem z lvm
+
+--- 
+## Zadanie - Rozszerzanie i zmniejszanie fileyestemu na lvm 
+\* **WAŻNE** - ```-r``` - rozszerza lub zmniejsza filesystem razem z lvm 
+- ```lvresize -r -L -200M datacontainer/ext4-lvm``` - Zmniejszenie **lvm wraz z filesystemem** o 200M 
 
 ### VDO
 - [Spis treści](#spis-tre%C5%9Bci)
