@@ -90,7 +90,7 @@
 | [027_create_compressed_archive](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/027_create_compressed_archive.md) | [archiwizowanie](#archiwizowanie) | tak, ++ |
 | [028_search_string_using_grep_and_redirect](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/028_search_string_using_grep_and_redirect.md) | [wyszukiwanie plików](#wyszukiwanie-plik%c3%b3w) | tak, ++ |
 | [029_make_journald_persistent](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/029_make_journald_persistent.md) | [logi](#logi) | tak, ++ |
-| [030_setting_up_vdo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md) | [vdo](#vdo) | ++ - poćwiczyć |
+| [030_setting_up_vdo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md) | [vdo](#vdo) | tak, +++ - poćwiczyć |
 | [031_finding_files](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/031_finding_files.md) | [wyszukiwanie plików](#wyszukiwanie-plik%c3%b3w) | tak, ćwiczyć! ++ |
 | [032_finding_files_with_given_text_in_them](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/032_finding_files_with_given_text_in_them.md) | [wyszukiwanie plików](#wyszukiwanie-plików)  | tak, ++ |
 | [033_managing_layered_storage](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/033_managing_layered_storage.md) | [stratis](#stratis) |   |
