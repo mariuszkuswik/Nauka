@@ -104,7 +104,7 @@
 | 1. [create users/groups and configure superuser access on both servers](egzamin_praktyczny_cg.md/#create-usersgroups-and-configure-superuser-access-on-both-servers) | [użytkownicy](#użytkownicy), [grupy użytkowników](#grupy-użytkowników) | +, dalej do ogarniecia szybka automatuzacja |   
 | 2. [configure yum repositories on both servers and install packages/modules](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules) | test | + |
 | 3. [configure ip addresses on the second network interface on the first server](egzamin_praktyczny_cg.md/#configure-ip-addresses-on-the-second-network-interface-on-the-first-server) | test | + |
-| 4. [managing tuned profiles and individual processes](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules#managing-tuned-profiles-and-individual-processes) | test | + | 
+| 4. [managing tuned profiles and individual processes](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules#managing-tuned-profiles-and-individual-processes) | [tuned profiles](#tuned-profiles) | tak, ++ | 
 | 6. [manage-scheduled-tasks-on-the-first-server ](egzamin_praktyczny_cg.md/#6-manage-scheduled-tasks-on-the-first-server) | test | test | 
 | 7. [configure-time-service-clients-for-both-servers](egzamin_praktyczny_cg.md/#7-configure-time-service-clients-for-both-servers) | test | + | 
 | 8. [managing-the-system-bootloader](egzamin_praktyczny_cg.md/#8-managing-the-system-bootloader) | test | + | 
