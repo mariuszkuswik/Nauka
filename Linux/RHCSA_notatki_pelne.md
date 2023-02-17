@@ -102,11 +102,11 @@
 | zadanko | notatki | czy wykonane |
 |--|--|--|
 | 1. [create users/groups and configure superuser access on both servers](egzamin_praktyczny_cg.md/#create-usersgroups-and-configure-superuser-access-on-both-servers) | [użytkownicy](#użytkownicy), [grupy użytkowników](#grupy-użytkowników) | +, dalej do ogarniecia szybka automatuzacja |   
-| 2. [configure yum repositories on both servers and install packages/modules](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules) | test | + |
-| 3. [configure ip addresses on the second network interface on the first server](egzamin_praktyczny_cg.md/#configure-ip-addresses-on-the-second-network-interface-on-the-first-server) | test | + |
+| 2. [configure yum repositories on both servers and install packages/modules](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules) | [Repo](#repo) | tak, ++ |
+| 3. [configure ip addresses on the second network interface on the first server](egzamin_praktyczny_cg.md/#configure-ip-addresses-on-the-second-network-interface-on-the-first-server) | [Zmiana ustawien sieciowych](#zmiana-ustawien-sieciowych) | + |
 | 4. [managing tuned profiles and individual processes](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules#managing-tuned-profiles-and-individual-processes) | [tuned profiles](#tuned-profiles) | tak, ++ | 
-| 6. [manage-scheduled-tasks-on-the-first-server ](egzamin_praktyczny_cg.md/#6-manage-scheduled-tasks-on-the-first-server) | test | test | 
-| 7. [configure-time-service-clients-for-both-servers](egzamin_praktyczny_cg.md/#7-configure-time-service-clients-for-both-servers) | test | + | 
+| 6. [manage-scheduled-tasks-on-the-first-server ](egzamin_praktyczny_cg.md/#6-manage-scheduled-tasks-on-the-first-server) | [cron, at](#managing-schedulded-tasks) | test | 
+| 7. [configure-time-service-clients-for-both-servers](egzamin_praktyczny_cg.md/#7-configure-time-service-clients-for-both-servers) | [Configure time services](#kontrola-czasu-w-rhel) | + | 
 | 8. [managing-the-system-bootloader](egzamin_praktyczny_cg.md/#8-managing-the-system-bootloader) | test | + | 
 | 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](egzamin_praktyczny_cg.md/#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | [tutorial rh](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/deduplicating_and_compressing_logical_volumes_on_rhel/creating-a-deduplicated-and-compressed-logical-volume_deduplicating-and-compressing-logical-volumes-on-rhel#creating-an-lvm-vdo-volume_creating-a-deduplicated-and-compressed-logical-volume) | +, jakos zostalo zrobione, ogarniac dalej, WAZNE | 
 | 10. [add-swap-space-persistently-and-nondisruptive](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules)| test | + | 
@@ -389,7 +389,7 @@ drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
 - ```semanage fcontext``` - zarządza kontekstami plików i folderów   
 - ```restorecon -Rv``` - służy do zatwierdzenia zmian na folderach, zmiany   etykiet   
 
-## Kontrola czasu w RHEL
+# Kontrola czasu w RHEL
 - [Spis treści](#spis-tre%C5%9Bci)
 - [RH - How to configure chrony as an NTP client or server in Linux](https://www.redhat.com/sysadmin/chrony-time-services-linux)
 - [Cloud_guru - lekcja](https://learn.acloud.guru/course/red-hat-certified-system-administrator-ex200-exam-prep/learn/60dc10ad-0973-4bb6-8a0b-9d987f2c25f3/071c69c6-90ba-4885-9f32-15949b43286f/watch)
