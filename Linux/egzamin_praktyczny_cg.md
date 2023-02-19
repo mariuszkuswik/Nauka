@@ -182,20 +182,20 @@ Validate the changes in ```/boot/grub2/grub.cfg```. Do not reboot the server.
 
 **On the second server:**
 
-Stwórz dwa razy VDO - storage i data
+Stwórz VDO - o nazwie storage
 
 - LVM: 
-    - Nazwa vg: vg_storage i vg_data
-    - Nazwa lv: lv_storage i lv_data
-    - extent size - 16M i 4M
+    - Nazwa vg: vg_storage 
+    - Nazwa lv: lv_storage
+    - extent size - 16M
     - Wielokość fizyczna: 5GiB 
 - VDO
-    - Nazwa vdo - storage i data
+    - Nazwa vdo - storage 
     - Wielkość fizyczna: 5GiB 
     - Wielkość logiczna: 50GiB
 
-- Filesystem: xfs i ext4
-- Oba zamontuj trwale pod /mnt
+- Filesystem: ext4
+- Zamontuj trwale pod /mnt
 
   
 Use the VDO device as an LVM physical volume. Create the following:  
