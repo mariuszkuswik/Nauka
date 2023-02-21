@@ -103,19 +103,19 @@
 |--|--|--|
 | 1. [create users/groups and configure superuser access on both servers](egzamin_praktyczny_cg.md/#create-usersgroups-and-configure-superuser-access-on-both-servers) | [użytkownicy](#użytkownicy), [grupy użytkowników](#grupy-użytkowników) | +, dalej do ogarniecia szybka automatuzacja |   
 | 2. [configure yum repositories on both servers and install packages/modules](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules) | [Repo](#repo) | tak, ++ |
-| 3. [configure ip addresses on the second network interface on the first server](egzamin_praktyczny_cg.md/#configure-ip-addresses-on-the-second-network-interface-on-the-first-server) | [Zmiana ustawien sieciowych](#zmiana-ustawien-sieciowych) | + |
+| 3. [configure ip addresses on the second network interface on the first server](egzamin_praktyczny_cg.md/#configure-ip-addresses-on-the-second-network-interface-on-the-first-server) | [Zmiana ustawien sieciowych](#zmiana-ustawien-sieciowych) | tak, ++ |
 | 4. [managing tuned profiles and individual processes](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules#managing-tuned-profiles-and-individual-processes) | [tuned profiles](#tuned-profiles) | tak, ++ | 
 | 6. [manage-scheduled-tasks-on-the-first-server ](egzamin_praktyczny_cg.md/#6-manage-scheduled-tasks-on-the-first-server) | [cron, at](#managing-schedulded-tasks) | tak, + | 
-| 7. [configure-time-service-clients-for-both-servers](egzamin_praktyczny_cg.md/#7-configure-time-service-clients-for-both-servers) | [Configure time services](#kontrola-czasu-w-rhel) | + | 
-| 8. [managing-the-system-bootloader](egzamin_praktyczny_cg.md/#8-managing-the-system-bootloader) | test | tak, ++ | 
-| 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](egzamin_praktyczny_cg.md/#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | [tutorial rh](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/deduplicating_and_compressing_logical_volumes_on_rhel/creating-a-deduplicated-and-compressed-logical-volume_deduplicating-and-compressing-logical-volumes-on-rhel#creating-an-lvm-vdo-volume_creating-a-deduplicated-and-compressed-logical-volume) | tak, ++, WAZNE | 
+| 7. [configure-time-service-clients-for-both-servers](egzamin_praktyczny_cg.md/#7-configure-time-service-clients-for-both-servers) | [Configure time services](#kontrola-czasu-w-rhel) | tak, ++ | 
+| 8. [managing-the-system-bootloader](egzamin_praktyczny_cg.md/#8-managing-the-system-bootloader) | [Zmiana zmiennych konfiguracji Grub](#zmiana-zmiennych-konfiguracji-grub) | tak, ++ | 
+| 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](egzamin_praktyczny_cg.md/#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | [LVM/VDO](#vdo) | tak, ++, WAZNE | 
 | 10. [add-swap-space-persistently-and-nondisruptive](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules)| test | + | 
 | 11. [configure-stratis-storage-persistently](egzamin_praktyczny_cg.md/#11-configure-stratis-storage-persistently) | test | + | 
 | 12. [configure-autofs-for-home-directories](egzamin_praktyczny_cg.md/#12-configure-autofs-for-home-directories) | test | ++| 
 | 13. [configure-a-shared-directory-for-collaboration ](egzamin_praktyczny_cg.md/#13-configure-a-shared-directory-for-collaboration) | test | + | 
 | 14. [create-a-persistent-systemd-container-using-podman](egzamin_praktyczny_cg.md/#14-create-a-persistent-systemd-container-using-podman) | [kontenery](#kontenery) | + | 
 | 15. [troubleshoot-selinux-issues](egzamin_praktyczny_cg.md/#15-troubleshoot-selinux-issues) | [selinux](#selinux) - man semanage-fcontext, **jest w przykładach** | + | 
-| 16. [configure-the-firewall-on-both-servers](egzamin_praktyczny_cg.md/#16-configure-the-firewall-on-both-servers) | test | + | 
+| 16. [configure-the-firewall-on-both-servers](egzamin_praktyczny_cg.md/#16-configure-the-firewall-on-both-servers) | [firewall](#firewall) | + | 
 
   
 
