@@ -182,20 +182,24 @@ Validate the changes in ```/boot/grub2/grub.cfg```. Do not reboot the server.
 
 **On the second server:**
 
-Create a VDO device with the first unused 5GB device.  
-- Name: web_storage
-- Logical Size: 10GB
+Stwórz VDO - o nazwie storage
+
+- LVM: 
+    - Nazwa vg: vg_storage 
+    - Nazwa lv: lv_storage
+    - extent size - 16M
+    - Wielokość fizyczna: 5GiB 
+- VDO
+    - Nazwa vdo - storage 
+    - Wielkość fizyczna: 5GiB 
+    - Wielkość logiczna: 50GiB
+
+- Filesystem: ext4
+- Zamontuj trwale pod /mnt
+
   
 Use the VDO device as an LVM physical volume. Create the following:  
 - Volume Group: web_vg
-    - Three 2G Logical Volumes with xfs file systems:
-        - web_storage_dev
-        - web_storage_qa
-        - web_storage_prod
-  
-Mount these persistently at /mnt/web_storage_{dev,qa,prod}.  
-
-
 ## 10. Add Swap Space Persistently and Nondisruptive
 [Spis treści](#spis-treści) 
 
