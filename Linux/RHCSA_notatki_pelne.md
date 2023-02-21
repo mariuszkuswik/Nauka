@@ -1570,11 +1570,14 @@ systemctl enable --now tuned
 # Przed egzaminem 
 - [Spis treści](#spis-treści)
 
+## ZAWSZE SPRAWDZAJ CZY USLUGA NFS/AUTOFS ITD DZIALA
+
 ### Ogolne 
 - [Przywracanie hasła roota](#przywracanie-hasła-roota)
 - [man](#man)
     - ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU
 - ```bc``` - basic calculator 
+
 
 ### Bash auto-completion 
 - [Bash completion ubuntu](https://askubuntu.com/questions/545540/terminal-autocomplete-doesnt-work-properly)
