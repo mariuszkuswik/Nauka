@@ -56,6 +56,7 @@
 | Kategoria | Nazwa zadania | Link | 
 |---|---|---|
 | Podman | Podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
+| Podman | Podman - httpd | [Podman - httpd](#podman---httpd) | 
 
 # TODO 
 - Bash auto uzupelnianie - jak instalowac i wlaczac!
