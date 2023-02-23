@@ -61,8 +61,10 @@
 | podman | podman - httpd | [Podman - httpd](#podman---httpd) | 
 | podman | podman login + rejestry | | 
 | autofs | autofs - home dir | | 
-| tuned | tuned | | 
+| lvm-vdo | Utworzenie vdo na lvm | | 
 | selinux | selinux | | 
+| chronyd - ntp | synchronizacja czasu chrony | | 
+| tuned | tuned | | 
 | repo | dodanie repo | |
 | rpm | podstawy rpm | | 
 | kernel | Zmiana parametrow kernela | | 
