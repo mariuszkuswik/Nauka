@@ -56,6 +56,7 @@
 | Kategoria | Nazwa zadania | Link | 
 |---|---|---|
 | Przywrocenie hasla | Przywrocenie hasla roota | |  
+| Bash autocomplete | Bash autocomplete | | 
 | podman | podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
 | podman | podman - httpd | [Podman - httpd](#podman---httpd) | 
 | podman | podman login + rejestry | | 
