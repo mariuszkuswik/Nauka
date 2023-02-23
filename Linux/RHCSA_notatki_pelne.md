@@ -51,6 +51,12 @@
 [koniec](#koniec)   
   
 
+# Przekladowe zadania 
+
+| Kategoria | Nazwa zadania | Link | 
+|---|---|---|
+| Podman | Podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
+
 # TODO 
 - Bash auto uzupelnianie - jak instalowac i wlaczac!
 - [RED HAT podman registries - do ogarnięcia !](https://www.redhat.com/sysadmin/manage-container-registries)
@@ -117,7 +123,6 @@
 | 15. [troubleshoot-selinux-issues](egzamin_praktyczny_cg.md/#15-troubleshoot-selinux-issues) | [selinux](#selinux) - man semanage-fcontext, **jest w przykładach** | + | 
 | 16. [configure-the-firewall-on-both-servers](egzamin_praktyczny_cg.md/#16-configure-the-firewall-on-both-servers) | [firewall](#firewall) | + | 
 
-  
 
 # Pomoc 
 [spis treści](#spis-tre%c5%9bci)
@@ -1478,14 +1483,26 @@ GRUB_TIMEOUT=15
 ### Rootless container - procedura
 - [RH - podman rootless container procedura](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/building_running_and_managing_containers/assembly_porting-containers-to-systemd-using-podman_building-running-and-managing-containers#proc_enabling-systemd-services_assembly_porting-containers-to-systemd-using-podman)
 
-
+### WAZNE!
 ssh usernam@hostname - ssh jest konieczne dla dzialania podmana jako non root   
 ~/.config/systemd/user - katalog z uslugami systemd  
 loginctl enable-linger "$user" - wlaczenie lingera  
   
 ---
-#### CG - Zalozenia
-- serrice: httpd
+
+#### Podman - rsyslog  
+- [Spis treści](#spis-treści)
+
+Create a **container** that runs the rsyslog service. This container should be configured to write log files persistently to the directory ```/var/log/logcontainer/``` on the host operating system. Run this container with the same user account that the rsyslog service normally uses.
+Kontener ma dzialac jako non-root dla uzytkownika standardowego uzytkownika **rsysuser**
+**Kontener ma dzialac po reboocie**
+
+---
+
+#### Podman - httpd  
+- [Spis treści](#spis-treści)
+
+- service: httpd
 - user: cloud_user
 - shared folder: ~/web_data:/var/www/html
 - port: 8000:8080
