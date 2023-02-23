@@ -55,11 +55,11 @@
 
 | Kategoria | Nazwa zadania | Link | 
 |---|---|---|
-| Przywrocenie hasla | Przywrocenie hasla roota | |  
+| Przywrocenie hasla | Przywrocenie hasla roota | [Przywracanie hasla roota](#przywracanie-hasła-roota) | 
 | Bash completion | Bash completion | [Bash completion - instalacja](#bash-completion) | 
 | podman | podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
 | podman | podman - httpd | [Podman - httpd](#podman---httpd) | 
-| podman | podman login + rejestry | | 
+| podman | podman login + rejestry | [RH - Podman rejestry](https://www.redhat.com/sysadmin/manage-container-registries) |
 | autofs | autofs - home dir | | 
 | lvm-vdo | Utworzenie vdo na lvm | | 
 | selinux | selinux | | 
