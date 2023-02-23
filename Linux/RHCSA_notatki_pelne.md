@@ -56,7 +56,7 @@
 | Kategoria | Nazwa zadania | Link | 
 |---|---|---|
 | Przywrocenie hasla | Przywrocenie hasla roota | |  
-| Bash autocomplete | Bash autocomplete | | 
+| Bash completion | Bash completion | [Bash completion - instalacja](#bash-completion) | 
 | podman | podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
 | podman | podman - httpd | [Podman - httpd](#podman---httpd) | 
 | podman | podman login + rejestry | | 
@@ -72,7 +72,6 @@
 | kernel | zmiana domyslnego kernela | | 
 
 # TODO 
-- Bash auto uzupelnianie - jak instalowac i wlaczac!
 - [RED HAT podman registries - do ogarnięcia !](https://www.redhat.com/sysadmin/manage-container-registries)
 
 
@@ -183,6 +182,7 @@ you are new system administrator and from now you are going to handle the system
 # exit
 # logout
 ```
+
 
 # hostname
 - ```hostnamectl``` - wyświetla aktualny hostname + informacje na temat systemu
@@ -1609,8 +1609,7 @@ systemctl enable --now tuned
     - ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU
 - ```bc``` - basic calculator 
 
-
-### Bash auto-completion 
+### Bash completion 
 - [Bash completion ubuntu](https://askubuntu.com/questions/545540/terminal-autocomplete-doesnt-work-properly)
 
 ```
