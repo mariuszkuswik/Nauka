@@ -55,8 +55,18 @@
 
 | Kategoria | Nazwa zadania | Link | 
 |---|---|---|
-| Podman | Podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
-| Podman | Podman - httpd | [Podman - httpd](#podman---httpd) | 
+| Przywrocenie hasla | Przywrocenie hasla roota | |  
+| podman | podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
+| podman | podman - httpd | [Podman - httpd](#podman---httpd) | 
+| podman | podman login + rejestry | | 
+| autofs | autofs - home dir | | 
+| tuned | tuned | | 
+| selinux | selinux | | 
+| repo | dodanie repo | |
+| rpm | podstawy rpm | | 
+| kernel | Zmiana parametrow kernela | | 
+| kernel | update kernela | | 
+| kernel | zmiana domyslnego kernela | | 
 
 # TODO 
 - Bash auto uzupelnianie - jak instalowac i wlaczac!
