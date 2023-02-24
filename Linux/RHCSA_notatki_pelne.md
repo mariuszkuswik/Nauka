@@ -50,7 +50,7 @@
 [koniec](#koniec)   
   
 
-# Przekladowe zadania 
+# Przykladowe zadania 
 
 | Kategoria | Nazwa zadania | Link | 
 |---|---|---|
@@ -61,14 +61,14 @@
 | podman | podman login + rejestry | [RH - Podman rejestry](https://www.redhat.com/sysadmin/manage-container-registries) |
 | autofs | autofs - home dir | [autofs - home dirs](#automatyczne-montowanie-katalogów-domowych) | 
 | lvm-vdo | Utworzenie vdo na lvm | [Tworzenie VDO](#zadanie---tworzenie-vdo)| 
-| selinux | Rozwiazywanie problemow selinux | | 
+| selinux | Rozwiazywanie problemow selinux | [audit2allow](#audit2allow) | 
 | chronyd - ntp | synchronizacja czasu chrony | [Synchronizacja czasu](#synchronizacja-czasu-klient-z-serwerem) | 
 | tuned | tuned | [tuned](#tuned-profiles) | 
-| repo | dodanie repo | [Dodawanie nowego repo] |
+| repo | dodanie repo | [Dodawanie nowego repo](#dodanie-nowego-repozytorium) |
 | rpm | podstawy rpm | [rpm](#rpm) | 
-| kernel | Zmiana parametrow kernela | | 
+| kernel | Zmiana parametrow kernela | [Zmiana konfiguracji grub ](#zmiana-zmiennych-konfiguracji-grub) | 
 | kernel | update kernela | [Kernel Update](#kernel-update) | 
-| kernel | zmiana domyslnego kernela | | 
+| kernel | zmiana domyslnego kernela | [Zmiana domyslnego kernela](https://access.redhat.com/solutions/4326431) | 
 
 
 # chlebik
@@ -348,7 +348,6 @@ zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
 - ```audit2allow``` - command generates an SELinux policy based on logs returned by ausearch. This tells you that the first command parses the audit logs for anything with an event based on httpd and then generates an SELinux policy to allow it.
 - ```getenforce``` - Pokazuje **w jakim trybie** działa SELinux 
 - ```sestatus``` - Pokazuje **szczegółowe informacje** na temat SELinux
-
 
 #### audit2allow  
 - Wyszukiwanie problemów z SELinux + zezwolenie 
@@ -1241,9 +1240,7 @@ $ yum module list module-name
 
 
 ### Dodanie nowego repozytorium
-
 1. Dodajemy plik konfiguracyjny o nazwie repozytorium 
-
 
 ```bash
 [nazwa_repo]
@@ -1366,7 +1363,6 @@ GRUB_TIMEOUT=15
 
 ## Managing kernel modules
 - [RH - Managing kernel modules](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/managing-kernel-modules_managing-monitoring-and-updating-the-kernel)
-
 
 
 # Sieci
