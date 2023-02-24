@@ -60,19 +60,16 @@
 | podman | podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
 | podman | podman - httpd | [Podman - httpd](#podman---httpd) | 
 | podman | podman login + rejestry | [RH - Podman rejestry](https://www.redhat.com/sysadmin/manage-container-registries) |
-| autofs | autofs - home dir | | 
-| lvm-vdo | Utworzenie vdo na lvm | | 
-| selinux | selinux | | 
-| chronyd - ntp | synchronizacja czasu chrony | | 
-| tuned | tuned | | 
-| repo | dodanie repo | |
-| rpm | podstawy rpm | | 
+| autofs | autofs - home dir | [autofs](#automatyczne-montowanie-katalogów-domowych) | 
+| lvm-vdo | Utworzenie vdo na lvm | [Tworzenie VDO](#zadanie---tworzenie-vdo)| 
+| selinux | Rozwiazywanie problemow selinux | | 
+| chronyd - ntp | synchronizacja czasu chrony | [Synchronizacja czasu](#synchronizacja-czasu-klient-z-serwerem) | 
+| tuned | tuned | [tuned](#tuned-profiles) | 
+| repo | dodanie repo | [Dodawanie nowego repo] |
+| rpm | podstawy rpm | [rpm](#rpm) | 
 | kernel | Zmiana parametrow kernela | | 
-| kernel | update kernela | | 
+| kernel | update kernela | [Kernel Update](#kernel-update) | 
 | kernel | zmiana domyslnego kernela | | 
-
-# TODO 
-- [RED HAT podman registries - do ogarnięcia !](https://www.redhat.com/sysadmin/manage-container-registries)
 
 
 # chlebik
