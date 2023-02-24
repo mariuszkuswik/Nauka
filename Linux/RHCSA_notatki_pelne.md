@@ -59,7 +59,7 @@
 | podman | podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
 | podman | podman - httpd | [Podman - httpd](#podman---httpd) | 
 | podman | podman login + rejestry | [RH - Podman rejestry](https://www.redhat.com/sysadmin/manage-container-registries) |
-| autofs | autofs - home dir | [autofs](#automatyczne-montowanie-katalogów-domowych) | 
+| autofs | autofs - home dir | [autofs - home dirs](#automatyczne-montowanie-katalogów-domowych) | 
 | lvm-vdo | Utworzenie vdo na lvm | [Tworzenie VDO](#zadanie---tworzenie-vdo)| 
 | selinux | Rozwiazywanie problemow selinux | | 
 | chronyd - ntp | synchronizacja czasu chrony | [Synchronizacja czasu](#synchronizacja-czasu-klient-z-serwerem) | 
