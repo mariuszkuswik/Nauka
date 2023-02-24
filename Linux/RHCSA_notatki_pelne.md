@@ -12,7 +12,6 @@
 1. [firewall](#firewall)
 1. [kontrola czasu w rhel](#kontrola-czasu-w-rhel)
 1. [managing schedulded tasks](#managing-schedulded-tasks)
-1. [nfs](#nfs)
 1. [storage](#storage)
     - [montowanie](#montowanie)
     - [filesystemy](#filesystemy)
@@ -1025,9 +1024,20 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 ## Automatyczne montowanie katalogów domowych
 
 ### Serwer
-1. Wyeksportowanie katalogu /home
-1.1 Edycja /etc/exports
 
+1. Instalacja nfs-utils, wlaczenie nfs-server 
+1.1 Instalacja nfs-utils
+```bash
+dnf install nfs-utils
+```
+
+1.2 Włączenie usługi nfs-server 
+```
+systemctl enable --now nfs-server
+```
+
+2. Wyeksportowanie katalogu /home
+1.1 Edycja /etc/exports
 ```
 # Wyeksportowanie dla wszystkich sieci
 /home   *(rw,insecure)
@@ -1035,23 +1045,88 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 # Wyeksportowanie dla podsieci 192.168.0.* 
 /home   192.168.0.*(rw,insecure)
 ```
-1.2 Eksport katalogu z configu 
 
+1.2 Eksport katalogu z configu 
 ```
 exportfs -avr 
 ```
 
 1.2.3 Sprawdzenie czy jest dobrze wyeksportowany 
-
 ```
 # Komenda pokazuje liste katalogow eksporowtanych przez serwer  
 showmount -e
 ```
 
-1.2.4 
 
 
-### Klient 
+### Klient
+
+1. Instalacja nfs-utils
+
+2. Instalacja autofs
+
+3. Uruchomienie autofs przy starcie systemu 
+
+4. Edycja auto.master - działa jak mapa **punkt montowania = plik montowania**
+``` 
+vim /etc/auto.master
+
+# Dodanie do auto.master pliku ktory bedzie odpowiadac za mapowanie pod /mnt/home
+/mnt/home       /etc/auto.home
+```
+
+5. Utworzenie auto.home - pliku który został przypisany w auto.master  
+- *Najlepiej do tego celu skopiowac auto.misc*
+- **man 5 autofs** - po wyszukaniu home znajdziemy to samo
+
+```
+cp /etc/auto.misc /etc/auto.home
+vim /etc/auto.home
+
+# Dodanie do /etc/auto.home ścieżki montowania 
+
+*       -rw,fstype=nfs      server:/home/&
+```
+
+1. Do pliku */etc/auto.master* dodaj wpis określający punkt montowania, w którym ma zostać zamontowany zdalny katalog NFS oraz (dowolnie wybrany) plik zawierający dane wskazujące położenie zdalnego katalogu NFS.  
+*Do pliku auto.master dodaj następujący wiersz kodu:*   
+
+    ```bash
+    /home/remote /etc/auto.janek
+    ```
+
+2. Do wybranego w poprzednim punkcie pliku
+(w moim przypadku jest to /etc/auto.janek) dodaj następujący wiersz kodu:
+
+    ```bash
+    janek  -rw   "$nfs_server_address":/home/shared/janek
+    ```
+
+3. Ponownie uruchom usługę autofs:
+    
+    ```bash
+    systemctl restart autofs.service
+    ```
+
+4. Utwórz użytkownika o nazwie janek **o tym samym UUID co na serwerze** (tutaj jest to 507)   
+*aby system klienta był właścicielem plików znajdujących się w katalogu domowym (na serwerze NFS) tego użytkownika.*
+ 
+
+    ```console
+    # useradd -u 507 -c "Jan Kowalski" -d /home/remote/janek janek
+    # passwd janek
+
+    Changing password for user janek.  
+    New password: ********  
+    Retype new password: ********  
+    ```
+
+
+5. **Zaloguj się jako użytkownik janek.**   
+Jeżeli wszystko działa prawidłowo, po zalogowaniu się i wejściu do katalogu domowego ```/home/remote/janek```, powinien zostać zamontowany katalog ```/home/shared/janek``` z serwera "$nfs_server_address".  
+  
+
+Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego właścicielem jest użytkownik o identyfikatorze 507 (w obu systemach jest to janek). Dlatego użytkownik janek w systemie lokalnym powinien mieć możliwość dodawania, usuwania, modyfikowania i wyświetlania plików znajdujących się w tym katalogu. Po wylogowaniu się janka — w rzeczywistości gdy przestanie używać katalogu przez ustalony czas (tutaj jest to 10 minut) — katalog zostanie odmontowany.    
 
 
 ---
@@ -1163,23 +1238,23 @@ np. ```cd /net/localhost/pub```
 - [Dodanie nowego repozytorium](#dodanie-nowego-repozytorium)
 
 ### Linki 
-Red Hat
-- [RH LAB - Installing Software using Package Managers](https://developers.redhat.com/learn/installing-software-using-package-managers?intcmp=7013a0000026UTXAA2)
-- [RH Sysadmin - How to install software packages on RHEL](https://www.redhat.com/sysadmin/install-software-packages-rhel)
-- [RH - Chapter 1. Using AppStream](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/using-appstream_using-appstream)
-- [RH - Chapter 2. Introduction to modules](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/introduction-to-modules_using-appstream)
-- [RH - Chapter 3. Finding RHEL 8 content](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/finding-rhel-8-content_using-appstream)
-    - Searching for a package
-    - Listing available modules
-    - Finding out details about a module
-    - Commands for listing content  
+- Red Hat
+    - [RH LAB - Installing Software using Package Managers](https://developers.redhat.com/learn/installing-software-using-package-managers?intcmp=7013a0000026UTXAA2)
+    - [RH Sysadmin - How to install software packages on RHEL](https://www.redhat.com/sysadmin/install-software-packages-rhel)
+    - [RH - Chapter 1. Using AppStream](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/using-appstream_using-appstream)
+    - [RH - Chapter 2. Introduction to modules](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/introduction-to-modules_using-appstream)
+    - [RH - Chapter 3. Finding RHEL 8 content](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/finding-rhel-8-content_using-appstream)
+        - Searching for a package
+        - Listing available modules
+        - Finding out details about a module
+        - Commands for listing content  
   
 - [Kernel Red Hat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/updating-kernel-with-yum_managing-monitoring-and-updating-the-kernel)
 
 
-Random 
-- [Introduction to Application Streams](https://www.redhat.com/en/blog/introduction-appstreams-and-modules-red-hat-enterprise-linux)   
-- [Różnica pomiędzy dnf module a dnf group](https://unix.stackexchange.com/questions/603905/what-is-the-difference-between-a-yum-group-and-a-yum-module-in-red-hat-enterpris)
+- Random 
+    - [Introduction to Application Streams](https://www.redhat.com/en/blog/introduction-appstreams-and-modules-red-hat-enterprise-linux)   
+    - [Różnica pomiędzy dnf module a dnf group](https://unix.stackexchange.com/questions/603905/what-is-the-difference-between-a-yum-group-and-a-yum-module-in-red-hat-enterpris)
 
 
 ## Dnf
@@ -1206,7 +1281,6 @@ You can use other relative offsets, such as ```last-3```
 
 
 ### Modules
-
 1. List module streams available to your system:
 ```console
 $ yum module list
@@ -1223,7 +1297,6 @@ $ yum module list module-name
 ```
 
 ### Installing Applications via Modules
-
 1. lists all modules
 ```console
 # yum module list
@@ -1598,13 +1671,14 @@ systemctl enable --now tuned
 # Przed egzaminem 
 - [Spis treści](#spis-treści)
 
-## ZAWSZE SPRAWDZAJ CZY USLUGA NFS/AUTOFS ITD DZIALA
+- **ZAWSZE SPRAWDZAJ CZY USLUGA NFS/AUTOFS ITD DZIALA**
 
 ### Ogolne 
 - [Przywracanie hasła roota](#przywracanie-hasła-roota)
 - [man](#man)
     - ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU
 - ```bc``` - basic calculator 
+
 
 ### Bash completion 
 - [Bash completion ubuntu](https://askubuntu.com/questions/545540/terminal-autocomplete-doesnt-work-properly)
@@ -1621,7 +1695,9 @@ cd /usr/share/bash-completion
 - [Sprawdzene poprawnosci fstab](https://sleeplessbeastie.eu/2019/01/21/how-to-verify-fstab-file/)
     - ```findmnt --verify``` - komenda sprawdzajaca poprawnosc fstab
 - Pamiętać o dodawaniu ```nofail``` do filesystemów w fstabie!
- 
+#### LVM
+- ```lvresize -r``` - zmienia wielkość lvm i filesystemu!
+
 ### Skrypty
 - ```man sh``` - lista zmiennych specjalnych
 
@@ -1671,14 +1747,6 @@ https://github.com/chlebik/rhcsa-practice-questions/blob/master/questions/018_up
 dnf update kernel - updatuje kernel
 
 
-ZADANIE 12 CHELBIK
-grub2-mkconfig 
-
-/boot - 
-
-OPISAĆ
-
-
 # Blokowanie połączenia z konkretnego serwera  
 
 I just added the following to the drop zone and it worked without any issue:
@@ -1723,34 +1791,6 @@ you could also use /etc/hosts.allow
     - zdiagnozowanie problemu z SELinux przez /var/log/messages
 
 
-
-
-
-https://askubuntu.com/questions/1148620/rc-local-to-be-executed-at-boot
-. You can find a rc.local in there that has a remark about it running /etc/rc.local if present. That is the one you probably are expected to create.
-
-In /etc/rc.local you can put scripts to be executed at a run-level.
-
-Example file with 1 line added:
-
-$ more /etc/rc.local
-
-#!/bin/sh -e
-#
-# rc.local
-#
-# This script is executed at the end of each multiuser runlevel.
-# Make sure that the script will "exit 0" on success or any other
-# value on error.
-#
-# In order to enable or disable this script just change the execution
-# bits.
-#
-# By default this script does nothing.
-
-[ -x /sbin/initctl ] && initctl emit --no-wait google-rc-local-has-run || true
-
-exit 0
 
 
 # Koniec
