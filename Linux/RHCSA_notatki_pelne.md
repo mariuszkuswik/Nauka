@@ -1514,10 +1514,35 @@ cp ~/container.service ~/.config/systed/user - WAŻNY KATALOG -
 ---
 
 #### Sander - rsyslog container 
-##### Zalozenia 
+-  Zadanie:
+    - Create a container that runs the rsyslog service. This container should be configured to write log files persistently to the directory ```/var/log/logcontainer/``` on the host operating system. Run this container with the same user account that the rsyslog service normally uses. 
+    - Kontener ma dzialac jako non-root dla uzytkownika standardowego uzytkownika **rsysuser** 
+    - Kontener ma dzialac po reboocie
 
+- Odpowiedzi: 
 
+1. Pull the rsyslog image from a registry
+```
+podman pull rsyslog
+```
 
+2. Create a directory on the host operating system to store the log files:
+```
+sudo mkdir /var/log/logcontainer
+```
+
+3. Change the ownership of the directory to the user account that the rsyslog service normally uses:
+```
+sudo chown <username>:<groupname> /var/log/logcontainer
+```
+4. Run the rsyslog container, mounting the host directory to the container directory and setting the appropriate environment variables:
+- Replace , , and with the appropriate values for your system.
+
+```
+podman run -d --name rsyslog-container -v /var/log/logcontainer:/var/log/rsyslog -e TZ=<timezone> --user <username> rsyslog/rsyslog
+```
+
+**This will create a Podman container named rsyslog-container that runs the rsyslog service and writes log files persistently to the directory /var/log/logcontainer/ on the host operating system.**
 
 ---
 
