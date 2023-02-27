@@ -1479,7 +1479,7 @@ Kontener ma dzialac jako non-root dla uzytkownika standardowego uzytkownika **rs
 
 ---
 
-#### Podman - httpd  
+### Podman - httpd  
 - [Spis treści](#spis-treści)
 
 - service: httpd
@@ -1487,13 +1487,13 @@ Kontener ma dzialac jako non-root dla uzytkownika standardowego uzytkownika **rs
 - shared folder: ~/web_data:/var/www/html
 - port: 8000:8080
 
-
-1. loginctl enable-linger "$user" 
-2. loginctl show-user "$user" - sprawdzenie czy linger jest wlaczony dla uzytkownika?
-2. podman generate systemd
+#### Podman - przydatne  
+1. ```loginctl enable-linger "$user"``` 
+    - ```loginctl show-user "$user"``` - sprawdzenie czy linger jest wlaczony dla uzytkownika?
+2. ```podman generate systemd```
     - Pliki uslug systemd uzytkownika ```~/.config/systemd/user```
-3. systemctl --user daemon-reload - przeladowane plikow systemd dla uzytkownikow standardowych
-5. systemctl --user enable|start|stop "$UNIT" - obsluga uslug systemd dla uzytkownikow 
+3. ```systemctl --user daemon-reload``` - przeladowane plikow systemd dla uzytkownikow standardowych
+    - ```systemctl --user enable|start|stop "$UNIT"``` - obsluga uslug systemd dla uzytkownikow 
 
 
 1. katalog dla zwyklego usera
@@ -1573,6 +1573,14 @@ curl http://127.0.0.1:8000
     - Create a container that runs the rsyslog service. This container should be configured to write log files persistently to the directory ```/var/log/logcontainer/``` on the host operating system. Run this container with the same user account that the rsyslog service normally uses. 
     - Kontener ma dzialac jako non-root dla uzytkownika standardowego uzytkownika **rsysuser** 
     - Kontener ma dzialac po reboocie
+
+#### Podman - przydatne  
+1. ```loginctl enable-linger "$user"``` 
+    - ```loginctl show-user "$user"``` - sprawdzenie czy linger jest wlaczony dla uzytkownika?
+2. ```podman generate systemd```
+    - Pliki uslug systemd uzytkownika ```~/.config/systemd/user```
+3. ```systemctl --user daemon-reload``` - przeladowane plikow systemd dla uzytkownikow standardowych
+    - ```systemctl --user enable|start|stop "$UNIT"``` - obsluga uslug systemd dla uzytkownikow 
 
 - Odpowiedzi: 
 
