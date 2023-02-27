@@ -1487,21 +1487,6 @@ Kontener ma dzialac jako non-root dla uzytkownika standardowego uzytkownika **rs
 - shared folder: ~/web_data:/var/www/html
 - port: 8000:8080
 
-1. ```mkdir -p /home/cloud_user/.config/systemd/user``` - katalog dla zwyklego usera
-2. ```podman create --name web_server -p 8000:8080 -v "~/web_data:/var/www/html:Z" "$container_image"``` tworzenie kontenera  
-3. ```podman ls -a``` - wyświetlenie wszystkich kontenerów
-4. ```curl 127.0.0.1:8000```  - sprawdzenie czy strona jest wyświetlana
-5. ```podman generate systemd web_server >> ~/container.service ``` - Wygenerowanie serwisu systemd 
-cp ~/container.service ~/.config/systed/user - WAŻNY KATALOG - 
-9. ```loginctl enable-linger "$user"``` - włączenie lingera dla użytkownika - **konieczne do włączenia usługi po reboocie**
-10. ```loginctl show-user "$user" | grep linger``` - potwierdzenie włączenia lingera
-11. ```systemctl --user daemon-reload``` - odświeżenie plików systemd dla userów
-12. ```systemctl --user enable --now container-web_server.service``` - włączenie kontenera po reboocie 
-13. ```systemctl --user status container-web_server.service``` - sprawdzenie statusu uslugi 
-14. ```curl http://127.0.0.1:8000``` - potwiedzenie dzialania uslugi na porcie 8000
-15. ```systemctl reboot now``` - reboot dla potwierdzenia 
-14. ```curl http://127.0.0.1:8000``` - potiwerdzenie po reboocie 
-
 
 1. loginctl enable-linger "$user" 
 2. loginctl show-user "$user" - sprawdzenie czy linger jest wlaczony dla uzytkownika?
@@ -1511,9 +1496,79 @@ cp ~/container.service ~/.config/systed/user - WAŻNY KATALOG -
 5. systemctl --user enable|start|stop "$UNIT" - obsluga uslug systemd dla uzytkownikow 
 
 
+1. katalog dla zwyklego usera
+```
+mkdir -p /home/cloud_user/.config/systemd/user
+``` 
+
+2. tworzenie kontenera  
+```
+podman create --name web_server -p 8000:8080 -v "~/web_data:/var/www/html:Z" "$container_image"
+``` 
+
+3. wyświetlenie wszystkich kontenerów
+```
+podman ls -a
+``` 
+
+4. sprawdzenie czy strona jest wyświetlana
+```
+curl 127.0.0.1:8000
+``` 
+
+5. Wygenerowanie serwisu systemd i dodanie go do folderu z unitami
+```
+podman generate systemd web_server >> ~/container.service 
+
+### WAŻNY KATALOG 
+cp ~/container.service ~/.config/systed/user
+``` 
+
+9. Włączenie lingera dla użytkownika - **konieczne do włączenia usługi po reboocie**
+```
+loginctl enable-linger "$user"
+```
+
+10. Potwierdzenie włączenia lingera
+```
+loginctl show-user "$user" | grep linger
+```
+
+11. Odświeżenie plików systemd dla userów
+```
+systemctl --user daemon-reload
+```
+
+12. Włączenie kontenera po reboocie 
+```
+systemctl --user enable --now container-web_server.service
+```
+
+13. Wprawdzenie statusu uslugi 
+```
+systemctl --user status container-web_server.service
+```
+
+14. Potwiedzenie dzialania uslugi na porcie 8000
+```
+curl http://127.0.0.1:8000
+```
+
+15. Reboot dla potwierdzenia 
+```
+systemctl reboot now
+```
+
+14. Potiwerdzenie po reboocie 
+```
+curl http://127.0.0.1:8000
+```
+
+
 ---
 
-#### Sander - rsyslog container 
+#### Podman - rsyslog container 
+
 -  Zadanie:
     - Create a container that runs the rsyslog service. This container should be configured to write log files persistently to the directory ```/var/log/logcontainer/``` on the host operating system. Run this container with the same user account that the rsyslog service normally uses. 
     - Kontener ma dzialac jako non-root dla uzytkownika standardowego uzytkownika **rsysuser** 
@@ -1536,8 +1591,6 @@ sudo mkdir /var/log/logcontainer
 sudo chown <username>:<groupname> /var/log/logcontainer
 ```
 4. Run the rsyslog container, mounting the host directory to the container directory and setting the appropriate environment variables:
-- Replace , , and with the appropriate values for your system.
-
 ```
 podman run -d --name rsyslog-container -v /var/log/logcontainer:/var/log/rsyslog -e TZ=<timezone> --user <username> rsyslog/rsyslog
 ```
