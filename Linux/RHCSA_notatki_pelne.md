@@ -108,7 +108,7 @@
 | [030_setting_up_vdo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md) | [vdo](#vdo) | tak, +++ - poćwiczyć |
 | [031_finding_files](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/031_finding_files.md) | [wyszukiwanie plików](#wyszukiwanie-plik%c3%b3w) | tak, ćwiczyć na innych przykladach! +++ |
 | [032_finding_files_with_given_text_in_them](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/032_finding_files_with_given_text_in_them.md) | [wyszukiwanie plików](#wyszukiwanie-plików)  | tak, ++ |
-| [033_managing_layered_storage](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/033_managing_layered_storage.md) | [stratis](#stratis) |   |
+| [033_managing_layered_storage](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/033_managing_layered_storage.md) | [Stratis - jak utworzyć](#jak-utworzyć--usunąć-i-zamontować-filesystem-stratis) | tak, + |
 | [034_containers](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/034_containers.md) | [kontenery](#kontenery) | tak, ćwiczyć z rsyslogiem! ++ |
 
 # cg 
@@ -125,7 +125,7 @@
 | 8. [managing-the-system-bootloader](egzamin_praktyczny_cg.md/#8-managing-the-system-bootloader) | [Zmiana zmiennych konfiguracji Grub](#zmiana-zmiennych-konfiguracji-grub) | tak, ++ | 
 | 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](egzamin_praktyczny_cg.md/#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | [LVM/VDO](#vdo) | tak, ++, WAZNE | 
 | 10. [add-swap-space-persistently-and-nondisruptive](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules)| [Swap](#swap) | tak, + | 
-| 11. [configure-stratis-storage-persistently](egzamin_praktyczny_cg.md/#11-configure-stratis-storage-persistently) | test | + | 
+| 11. [configure-stratis-storage-persistently](egzamin_praktyczny_cg.md/#11-configure-stratis-storage-persistently) | [Stratis - jak utorzyć](#jak-utworzyć--usunąć-i-zamontować-filesystem-stratis) | tak, + | 
 | 12. [configure-autofs-for-home-directories](egzamin_praktyczny_cg.md/#12-configure-autofs-for-home-directories) | [autofs](#autofs) | tak, +++| 
 | 13. [configure-a-shared-directory-for-collaboration ](egzamin_praktyczny_cg.md/#13-configure-a-shared-directory-for-collaboration) | [acl](#acl) | + | 
 | 14. [create-a-persistent-systemd-container-using-podman](egzamin_praktyczny_cg.md/#14-create-a-persistent-systemd-container-using-podman) | [kontenery](#kontenery) | + | 
@@ -683,7 +683,7 @@ dnf install stratisd stratis-cli
 
 
 
-Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
+### Jak utworzyć / usunąć i zamontować filesystem Stratis
 
 1. Zainstaluj pakiety Stratis:
 ```
