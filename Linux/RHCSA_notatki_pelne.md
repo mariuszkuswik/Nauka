@@ -1470,15 +1470,6 @@ loginctl enable-linger "$user" - wlaczenie lingera
   
 ---
 
-#### Podman - rsyslog  
-- [Spis treści](#spis-treści)
-
-Create a **container** that runs the rsyslog service. This container should be configured to write log files persistently to the directory ```/var/log/logcontainer/``` on the host operating system. Run this container with the same user account that the rsyslog service normally uses.
-Kontener ma dzialac jako non-root dla uzytkownika standardowego uzytkownika **rsysuser**
-**Kontener ma dzialac po reboocie**
-
----
-
 ### Podman - httpd  
 - [Spis treści](#spis-treści)
 
