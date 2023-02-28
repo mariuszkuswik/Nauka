@@ -1,10 +1,11 @@
-# linki 
+# Ogólne linki 
 - [oreily link](https://learning.oreilly.com/videos/red-hat-certified/9780135656495/9780135656495-rcsa_02_10_08/)
 - [cloud guru link](https://learn.acloud.guru/course/red-hat-certified-system-administrator-ex200-exam-prep/learn/4a50133e-bbdb-43b8-b939-5f648997ec6d/9a5ffcb1-8849-4fe1-a2ae-3ed99bfc32ba/watch)
 - [red hat - sysadmin](https://www.redhat.com/sysadmin/)
 
 
-# spis treści
+# Start
+# Spis treści
 1. [pomoc](#pomoc)
 1. [przywracanie hasła roota](#przywracanie-hasła-roota)
 1. [selinux](#selinux)
@@ -41,7 +42,7 @@
 -  [przed egzaminem!!!](#przed-egzaminem)
 -  [po egzaminie](#po-egzaminie) - pytania z egzaminu
 ---
-## zadania 
+## Zadania 
 - [chlebik](#chlebik)    
 - [cloud guru](#cg)    
 - [daily zadanka](#daily-zadanka)  
@@ -50,7 +51,7 @@
 [koniec](#koniec)   
   
 
-# Przykladowe zadania 
+## Przykladowe zadania 
 
 | Kategoria | Nazwa zadania | Link | 
 |---|---|---|
@@ -71,7 +72,7 @@
 | kernel | zmiana domyslnego kernela | [Zmiana domyslnego kernela](https://access.redhat.com/solutions/4326431) | 
 
 
-# chlebik
+## chlebik
 - [spis treści](#spis-tre%c5%9bci)
 
 | zadanko | notatki | czy opanowane |
@@ -111,7 +112,7 @@
 | [033_managing_layered_storage](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/033_managing_layered_storage.md) | [Stratis - jak utworzyć](#jak-utworzyć--usunąć-i-zamontować-filesystem-stratis) | tak, + |
 | [034_containers](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/034_containers.md) | [kontenery](#kontenery) | tak, ćwiczyć z rsyslogiem! ++ |
 
-# cg 
+## cg 
 - [spis treści](#spis-tre%c5%9bci)
 
 | zadanko | notatki | czy wykonane |
