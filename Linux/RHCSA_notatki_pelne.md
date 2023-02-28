@@ -1284,7 +1284,6 @@ sslke
 # Swap
 - [Spis treści](#spis-tre%C5%9Bci)
 
-### #TODO - uzupełnić chociaż trochę
 
 ### Wlaczenie/Wylaczenie swapu  
 - ```swapon -a``` - wlaczenie calego swapu z fstab? 
