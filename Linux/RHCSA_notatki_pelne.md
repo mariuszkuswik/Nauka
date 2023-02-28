@@ -1455,15 +1455,14 @@ GRUB_TIMEOUT=15
     - ```systemctl --user start|stop|enable UNIT``` - Zarządzanie usługami systemd użytkownika
         - ```systemctl --user enable --now container-myubi.service``` - Uruchomienie usługi kontenera przy starcie systemu
 
-### Rootless container - procedura
-- [RH - podman rootless container procedura](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/building_running_and_managing_containers/assembly_porting-containers-to-systemd-using-podman_building-running-and-managing-containers#proc_enabling-systemd-services_assembly_porting-containers-to-systemd-using-podman)
+### Kontenery - SeLinux 
+- [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
 
-### WAZNE!
-ssh usernam@hostname - ssh jest konieczne dla dzialania podmana jako non root   
-~/.config/systemd/user - katalog z uslugami systemd  
-loginctl enable-linger "$user" - wlaczenie lingera  
+**Każdy wolumen musi mieć odpowiednio udostępniony plik - Z ODPOWIEDNIO USTAWIONYM KONTEKSTEM PLIKU**
+- ```podman container create --volume "$host_volume/$container_volume:Z"``` - automatyczny kontekst dla volumenu
+- kontekst dla folderów które mają byc udostępnione może być taki sam jak dla reszty plików 
+SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA ```ls -lZ /```
   
----
 
 ## Podman - httpd  
 - [Spis treści](#spis-treści)
@@ -1553,9 +1552,6 @@ systemctl reboot now
 curl http://127.0.0.1:8000
 ```
 
-
----
-
 ## Podman - rsyslog container 
 -  Zadanie:
     - Create a container that runs the rsyslog service. This container should be configured to write log files persistently to the directory ```/var/log/logcontainer/``` on the host operating system. Run this container with the same user account that the rsyslog service normally uses. 
@@ -1593,16 +1589,6 @@ podman run -d --name rsyslog-container -v /var/log/logcontainer:/var/log/rsyslog
 ```
 
 **This will create a Podman container named rsyslog-container that runs the rsyslog service and writes log files persistently to the directory /var/log/logcontainer/ on the host operating system.**
-
----
-
-### Kontenery - SeLinux 
-- [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
-
-**Każdy wolumen musi mieć odpowiednio udostępniony plik - Z ODPOWIEDNIO USTAWIONYM KONTEKSTEM PLIKU**
-- ```podman container create --volume "$host_volume/$container_volume:Z"``` - automatyczny kontekst dla volumenu
-- kontekst dla folderów które mają byc udostępnione może być taki sam jak dla reszty plików 
-SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA ```ls -lZ /```
 
 
 # Tuned profiles
@@ -1716,12 +1702,15 @@ dnf update kernel - updatuje kernel
 
 I just added the following to the drop zone and it worked without any issue:
 
-```firewall-cmd --zone=drop --add-source=x.x.x.x/xx```
-
+```
+firewall-cmd --zone=drop --add-source=x.x.x.x/xx
+```
 replace x.x.x.x with the IP and you can add the subnet under /xx
 
 reguły dla danej strefy, do drop dodajemy źródłą które chcemy blokować 
-```firewall-cmd --zone=drop --list-all```
+```
+firewall-cmd --zone=drop --list-all
+```
 
 you could also use /etc/hosts.allow
 /etc/hosts.deny
