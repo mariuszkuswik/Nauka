@@ -105,7 +105,7 @@
 | [026_reduce_the_size_of_lv](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/026_reduce_the_size_of_lv.md) | [LVM - Dodawanie i zmniejszanie](#zadanie---rozszerzanie-i-zmniejszanie-filesystemu-na-lvm) | tak, ++ |
 | [027_create_compressed_archive](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/027_create_compressed_archive.md) | [archiwizowanie](#archiwizowanie) | tak, ++ |
 | [028_search_string_using_grep_and_redirect](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/028_search_string_using_grep_and_redirect.md) | [wyszukiwanie plików](#wyszukiwanie-plik%c3%b3w) | tak, ++ |
-| [029_make_journald_persistent](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/029_make_journald_persistent.md) | [logi](#logi) | tak, ++ |
+| [029_make_journald_persistent](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/029_make_journald_persistent.md) | [Ustawianie stalego journal](#ustawienie-stałego-journalctl) | tak, ++ |
 | [030_setting_up_vdo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md) | [vdo](#vdo) | tak, +++ - poćwiczyć |
 | [031_finding_files](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/031_finding_files.md) | [wyszukiwanie plików](#wyszukiwanie-plik%c3%b3w) | tak, ćwiczyć na innych przykladach! +++ |
 | [032_finding_files_with_given_text_in_them](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/032_finding_files_with_given_text_in_them.md) | [wyszukiwanie plików](#wyszukiwanie-plików)  | tak, ++ |
@@ -743,7 +743,7 @@ Dodanie UUID ```/dev/stratis/"$pool_name"/"$filesystem_name"```
 - [RH - Chapter 23. Viewing and Managing Log Files](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-viewing_and_managing_log_files)
 
 
-## Understanding Logging and Using Persistent Journals on RHEL 8
+## Understanding Logging
 
 ```grep "$nazwa_szukanej_usługi" `find /var/log -maxdepth 1 -type f` | less ``` - Dobrze jest grepować logi w /var/log, w ten sposób dowiemy się które pliki zawierają logi o nazej usłudze
 
@@ -758,8 +758,6 @@ Dodanie UUID ```/dev/stratis/"$pool_name"/"$filesystem_name"```
     ```
 
 - ```/var/log/messages```
-
-### #TODO - opisać jakoś 
 
 ## Ustawienie stałego journalctl 
 
