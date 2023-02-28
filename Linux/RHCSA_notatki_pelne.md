@@ -1474,13 +1474,16 @@ loginctl enable-linger "$user" - wlaczenie lingera
 - port: 8000:8080
 
 #### Podman - SZYBKIE NOTATKI  
-1. ```loginctl enable-linger "$user"``` 
+1. ```ssh usernam@hostname``` - ssh jest konieczne dla dzialania podmana jako non root
+2. ```loginctl enable-linger "$user"``` 
     - ```loginctl show-user "$user"``` - sprawdzenie czy linger jest wlaczony dla uzytkownika?
-2. ```podman generate systemd```
+3. ```podman generate systemd```
     - Pliki uslug systemd uzytkownika ```~/.config/systemd/user```
-3. ```systemctl --user daemon-reload``` - przeladowane plikow systemd dla uzytkownikow standardowych
+4. ```systemctl --user daemon-reload``` - przeladowane plikow systemd dla uzytkownikow standardowych
     - ```systemctl --user enable|start|stop "$UNIT"``` - obsluga uslug systemd dla uzytkownikow 
 
+---
+#### Stawianie kontenera
 
 1. katalog dla zwyklego usera
 ```
@@ -1554,21 +1557,21 @@ curl http://127.0.0.1:8000
 ---
 
 ## Podman - rsyslog container 
-
 -  Zadanie:
     - Create a container that runs the rsyslog service. This container should be configured to write log files persistently to the directory ```/var/log/logcontainer/``` on the host operating system. Run this container with the same user account that the rsyslog service normally uses. 
     - Kontener ma dzialac jako non-root dla uzytkownika standardowego uzytkownika **rsysuser** 
     - Kontener ma dzialac po reboocie
 
 #### Podman - SZYBKIE NOTATKI  
-1. ```loginctl enable-linger "$user"``` 
+1. ```ssh usernam@hostname``` - ssh jest konieczne dla dzialania podmana jako non root
+2. ```loginctl enable-linger "$user"``` 
     - ```loginctl show-user "$user"``` - sprawdzenie czy linger jest wlaczony dla uzytkownika?
-2. ```podman generate systemd```
+3. ```podman generate systemd```
     - Pliki uslug systemd uzytkownika ```~/.config/systemd/user```
-3. ```systemctl --user daemon-reload``` - przeladowane plikow systemd dla uzytkownikow standardowych
+4. ```systemctl --user daemon-reload``` - przeladowane plikow systemd dla uzytkownikow standardowych
     - ```systemctl --user enable|start|stop "$UNIT"``` - obsluga uslug systemd dla uzytkownikow 
 
-- Odpowiedzi: 
+#### Stawianie kontenera 
 
 1. Pull the rsyslog image from a registry
 ```
