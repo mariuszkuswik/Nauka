@@ -199,7 +199,7 @@ you are new system administrator and from now you are going to handle the system
 - ```/etc/defaults/useradd``` 
 - ```/etc/login.defs```
 
-# ToDo - dopisać
+### ToDo - dopisać
 - ustawienie domyślnych ustawień nowo dodawanych użytkowników, tj. wygasanie hasła, katalogi domowe itd.
  
 ### podstawowe komendy
@@ -267,19 +267,19 @@ locate działa na podstawie bazy danych, domyślnie aktualizowana jest raz dzien
 - ```updatedb``` - aktualizuje bazę locate
 - ```locate "$file_name"``` - wyszukuje plik na podstawie indeksowanej bazy danych
 
-# firewall 
+# Firewall 
 - [spis treści](#spis-tre%c5%9bci)
-### linki
+### Linki
 - [rh - firewalld article](https://www.redhat.com/sysadmin/firewalld-linux-firewall)
 ---
 - w rhel8 firewall jest zarzadzany przez firewalld, pod spodem jest nftables  
 zarzadzanie firewalld odbywa sie za pomoca komendy ```firewall-cmd```
 
-### configi 
+### Configi 
 - ```/usr/lib/firewalld``` - katalog z domyslna konfiguracja
 - ```/etc/firewalld``` - katalog z obecnie dzialajacym configiem 
 
-### komendy
+### Komendy
 - ```firewall-cmd``` - odpowiada za konfigurację zapory   
     
     - zarządzanie firewallem :  
@@ -409,7 +409,7 @@ Poprzednim serwerem czasu był ntp, obecnym chrony
 
 - ```chrony``` - serwer lub klient (zależy od potrzeby) kontroli czasu
 
-### Ważne pliki :  
+### Ważne pliki  
 - ```/etc/chrony.conf``` - config  
 - ```/etc/chrony.keys``` - zawiera klucze ? 
 - ```/usr/share/doc/chrony``` - dokumentacja
@@ -640,8 +640,7 @@ Zamontowanie filesystemu
 
 ## Stratis 
 - [Spis treści](#spis-tre%C5%9Bci)
----
-### #TODO - opisać bardziej 
+### Linki
 - [Stratis - ogolna strona + how_to](https://stratis-storage.github.io/howto/)  
 - [Stratis filmik](https://www.youtube.com/watch?v=CJu3kmY-f5o&t=200s)  
 
@@ -738,7 +737,7 @@ Dodanie UUID ```/dev/stratis/"$pool_name"/"$filesystem_name"```
 
 
 
-## Logi 
+# Logi 
 - [Spis treści](#spis-tre%C5%9Bci)
 - [RH - How to configure your system to preserve system logs after a reboot](https://www.redhat.com/sysadmin/store-linux-system-journals)
 - [RH - Chapter 23. Viewing and Managing Log Files](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-viewing_and_managing_log_files)
@@ -942,7 +941,7 @@ WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli wys
 
 
 
-## sar - sysstat
+# sar - sysstat
 - [Spis treści](#spis-tre%C5%9Bci)
 
 **sprawdzanie zasobów systemowych**
@@ -1106,7 +1105,6 @@ showmount -e
 
 ### Automatyczne montowanie katalogu /net   
 Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego katalogu, należy po prostu zmienić katalog (cd) na katalog montowania autofs (domyślnie /net lub /var/autofs). W ten sposób współdzielony zasób zostanie automatycznie zamontowany i udostępniony.    
-### #TODO - Dopisać jakiś przykład
 
 1. **Otworzyć plik /etc/auto.master, a następnie znaleźć następujący wiersz:**  
 
