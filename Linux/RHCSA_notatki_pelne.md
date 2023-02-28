@@ -191,10 +191,36 @@ you are new system administrator and from now you are going to handle the system
 ### ważne!
 - zmiana w /etc/hostname jest niezalecana!
 
-
 # Użytkownicy 
-- szybkie tworzenie userów 
+[spis treści](#spis-tre%c5%9bci)
 
+## Tworzenie nowych 
+### configi
+- ```/etc/defaults/useradd``` 
+- ```/etc/login.defs```
+
+# ToDo - dopisać
+- ustawienie domyślnych ustawień nowo dodawanych użytkowników, tj. wygasanie hasła, katalogi domowe itd.
+ 
+### podstawowe komendy
+- ```useradd``` - dodanie użytkownika
+    - ```useradd -u "$uid"``` - user z innym uuid
+- ```usermod``` - modyfikowanie ustawień użytkownika
+    - ```usermod -ag "$group_name"``` - samo użycie opcji ```g``` bez ```a``` **powoduje zastępienie obecnych grup użytkownika tą jedną którą przypisujemy**
+- ```userdel``` - usuwanie użytkownika
+   
+
+## Edycja użytkowników
+### wygasanie hasla/blokowanie konta 
+- ```chage``` - blokowanie konta po określonym czasie 
+- ```chage``` - wymuszenie zmiany hasła 
+
+### wyłączenie logowania 
+```
+vim /etc/passwd 
+# dodanie jako shell 
+/sbin/nologin
+```
 
 # Grupy użytkowników
 -  szybkie tworzenie  
@@ -240,38 +266,6 @@ nadanie dla grupy ```dba_managers``` praw do wykonywania na wszystkihch maszynac
 locate działa na podstawie bazy danych, domyślnie aktualizowana jest raz dziennie  
 - ```updatedb``` - aktualizuje bazę locate
 - ```locate "$file_name"``` - wyszukuje plik na podstawie indeksowanej bazy danych
-
-# uzytkownicy
-[spis treści](#spis-tre%c5%9bci)
-
-## Tworzenie nowych 
-### configi
-- ```/etc/defaults/useradd``` 
-- ```/etc/login.defs```
-
-# ToDo - dopisać
-- ustawienie domyślnych ustawień nowo dodawanych użytkowników, tj. wygasanie hasła, katalogi domowe itd.
- 
-
-### podstawowe komendy
-- ```useradd``` - dodanie użytkownika
-    - ```useradd -u "$uid"``` - user z innym uuid
-- ```usermod``` - modyfikowanie ustawień użytkownika
-    - ```usermod -ag "$group_name"``` - samo użycie opcji ```g``` bez ```a``` **powoduje zastępienie obecnych grup użytkownika tą jedną którą przypisujemy**
-- ```userdel``` - usuwanie użytkownika
-   
-
-## Edycja użytkowników
-### wygasanie hasla/blokowanie konta 
-- ```chage``` - blokowanie konta po określonym czasie 
-- ```chage``` - wymuszenie zmiany hasła 
-
-### wyłączenie logowania 
-```
-vim /etc/passwd 
-# dodanie jako shell 
-/sbin/nologin
-```
 
 # firewall 
 - [spis treści](#spis-tre%c5%9bci)
