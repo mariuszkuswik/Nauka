@@ -1416,6 +1416,9 @@ GRUB_TIMEOUT=15
         - ```podman image rm "$nazwa_obrazu"``` - usuwa obraz 
         - ```podman image tag "$nazwa_obrazu" "$tag"``` - nadaje obrazowi tag
 
+#### Inspecting images - skopeo
+- ```skopeo``` - used to inspect, copy, delete and sign container images
+
 ### Operacje na kontenerach
 - **Tworzenie kontenera**
     - ```podman container``` - operacje wykonywane na kontenerach     
@@ -1462,7 +1465,7 @@ loginctl enable-linger "$user" - wlaczenie lingera
   
 ---
 
-### Podman - httpd  
+## Podman - httpd  
 - [Spis treści](#spis-treści)
 
 - service: httpd
@@ -1470,7 +1473,7 @@ loginctl enable-linger "$user" - wlaczenie lingera
 - shared folder: ~/web_data:/var/www/html
 - port: 8000:8080
 
-#### Podman - przydatne  
+#### Podman - SZYBKIE NOTATKI  
 1. ```loginctl enable-linger "$user"``` 
     - ```loginctl show-user "$user"``` - sprawdzenie czy linger jest wlaczony dla uzytkownika?
 2. ```podman generate systemd```
@@ -1550,14 +1553,14 @@ curl http://127.0.0.1:8000
 
 ---
 
-#### Podman - rsyslog container 
+## Podman - rsyslog container 
 
 -  Zadanie:
     - Create a container that runs the rsyslog service. This container should be configured to write log files persistently to the directory ```/var/log/logcontainer/``` on the host operating system. Run this container with the same user account that the rsyslog service normally uses. 
     - Kontener ma dzialac jako non-root dla uzytkownika standardowego uzytkownika **rsysuser** 
     - Kontener ma dzialac po reboocie
 
-#### Podman - przydatne  
+#### Podman - SZYBKIE NOTATKI  
 1. ```loginctl enable-linger "$user"``` 
     - ```loginctl show-user "$user"``` - sprawdzenie czy linger jest wlaczony dla uzytkownika?
 2. ```podman generate systemd```
@@ -1597,12 +1600,6 @@ podman run -d --name rsyslog-container -v /var/log/logcontainer:/var/log/rsyslog
 - ```podman container create --volume "$host_volume/$container_volume:Z"``` - automatyczny kontekst dla volumenu
 - kontekst dla folderów które mają byc udostępnione może być taki sam jak dla reszty plików 
 SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA ```ls -lZ /```
-
-
-
-## Obrazy kontenerów
-### Inspecting images - skopeo
-- ```skopeo``` - used to inspect, copy, delete and sign container images
 
 
 # Tuned profiles
