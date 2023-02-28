@@ -1160,15 +1160,16 @@ np. ```cd /net/localhost/pub```
   
 - dnf history - wyświetla listę operacji  
 
-> ID| Command                  | Date and time    | Action(s)| Altered    
-> ------------------------------------------------------------------    
-> 12 | -y remove httpd         | 2021-12-22 01:12 | Removed  |   10  
-> 11 | -y update bash          | 2021-12-22 01:12 | Upgrade  |    1  
-> 10 | -y install wireshark    | 2021-12-22 01:07 | install  |   98  
->  9 | install -y httpd        | 2021-12-22 01:04 | Install  |   10  <  
- 8 |                         | 2021-12-22 01:02 | I, U     |   81 >  
+``` 
+ID| Command                  | Date and time    | Action(s)| Altered    
+------------------------------------------------------------------    
+12 | -y remove httpd         | 2021-12-22 01:12 | Removed  |   10  
+11 | -y update bash          | 2021-12-22 01:12 | Upgrade  |    1  
+10 | -y install wireshark    | 2021-12-22 01:07 | install  |   98  
+ 9 | install -y httpd        | 2021-12-22 01:04 | Install  |   10   
+ 8 |                         | 2021-12-22 01:02 | I, U     |   81   
  7 | install -y git          | 2021-09-03 15:10 | Install  |   48  
-
+```
 - dnf -y history rollback 11 - cofa operacje o ID 11
 You can use other relative offsets, such as ```last-3```
 
