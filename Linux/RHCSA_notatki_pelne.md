@@ -42,7 +42,7 @@
 -  [przed egzaminem!!!](#przed-egzaminem)
 -  [po egzaminie](#po-egzaminie) - pytania z egzaminu
 ---
-## Zadania 
+# Zadania 
 - [chlebik](#chlebik)    
 - [cloud guru](#cg)    
 - [daily zadanka](#daily-zadanka)  
@@ -128,8 +128,8 @@
 | 10. [add-swap-space-persistently-and-nondisruptive](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules)| [Swap](#swap) | tak, + | 
 | 11. [configure-stratis-storage-persistently](egzamin_praktyczny_cg.md/#11-configure-stratis-storage-persistently) | [Stratis - jak utorzyć](#jak-utworzyć--usunąć-i-zamontować-filesystem-stratis) | tak, + | 
 | 12. [configure-autofs-for-home-directories](egzamin_praktyczny_cg.md/#12-configure-autofs-for-home-directories) | [autofs](#autofs) | tak, +++| 
-| 13. [configure-a-shared-directory-for-collaboration ](egzamin_praktyczny_cg.md/#13-configure-a-shared-directory-for-collaboration) | [acl](#acl) | + | 
-| 14. [create-a-persistent-systemd-container-using-podman](egzamin_praktyczny_cg.md/#14-create-a-persistent-systemd-container-using-podman) | [kontenery](#kontenery) | + | 
+| 13. [configure-a-shared-directory-for-collaboration ](egzamin_praktyczny_cg.md/#13-configure-a-shared-directory-for-collaboration) | [acl](#acl) | tak, ++ | 
+| 14. [create-a-persistent-systemd-container-using-podman](egzamin_praktyczny_cg.md/#14-create-a-persistent-systemd-container-using-podman) | [kontenery](#kontenery) | tak, ++ | 
 | 15. [troubleshoot-selinux-issues](egzamin_praktyczny_cg.md/#15-troubleshoot-selinux-issues) | [selinux](#selinux) - man semanage-fcontext, **jest w przykładach** | + | 
 | 16. [configure-the-firewall-on-both-servers](egzamin_praktyczny_cg.md/#16-configure-the-firewall-on-both-servers) | [firewall](#firewall) | + | 
 
