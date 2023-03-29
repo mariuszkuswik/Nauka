@@ -918,70 +918,11 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
 
 ## Automatyczne montowanie katalogów domowych
 
-### Serwer
-1. Wyeksportowanie katalogu /home
-1.1 Edycja /etc/exports
-
-```
-# Wyeksportowanie dla wszystkich sieci
-/home   *(rw,insecure)
-
-# Wyeksportowanie dla podsieci 192.168.0.* 
-/home   192.168.0.*(rw,insecure)
-```
-1.2 Eksport katalogu z configu 
-
-```
-exportfs -avr 
-```
-
-1.2.3 Sprawdzenie czy jest dobrze wyeksportowany 
-
+### 
 ```
 # Komenda pokazuje liste katalogow eksporowtanych przez serwer  
-showmount -e
+showmount -e 192.168.10.10 
 ```
-
-1.2.4 
-
-
-### Klient 
-
-
----
-
-
-### Serwer 
-
-1. Na serwerze NFS (mynfs.example.com) na którym zjanduje się *katalog domowy* użytkownika **janek** należy utworzyć konto dla tego użytkownika,  
-**UUID użytkownika *janek* na hoscie i kliencie musi być takie samo**  
-
-    ```bash
-    mkdir /home/shared
-    useradd -c "Jan Kowalski" -d /home/shared/janek janek
-    grep janek /etc/passwd
-    janek:x:1000:1000:Jan Kowalski:/home/shared/janek:/bin/bash  
-    ```
-
-2. Na serwerze NFS należy wyeksportować katalog /home/shared do całej sieci lokalnej (w omawianym przykładzie to sieć 192.168.0.*)  
-*Aby to zrobić w /etc/exports należy dodać :*   
-    
-    ```bash
-    # /etc/exports file to share directories under /home/shared  
-    # only to other systems on the 192.168.0.0/24 network:
-    
-    /home/shared 192.168.0.*(rw,insecure)  
-    ```
-   
-    **WAŻNE !** - opcja insecure  umożliwia klientom podczas wykonywania żądań używanie portów o numerach wyższych niż 1024. Część klientów NFS wymaga tej opcji, ponieważ nie ma dostępu do portów zarezerwowanych dla NFS.   
-
-3. Na serwerze NFS ponownie uruchom usługę nfs-server lub, jeśli już działa, wyeksportuj katalog współdzielony.  
-
-    ```bash
-    exportfs -a -r -v
-    ```
-
-4. **Na serwerze NFS sprawdź, czy w zaporze sieciowej zostały otwarte niezbędne porty lub czy do zapory został dodany seriws nfs.**
 
 ### Klient
 1. Do pliku */etc/auto.master* dodaj wpis określający punkt montowania, w którym ma zostać zamontowany zdalny katalog NFS oraz (dowolnie wybrany) plik zawierający dane wskazujące położenie zdalnego katalogu NFS.  
