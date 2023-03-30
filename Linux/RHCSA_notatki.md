@@ -917,57 +917,35 @@ system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które 
   
 
 ## Automatyczne montowanie katalogów domowych
-
-### 
+ 
 ```
 # Komenda pokazuje liste katalogow eksporowtanych przez serwer  
 showmount -e 192.168.10.10 
 ```
-
-### Klient
-1. Do pliku */etc/auto.master* dodaj wpis określający punkt montowania, w którym ma zostać zamontowany zdalny katalog NFS oraz (dowolnie wybrany) plik zawierający dane wskazujące położenie zdalnego katalogu NFS.  
-*Do pliku auto.master dodaj następujący wiersz kodu:*   
-
+#### UID użytkownika na serwerze nfs i kliencie musi być taki sam!
+1. Plik /etc/auto.master - punkt montowania - ścieżka do mapy montowania 
     ```bash
-    /home/remote /etc/auto.janek
+    /home   /etc/auto.home
     ```
 
-2. Do wybranego w poprzednim punkcie pliku
-(w moim przypadku jest to /etc/auto.janek) dodaj następujący wiersz kodu:
-
+2. Plik /etc/auto.home
+- Opcja dla jednego użytkownika
     ```bash
-    janek  -rw   "$nfs_server_address":/home/shared/janek
+    janek  -rw,filesystem=nfs   "$nfs_server_address":/home/janek
     ```
-
-3. Ponownie uruchom usługę autofs:
-    
+- Opcja dla wielu użytkownikó
     ```bash
-    systemctl restart autofs.service
+    *   -rw,filesystem=nfs  "$nfs_server_address":/home/janek
     ```
 
-4. Utwórz użytkownika o nazwie janek **o tym samym UUID co na serwerze** (tutaj jest to 507)   
-*aby system klienta był właścicielem plików znajdujących się w katalogu domowym (na serwerze NFS) tego użytkownika.*
- 
-
-    ```console
-    # useradd -u 507 -c "Jan Kowalski" -d /home/remote/janek janek
-    # passwd janek
-
-    Changing password for user janek.  
-    New password: ********  
-    Retype new password: ********  
+3. Enable + restart autofs
+    ```bash
+    systemctl enable autofs
+    systemctl restart autofs
     ```
 
+5. Zmiana **home** w ```/etc/passwd``` 
 
-5. **Zaloguj się jako użytkownik janek.**   
-Jeżeli wszystko działa prawidłowo, po zalogowaniu się i wejściu do katalogu domowego ```/home/remote/janek```, powinien zostać zamontowany katalog ```/home/shared/janek``` z serwera "$nfs_server_address".  
-  
-
-Katalog NFS jest współdzielony, zamontowany w trybie odczytu i zapisu, a jego właścicielem jest użytkownik o identyfikatorze 507 (w obu systemach jest to janek). Dlatego użytkownik janek w systemie lokalnym powinien mieć możliwość dodawania, usuwania, modyfikowania i wyświetlania plików znajdujących się w tym katalogu. Po wylogowaniu się janka — w rzeczywistości gdy przestanie używać katalogu przez ustalony czas (tutaj jest to 10 minut) — katalog zostanie odmontowany.    
-
-
-
----
 
 ### Automatyczne montowanie katalogu /net   
 Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego katalogu, należy po prostu zmienić katalog (cd) na katalog montowania autofs (domyślnie /net lub /var/autofs). W ten sposób współdzielony zasób zostanie automatycznie zamontowany i udostępniony.    
