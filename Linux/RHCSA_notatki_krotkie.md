@@ -1,66 +1,24 @@
-# linki 
-- [oreily link](https://learning.oreilly.com/videos/red-hat-certified/9780135656495/9780135656495-rcsa_02_10_08/)
-- [cloud guru link](https://learn.acloud.guru/course/red-hat-certified-system-administrator-ex200-exam-prep/learn/4a50133e-bbdb-43b8-b939-5f648997ec6d/9a5ffcb1-8849-4fe1-a2ae-3ed99bfc32ba/watch)
-- [red hat - sysadmin](https://www.redhat.com/sysadmin/)
 
+## Przykladowe zadania 
 
-# spis treści
-1. [pomoc](#pomoc)
-1. [przywracanie hasła roota](#przywracanie-hasła-roota)
-1. [selinux](#selinux)
-1. [wyszukiwanie plików](#wyszukiwanie-plików) 
-1. [firewall](#firewall)
-1. [kontrola czasu w rhel](#kontrola-czasu-w-rhel)
-1. [managing schedulded tasks](#managing-schedulded-tasks)
-1. [nfs](#nfs)
-1. [storage](#storage)
-    - [montowanie](#montowanie)
-    - [filesystemy](#filesystemy)
-    - [lvm](#lvm)
-        - [vdo](#vdo)
-    - [stratis](#stratis)
-1. [logi](#acl)
-1. [uprawnienia](#uprawnienia)
-    - [suid, sgid, sticky bit](#suid,-sgid,-sticky-bit)
-    - [acl](#acl)
-1. [sysstat](#sar---sysstat)
-1. [instalacja/update](#instalacjaupdate)
-    - [dnf](#dnf)
-    - [modules](#modules)
-    - [repo](#repo)
-        - [dodanie nowego repo](#dodanie-nowego-repozytorium)
-1. [blokowanie połączenia z konkretnego serwera](#blokowanie-po%c5%82%c4%85czenia-z-konkretnego-serwera)
-1. [autofs](#autofs)
-1. [archiwizowanie](#archiwizowanie)
-1. [swap](#swap)
-1. [sieci](#sieci)
-1. [kontenery](#kontenery)
-1. [tuned profiles](#tuned-profiles)
-1. [grub/kernel](#grubkernel)
+| Kategoria | Nazwa zadania | Link | 
+|---|---|---|
+| Przywrocenie hasla | Przywrocenie hasla roota | [Przywracanie hasla roota](#przywracanie-hasła-roota) | 
+| Bash completion | Bash completion | [Bash completion - instalacja](#bash-completion) | 
+| podman | podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
+| podman | podman - httpd | [Podman - httpd](#podman---httpd) | 
+| podman | podman login + rejestry | [RH - Podman rejestry](https://www.redhat.com/sysadmin/manage-container-registries) |
+| autofs | autofs - home dir | [autofs - home dirs](#automatyczne-montowanie-katalogów-domowych) | 
+| lvm-vdo | Utworzenie vdo na lvm | [Tworzenie VDO](#zadanie---tworzenie-vdo)| 
+| selinux | Rozwiazywanie problemow selinux | [audit2allow](#audit2allow) | 
+| chronyd - ntp | synchronizacja czasu chrony | [Synchronizacja czasu](#synchronizacja-czasu-klient-z-serwerem) | 
+| tuned | tuned | [tuned](#tuned-profiles) | 
+| repo | dodanie repo | [Dodawanie nowego repo](#dodanie-nowego-repozytorium) |
+| rpm | podstawy rpm | [rpm](#rpm) | 
+| kernel | Zmiana parametrow kernela | [Zmiana konfiguracji grub ](#zmiana-zmiennych-konfiguracji-grub) | 
+| kernel | update kernela | [Kernel Update](#kernel-update) | 
+| kernel | zmiana domyslnego kernela | [Zmiana domyslnego kernela](https://access.redhat.com/solutions/4326431) | 
 
-  
-[koniec](#koniec)   
-
-# Pomoc 
-[spis treści](#spis-tre%c5%9bci)
-
-## Wyszukiwanie pomocy
-- ```apropos``` wyszukuje strony w pomocy, podobnie jak *man -k*
-- ```man -k``` - wyszukuje strony w pomocy 
-- ```man -K``` - szuka **slow kluczowych** we wszystkich plikach pomocy
-- ```info``` - wyświetla komendy z opisem  
-- ```rpm -qd``` - wyświetl pliki z dokumentacją dla danego pakietu
-- ```locate "$szukana_komenda"``` - powinno wylistować pliki z pomocą 
-
-## man
-- ```man man``` - manual do ```man```
-- ```mandb``` - odświeża bazę danych man, odpalać na początku egzaminu
-
-## info
-- ```info``` - **samo wykonanie polecenia info wyświetla przydatne komendy z opisami**
-
-## /usr/share/doc
-- dodatkowa dokumentacja 
 
 # Przywracanie hasła roota
 - [spis treści](#spis-tre%c5%9bci)
@@ -82,46 +40,6 @@
 - ```nmtui``` i ```nmcli``` - pozwalają na zmianę hostname i ip
 - ```hostnamectl``` - wyświetla aktualny hostname + informacje na temat systemu
     - ```set-hostname``` - zmienia hostname na podany
-  
-### Ważne!
-- zmiana w /etc/hostname jest niezalecana!
-
-
-# Użytkownicy 
-- szybkie tworzenie userów 
-
-Ustawienia domyślne nowych kont użytkowników 
-- ```/etc/defaults/useradd``` 
-
-Ustawienia domyślne haseł
-- ```/etc/security/pwquality.conf``` 
-
-# Grupy użytkowników
--  szybkie tworzenie grup 
-`for group in gropup1 group2 group3 ; do groupadd "$group" ; done`
-
-# sudoers
-- [spis treści](#spis-tre%c5%9bci)
-
-### linki
-- [rhel sudoers](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/managing-sudo-access_configuring-basic-system-settings)
-
-### todo - dopisać coś
-
-## config
-- ```/etc/sudoers``` - ogólny 
-
-- ```username hostname=path/to/command```
-    - username is the name of the user or group, for example, ```user1``` or ```%group1```.
-    - hostname is the name of the host on which the rule applies.
-    - path/to/command is the complete absolute path to the command. you can also limit the user to only performing a command with specific options and arguments by adding those options after the command path.   
-    if you do not specify any options, the user can use the command with all options.  
-
-### #todo - opisać aliasy w sudoers
-
-nadanie dla grupy ```dba_managers``` praw do wykonywania na wszystkihch maszynach **all** komend pod aliasem **software**
-%dba_managers   all = software
-
 
 # wyszukiwanie plików 
 - [spis treści](#spis-tre%c5%9bci)
@@ -136,44 +54,9 @@ nadanie dla grupy ```dba_managers``` praw do wykonywania na wszystkihch maszynac
     - ```-ls``` - list current file in ```ls format```
 
 
-## locate 
-locate działa na podstawie bazy danych, domyślnie aktualizowana jest raz dziennie  
-- ```updatedb``` - aktualizuje bazę locate
-- ```locate "$file_name"``` - wyszukuje plik na podstawie indeksowanej bazy danych
-
-# uzytkownicy
-[spis treści](#spis-tre%c5%9bci)
-
-## Tworzenie nowych 
-### configi
-- ```/etc/defaults/useradd``` 
-- ```/etc/login.defs```
-
-# ToDo - dopisać
-- ustawienie domyślnych ustawień nowo dodawanych użytkowników, tj. wygasanie hasła, katalogi domowe itd.
-
-### podstawowe komendy
-- ```useradd``` - dodanie użytkownika
-    - ```useradd -u "$uid"``` - user z innym uuid
-- ```usermod``` - modyfikowanie ustawień użytkownika
-    - ```usermod -ag "$group_name"``` - samo użycie opcji ```g``` bez ```a``` **powoduje zastępienie obecnych grup użytkownika tą jedną którą przypisujemy**
-- ```userdel``` - usuwanie użytkownika
-   
-
-## Edycja użytkowników
-### wygasanie hasla/blokowanie konta 
-- ```chage``` - blokowanie konta po określonym czasie 
-- ```chage``` - wymuszenie zmiany hasła 
-
-### wyłączenie logowania 
-```
-vim /etc/passwd 
-# dodanie jako shell 
-/sbin/nologin
-```
-
 # firewall 
 - [spis treści](#spis-tre%c5%9bci)
+
 ### linki
 - [rh - firewalld article](https://www.redhat.com/sysadmin/firewalld-linux-firewall)
 
@@ -192,6 +75,7 @@ vim /etc/passwd
     - otwieranie portów/usług :  
         - ```--add-port "$port_number"/[tcp | udp ]``` - otwarcie portu dla tcp lub udp
         - ```--add-service "$service_name"``` - udostępnienie możliwości komunikacji z usługą (lista dostępna pod tabulatorem)
+
 
 #### **WAŻNE!**
 **zawsze trzeba pamiętać o opcji ```--permanent```**, w przeciwnym wypadku zmiany nie będą stałe   
@@ -234,10 +118,6 @@ oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zast
 
 # SELinux
 - [Spis treści](#spis-tre%C5%9Bci)
-
-### Linki
-- [RH - How to troubleshoot SELinux policy violations](https://www.redhat.com/sysadmin/diagnose-selinux-violations)  
-- [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)  
 
 ### Instalacja
 - ```yum whatprovides */semanage``` - domyślnie narzędzia SELinux mogą nie być zainstalowane  
@@ -303,34 +183,8 @@ drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
 - ```semanage fcontext``` - zarządza kontekstami plików i folderów   
 - ```restorecon -Rv``` - służy do zatwierdzenia zmian na folderach, zmiany   etykiet   
 
-## Kontrola czasu w RHEL
-- [Spis treści](#spis-tre%C5%9Bci)
-- [RH - How to configure chrony as an NTP client or server in Linux](https://www.redhat.com/sysadmin/chrony-time-services-linux)
-- [Cloud_guru - lekcja](https://learn.acloud.guru/course/red-hat-certified-system-administrator-ex200-exam-prep/learn/60dc10ad-0973-4bb6-8a0b-9d987f2c25f3/071c69c6-90ba-4885-9f32-15949b43286f/watch)
 
-
-Poprzednim serwerem czasu był ntp, obecnym chrony
-
-- ```chrony``` - serwer lub klient (zależy od potrzeby) kontroli czasu
-
-### Ważne pliki :  
-- ```/etc/chrony.conf``` - config  
-- ```/etc/chrony.keys``` - zawiera klucze ? 
-- ```/usr/share/doc/chrony``` - dokumentacja
-
----
-
-- ```chronyd``` - **daemon for synchronisation of the system clock**, can be controlled via local or remote instances of ```chronyc```
-- ```chronyc``` - command line program **used to monitor and control ```chronyd```** - działa na tej samej zasadzie co fdisk, **tabulator mocno pomaga** 
-    - ```help``` - wyświetla pomoc
-    - ```sources -v``` - wyświetla dostępne źródła, razem z wyjaśnieniem co znaczą wpisy w tabeli  
-
-    ![chronyc_sources_verbosed](Obrazy/Cloud_Guru/chronyc_sources_verbosed.png)  
-
-    - ```serverstats``` - nie wiem ? 
-
-
-# Synchronizacja czasu (klient z serwerem)
+## Synchronizacja czasu (klient z serwerem)
 
 1. instalacja chrony 
 
@@ -397,40 +251,6 @@ server 169.254.169.123 iburst
           RTC in local TZ: no
 ```
 
-# Managing schedulded tasks
-- [Spis treści](#spis-treści)
-
-## cron
-- ```dnf list --installed cronie``` - sprawdzenie czy **cron** jest zainstalowany
-- ```systemctl status crond.service``` - sprawdzenie czy działa uzługa **cron**
-- ```cronnext -c``` pokazuje datę wszystkich następnych **cronjobów** 
-
-
-### Budowa pliku ```/etc/crontab``` 
-
-```
-Example of job definition:  
-.---------------- minute (0 - 59)  
-|  .------------- hour (0 - 23)  
-|  |  .---------- day of month (1 - 31)  
-|  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...  
-|  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat  
-|  |  |  |  |  
-*  *  *  *  * user-name  command to be executed  
-```
-
-## at
-- ```dnf list --installed at``` - sprawdzenie czy **at** jest zainstalowany
-- ```systemctl status atd.service``` - sprawdzenie czy działa uzługa **at**
-- ```atq``` - kolejka at
----
-- Można wywoływać komendę o konkretnej godzine lub po jakimś czasie, np. at 20:00 lub at +7 days 
-
-```
-sudo at 20:00 
->at command to execute
-*ctrl+d*
-```
 
 # Storage 
 ## Montowanie
@@ -609,6 +429,7 @@ Dodanie UUID ```/dev/stratis/"$pool_name"/"$filesystem_name"```
 6. Dodaj więcej bloków do istniejącej puli:
 
 
+
 # Logi 
 - [Spis treści](#spis-tre%C5%9Bci)
 - [RH - How to configure your system to preserve system logs after a reboot](https://www.redhat.com/sysadmin/store-linux-system-journals)
@@ -653,6 +474,8 @@ Zmieniamy zmienną ```Storage```
 #RateLimitIntervalSec=30s
 #RateLimitBurst=10000
 ```
+
+
 
 # Uprawnienia
 - [Spis treści](#spis-tre%C5%9Bci)
@@ -811,8 +634,6 @@ WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli wys
 
 
 
-
-
 # sar - sysstat
 - [Spis treści](#spis-tre%C5%9Bci)
 
@@ -937,6 +758,9 @@ Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego kat
 **/net/hostname/sharename**   
   
 np. ```cd /net/localhost/pub```  
+
+
+
 
 # Instalacja/update
 - [Spis treści](#spis-tre%C5%9Bci)
@@ -1338,107 +1162,3 @@ systemctl enable --now tuned
     - ```tuned-adm list``` - wyświetlenie wszystkich dostępnych profili 
     - ```tuned-adm active``` - wyświetlenie obecnie działających profili 
     - ```tuned-adm profile "$profile_name1" "$profile_name2"``` - Switches  to  the given profile. If more than one profile is given, the profiles are merged
-
-
-# Rozwiązywanie problemów (ogólnie)
-[Spis treści](#spis-tre%C5%9Bci)
-
-## httpd
-1. Sprawdzenie czy usługa działa, jeżeli tak/nie to czy systemd pokazuje jakieś błędy 
-2. Pobranie strony ```curlem``` z podanego serwera
-3. sprawdzenie logów systemd - ```journalctl -u httpd``` - pobranie logów dla konkretnej usługi
-4. sprawdzenie loga audit - ```grep /var/log/audit/audit.log``` - sprawdzić co to jest konkretnie za log, jest od niego demon ```auditd```
-5. sprawdzenie logów - ```grep /var/log/messages``` 
-3. Ustawienie selinux w tryb permissive 
-4. Włączenie odpowiedniej zmiennej boolowskiej ?
-
-
-# Przed egzaminem 
-- [Spis treści](#spis-treści)
-
-### Ogolne 
-- [Przywracanie hasła roota](#przywracanie-hasła-roota)
-- [man](#man)
-    - ```mandb``` - odświeża bazę danych man, ODPALAĆ NA POCZĄTKU EGZAMINU
-- ```bc``` - basic calculator 
-
-### Bash auto-completion 
-- [Bash completion ubuntu](https://askubuntu.com/questions/545540/terminal-autocomplete-doesnt-work-properly)
-
-```
-dnf search bash 
-dnf install bash-completion 
-whereis bash-completion
-cd /usr/share/bash-completion 
-. ./bash-completion
-```
-
-### Storage
-- [Sprawdzene poprawnosci fstab](https://sleeplessbeastie.eu/2019/01/21/how-to-verify-fstab-file/)
-    - ```findmnt --verify``` - komenda sprawdzajaca poprawnosc fstab
-- Pamiętać o dodawaniu ```nofail``` do filesystemów w fstabie!
- 
-### Skrypty
-- ```man sh``` - lista zmiennych specjalnych
-
-### Selinux
-- [Selinux](#selinux)
-### TODO - Dodać coś o audit2allow i takie tam
-
-### Repo
-- ```dnf-config-manager``` - upraszcza dodawanie repo 
-- ```dnf repolist``` - listuje repo i sprawdza je
-
-```
-[$name]
-name=$name
-baseurl=file:/// lub http://
-gpgcheck=no
-sslverify=no
-```
-
-```yum --exclude=packgeName1\* --exclude=packgeName2\* update```
-
-### Autofs
-- [autofs](#autofs)
-
-### Ustawianie taskow w czasie?
-- ```cronnext -c``` - pokazuje datę wszystkich następnych cronjobów 
-
-### Kontenery
-- [Kontenery](#Kontenery)
-
-DO SEKCJI [SERVICE] DODAJEMY USER="$user", DZIĘKI TEMU UŻYTKOWNIK MOŻE URUCHAMIAĆ SERWIS, TYM SAMYM JEST DOSTĘP DO KONTENERÓW  
-
-**podman -v "volume_hosta:volume_kontenera:Z" - z dopiskiem ```:Z``` sam ogarnie SELinuxa!**
-podman generate systemd - generuje plik systemd który z nazwą service kopiujemy do ```/etc/systemd/system``` - ```man systemd.unit```
-
-
-### Narzędzie do edycji parametrów konsoli?
-- ```grubby –update-kernel=ALL –args="console=ttyS0"```
-
-### TODO 
-### Dopisać coś na temat zmiany configu bootowania?
-
-Zadanie 18 - update kernel
-
-https://github.com/chlebik/rhcsa-practice-questions/blob/master/questions/018_update_kernel_and_make_it_default_one.md
-
-dnf update kernel - updatuje kernel
-
-
-ZADANIE 12 CHELBIK
-grub2-mkconfig 
-
-/boot - 
-
-OPISAĆ
-
-
-
-
-
-# Koniec
-
-- [Spis treści](#spis-tre%C5%9Bci)
-
