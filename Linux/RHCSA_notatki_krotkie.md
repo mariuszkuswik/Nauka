@@ -58,7 +58,6 @@
 # Firewall 
 - [spis treści](#spis-tre%c5%9bci)
 
-## Komendy
 - ```firewall-cmd``` - odpowiada za konfigurację zapory   
     
     - zarządzanie firewallem :  
@@ -74,7 +73,7 @@
 **zawsze trzeba pamiętać o opcji ```--permanent```**, w przeciwnym wypadku zmiany nie będą stałe   
 oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zastosowane
 
-### Przyklady użycia
+### Przyklady użycie
 - Otwarcie portu 80 tcp
     ```console
     firewall-cmd --add-port=80/tcp --permanent
@@ -178,31 +177,20 @@ drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
 # systemctl enable --now chronyd
 ```
 
-3. Dodanie docelowego serwera w configu ```/etc/chrony.conf```
-There is a list of servers being used to get time from. The lines start with server. In order to use only one of the servers (the one that is provided in question) You should comment all others and just put new line there:
-server classroom.example.com iburst
+3. Dodanie docelowego serwera w configu ```/etc/chrony.conf```  
+Pozostałe wpisy należy usunąć 
     
 ```console
-# vim ```/etc/chrony.conf```
-
-### server "$sever_address" [option] - składnia opisana w man ```chrony.conf```
 server 169.254.169.123 iburst
 ```
 
 4. Restart usługi chronyd
 
 ```console
-# systemctl restart chronyd
+systemctl restart chronyd
 ```
 
-
-5. Sprawdzenie czy serwer został zsynchronizowany **(bez wymuszenia synchronizacja może zająć trochę czasu)**
-
-```console
-# chronyc sources -v
-```
-
-6. Wymuszenie synchronizacji 
+5. Wymuszenie synchronizacji 
 
 ```console
 # chronyc makestep
@@ -210,26 +198,24 @@ server 169.254.169.123 iburst
 200 OK
 ```
 
+
+6. Sprawdzenie czy serwer został zsynchronizowany, jeżeli tak to będzie podane tu jakieś źródło
+
+```console
+chronyc sources -v
+```
+
+Można też użyć 
+
+```
+tinedatectl
+```
+
 6. Display parameters about the system’s clock performance
 
 ```console
 # chronyc tracking 
 ```
-
-7. Sprawdzenie czy zegar jest zsynchronizowany 
-
-```console
-# timedatectl
-
-               Local time: Wed 2022-03-09 12:28:58 EST
-           Universal time: Wed 2022-03-09 17:28:58 UTC
-                 RTC time: Wed 2022-03-09 17:28:58
-                Time zone: America/New_York (EST, -0500)
---> System clock synchronized: yes <--
-              NTP service: active
-          RTC in local TZ: no
-```
-
 
 # Storage 
 ## Montowanie
