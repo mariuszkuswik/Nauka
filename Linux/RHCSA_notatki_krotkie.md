@@ -1,23 +1,24 @@
 
-## Przykladowe zadania 
+# Spis treści 
 
 | Kategoria | Nazwa zadania | Link | 
 |---|---|---|
-| Przywrocenie hasla | Przywrocenie hasla roota | [Przywracanie hasla roota](#przywracanie-hasła-roota) | 
-| Bash completion | Bash completion | [Bash completion - instalacja](#bash-completion) | 
-| podman | podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
-| podman | podman - httpd | [Podman - httpd](#podman---httpd) | 
-| podman | podman login + rejestry | [RH - Podman rejestry](https://www.redhat.com/sysadmin/manage-container-registries) |
-| autofs | autofs - home dir | [autofs - home dirs](#automatyczne-montowanie-katalogów-domowych) | 
-| lvm-vdo | Utworzenie vdo na lvm | [Tworzenie VDO](#zadanie---tworzenie-vdo)| 
-| selinux | Rozwiazywanie problemow selinux | [audit2allow](#audit2allow) | 
-| chronyd - ntp | synchronizacja czasu chrony | [Synchronizacja czasu](#synchronizacja-czasu-klient-z-serwerem) | 
-| tuned | tuned | [tuned](#tuned-profiles) | 
-| repo | dodanie repo | [Dodawanie nowego repo](#dodanie-nowego-repozytorium) |
-| rpm | podstawy rpm | [rpm](#rpm) | 
-| kernel | Zmiana parametrow kernela | [Zmiana konfiguracji grub ](#zmiana-zmiennych-konfiguracji-grub) | 
-| kernel | update kernela | [Kernel Update](#kernel-update) | 
-| kernel | zmiana domyslnego kernela | [Zmiana domyslnego kernela](https://access.redhat.com/solutions/4326431) | 
+| + Przywrocenie hasla | Przywrocenie hasla roota | [Przywracanie hasla roota](#przywracanie-hasła-roota) | 
+| - Bash completion | Bash completion | [Bash completion - instalacja](#bash-completion) | 
+| - podman | podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
+| - podman | podman - httpd | [Podman - httpd](#podman---httpd) | 
+| + podman | podman login + rejestry | [RH - Podman rejestry](https://www.redhat.com/sysadmin/manage-container-registries) |
+| + autofs | autofs - home dir | [autofs - home dirs](#automatyczne-montowanie-katalogów-domowych) | 
+| - lvm-vdo | Utworzenie vdo na lvm | [Tworzenie VDO](#zadanie---tworzenie-vdo)| 
+| + selinux | Rozwiazywanie problemow selinux | [Selinux](#selinux) |  
+| + selinux - | Selinux - audit2allow | [audit2allow](#audit2allow) | 
+| + chronyd - ntp | synchronizacja czasu chrony | [Synchronizacja czasu](#synchronizacja-czasu-klient-z-serwerem) | 
+| + tuned | tuned | [tuned](#tuned-profiles) | 
+| + repo | dodanie repo | [Dodawanie nowego repo](#dodanie-nowego-repozytorium) |
+| + rpm | podstawy rpm | [rpm](#rpm) | 
+| + kernel | Zmiana parametrow kernela | [Zmiana konfiguracji grub ](#zmiana-zmiennych-konfiguracji-grub) | 
+| + kernel | update kernela | [Kernel Update](#kernel-update) | 
+| + kernel | zmiana domyslnego kernela | [Zmiana domyslnego kernela](https://access.redhat.com/solutions/4326431) | 
 
 
 # Przywracanie hasła roota
@@ -119,17 +120,16 @@ oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zast
 # SELinux
 - [Spis treści](#spis-tre%C5%9Bci)
 
-### Instalacja
+## Instalacja
 - ```yum whatprovides */semanage``` - domyślnie narzędzia SELinux mogą nie być zainstalowane  
 
-### Pomocne komendy
+## Pomocne komendy
 - ```ausearch``` - command parses audit daemon logs. You can view the man page for all of the details, but the -c 'httpd' argument will search for any event with that httpd name.
 - ```audit2allow``` - command generates an SELinux policy based on logs returned by ausearch. This tells you that the first command parses the audit logs for anything with an event based on httpd and then generates an SELinux policy to allow it.
 - ```getenforce``` - Pokazuje **w jakim trybie** działa SELinux 
 - ```sestatus``` - Pokazuje **szczegółowe informacje** na temat SELinux
 
-
-#### audit2allow  
+## audit2allow  
 - Wyszukiwanie problemów z SELinux + zezwolenie 
     ```
     ausearch -c "httpd" --raw | audit2allow -M my-httpd
@@ -184,7 +184,8 @@ drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
 - ```restorecon -Rv``` - służy do zatwierdzenia zmian na folderach, zmiany   etykiet   
 
 
-## Synchronizacja czasu (klient z serwerem)
+# Synchronizacja czasu (klient z serwerem)
+- [Spis treści](#spis-tre%C5%9Bci)
 
 1. instalacja chrony 
 
@@ -844,6 +845,8 @@ $ yum module list module-name
 
 
 ## Rpm 
+- [Spis treści](#spis-treści)
+
 ### Kernel update 
 - [RH - Kernel update](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/updating-kernel-with-yum_managing-monitoring-and-updating-the-kernel)  
 - [Lokalnie - Zarządzanie kernelem](#kernel)  
@@ -967,6 +970,8 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 
 
 ### Zmiana zmiennych konfiguracji Grub
+- [Spis treści](#spis-treści)
+
 1. Edycja zmiennych dla komendy ```grub2-mkconfig```
 ```console
 # vim /etc/default/grub
@@ -985,9 +990,11 @@ GRUB_TIMEOUT=15
 # grub2-mkconfig > /boot/grub2/grub.cfg
 ```
 
-## Kernel
+# Kernel
+- [Spis treści](#spis-treści)
 - [Kernel Update](#Kernel-update)
-### Linki
+
+## Linki
 - [Zmiana domyslnego kernela](https://access.redhat.com/solutions/4326431)
 - [Fedora przydatne](https://docs.fedoraproject.org/en-US/fedora/latest/system-administrators-guide/kernel-module-driver-configuration/Working_with_the_GRUB_2_Boot_Loader/)
 
