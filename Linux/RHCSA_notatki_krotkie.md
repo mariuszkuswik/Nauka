@@ -42,7 +42,7 @@
 - ```hostnamectl``` - wyświetla aktualny hostname + informacje na temat systemu
     - ```set-hostname``` - zmienia hostname na podany
 
-# wyszukiwanie plików 
+# Wyszukiwanie plików 
 - [spis treści](#spis-tre%c5%9bci)
 
 ## find
@@ -55,17 +55,10 @@
     - ```-ls``` - list current file in ```ls format```
 
 
-# firewall 
+# Firewall 
 - [spis treści](#spis-tre%c5%9bci)
 
-### linki
-- [rh - firewalld article](https://www.redhat.com/sysadmin/firewalld-linux-firewall)
-
-### configi 
-- ```/usr/lib/firewalld``` - katalog z domyslna konfiguracja
-- ```/etc/firewalld``` - katalog z obecnie dzialajacym configiem 
-
-### komendy
+## Komendy
 - ```firewall-cmd``` - odpowiada za konfigurację zapory   
     
     - zarządzanie firewallem :  
@@ -76,7 +69,6 @@
     - otwieranie portów/usług :  
         - ```--add-port "$port_number"/[tcp | udp ]``` - otwarcie portu dla tcp lub udp
         - ```--add-service "$service_name"``` - udostępnienie możliwości komunikacji z usługą (lista dostępna pod tabulatorem)
-
 
 #### **WAŻNE!**
 **zawsze trzeba pamiętać o opcji ```--permanent```**, w przeciwnym wypadku zmiany nie będą stałe   
@@ -103,25 +95,11 @@ oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zast
     firewall-cmd --reload 
     ```
 
-- **Sprawdzenie czy port 90 jest otwarty** - telnet powinien wyrzucić błąd po czasie jeżeli działa 
-    ```console
-    telnet 172.20.183.251 90
-    ```  
-
-    np. 
-    ```
-    telnet "$remote_ip" "$remote_port"
-    ```
- ---  
-- ```nmap -A``` - skanuje porty zdalnej maszyny, wyświetla wszystkie informacje      
-- ```curl "$remote_ip"``` - pozwala sprawdzić czy działa serwis http      
-
-
 # SELinux
 - [Spis treści](#spis-tre%C5%9Bci)
 
 ## Instalacja
-- ```yum whatprovides */semanage``` - domyślnie narzędzia SELinux mogą nie być zainstalowane  
+- ```dnf whatprovides */semanage``` - domyślnie narzędzia SELinux mogą nie być zainstalowane  
 
 ## Pomocne komendy
 - ```ausearch``` - command parses audit daemon logs. You can view the man page for all of the details, but the -c 'httpd' argument will search for any event with that httpd name.
@@ -256,13 +234,11 @@ server 169.254.169.123 iburst
 # Storage 
 ## Montowanie
 - [Spis treści](#spis-tre%C5%9Bci)
-- [RH - Mounting file systems](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_file_systems/assembly_mounting-file-systems_managing-file-systems)
----
 
 ### WAŻNE!
 - ```findmnt``` - wyświetla zamontowane filesystemy 
-    - findmnt --types xfs - listuje tylko filesystemy xfs
-
+    - ```findmnt --verify``` - sprawdza poprawność fstab
+    - ```findmnt --types xfs``` - listuje tylko filesystemy xfs
 
 ## Filesystemy
 - [Spis treści](#spis-tre%C5%9Bci)
@@ -372,7 +348,7 @@ dnf install stratisd stratis-cli
 2.  Uruchomienie uslugi 
 ```sudo systemctl enable --now stratisd.service```
 
-### Jak utworzyć / usunąć i zamontować system plików Stratis w CentOS / RHEL 8
+### Stratis - Jak utworzyć/usunąć i zamontować system plików Stratis
 
 1. Zainstaluj pakiety Stratis:
 ```
@@ -433,9 +409,6 @@ Dodanie UUID ```/dev/stratis/"$pool_name"/"$filesystem_name"```
 
 # Logi 
 - [Spis treści](#spis-tre%C5%9Bci)
-- [RH - How to configure your system to preserve system logs after a reboot](https://www.redhat.com/sysadmin/store-linux-system-journals)
-- [RH - Chapter 23. Viewing and Managing Log Files](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-viewing_and_managing_log_files)
-
 
 ## Understanding Logging and Using Persistent Journals on RHEL 8
 
@@ -476,8 +449,6 @@ Zmieniamy zmienną ```Storage```
 #RateLimitBurst=10000
 ```
 
-
-
 # Uprawnienia
 - [Spis treści](#spis-tre%C5%9Bci)
 
@@ -493,88 +464,22 @@ http://miro.borodziuk.eu/index.php/2017/03/13/uprawnienia-specjalne/
 | Sticky bit | 1 lub o+t | 	klejący bit |
 
 
-### Bit SUID
+### Bity specjalne
 - [Spis treści](#spis-tre%C5%9Bci)
 
-**Bit SUID** - gdy zostaje ustawiony dla katalogu *(4 lub u+s)*, wówczas **proces będzie miał prawa użytkownika który jest właścicielem pliku wykonywalnego, a nie użytkownika który ten plik uruchamia.**  
-O tym, że *SUID* jest przypisany świadczy *litera s* w miejscu execute dla użytkownika   
-*Ustawienie tego bitu na katalogu nie ma żadnego znaczenia, jest ignorowany.*  
-
-
-Plik wykonywalny z ustawionym bitem setuid jest wykonywany przez zwykłych użytkowników z takimi przywilejami jakie posiada właściciel pliku. 
-
-Jeśli bit SUID jest ustawiony, po uruchomieniu polecenia efektywny UID staje się identyfikatorem właściciela pliku, a nie użytkownika, który go uruchamia. Oznacza to, że SUID zapewnia tymczasowe podwyższenie uprawnień podczas wykonywania. Przykładowo, jeśli wykonywany plik był własnością roota i ma ustawiony bit SUID, to bez względu na to, kto uruchamia skrypt lub aplikację, uprawnienia będą tymczasowo równe uprawnieniom roota.
-
-
-
-Dodać coś o tym kto może usuwać pliki
-
-### Bit SGID
-- [Spis treści](#spis-tre%C5%9Bci)
-
-**Tworzenie katalogów współdzielonych przez grupy**
-
-**Bit SGID** - gdy zostaje ustawiony dla katalogu *(2 lub g+s)*, wówczas **wszystkie pliki tworzone w tym katalogu zostają przypisane grupie katalogu.**   
-O tym, że *SGID* jest przypisany świadczy *litera s* w miejscu execute dla grupy    
-
-- *Bit GID* można ustawić poprzez użycie *chmod g+s* lub dodając *2 na początku* uprawnień które nadajemy *np. chmod 2755*  - [Tabela 11.4](#tabela-114-strona-285)
-
-    ```console
-    ### Zmiana grupy dla folderu na shared_folder
-    # chgrp shared_folder GID_test_shared
-
-    ### Dodanie GID do folderu 
-    # chmod 2775 GID_test_shared/
-
-    ### Potwierdzenie dodania bitu GID ( s w miejscu execute dla grupy )
-    # ls -l GID_test_shared/
-    
-    drwxrwsr-x. 2 mariusz shared_folder  4096 Feb  2 12:30 GID_test_shared
-
-    ### Grupą do której należy plik jest shared_folder - skutek przypisania GID
-    # ls -l test_file
-    -rw-rw-r--. 1 mariusz shared_folder 0 Feb 2 12:37 test_file
-    ```
-
-
-
-### Bit sticky
-- [Spis treści](#spis-tre%C5%9Bci)
-
-**Bit sticky** - gdy zostaje ustawiony dla katalogu *(1 lub u+s)*, wówczas **tylko użytkownik root lub właściciel katalogu może go usunąć.**
-O tym, że *Sticky bit* jest przypisany świadczy *litera t w miejscu execute dla others*
-
-- *Sticky Bit* można ustawić poprzez użycie *chmod u+s* lub dodając *1 na początku* uprawnień które nadajemy *np. chmod 1755*  - [Tabela 11.4](#tabela-114-strona-285)
-
-    ```bash
-    # Dodanie sticky bitu
-    chmod 1777 Sticky_catalog/
-
-    # Sprawdzenie czy bit został dodany - t w miejscu execute dla others oznacza, że tak
-    ls -l Sticky_catalog
-    drwxrwxrwt. 2 mariusz mariusz        4096 Feb  2 12:57 Sticky_catalog
-
-    # Przelogowanie na użytkownika test 
-    su test
-
-    # Próba usunięcia pliku w folderze ze stickybitem nieudana 
-    rm Sticky_catalog/test_file
-    >rm: cannot remove 'Sticky_catalog/test_file': Operation not permitted 
-    ```
-
-
+- Bit SUID - 4 lub u+s - user którzy tworzy plik jest jego właścicielem
+- Bit SGID - 2 lub g+s - chmod g+s lub chmod 2000 - grupa która jest właścicielem katalogu jest właścicielem pliku 
+- Bit Sticky - 1 lub o+t - chmod o+t lub chmod 1000 - tylko user może usunąć plik 
 
 ## ACL 
 - [Spis treści](#spis-tre%C5%9Bci)
 
-WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli występuje to **oznacza, że dla pliku są ustawione uprawnienia ACL**   
+**WAŻNE !** - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli występuje to **oznacza, że dla pliku są ustawione uprawnienia ACL**   
 ```drwxrw----+ 2 mariusz mariusz 56 Mar 22 19:03 aclki/```     
    
-
 - ```man acl``` -  ogólne informacje o tym jak działają acl 
 - ```man mount ```
     - ```acl``` **obsługa acl powinna być domyślnie dostępna w systemie plików**, jeżeli nie to dodać w fstab jeżeli domyślnie nie jest włączone w systemie plików 
-
 
 ### getfacl, pobieranie nadanych ACL  
 - ```getfacl "$shared_directory"``` - Wyświetla ACLki dla pliku    
@@ -642,19 +547,19 @@ WAŻNE ! - Przy poleceniu **ls -l** trzeba zwracać uwagę na **+**, jeżeli wys
 
 ### #TODO - przeredagować 
 
-Polecenie ```sar``` jest częścią pakietu sysstat. Po jego zainstalowaniu   
+Polecenie ```sar``` jest częścią pakietu sysstat. Po jego zainstalowaniu  
 **i uruchomieniu usługi sysstat** ```sudo systemctl sysstat enable --now```  
 system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które będzie można wyświetlić później po użyciu określonych opcji polecenia ```sar```.  
 
 ### Włączenie usługi sysstat
 ```console
-# systemclt enable sysstat
-# systemctl start sysstat
+systemclt enable sysstat
+systemctl start sysstat
 ```
 
-```/var/log/sa/sa??``` - domyślne miejsce docelowe dla logów  
+- ```/var/log/sa/sa??``` - domyślne miejsce docelowe dla logów  
 
-```sar``` - przeglądanie logów  
+- ```sar``` - przeglądanie logów  
     - ```-A``` - wyświetla wszystkie możliwe informacje o systemie 
     - ```-u``` - wyświetla informacje dotyczące procesora   
     - ```-d``` - wyświetla informacje dotyczące dysku  
@@ -761,8 +666,6 @@ Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego kat
 np. ```cd /net/localhost/pub```  
 
 
-
-
 # Instalacja/update
 - [Spis treści](#spis-tre%C5%9Bci)
 
@@ -770,26 +673,6 @@ np. ```cd /net/localhost/pub```
 - [Dnf](#dnf)
 - [Repozytoria](#repo)
 - [Dodanie nowego repozytorium](#dodanie-nowego-repozytorium)
-
-### Linki 
-Red Hat
-- [RH LAB - Installing Software using Package Managers](https://developers.redhat.com/learn/installing-software-using-package-managers?intcmp=7013a0000026UTXAA2)
-- [RH Sysadmin - How to install software packages on RHEL](https://www.redhat.com/sysadmin/install-software-packages-rhel)
-- [RH - Chapter 1. Using AppStream](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/using-appstream_using-appstream)
-- [RH - Chapter 2. Introduction to modules](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/introduction-to-modules_using-appstream)
-- [RH - Chapter 3. Finding RHEL 8 content](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/installing_managing_and_removing_user-space_components/finding-rhel-8-content_using-appstream)
-    - Searching for a package
-    - Listing available modules
-    - Finding out details about a module
-    - Commands for listing content  
-  
-- [Kernel Red Hat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/updating-kernel-with-yum_managing-monitoring-and-updating-the-kernel)
-
-
-Random 
-- [Introduction to Application Streams](https://www.redhat.com/en/blog/introduction-appstreams-and-modules-red-hat-enterprise-linux)   
-- [Różnica pomiędzy dnf module a dnf group](https://unix.stackexchange.com/questions/603905/what-is-the-difference-between-a-yum-group-and-a-yum-module-in-red-hat-enterpris)
-
 
 ## Dnf
 ### Podstawowe operacje
@@ -930,8 +813,6 @@ sslke
 # Swap
 - [Spis treści](#spis-tre%C5%9Bci)
 
-### #TODO - uzupełnić chociaż trochę
-
 ### Wlaczenie/Wylaczenie swapu  
 - ```swapon -a``` - wlaczenie calego swapu z fstab? 
 - ```swapoff -a``` - wylaczenie calego swapu z fstab? 
@@ -942,9 +823,8 @@ sslke
     - ```"$UUID"/PATH   SWAP    SWAP    defaults    0 0```
 
 ### Utworzenie pliku swapowego
-fallocate - przypisanie plikowi określonej ilości zajmowanego miejsca
-### TODO
-tworzenie swapu z pliku, procedura do ogarnięcia
+- ```fallocate``` - przypisanie plikowi określonej ilości zajmowanego miejsca
+### TODO - tworzenie swapu z pliku, procedura do ogarnięcia
 
 # Grub/Kernel
 - [Spis treści](#spis-tre%C5%9Bci)
@@ -967,7 +847,6 @@ tworzenie swapu z pliku, procedura do ogarnięcia
 - ```/boot/grub2/grub.cfg``` -  plik konfiguracyjny dla **grub**, generowany automatycznie przez **grub2-mkconfig** na podstawie wpisów w **/etc/default/grub**
 - ```/etc/default/grub``` - config dla **KOMENDY GENERUJĄCEJ SKRYPT BOOTUJĄCY, NIE DLA GRUBA**,  
     - ```grub2-mkconfig > /boot/grub2/grub.cfg``` - **ZATWIERDZENIE ZMIAN** - aktualizacja skryptu dla grub
-
 
 ### Zmiana zmiennych konfiguracji Grub
 - [Spis treści](#spis-treści)
@@ -998,18 +877,15 @@ GRUB_TIMEOUT=15
 - [Zmiana domyslnego kernela](https://access.redhat.com/solutions/4326431)
 - [Fedora przydatne](https://docs.fedoraproject.org/en-US/fedora/latest/system-administrators-guide/kernel-module-driver-configuration/Working_with_the_GRUB_2_Boot_Loader/)
 
-### #TODO - Sprawdzić jak dokładnie działają 
-```grubby --add-kernel="$kernel-path"```   
-```grubby --default-kernel```   
-```grubby --info="$kernel-path"```  
-```grubby --remove-kernel="$kernel-path"```  
-  
-```grubby --update-kernel=kernel-path```  
+---
+- ```grubby --add-kernel="$kernel-path"```   
+- ```grubby --default-kernel```   
+- ```grubby --info="$kernel-path"```  
+- ```grubby --remove-kernel="$kernel-path"```  
+- ```grubby --update-kernel=kernel-path```  
 
 ## Managing kernel modules
 - [RH - Managing kernel modules](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/managing-kernel-modules_managing-monitoring-and-updating-the-kernel)
-
-
 
 # Sieci
 [Spis treści](#spis-tre%C5%9Bci)
