@@ -214,7 +214,7 @@ tinedatectl
 6. Display parameters about the system’s clock performance
 
 ```console
-# chronyc tracking 
+chronyc tracking 
 ```
 
 # Storage 
@@ -305,23 +305,13 @@ File mapping | filefrag | xfs_bmap
 dnf install vdo kmod-kvdo
 ```
 
-- [STARY artykuł jak to działa](https://hobo.house/2018/09/13/using-vdo-on-centos-rhel7-for-storage-efficiency/)  
 
-
-### Tworzenie VDO
-#### TODO - Opisac 
-
-Zamontowanie filesystemu 
-- **Opcje montowania VDO :**
-    - ```x-systemd.requires=vdo.service``` - VDO musi mieć działającą usługę ```vdo.service``` przed zamontowaniem  
 
 
 ## Stratis 
 - [Spis treści](#spis-tre%C5%9Bci)
 ---
-### #TODO - opisać bardziej 
 - [Stratis - ogolna strona + how_to](https://stratis-storage.github.io/howto/)  
-- [Stratis filmik](https://www.youtube.com/watch?v=CJu3kmY-f5o&t=200s)  
 
 1.  Instalacja 
 ```sudo dnf install stratis-cli stratisd -y```
@@ -387,10 +377,7 @@ stratis_howto  my_precious  546 MiB  Nov 09 2018 11:09  /dev/stratis/stratis_how
 6. Mount the file system
 Dodanie UUID ```/dev/stratis/"$pool_name"/"$filesystem_name"```
 
-
 5. Utwórz punkt montowania i zamontuj system plików: ...
-6. Dodaj więcej bloków do istniejącej puli:
-
 
 
 # Logi 
@@ -445,17 +432,9 @@ http://miro.borodziuk.eu/index.php/2017/03/13/uprawnienia-specjalne/
 
 | Bit | Nadanie | Opis |
 |--|--|--|
-| SUID - setuid | 4 lub u+s | bit identyfikatora użytkownika | 
-| SGID - setgid | 2 lub g+s | bit identyfikatora grupy |
-| Sticky bit | 1 lub o+t | 	klejący bit |
-
-
-### Bity specjalne
-- [Spis treści](#spis-tre%C5%9Bci)
-
-- Bit SUID - 4 lub u+s - user którzy tworzy plik jest jego właścicielem
-- Bit SGID - 2 lub g+s - chmod g+s lub chmod 2000 - grupa która jest właścicielem katalogu jest właścicielem pliku 
-- Bit Sticky - 1 lub o+t - chmod o+t lub chmod 1000 - tylko user może usunąć plik 
+| SUID | 4 lub u+s | buser którzy tworzy plik jest jego właścicielem |
+| SGID | 2 lub g+s | grupa która jest właścicielem katalogu jest właścicielem pliku|
+| Sticky bit | 1 lub o+t | tylko user może usunąć plik |
 
 ## ACL 
 - [Spis treści](#spis-tre%C5%9Bci)
