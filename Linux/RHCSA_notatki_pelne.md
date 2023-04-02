@@ -77,7 +77,7 @@
 
 | zadanko | notatki | czy opanowane |
 |--|--|--|
-| [001_restore_root_password](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/001_restore_root_password.md) | [przywracanie hasła roota](#przywracanie-hasła-roota) | tak, WAZNE, +++ |
+| [001_restore_root_password](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/001_restore_root_password.md) | [przywracanie hasła roota](#przywracanie-hasła-roota) | tak, WAZNE, ++++ |
 | [002_setup_network_parameters](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/002_setup_network_parameters.md) | [sieci](#sieci) | tak, ++ |
 | [003_change_hostname]( https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/003_change_hostname.md) | [hostname](#hostname) | tak, ++ |
 | [004_enable_selinux](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/004_enable_selinux.md) |[selinux](#selinux) | tak, ++ |
@@ -123,7 +123,7 @@
 | 6. [manage-scheduled-tasks-on-the-first-server ](egzamin_praktyczny_cg.md/#6-manage-scheduled-tasks-on-the-first-server) | [cron, at](#managing-schedulded-tasks) | tak, + | 
 | 7. [configure-time-service-clients-for-both-servers](egzamin_praktyczny_cg.md/#7-configure-time-service-clients-for-both-servers) | [Configure time services](#kontrola-czasu-w-rhel) | tak, ++ | 
 | 8. [managing-the-system-bootloader](egzamin_praktyczny_cg.md/#8-managing-the-system-bootloader) | [Zmiana zmiennych konfiguracji Grub](#zmiana-zmiennych-konfiguracji-grub) | tak, +++ | 
-| 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](egzamin_praktyczny_cg.md/#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | [LVM/VDO](#vdo) | tak, ++, WAZNE | 
+| 9. [configure-persistent-storage-with-lvm-on-top-of-vdo](egzamin_praktyczny_cg.md/#9-configure-persistent-storage-with-lvm-on-top-of-vdo) | [LVM/VDO](#vdo) | tak, +++, WAZNE | 
 | 10. [add-swap-space-persistently-and-nondisruptive](egzamin_praktyczny_cg.md/#configure-yum-repositories-on-both-servers-and-install-packagesmodules)| [Swap](#swap) | tak, + | 
 | 11. [configure-stratis-storage-persistently](egzamin_praktyczny_cg.md/#11-configure-stratis-storage-persistently) | [Stratis - jak utorzyć](#jak-utworzyć--usunąć-i-zamontować-filesystem-stratis) | tak, + | 
 | 12. [configure-autofs-for-home-directories](egzamin_praktyczny_cg.md/#12-configure-autofs-for-home-directories) | [autofs](#autofs) | tak, ++++ | 

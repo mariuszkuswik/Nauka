@@ -9,7 +9,7 @@
 | - podman | podman - httpd | [Podman - httpd](#podman---httpd) | 
 | + podman | podman login + rejestry | [RH - Podman rejestry](https://www.redhat.com/sysadmin/manage-container-registries) |
 | + autofs | autofs - home dir | [autofs - home dirs](#automatyczne-montowanie-katalogów-domowych) | 
-| - lvm-vdo | Utworzenie vdo na lvm | [Tworzenie VDO](#zadanie---tworzenie-vdo)| 
+| + lvm-vdo | Utworzenie vdo na lvm | [Tworzenie VDO](#vdo)| 
 | + selinux | Rozwiazywanie problemow selinux | [Selinux](#selinux) |  
 | + selinux - | Selinux - audit2allow | [audit2allow](#audit2allow) | 
 | + chronyd - ntp | synchronizacja czasu chrony | [Synchronizacja czasu](#synchronizacja-czasu-klient-z-serwerem) | 
@@ -290,28 +290,29 @@ File mapping | filefrag | xfs_bmap
 - ```lvcreate``` 
     - ```-l``` - **liczba extent** z której chcemy utworzyć lvm (wielkość extent jest ustawiony przy volume grupie)
 
-### VDO
+## VDO
 - [Spis treści](#spis-tre%C5%9Bci)
 - [Poradnik od RedHata](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/vdo-quick-start)
+---
 
-
-- [Utworzenie VDO na bazie LVM](https://access.redhat.com/solutions/6809311)
-
-### SPRAWDZIC WLASCIWIE WSZYSTKO, pozmienialo sie od czasu kiedy jest na lvm
-
-### Instalacja
-
+1. Instalacja VDO
 ```console
-dnf install vdo kmod-kvdo
+yum install vdo
 ```
 
-
-
+2. Utworzenie VDO
+```
+lvcreate --type vdo --size Size[m|UNIT] VG/VDO_pool_name
+```
+3. Weryfikacja, że wolumen działa 
+```
+vdostats 
+```
 
 ## Stratis 
 - [Spis treści](#spis-tre%C5%9Bci)
----
 - [Stratis - ogolna strona + how_to](https://stratis-storage.github.io/howto/)  
+---
 
 1.  Instalacja 
 ```sudo dnf install stratis-cli stratisd -y```

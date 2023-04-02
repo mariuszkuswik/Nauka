@@ -530,7 +530,7 @@ dnf install vdo kmod-kvdo
 
 Zamontowanie filesystemu 
 - **Opcje montowania VDO :**
-    - ```x-systemd.requires=vdo.service``` - VDO musi mieć działającą usługę ```vdo.service``` przed zamontowaniem  
+    - ```x-systemd.requires=vdo.service``` - stare VDO musi mieć działającą usługę ```vdo.service``` przed zamontowaniem  
 
 
 ## Stratis 
