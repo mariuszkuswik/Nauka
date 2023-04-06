@@ -89,7 +89,7 @@
 | [010_dir_ownership_via_group](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/010_dir_ownership_via_group.md) | [suid,sgid,sticky bit](#suid-sgid-sticky-bit) | tak, +++ |
 | [011_create_logical_volume_and_add_filesystem](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/011_create_logical_volume_and_add_filesystem.md) | [lvm](#lvm) | tak, ++++ |
 | [012_configure_virtual_console_for_kernel](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/012_configure_virtual_console_for_kernel.md) |  | #todo - nie wiem o co chodzi |
-| [013_create_swap_on_logical_volume](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/013_create_swap_on_logical_volume.md) | [swap](#swap) | tak, ++ |
+| [013_create_swap_on_logical_volume](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/013_create_swap_on_logical_volume.md) | [swap](#swap) | tak, +++ |
 | [014_add_entry_to_cron](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/014_add_entry_to_cron.md) | [sysstat](#sar---sysstat) | tak, ++++ |
 | [015_set_default_system_level](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/015_set_default_system_level.md) | [runlevele](#runlevele) | tak, +++ |
 | [016_add_additional_remote_yum_repo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/016_add_additional_remote_yum_repo.md) | [dnf](#dnf) | tak, WAZNE, ++ |
@@ -100,11 +100,11 @@
 | [021_configure_ldap_authentication](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/021_configure_ldap_authentication.md) | - | **nie ma na egzaminie** |
 | [022_configure_autofs](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/022_configure_autofs.md) | [autofs](#autofs) | tak, +++ |
 | [023_configure_ntp_on_the_client](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/023_configure_ntp_on_the_client.md) |[Synchronizacja czasu chrony](#synchronizacja-czasu-klient-z-serwerem) | tak, ++++ | 
-| [024_access_rights_for_file](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/024_access_rights_for_file.md) | [acl](#acl) | tak, ++ |
+| [024_access_rights_for_file](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/024_access_rights_for_file.md) | [acl](#acl) | tak, +++ |
 | [025_create_whole_lvm_stack](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/025_create_whole_lvm_stack.md) | [lvm](#lvm) dodać extent of vg should be 16mb do notatek | tak, +++ |
 | [026_reduce_the_size_of_lv](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/026_reduce_the_size_of_lv.md) | [LVM - Dodawanie i zmniejszanie](#zadanie---rozszerzanie-i-zmniejszanie-filesystemu-na-lvm) | tak, +++ |
 | [027_create_compressed_archive](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/027_create_compressed_archive.md) | [archiwizowanie](#archiwizowanie) | tak, +++ |
-| [028_search_string_using_grep_and_redirect](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/028_search_string_using_grep_and_redirect.md) | [wyszukiwanie plików](#wyszukiwanie-plik%c3%b3w) | tak, ++ |
+| [028_search_string_using_grep_and_redirect](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/028_search_string_using_grep_and_redirect.md) | [wyszukiwanie plików](#wyszukiwanie-plik%c3%b3w) | tak, +++ |
 | [029_make_journald_persistent](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/029_make_journald_persistent.md) | [Ustawianie stalego journal](#ustawienie-stałego-journalctl) | tak, +++ |
 | [030_setting_up_vdo](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/030_setting_up_vdo.md) | [vdo](#vdo) | tak, +++ - poćwiczyć |
 | [031_finding_files](https://github.com/mariuszkuswik/rhcsa-practice-questions/blob/master/questions/031_finding_files.md) | [wyszukiwanie plików](#wyszukiwanie-plik%c3%b3w) | tak, ćwiczyć na innych przykladach! +++ |
