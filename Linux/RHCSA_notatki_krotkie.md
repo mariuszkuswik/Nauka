@@ -21,6 +21,8 @@
 | + kernel | zmiana domyslnego kernela | [Zmiana domyslnego kernela](https://access.redhat.com/solutions/4326431) | 
 | - find - TODO - opisać sensownie, pamietac o + kiedy chcemy znajdowac daty po czasie i o dokladnym wyszukiwaniu | Wyszukiwanie plików | [Wyszukiwanie plików](#wyszukiwanie-plików) |
 | - grep | Grep | [grep](#grep) |
+| acl | acl | [acl](#acl) |
+| sticky bit, sgid, suid | uprawnienia | [sticky bit, sgid, suid](#suid-sgid-sticky-bit) 
 
 # TODO - 
 
@@ -28,15 +30,22 @@
 - [Spis treści](#spis-treści)
 ## Find 
 
-- Find All Files in /etc (not subdirectories) that where modified more than 180 days ago.
+- ```find```
+    - ```-type``` - typ wyszukiwanych plików 
+        ```-f``` - file 
+        ```-d``` - firectory
+    - ```-mtime``` - file's  data  was last **modified** n*24 hours ago
+    - ```-atime``` - file was last **accessed** n*24 hours ago
+    - ```-ls``` - list current file in ```ls format```
+
+
 - Znalezienie plików które były modyfikowane **więcej niż 180 dni temu** w folderze /etc, bez uwzględniania katalogów pod lub nad /etc
-find /etc -type f -mindepth 1 -maxdepth 1 -mtime +180
+```find /etc -type f -mindepth 1 -maxdepth 1 -mtime +180```
 
 - Znalezienie plików które były modyfikowane **dokładnie 180 dni temu** w folderze /etc, bez uwzględniania katalogów pod lub nad /etc
-find /etc -type f -mindepth 1 -maxdepth 1 -mtime 180
+```find /etc -type f -mindepth 1 -maxdepth 1 -mtime 180```
 
 ## Grep
-
 
 # Bash completion 
 
@@ -50,7 +59,6 @@ cd /usr/share/bash-completion
 ```
 
 -------
-
 
 # Przywracanie hasła roota
 - [spis treści](#spis-tre%c5%9bci)
@@ -75,15 +83,6 @@ cd /usr/share/bash-completion
 
 # Wyszukiwanie plików 
 - [spis treści](#spis-tre%c5%9bci)
-
-## find
-- ```find```
-    - ```-type``` - typ wyszukiwanych plików 
-        ```-f``` - file 
-        ```-d``` - firectory
-    - ```-mtime``` - file's  data  was last **modified** n*24 hours ago
-    - ```-atime``` - file was last **accessed** n*24 hours ago
-    - ```-ls``` - list current file in ```ls format```
 
 
 # Firewall 
@@ -506,21 +505,14 @@ http://miro.borodziuk.eu/index.php/2017/03/13/uprawnienia-specjalne/
         - **WAŻNE!** ```-``` zabrania dostępu, 
             np. ```rw-``` zabrania prawa do wykonywania 
         
-  
     - ```setfacl --remove u:"$nazwa_użytkownika"  "$nazwa_folderu"``` - setfacl usuwa uprawnienia "$nazwa_uzytkownika" dla folderu *nazwa_folderu*  
-
-
         **WAŻNE**
-          
         Wiersz **mask** określa jakie uprawnienia maksymalne może mieć użytkownik lub grupa - w tym przypadku **read** dla użytkownika **test**,  
         **mask** jest określany **na podstawie uprawnień zwykłej grupy** (*chmod nadaje*), 
         Nawet jeśli użytkownik otrzyma większe uprawnienia ACL to nie będą one miały zastosowania
      
-
     **Przykład użycia :**
-
     ```setfacl -m u:test:rwx ./a1``` 
-
     ```ls -l ./a1```
     > drwxrwxr-x+ 2 mariusz mariusz 6 Feb  1 09:20 a1  
 
@@ -542,11 +534,8 @@ http://miro.borodziuk.eu/index.php/2017/03/13/uprawnienia-specjalne/
 
 **sprawdzanie zasobów systemowych**
 
-### #TODO - przeredagować 
-
-Polecenie ```sar``` jest częścią pakietu sysstat. Po jego zainstalowaniu  
-**i uruchomieniu usługi sysstat** ```sudo systemctl sysstat enable --now```  
-system natychmiast rozpocznie zbieranie dotyczących aktywności danych, które będzie można wyświetlić później po użyciu określonych opcji polecenia ```sar```.  
+- ```sysstat``` - usługa, zbiera dane o systemie
+- ```sar``` - wyświetla sane o systemie, zebrane przez **sysstat**
 
 ### Włączenie usługi sysstat
 ```console
