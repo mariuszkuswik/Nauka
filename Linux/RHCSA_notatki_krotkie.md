@@ -4,7 +4,7 @@
 | Kategoria | Nazwa zadania | Link | 
 |---|---|---|
 | + Przywrocenie hasla | Przywrocenie hasla roota | [Przywracanie hasla roota](#przywracanie-hasła-roota) | 
-| - Bash completion | Bash completion | [Bash completion - instalacja](#bash-completion) | 
+| + Bash completion | Bash completion | [Bash completion - instalacja](#bash-completion) | 
 | - podman | podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
 | - podman | podman - httpd | [Podman - httpd](#podman---httpd) | 
 | + podman | podman login + rejestry | [RH - Podman rejestry](https://www.redhat.com/sysadmin/manage-container-registries) |
@@ -20,24 +20,36 @@
 | + kernel | update kernela | [Kernel Update](#kernel-update) | 
 | + kernel | zmiana domyslnego kernela | [Zmiana domyslnego kernela](https://access.redhat.com/solutions/4326431) | 
 | - find - TODO - opisać sensownie, pamietac o + kiedy chcemy znajdowac daty po czasie i o dokladnym wyszukiwaniu | Wyszukiwanie plików | [Wyszukiwanie plików](#wyszukiwanie-plików) |
+| - grep | Grep | [grep](#grep) |
 
 # TODO - 
+
 # Wyszukiwanie plików
+- [Spis treści](#spis-treści)
+## Find 
 
-Find files with specific properties
-Question:
-Find All Files in /etc (not subdirectories) that where modified more than 180 days ago.
+- Find All Files in /etc (not subdirectories) that where modified more than 180 days ago.
+- Znalezienie plików które były modyfikowane **więcej niż 180 dni temu** w folderze /etc, bez uwzględniania katalogów pod lub nad /etc
+find /etc -type f -mindepth 1 -maxdepth 1 -mtime +180
 
-(scroll down for an answer)
+- Znalezienie plików które były modyfikowane **dokładnie 180 dni temu** w folderze /etc, bez uwzględniania katalogów pod lub nad /etc
+find /etc -type f -mindepth 1 -maxdepth 1 -mtime 180
+
+## Grep
 
 
+# Bash completion 
 
-Answer:
-If Your first idea was to use ls command - You were wrong. The proper command to actually search for files is (obviously) - find. It is worthwhile to browse through man pages of that command.
+- Instalacja 
+```
+dnf search bash 
+dnf install bash-completion 
+whereis bash-completion
+cd /usr/share/bash-completion 
+. ./bash-completion
+```
 
-Below listing provides what is needed
-
-find /etc -type f -maxdepth 1 -mtime +180
+-------
 
 
 # Przywracanie hasła roota
@@ -654,10 +666,45 @@ np. ```cd /net/localhost/pub```
 # Instalacja/update
 - [Spis treści](#spis-tre%C5%9Bci)
 
-### Lokalny spis
+## Lokalny spis
 - [Dnf](#dnf)
 - [Repozytoria](#repo)
 - [Dodanie nowego repozytorium](#dodanie-nowego-repozytorium)
+
+## Repo
+### Pomoc
+```man dnf.conf``` - pomoc dla opcji konfiguracyjnych repozytoriów
+
+### Config 
+- ```/etc/yum.repos.d``` - katalog z plikami konfiguracyjnymi dla repozytowiów 
+    - ```"$repo_name".repo``` - pliki nazywamy w konwencji nazwa_repo.repo
+
+### Polecenia
+```dnf repolist``` - pokazuje liste repo i ewentualne błędy  
+```dnf repoquery``` - wyświetla dostępne do pobrania pakiety
+
+### Pobranie lokalnie repozytorium 
+```dnf reposync --download-metadata --downloaddir "$path_to_download"``` - Pobranie lokalnie plików repozytorium
+
+
+### Dodanie nowego repozytorium
+1. Dodajemy plik konfiguracyjny o nazwie repozytorium 
+
+```bash
+[nazwa_repo]
+name="$nazwa_repo"
+
+# https://link lub file:///plik dla plików lokalnych
+baseurl="$repo_link"
+
+# Czy sprawdzać klucz gpg - 0 lub 1 
+# Klucz gpg sprawdza czy paczki w repo nie zostały podmienione
+gpgcheck="no" 
+gpgkey="$gpg_path"
+sslverify=no
+sslke
+```
+
 
 ## Dnf
 ### Podstawowe operacje
@@ -728,45 +775,6 @@ $ yum module list module-name
 ```console
 # yum install kernel-{version}
 ```
-
-## Repo
-
-### Pomoc
-```man dnf.conf``` - pomoc dla opcji konfiguracyjnych repozytoriów
-
-### Config 
-- ```/etc/yum.repos.d``` - katalog z plikami konfiguracyjnymi dla repozytowiów 
-    - ```"$repo_name".repo``` - pliki nazywamy w konwencji nazwa_repo.repo
-
-### Polecenia
-```dnf repolist``` - pokazuje liste repo i ewentualne błędy  
-```dnf repoquery``` - wyświetla dostępne do pobrania pakiety
-
-### Pobranie lokalnie repozytorium 
-```dnf reposync --download-metadata --downloaddir "$path_to_download"``` - Pobranie lokalnie plików repozytorium
-
-
-### Dodanie nowego repozytorium
-
-1. Dodajemy plik konfiguracyjny o nazwie repozytorium 
-
-
-```bash
-[nazwa_repo]
-name="$nazwa_repo"
-
-# https://link lub file:///plik dla plików lokalnych
-baseurl="$repo_link"
-
-# Czy sprawdzać klucz gpg - 0 lub 1 
-# Klucz gpg sprawdza czy paczki w repo nie zostały podmienione
-gpgcheck="no" 
-gpgkey="$gpg_path"
-sslverify=no
-sslke
-```
-
-
 # Archiwizowanie 
 - [Spis treści](#spis-tre%C5%9Bci)
 
@@ -854,11 +862,11 @@ GRUB_TIMEOUT=15
 # grub2-mkconfig > /boot/grub2/grub.cfg
 ```
 
-# Kernel
+## Kernel
 - [Spis treści](#spis-treści)
 - [Kernel Update](#Kernel-update)
 
-## Linki
+### Linki
 - [Zmiana domyslnego kernela](https://access.redhat.com/solutions/4326431)
 - [Fedora przydatne](https://docs.fedoraproject.org/en-US/fedora/latest/system-administrators-guide/kernel-module-driver-configuration/Working_with_the_GRUB_2_Boot_Loader/)
 
@@ -889,22 +897,12 @@ GRUB_TIMEOUT=15
 # Kontenery
 [Spis treści](#spis-tre%C5%9Bci)
 
-### Tutoriale
-- [RH - podman rootless container procedura](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/building_running_and_managing_containers/assembly_porting-containers-to-systemd-using-podman_building-running-and-managing-containers#proc_enabling-systemd-services_assembly_porting-containers-to-systemd-using-podman)
-- [RSYSLOG - aktualny forum](https://learn.redhat.com/t5/platform-Linux/How-to-install-the-containerized-version-of-rhel8-rsyslog/td-p/20887)
-    - [RSYSLOG2](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/building_running_and_managing_containers/index#assembly_running-special-container-images_building-running-and-managing-containers)
-- [RH - lab kontenery](https://developers.redhat.com/learn/lessons/deploying-containers-podman?intcmp=7013a0000026UTXAA2)
-- [Youtube RH - podman systemd](https://www.youtube.com/watch?v=AGkM2jGT61Y)
-- [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
-- [Rootless container service](https://www.linuxtechi.com/run-containers-systemd-service-podman/)
-
-
 ## Przydatne  
-**podman -v "volume_hosta:volume_kontenera:Z" - z dopiskiem ```:Z``` sam ogarnie SELinuxa!**  
+- Selinux
+```podman -v "volume_hosta:volume_kontenera:Z"``` - z dopiskiem ```:Z``` podman sam ogarnie SELinuxa!**  
 
 - Uruchomienie terminala jako root  
 ```podman exec -u 0 -it "$nazwa_kontenera" bash``` - uruchomienie interaktywnego terminala jako **root** (```-u 0```)  
-- ```podman container/image/volume...``` - ogólna budowa komend 
   
 ## Pomoc 
 - ```man -k podman``` - wyświetla wszystkie potrzebne komendy podmana   
@@ -967,9 +965,23 @@ GRUB_TIMEOUT=15
     - ```systemctl --user start|stop|enable UNIT``` - Zarządzanie usługami systemd użytkownika
         - ```systemctl --user enable --now container-myubi.service``` - Uruchomienie usługi kontenera przy starcie systemu
 
-### Rootless container - procedura
-- [RH - podman rootless container procedura](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/building_running_and_managing_containers/assembly_porting-containers-to-systemd-using-podman_building-running-and-managing-containers#proc_enabling-systemd-services_assembly_porting-containers-to-systemd-using-podman)
-#### CG - Zalozenia
+### Kontenery - SeLinux 
+- [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
+
+**Każdy wolumen musi mieć odpowiednio udostępniony plik - Z ODPOWIEDNIO USTAWIONYM KONTEKSTEM PLIKU**
+- podman container create --volume "volume/volume:Z" - podman sam ogarnie odpowiednie konteksty 
+- kontekst dla folderów które mają byc udostępnione może być taki sam jak dla reszty plików 
+SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA ```ls -lZ /```
+
+
+## Obrazy kontenerów
+### Inspecting images - skopeo
+- ```skopeo``` - used to inspect, copy, delete and sign container images
+
+
+## podman - httpd
+- [Spis treści](#spis-treści) 
+
 - serrice: httpd
 - user: cloud_user
 - shared folder: ~/web_data:/var/www/html
@@ -1000,21 +1012,6 @@ GRUB_TIMEOUT=15
     - Pliki uslug systemd uzytkownika ```~/.config/systemd/user```
 3. systemctl --user daemon-reload - przeladowane plikow systemd dla uzytkownikow standardowych
 5. systemctl --user enable|start|stop "$UNIT" - obsluga uslug systemd dla uzytkownikow 
-
-
-### Kontenery - SeLinux 
-- [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
-
-**Każdy wolumen musi mieć odpowiednio udostępniony plik - Z ODPOWIEDNIO USTAWIONYM KONTEKSTEM PLIKU**
-- kontekst dla folderów które mają byc udostępnione może być taki sam jak dla reszty plików 
-SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA ```ls -lZ /```
-
-- podman container create --volume "volume/volume:Z" - automatyczny kontekst dla volumenu? - ogarnąć całą komendę
-
-
-## Obrazy kontenerów
-### Inspecting images - skopeo
-- ```skopeo``` - used to inspect, copy, delete and sign container images
 
 
 # Tuned profiles
