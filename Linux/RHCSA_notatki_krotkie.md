@@ -255,9 +255,14 @@ File mapping | filefrag | xfs_bmap
 - [RH - Getting started with XFS](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_file_systems/assembly_getting-started-with-xfs_managing-file-systems)
 
 ### TODO - dopisać coś
-#### Rozszerzanie filesystemu
+#### xfs - rozszerzanie filesystemu
+- ```xfs_growfs``` - rozszerzenie filesystemu 
+    - 
 
-#### zmiana właściwości filesystemu 
+#### xfs - zmiana właściwości filesystemu 
+- Zmiana labelki 
+xfs_admin - zmiana labelki? 
+
 - Dodać zmianę labelki 
 - sprawdzić co jeszcze możmna dopisać
 
@@ -266,14 +271,16 @@ File mapping | filefrag | xfs_bmap
 - ```resize2fs``` - zmiana wielkości filesystemu
 - ```tune2fs``` - zmiana właściwości filesystemu 
 
-#### Rozszerzanie filesystemu
+#### ext4 - rozszerzanie filesystemu
 1. Umount filesystemu
 2. Sprawdzenie filesystemu
 3. 
 - ```resize2fs /dev/vdb2``` - filesystem zajmie cala dostepna powierzchnie partycji 
+---- Dopisać zmianę filesystemu na określoną wielkość 
 
-#### zmiana właściwości filesystemu 
+#### ext4 - zmiana właściwości filesystemu 
 - Dodać zmianę labelki 
+tune2fs - zmiana właściwości filesystemu? 
 - sprawdzić co jeszcze możmna dopisać
 
 ### TODO - Dodac kopiowanie filesystemu/jakis backup
