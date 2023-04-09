@@ -528,7 +528,6 @@ http://miro.borodziuk.eu/index.php/2017/03/13/uprawnienia-specjalne/
     other::r-x  
 
 
-
 # sar - sysstat
 - [Spis treści](#spis-tre%C5%9Bci)
 
@@ -550,7 +549,6 @@ systemctl start sysstat
     - ```-u``` - wyświetla informacje dotyczące procesora   
     - ```-d``` - wyświetla informacje dotyczące dysku  
 
-### #TODO - sar do uzupełnienia, nie było możliwości pobrania na wirtualkę 
 
 # Runlevele 
 [Spis treści](#spis-tre%C5%9Bci)  
@@ -601,12 +599,13 @@ systemctl start sysstat
   
 
 ## Automatyczne montowanie katalogów domowych
- 
+
+- Komenda pokazuje liste katalogow eksporowtanych przez serwer   
 ```
-# Komenda pokazuje liste katalogow eksporowtanych przez serwer  
 showmount -e 192.168.10.10 
 ```
-#### UID użytkownika na serwerze nfs i kliencie musi być taki sam!
+- **WAŻNE!** - UID użytkownika na serwerze nfs i kliencie musi być taki sam!
+
 1. Plik /etc/auto.master - punkt montowania - ścieżka do mapy montowania 
     ```bash
     /home   /etc/auto.home
@@ -617,7 +616,7 @@ showmount -e 192.168.10.10
     ```bash
     janek  -rw,filesystem=nfs   "$nfs_server_address":/home/janek
     ```
-- Opcja dla wielu użytkownikó
+- Opcja dla wielu użytkowników
     ```bash
     *   -rw,filesystem=nfs  "$nfs_server_address":/home/janek
     ```
@@ -631,26 +630,23 @@ showmount -e 192.168.10.10
 5. Zmiana **home** w ```/etc/passwd``` 
 
 
-### Automatyczne montowanie katalogu /net   
-Po włączeniu autofs, jeżeli znasz nazwę komputera oraz współdzielonego katalogu, należy po prostu zmienić katalog (cd) na katalog montowania autofs (domyślnie /net lub /var/autofs). W ten sposób współdzielony zasób zostanie automatycznie zamontowany i udostępniony.    
-### #TODO - Dopisać jakiś przykład
+## Automatyczne montowanie katalogu /net   
 
-1. **Otworzyć plik /etc/auto.master, a następnie znaleźć następujący wiersz:**  
+1. Do pliku ```/etc/auto.master``` dodać wiersz poniżej *powinien być dodany domyślnie*
+    ```
+    /net -hosts
+    ```
 
-    ```/net -hosts```
-
-    Wiersz ten powoduje, że katalog /net będzie funkcjonował jako punkt montowania dla współdzielonych katalogów NFS, do których chcesz uzyskać dostęp w sieci. *(Jeżeli na początku wiersza znajduje się znak komentarza, wówczas trzeba go usunąć)*.  
-
-2. **Uruchomienie usługi autofs**  
-
-    ```systemctl enable --now autofs``` 
+2. Uruchomienie usługi autofs  
+    ```
+    systemctl enable --now autofs
+    ``` 
    
-   
-3. Po przeprowadzeniu powyższej procedury, jeżeli mamy dostęp do jakiegoś udziału udostępnionego NFS to będzie on dostępny pod :     
-**/net/hostname/sharename**   
-  
-np. ```cd /net/localhost/pub```  
-
+3. Udział udostępniony powinien być teraz dostępny pod ```/net/hostname/sharename```     
+np.   
+    ```
+    cd /net/localhost/pub
+    ```  
 
 # Instalacja/update
 - [Spis treści](#spis-tre%C5%9Bci)
