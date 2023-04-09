@@ -156,15 +156,14 @@ oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zast
         - **permissive** - selinux tylko zapisuje blokowane akcje w logach, **nic nie jest blokowane**    
         - **disabled** - nic nie jest blokowane, nic nie jest logowane  
 
-- Zmiana podczas bootowania systemu ( parametry przy odpalaniu systemu)  
+- Zmiana podczas bootowania systemu (parametry przy odpalaniu systemu)  
     - Dopisanie/zmiana parametru ```enforcing``` np. ```enforcing=0``` w linijce ```linux``` (parametry jądra)  - zmiana parametru selinux przy bootowaniu na   permissive     
   
 ## Konteksty SELinux
-
 ### Sprawdzanie kontenstu SELinux
 - ```ls -laZ``` - sprawdzenie kontekstu plików 
     - ```ls -laZ "$file_name"``` - wyświetlenie kontekstu pliku 
-        - **Context** is the one with **_t** suffix - *user_home_dir_t*
+        - **Context** is the one with **_t** suffix - np. *user_home_dir_t*
 - ```ps -elZ``` - sprawdzenie kontekstu procesów 
 
 ### Przypisanie kontekstu SELinux
@@ -232,8 +231,7 @@ chronyc tracking
 # Storage 
 ## Montowanie
 - [Spis treści](#spis-tre%C5%9Bci)
-
-### WAŻNE!
+---
 - ```findmnt``` - wyświetla zamontowane filesystemy 
     - ```findmnt --verify``` - sprawdza poprawność fstab
     - ```findmnt --types xfs``` - listuje tylko filesystemy xfs
@@ -242,7 +240,6 @@ chronyc tracking
 - [Spis treści](#spis-tre%C5%9Bci)
 
 ### Comparison of tools used with ext4 and XFS
-
 | Task | ext4 | XFS |
 |------|------|-----|
 | Create a file system | mkfs.ext4 | mkfs.xfs | 
@@ -257,6 +254,7 @@ File mapping | filefrag | xfs_bmap
 ### xfs 
 - [RH - Getting started with XFS](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_file_systems/assembly_getting-started-with-xfs_managing-file-systems)
 
+### TODO - dopisać coś
 #### Rozszerzanie filesystemu
 
 #### zmiana właściwości filesystemu 
@@ -264,13 +262,11 @@ File mapping | filefrag | xfs_bmap
 - sprawdzić co jeszcze możmna dopisać
 
 ### ext4
-
 - ```e2fsck``` - srawdzenie filesystemu 
 - ```resize2fs``` - zmiana wielkości filesystemu
 - ```tune2fs``` - zmiana właściwości filesystemu 
 
 #### Rozszerzanie filesystemu
-
 1. Umount filesystemu
 2. Sprawdzenie filesystemu
 3. 
@@ -285,6 +281,7 @@ File mapping | filefrag | xfs_bmap
 ## LVM 
 - [Spis treści](#spis-tre%C5%9Bci)
 
+### Przydatne
 - ```/dev/mapper/"$group_name"-"$lv_name"``` - ścieżka do utworzonego lvm
 
 ### Opisy skrócone
@@ -412,25 +409,22 @@ Dodanie UUID ```/dev/stratis/"$pool_name"/"$filesystem_name"```
 ### #TODO - opisać jakoś 
 
 ## Ustawienie stałego journalctl 
+1. Wejście w ```/etc/systemd/journald.conf```
+    - ```man journalctl.conf``` - pomoc dla pliku 
 
-```/etc/systemd/journald.conf```
-```man journalctl.conf``` - pomoc dla pliku 
-
-Zmieniamy zmienną ```Storage```
-
-```Storage=persistent``` - powoduje, że odpowiedni katalog jest tworzony w razie potrzeby
-```Storage=auto``` - logi będą zapisywane tylko jeżeli katalog istniał wcześniej 
-
-```bash
-[Journal]
-#Storage=auto
-#Compress=yes
-#Seal=yes
-#SplitMode=uid
-#SyncIntervalSec=5m
-#RateLimitIntervalSec=30s
-#RateLimitBurst=10000
-```
+2. Zmieniamy zmienną ```Storage```
+    - ```Storage=persistent``` - powoduje, że odpowiedni katalog jest tworzony w razie potrzeby
+    - ```Storage=auto``` - logi będą zapisywane tylko jeżeli katalog istniał wcześniej 
+    - ```bash
+    [Journal]
+    #Storage=auto
+    #Compress=yes
+    #Seal=yes
+    #SplitMode=uid
+    #SyncIntervalSec=5m
+    #RateLimitIntervalSec=30s
+    #RateLimitBurst=10000
+    ```
 
 # Uprawnienia
 - [Spis treści](#spis-tre%C5%9Bci)
