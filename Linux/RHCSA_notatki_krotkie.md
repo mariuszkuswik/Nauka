@@ -52,7 +52,7 @@ cd /usr/share/bash-completion
 9. exit
 10. reboot now 
 
-# hostname
+# Hostname
 - ```nmtui``` i ```nmcli``` - pozwalają na zmianę hostname i ip
 - ```hostnamectl``` - wyświetla aktualny hostname + informacje na temat systemu
     - ```set-hostname``` - zmienia hostname na podany
@@ -82,6 +82,11 @@ cd /usr/share/bash-completion
 
 # Firewall 
 - [spis treści](#spis-tre%c5%9bci)
+---
+
+#### **WAŻNE!**
+**zawsze trzeba pamiętać o opcji ```--permanent```**, w przeciwnym wypadku zmiany nie będą stałe   
+oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zastosowane
 
 - ```firewall-cmd``` - odpowiada za konfigurację zapory   
     
@@ -93,10 +98,6 @@ cd /usr/share/bash-completion
     - otwieranie portów/usług :  
         - ```--add-port "$port_number"/[tcp | udp ]``` - otwarcie portu dla tcp lub udp
         - ```--add-service "$service_name"``` - udostępnienie możliwości komunikacji z usługą (lista dostępna pod tabulatorem)
-
-#### **WAŻNE!**
-**zawsze trzeba pamiętać o opcji ```--permanent```**, w przeciwnym wypadku zmiany nie będą stałe   
-oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zastosowane
 
 ### Przyklady użycie
 - Otwarcie portu 80 tcp
@@ -126,10 +127,9 @@ oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zast
 - ```dnf whatprovides */semanage``` - domyślnie narzędzia SELinux mogą nie być zainstalowane  
 
 ## Pomocne komendy
-- ```ausearch``` - command parses audit daemon logs. You can view the man page for all of the details, but the -c 'httpd' argument will search for any event with that httpd name.
-- ```audit2allow``` - command generates an SELinux policy based on logs returned by ausearch. This tells you that the first command parses the audit logs for anything with an event based on httpd and then generates an SELinux policy to allow it.
-- ```getenforce``` - Pokazuje **w jakim trybie** działa SELinux 
-- ```sestatus``` - Pokazuje **szczegółowe informacje** na temat SELinux
+- ```semanage boolean -l``` - **wyświetlenie opisu** wszystkich zmiennych SELinux 
+
+**Jeżeli mamy jakiś problem z selinuxem to jest duża szansa że odpowiednią komendę znajdziemy poprzez ```grep "$nazwa_usługi" /var/log/messages```**
 
 ## audit2allow  
 - Wyszukiwanie problemów z SELinux + zezwolenie 
@@ -140,10 +140,6 @@ oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zast
     ```
     audit2allow -a -M "$nazwa_reguly"
     ```
-
-**Jeżeli mamy jakiś problem z selinuxem to jest duża szansa że odpowiednią komendę znajdziemy poprzez ```grep "$nazwa_usługi" /var/log/messages```**
-
-- ```semanage boolean -l``` - **wyświetlenie opisu** wszystkich zmiennych SELinux 
 
 ## Tryby SELinux
 ### Sprawdzanie trybu selinux 
@@ -164,15 +160,14 @@ oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zast
     - Dopisanie/zmiana parametru ```enforcing``` np. ```enforcing=0``` w linijce ```linux``` (parametry jądra)  - zmiana parametru selinux przy bootowaniu na   permissive     
   
 ## Konteksty SELinux
-Dla większości komend aby sprawdzić kontekst działa parametr ```-Z```,   
-np. 
 - ```ls -laZ``` - sprawdzenie kontekstu plików 
+    - ```ls -laZ "$file_name"``` - wyświetlenie kontekstu pliku 
+        - **Context** is the one with **_t** suffix - *user_home_dir_t*
 - ```ps -elZ``` - sprawdzenie kontekstu procesów 
 
 
 ### Sprawdzenie kontekstu pliku 
-- ```ls -laZ "$file_name"``` - wyświetlenie kontekstu pliku 
-    - **Context** is the one with **_t** suffix - *user_home_dir_t*
+
 
 ```console
 # ls -lZ /home
@@ -989,8 +984,6 @@ SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA
 
 # Tuned profiles
 - [Spis treści](#spis-tre%C5%9Bci)
-
-**TuneD** - tuned is a dynamic adaptive system tuning ```daemon``` that tunes system settings dynamically depending on usage.
 
 ```
 systemctl enable --now tuned
