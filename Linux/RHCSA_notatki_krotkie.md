@@ -160,20 +160,12 @@ oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zast
     - Dopisanie/zmiana parametru ```enforcing``` np. ```enforcing=0``` w linijce ```linux``` (parametry jądra)  - zmiana parametru selinux przy bootowaniu na   permissive     
   
 ## Konteksty SELinux
+
+### Sprawdzanie kontenstu SELinux
 - ```ls -laZ``` - sprawdzenie kontekstu plików 
     - ```ls -laZ "$file_name"``` - wyświetlenie kontekstu pliku 
         - **Context** is the one with **_t** suffix - *user_home_dir_t*
 - ```ps -elZ``` - sprawdzenie kontekstu procesów 
-
-
-### Sprawdzenie kontekstu pliku 
-
-
-```console
-# ls -lZ /home
-
-drwx------. chlebik chlebik unconfined_u:object_r:user_home_dir_t:s0 chlebik
-```
 
 ### Przypisanie kontekstu SELinux
 - ```semanage``` - służy do zarządzania kontekstami   
