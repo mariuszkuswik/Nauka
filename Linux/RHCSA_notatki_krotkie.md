@@ -24,28 +24,6 @@
 | acl | acl | [acl](#acl) |
 | sticky bit, sgid, suid | uprawnienia | [sticky bit, sgid, suid](#suid-sgid-sticky-bit) 
 
-# TODO - 
-
-# Wyszukiwanie plików
-- [Spis treści](#spis-treści)
-## Find 
-
-- ```find```
-    - ```-type``` - typ wyszukiwanych plików 
-        ```-f``` - file 
-        ```-d``` - firectory
-    - ```-mtime``` - file's  data  was last **modified** n*24 hours ago
-    - ```-atime``` - file was last **accessed** n*24 hours ago
-    - ```-ls``` - list current file in ```ls format```
-
-
-- Znalezienie plików które były modyfikowane **więcej niż 180 dni temu** w folderze /etc, bez uwzględniania katalogów pod lub nad /etc
-```find /etc -type f -mindepth 1 -maxdepth 1 -mtime +180```
-
-- Znalezienie plików które były modyfikowane **dokładnie 180 dni temu** w folderze /etc, bez uwzględniania katalogów pod lub nad /etc
-```find /etc -type f -mindepth 1 -maxdepth 1 -mtime 180```
-
-## Grep
 
 # Bash completion 
 
@@ -57,8 +35,6 @@ whereis bash-completion
 cd /usr/share/bash-completion 
 . ./bash-completion
 ```
-
--------
 
 # Przywracanie hasła roota
 - [spis treści](#spis-tre%c5%9bci)
@@ -81,8 +57,27 @@ cd /usr/share/bash-completion
 - ```hostnamectl``` - wyświetla aktualny hostname + informacje na temat systemu
     - ```set-hostname``` - zmienia hostname na podany
 
-# Wyszukiwanie plików 
-- [spis treści](#spis-tre%c5%9bci)
+
+# Wyszukiwanie plików
+- [Spis treści](#spis-treści)
+## Find 
+
+- ```find```
+    - ```-type``` - typ wyszukiwanych plików 
+        ```-f``` - file 
+        ```-d``` - firectory
+    - ```-mtime``` - file's  data  was last **modified** n*24 hours ago
+    - ```-atime``` - file was last **accessed** n*24 hours ago
+    - ```-ls``` - list current file in ```ls format```
+
+- Znalezienie plików które były modyfikowane **więcej niż 180 dni temu** w folderze /etc, bez uwzględniania katalogów pod lub nad /etc
+```find /etc -type f -mindepth 1 -maxdepth 1 -mtime +180```
+
+- Znalezienie plików które były modyfikowane **dokładnie 180 dni temu** w folderze /etc, bez uwzględniania katalogów pod lub nad /etc
+```find /etc -type f -mindepth 1 -maxdepth 1 -mtime 180```
+
+## Grep
+### TODO - uzupełnić
 
 
 # Firewall 
@@ -414,10 +409,8 @@ Dodanie UUID ```/dev/stratis/"$pool_name"/"$filesystem_name"```
 # Logi 
 - [Spis treści](#spis-tre%C5%9Bci)
 
-## Understanding Logging and Using Persistent Journals on RHEL 8
-
-```grep "$nazwa_szukanej_usługi" `find /var/log -maxdepth 1 -type f` | less ``` - Dobrze jest grepować logi w /var/log, w ten sposób dowiemy się które pliki zawierają logi o nazej usłudze
-
+---
+- ```grep "$nazwa_szukanej_usługi" `find /var/log -maxdepth 1 -type f` | less ``` - Dobrze jest grepować logi w /var/log, w ten sposób dowiemy się które pliki zawierają logi o nazej usłudze
 - ```journalctl``` - dziennik zdarzeń dla **systemd**, standardowo resetowany przy reboocie
     - ```journalctl -k``` - Wyświetla komunikaty tylko **na temat jądra**   `
     - ```journalctl -u nazwa_usługi``` - Wyświetlenie komunikatów **dotyczących określonej usługi**:   
@@ -427,7 +420,6 @@ Dodanie UUID ```/dev/stratis/"$pool_name"/"$filesystem_name"```
     journalctl -u httpd.service
     journalctl -u avahi-daemon.service
     ```
-
 - ```/var/log/messages```
 
 ### #TODO - opisać jakoś 
@@ -458,8 +450,6 @@ Zmieniamy zmienną ```Storage```
 
 ## SUID, SGID, Sticky bit
 - [Spis treści](#spis-tre%C5%9Bci)
-
-http://miro.borodziuk.eu/index.php/2017/03/13/uprawnienia-specjalne/
 
 | Bit | Nadanie | Opis |
 |--|--|--|
@@ -543,7 +533,6 @@ systemctl start sysstat
 ```
 
 - ```/var/log/sa/sa??``` - domyślne miejsce docelowe dla logów  
-
 - ```sar``` - przeglądanie logów  
     - ```-A``` - wyświetla wszystkie możliwe informacje o systemie 
     - ```-u``` - wyświetla informacje dotyczące procesora   
@@ -553,9 +542,9 @@ systemctl start sysstat
 # Runlevele 
 [Spis treści](#spis-tre%C5%9Bci)  
 
-- ```systemctl set-default graphical.target``` - ustawia tryb graficzny jako działający domyślnie 
-- ```systemctl set-default multi-user.target``` - ustawia tryb tekstowy jako działający domyślnie 
-- ```systemctl get-default``` - wyświetla obecny defaultowy target 
+- ```systemctl set-default "$target".target``` - ustawia docelowy target jako działający domyślnie
+    - ```graphical.target``` - tryb graficzny 
+    - ```multi-user.target``` - tryb tekstowy 
 
 # autofs 
 [Spis treści](#spis-tre%C5%9Bci)
@@ -563,13 +552,12 @@ systemctl start sysstat
 **autofs** - montowanie systemów plików NFS na żądanie
 
 - [RH - autofs](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/nfs-autofs)
-- [Montowanie pod /net](#Automatyczne-montowanie-katalogu-/net)  
 - [Montowanie katalogów domowych](#Automatyczne-montowanie-katalogów-domowych) 
-
-## WAŻNE! 
-```man 5 autofs``` - wyjaśnia w jaki sposób zamontować home directory, w manie szukać ```home```
-```mount``` wyświetla listę katalogów mających być zamontowanymi przez autofs 
-
+- [Montowanie pod /net](#Automatyczne-montowanie-katalogu-/net)  
+---
+- ## WAŻNE! 
+- ```man 5 autofs``` - wyjaśnia w jaki sposób zamontować home directory, w manie szukać ```home```
+- ```mount``` wyświetla listę katalogów mających być zamontowanymi przez autofs 
 - Configi 
     - ```/etc/auto.master``` - mapa dla folderów montowania, linkujemy tu config dla poszczególnych katalogów
         ```bash
