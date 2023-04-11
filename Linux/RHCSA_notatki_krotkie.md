@@ -5,7 +5,7 @@
 |---|---|---|
 | Przywrocenie hasla | Przywrocenie hasla roota | [Przywracanie hasla roota](#przywracanie-hasła-roota) | 
 | Bash completion | Bash completion | [Bash completion - instalacja](#bash-completion) | 
-| podman ogólnie | podman ogólnie | [Podman ogólnie](#podman---szybka-procedura) | 
+| podman | podman ogólnie | [Podman ogólnie](#podman---szybka-procedura) | 
 | podman | podman login + rejestry | [RH - Podman rejestry](https://www.redhat.com/sysadmin/manage-container-registries) |
 | - podman | podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
 | podman | podman - httpd | [Podman - httpd](#podman---httpd) | 
@@ -860,7 +860,7 @@ GRUB_TIMEOUT=15
     - ```ip route show```
     - ```ip address show```
 
-# Kontenery
+# Podman 
 [Spis treści](#spis-tre%C5%9Bci)
 
 ## Podman - Szybka procedura
@@ -889,7 +889,7 @@ GRUB_TIMEOUT=15
 - ```systemctl enable podman --now``` 
 
 ## Komendy, stawianie uslugi
-### Obrazy kontenerów
+### Obrazy podman
 - **Rejestr** 
     - **The list of registries is defined in /etc/containers/registries.conf**
     - ```podman login "$registryURL" -u username [-p password]``` - logowanie do rejestru kontenerów 
@@ -905,7 +905,7 @@ GRUB_TIMEOUT=15
         - ```podman image rm "$nazwa_obrazu"``` - usuwa obraz 
         - ```podman image tag "$nazwa_obrazu" "$tag"``` - nadaje obrazowi tag
 
-### Operacje na kontenerach
+### Podman - Operacje na kontenerach
 - **Tworzenie kontenera**
     - ```podman container``` - operacje wykonywane na kontenerach     
         - ```podman container create "$nazwa_obrazu"``` - utworzenie kontenera z obrazu 
@@ -922,7 +922,7 @@ GRUB_TIMEOUT=15
     - ```podman rm <container>``` - Get rid of the container you created before you try to start your systemd container
 
 
-### Rootless containers as a service  
+### Podman - Rootless containers as a service  
 - [Rootless container service](https://www.linuxtechi.com/run-containers-systemd-service-podman/)
 
 - **Włączenie opcji uruchamiania usługi bez zalogowania? Doczytać**
@@ -941,7 +941,7 @@ GRUB_TIMEOUT=15
     - ```systemctl --user start|stop|enable UNIT``` - Zarządzanie usługami systemd użytkownika
         - ```systemctl --user enable --now container-myubi.service``` - Uruchomienie usługi kontenera przy starcie systemu
 
-### Kontenery - SeLinux 
+### Podman - SeLinux 
 - [RH - How to modify SELinux settings with booleans](https://www.redhat.com/sysadmin/change-selinux-settings-boolean)
 
 **Każdy wolumen musi mieć odpowiednio udostępniony plik - Z ODPOWIEDNIO USTAWIONYM KONTEKSTEM PLIKU**
@@ -950,7 +950,7 @@ GRUB_TIMEOUT=15
 SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA ```ls -lZ /```
 
 
-## Obrazy kontenerów
+## Podman - Obrazy kontenerów
 ### Inspecting images - skopeo
 - ```skopeo``` - used to inspect, copy, delete and sign container images
 
@@ -977,7 +977,7 @@ podman run -d --name rsyslog-container -v /var/log/logcontainer:/var/log/rsyslog
 
 **This will create a Podman container named rsyslog-container that runs the rsyslog service and writes log files persistently to the directory /var/log/logcontainer/ on the host operating system.**
 
-## podman - httpd
+## Podman - httpd
 - [Spis treści](#spis-treści) 
 
 - serrice: httpd
