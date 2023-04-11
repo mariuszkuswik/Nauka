@@ -77,7 +77,11 @@ cd /usr/share/bash-completion
 ```find /etc -type f -mindepth 1 -maxdepth 1 -mtime 180```
 
 ## Grep
-### TODO - uzupełnić
+
+- ```grep``` 
+    - ```-l``` - pokaż nazwy plików które zawierają frazę 
+    - ```-A NUM``` - After - pokaż NUM linii **po** frazie
+    - ```-B NUM``` - Before - pokaż NUM linii **przed** frazą
 
 
 # Firewall 
