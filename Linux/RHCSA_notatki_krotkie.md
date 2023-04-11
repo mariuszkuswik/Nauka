@@ -954,7 +954,15 @@ SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA
 ### Inspecting images - skopeo
 - ```skopeo``` - used to inspect, copy, delete and sign container images
 
-## podman - rsyslog
+## Podman - rsyslog
+- service: rsyslog
+- user: cloud_user 
+- shared folder: /var/log/container:/var/log/rsyslog
+
+1. Ssh to the user 
+```
+ssh cloud_user@localhost 
+```
 
 1. Pull the rsyslog image from a registry
 ```
@@ -968,11 +976,12 @@ sudo mkdir /var/log/logcontainer
 
 3. Change the ownership of the directory to the user account that the rsyslog service normally uses:
 ```
-sudo chown <username>:<groupname> /var/log/logcontainer
+sudo chown cloud_user:cloud_user /var/log/logcontainer
 ```
+
 4. Run the rsyslog container, mounting the host directory to the container directory and setting the appropriate environment variables:
 ```
-podman run -d --name rsyslog-container -v /var/log/logcontainer:/var/log/rsyslog -e TZ=<timezone> --user <username> rsyslog/rsyslog
+podman container start -- name rsyslog-container -v /var/log/logcontainer:/var/log/rsyslog  rsyslog/rsyslog
 ```
 
 **This will create a Podman container named rsyslog-container that runs the rsyslog service and writes log files persistently to the directory /var/log/logcontainer/ on the host operating system.**
