@@ -3,24 +3,25 @@
 
 | Kategoria | Nazwa zadania | Link | 
 |---|---|---|
-| + Przywrocenie hasla | Przywrocenie hasla roota | [Przywracanie hasla roota](#przywracanie-hasła-roota) | 
-| + Bash completion | Bash completion | [Bash completion - instalacja](#bash-completion) | 
+| Przywrocenie hasla | Przywrocenie hasla roota | [Przywracanie hasla roota](#przywracanie-hasła-roota) | 
+| Bash completion | Bash completion | [Bash completion - instalacja](#bash-completion) | 
+| podman ogólnie | podman ogólnie | [Podman ogólnie](#podman---szybka-procedura) | 
+| podman | podman login + rejestry | [RH - Podman rejestry](https://www.redhat.com/sysadmin/manage-container-registries) |
 | - podman | podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
-| - podman | podman - httpd | [Podman - httpd](#podman---httpd) | 
-| + podman | podman login + rejestry | [RH - Podman rejestry](https://www.redhat.com/sysadmin/manage-container-registries) |
-| + autofs | autofs - home dir | [autofs - home dirs](#automatyczne-montowanie-katalogów-domowych) | 
-| + lvm-vdo | Utworzenie vdo na lvm | [Tworzenie VDO](#vdo)| 
-| + selinux | Rozwiazywanie problemow selinux | [Selinux](#selinux) |  
-| + selinux - | Selinux - audit2allow | [audit2allow](#audit2allow) | 
-| + chronyd - ntp | synchronizacja czasu chrony | [Synchronizacja czasu](#synchronizacja-czasu-klient-z-serwerem) | 
-| + tuned | tuned | [tuned](#tuned-profiles) | 
-| + repo | dodanie repo | [Dodawanie nowego repo](#dodanie-nowego-repozytorium) |
-| + rpm | podstawy rpm | [rpm](#rpm) | 
-| + kernel | Zmiana parametrow kernela | [Zmiana konfiguracji grub ](#zmiana-zmiennych-konfiguracji-grub) | 
-| + kernel | update kernela | [Kernel Update](#kernel-update) | 
-| + kernel | zmiana domyslnego kernela | [Zmiana domyslnego kernela](https://access.redhat.com/solutions/4326431) | 
-| - find - TODO - opisać sensownie, pamietac o + kiedy chcemy znajdowac daty po czasie i o dokladnym wyszukiwaniu | Wyszukiwanie plików | [Wyszukiwanie plików](#wyszukiwanie-plików) |
-| - grep | Grep | [grep](#grep) |
+| podman | podman - httpd | [Podman - httpd](#podman---httpd) | 
+| autofs | autofs - home dir | [autofs - home dirs](#automatyczne-montowanie-katalogów-domowych) | 
+| lvm-vdo | Utworzenie vdo na lvm | [Tworzenie VDO](#vdo)| 
+| selinux | Rozwiazywanie problemow selinux | [Selinux](#selinux) |  
+| selinux - | Selinux - audit2allow | [audit2allow](#audit2allow) | 
+| chronyd - ntp | synchronizacja czasu chrony | [Synchronizacja czasu](#synchronizacja-czasu-klient-z-serwerem) | 
+| tuned | tuned | [tuned](#tuned-profiles) | 
+| repo | dodanie repo | [Dodawanie nowego repo](#dodanie-nowego-repozytorium) |
+| rpm | podstawy rpm | [rpm](#rpm) | 
+| kernel | Zmiana parametrow kernela | [Zmiana konfiguracji grub ](#zmiana-zmiennych-konfiguracji-grub) | 
+| kernel | update kernela | [Kernel Update](#kernel-update) | 
+| kernel | zmiana domyslnego kernela | [Zmiana domyslnego kernela](https://access.redhat.com/solutions/4326431) | 
+| find | Wyszukiwanie plików | [Wyszukiwanie plików](#wyszukiwanie-plików) |
+| grep | Grep | [grep](#grep) |
 | acl | acl | [acl](#acl) |
 | sticky bit, sgid, suid | uprawnienia | [sticky bit, sgid, suid](#suid-sgid-sticky-bit) 
 
@@ -862,6 +863,16 @@ GRUB_TIMEOUT=15
 # Kontenery
 [Spis treści](#spis-tre%C5%9Bci)
 
+## Podman - Szybka procedura
+1. ```ssh usernam@hostname``` - ssh jest konieczne dla dzialania podmana jako non root
+2. ```loginctl enable-linger "$user"``` 
+    - ```loginctl show-user "$user"``` - sprawdzenie czy linger jest wlaczony dla uzytkownika?
+3. ```podman generate systemd```
+    - Pliki uslug systemd uzytkownika ```~/.config/systemd/user```
+4. ```systemctl --user daemon-reload``` - przeladowane plikow systemd dla uzytkownikow standardowych
+    - ```systemctl --user enable|start|stop "$UNIT"``` - obsluga uslug systemd dla uzytkownikow 
+
+
 ## Przydatne  
 - Selinux
 ```podman -v "volume_hosta:volume_kontenera:Z"``` - z dopiskiem ```:Z``` podman sam ogarnie SELinuxa!**  
@@ -943,6 +954,28 @@ SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA
 ### Inspecting images - skopeo
 - ```skopeo``` - used to inspect, copy, delete and sign container images
 
+## podman - rsyslog
+
+1. Pull the rsyslog image from a registry
+```
+podman pull rsyslog
+```
+
+2. Create a directory on the host operating system to store the log files:
+```
+sudo mkdir /var/log/logcontainer
+```
+
+3. Change the ownership of the directory to the user account that the rsyslog service normally uses:
+```
+sudo chown <username>:<groupname> /var/log/logcontainer
+```
+4. Run the rsyslog container, mounting the host directory to the container directory and setting the appropriate environment variables:
+```
+podman run -d --name rsyslog-container -v /var/log/logcontainer:/var/log/rsyslog -e TZ=<timezone> --user <username> rsyslog/rsyslog
+```
+
+**This will create a Podman container named rsyslog-container that runs the rsyslog service and writes log files persistently to the directory /var/log/logcontainer/ on the host operating system.**
 
 ## podman - httpd
 - [Spis treści](#spis-treści) 

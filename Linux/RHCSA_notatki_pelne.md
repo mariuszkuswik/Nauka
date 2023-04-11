@@ -1558,17 +1558,6 @@ curl http://127.0.0.1:8000
     - Kontener ma dzialac jako non-root dla uzytkownika standardowego uzytkownika **rsysuser** 
     - Kontener ma dzialac po reboocie
 
-#### Podman - SZYBKIE NOTATKI  
-1. ```ssh usernam@hostname``` - ssh jest konieczne dla dzialania podmana jako non root
-2. ```loginctl enable-linger "$user"``` 
-    - ```loginctl show-user "$user"``` - sprawdzenie czy linger jest wlaczony dla uzytkownika?
-3. ```podman generate systemd```
-    - Pliki uslug systemd uzytkownika ```~/.config/systemd/user```
-4. ```systemctl --user daemon-reload``` - przeladowane plikow systemd dla uzytkownikow standardowych
-    - ```systemctl --user enable|start|stop "$UNIT"``` - obsluga uslug systemd dla uzytkownikow 
-
-#### Stawianie kontenera 
-
 1. Pull the rsyslog image from a registry
 ```
 podman pull rsyslog
