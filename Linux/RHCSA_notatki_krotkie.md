@@ -994,8 +994,19 @@ podman container start -- name rsyslog-container -v /var/log/logcontainer:/var/l
 - shared folder: ~/web_data:/var/www/html
 - port: 8000:8080
 
-1. ```mkdir -p /home/cloud_user/.config/systemd/user``` - katalog dla zwyklego usera
-2. ```podman run -d --name web_server -p 8000:8080 -v "~/web_data:/var/www/html:Z" "$container_image"``` tworzenie kontenera w trybie detach 
+1. Utworzenie katalogu dla usera
+```
+mkdir -p /home/cloud_user/.config/systemd/user
+```
+2. ssh to the cloud_user
+``` 
+ssh cloud_user@localhost
+```
+
+3. tworzenie kontenera w trybie detach
+```
+podman run -d --name web_server -p 8000:8080 -v "~/web_data:/var/www/html:Z" "$container_image"
+```  
 3. ```podman ps -a``` - wyswietlenie kontenerow ktore dzialaja
 4. ```curl 127.0.0.1:8000``` / ```curl http://127.0.0.1:8000/text.txt```
 5. ```podman generate systemd --name web_server --files --new``` - ### TODO - sprawdzic opcje
