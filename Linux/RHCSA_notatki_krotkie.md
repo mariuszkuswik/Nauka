@@ -955,10 +955,12 @@ SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA
 - ```skopeo``` - used to inspect, copy, delete and sign container images
 
 ## Podman - rsyslog
+- [Spis treści](#spis-treści)
+---
 - service: rsyslog
 - user: cloud_user 
 - shared folder: /var/log/container:/var/log/rsyslog
-
+---
 1. Ssh to the user 
 ```
 ssh cloud_user@localhost 
@@ -988,12 +990,12 @@ podman container start -- name rsyslog-container -v /var/log/logcontainer:/var/l
 
 ## Podman - httpd
 - [Spis treści](#spis-treści) 
-
+---
 - serrice: httpd
 - user: cloud_user
 - shared folder: ~/web_data:/var/www/html
 - port: 8000:8080
-
+---
 1. Utworzenie katalogu dla usera
 ```
 mkdir -p /home/cloud_user/.config/systemd/user
