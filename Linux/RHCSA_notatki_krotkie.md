@@ -7,8 +7,8 @@
 | Bash completion | Bash completion | [Bash completion - instalacja](#bash-completion) | 
 | podman | podman ogólnie | [Podman ogólnie](#podman---szybka-procedura) | 
 | podman | podman login + rejestry | [RH - Podman rejestry](https://www.redhat.com/sysadmin/manage-container-registries) |
-| - podman | podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
-| podman | podman - httpd | [Podman - httpd](#podman---httpd) | 
+| podman | podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
+| - podman - format w trakcie | podman - httpd | [Podman - httpd](#podman---httpd) | 
 | autofs | autofs - home dir | [autofs - home dirs](#automatyczne-montowanie-katalogów-domowych) | 
 | lvm-vdo | Utworzenie vdo na lvm | [Tworzenie VDO](#vdo)| 
 | selinux | Rozwiazywanie problemow selinux | [Selinux](#selinux) |  
