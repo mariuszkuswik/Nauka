@@ -388,74 +388,56 @@ Verify status:
 systemctl status nfs-server
 Check NFS exports on our local system:
 showmount -e
-Configuring autofs to mount home directories on server1
-Become root:
-sudo -i
-Install the autofs package:
+  
+
+# Autofs
+## Configuring autofs to mount home directories on server1
+
+1. Install the autofs package:
+```
 yum -y install autofs
-Create the /export/home directory:
-mkdir -p /export/home
-Add the mapping for the /export/home directory to /etc/auto.master:
-vi /etc/auto.master
-At the end of the file, above the line with +auto.master, add:
+```
+2. Create the /export/home directory:
+```
+  mkdir -p /export/home
+```
+3. Add the mapping for the /export/home directory to /etc/auto.master:
+```
 /export/home  	/etc/auto.home
-Save and quit:
-:wq
-Edit /etc/auto.home:
-vi /etc/auto.home
+```
+4. Edit /etc/auto.home:
 Add the following line: (NOTE: Use command ip addr on server2 for private IP address)
-*	<second_server_private_IP>:/home/&
-Save and quit:
-:wq
-Confirm NFS export:
-showmount -e <second_server_private_IP>
-Start and enable autofs service:
-systemctl enable --now autofs
-Check autofs status:
-systemctl status autofs
-On server1, change user's home directory locations to /export/home:
-for i in manny moe jack marcia jan cindy; do usermod -d /export/home/$i $i; done
-Confirm changes:
-grep -E 'manny|moe|jack|marcia|jan|cindy' /etc/passwd
-On server1, test as the user manny:
-su - manny
-Check directory:
-pwd
-Create a file:
-touch file1
-Create a directory:
-mkdir directory1
-Check our work:
-ls -la
-Log out manny:
-exit
-On server1, test as moe:
-su - moe
-Check directory:
-pwd
-Create a file:
-touch file1
-Create a directory:
-mkdir directory1
-Check our work:
-ls -la
-Log out moe:
-exit
-On server1, test as jack:
-su - jack
-Check directory:
-pwd
-Create a file:
-touch file1
-Create a directory:
-mkdir directory1
-Check our work:
-ls -la
-Log out jack:
-exit
-Confirm that the home directories are mounted via autofs on the first server:
-mount | grep home
-Configure a Shared Directory for Collaboration on server2
+```
+  *	<second_server_private_IP>:/home/&
+```
+
+## Confirm NFS export:
+1. showmount -e <second_server_private_IP>
+2. Start and enable autofs service:
+```
+  systemctl enable --now autofs
+```
+3. On server1, change user's home directory locations to /export/home:
+```
+  for i in manny moe jack marcia jan cindy; do usermod -d /export/home/$i $i; done
+```
+4. On server1, test as the user manny:
+```
+  su - manny
+```
+ 5. Check directory:
+```
+  pwd
+```
+6. Create a file:
+```
+  touch file1
+```
+7. Confirm that the home directories are mounted via autofs on the first server:
+```
+  mount | grep home
+```
+  Configure a Shared Directory for Collaboration on server2
 Become root:
 sudo -i
 Create the shared directory:
