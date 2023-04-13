@@ -581,34 +581,44 @@ systemctl start sysstat
 
 ## Automatyczne montowanie katalogów domowych
 
+- **WAŻNE!** - UID użytkownika na serwerze nfs i kliencie musi być taki sam!
 - Komenda pokazuje liste katalogow eksporowtanych przez serwer   
 ```
 showmount -e 192.168.10.10 
 ```
-- **WAŻNE!** - UID użytkownika na serwerze nfs i kliencie musi być taki sam!
+---
 
-1. Plik /etc/auto.master - punkt montowania - ścieżka do mapy montowania 
-    ```bash
-    /home   /etc/auto.home
-    ```
+1. Instalacja **nfs-utils** i **autofs** 
+```
+dnf install nfs-utils autofs
+```
 
-2. Plik /etc/auto.home
-- Opcja dla jednego użytkownika
-    ```bash
-    janek  -rw,filesystem=nfs   "$nfs_server_address":/home/janek
-    ```
+2. Włączenie autofs
+```
+systemctl enable --now autofs
+```
+
+3. Plik /etc/auto.master - punkt montowania - ścieżka do mapy montowania 
+```bash
+/mnt/home   /etc/auto.home
+```
+
+4. Plik /etc/auto.home
 - Opcja dla wielu użytkowników
-    ```bash
-    *   -rw,filesystem=nfs  "$nfs_server_address":/home/janek
-    ```
+```bash
+*   -rw,filesystem=nfs  "$nfs_server_address":/home/&
+```
+- Opcja dla jednego użytkownika
+```bash
+mariusz  -rw,filesystem=nfs   "$nfs_server_address":/home/mariusz
+```
 
-3. Enable + restart autofs
-    ```bash
-    systemctl enable autofs
-    systemctl restart autofs
-    ```
+5. Restart autofs
+```bash
+systemctl restart autofs
+```
 
-5. Zmiana **home** w ```/etc/passwd``` 
+6. Zmiana **home** w ```/etc/passwd``` 
 
 
 ## Automatyczne montowanie katalogu /net   
