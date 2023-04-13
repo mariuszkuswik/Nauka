@@ -410,37 +410,43 @@ Add the following line: (NOTE: Use command ip addr on server2 for private IP add
 ```
   *	<second_server_private_IP>:/home/&
 ```
-
-## Confirm NFS export:
-1. showmount -e <second_server_private_IP>
-2. Start and enable autofs service:
+Confirm NFS export:
+5. 
 ```
-  systemctl enable --now autofs
+  showmount -e <second_server_private_IP>
+```
+  2. Start and enable autofs service:
+```
+systemctl enable --now autofs
 ```
 3. On server1, change user's home directory locations to /export/home:
 ```
-  for i in manny moe jack marcia jan cindy; do usermod -d /export/home/$i $i; done
+for i in manny moe jack marcia jan cindy; do usermod -d /export/home/$i $i; done
 ```
 4. On server1, test as the user manny:
 ```
-  su - manny
+su - manny
 ```
  5. Check directory:
 ```
-  pwd
+pwd
 ```
 6. Create a file:
 ```
-  touch file1
+touch file1
 ```
 7. Confirm that the home directories are mounted via autofs on the first server:
 ```
-  mount | grep home
+mount | grep home
 ```
-  Configure a Shared Directory for Collaboration on server2
-Become root:
-sudo -i
-Create the shared directory:
+
+  
+# Configure a Shared Directory for Collaboration on server2
+  1. Become root:
+```
+  sudo -i
+```
+  Create the shared directory:
 mkdir /home/dba_docs
 Set group ownership to dba_staff on the shared directory:
 chown -R :dba_staff /home/dba_docs
@@ -526,10 +532,12 @@ Use a for loop create a soft link in each user's home directory for quick and ea
 for user in manny moe jack marcia jan cindy ; do echo "Adding soft link for "$user"..." ; ln -s /home/dba_docs /home/$user/dba_docs ; done
 Verify changes using a for loop:
 for user in manny moe jack marcia jan cindy ; do ls -al /home/$user ; done
-Managing Containers Using Podman
+# Managing Containers Using Podman
 Create a Persistent systemd Container Using Podman on server1
-Verify if cloud_user: (NOTE: If not, log out and log in directly as cloud_user)
-whoami
+1. Verify if cloud_user: (NOTE: If not, log out and log in directly as cloud_user)
+```
+  whoami
+ ```
 Create the ~/.config/systemd/user directory:
 mkdir -p ~/.config/systemd/user
 Change directory to the new directory:
