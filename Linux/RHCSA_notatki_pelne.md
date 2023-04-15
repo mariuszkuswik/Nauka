@@ -1740,7 +1740,7 @@ you could also use /etc/hosts.allow
 
 1. autofs - mapowanie home directory
 2. Budowanie obrazu kontenera z pliku 
-3. Budowanie kontenera, kontener ma miec udostepnione foldery, dzialac przy starcie systemu jako konkretny user
+3. Budowanie kontenera, kontener ma miec udostepnione foldery, dzialac przy starcie systemu jako konkretny user, home folder to /rhome, ma dzialac dla jegnego uzytkownika 
 4. Usluga httpd nie dziala, ma dzialac na porcie 82 i ma miec dostep do plikow - pliki nie maja nadanego kontekstu selinux, pamietac o tym + nauczyc sie jak przypisywac porty selinux
 5. Problem z repo - dnf, sudo itd nie jest dostepne, nie udalo mi sie podlaczyc repo 
 6. Reset hasla roota - montowanie katalogu roota jako read only, tak zeby zbootowac
