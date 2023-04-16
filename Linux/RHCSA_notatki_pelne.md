@@ -178,12 +178,17 @@ Manage containers: 67%
 
 # Po egzaminie 2 - opracowanie
 
+## Umask 
+- Dopisać coś o login.defs i ~/.bashrc
+
 ## Repo 
-https://access.redhat.com/solutions/253273 - jak zarejestrować system
-https://sahlitech.com/entitlement-server-fix/ - odpalenie bez rejestracji
+- [odpalenie bez rejestracji](https://sahlitech.com/entitlement-server-fix/)
+- [Jak zarejestrować system](https://access.redhat.com/solutions/253273)
 
 ### Możliwe rozwiązanie - sprawdzić
 - Jeżeli to nie zadziała to ściągnąć repo przez wget i podłączyć lokalnie!
+- Dowiedzieć się jak pobrać takie repo 
+---
 
 Zmiana enabled na 0 
 ```
@@ -209,8 +214,55 @@ Komunikat powinien zniknąć
 ## tar
 
 ## user - domyślne ustawienia
+### TODO - opisać dokładniej login.defs
+- ```/etc/login.defs``` - file defines the site-specific configuration for this suite. 
+    - PASS_MAX_DAYS : Maximum number of days a password may be used. If the password is older than this, a password change will be forced.
+    - PASS_MIN_DAYS : Minimum number of days allowed between password changes. Any password changes attempted sooner than this will be rejected
+    - PASS_WARN_AGE : Number of days warning given before a password expires. A zero means warning is given only upon the day of expiration, a negative value means no warning is given. If not specified, no warning will be provided.
+
+1. Zmiana wartości w pliku ```/etc/login.defs```
+
+```
+vi /etc/login.defs
+```
+
+2. Setup (sample) values as follows:
+- PASS_MAX_DAYS 30 - Ważnośc hasła - maksymalny czas przez jaki może być używane
+- PASS_MIN_DAYS 1 - Minimalna ważność hasła - minimalny czas po jakim można zmienić hasło 
+- PASS_WARN_AGE 7 - 
+
+3. Close and save the file.
+
+# Howto set or force user to change a password at first login under Linux
+
+```
+chage -d 0 user 
+```
+
+## Procedure to change OpenSSH pre login banner
+1) By default sshd server turns off this feature.
+
+2) Login as the root user; create your login banner file:
+
+- vi /etc/ssh/sshd-banner
+Append text:
+Welcome to nixCraft Remote Login!
+
+3) Open sshd configuration file /etc/sshd/sshd_config using a text editor:
+
+- vi /etc/sshd/sshd_config
+4) Add/edit the following line:
+
+Banner /etc/ssh/sshd-banner
+5) Save file and restart the sshd server:
+
+- /etc/init.d/sshd restart
+6) Test your new banner (from Linux or UNIX workstation or use any other ssh client):
+
+ssh vivek@rh3es.nixcraft.org
 
 ## tuned-adm 
+
 
 
 
