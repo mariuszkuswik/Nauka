@@ -24,10 +24,9 @@
 | grep | Grep | [grep](#grep) |
 | acl | acl | [acl](#acl) |
 | sticky bit, sgid, suid | uprawnienia | [sticky bit, sgid, suid](#suid-sgid-sticky-bit) 
-
+| Userzy | Domyślne ustawienia hasła | | 
 
 # Bash completion 
-
 - Instalacja 
 ```
 dnf search bash 
@@ -72,10 +71,22 @@ cd /usr/share/bash-completion
     - ```-ls``` - list current file in ```ls format```
 
 - Znalezienie plików które były modyfikowane **więcej niż 180 dni temu** w folderze /etc, bez uwzględniania katalogów pod lub nad /etc
-```find /etc -type f -mindepth 1 -maxdepth 1 -mtime +180```
+```
+find /etc -type f -mindepth 1 -maxdepth 1 -mtime +180
+```
 
 - Znalezienie plików które były modyfikowane **dokładnie 180 dni temu** w folderze /etc, bez uwzględniania katalogów pod lub nad /etc
-```find /etc -type f -mindepth 1 -maxdepth 1 -mtime 180```
+```
+find /etc -type f -mindepth 1 -maxdepth 1 -mtime 180
+```
+
+- Znalezienie **plików konkretnego użytkownika** i skopiowanie ich do folderu backup 
+```
+find /ścieżka/do/katalogu -user test | xargs -I{} cp {} /backup/
+```
+
+
+
 
 ## Grep
 
@@ -124,6 +135,64 @@ oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zast
     ```console
     firewall-cmd --reload 
     ```
+
+# User
+
+### TODO - dopisać coś o chage
+
+## chage 
+
+```chage -l``` - wyświetlenie informacji o userze
+
+## Domyślne ustawienia hasła dla nowotworzonych użytkowników!
+### TODO - opisać dokładniej login.defs
+- ```/etc/login.defs``` - file defines the site-specific configuration for this suite. 
+    - ```PASS_MAX_DAYS``` : Maximum number of days a password may be used. If the password is older than this, a password change will be forced.
+    - ```PASS_MIN_DAYS``` : Minimum number of days allowed between password changes. Any password changes attempted sooner than this will be rejected
+    - ```PASS_WARN_AGE``` : Number of days warning given before a password expires. A zero means warning is given only upon the day of expiration, a negative value means no warning is given. If not specified, no warning will be provided.
+
+1. Zmiana wartości w pliku ```/etc/login.defs```
+```
+vi /etc/login.defs
+```
+
+2. Setup (sample) values as follows:
+- PASS_MAX_DAYS 30 - Ważnośc hasła - maksymalny czas przez jaki może być używane
+- PASS_MIN_DAYS 1 - Minimalna ważność hasła - minimalny czas po jakim można zmienić hasło 
+- PASS_WARN_AGE 7 - 
+
+3. Close and save the file.
+
+## Wymuszenie zmiany hasła dla użytkownika
+
+```
+chage -d 0 user 
+```
+
+# ssh
+## Dodanie login bannru przy logowaniu ssh 
+1) By default sshd server turns off this feature.
+
+2) Login as the root user; create your login banner file:
+
+- vi /etc/ssh/sshd-banner
+Append text:
+Welcome to nixCraft Remote Login!
+
+3) Open sshd configuration file /etc/sshd/sshd_config using a text editor:
+
+- vi /etc/sshd/sshd_config
+4) Add/edit the following line:
+
+Banner /etc/ssh/sshd-banner
+5) Save file and restart the sshd server:
+
+- /etc/init.d/sshd restart
+6) Test your new banner (from Linux or UNIX workstation or use any other ssh client):
+
+ssh vivek@rh3es.nixcraft.org
+
+
 
 # SELinux
 - [Spis treści](#spis-tre%C5%9Bci)
@@ -511,6 +580,11 @@ Dodanie UUID ```/dev/stratis/"$pool_name"/"$filesystem_name"```
     other::r-x  
 
 
+## Umask 
+- Dopisać coś o login.defs i ~/.bashrc
+
+
+
 # sar - sysstat
 - [Spis treści](#spis-tre%C5%9Bci)
 
@@ -566,7 +640,6 @@ systemctl start sysstat
         # Użytkownik    opcje montowania    adres serwera:folder do zamontowania
         manny           -fstype=nfs,rw      172.29.188.8:/home/manny
         *               -fstype=nfs,rw      172.29.188.8:/home/&
-
         ```
 
     - ```/etc/autofs.conf``` - Główny plik konfiguracyjny usługi 
@@ -648,6 +721,35 @@ np.
 - [Dodanie nowego repozytorium](#dodanie-nowego-repozytorium)
 
 ## Repo
+### TODO - ogarnąć 
+- [odpalenie bez rejestracji](https://sahlitech.com/entitlement-server-fix/)
+- [Jak zarejestrować system](https://access.redhat.com/solutions/253273)
+
+### Możliwe rozwiązanie - sprawdzić
+- Jeżeli to nie zadziała to ściągnąć repo przez wget i podłączyć lokalnie!
+### TODO - ogarnąć
+- Dowiedzieć się jak pobrać takie repo 
+---
+
+1. W pliku  ```/etc/yum.pluginconf.d/subscription-manager.conf``` zmiana enabled na 0 
+```
+vim /etc/yum.pluginconf.d/subscription-manager.conf
+```
+
+2. Wyczyszczenie dnf cache 
+```
+dnf clean all 
+```
+lub 
+```
+yum clean all 
+```
+
+3. Odpalenie update/dnf 
+```
+dnf update -y 
+```
+
 ### Pomoc
 ```man dnf.conf``` - pomoc dla opcji konfiguracyjnych repozytoriów
 
@@ -1055,3 +1157,6 @@ systemctl enable --now tuned
     - ```tuned-adm list``` - wyświetlenie wszystkich dostępnych profili 
     - ```tuned-adm active``` - wyświetlenie obecnie działających profili 
     - ```tuned-adm profile "$profile_name1" "$profile_name2"``` - Switches  to  the given profile. If more than one profile is given, the profiles are merged
+
+
+

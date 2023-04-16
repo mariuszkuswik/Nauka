@@ -140,9 +140,9 @@
 ## Pytania 2
 | lp. | Ogarnięcie | link | Zadanie | 
 |--|--|--|--|
-| 1 | + | | autofs - mapowanie home directory |
-| 2 | - | | Budowanie obrazu kontenera z pliku  |
-| 3 | - | | Budowanie kontenera, kontener ma miec udostepnione foldery, dzialac przy starcie systemu jako konkretny user, home folder to /rhome, ma dzialac dla jegnego uzytkownika  |
+| 1 | + | | autofs - mapowanie home directory  home folder to /rhome, ma dzialac dla jegnego uzytkownika|
+| 2 | - | | Budowanie obrazu kontenera z pliku |
+| 3 | + | | Budowanie kontenera, kontener ma miec udostepnione foldery, dzialac przy starcie systemu jako konkretny user,  |
 | 4 | +  | | Usluga httpd nie dziala, ma dzialac na porcie 82 i ma miec dostep do plikow - pliki nie maja nadanego kontekstu selinux, pamietac o tym + nauczyc sie jak przypisywac porty selinux |
 | 5 | - | |  Problem z repo - dnf, sudo itd nie jest dostepne, nie udalo mi sie podlaczyc repo  |
 | 6 | + | | Reset hasla roota - montowanie katalogu roota jako read only, tak zeby zbootowac |
@@ -161,7 +161,7 @@
 | 19 | + |  | Networking - ustawienie adresu ip  |
 | 20 | + |  | Ustawienie odpowiedniego hostname |
 | 21 | - |  | Zadanie w cronie - co dwie minuty ma wykonywac polecenie logrotate "testowe echo" jako jaki uzytkownik |
-| 22 | + | /- | Wyszukiwanie linii w pliku z konkretnym słowem, grep ale upewnić się jak to ma być zrobione, słowa mają byc przekierowane do pliku, nie może być żadnych dodatkowych linii, słowa mają być dokładnie w tej kolejności |
+| 22 | +/- |  | Wyszukiwanie linii w pliku z konkretnym słowem, grep ale upewnić się jak to ma być zrobione, słowa mają byc przekierowane do pliku, nie może być żadnych dodatkowych linii, słowa mają być dokładnie w tej kolejności |
 | 23 | - |  | find - Wyszukiwanie plików należących do konkretnego usera |
 
 ## Objectivy 2
@@ -177,46 +177,6 @@ Manage security: 100%
 Manage containers: 67%
 
 # Po egzaminie 2 - opracowanie
-
-## find 
-
-
-```
-find /ścieżka/do/katalogu -user test | xargs -I{} cp {} /backup/
-```
-
-
-## Umask 
-- Dopisać coś o login.defs i ~/.bashrc
-
-## Repo 
-- [odpalenie bez rejestracji](https://sahlitech.com/entitlement-server-fix/)
-- [Jak zarejestrować system](https://access.redhat.com/solutions/253273)
-
-### Możliwe rozwiązanie - sprawdzić
-- Jeżeli to nie zadziała to ściągnąć repo przez wget i podłączyć lokalnie!
-- Dowiedzieć się jak pobrać takie repo 
----
-
-Zmiana enabled na 0 
-```
-vim /etc/yum.pluginconf.d/subscription-manager.conf
-```
-Wyczyszczenie dnf cache 
-```
-dnf clean all 
-```
-lub 
-```
-yum clean all 
-```
-
-Odpalenie update/dnf 
-```
-dnf update -y 
-```
-
-Komunikat powinien zniknąć 
 
 
 ## tar
