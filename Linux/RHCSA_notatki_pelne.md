@@ -138,8 +138,8 @@
 
 # Po egzaminie 2 
 ## Pytania 2
-| lp. | Ogarnięcie | Zadanie |  
-|--|--|--|
+| lp. | Ogarnięcie | link | Zadanie | 
+|--|--|--|--|
 | 1 | + | | autofs - mapowanie home directory |
 | 2 | - | | Budowanie obrazu kontenera z pliku  |
 | 3 | - | | Budowanie kontenera, kontener ma miec udostepnione foldery, dzialac przy starcie systemu jako konkretny user, home folder to /rhome, ma dzialac dla jegnego uzytkownika  |
