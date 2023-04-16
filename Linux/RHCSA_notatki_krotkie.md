@@ -1012,11 +1012,10 @@ GRUB_TIMEOUT=15
         - ```podman image list``` - listuje dostępne obrazy 
         - ```podman image rm "$nazwa_obrazu"``` - usuwa obraz 
         - ```podman image tag "$nazwa_obrazu" "$tag"``` - nadaje obrazowi tag
-
-- Budowanie obrazu 
-podman build - budowanie obrazu podman
-    - podman build -t nazwa_obrazu /ścieżka/do/pliku
-
+- **Budowanie obrazu** 
+    - ```podman build``` - budowanie obrazu podman
+        - ```podman build -t nazwa_obrazu /ścieżka/do/pliku/dockerfile .``` - kropka oznacza obecny katalog jako kontekst budowy obrazu
+            -  **Kontekst budowy obrazu** zawiera pliki, które są kopiowane do obrazu w procesie budowy, takie jak pliki Dockerfile, skrypty, pliki konfiguracyjne itp. Pliki w kontekście budowy obrazu są dostępne wewnątrz obrazu w trakcie jego budowy i mogą być kopiowane, instalowane, konfigurowane i używane w celu tworzenia warstw obrazu. 
 
 ### Podman - Operacje na kontenerach
 - **Tworzenie kontenera**
