@@ -154,7 +154,7 @@
 | 12 | + | Dodanie uzytkownika z konkretnym UUID  |
 | 13 | - | Dodanie folderu wspoldzielonego, kazdy plik ktory jest tworzony ma nalezec do grupy, uprawnienia ma miec tylko grupa  |
 | 14 | + | Chrony - ustawienie serwera |
-| 15 | - | tuned-adm - ustawienie profilu zalecanego jako defaultowy? co kolwiek to znaczy  |
+| 15 | - | tuned-adm - ustawienie profilu zalecanego jako defaultowy? co kolwiek to znaczy   - get the recommended profile for tuned-adm and set is as default|
 | 16 | - | archiwizowanie tar /usr/local jako bzip2 |
 | 17 | - | Nowo tworzeni uzytkownicy maja miec haslo wazne 20 dni, nie dzialalo z /etc/defaults/useradd |
 | 18 | - | Repo2 - Dodaj repo do serwera 2 |
@@ -263,7 +263,7 @@ ssh vivek@rh3es.nixcraft.org
 
 ## tuned-adm 
 
-
+[RH - tuned](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/performance_tuning_guide/sect-red_hat_enterprise_linux-performance_tuning_guide-performance_monitoring_tools-tuned_and_tuned_adm)
 
 
 
