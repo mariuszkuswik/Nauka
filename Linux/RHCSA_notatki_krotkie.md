@@ -23,7 +23,9 @@
 | find | Wyszukiwanie plików | [Wyszukiwanie plików](#wyszukiwanie-plików) |
 | grep | Grep | [grep](#grep) |
 | acl | acl | [acl](#acl) |
+| umask | Umask | [umask](#umask) |
 | sticky bit, sgid, suid | uprawnienia | [sticky bit, sgid, suid](#suid-sgid-sticky-bit) 
+| Userzy | Userzy ogólnie | [Userzy ogólnie](#userzy) | 
 | Userzy | Domyślne ustawienia hasła dla nowych użytkowników | [Userzy](#domyślne-ustawienia-hasła-dla-nowotworzonych-użytkowników) | 
 
 # Bash completion 
@@ -576,7 +578,7 @@ Dodanie UUID ```/dev/stratis/"$pool_name"/"$filesystem_name"```
 
 
 ## Umask 
-- Dopisać coś o login.defs i ~/.bashrc
+### TODO - Dopisać coś o login.defs i ~/.bashrc
 
 
 
