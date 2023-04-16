@@ -41,6 +41,7 @@
 ---
 -  [przed egzaminem!!!](#przed-egzaminem)
 -  [po egzaminie](#po-egzaminie) - pytania z egzaminu
+- [Po egzaminie 2](#po-egzaminie-2)
 ---
 # Zadania 
 - [chlebik](#chlebik)    
@@ -132,6 +133,68 @@
 | 14. [create-a-persistent-systemd-container-using-podman](egzamin_praktyczny_cg.md/#14-create-a-persistent-systemd-container-using-podman) | [kontenery](#kontenery) | tak, +++ | 
 | 15. [troubleshoot-selinux-issues](egzamin_praktyczny_cg.md/#15-troubleshoot-selinux-issues) | [selinux](#selinux) - man semanage-fcontext, **jest w przykładach** | + | 
 | 16. [configure-the-firewall-on-both-servers](egzamin_praktyczny_cg.md/#16-configure-the-firewall-on-both-servers) | [firewall](#firewall) | + | 
+
+
+
+# Po egzaminie 2 
+## Pytania 2
+| lp. | Ogarnięcie | Zadanie |  
+|--|--|--|
+| 1 | + | autofs - mapowanie home directory |
+| 2 | - | Budowanie obrazu kontenera z pliku  |
+| 3 | - | Budowanie kontenera, kontener ma miec udostepnione foldery, dzialac przy starcie systemu jako konkretny user, home folder to /rhome, ma dzialac dla jegnego uzytkownika  |
+| 4 | + | Usluga httpd nie dziala, ma dzialac na porcie 82 i ma miec dostep do plikow - pliki nie maja nadanego kontekstu selinux, pamietac o tym + nauczyc sie jak przypisywac porty selinux |
+| 5 |  | Problem z repo - dnf, sudo itd nie jest dostepne, nie udalo mi sie podlaczyc repo  |
+| 6 | + | Reset hasla roota - montowanie katalogu roota jako read only, tak zeby zbootowac |
+| 7 | - | Tworzenie partycji z systemem plikow ext3, montowal mi sie jako ext4 - ext2+ journal? sprawdzic |
+| 8 | | Dodanie partycji swapowej  |
+| 9 | | Dodanie stacka LVM - VG ma miec okreslona wielkosc extent, LVM ma miec wielkosc 50 extents |
+| 10 | + | Rozszerzenie istniejacego LVM bez naruszenia filesystemu |
+| 11 | | Dodanie uzytkownikow z grupami pobocznymi, jeden z uzytkownikow nie powinien moc sie logowac do shella |
+| 12 | + | Dodanie uzytkownika z konkretnym UUID  |
+| 13 | - | Dodanie folderu wspoldzielonego, kazdy plik ktory jest tworzony ma nalezec do grupy, uprawnienia ma miec tylko grupa  |
+| 14 | + | Chrony - ustawienie serwera |
+| 15 | - | tuned-adm - ustawienie profilu zalecanego jako defaultowy? co kolwiek to znaczy  |
+| 16 | - | archiwizowanie tar /usr/local jako bzip2 |
+| 17 | - | Nowo tworzeni uzytkownicy maja miec haslo wazne 20 dni, nie dzialalo z /etc/defaults/useradd |
+| 18 | - | Repo2 - Dodaj repo do serwera 2 |
+| 19 | + | Networking - ustawienie adresu ip  |
+| 20 | + | Ustawienie odpowiedniego hostname |
+| 21 | - | Zadanie w cronie - co dwie minuty ma wykonywac polecenie logrotate "testowe echo" jako jaki uzytkownik |
+| 22 | +/- | Wyszukiwanie linii w pliku z konkretnym słowem, grep ale upewnić się jak to ma być zrobione, słowa mają byc przekierowane do pliku, nie może być żadnych dodatkowych linii, słowa mają być dokładnie w tej kolejności |
+| 23 | - | Wyszukiwanie plików należących do konkretnego usera |
+
+## Objectivy 2
+OBJECTIVE: SCORE
+Manage basic networking: 100%
+Understand and use essential tools: 56%
+Operate running systems: 50%
+Configure local storage: 75%
+Create and configure file systems: 75%
+Deploy, configure and maintain systems: 62%
+Manage users and groups: 75%
+Manage security: 100%
+Manage containers: 67%
+
+# Po egzaminie 2 - opracowanie
+
+## Repo 
+
+## tar
+
+## user - domyślne ustawienia
+
+## tuned-adm 
+
+
+
+
+
+# Po egzaminie 1
+## Pytania 1
+
+
+
 
 # Notatki
 ---
@@ -1736,45 +1799,7 @@ you could also use /etc/hosts.allow
 
 
 
-# Po egzaminie 2 
-## Pytania 2
-| lp. | Ogarnięcie | Zadanie |  
-|--|--|--|
-| 1 | | autofs - mapowanie home directory |
-| 2 | | Budowanie obrazu kontenera z pliku  |
-| 3 | | Budowanie kontenera, kontener ma miec udostepnione foldery, dzialac przy starcie systemu jako konkretny user, home folder to /rhome, ma dzialac dla jegnego uzytkownika  |
-| 4 | | Usluga httpd nie dziala, ma dzialac na porcie 82 i ma miec dostep do plikow - pliki nie maja nadanego kontekstu selinux, pamietac o tym + nauczyc sie jak przypisywac porty selinux |
-| 5 | | Problem z repo - dnf, sudo itd nie jest dostepne, nie udalo mi sie podlaczyc repo  |
-| 6 | | Reset hasla roota - montowanie katalogu roota jako read only, tak zeby zbootowac |
-| 7 | | Tworzenie partycji z systemem plikow ext3, montowal mi sie jako ext4 - ext2+ journal? sprawdzic |
-| 8 | | Dodanie partycji swapowej  |
-| 9 | | Dodanie stacka LVM - VG ma miec okreslona wielkosc extent, LVM ma miec wielkosc 50 extents |
-| 10 | | Rozszerzenie istniejacego LVM bez naruszenia filesystemu |
-| 11 | | Dodanie uzytkownikow z grupami pobocznymi, jeden z uzytkownikow nie powinien moc sie logowac do shella |
-| 12 | | Dodanie uzytkownika z konkretnym UUID  |
-| 13 | | Dodanie folderu wspoldzielonego, kazdy plik ktory jest tworzony ma nalezec do grupy, uprawnienia ma miec tylko grupa  |
-| 14 | | Chrony - ustawienie serwera |
-| 15 | | tuned-adm - ustawienie profilu zalecanego jako defaultowy? co kolwiek to znaczy  |
-| 16 | | archiwizowanie tar /usr/local jako bzip2 |
-| 17 | | Nowo tworzeni uzytkownicy maja miec haslo wazne 20 dni, nie dzialalo z /etc/defaults/useradd |
-| 18 | | Repo2 - Dodaj repo do serwera 2 |
-| 19 | | Networking - ustawienie adresu ip  |
-| 20 | | Ustawienie odpowiedniego hostname |
-| 21 | | Zadanie w cronie - co dwie minuty ma wykonywac polecenie logrotate "testowe echo" jako jaki uzytkownik |
-| 22 | | Wyszukiwanie linii w pliku z konkretnym słowem, grep ale upewnić się jak to ma być zrobione, słowa mają byc przekierowane do pliku, nie może być żadnych dodatkowych linii, słowa mają być dokładnie w tej kolejności |
-| 23. | +/- | Wyszukiwanie plików należą |cych do konkretnego usera |
 
-## Objectivy 2
-OBJECTIVE: SCORE
-Manage basic networking: 100%
-Understand and use essential tools: 56%
-Operate running systems: 50%
-Configure local storage: 75%
-Create and configure file systems: 75%
-Deploy, configure and maintain systems: 62%
-Manage users and groups: 75%
-Manage security: 100%
-Manage containers: 67%
 
 # Koniec
 
