@@ -179,6 +179,32 @@ Manage containers: 67%
 # Po egzaminie 2 - opracowanie
 
 ## Repo 
+https://access.redhat.com/solutions/253273 - jak zarejestrować system
+https://sahlitech.com/entitlement-server-fix/ - odpalenie bez rejestracji
+
+### Możliwe rozwiązanie - sprawdzić
+- Jeżeli to nie zadziała to ściągnąć repo przez wget i podłączyć lokalnie!
+
+Zmiana enabled na 0 
+```
+vim /etc/yum.pluginconf.d/subscription-manager.conf
+```
+Wyczyszczenie dnf cache 
+```
+dnf clean all 
+```
+lub 
+```
+yum clean all 
+```
+
+Odpalenie update/dnf 
+```
+dnf update -y 
+```
+
+Komunikat powinien zniknąć 
+
 
 ## tar
 
