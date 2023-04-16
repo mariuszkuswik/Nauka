@@ -143,10 +143,6 @@ oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zast
 
 ## Domyślne ustawienia hasła dla nowotworzonych użytkowników!
 ### TODO - opisać dokładniej login.defs
-- ```/etc/login.defs``` - file defines the site-specific configuration for this suite. 
-    - ```PASS_MAX_DAYS``` : Maximum number of days a password may be used. If the password is older than this, a password change will be forced.
-    - ```PASS_MIN_DAYS``` : Minimum number of days allowed between password changes. Any password changes attempted sooner than this will be rejected
-    - ```PASS_WARN_AGE``` : Number of days warning given before a password expires. A zero means warning is given only upon the day of expiration, a negative value means no warning is given. If not specified, no warning will be provided.
 
 1. Zmiana wartości w pliku ```/etc/login.defs```
 ```
@@ -154,9 +150,9 @@ vi /etc/login.defs
 ```
 
 2. Setup (sample) values as follows:
-- PASS_MAX_DAYS 30 - Ważnośc hasła - maksymalny czas przez jaki może być używane
-- PASS_MIN_DAYS 1 - Minimalna ważność hasła - minimalny czas po jakim można zmienić hasło 
-- PASS_WARN_AGE 7 - 
+- ```PASS_MAX_DAYS 30``` - **Ważnośc hasła** - maksymalny czas przez jaki może być używane
+- ```PASS_MIN_DAYS 1``` - **Minimalna ważność hasła** - minimalny czas po jakim można zmienić hasło 
+- ```PASS_WARN_AGE 7``` - **Ostrzeżenie przed wygaśnięciem hasła** - liczba dni, po których użytkownik otrzymuje ostrzeżenie przed wygaśnięciem hasła
 
 3. Close and save the file.
 
@@ -466,6 +462,9 @@ Dodanie UUID ```/dev/stratis/"$pool_name"/"$filesystem_name"```
 
 5. Utwórz punkt montowania i zamontuj system plików: ...
 
+## SWAP 
+
+### TODO - tworzenie partycji swapowej - pamiętać o rodzaju partycji SWAP
 
 # Logi 
 - [Spis treści](#spis-tre%C5%9Bci)
