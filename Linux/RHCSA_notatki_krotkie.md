@@ -24,7 +24,7 @@
 | grep | Grep | [grep](#grep) |
 | acl | acl | [acl](#acl) |
 | sticky bit, sgid, suid | uprawnienia | [sticky bit, sgid, suid](#suid-sgid-sticky-bit) 
-| Userzy | Domyślne ustawienia hasła | | 
+| Userzy | Domyślne ustawienia hasła dla nowych użytkowników | [Userzy](#domyślne-ustawienia-hasła-dla-nowotworzonych-użytkowników) | 
 
 # Bash completion 
 - Instalacja 
@@ -133,7 +133,7 @@ oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zast
     firewall-cmd --reload 
     ```
 
-# User
+# Userzy
 
 ### TODO - dopisać coś o chage
 
