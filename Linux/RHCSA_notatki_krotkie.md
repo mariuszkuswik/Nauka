@@ -60,8 +60,8 @@ cd /usr/share/bash-completion
 
 # Wyszukiwanie plików
 - [Spis treści](#spis-treści)
-## Find 
 
+## Find 
 - ```find```
     - ```-type``` - typ wyszukiwanych plików 
         ```-f``` - file 
@@ -86,10 +86,7 @@ find /ścieżka/do/katalogu -user test | xargs -I{} cp {} /backup/
 ```
 
 
-
-
 ## Grep
-
 - ```grep``` 
     - ```-l``` - pokaż nazwy plików które zawierają frazę 
     - ```-A NUM``` - After - pokaż NUM linii **po** frazie
@@ -191,7 +188,6 @@ Banner /etc/ssh/sshd-banner
 6) Test your new banner (from Linux or UNIX workstation or use any other ssh client):
 
 ssh vivek@rh3es.nixcraft.org
-
 
 
 # SELinux
@@ -1017,6 +1013,11 @@ GRUB_TIMEOUT=15
         - ```podman image rm "$nazwa_obrazu"``` - usuwa obraz 
         - ```podman image tag "$nazwa_obrazu" "$tag"``` - nadaje obrazowi tag
 
+- Budowanie obrazu 
+podman build - budowanie obrazu podman
+    - podman build -t nazwa_obrazu /ścieżka/do/pliku
+
+
 ### Podman - Operacje na kontenerach
 - **Tworzenie kontenera**
     - ```podman container``` - operacje wykonywane na kontenerach     
@@ -1149,6 +1150,11 @@ podman run -d --name web_server -p 8000:8080 -v "~/web_data:/var/www/html:Z" "$c
 # Tuned profiles
 - [Spis treści](#spis-tre%C5%9Bci)
 
+### Linki
+- [RH - tuned](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/performance_tuning_guide/sect-red_hat_enterprise_linux-performance_tuning_guide-performance_monitoring_tools-tuned_and_tuned_adm)
+
+---
+### WAŻNE
 ```
 systemctl enable --now tuned
 ```
