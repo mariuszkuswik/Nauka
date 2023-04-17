@@ -158,8 +158,8 @@
 | 16 | - |  | archiwizowanie tar /usr/local jako bzip2 |
 | 17 | - | + | Nowo tworzeni uzytkownicy maja miec haslo wazne 20 dni, nie dzialalo z /etc/defaults/useradd |
 | 18 | - |  | Repo2 - Dodaj repo do serwera 2 |
-| 19 | + |  | Networking - ustawienie adresu ip  |
-| 20 | + |  | Ustawienie odpowiedniego hostname |
+| 19 | + | + | Networking - ustawienie adresu ip  |
+| 20 | + | + | Ustawienie odpowiedniego hostname |
 | 21 | - |  | Zadanie w cronie - co dwie minuty ma wykonywac polecenie logrotate "testowe echo" jako jaki uzytkownik |
 | 22 | +/- |  | Wyszukiwanie linii w pliku z konkretnym słowem, grep ale upewnić się jak to ma być zrobione, słowa mają byc przekierowane do pliku, nie może być żadnych dodatkowych linii, słowa mają być dokładnie w tej kolejności |
 | 23 | - |  | find - Wyszukiwanie plików należących do konkretnego usera |

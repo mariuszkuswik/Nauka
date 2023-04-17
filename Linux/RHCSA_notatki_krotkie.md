@@ -11,6 +11,7 @@
 | - podman - format w trakcie | podman - httpd | [Podman - httpd](#podman---httpd) | 
 | autofs | autofs - home dir | [autofs - home dirs](#automatyczne-montowanie-katalogów-domowych) | 
 | lvm-vdo | Utworzenie vdo na lvm | [Tworzenie VDO](#vdo)| 
+| swap | Swap | [Tworzenie Swap](#swap)
 | selinux | Rozwiazywanie problemow selinux | [Selinux](#selinux) |  
 | selinux - | Selinux - audit2allow | [audit2allow](#audit2allow) | 
 | chronyd - ntp | synchronizacja czasu chrony | [Synchronizacja czasu](#synchronizacja-czasu-klient-z-serwerem) | 
@@ -51,7 +52,9 @@ cd /usr/share/bash-completion
 6. chroot /sysroot
 7. passwd
 8. touch ```/.autorelabel```
+9. mount -o ro,remount
     - **WAŻNE!** - bez utworzenia ```/.autorelabel``` SELinux się rozsypie
+    - **WAŻNE!** - bez ro filesystem się rozsypie
 9. exit
 10. reboot now 
 
@@ -199,6 +202,7 @@ ssh vivek@rh3es.nixcraft.org
 
 ## Pomocne komendy
 - ```semanage boolean -l``` - **wyświetlenie opisu** wszystkich zmiennych SELinux 
+- ```man semanage-``` - **najważniejsze komendy** SELinux
 
 **Jeżeli mamy jakiś problem z selinuxem to jest duża szansa że odpowiednią komendę znajdziemy poprzez ```grep "$nazwa_usługi" /var/log/messages```**
 
@@ -241,6 +245,14 @@ ssh vivek@rh3es.nixcraft.org
 - ```semanage``` - służy do zarządzania kontekstami   
 - ```semanage fcontext``` - zarządza kontekstami plików i folderów   
 - ```restorecon -Rv``` - służy do zatwierdzenia zmian na folderach, zmiany   etykiet   
+
+## Port SELinux
+- ```semanage port -a -t http_port_t tcp 82``` - Dodanie portu 82 do kontekstu http_port_t
+- semanage port -l - wyświetlenie wszystkich kontekstów i ich portów 
+
+## Boolean SELinux 
+semanage boolean -l - wyświetlenie wszystkich 
+semanage boolean -m "$
 
 
 # Synchronizacja czasu (klient z serwerem)
@@ -356,6 +368,12 @@ tune2fs - zmiana właściwości filesystemu?
 
 ### TODO - Dodac kopiowanie filesystemu/jakis backup
 
+### ext2 i ext3 
+#### Tworzenie filesystemu ext3
+- ```mkfs.ext2``` 
+- ```tune2fs -j``` - dodanie journala do filesystemu ext2
+- Sprawdzić czy jest zainstalowany ext3? 
+
 ## LVM 
 - [Spis treści](#spis-tre%C5%9Bci)
 
@@ -468,8 +486,17 @@ Dodanie UUID ```/dev/stratis/"$pool_name"/"$filesystem_name"```
 5. Utwórz punkt montowania i zamontuj system plików: ...
 
 ## SWAP 
+### Partycja SWAP 
+- ```fdisk``` **(select "swap" type)**
+    - ```fdisk``` 
+    - ```t``` 
+    - ```19``` 
+- ```mkswap "$partycja"``` 
+- ```vim /etc/fstab``` - (UUID=123 swap swap default 0 0)
+- ```swapon -a```
 
-### TODO - tworzenie partycji swapowej - pamiętać o rodzaju partycji SWAP
+### Plik SWAP
+fallocate
 
 # Logi 
 - [Spis treści](#spis-tre%C5%9Bci)
