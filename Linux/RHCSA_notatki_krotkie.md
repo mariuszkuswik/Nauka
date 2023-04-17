@@ -27,6 +27,7 @@
 | sticky bit, sgid, suid | uprawnienia | [sticky bit, sgid, suid](#suid-sgid-sticky-bit) 
 | Userzy | Userzy ogólnie | [Userzy ogólnie](#userzy) | 
 | Userzy | Domyślne ustawienia hasła dla nowych użytkowników | [Userzy](#domyślne-ustawienia-hasła-dla-nowotworzonych-użytkowników) | 
+| Userzy | Zmiana parametrów hasła użytkownika  | [chage](#chage) |
 
 # Bash completion 
 - Instalacja 
@@ -139,12 +140,7 @@ oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zast
 
 ### TODO - dopisać coś o chage
 
-## chage 
-
-```chage -l``` - wyświetlenie informacji o userze
-
 ## Domyślne ustawienia hasła dla nowotworzonych użytkowników!
-### TODO - opisać dokładniej login.defs
 
 1. Zmiana wartości w pliku ```/etc/login.defs```
 ```
@@ -158,11 +154,18 @@ vi /etc/login.defs
 
 3. Close and save the file.
 
-## Wymuszenie zmiany hasła dla użytkownika
+## chage 
+- ```-d, --lastday DAYS``` - Liczba dni od ostatniej zmiany hasła, po której konto zostanie zablokowane.
+    - Wymuszenie **zmiany hasła** dla użytkownika
+    ```
+    chage -d 0 user 
+    ```
+- ```-E, --expiredate DATE``` - **Data wygaśnięcia konta** (np. "YYYY-MM-DD").
+- ```-m, --mindays DAYS``` - **Minimalny okres ważności hasła** (liczba dni między zmianami).
+- ```-M, --maxdays DAYS``` - **Maksymalny okres ważności hasła** (liczba dni przed wygaśnięciem).
+- ```-I, --inactive DAYS``` - **Liczba dni bezczynności**, po której konto zostanie zablokowane.
+- ```-l, --list``` - **Wyświetla aktualne ustawienia dotyczące haseł** dla danego konta.
 
-```
-chage -d 0 user 
-```
 
 # ssh
 ## Dodanie login bannru przy logowaniu ssh 
