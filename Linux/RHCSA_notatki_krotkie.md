@@ -143,6 +143,10 @@ oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zast
 
 ### TODO - dopisać coś o chage
 
+## UID 
+- ```useradd -u <uid>  username``` - utworzenie usera z konkretnym uid
+- ```usermod -u <uid> username``` - zmiana uid dla usera
+
 ## Domyślne ustawienia hasła dla nowotworzonych użytkowników!
 
 1. Zmiana wartości w pliku ```/etc/login.defs```
@@ -349,7 +353,7 @@ xfs_admin - zmiana labelki?
 - Dodać zmianę labelki 
 - sprawdzić co jeszcze możmna dopisać
 
-### ext4
+### ext2, ext3, ext4
 - ```e2fsck``` - srawdzenie filesystemu 
 - ```resize2fs``` - zmiana wielkości filesystemu
 - ```tune2fs``` - zmiana właściwości filesystemu 
@@ -359,7 +363,7 @@ xfs_admin - zmiana labelki?
 2. Sprawdzenie filesystemu
 3. 
 - ```resize2fs /dev/vdb2``` - filesystem zajmie cala dostepna powierzchnie partycji 
----- Dopisać zmianę filesystemu na określoną wielkość 
+### TODO ---- Dopisać zmianę filesystemu na określoną wielkość 
 
 #### ext4 - zmiana właściwości filesystemu 
 - Dodać zmianę labelki 
@@ -370,9 +374,24 @@ tune2fs - zmiana właściwości filesystemu?
 
 ### ext2 i ext3 
 #### Tworzenie filesystemu ext3
-- ```mkfs.ext2``` 
-- ```tune2fs -j``` - dodanie journala do filesystemu ext2
-- Sprawdzić czy jest zainstalowany ext3? 
+- [RH - ext3 filesystem](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/system_administration_guide/the_ext3_file_system#The_ext3_File_System-Features_of_ext3)
+---
+
+1. Utworzenie filesystemu ext2
+```
+mkfs.ext2
+``` 
+
+2. Zmiana labelki
+```
+e2label device [ nazwa labelki ]
+```
+
+3. Dodanie journala do filesystemu ext2
+```
+tune2fs -j <file_system>
+```
+
 
 ## LVM 
 - [Spis treści](#spis-tre%C5%9Bci)
@@ -542,9 +561,14 @@ fallocate
 
 | Bit | Nadanie | Opis |
 |--|--|--|
-| SUID | 4 lub u+s | buser którzy tworzy plik jest jego właścicielem |
+| SUID | 4 lub u+s | user którzy tworzy plik jest jego właścicielem |
 | SGID | 2 lub g+s | grupa która jest właścicielem katalogu jest właścicielem pliku|
 | Sticky bit | 1 lub o+t | tylko user może usunąć plik |
+
+### Utworzenie folderu współdzielonego
+
+
+
 
 ## ACL 
 - [Spis treści](#spis-tre%C5%9Bci)

@@ -146,12 +146,12 @@
 | 4 | +  | - | Usluga httpd nie dziala, ma dzialac na porcie 82 i ma miec dostep do plikow - pliki nie maja nadanego kontekstu selinux, pamietac o tym + nauczyc sie jak przypisywac porty selinux |
 | 5 | - | + |  Problem z repo - dnf, sudo itd nie jest dostepne, nie udalo mi sie podlaczyc repo  |
 | 6 | + | + | Reset hasla roota - montowanie katalogu roota jako read only, tak zeby zbootowac |
-| 7 | - | | Tworzenie partycji z systemem plikow ext3, montowal mi sie jako ext4 - ext2+ journal? sprawdzic |
-| 8 | - |  | Dodanie partycji swapowej  |
+| 7 | + | + | Tworzenie partycji z systemem plikow ext3, montowal mi sie jako ext4 - ext2+ journal? sprawdzic |
+| 8 | - | + | Dodanie partycji swapowej  |
 | 9 | - |  | Dodanie stacka LVM - VG ma miec okreslona wielkosc extent, LVM ma miec wielkosc 50 extents |
 | 10 | + |  | Rozszerzenie istniejacego LVM bez naruszenia filesystemu |
 | 11 | | |  Dodanie uzytkownikow z grupami pobocznymi, jeden z uzytkownikow nie powinien moc sie logowac do shella |
-| 12 | + |  | Dodanie uzytkownika z konkretnym UUID  |
+| 12 | + | + | Dodanie uzytkownika z konkretnym UUID |
 | 13 | - |  | Dodanie folderu wspoldzielonego, kazdy plik ktory jest tworzony ma nalezec do grupy, uprawnienia ma miec tylko grupa  |
 | 14 | + | +  | Chrony - ustawienie serwera |
 | 15 | - |  | tuned-adm - ustawienie profilu zalecanego jako defaultowy? co kolwiek to znaczy   - get the recommended profile for tuned-adm and set is as default|
