@@ -259,7 +259,7 @@ ssh vivek@rh3es.nixcraft.org
 - ```semanage boolean -m "$nazwa_booli"``` - zmiana 
 
 ## HTTPD - ustawienie customowej konfiguracji 
-[RH - ](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/using_selinux/configuring-selinux-for-applications-and-services-with-non-standard-configurations_using-selinux#customizing-the-selinux-policy-for-the-apache-http-server-in-a-non-standard-configuration_configuring-selinux-for-applications-and-services-with-non-standard-configurations)
+- [RH - Configuring SELinux for applications and services with non-standard configurations](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/using_selinux/configuring-selinux-for-applications-and-services-with-non-standard-configurations_using-selinux#customizing-the-selinux-policy-for-the-apache-http-server-in-a-non-standard-configuration_configuring-selinux-for-applications-and-services-with-non-standard-configurations)
 ---
 
 1. Start the httpd service and check the status
@@ -269,12 +269,26 @@ systemctl status httpd
 ```
 
 2. The SELinux policy assumes that httpd runs on port 80
-
+```
 semanage port -l | grep http
+```
 
 3. Change the SELinux type of port 3131 to match port 80
+```
+semanage port -a -t http_port_t -p tcp 3131
+```
 
+4. Start httpd again
+```
+systemctl start httpd
+```
 
+5. Sprawdzenie czy działa
+```
+wget localhost:3131/index.html
+```
+
+- **Jeżeli nadal nie działa**: 
 
 
 # Synchronizacja czasu (klient z serwerem)
