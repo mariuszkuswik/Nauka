@@ -1232,7 +1232,6 @@ systemctl enable --now tuned
     - then at 2023-04-19 11:32:00
     then at 2023-04-19 11:34:00
 
-
 - Dwie minuty **po każdej pełnej godzinie**
     ```
     2  * * * *
