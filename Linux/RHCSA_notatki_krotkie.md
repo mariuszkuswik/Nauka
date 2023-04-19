@@ -1187,6 +1187,14 @@ SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA
 ### Inspecting images - skopeo
 - ```skopeo``` - used to inspect, copy, delete and sign container images
 
+- [RH - podman, skopeo, kopiowanie kontenerów](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/managing_containers/finding_running_and_building_containers_with_podman_skopeo_and_buildah#inspecting_container_images_with_skopeo)
+
+
+
+skopeo: The skopeo command is a tool for copying containers and images between different types of container storage. It can copy containers from one container registry to another. It can copy images to and from a host, as well as to other container environments and registries. Skopeo can inspect images from container image registries, get images and image layers, and use signatures to create and verify images.
+
+
+
 ## Podman - rsyslog
 - [Spis treści](#spis-treści)
 ---
