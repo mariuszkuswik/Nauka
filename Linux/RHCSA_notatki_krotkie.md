@@ -441,6 +441,7 @@ tune2fs -j <file_system>
 
 ### Przydatne
 - ```/dev/mapper/"$group_name"-"$lv_name"``` - ścieżka do utworzonego lvm
+- ```lvresize -r -L+100M /vg/lv1``` - resize razem z filesystemem
 
 ### Opisy skrócone
 - ```pvs``` - physical volume 
