@@ -1185,9 +1185,10 @@ SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA
 
 ## Podman - Obrazy kontenerów
 ### Inspecting images - skopeo
-- ```skopeo``` - used to inspect, copy, delete and sign container images
-
 - [RH - podman, skopeo, kopiowanie kontenerów](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/managing_containers/finding_running_and_building_containers_with_podman_skopeo_and_buildah#inspecting_container_images_with_skopeo)
+---
+- ```skopeo``` - used to inspect, copy, delete and sign container images
+    - skopeo copy "$registry" "$container" - kopiowanie kontenera z rejestru
 
 
 
