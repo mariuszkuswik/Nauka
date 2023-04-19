@@ -9,6 +9,7 @@
 | podman | podman login + rejestry | [RH - Podman rejestry](https://www.redhat.com/sysadmin/manage-container-registries) |
 | podman | podman - rsyslog | [Podman - rsyslog](#podman---rsyslog) | 
 | - podman - format w trakcie | podman - httpd | [Podman - httpd](#podman---httpd) | 
+| podman | podman - obrazy kontenerów | [Podman - obrazy kontenerów](#podman---obrazy-kontenerów) |
 | autofs | autofs - home dir | [autofs - home dirs](#automatyczne-montowanie-katalogów-domowych) | 
 | lvm-vdo | Utworzenie vdo na lvm | [Tworzenie VDO](#vdo)| 
 | swap | Swap | [Tworzenie Swap](#swap)
@@ -1184,15 +1185,11 @@ SRPAWDZIĆ TO MOŻNA PO PODŁĄCZENIU DO TERMINALA KONTENERA I WYDANIU POLECENIA
 
 
 ## Podman - Obrazy kontenerów
-### Inspecting images - skopeo
+### Wyciaganie informacji o obrazach, kopiowanie kontenerow
 - [RH - podman, skopeo, kopiowanie kontenerów](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/managing_containers/finding_running_and_building_containers_with_podman_skopeo_and_buildah#inspecting_container_images_with_skopeo)
 ---
 - ```skopeo``` - used to inspect, copy, delete and sign container images
-    - skopeo copy "$registry" "$container" - kopiowanie kontenera z rejestru
-
-
-
-skopeo: The skopeo command is a tool for copying containers and images between different types of container storage. It can copy containers from one container registry to another. It can copy images to and from a host, as well as to other container environments and registries. Skopeo can inspect images from container image registries, get images and image layers, and use signatures to create and verify images.
+    - ```skopeo copy docker://localhost:5000/myrhel7 dir:/root/test/``` - przykład kopiowania kontenera ze zdalnego rejestru do lokalnego folderu
 
 
 
