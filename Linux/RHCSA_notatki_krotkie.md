@@ -142,9 +142,6 @@ oraz o **przeładowaniu firewalla**, w przyciwnym razie zmiany nie zostaną zast
     ```
 
 # Userzy
-
-### TODO - dopisać coś o chage
-
 ## UID 
 - ```useradd -u <uid>  username``` - utworzenie usera z konkretnym uid
 - ```usermod -u <uid> username``` - zmiana uid dla usera
@@ -174,7 +171,6 @@ vi /etc/login.defs
 - ```-M, --maxdays DAYS``` - **Maksymalny okres ważności hasła** (liczba dni przed wygaśnięciem).
 - ```-I, --inactive DAYS``` - **Liczba dni bezczynności**, po której konto zostanie zablokowane.
 - ```-l, --list``` - **Wyświetla aktualne ustawienia dotyczące haseł** dla danego konta.
-
 
 # ssh
 ## Dodanie login bannru przy logowaniu ssh 
@@ -384,17 +380,11 @@ File mapping | filefrag | xfs_bmap
 ### xfs 
 - [RH - Getting started with XFS](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_file_systems/assembly_getting-started-with-xfs_managing-file-systems)
 
-### TODO - dopisać coś
 #### xfs - rozszerzanie filesystemu
 - ```xfs_growfs``` - rozszerzenie filesystemu 
-    - 
 
 #### xfs - zmiana właściwości filesystemu 
-- Zmiana labelki 
-xfs_admin - zmiana labelki? 
-
-- Dodać zmianę labelki 
-- sprawdzić co jeszcze możmna dopisać
+- ```xfs_admin``` - zmiana labelki   
 
 ### ext2, ext3, ext4
 - ```e2fsck``` - srawdzenie filesystemu 
@@ -404,16 +394,13 @@ xfs_admin - zmiana labelki?
 #### ext4 - rozszerzanie filesystemu
 1. Umount filesystemu
 2. Sprawdzenie filesystemu
-3. 
-- ```resize2fs /dev/vdb2``` - filesystem zajmie cala dostepna powierzchnie partycji 
-### TODO ---- Dopisać zmianę filesystemu na określoną wielkość 
+3. Zmiana wielkości
+    - ```resize2fs /dev/vdb2 [size]``` - filesystem zajmie cala dostepna powierzchnie partycji 
 
 #### ext4 - zmiana właściwości filesystemu 
 - Dodać zmianę labelki 
 tune2fs - zmiana właściwości filesystemu? 
 - sprawdzić co jeszcze możmna dopisać
-
-### TODO - Dodac kopiowanie filesystemu/jakis backup
 
 ### ext2 i ext3 
 #### Tworzenie filesystemu ext3
@@ -577,8 +564,6 @@ fallocate
     journalctl -u avahi-daemon.service
     ```
 - ```/var/log/messages```
-
-### #TODO - opisać jakoś 
 
 ## Ustawienie stałego journalctl 
 1. Wejście w ```/etc/systemd/journald.conf```
@@ -817,15 +802,9 @@ np.
 - [Dodanie nowego repozytorium](#dodanie-nowego-repozytorium)
 
 ## Repo
-### TODO - ogarnąć 
 - [Odpalenie bez rejestracji](https://sahlitech.com/entitlement-server-fix/)
 - [RH - Jak odpalić repo bez restejstracji](https://access.redhat.com/solutions/265523)
 - [RH - Jak zarejestrować system](https://access.redhat.com/solutions/253273)
-
-### Możliwe rozwiązanie - sprawdzić
-- Jeżeli to nie zadziała to ściągnąć repo przez wget i podłączyć lokalnie!
-### TODO - ogarnąć
-- Dowiedzieć się jak pobrać takie repo 
 ---
 
 1. W pliku  ```/etc/yum.pluginconf.d/subscription-manager.conf``` zmiana enabled na 0 
@@ -975,7 +954,7 @@ $ yum module list module-name
 # Archiwizowanie 
 - [Spis treści](#spis-tre%C5%9Bci)
 
-### #TODO - do uzupełnienia
+### #TODO - do uzupełnienia - dodać do spisu treści
 - Jak tworzyć inne typy archiwów niż gzip 
 - Jak dodać coś do istniejącego archiwum 
 
@@ -988,17 +967,24 @@ $ yum module list module-name
     - ```t``` - wylisowanie plików archiwum 
     - ```x``` - extract 
     - ```u``` - update files that are newer 
+    - ```j``` - bzip2 
 
-### przyklady
+### Przyklady gzip
 - ```tar -cvzf "$plik_archiwum" "$folder_do_skompresowania"``` - tworzenie nowego gzipowego archiwum 
 - ```tar -tvzf "$plik_archiwum" "$folder_do_skompresowania"``` - wyświetlenie list plików w gzipowym archiwum 
 - ```tar -xvzf "$plik_archiwum" "$folder_do_skompresowania"``` - wypakowanie gzipowego archiwum
+
+### przyklady bzip2 
+
+
+
+
+
 
 ### gzip
 
 ### bzip
 
-### todo - cos jeszcze?
 
 # Swap
 - [Spis treści](#spis-tre%C5%9Bci)
@@ -1251,7 +1237,7 @@ podman run -d --name web_server -p 8000:8080 -v "~/web_data:/var/www/html:Z" "$c
 ```  
 3. ```podman ps -a``` - wyswietlenie kontenerow ktore dzialaja
 4. ```curl 127.0.0.1:8000``` / ```curl http://127.0.0.1:8000/text.txt```
-5. ```podman generate systemd --name web_server --files --new``` - ### TODO - sprawdzic opcje
+5. ```podman generate systemd --name web_server --files --new``` 
 6. cp plik do katalogu
 6. podman stop web_server 
 7. podman rm web_server 
