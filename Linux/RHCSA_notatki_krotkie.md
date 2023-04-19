@@ -1219,4 +1219,27 @@ systemctl enable --now tuned
     - ```tuned-adm profile "$profile_name1" "$profile_name2"``` - Switches  to  the given profile. If more than one profile is given, the profiles are merged
 
 
+# Cron 
+- ```man 5 crontab``` - pomoc dotycząca crontaba 
+---
+- **Co dwie minuty** 
+    ```
+    */2 * * * *
+    ``` 
+    - next at 2023-04-19 11:26:00
+    - then at 2023-04-19 11:28:00
+    - then at 2023-04-19 11:30:00
+    - then at 2023-04-19 11:32:00
+    then at 2023-04-19 11:34:00
+
+
+- Dwie minuty **po każdej pełnej godzinie**
+    ```
+    2  * * * *
+    ```
+    - next at 2023-04-19 11:02:00  
+    - then at 2023-04-19 12:02:00  
+    - then at 2023-04-19 13:02:00   
+    - then at 2023-04-19 14:02:00  
+    - then at 2023-04-19 15:02:00  
 
