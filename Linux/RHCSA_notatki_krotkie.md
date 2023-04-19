@@ -252,11 +252,29 @@ ssh vivek@rh3es.nixcraft.org
 
 ## Port SELinux
 - ```semanage port -a -t http_port_t tcp 82``` - Dodanie portu 82 do kontekstu http_port_t
-- semanage port -l - wyświetlenie wszystkich kontekstów i ich portów 
+- ```semanage port -l``` - wyświetlenie wszystkich kontekstów i ich portów 
 
 ## Boolean SELinux 
-semanage boolean -l - wyświetlenie wszystkich 
-semanage boolean -m "$
+- ```semanage boolean -l``` - wyświetlenie wszystkich 
+- ```semanage boolean -m "$nazwa_booli"``` - zmiana 
+
+## HTTPD - ustawienie customowej konfiguracji 
+[RH - ](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/using_selinux/configuring-selinux-for-applications-and-services-with-non-standard-configurations_using-selinux#customizing-the-selinux-policy-for-the-apache-http-server-in-a-non-standard-configuration_configuring-selinux-for-applications-and-services-with-non-standard-configurations)
+---
+
+1. Start the httpd service and check the status
+```
+systemctl start httpd 
+systemctl status httpd
+```
+
+2. The SELinux policy assumes that httpd runs on port 80
+
+semanage port -l | grep http
+
+3. Change the SELinux type of port 3131 to match port 80
+
+
 
 
 # Synchronizacja czasu (klient z serwerem)
@@ -773,8 +791,9 @@ np.
 
 ## Repo
 ### TODO - ogarnąć 
-- [odpalenie bez rejestracji](https://sahlitech.com/entitlement-server-fix/)
-- [Jak zarejestrować system](https://access.redhat.com/solutions/253273)
+- [Odpalenie bez rejestracji](https://sahlitech.com/entitlement-server-fix/)
+- [RH - Jak odpalić repo bez restejstracji](https://access.redhat.com/solutions/265523)
+- [RH - Jak zarejestrować system](https://access.redhat.com/solutions/253273)
 
 ### Możliwe rozwiązanie - sprawdzić
 - Jeżeli to nie zadziała to ściągnąć repo przez wget i podłączyć lokalnie!
@@ -817,13 +836,37 @@ dnf update -y
 
 
 ### Dodanie nowego repozytorium
+- [Odpalenie bez rejestracji](https://sahlitech.com/entitlement-server-fix/)
+- [RH - Jak odpalić repo bez restejstracji](https://access.redhat.com/solutions/265523)
+---
+- **WAŻNE!!!** - Wyłączenie managera subckrypcji
+```
+subscription-manager config --rhsm.manage_repos=0
+```
+
+1. Open the “subscription-manager.conf” file
+```
+vim /etc/yum/pluginconf.d/subscription-manager.conf
+```
+ 
+2. Inside the “subscription-manager.conf” file change enabled to 0 and save the file
+```
+enabled=0
+``` 
+ 
+3. Lastly issue the “yum clean all” command
+```
+yum clean all
+``` 
+
+
 1. Dodajemy plik konfiguracyjny o nazwie repozytorium 
 
 ```bash
 [nazwa_repo]
 name="$nazwa_repo"
 
-# https://link lub file:///plik dla plików lokalnych
+# "$repo_link" = https://link lub file:///plik dla plików lokalnych
 baseurl="$repo_link"
 
 # Czy sprawdzać klucz gpg - 0 lub 1 
@@ -831,7 +874,7 @@ baseurl="$repo_link"
 gpgcheck="no" 
 gpgkey="$gpg_path"
 sslverify=no
-sslke
+sslke #?
 ```
 
 
