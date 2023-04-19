@@ -14,6 +14,7 @@
 | swap | Swap | [Tworzenie Swap](#swap)
 | selinux | Rozwiazywanie problemow selinux | [Selinux](#selinux) |  
 | selinux - | Selinux - audit2allow | [audit2allow](#audit2allow) | 
+| selinux | Selinux - problem z usluga httpd | [Selinux - httpd](#httpd---ustawienie-customowej-konfiguracji) |
 | chronyd - ntp | synchronizacja czasu chrony | [Synchronizacja czasu](#synchronizacja-czasu-klient-z-serwerem) | 
 | tuned | tuned | [tuned](#tuned-profiles) | 
 | repo | dodanie repo | [Dodawanie nowego repo](#dodanie-nowego-repozytorium) |
@@ -289,7 +290,16 @@ wget localhost:3131/index.html
 ```
 
 - **Jeżeli nadal nie działa**: 
+6. Sealert - znalezienie czemu nie działa
+```
+sealert -l "*"
+```
 
+7. Przypisanie /var/test_www takiego samego kontekstu jak /var/www
+```
+semanage fcontext -a -e /var/www /var/test_www
+restorecon -Rv /var
+```
 
 # Synchronizacja czasu (klient z serwerem)
 - [Spis treści](#spis-tre%C5%9Bci)
@@ -443,6 +453,7 @@ tune2fs -j <file_system>
 
 - ```pvcreate```
 - ```vgcreate```
+    - ```-s``` - **wielkość extent** 
 - ```lvcreate``` 
     - ```-l``` - **liczba extent** z której chcemy utworzyć lvm (wielkość extent jest ustawiony przy volume grupie)
 

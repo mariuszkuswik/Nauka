@@ -141,28 +141,28 @@
 | lp. | Ogarnięcie | Opisane? | Zadanie | 
 |--|--|--|--|
 | 1 | + | + | autofs - mapowanie home directory  home folder to /rhome, ma dzialac dla jegnego uzytkownika|
-| 2 | - | + | Budowanie obrazu kontenera z pliku |
+| 2 | - | - | Budowanie obrazu kontenera z pliku |
 | 3 | + | + | Budowanie kontenera, kontener ma miec udostepnione foldery, dzialac przy starcie systemu jako konkretny user,  |
-| 4 | +  | - | Usluga httpd nie dziala, ma dzialac na porcie 82 i ma miec dostep do plikow - pliki nie maja nadanego kontekstu selinux, pamietac o tym + nauczyc sie jak przypisywac porty selinux |
+| 4 | +  | + | Usluga httpd nie dziala, ma dzialac na porcie 82 i ma miec dostep do plikow - pliki nie maja nadanego kontekstu selinux, pamietac o tym + nauczyc sie jak przypisywac porty selinux |
 | 5 | + | + |  Problem z repo - dnf, sudo itd nie jest dostepne, nie udalo mi sie podlaczyc repo  |
 | 6 | + | + | Reset hasla roota - montowanie katalogu roota jako read only, tak zeby zbootowac |
 | 7 | + | + | Tworzenie partycji z systemem plikow ext3, montowal mi sie jako ext4 - ext2+ journal? sprawdzic |
 | 8 | - | + | Dodanie partycji swapowej  |
-| 9 | - |  | Dodanie stacka LVM - VG ma miec okreslona wielkosc extent, LVM ma miec wielkosc 50 extents |
-| 10 | + |  | Rozszerzenie istniejacego LVM bez naruszenia filesystemu |
-| 11 | | |  Dodanie uzytkownikow z grupami pobocznymi, jeden z uzytkownikow nie powinien moc sie logowac do shella |
+| 9 | + | + | Dodanie stacka LVM - VG ma miec okreslona wielkosc extent, LVM ma miec wielkosc 50 extents |
+| 10 | + | - | Rozszerzenie istniejacego LVM bez naruszenia filesystemu |
+| 11 | + | - | Dodanie uzytkownikow z grupami pobocznymi, jeden z uzytkownikow nie powinien moc sie logowac do shella |
 | 12 | + | + | Dodanie uzytkownika z konkretnym UUID |
 | 13 | - |  | Dodanie folderu wspoldzielonego, kazdy plik ktory jest tworzony ma nalezec do grupy, uprawnienia ma miec tylko grupa  |
-| 14 | + | +  | Chrony - ustawienie serwera |
+| 14 | + | + | Chrony - ustawienie serwera |
 | 15 | + | + | tuned-adm - ustawienie profilu zalecanego jako defaultowy? co kolwiek to znaczy   - get the recommended profile for tuned-adm and set is as default|
 | 16 | - |  | archiwizowanie tar /usr/local jako bzip2 |
 | 17 | - | + | Nowo tworzeni uzytkownicy maja miec haslo wazne 20 dni, nie dzialalo z /etc/defaults/useradd |
-| 18 | - |  | Repo2 - Dodaj repo do serwera 2 |
+| 18 | + | + | Repo2 - Dodaj repo do serwera 2 |
 | 19 | + | + | Networking - ustawienie adresu ip  |
 | 20 | + | + | Ustawienie odpowiedniego hostname |
 | 21 | + | + | Zadanie w cronie - co dwie minuty ma wykonywac polecenie logrotate "testowe echo" jako jaki uzytkownik |
 | 22 | +/- |  | Wyszukiwanie linii w pliku z konkretnym słowem, grep ale upewnić się jak to ma być zrobione, słowa mają byc przekierowane do pliku, nie może być żadnych dodatkowych linii, słowa mają być dokładnie w tej kolejności |
-| 23 | - |  | find - Wyszukiwanie plików należących do konkretnego usera |
+| 23 | + | + | find - Wyszukiwanie plików należących do konkretnego usera |
 
 ## Objectivy 2
 OBJECTIVE: SCORE
