@@ -144,7 +144,7 @@
 | 2 | - | + | Budowanie obrazu kontenera z pliku |
 | 3 | + | + | Budowanie kontenera, kontener ma miec udostepnione foldery, dzialac przy starcie systemu jako konkretny user,  |
 | 4 | +  | - | Usluga httpd nie dziala, ma dzialac na porcie 82 i ma miec dostep do plikow - pliki nie maja nadanego kontekstu selinux, pamietac o tym + nauczyc sie jak przypisywac porty selinux |
-| 5 | - | + |  Problem z repo - dnf, sudo itd nie jest dostepne, nie udalo mi sie podlaczyc repo  |
+| 5 | + | + |  Problem z repo - dnf, sudo itd nie jest dostepne, nie udalo mi sie podlaczyc repo  |
 | 6 | + | + | Reset hasla roota - montowanie katalogu roota jako read only, tak zeby zbootowac |
 | 7 | + | + | Tworzenie partycji z systemem plikow ext3, montowal mi sie jako ext4 - ext2+ journal? sprawdzic |
 | 8 | - | + | Dodanie partycji swapowej  |

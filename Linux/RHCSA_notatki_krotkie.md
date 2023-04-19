@@ -844,12 +844,12 @@ dnf update -y
 subscription-manager config --rhsm.manage_repos=0
 ```
 
-1. Open the “subscription-manager.conf” file
+1. Otwarcie pliku “subscription-manager.conf” 
 ```
 vim /etc/yum/pluginconf.d/subscription-manager.conf
 ```
  
-2. Inside the “subscription-manager.conf” file change enabled to 0 and save the file
+2. Zmiana opcji enabled na 0
 ```
 enabled=0
 ``` 
@@ -859,8 +859,7 @@ enabled=0
 yum clean all
 ``` 
 
-
-1. Dodajemy plik konfiguracyjny o nazwie repozytorium 
+4. Dodajemy plik konfiguracyjny o nazwie repozytorium 
 
 ```bash
 [nazwa_repo]
@@ -876,7 +875,6 @@ gpgkey="$gpg_path"
 sslverify=no
 sslke #?
 ```
-
 
 ## Dnf
 ### Podstawowe operacje
