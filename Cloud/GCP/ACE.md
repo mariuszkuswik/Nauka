@@ -1,4 +1,4 @@
-# strona 58
+# strona 59
 
 
 # Rozdzial 1 - Exam Essentials
