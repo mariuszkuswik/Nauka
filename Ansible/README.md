@@ -1,16 +1,36 @@
  
 # Spis treści
 
+# Strona 91
+
 [RH - How to use YAML nesting, lists, and comments in Ansible playbooks](https://www.redhat.com/sysadmin/yaml-nesting-lists-comments-ansible)
 
 1. [Grupowanie](#grupowanie)
 - [Koniec](#Koniec)
+
+# CONFIGURING MANAGED HOSTS
+## Wymagania dla zdalnych hostów
+1. systemctl status sshd - sshd musi być włączony 
+2. rpm -qa | grep python - python musi być zainstalowany 
+3. firewall-cmd --list-all - sshd musi być dodany
+
+# CONFIGURING THE ANSIBLE USER
+
+While managing an environment with Ansible, you need a dedicated user account. 
+
+### Exercise 2-6 Setting Up SSH Key-Based User Authentication
+Na egzaminie 
+
+## Configuring sudo for the Ansible User
+
 
 
 # Pliki ini  
 [Spis treści](#spis-treści)
 
 Pliki konfiguracyjne ini - zawierają informacje na temat maszyn na których chcemy stosowac komendy/ustawienia?
+
+
 
 ## Grupy 
 
