@@ -4,7 +4,7 @@
 # Serial
 ozark
 
-# Strona 126
+# Strona 135
 
 [RH - How to use YAML nesting, lists, and comments in Ansible playbooks](https://www.redhat.com/sysadmin/yaml-nesting-lists-comments-ansible)
 
@@ -211,6 +211,26 @@ Config to miejsce dla domyślnych opcji
 
 
 # Using Ad Hoc Commands
+
+
+Sample ad-hoc command
+
+```ansible all -m user -a "name=lisa"``` - This command contains a few ingredients. To start with,
+there is the ansible command, which is the command
+for running ad hoc commands. Next, you need to specify
+on which hosts you want to run the ad hoc commands,
+which is accomplished by the all part of the command.
+The third element refers to the module that you want to
+run. A module is a script that is executed by Ansible to
+perform a specific task. In the sample command shown,
+the -m option is used to call the module, and the
+specific module in this example is user. Finally, you
+need to provide arguments to the module by using the -
+a option. In an ad hoc command, all arguments are
+provided between double quotes. In this case there is
+just one argument, but if there are many arguments, all
+of them need to be included between double quotes.
+
 
 
 
