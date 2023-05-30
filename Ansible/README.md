@@ -1,11 +1,10 @@
  
 # Spis treści
 
-
+# Serial
 ozark
 
-
-# Strona 111
+# Strona 126
 
 [RH - How to use YAML nesting, lists, and comments in Ansible playbooks](https://www.redhat.com/sysadmin/yaml-nesting-lists-comments-ansible)
 
@@ -26,7 +25,6 @@ While managing an environment with Ansible, you need a dedicated user account.
 Na egzaminie 
 
 ## Configuring sudo for the Ansible User
-
 
 
 # CONFIGURING STATIC INVENTORY
@@ -91,10 +89,51 @@ example you also see the group servers that address all
 hosts in the group [web] as well as the [db] group.
 
 
+1. Type ansible all --list-hosts. You get a failure
+message because the ansible command does
+not find any inventory containing hosts.
+4. Type ansible -i inventory all --list-hosts.
+Now you see a list of all hosts in inventory.
+5. Type ansible -i inventory ungrouped --listhosts. This command shows all hosts that are
+not a member of any group.
+6. Use ansible-inventory -i inventory --
+graph. This command shows a hierarchical
+overview of inventory, including information
+about which host is a member of which group.
+7. Use ansible-inventory -i inventory --list.
+This command shows the contents of the
+inventory represented in JSON format.
+
+## Specifying Host Variables
+
+**In older versions of Ansible**, the inventory file was also used to define variables for specific hosts.   
+**This behavior is deprecated and should not be used anymore.**
+
+- Sample Inventory with Variables
+```
+[win]
+windows.example.com
+
+[win:vars]
+ansible_user=ansible
+ansible_password=@nsible123
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore
+```
+
+As you can see, the variables are set at a group level, using [groupname:vars]. You shouldn’t use this approach anymore, though. 
+**Variables in current versions of Ansible should be set using the host_vars and group_vars directories**
+
+# WORKING WITH DYNAMIC INVENTORY
+
+Można tworzyć skrypty do automatycznego tworzenia plików ini, nic specjalnego, zwykłe skrypty, 
+są gotowce na githubie
 
 
 
+# MANAGING SETTINGS IN ANSIBLE.CFG
 
+- ```/etc/ansible/ansible.cfg``` - główny config
 
 
 
@@ -157,13 +196,21 @@ W powyższym przykładzie ```canada``` i ```usa``` są podrupami dla ```north_am
 
 # Ansible config 
 
-```/etc/ansible/hosts``` - domyślny plik dla wskazania hostów 
-```/etc/ansible/ansible.cfg``` - config dla ansible
+- ```/etc/ansible/hosts``` - domyślny plik dla wskazania hostów 
+- ```/etc/ansible/ansible.cfg``` - config dla ansible
 
-```ansible --version``` - wyświetla który config jest obecnie używany 
+- Wyświetlenie obecnego configu 
+    - ```ansible --version``` - wyświetla który config jest obecnie używany 
 
-```ANSIBLE_CONFIG``` - zmienna śrowowiskowa do której można przypisać nowy config
-```export ANSIBLE_CONFIG=/ansible/ansible.cfg```
+- Plik ansible Config 
+    - ```ANSIBLE_CONFIG``` - zmienna śrowowiskowa do której można przypisać nowy config
+        - np. ```export ANSIBLE_CONFIG=/ansible/ansible.cfg```
+
+Rzeczy zapisane w configu ansible mogą zostać zastąpione w playbooku!
+Config to miejsce dla domyślnych opcji
+
+
+# Using Ad Hoc Commands
 
 
 
