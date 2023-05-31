@@ -4,7 +4,7 @@
 # Serial
 ozark
 
-# Strona 135
+# Strona 139
 
 [RH - How to use YAML nesting, lists, and comments in Ansible playbooks](https://www.redhat.com/sysadmin/yaml-nesting-lists-comments-ansible)
 
@@ -232,6 +232,18 @@ just one argument, but if there are many arguments, all
 of them need to be included between double quotes.
 
 
+# WORKING WITH MODULES
+
+## Essential Modules
+
+
+- command
+- shell
+- raw - runs commands directly on top of SSH without using Python
+- copy
+- yum
+- service
+- ping
 
 
 
