@@ -247,5 +247,27 @@ of them need to be included between double quotes.
 
 
 
+---
+[Eurolinux role](https://pl.euro-linux.com/blog/ansible-w-eurolinuxie-czesc-piata-role/)
+
+- **Rola** - to zbiór zadań (tasks), uchwytów (handlers), plików (files), metainformacji (meta), szablonów (templates) i zmiennych (vars).
+
+
+Stworzenie odpowiedniego drzewa folderów ręcznie
+```mkdir ­p roles/web_server/{files,handlers,meta,templates,tasks,vars}```
+
+
+
+
+```ansible-galaxy init web_server``` - stworzenie odpowiedniego drzewa katalogów za pomocą angible-galaxy
+
+
+### META
+
+Meta zawiera metainformację – np. zależność od innych ról, minimalną wersję ansible, nazwę autora dla ansible-galaxy itp.
+
+
+
+
 
 ### Koniec
