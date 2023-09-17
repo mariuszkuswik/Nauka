@@ -248,24 +248,57 @@ of them need to be included between double quotes.
 
 
 ---
+# Role w Ansible
 [Eurolinux role](https://pl.euro-linux.com/blog/ansible-w-eurolinuxie-czesc-piata-role/)
 
 - **Rola** - to zbiór zadań (tasks), uchwytów (handlers), plików (files), metainformacji (meta), szablonów (templates) i zmiennych (vars).
 
 
+## Katalogi
+
 Stworzenie odpowiedniego drzewa folderów ręcznie
-```mkdir ­p roles/web_server/{files,handlers,meta,templates,tasks,vars}```
 
+```bash
+mkdir ­p roles/web_server/{files,handlers,meta,templates,tasks,vars}
+```
 
-
-
-```ansible-galaxy init web_server``` - stworzenie odpowiedniego drzewa katalogów za pomocą angible-galaxy
-
+Stworzenie odpowiedniego drzewa katalogów za pomocą angible-galaxy
+```
+ansible-galaxy init web_server
+``` 
 
 ### META
-
 Meta zawiera metainformację – np. zależność od innych ról, minimalną wersję ansible, nazwę autora dla ansible-galaxy itp.
 
+Stwórzmy więc plik vim meta/main.yml, w którym podkreślimy brak dependencji.
+
+```dependencies: []```
+
+### FILES
+Do files wrzucamy statyczne pliki, które umieszczamy na serwerze. Mogą być to gotowe konfiguracje niewymagające od nas szablonowania. 
+**Tutaj dla przykładu został podany config ngnix**
+
+
+### VARS
+W naszych zmiennych będziemy trzymać nazwę domenową projektu, jego położenie, środowisko virtualne i nazwę aplikacji i adres repozytorium gitowego.
+
+Tworzmy więc vars/main.yml
+
+```yml
+­­­---
+domain: helloworld.local
+virtenv_dir: /var/app/hello_virt_env
+app_dir: /var/app/hello
+uwsgi_ini_name: hello_uwsgi.ini
+app_name: hello
+git_repo: https://github.com/EuroLinux/hello_world_django2.git
+```
+
+### TEMPLATES
+Tutaj znajdują się templaty jinja2? 
+W templates tworzymy uniwersalny config dla nginx templates/nginx_my_site.j2
+
+### HANDLERS
 
 
 
