@@ -272,7 +272,9 @@ Meta zawiera metainformację – np. zależność od innych ról, minimalną wer
 
 Stwórzmy więc plik vim meta/main.yml, w którym podkreślimy brak dependencji.
 
-```dependencies: []```
+```
+dependencies: []
+```
 
 ### FILES
 Do files wrzucamy statyczne pliki, które umieszczamy na serwerze. Mogą być to gotowe konfiguracje niewymagające od nas szablonowania. 
@@ -299,7 +301,135 @@ Tutaj znajdują się templaty jinja2?
 W templates tworzymy uniwersalny config dla nginx templates/nginx_my_site.j2
 
 ### HANDLERS
+Po zainstalowaniu odpowiednich dependencji, zmianach w konfiguracji czy wydaniu nowej wersji oprogramowania, powinniśmy zrestartować lub przeładować nasze usługi. Jak już wcześniej pisałem, służą do tego uchwyty lub jak ktoś woli chwytaki – handlers/main.yml ­
 
+
+```yml
+­­­---
+­- name: Enable and restart nginx
+  service:
+    name: nginx
+    state: restarted
+    enabled: yes
+  listen: "restart web services"
+
+-­ name: Enable and restart uwsgi
+  service:
+    name: uwsgi
+    state: restarted 
+    enabled: yes
+  listen: "restart web services"
+­
+- name: Touch uwsgi (restart vassal).
+  file:
+    path: "{{app_dir}}/{{uwsgi_ini_name}}"
+    state: touch
+  listen: "restart vassals"
+­
+- name: reboot
+  shell: sleep 5 && shutdown ­r now "Host restart triggered"
+  async: 1
+  poll: 0
+  ignore_errors: true
+  ```
+
+Nowością jest listen: "restart web services", które pojawiło się w Ansible 2.2 i umożliwia tworzenie group handlerów do wywołania.
+
+### TASKS
+
+Mając już absolutnie wszystko na miejscu, możemy stworzyć nasze taski. Pozwolę sobie podzielić je ze względu na pełnione funkcje.
+
+**Wrzuciłem tylko przykładowe**
+
+- ```tasks/setup_yum.yml ­```
+
+```yml
+---
+-name: Install EPEL
+ yum:
+   name: https://dl.fedoraproject.org/pub/epel/epel­release­latest­7.noarch.rpm
+   state: present
+
+­- name: Update Packages
+  yum:
+    name: '*'
+    state: latest
+­ 
+- name: Install Python 3.4 and virtualenv and git
+  yum: state=present name={{ item }}
+  with_items:
+­    - python34
+­    - python34­devel
+­    - python34­virtualenv
+­    - python34­pip
+­    - git
+­    - '@development'
+­ 
+- name: Install nginx
+  yum: 
+    state: present
+    name: nginx
+```
+
+
+
+- ```tasks/setup_fixes.yml```
+
+```yml
+­­­---
+­- name: Put SELinux in permissive
+  selinux:
+    policy: targeted
+    state: permissive
+­- name: Make nginx "{{ app_dir }}" owner
+  file:
+    path: "{{ app_dir }}"
+    owner: nginx
+    group: nginx
+    recurse: yes
+  notify: "restart web services"
+```
+
+
+### OSTATNI YAML W ROLI
+
+- ```tasks/main.yml```
+
+**W ostatnim playbooku importujemy podplaybooki. ­**
+
+```­­yml
+---
+­- import_tasks: setup_yum.yml
+­- import_tasks: setup_app.yml
+­- import_tasks: setup_fixes.yml
+­- import_tasks: setup_uwsgi.yml
+­- import_tasks: setup_nginx.yml
+```
+
+
+### URCHOMIENIE ROLI
+
+W katalogu nadrzędnym w stosunku do roli tworzymy playbook uruchomieniowy. ```setup_apps.yml```
+
+```yml
+---
+­- hosts: apps
+  user: ansible
+  become: true
+  roles:
+­    - web_server
+```
+
+Dla pliku inventory wyglądająceo następująco:
+```
+[apps]
+192.168.121.173
+```
+
+Wywołanie komendy: 
+```
+ansible-playbook -i inventory setup_apps.yml
+```
 
 
 
