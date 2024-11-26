@@ -1,3 +1,17 @@
+# Spis odcinków 
+## Youtube
+- [Playlista](https://youtu.be/nVVoehDwJDY?si=z9MWETbQ4m8muJDB)
+
+---
+
+- [Logika działania PGP/GPG oraz PKI. Infrastruktura klucza publicznego](https://www.youtube.com/watch?v=nVVoehDwJDY&list=PLc0fm8idNdk6kr3svhMCnJ4r2881rh_hx)
+- []()
+
+## Google drive
+
+# Pierwszy odcinek - Logika działania PGP/GPG oraz PKI. Infrastruktura klucza publicznego
+- [Logika działania PGP/GPG oraz PKI. Infrastruktura klucza publicznego](https://www.youtube.com/watch?v=nVVoehDwJDY&list=PLc0fm8idNdk6kr3svhMCnJ4r2881rh_hx)
+
 ### Klucz asymetryczny - przypomnienie problemu bezpieczeństwa przesłania klucza publicznego  
 Systemy kryptografii asymetrycznej wykorzystują dwa klucze: **publiczny**, który można udostępniać, i **prywatny**, który musi pozostać tajny. Problemem jest weryfikacja, czy klucz publiczny rzeczywiście należy do deklarowanego właściciela. Atakujący może przechwycić komunikację i podmienić klucz publiczny, co pozwoli mu podszywać się pod właściciela i odszyfrowywać dane. Rozwiązaniem są mechanizmy weryfikacji zaufania do klucza publicznego.
 
@@ -16,7 +30,6 @@ Zdecentralizowane rozwiązanie, w którym użytkownicy wzajemnie podpisują swoj
 
 #### Infrastruktura klucza publicznego (PKI)  
 Centralny model zarządzania kluczami, oparty na hierarchii urzędów certyfikacji.
-
 
 ### Logika działania PGP/GPG  
 PGP (Pretty Good Privacy) i GPG (GNU Privacy Guard) zapewniają szyfrowanie, weryfikację integralności danych oraz podpisy cyfrowe. Kluczowe cechy:  
