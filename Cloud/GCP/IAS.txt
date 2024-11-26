@@ -1,0 +1,12 @@
+IAS 
+
+- Google Cloud Functions - Serverless dla kodu
+Google Run - odpala makra do kontenerów 
+
+Google zamierza byc bez co2 w 20230
+
+
+PAAS? - znalezc przyklady 
+
+
+SAAS - Gmail, google docs itd. 
